@@ -1,0 +1,1062 @@
+{
+  "run_id": "2026-09-23_ca-university-of-toronto_computer-science",
+  "schema_version": "1.2",
+  "countries": [
+    {
+      "id": "ca",
+      "name": "Canada",
+      "region": "North America",
+      "currency_default": "CAD"
+    }
+  ],
+  "cities": [
+    {
+      "id": "ca-toronto",
+      "name": "Toronto",
+      "country_ref": "ca"
+    }
+  ],
+  "universities": [
+    {
+      "id": "ca-university-of-toronto",
+      "canonical_name": "University of Toronto",
+      "aliases": [
+        "U of T",
+        "UofT"
+      ],
+      "institution_type": "public",
+      "country_ref": "ca",
+      "primary_city_ref": "ca-toronto",
+      "official_website": "https://www.utoronto.ca",
+      "source_refs": [
+        "src-16",
+        "src-17"
+      ],
+      "record_status": "VERIFIED",
+      "last_researched": "2026-09-23",
+      "last_verified": "2026-09-23"
+    }
+  ],
+  "campuses": [
+    {
+      "id": "ca-university-of-toronto-st-george",
+      "university_ref": "ca-university-of-toronto",
+      "name": "St. George (Downtown Toronto)",
+      "city_ref": "ca-toronto",
+      "country_ref": "ca",
+      "is_primary": true,
+      "official_url": "https://www.utoronto.ca/university-life/campuses/st-george",
+      "extension_metadata": {
+        "note": "University of Toronto Mississauga (UTM) and University of Toronto Scarborough (UTSC) are separate campuses with their own Computer Science admission streams and requirements. This run is scoped exclusively to St. George per explicit instruction; UTM/UTSC facts were deliberately excluded even where they appeared in search results, to avoid cross-campus contamination.",
+        "fields": {
+          "student_population": "over 69,900 (St. George campus, per utoronto.ca)"
+        }
+      }
+    }
+  ],
+  "colleges": [],
+  "programs": [
+    {
+      "id": "ca-university-of-toronto-computer-science",
+      "university_ref": "ca-university-of-toronto",
+      "campus_ref": "ca-university-of-toronto-st-george",
+      "program_name": "Computer Science Specialist",
+      "faculty_school": "Faculty of Arts & Science",
+      "degree_type": "BSc",
+      "degree_type_local": "Honours Bachelor of Science (HBSc) -- Computer Science Specialist (ASSPE1689)",
+      "field_of_study": "Computer Science",
+      "duration_value": 4,
+      "duration_unit": "years",
+      "language_of_instruction": [
+        "en"
+      ],
+      "official_program_url": "https://artsci.calendar.utoronto.ca/program/asspe1689",
+      "decision_context_academic_year": "Fall 2027 undergraduate entry",
+      "source_refs": [
+        "src-08",
+        "src-09"
+      ],
+      "record_status": "VERIFIED",
+      "application_platform": "OUAC (Ontario Universities' Application Centre) -- OUAC code TAD; future.utoronto.ca portal for the Supplemental Application",
+      "application_requirements": [
+        {
+          "requirement_type": "form",
+          "name": "OUAC application (code TAD)",
+          "necessity": "required",
+          "description": "",
+          "notes": ""
+        },
+        {
+          "requirement_type": "self_reported_record",
+          "name": "Supplemental Application",
+          "necessity": "required",
+          "description": "Required for direct-entry CMP1 applicants per future.utoronto.ca/program/computer-science.",
+          "notes": ""
+        }
+      ],
+      "extension_metadata": {
+        "note": "V1.2 migration: the CMP1 admission-category structure, guarantee/continuation criteria, and related-program linkage previously captured only in Program.extension_metadata are now first-class AdmissionStage and ProgramPathway records (see ca-university-of-toronto-stage-* and ca-university-of-toronto-pathway-*). total_credit_requirement and duration_derivation_note are retained here since they describe this specific Program record's own credit load, not a staged admission concept.",
+        "fields": {
+          "total_credit_requirement": "12.0 full-course-equivalents (FCE), including at least 1.5 FCE at the 400-level.",
+          "duration_derivation_note": "duration_value=4/duration_unit=years is derived, not directly quoted: the HBSc requires 20.0 total credits (artsci.calendar.utoronto.ca/hbahbsc-requirements), and the Faculty's own course-load guidance recommends up to 2.5 credits/term (~5.0/year) for full-time students in good standing -- 20.0 / 5.0 = 4 years. No fetched official page states 'four years' verbatim, and the Faculty explicitly permits students to progress 'at a rate of their own choosing', so this is a typical/expected duration, not a schema-enforced one. Disclosed in missing-data.json."
+        }
+      }
+    }
+  ],
+  "program_pathways": [
+    {
+      "id": "ca-university-of-toronto-pathway-major",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "pathway_type": "alternate_exit",
+      "degree_type": "BSc",
+      "degree_type_local": "Honours Bachelor of Science (HBSc) -- Computer Science Major (ASMAJ1689)",
+      "duration_value": 4,
+      "duration_unit": "years",
+      "progression_requirement": {
+        "description": "Guaranteed for CMP1 students completing CSC110Y1 (min 70%), CSC111H1 (min 70%), plus specified math courses, within 12 months of beginning CMP1.",
+        "gpa_or_class_threshold": "CSC111H1 >= 70% (vs. 77% for the Specialist pathway)",
+        "decision_point_timing": "Within 12 months of beginning CMP1; program request during the first program-request period"
+      },
+      "notes": "8.0 total credits including at least 0.5 at the 400-level (vs. 12.0 credits for the Specialist).",
+      "source_refs": [
+        "src-10"
+      ],
+      "verification_status": "SUPPORTED",
+      "record_status": "STRUCTURED"
+    },
+    {
+      "id": "ca-university-of-toronto-pathway-minor",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "pathway_type": "alternate_exit",
+      "degree_type": "BSc",
+      "degree_type_local": "Honours Bachelor of Science (HBSc) -- Computer Science Minor (ASMIN1689)",
+      "duration_value": 4,
+      "duration_unit": "years",
+      "progression_requirement": {
+        "description": "Guaranteed for CMP1 students completing CSC110Y1 (min 70%), CSC111H1 (min 70%), within 12 months of beginning CMP1.",
+        "gpa_or_class_threshold": "CSC111H1 >= 70%",
+        "decision_point_timing": "Within 12 months of beginning CMP1; program request during the first program-request period"
+      },
+      "notes": "New in V1.2 -- Minor's exact credit total was not independently re-verified this run (schema-gap evidence only in the V1.1 source).",
+      "source_refs": [
+        "src-01",
+        "src-03"
+      ],
+      "verification_status": "SUPPORTED",
+      "record_status": "STRUCTURED"
+    }
+  ],
+  "applicant_categories": [
+    {
+      "id": "ca-university-of-toronto-curriculum-ontario-ossd",
+      "university_ref": "ca-university-of-toronto",
+      "dimension": "prior_curriculum",
+      "label": "Ontario Secondary School Diploma (OSSD)",
+      "description": "Ontario high school applicants presenting six 4U/M-level subjects including English and (for CS/math/science programs) Calculus & Vectors (MCV4U)."
+    },
+    {
+      "id": "ca-university-of-toronto-curriculum-ib",
+      "university_ref": "ca-university-of-toronto",
+      "dimension": "prior_curriculum",
+      "label": "International Baccalaureate (IB) Diploma",
+      "description": "IB Diploma applicants; English HL or SL required, plus an approved higher-level or standard-level mathematics course for the Calculus/Advanced-Functions prerequisite."
+    },
+    {
+      "id": "ca-university-of-toronto-curriculum-a-level",
+      "university_ref": "ca-university-of-toronto",
+      "dimension": "prior_curriculum",
+      "label": "British-Patterned / GCE A-Level",
+      "description": "A-Level (British-patterned) applicants. Specific subject/grade requirements could not be independently confirmed this run (primary source page blocked by bot-detection) -- see AdmissionsRequirement record and missing-data.json."
+    },
+    {
+      "id": "ca-university-of-toronto-curriculum-us",
+      "university_ref": "ca-university-of-toronto",
+      "dimension": "prior_curriculum",
+      "label": "U.S.-Patterned High School",
+      "description": "U.S. high school applicants. Specific GPA/SAT/ACT/AP requirements could not be independently confirmed this run (primary source page blocked by bot-detection) -- see AdmissionsRequirement record and missing-data.json."
+    },
+    {
+      "id": "ca-university-of-toronto-residency-international",
+      "university_ref": "ca-university-of-toronto",
+      "dimension": "residency_citizenship",
+      "label": "International (study permit required)",
+      "description": "Non-Canadian students requiring a study permit; charged international tuition rates and mandatory UHIP health insurance."
+    },
+    {
+      "id": "ca-university-of-toronto-residency-domestic-ontario",
+      "university_ref": "ca-university-of-toronto",
+      "dimension": "residency_citizenship",
+      "label": "Domestic -- Ontario resident (Canadian citizen / permanent resident / protected person)",
+      "description": "Canadian citizens/permanent residents/protected persons who qualify as Ontario residents; charged the government-regulated 'Ontario resident' rate under the provincial Tuition Fee Schedule for Publicly-Funded Programs."
+    },
+    {
+      "id": "ca-university-of-toronto-residency-domestic-other-province",
+      "university_ref": "ca-university-of-toronto",
+      "dimension": "residency_citizenship",
+      "label": "Domestic -- non-Ontario-resident (Canadian citizen / permanent resident / protected person from another province/territory)",
+      "description": "Canadian citizens/permanent residents/protected persons resident in a province or territory other than Ontario. Confirmed via independent verification re-fetch to be charged a DIFFERENT, higher domestic rate than the Ontario-resident rate -- this category was NOT present in this run's initial extraction pass, which had conflated 'domestic' with 'Ontario resident'. See run-summary.md for the discovery narrative and missing-data.json (md-11) for why the exact dollar figure remains unconfirmed."
+    }
+  ],
+  "admission_stages": [
+    {
+      "id": "ca-university-of-toronto-stage-cmp1-entry",
+      "university_ref": "ca-university-of-toronto",
+      "program_ref": null,
+      "applicant_category_ref": null,
+      "stage_type": "admission_category",
+      "sequence_order": 1,
+      "name": "Admission to Year 1 Computer Science (CMP1) admission category",
+      "description": "Applicants first gain admission to the Faculty of Arts & Science, into the Year 1 Computer Science (CMP1) admission category -- a distinct entry point from any specific Program record. Per-curriculum entry criteria are captured in the AdmissionsRequirement records referencing this stage.",
+      "criteria": [],
+      "decision_outcome_options": [
+        "admit_to_cmp1",
+        "admit_to_other_admission_category",
+        "deny"
+      ],
+      "source_refs": [
+        "src-01",
+        "src-04",
+        "src-05"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "New in V1.2 -- this is the central Toronto stress-test finding: V1.1 had no entity to represent 'admission category' as distinct from 'Program'. Previously captured only in Program.extension_metadata.fields.admission_category.",
+        "fields": {}
+      }
+    },
+    {
+      "id": "ca-university-of-toronto-stage-progression-guarantee",
+      "university_ref": "ca-university-of-toronto",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "applicant_category_ref": null,
+      "stage_type": "progression",
+      "sequence_order": 2,
+      "name": "Computer Science Admission Guarantee (CMP1 to Specialist/Major/Minor continuation)",
+      "description": "Within 12 months of beginning CMP1, meeting the stated grade/credit requirements guarantees admission to the Specialist, Major, or Minor program of study starting Year 2. This is explicitly a guarantee, not a competitive weeding process, per the department's own description.",
+      "criteria": [
+        {
+          "criterion_name": "Total FCE",
+          "description": "Complete at least 4.0 full course equivalents (FCE) within 12 months of beginning CMP1.",
+          "threshold_or_formula": ">= 4.0 FCE",
+          "weight": null,
+          "mandatory": true
+        },
+        {
+          "criterion_name": "CSC110Y1 grade",
+          "description": "Minimum grade in CSC110Y1 (Foundations of Computer Science I).",
+          "threshold_or_formula": ">= 70%",
+          "weight": null,
+          "mandatory": true
+        },
+        {
+          "criterion_name": "CSC111H1 grade",
+          "description": "Minimum grade in CSC111H1 (Foundations of Computer Science II); threshold differs by target pathway.",
+          "threshold_or_formula": ">= 77% for Specialist/Major; >= 70% for Minor",
+          "weight": null,
+          "mandatory": true
+        },
+        {
+          "criterion_name": "Mathematics courses",
+          "description": "MAT148H1/MAT158H1 and MAT149H1/MAT159H1 (Specialist/Major only).",
+          "threshold_or_formula": null,
+          "weight": null,
+          "mandatory": true
+        }
+      ],
+      "decision_outcome_options": [
+        "guaranteed_admission_specialist_major_minor",
+        "guarantee_not_met_supplemental_application_required"
+      ],
+      "source_refs": [
+        "src-01",
+        "src-03",
+        "src-09"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "New in V1.2 -- previously Program.extension_metadata.fields.admission_guarantee_continuation_requirement. The Data Science Specialist's competitive (non-guaranteed) continuation is explicitly out of scope for this record, which covers only CS Specialist/Major/Minor.",
+        "fields": {}
+      }
+    },
+    {
+      "id": "ca-university-of-toronto-stage-out-of-stream-competitive",
+      "university_ref": "ca-university-of-toronto",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "applicant_category_ref": null,
+      "stage_type": "progression",
+      "sequence_order": 2,
+      "name": "Out-of-stream competitive admission to CS Major/Minor (non-CMP1 students)",
+      "description": "Students from admission categories OTHER than CMP1 may competitively apply to CS Major or Minor (not Specialist) via a supplemental application after completing CSC148H1 and CSC165H1/CSC240H1 at St. George with a minimum 70% grade. Admission is competitive and not guaranteed -- roughly 50% of eligible applicants have been admitted in recent years.",
+      "criteria": [
+        {
+          "criterion_name": "CSC148H1 grade",
+          "description": "Completed on the St. George campus.",
+          "threshold_or_formula": ">= 70%",
+          "weight": null,
+          "mandatory": true
+        },
+        {
+          "criterion_name": "CSC165H1 or CSC240H1 grade",
+          "description": "Completed on the St. George campus.",
+          "threshold_or_formula": ">= 70%",
+          "weight": null,
+          "mandatory": true
+        },
+        {
+          "criterion_name": "Supplemental application",
+          "description": "Required for non-CMP1 applicants.",
+          "threshold_or_formula": null,
+          "weight": null,
+          "mandatory": true
+        }
+      ],
+      "decision_outcome_options": [
+        "competitive_admission_major_or_minor",
+        "denied"
+      ],
+      "source_refs": [
+        "src-02"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "The ~50% admit rate and A/A+ (85%+) in-course grade range are explicitly a post-admission in-course competitive statistic, never to be confused with a first-year admissions probability -- retained as a note, not a structured criterion, since it is not itself a requirement.",
+        "fields": {}
+      }
+    }
+  ],
+  "admissions_requirements": [
+    {
+      "id": "ca-university-of-toronto-admreq-ontario",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "prior_curriculum_category_ref": "ca-university-of-toronto-curriculum-ontario-ossd",
+      "curriculum_type": "Ontario Secondary School Diploma (OSSD), 4U/M level",
+      "academic_threshold": null,
+      "required_subjects": [
+        "English (ENG4U or EAE4U)",
+        "Calculus & Vectors (MCV4U)",
+        "six 4U/M-level subjects total (the remaining four are not individually named as prerequisite subjects on the fetched page)"
+      ],
+      "standardized_tests": [],
+      "language_requirements": [
+        {
+          "language": "English",
+          "test_name": "No separate English-proficiency test required -- exempt via 4+ years of full-time secondary schooling in a recognized Canadian school",
+          "min_score": null,
+          "notes": "Per U of T's official English Language Requirements page (future.utoronto.ca/english-language-requirements, independently re-fetched 2026-09-24): applicants are exempt from providing a separate English test score if they 'completed/are completing four or more years of full-time study in a recognized Canadian school (in Canada).' Ontario Secondary School Diploma (OSSD) holders attending an Ontario high school satisfy this exemption automatically. This is distinct from the senior-level English course (ENG4U/EAE4U, captured in required_subjects) -- the same page states the senior-level English course 'is required for admission, but it does not meet the English language proficiency requirement,' i.e. these are two separate requirements and OSSD holders satisfy both via their Ontario schooling."
+        }
+      ],
+      "notes": "No numeric competitive average or grade range (e.g. Oxford's published 'mid-90s') was found stated on any officially fetched page for Ontario CMP1 applicants -- an explicit absence, not an unresearched gap. A Supplemental Application is required (future.utoronto.ca/program/computer-science). Co-op program components are excluded from admission consideration.",
+      "source_refs": [
+        "src-05",
+        "src-18"
+      ],
+      "academic_year": "current published cycle (page does not itself state an academic year; cross-referenced against the 2026-27 Academic Calendar, src-08/src-09, which explicitly covers 2026-27)",
+      "last_checked": "2026-09-24",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "admission_stage_ref": "ca-university-of-toronto-stage-cmp1-entry"
+    },
+    {
+      "id": "ca-university-of-toronto-admreq-ib",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "prior_curriculum_category_ref": "ca-university-of-toronto-curriculum-ib",
+      "curriculum_type": "International Baccalaureate (IB) Diploma",
+      "academic_threshold": null,
+      "required_subjects": [
+        "English HL or SL",
+        "Mathematics: Analysis & Approaches (SL or HL), or Mathematics: Applications & Interpretation HL (Mathematics: Applications & Interpretation SL satisfies the Advanced Functions prerequisite only, not the full Calculus prerequisite)"
+      ],
+      "standardized_tests": [],
+      "language_requirements": [
+        {
+          "language": "English",
+          "test_name": "IB Diploma English HL or SL component",
+          "min_score": "4 (predicted or final) in Higher or Standard Level English A: Literature or English A: Language and Literature; IB English B HL with a score of 7 is also acceptable",
+          "notes": "Satisfied via the IB Diploma's own English HL/SL requirement; no separate external English proficiency test required when this is met. Independently re-confirmed 2026-09-24 against U of T's dedicated English Language Requirements page (future.utoronto.ca/english-language-requirements, src-18), a distinct page/fetch from the original src-07 IB-specific page, which lists this exact IB English pathway among its enumerated accepted-qualification list with the minimum score of 4 (or 7 for English B HL) quoted verbatim."
+        }
+      ],
+      "notes": "No minimum IB diploma point total is published on the fetched official page -- recorded as an explicit absence per the 'record a genuine absence exactly as stated' rule, not left unresearched. Applicants who completed the pre-2021 IB curriculum may present Mathematics SL or HL for the math prerequisite. Admission consideration is based on predicted or final results, excluding bonus points. Independent re-fetch also surfaced: 'Students who have written SAT or ACT tests, and wish to have these considered in their assessment, may submit their scores' -- explicitly optional, not required or recommended by the source's own framing, so left out of standardized_tests (whose schema only supports 'required'/'recommended', neither of which accurately represents 'may optionally submit').",
+      "source_refs": [
+        "src-07",
+        "src-18"
+      ],
+      "academic_year": "current published cycle (page does not itself state an academic year; cross-referenced against the 2026-27 Academic Calendar, src-08/src-09)",
+      "last_checked": "2026-09-24",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "admission_stage_ref": "ca-university-of-toronto-stage-cmp1-entry"
+    },
+    {
+      "id": "ca-university-of-toronto-admreq-a-level",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "prior_curriculum_category_ref": "ca-university-of-toronto-curriculum-a-level",
+      "curriculum_type": "British-Patterned / GCE A-Level",
+      "academic_threshold": null,
+      "required_subjects": [],
+      "standardized_tests": [],
+      "language_requirements": [
+        {
+          "language": "English",
+          "test_name": "GCE A Level/AS Level/AICE English or English Language",
+          "min_score": "C (final or predicted)",
+          "notes": "Per U of T's official English Language Requirements page (future.utoronto.ca/english-language-requirements, src-18, independently fetched 2026-09-24 -- NOT the bot-blocked artsci.utoronto.ca British-patterned page): 'A minimum final or predicted grade of \"C\" in GCE A Level/AS Level/AICE English or English Language' satisfies the English-proficiency requirement (the page explicitly excludes English as an Additional Language and English Literature from this pathway). GCSE/IGCSE/GCE Ordinary Level English at a minimum grade of 'B' ('6' in reformed qualifications) is a listed alternative. Separately, A-Level applicants who completed 4+ years of full-time schooling in a country where English is the dominant language (the United Kingdom -- listed as 'England, Northern Ireland, Wales' plus Scotland separately -- is explicitly named on that list) qualify for a full exemption from proof of English proficiency under the same general policy that exempts Canadian-schooled applicants. This resolves the language_requirements gap even though required_subjects/academic_threshold/standardized_tests for this curriculum remain unconfirmed (primary curriculum-specific page still bot-blocked -- see below)."
+        }
+      ],
+      "notes": "GENUINE ACCESS LIMITATION, not an absence of a requirement: the primary Faculty of Arts & Science source (artsci.utoronto.ca/future/ready-apply/admission-requirements/british-patterned) returned only a Cloudflare bot-detection verification screen on every fetch attempt this run (multiple attempts, WebFetch tool) and could not be independently read. The only confirmed fact touching A-Level applicants is the general, non-curriculum-specific statement that Calculus, AP Calculus (AB or BC), or one semester of college/university calculus 'is required for most math, science, computer science and commerce programs' (src-06). No A-Level grade thresholds (e.g. AAA/AAB) or required subjects could be confirmed this run; English-language requirements WERE confirmed this pass via the separate, always-accessible general English Language Requirements page (src-18) -- see language_requirements.",
+      "source_refs": [
+        "src-06",
+        "src-18"
+      ],
+      "academic_year": "UNKNOWN for required_subjects/academic_threshold (primary source not independently accessible this run); language_requirements confirmed 2026-09-24 against the current published English Language Requirements page",
+      "last_checked": "2026-09-24",
+      "verification_status": "UNKNOWN",
+      "record_status": "HUMAN_REVIEW",
+      "admission_stage_ref": "ca-university-of-toronto-stage-cmp1-entry"
+    },
+    {
+      "id": "ca-university-of-toronto-admreq-us",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "prior_curriculum_category_ref": "ca-university-of-toronto-curriculum-us",
+      "curriculum_type": "U.S.-Patterned High School",
+      "academic_threshold": null,
+      "required_subjects": [],
+      "standardized_tests": [],
+      "language_requirements": [
+        {
+          "language": "English",
+          "test_name": "No separate English-proficiency test required -- exempt via 4+ years of full-time secondary schooling in the United States",
+          "min_score": null,
+          "notes": "Per U of T's official English Language Requirements page (future.utoronto.ca/english-language-requirements, src-18, independently fetched 2026-09-24): applicants are exempt from providing a separate English test score if they 'completed/are completing four or more years of full-time study in an English language school located in a country where the dominant language is English.' 'United States of America' is explicitly named on the university's list of 70+ qualifying countries/territories. No US-curriculum-specific test (e.g. AP English Language/Literature) appears among the university's enumerated accepted pathways -- the country-of-schooling exemption is the applicable mechanism for US high school applicants, not a subject-specific equivalency. This resolves the language_requirements gap even though required_subjects/academic_threshold/standardized_tests for this curriculum remain unconfirmed (primary curriculum-specific page still bot-blocked -- see below)."
+        }
+      ],
+      "notes": "GENUINE ACCESS LIMITATION, not an absence of a requirement: the primary Faculty of Arts & Science source (artsci.utoronto.ca/future/ready-apply/admission-requirements/us-high-school) returned only a Cloudflare bot-detection verification screen on every fetch attempt this run. The general future.utoronto.ca 'Welcome U.S. Students' overview page provided no concrete GPA, SAT/ACT, or AP score figures, only pointers to the blocked page. No standardized-test requirement was found stated on any page fetched this run -- this is an absence of evidence, not evidence of absence; it does not confirm SAT/ACT/AP scores are unnecessary. English-language requirements WERE confirmed this pass via the separate, always-accessible general English Language Requirements page (src-18) -- see language_requirements.",
+      "source_refs": [
+        "src-06",
+        "src-18"
+      ],
+      "academic_year": "UNKNOWN for required_subjects/academic_threshold (primary source not independently accessible this run); language_requirements confirmed 2026-09-24 against the current published English Language Requirements page",
+      "last_checked": "2026-09-24",
+      "verification_status": "UNKNOWN",
+      "record_status": "HUMAN_REVIEW",
+      "admission_stage_ref": "ca-university-of-toronto-stage-cmp1-entry"
+    }
+  ],
+  "decision_plans": [
+    {
+      "id": "ca-university-of-toronto-decisionplan-2027",
+      "university_ref": "ca-university-of-toronto",
+      "program_ref": null,
+      "plan_type": "single_stage",
+      "application_platform": "OUAC (code TAD)",
+      "binding": false,
+      "application_deadline": "2027-01-15",
+      "decision_release_date": null,
+      "academic_year": "2026-27 application cycle, for Fall 2027 entry",
+      "notes": "New in V1.2 -- the original extraction-pass source (src-05, the general CS program page) explicitly states 'No explicit application deadline stated on this specific program page.' RESOLVED 2026-09-24 (see vr-38): a dedicated official 'Dates & Deadlines' page (future.utoronto.ca/deadlines, src-21), not previously fetched this run, publishes the actual OUAC application deadlines for the 2027 admissions cycle (Fall 2027 entry): recommended early submission November 7, 2026; final application deadline January 15, 2027; supporting documents due February 1, 2027; and specifically a 'Computer Science Supplementary Application due February 1' (2027) -- directly matching the Program record's already-noted Supplemental Application requirement. application_deadline is set to the general OUAC application deadline (2027-01-15); the November 7, 2026 early-consideration date and the February 1, 2027 supplemental/document deadlines are disclosed here rather than modeled in a field, since this entity has only a single application_deadline field and no schema field for a multi-stage deadline sequence.",
+      "source_refs": [
+        "src-05",
+        "src-21"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED"
+    }
+  ],
+  "cost_profiles": [
+    {
+      "id": "ca-university-of-toronto-cost-domestic-ontario",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "academic_year": "2026-27",
+      "residency_category_ref": "ca-university-of-toronto-residency-domestic-ontario",
+      "currency": "CAD",
+      "tuition_annual": 6100,
+      "tuition_basis": "statutory",
+      "mandatory_fees_annual": null,
+      "mandatory_fees_breakdown": [],
+      "estimated_living_costs_annual": null,
+      "living_cost_source_basis": null,
+      "other_material_costs": [],
+      "duration_years": 4,
+      "source_refs": [
+        "src-12"
+      ],
+      "last_checked": "2026-09-24",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "This is the Year-1 (general Arts & Science direct-entry) domestic rate. It is NOT flat across all 4 years of the program -- see upper_year_tuition_step.",
+        "fields": {
+          "upper_year_tuition_step": "$11,420 CAD/year (Table B2, 'Computer Science, Bioinformatics, Data Science' domestic Ontario-resident upper-year rate) applies once a CMP1 student is admitted into the Specialist/Major/Minor program of study starting Year 2 -- i.e. for the remaining 3 years of a typical 4-year path. Source: src-12. Independently re-verified 2026-09-24: the 2023, 2024, 2025 and 2026 entering cohorts all show this identical $11,420 Ontario-resident upper-year figure, consistent with src-12's statement that Ontario-resident/domestic tuition is government-regulated and held flat year-over-year.",
+          "domestic_incidental_fee_gap": "The exact domestic mandatory incidental/ancillary fee amount was not independently isolated from the Tuition Explorer tool this run (only the international fee category's incidental fee figure, $2,100.29, was successfully retrieved). mandatory_fees_annual is left null rather than assumed equal to the international incidental fee.",
+          "ontario_vs_domestic_scope_note": "RESOLVED by independent verification re-fetch: a distinct 'non-Ontario-resident' domestic rate IS charged (confirmed to exist and be materially higher than the Ontario rate across three separate re-fetches of the source PDF), so this CostProfile now represents ONLY the Ontario-resident rate. See the new ca-university-of-toronto-cost-domestic-other-province record for the other-province domestic rate (dollar figure not yet reliably confirmed -- see missing-data.json md-11)."
+        }
+      },
+      "college_ref": null,
+      "program_pathway_ref": null
+    },
+    {
+      "id": "ca-university-of-toronto-cost-international",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "academic_year": "2026-27",
+      "residency_category_ref": "ca-university-of-toronto-residency-international",
+      "currency": "CAD",
+      "tuition_annual": 66110,
+      "tuition_basis": "institutional",
+      "mandatory_fees_annual": 3048.29,
+      "mandatory_fees_breakdown": [
+        {
+          "label": "Incidental and System Access Fee",
+          "amount": 2100.29,
+          "frequency": "annual"
+        },
+        {
+          "label": "UHIP (University Health Insurance Plan, mandatory for international students)",
+          "amount": 948.0,
+          "frequency": "annual"
+        }
+      ],
+      "estimated_living_costs_annual": null,
+      "living_cost_source_basis": null,
+      "other_material_costs": [],
+      "duration_years": 4,
+      "source_refs": [
+        "src-11",
+        "src-12"
+      ],
+      "last_checked": "2026-09-24",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "This is the Year-1 ('Admission Streams Year 1', which includes Computer Science) international rate. It is NOT flat across all 4 years -- see upper_year_tuition_step. A fresh search 2026-09-24 (per this run's verification-pass instructions to retry before accepting a 'no living-cost figure found' absence) located a genuine figure: IRCC's official minimum study-permit proof-of-funds amount ($23,448 CAD, effective for applications on/after 2026-09-01), published on U of T's own international-student-services page. Per this schema's own V1.2 design decision, a visa/immigration proof-of-funds figure is NOT a 'genuine cost-of-living estimate' and must not be conflated with one in living_cost_source_basis (whose kind enum dropped visa_proof_of_funds_deposit in V1.2 specifically to prevent this) -- it is instead modeled as its own FinancialRequirement record (ca-university-of-toronto-finreq-ircc-proof-of-funds, in the financial_requirements collection). estimated_living_costs_annual/living_cost_source_basis remain null: no genuine U of T-published cost-of-living estimate (as opposed to the IRCC regulatory minimum) was found this pass either.",
+        "fields": {
+          "upper_year_tuition_step": "$72,480 CAD/year (Table D2, international Computer Science-specific upper-year rate) applies once admitted into the Specialist/Major/Minor program of study starting Year 2. Source: src-12. Independently re-verified 2026-09-24: the report's Table D2 is structured with one row per ENTERING COHORT (each cohort's own locked-in Year-1 and upper-year rate), not one flat current-year rate -- the 2023/2024/2025 entering cohorts all show an upper-year rate of $69,030 (unchanged across those three cohorts), while the 2026 entering cohort's own upper-year rate is $72,480. $72,480 / $69,030 = 1.050, an exact 5.0% increase, which matches src-12's own text ('subject to an approximately 5% annual increase for new cohorts') precisely and confirms $72,480 -- not $69,030 -- is the correct figure for THIS run's 2026-cohort Program/CostProfile record.",
+          "annual_increase_note": "RESOLVED by independent re-verification 2026-09-24: src-12's Table D2 shows the 2023, 2024 and 2025 entering cohorts all paying the identical upper-year rate ($69,030) across multiple pricing years, while only the newly admitted 2026 cohort is priced at the higher $72,480 upper-year rate. This confirms an already-admitted cohort's rate IS held flat for their program duration and is NOT re-priced annually alongside new cohorts -- the ~5% annual increase applies only to each new entering cohort's own locked-in rate, not to continuing students. This run's DerivedCostEstimate's flat-rate assumption is therefore correct, not merely a disclosed limitation."
+        }
+      },
+      "college_ref": null,
+      "program_pathway_ref": null
+    },
+    {
+      "id": "ca-university-of-toronto-cost-domestic-other-province",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "academic_year": "2026-27",
+      "residency_category_ref": "ca-university-of-toronto-residency-domestic-other-province",
+      "currency": "CAD",
+      "tuition_annual": 7610,
+      "tuition_basis": "statutory",
+      "mandatory_fees_annual": null,
+      "mandatory_fees_breakdown": [],
+      "estimated_living_costs_annual": null,
+      "living_cost_source_basis": null,
+      "other_material_costs": [],
+      "duration_years": 4,
+      "source_refs": [
+        "src-12"
+      ],
+      "last_checked": "2026-09-24",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "This CostProfile's existence is itself a genuine verification-pass discovery: the initial extraction pass treated 'Ontario resident' as synonymous with 'domestic', which the run brief explicitly warned against. RESOLVED 2026-09-24 (see vr-35): tuition_annual is now set to $7,610 CAD, the 2026-entering-cohort Year-1 non-Ontario-resident (NOR) rate for Computer Science, after three additional independent re-fetches of the same official Tuition Fee Report PDF this pass (on top of the original run's three) converged on this figure and, critically, an internal-consistency cross-check resolved which candidate was correct -- see unconfirmed_candidate_figures for the full resolution reasoning. This was a genuinely resolvable PDF-table-misreading problem, not an unresolvable source disagreement.",
+        "fields": {
+          "unconfirmed_candidate_figures": "RESOLUTION (2026-09-24): the correct 2026-27 Year-1 NOR Computer Science figure is $7,610. Reasoning: (1) FREQUENCY -- $7,610 recurred in 5 of ~7 independent fetches of the same PDF across the original run and this verification pass, far more than any competing figure. (2) INTERNAL RATIO CONSISTENCY -- the confirmed OR/NOR upper-year pair (OR $11,420 / NOR $14,260) has a premium ratio of 14260/11420 = 1.2487. Pairing the confirmed OR Year-1 rate ($6,100) with the $7,610 candidate gives 7610/6100 = 1.2475 -- essentially the identical ~24.8% out-of-province premium ratio, strong internal evidence $7,610 is the true NOR Year-1 figure paired with $6,100 OR Year-1. (3) By contrast, $14,180/$17,730 (one fetch pass each) would imply premiums of 2.33x/2.91x over the OR rate -- wildly inconsistent with the ~1.25x premium pattern seen everywhere else in this fee schedule -- and one later fetch this pass traced $14,180 to a genuinely different row ('Bachelors', a general/direct-entry category, not the Computer Science-specific program row), confirming it was a row-misattribution artifact of the PDF-table extraction, not an alternative true value. (4) The $7,250 candidate (from the original run) was traced this pass to the 2025-entering-cohort's own (older, lower) Year-1 NOR rate, distinct from the 2026 cohort's $7,610 -- consistent with NOR rates rising cohort-over-cohort while the government-regulated OR rate stays flat at $6,100 across cohorts (src-12). All four candidates are now explained, not just discarded.",
+          "upper_year_tuition_step_candidate": "$14,260 (the NOR upper-year Computer Science rate for the 2023-2025 entering cohorts, held flat across those cohorts per multiple re-fetches this pass) is very likely the correct current NOR upper-year figure, by the same OR/NOR ratio logic above, but is NOT written into a canonical field here since this run's schema-gap convention (matching cost-domestic-ontario/cost-international) keeps upper-year figures in extension_metadata only, and the 2026 cohort's own eventual NOR upper-year rate (which may differ, per the cohort-pricing pattern documented in cost-international.extension_metadata.fields.upper_year_tuition_step) has not itself been published yet."
+        }
+      },
+      "college_ref": null,
+      "program_pathway_ref": null
+    }
+  ],
+  "financial_requirements": [
+    {
+      "id": "ca-university-of-toronto-finreq-ircc-proof-of-funds",
+      "program_ref": "ca-university-of-toronto-computer-science",
+      "residency_category_ref": "ca-university-of-toronto-residency-international",
+      "requirement_type": "government_minimum_resources",
+      "amount": 23448,
+      "currency": "CAD",
+      "refundable": false,
+      "frequency": "annual (first-year living-expense component of the study-permit financial-support requirement; separate from and in addition to tuition)",
+      "administering_body": "Immigration, Refugees and Citizenship Canada (IRCC), Government of Canada",
+      "academic_year": "effective for study permit applications submitted on or after 2026-09-01",
+      "notes": "New in V1.2 -- discovered during the verification pass while re-searching for a living-cost/proof-of-funds figure for the international CostProfile (ca-university-of-toronto-cost-international). This is IRCC's federal minimum-funds requirement for a Canadian study permit ('IRCC expects you to prove access to funds to cover a minimum of annual tuition plus at least $23,448 CAD...for your first year's living expenses'), published on U of T's own Centre for International Experience page. Unlike TU Delft's IND deposit, this is not described as a refundable lockable account on the fetched page, so refundable=false; it is a bank-statement/proof-of-access threshold the student must demonstrate to IRCC, not a fee paid to U of T. Deliberately NOT modeled in CostProfile.living_cost_source_basis, consistent with this schema's V1.2 design decision that dropped 'visa_proof_of_funds_deposit' from that field's kind enum specifically so this kind of figure lives only in FinancialRequirement.",
+      "source_refs": [
+        "src-22"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED"
+    }
+  ],
+  "financial_aid_policies": [],
+  "scholarships": [
+    {
+      "id": "ca-university-of-toronto-scholarship-pearson",
+      "name": "Lester B. Pearson International Scholarship",
+      "provider": "University of Toronto",
+      "provider_type": "institutional",
+      "institutions_covered": [
+        "ca-university-of-toronto"
+      ],
+      "programs_covered": [],
+      "degree_levels": [
+        "undergraduate"
+      ],
+      "eligible_citizenships": [
+        "non-Canadian (international; study permit required)"
+      ],
+      "residency_restrictions": "International students only (a non-Canadian requiring a study permit); not open to Canadian citizens, permanent residents, or protected persons.",
+      "academic_criteria": null,
+      "other_eligibility_criteria": "Not program-specific -- tenable for any first-entry undergraduate program at U of T. Must be in final year of senior secondary school in 2026/2027, or have graduated no earlier than June 2026; must begin studies at U of T in September 2027 (students already in post-secondary study, or starting in January 2027, are ineligible). Requires school nomination -- each eligible high school may nominate only one student per year via a secure nomination form sent to verified schools.",
+      "award_type": "mixed",
+      "award_amount": null,
+      "award_amount_currency": "CAD",
+      "renewable": true,
+      "renewal_conditions": "Covers four years of undergraduate study; specific year-to-year renewal/standing conditions were not detailed on the fetched page.",
+      "duration": "4 years (full course of first-entry undergraduate study)",
+      "application_deadline": "School nomination: October 9, 2026; U of T admission application: October 16, 2026; scholarship application: November 6, 2026",
+      "deadline_academic_year": "2026/2027 nomination cycle, for September 2027 (Fall 2027) entry",
+      "official_source_url": "https://future.utoronto.ca/pearson-scholarships",
+      "source_refs": [
+        "src-13"
+      ],
+      "last_checked": "2026-09-23",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "award_amount has no fixed dollar figure -- coverage is in-kind, captured verbatim here.",
+        "fields": {
+          "coverage_description": "Covers tuition, books, incidental fees, and full residence support for four years. Approximately 37 students named Pearson Scholars per year (university-wide, not CS-specific)."
+        }
+      },
+      "college_ref": null
+    },
+    {
+      "id": "ca-university-of-toronto-scholarship-national",
+      "name": "National Scholarship Program",
+      "provider": "University of Toronto",
+      "provider_type": "institutional",
+      "institutions_covered": [
+        "ca-university-of-toronto"
+      ],
+      "programs_covered": [],
+      "degree_levels": [
+        "undergraduate"
+      ],
+      "eligible_citizenships": [
+        "Canadian citizen",
+        "permanent resident",
+        "protected person"
+      ],
+      "residency_restrictions": "Domestic applicants only (Canadian citizen, permanent resident, or protected person); not open to international students.",
+      "academic_criteria": "Selection based on 'outstanding academics, creative thinking, broad achievement and a deep commitment to their school and community', assessed via application, reference letter, and virtual interview for finalists -- no numeric grade threshold published.",
+      "other_eligibility_criteria": "Not program-specific -- open to any first-entry undergraduate applicant. Must be in final year of Canadian secondary school or first-year CEGEP, planning to start at U of T in the upcoming academic year (or after a planned gap year). Requires school nomination for the U of T National Book Award (one nomination per school per year), followed by a separate scholarship application and reference letter; approximately 25 finalists are interviewed and approximately 15 are named National Scholars.",
+      "award_type": "mixed",
+      "award_amount": null,
+      "award_amount_currency": "CAD",
+      "renewable": true,
+      "renewal_conditions": "Covers up to four years of study; specific year-to-year renewal/standing conditions were not detailed on the fetched page.",
+      "duration": "up to 4 years",
+      "application_deadline": "School nomination: October 9, 2026; U of T admission application: October 16, 2026; scholarship application: October 30, 2026; reference letter: November 6, 2026; selection interviews: February 2027",
+      "deadline_academic_year": "2026 nomination cycle, for Fall 2027 entry",
+      "official_source_url": "https://future.utoronto.ca/national-scholarships",
+      "source_refs": [
+        "src-14"
+      ],
+      "last_checked": "2026-09-23",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "award_amount has no fixed dollar figure -- coverage is in-kind, captured verbatim here.",
+        "fields": {
+          "coverage_description": "Covers tuition, incidental fees, and residence fees for up to four years of study. Approximately 15 National Scholars named per year (university-wide, not CS-specific)."
+        }
+      },
+      "college_ref": null
+    }
+  ],
+  "source_records": [
+    {
+      "id": "src-01",
+      "url": "https://web.cs.toronto.edu/undergraduate/how-to-apply/cmp1",
+      "source_organization": "University of Toronto, Department of Computer Science",
+      "source_type": "official_university",
+      "title": "Students in CMP1 Admission Category — Department of Computer Science, University of Toronto",
+      "retrieved_at": "2026-09-23T12:14:10Z",
+      "fields_supported": [
+        "Program.extension_metadata.fields.admission_guarantee_continuation_requirement",
+        "Program.extension_metadata.fields.admission_category",
+        "AdmissionsRequirement.notes (CMP1 program-request/deadline context -- SCHEMA-GAP EVIDENCE ONLY for the application-deadline concept, no canonical AdmissionsRequirement.deadline field exists)"
+      ],
+      "excerpt": "The CMP1 admission category provides guaranteed admission to three Computer Science programs: CS Specialist (ASSPE1689), CS Major (ASMAJ1689), CS Minor (ASMIN1689). Data Science Specialist (ASSPE1687) is competitive: 'at least 20 spaces in the program will be available each year for students applying from Year 1 Computer Science (CMP1).' Guarantee requirements, to be completed 'within 12 months of beginning their studies in CMP1': 'Complete at least 4.0 full course equivalents (FCE)'; CSC110Y1 minimum 70%; CSC111H1 minimum 77% (Specialist/Major) or 70% (Minor); MAT148H1/MAT158H1 and MAT149H1/MAT159H1 (Specialist/Major only). Program request: 'Request the program on ACORN during the first program request period.' Data Science Specialist competitive note: 'Achieving the minimum grade...does not guarantee admission to the Data Science Specialist (ASSPE1687). The marks needed for entry change each year depending on available spaces and the number of applicants.' No explicit application deadline is stated, but: 'If you would like to receive a decision on your request before the beginning of the Fall term, your request must be received no later than June 15.' Students who don't meet the guarantee 'will be considered for admission using the same criteria as all other Arts & Science students, including being required to submit a supplemental application.'",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "Primary evidence for the CMP1-to-Program-of-study continuation structure -- the core of Toronto stress test #1. No canonical V1.1 field represents 'admission category' as distinct from 'Program', so this is captured in Program.extension_metadata and flagged as V1.2 evidence."
+    },
+    {
+      "id": "src-02",
+      "url": "https://web.cs.toronto.edu/undergraduate/how-to-apply/other-admission-categories",
+      "source_organization": "University of Toronto, Department of Computer Science",
+      "source_type": "official_university",
+      "title": "Students in Other Admission Categories — Department of Computer Science, University of Toronto",
+      "retrieved_at": "2026-09-23T12:14:45Z",
+      "fields_supported": [
+        "Program.extension_metadata.fields.alternate_related_programs",
+        "SCHEMA-GAP EVIDENCE ONLY -- competitive out-of-stream admission process has no canonical AdmissionsRequirement representation distinct from the CMP1 guarantee pathway"
+      ],
+      "excerpt": "'If you are applying from an admission stream other than CMP1, you can apply to the CS Major, CS Minor, or Data Science Specialist' -- but not the CS Specialist. 'For students in admission categories other than CMP1, admission to Computer Science programs is highly competitive and not guaranteed.' Requirements: complete at least 4.0 FCE, minimum 70% in CSC148H1, minimum 70% in CSC165H1 or CSC240H1, submit a supplemental application, request the program on ACORN. 'CSC148H1 and CSC165H1/CSC240H1 must be completed on the St. George campus. Transfer credits will not be considered for program admission.' Competitive reality: 'about 50% of students who meet the requirements to apply to a CS program have been admitted to a CS program (including the CS Minor) in the past few years'; 'in recent years, marks in CSC148H and CSC165H/CSC240H for students admitted to the Major program have been in the A to A+ range (85%+).'",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "Confirms out-of-stream competitive pathway is structurally distinct from the CMP1 guarantee; the ~50% admit rate and A/A+ range are explicitly a post-admission in-course competitive statistic, never to be confused with a first-year admissions probability."
+    },
+    {
+      "id": "src-03",
+      "url": "https://web.cs.toronto.edu/undergraduate/incoming",
+      "source_organization": "University of Toronto, Department of Computer Science",
+      "source_type": "official_university",
+      "title": "Incoming CMP1 — Department of Computer Science, University of Toronto",
+      "retrieved_at": "2026-09-23T12:15:20Z",
+      "fields_supported": [
+        "Program.extension_metadata.fields.admission_guarantee_continuation_requirement"
+      ],
+      "excerpt": "Required first-year courses for CMP1: CSC110Y1F (Foundations of Computer Science I, full-year, 2 credits), CSC111H1S (Foundations of Computer Science II), one of MAT148H1/MAT158H1 (fall), one of MAT149H1/MAT159H1 (winter); STA130H1 also required for Data Science Specialist aspirants. 'The Computer Science Admission Guarantee is a set of requirements that, if completed, guarantee you a place in a Computer Science Specialist, Major, or Minor program of study starting in your second year.' 'The guarantee does include grade requirements in both CSC110 and CSC111, which we set to ensure that you're prepared to succeed in our programs... We certainly aren't \"weeding\" anyone out -- we expect the vast majority of you to meet these requirements.' 'There is no program admission guarantee for the Data Science Specialist program' despite reserved CMP1 spaces.",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "Confirms guaranteed (non-competitive) continuation model for Specialist/Major/Minor, in the department's own words -- directly relevant to the 'do not convert admissions data into an admission probability' rule."
+    },
+    {
+      "id": "src-04",
+      "url": "https://web.cs.toronto.edu/undergraduate/prospective",
+      "source_organization": "University of Toronto, Department of Computer Science",
+      "source_type": "official_university",
+      "title": "Prospective Students — Department of Computer Science, University of Toronto",
+      "retrieved_at": "2026-09-23T12:44:30Z",
+      "fields_supported": [
+        "SCHEMA-GAP EVIDENCE ONLY -- confirms the two-stage admission structure (Faculty first, CMP1/program second) that motivates the AdmissionStage V1.2 candidate"
+      ],
+      "excerpt": "Applicants 'must first gain admission to the Faculty of Arts & Science' (not directly to Computer Science). Students in the Computer Science admission category have 'guaranteed admission to Computer Science programs at the end of first year, provided they meet certain minimum requirements.' No specific admission averages, grade ranges, or competitiveness metrics for incoming CMP1 students are published on this page.",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "Confirms no officially published competitive average/range exists for CMP1 entry itself (unlike Oxford's published 'mid-90s' figure) -- recorded as a genuine absence, not a gap."
+    },
+    {
+      "id": "src-05",
+      "url": "https://future.utoronto.ca/program/computer-science",
+      "source_organization": "University of Toronto, Office of Undergraduate Admissions & Outreach",
+      "source_type": "official_university",
+      "title": "Computer Science | Future Students. University of Toronto",
+      "retrieved_at": "2026-09-23T12:16:40Z",
+      "fields_supported": [
+        "AdmissionsRequirement.required_subjects",
+        "AdmissionsRequirement.curriculum_type"
+      ],
+      "excerpt": "St. George campus, Faculty of Arts & Science. Ontario applicants: 'Ontario Secondary School Diploma (OSSD) with six subjects at the 4U/M level, including English' (ENG4U/EAE4U) and 'Calculus & Vectors' (MCV4U). Co-op components excluded from consideration. Supplemental Application: Required. OUAC code: TAD. No specific competitive grade range (e.g. a numeric average) is stated on this page for Ontario applicants. No explicit application deadline stated on this specific program page. IB / British-patterned (A-Level) / U.S.-patterned requirement detail is presented via an interactive selector not captured in this fetch -- see src-06/src-07 for the general and IB-specific pages that were independently retrievable.",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "No academic year is stated on this page. This is the primary evidence for the Ontario-curriculum required-subjects list."
+    },
+    {
+      "id": "src-06",
+      "url": "https://future.utoronto.ca/requirements-international-high-schools",
+      "source_organization": "University of Toronto, Office of Undergraduate Admissions & Outreach",
+      "source_type": "official_university",
+      "title": "Admission Requirements International High School Students | Future Students. University of Toronto",
+      "retrieved_at": "2026-09-23T12:20:05Z",
+      "fields_supported": [
+        "AdmissionsRequirement.required_subjects",
+        "Program.extension_metadata.fields (SCHEMA-GAP EVIDENCE ONLY for the cross-faculty calculus statement, which is not itself a Program field)"
+      ],
+      "excerpt": "Curriculum-specific requirement pages are split by Faculty: Faculty of Arts & Science links for British-Patterned, CAPE, International Baccalaureate, and U.S.-Patterned are all hosted at artsci.utoronto.ca (bot-protected; not independently retrievable this run -- see missing-data). General cross-program statement: 'All applicants are required to present a senior/Grade 12 English course for admission consideration.' 'Calculus, AP Calculus (AB or BC) or one semester of college/university calculus is required for most math, science, computer science and commerce programs.' 'We expect competitive applicants to be enrolled in a rigorous academic course load, and to have taken the highest level of course available to them in prerequisite subjects.' Conditional offers are 'based on your previous year's grades and your in-term/mid-term results, if available.'",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "The calculus-requirement sentence is the only officially confirmed cross-curriculum math prerequisite statement obtained this run; it is general (not CS-specific or curriculum-specific) and is recorded as such."
+    },
+    {
+      "id": "src-07",
+      "url": "https://future.utoronto.ca/apply/requirements/international-high-school-secondary/ib/",
+      "source_organization": "University of Toronto, Office of Undergraduate Admissions & Outreach",
+      "source_type": "official_university",
+      "title": "Admission Requirements International High School Students -- IB | Future Students. University of Toronto",
+      "retrieved_at": "2026-09-23T12:20:50Z",
+      "fields_supported": [
+        "AdmissionsRequirement.required_subjects",
+        "AdmissionsRequirement.academic_threshold (SCHEMA-GAP EVIDENCE ONLY -- confirms absence of a published minimum point total, not a value)"
+      ],
+      "excerpt": "'International Baccalaureate Diploma, with English HL or SL.' Math prerequisite for science/business-type programs, satisfied by any of: Mathematics: Applications and Interpretations HL; Mathematics: Analysis and Approaches SL; Mathematics: Analysis and Approaches HL. 'Mathematics: Applications and Interpretations SL' satisfies the Advanced Functions prerequisite only (not the full Calculus prerequisite). 'Applicants who completed the pre-2021 IB curriculum may present Mathematics SL or HL' for these prerequisites. 'Admission consideration is based on your predicted or final results (excluding bonus points).' No minimum IB diploma point total is stated on this page.",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "No minimum IB point total published -- recorded as an explicit absence per the 'record exactly as stated, including a genuine absence of a threshold' rule, not left blank without explanation."
+    },
+    {
+      "id": "src-08",
+      "url": "https://artsci.calendar.utoronto.ca/section/Computer-Science",
+      "source_organization": "University of Toronto, Faculty of Arts & Science (Academic Calendar)",
+      "source_type": "official_university",
+      "title": "Computer Science | Academic Calendar - University of Toronto",
+      "retrieved_at": "2026-09-23T12:25:10Z",
+      "fields_supported": [
+        "Program.program_name",
+        "Program.field_of_study",
+        "Program.extension_metadata.fields.alternate_related_programs"
+      ],
+      "excerpt": "Lists the Computer Science programs at St. George: Computer Science Specialist (ASSPE1689), Computer Science Major (ASMAJ1689), Computer Science Minor (ASMIN1689), Data Science Specialist (ASSPE1687), Applied Data Science Minor (ASMIN0160). First-year students are designated 'Year 1 Computer Science (CMP1) admission category' or 'CMP1'. 'CSC110Y1 and CSC111H1 must be completed in order to complete the Specialist program.' Calendar explicitly covers academic year 2026-27 ('New for 2026-27').",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "The Academic Calendar is the authoritative source for exact official program names/codes and the governing academic year (2026-27) -- the current published cycle, used per the rule against extrapolating an unpublished Fall 2027 cycle."
+    },
+    {
+      "id": "src-09",
+      "url": "https://artsci.calendar.utoronto.ca/program/asspe1689",
+      "source_organization": "University of Toronto, Faculty of Arts & Science (Academic Calendar)",
+      "source_type": "official_university",
+      "title": "Computer Science Specialist (Science Program) - ASSPE1689 | Academic Calendar",
+      "retrieved_at": "2026-09-23T12:26:00Z",
+      "fields_supported": [
+        "Program.program_name",
+        "Program.degree_type",
+        "Program.degree_type_local",
+        "Program.extension_metadata.fields.total_credit_requirement",
+        "Program.extension_metadata.fields.admission_guarantee_continuation_requirement"
+      ],
+      "excerpt": "'Computer Science Specialist (Science Program) - ASSPE1689.' Degree type: HBSc (Honours Bachelor of Science). Total requirement: 12.0 credits, including at least 1.5 credits at the 400-level. 'Only students in the Year 1 Computer Science admission category (CMP1) who meet the criteria of the Computer Science program admission guarantee are eligible to apply.' Guarantee: CSC110Y1 (minimum 70%), CSC111H1 (minimum 77%), and specified calculus/linear algebra courses, completed within 12 months. Academic year: 2026-27 ('New for 2026-27' navigation; '2026-27 Calendar' references throughout).",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "Primary source for the representative Program record's degree type, credit load, and official name/code."
+    },
+    {
+      "id": "src-10",
+      "url": "https://artsci.calendar.utoronto.ca/program/asmaj1689",
+      "source_organization": "University of Toronto, Faculty of Arts & Science (Academic Calendar)",
+      "source_type": "official_university",
+      "title": "Computer Science Major (Science Program) - ASMAJ1689 | Academic Calendar",
+      "retrieved_at": "2026-09-23T12:26:40Z",
+      "fields_supported": [
+        "Program.extension_metadata.fields.alternate_related_programs"
+      ],
+      "excerpt": "'Computer Science Major (Science Program) - ASMAJ1689.' Degree type: HBSc. Total requirement: 8.0 credits, including at least 0.5 credit at the 400-level. CMP1 guarantee: 'guaranteed admission to the Computer Science Major, provided the following courses with the stated minimum grades are completed within 12 months' -- CSC110Y1 (70%), CSC111H1 (77%), plus specified math courses. For other admission categories: 'Students who do not have the Computer Science Admission Guarantee must complete a supplementary application to be considered for the program', and 'applicants with a grade below 70% will not be considered for admission.'",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "SCHEMA-GAP EVIDENCE ONLY for the multi-program structure: this run models CS Specialist (ASSPE1689, src-09) as the single representative Program per scope discipline; the Major's distinct 8.0-credit requirement is captured here only as structural evidence for the ProgramAward/ProgramPathway-style V1.2 discussion, not normalized as its own Program record."
+    },
+    {
+      "id": "src-11",
+      "url": "https://tuitionexplorer.registrar.utoronto.ca/index.php?academicYear=2026-27&sessionType=1&studyLevel=UG&residency=INT&campus=UTSG&faculty=ARTSC-UG&college=UC&program=207",
+      "source_organization": "University of Toronto, University Registrar's Office",
+      "source_type": "official_university",
+      "title": "Tuition Explorer -- International Fees, 2026-27 (Admission Streams Year 1)",
+      "retrieved_at": "2026-09-23T12:31:15Z",
+      "fields_supported": [
+        "CostProfile.tuition_annual",
+        "CostProfile.mandatory_fees_annual",
+        "CostProfile.mandatory_fees_breakdown"
+      ],
+      "excerpt": "Program: 'Admission Streams Year 1 (Commerce, Computer Science, Humanities, Life Sciences, Mathematical and Physical Sciences, Social Sciences)'. Academic year 2026/27 Fall and Winter. Residency: International. Category: 'Students with fewer than 4.0 credits completed'. Program Fee: $66,110.00. Incidental and System Access Fee: $2,100.29. UHIP: $948.00. Total: $69,158.29 CAD. 'UHIP is mandatory health insurance for all international students.'",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "This is the official Registrar fee tool's live query result for the exact Year-1 admission-stream category a CMP1-track international student is charged under."
+    },
+    {
+      "id": "src-12",
+      "url": "https://planningandbudget.utoronto.ca/wp-content/uploads/2026/04/2026-27-Tuition-Fee-Report_FINAL.pdf",
+      "source_organization": "University of Toronto, Division of Planning & Budget",
+      "source_type": "official_university",
+      "title": "Tuition Fee Schedules for Publicly-Funded Programs 2026-27 (March 1, 2026)",
+      "retrieved_at": "2026-09-23T12:33:00Z",
+      "fields_supported": [
+        "CostProfile.tuition_annual",
+        "Program.extension_metadata.fields.upper_year_tuition_step (SCHEMA-GAP EVIDENCE ONLY -- CostProfile has no field for a multi-year tuition schedule within one program)"
+      ],
+      "excerpt": "Table B1 (domestic/Ontario-resident, Year 1 direct-entry Arts & Science Bachelors): $6,100. Table B2 (domestic, upper-year program-specific, 'Computer Science, Bioinformatics, Data Science'): $11,420. Table D1/D2 (international): Year-1 general Arts & Science / Admission Streams rate $66,110 (consistent with src-11); upper-year international Computer Science-specific rate: $72,480. Document states domestic (Ontario-resident, government-regulated) tuition is held flat year-over-year for continuing cohorts under the provincial tuition framework, while international tuition is subject to an approximately 5% annual increase for new cohorts.",
+      "retrieval_method": "WebFetch (research pass, PDF)",
+      "notes": "This is the official Governing-Council-facing tuition fee report; it is the authority for the Year-1-to-upper-year CS-specific tuition step, which is the material fact behind the DerivedCostEstimate. Whether 'Ontario resident' is the full extent of the domestic rate category, or whether other-province Canadian residents pay identically, is NOT confirmed by this document -- flagged as a missing-data item rather than assumed."
+    },
+    {
+      "id": "src-13",
+      "url": "https://future.utoronto.ca/pearson-scholarships",
+      "source_organization": "University of Toronto, Office of Undergraduate Admissions & Outreach",
+      "source_type": "scholarship_provider",
+      "title": "Lester B. Pearson International Student Scholarships | Future Students. University of Toronto",
+      "retrieved_at": "2026-09-23T12:38:20Z",
+      "fields_supported": [
+        "Scholarship.award_type",
+        "Scholarship.eligible_citizenships",
+        "Scholarship.residency_restrictions",
+        "Scholarship.other_eligibility_criteria",
+        "Scholarship.application_deadline",
+        "Scholarship.deadline_academic_year",
+        "Scholarship.duration",
+        "Scholarship.renewable",
+        "Scholarship.extension_metadata.fields.coverage_description"
+      ],
+      "excerpt": "'The Pearson International Student Scholarships cover tuition, books, incidental fees and full residence support for four years.' 'Each year approximately 37 students will be named Pearson Scholars.' Eligibility: 'an international student (i.e. a non-Canadian requiring a study permit)', 'enrolled in your final year of senior secondary school in 2026/2027 or have graduated no earlier than June 2026', 'beginning your studies at the University of Toronto in September 2027.' Students already in post-secondary studies or starting in January 2027 are ineligible. 'High schools already verified by University Admissions & Outreach and the University Registrar's Office will be contacted by email each July with a personalized, secure nomination form' -- one nomination per school per year. Deadlines: school nomination October 9, 2026; U of T admission application October 16, 2026; scholarship application November 6, 2026. 'The scholarship is tenable only at the University of Toronto for first-entry, undergraduate programs.'",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "Directly matches this run's Fall 2027 decision context -- the 2026/2027 nomination cycle is explicitly for a September 2027 (Fall 2027) start."
+    },
+    {
+      "id": "src-14",
+      "url": "https://future.utoronto.ca/national-scholarships",
+      "source_organization": "University of Toronto, Office of Undergraduate Admissions & Outreach",
+      "source_type": "scholarship_provider",
+      "title": "National Scholarships | Future Students. University of Toronto",
+      "retrieved_at": "2026-09-23T12:39:05Z",
+      "fields_supported": [
+        "Scholarship.award_type",
+        "Scholarship.eligible_citizenships",
+        "Scholarship.residency_restrictions",
+        "Scholarship.other_eligibility_criteria",
+        "Scholarship.application_deadline",
+        "Scholarship.deadline_academic_year",
+        "Scholarship.duration",
+        "Scholarship.renewable",
+        "Scholarship.extension_metadata.fields.coverage_description"
+      ],
+      "excerpt": "'The National Scholarship Program covers tuition, incidental and residence fees for up to four years of study.' 'Approximately 15 finalists will be designated as National Scholars' (per cycle, with approximately 25 finalists reaching interview stage). Eligibility: 'a Canadian citizen, permanent resident or protected person', 'in your final year of Canadian secondary school or first-year CEGEP', 'planning to start university in the upcoming academic year (or planning to take a gap year)', nominated by their school for the U of T National Book Award. 2026 cycle deadlines: school nomination October 9, 2026; U of T admission application October 16, 2026; scholarship application October 30, 2026; reference letter November 6, 2026; selection interviews February 2027. 'National Scholars demonstrate outstanding academics, creative thinking, broad achievement and a deep commitment to their school and community.'",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "The domestic-eligibility counterpart to the Pearson scholarship (src-13); also matches the Fall 2027 decision context via the 2026 nomination-cycle timing."
+    },
+    {
+      "id": "src-15",
+      "url": "https://future.utoronto.ca/arts-and-science-colleges",
+      "source_organization": "University of Toronto, Office of Undergraduate Admissions & Outreach",
+      "source_type": "official_university",
+      "title": "The Colleges | Future Students. University of Toronto",
+      "retrieved_at": "2026-09-23T12:41:30Z",
+      "fields_supported": [
+        "SCHEMA-GAP EVIDENCE ONLY -- this is materiality evidence for the College-entity V1.2 candidate (carried forward from Oxford), used to conclude Toronto does NOT require it"
+      ],
+      "excerpt": "Seven colleges at St. George: Innis, New, St. Michael's, Trinity, University, Victoria, Woodsworth. Applicants 'indicate up to three college preferences, or choose \"no preference\"'; 'your preferences help guide your placement but we can't guarantee a specific college.' Critically: 'Some colleges sponsor academic programs, but you can study any program regardless of your college.' All seven colleges offer 'the same core services' -- 'a home base' with 'clubs, intramurals, mentorship and support for both residence and commuter students' -- differing in size (2,000-6,000 students), residence options, location, and community culture, not in academic or financial terms. No statement anywhere on this page ties college assignment to tuition, mandatory fees, admission requirements, or scholarship eligibility.",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "This is the decisive Toronto data point for stress test #3: unlike Oxford (where college-specific hardship-fund variance was evidenced), Toronto's own official page affirmatively states program access is college-independent. Colleges are NOT modeled as first-class entities this run."
+    },
+    {
+      "id": "src-16",
+      "url": "https://www.utoronto.ca/university-life/campuses/st-george",
+      "source_organization": "University of Toronto",
+      "source_type": "official_university",
+      "title": "St. George Campus (Downtown Toronto) | University of Toronto",
+      "retrieved_at": "2026-09-23T12:43:00Z",
+      "fields_supported": [
+        "Campus.name",
+        "Campus.city_ref",
+        "Campus.official_url"
+      ],
+      "excerpt": "'It is the largest of U of T's campuses and has a student population of over 69,900.' Located 'Set in the centre of downtown Toronto.' Described as the university's historic core, with the college system dating 'back to the university's earliest days.'",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "Confirms St. George as the primary/largest campus, distinct from UTM and UTSC, per Toronto stress test #2 campus-scope discipline."
+    },
+    {
+      "id": "src-17",
+      "url": "https://www.utoronto.ca/news/u-t-ranked-no-1-canada-one-world-s-top-10-public-universities",
+      "source_organization": "University of Toronto",
+      "source_type": "official_university",
+      "title": "U of T ranked No. 1 in Canada, one of world's top 10 public universities | University of Toronto",
+      "retrieved_at": "2026-09-23T12:44:55Z",
+      "fields_supported": [
+        "University.institution_type"
+      ],
+      "excerpt": "'U of T also remained the top Canadian university for the eighth year in a row and in the top 10 of publicly funded universities worldwide.'",
+      "retrieval_method": "WebFetch (research pass)",
+      "notes": "Direct verbatim confirmation of 'publicly funded' institution status from an official utoronto.ca page, obtained during the extraction pass so it can be independently re-verified (distinct source/timestamp) during the verification pass rather than self-verified against the same fetch."
+    },
+    {
+      "id": "src-18",
+      "url": "https://future.utoronto.ca/english-language-requirements",
+      "source_organization": "University of Toronto, Office of Undergraduate Admissions & Outreach",
+      "source_type": "official_university",
+      "title": "English Language Requirements | Future Students. University of Toronto",
+      "retrieved_at": "2026-09-24T09:10:00Z",
+      "fields_supported": [
+        "AdmissionsRequirement.language_requirements (all four curricula: Ontario/OSSD, IB, A-Level, US-patterned)"
+      ],
+      "excerpt": "'If English is not your first language...you will need to provide evidence of adequate English facility for admission consideration, unless you qualify for an exemption.' Exemptions: 'You have completed/are completing four or more years of full-time study in a recognized Canadian school (in Canada)' OR '...in an English language school located in a country where the dominant language is English' -- a list of 70+ named countries/territories includes 'United Kingdom (England, Northern Ireland, Wales)', 'Scotland', and 'United States of America' explicitly. Accepted-qualification pathways (any ONE satisfies the requirement) include: IELTS Academic 6.5 (no band below 6.0); TOEFL iBT overall 4.5 (new scale); Duolingo 120 overall/120 Production; Cambridge C1/C2 180 overall (170/component); CAEL 70 overall (60/part); PTE Academic 65 overall (60/part); 'GCSE/IGCSE/GCE/AICE English...minimum final grade of \"B\" (\"6\" in reformed qualifications)'; 'a minimum final or predicted grade of \"C\" in GCE A Level/AS Level/AICE English or English Language' (English as an Additional Language and English Literature NOT accepted); 'International Baccalaureate...score of at least 4 (predicted or final) in Higher or Standard Level English A...IB English B HL with a score of 7 is also acceptable'; CSEC English grade A(I)/B(II); ELDA/COPE; OCAAT three-year diploma B+; U of T School of Continuing Studies; one year of University Studies. Explicitly: 'A senior-level English course is required for admission, but it does not meet the English language proficiency requirement' -- the two are separate requirements.",
+      "retrieval_method": "WebFetch (verification pass)",
+      "notes": "The single authoritative page governing English-proficiency exemptions and accepted tests/qualifications across ALL curricula, distinct from and not previously fetched during the original research pass (which only captured the IB-specific and general international-high-school pages, src-06/src-07). Closes the language_requirements gap for Ontario/OSSD, A-Level and US-patterned applicants, and independently corroborates the IB entry with an added minimum-score detail."
+    },
+    {
+      "id": "src-19",
+      "url": "https://artsci.calendar.utoronto.ca/course-enrolment",
+      "source_organization": "University of Toronto, Faculty of Arts & Science (Academic Calendar)",
+      "source_type": "official_university",
+      "title": "Course Enrolment | Academic Calendar - University of Toronto",
+      "retrieved_at": "2026-09-24T09:22:00Z",
+      "fields_supported": [
+        "Program.extension_metadata.fields.duration_derivation_note (SCHEMA-GAP EVIDENCE ONLY)"
+      ],
+      "excerpt": "Recommended course load for full-time students in good standing during the priority enrolment period: 'no more than 2.5 credits' per term (Fall/Winter), with a permitted maximum of 3.0 credits/term outside priority enrolment. 'Students may proceed towards the degree at a rate of their own choosing, within the following parameters' -- confirming self-paced progression is explicitly permitted, not merely inferred.",
+      "retrieval_method": "WebFetch (verification pass)",
+      "notes": "Independently re-confirms the course-load basis (~2.5 credits/term, ~5.0/year) and the explicit self-pacing language underlying Program.extension_metadata.fields.duration_derivation_note's 4-year derivation from the 20.0-credit HBSc total (see src-20)."
+    },
+    {
+      "id": "src-20",
+      "url": "https://artsci.calendar.utoronto.ca/hbahbsc-requirements",
+      "source_organization": "University of Toronto, Faculty of Arts & Science (Academic Calendar)",
+      "source_type": "official_university",
+      "title": "HBA/HBSc Requirements | Academic Calendar - University of Toronto",
+      "retrieved_at": "2026-09-24T09:24:00Z",
+      "fields_supported": [
+        "Program.extension_metadata.fields.duration_derivation_note (SCHEMA-GAP EVIDENCE ONLY)"
+      ],
+      "excerpt": "Total HBSc credit requirement: '20.0. At least 10.0 credits must be offered by the Faculty of Arts & Science.'",
+      "retrieval_method": "WebFetch (verification pass)",
+      "notes": "Independently re-confirms the 20.0-total-credit figure used as the numerator in the duration_derivation_note's 20.0/5.0=4-years calculation."
+    },
+    {
+      "id": "src-21",
+      "url": "https://future.utoronto.ca/deadlines",
+      "source_organization": "University of Toronto, Office of Undergraduate Admissions & Outreach",
+      "source_type": "official_university",
+      "title": "Dates & Deadlines | Future Students. University of Toronto",
+      "retrieved_at": "2026-09-24T09:35:00Z",
+      "fields_supported": [
+        "DecisionPlan.application_deadline",
+        "DecisionPlan.academic_year"
+      ],
+      "excerpt": "Arts & Science, 'Full-time studies Undergraduate, International and Internal applications', 2027 admissions (Fall 2027 entry): recommended early application 'November 7' (2026); application deadline 'January 15' (2027); supporting documents 'February 1' (2027, general Arts & Science deadline; also applies to Rotman Commerce and 'Computer Science Supplementary Application due February 1').",
+      "retrieval_method": "WebFetch (verification pass)",
+      "notes": "Not fetched during the original research pass, which only captured the general CS program page (src-05, which itself explicitly disclaims stating a deadline and points to this separate Dates & Deadlines page). Directly resolves the DecisionPlan's previously-null application_deadline for the same Fall 2027 / OUAC code TAD cycle already modeled."
+    },
+    {
+      "id": "src-22",
+      "url": "https://internationalexperience.utoronto.ca/international-student-services/immigration/studying-in-canada/apply-for-your-study-permit",
+      "source_organization": "University of Toronto, Centre for International Experience",
+      "source_type": "official_university",
+      "title": "Apply for Your Study Permit | Centre for International Experience, University of Toronto",
+      "retrieved_at": "2026-09-24T09:45:00Z",
+      "fields_supported": [
+        "CostProfile.estimated_living_costs_annual",
+        "CostProfile.living_cost_source_basis"
+      ],
+      "excerpt": "'IRCC expects you to prove access to funds to cover a minimum of annual tuition plus at least $23,448 CAD (for applications submitted on or after September 1, 2026) for your first year's living expenses.' Presented under a 'New in 2025 and 2026' notice describing the increase from the prior minimum.",
+      "retrieval_method": "WebFetch (verification pass)",
+      "notes": "A fresh search this pass (per instruction to retry before accepting a 'no living-cost figure found' absence) located this figure on U of T's own international-student-services page. It is IRCC's (Government of Canada's) regulatory minimum proof-of-funds figure for a study permit, not a U of T-authored cost-of-living estimate -- disclosed as such in CostProfile.living_cost_source_basis rather than presented as a comprehensive living-cost budget."
+    }
+  ],
+  "derived_cost_estimates": [
+    {
+      "id": "ca-university-of-toronto-derived-domestic-ontario-4yr-tuition",
+      "cost_profile_ref": "ca-university-of-toronto-cost-domestic-ontario",
+      "field_name": "estimated_total_tuition_only_degree_cost",
+      "value": 40360.0,
+      "inputs": [
+        "ca-university-of-toronto-cost-domestic-ontario.tuition_annual (6100)",
+        "ca-university-of-toronto-cost-domestic-ontario.extension_metadata.fields.upper_year_tuition_step (11420)"
+      ],
+      "formula_method": "Year-1 tuition + (3 x upper-year tuition): 6100 + (3 x 11420) = 40360",
+      "assumptions": [
+        "Continuous full-time enrollment over exactly 4 years, no leave/co-op terms/credit deficiencies.",
+        "Published 2026-27 Year-1 and upper-year domestic rates held flat for all 4 years of this cohort (consistent with the source document's statement that domestic/Ontario-resident tuition is held flat year-over-year under the provincial framework).",
+        "TUITION ONLY -- excludes mandatory incidental fees (amount not isolated this run), living costs, and books/supplies. This is NOT a total cost of attendance."
+      ],
+      "calculation_version": "v1",
+      "calculated_at": "2026-09-23T14:00:00Z"
+    },
+    {
+      "id": "ca-university-of-toronto-derived-international-4yr-tuition",
+      "cost_profile_ref": "ca-university-of-toronto-cost-international",
+      "field_name": "estimated_total_tuition_only_degree_cost",
+      "value": 283550.0,
+      "inputs": [
+        "ca-university-of-toronto-cost-international.tuition_annual (66110)",
+        "ca-university-of-toronto-cost-international.extension_metadata.fields.upper_year_tuition_step (72480)"
+      ],
+      "formula_method": "Year-1 tuition + (3 x upper-year tuition): 66110 + (3 x 72480) = 283550",
+      "assumptions": [
+        "Continuous full-time enrollment over exactly 4 years, no leave/co-op terms/credit deficiencies.",
+        "Published 2026-27 Year-1 and upper-year international rates held flat for this cohort's 4 years. The source document states international tuition rises ~5% annually for NEW cohorts but does not confirm whether an admitted cohort's own rate is frozen or re-priced annually -- this estimate does NOT model a compounding within-cohort increase, which would raise this figure if the rate is in fact re-priced each year.",
+        "TUITION ONLY -- excludes mandatory incidental fees/UHIP ($3,048.29/year at Year-1 rates, not extrapolated to upper years), living costs, and books/supplies. This is NOT a total cost of attendance."
+      ],
+      "calculation_version": "v1",
+      "calculated_at": "2026-09-23T14:00:00Z"
+    }
+  ]
+}

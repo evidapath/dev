@@ -1,0 +1,81 @@
+{
+  "audited_file": "C:\\Users\\Suhail\\OneDrive\\EvidaPath\\v1.2-final-import\\05-sanity\\import-final\\five-school-sanity-drafts.staging-ready.ndjson",
+  "sha256": "59973cf432650f8faaef7f31de148f371eddd3f6e180ddc2f032ad4b02e8ce8b",
+  "documents": 399,
+  "canonical_source_records": 399,
+  "empty_serialized_objects": {},
+  "empty_source_objects": {
+    "Country.extension_metadata": [
+      "ae-nyu-abu-dhabi:ae"
+    ],
+    "Country.extension_metadata.fields": [
+      "ae-nyu-abu-dhabi:ae"
+    ],
+    "City.extension_metadata": [
+      "ae-nyu-abu-dhabi:ae-abu-dhabi"
+    ],
+    "City.extension_metadata.fields": [
+      "ae-nyu-abu-dhabi:ae-abu-dhabi"
+    ],
+    "University.extension_metadata.fields": [
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi",
+      "de-tu-munich:de-tu-munich",
+      "gb-university-of-oxford:gb-university-of-oxford"
+    ],
+    "Campus.extension_metadata.fields": [
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-saadiyat",
+      "de-tu-munich:de-tu-munich-garching"
+    ],
+    "ApplicantCategory.extension_metadata": [
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-curriculum-a-level",
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-curriculum-ib",
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-curriculum-international-other",
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-curriculum-us-hs",
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-residency-uniform"
+    ],
+    "ApplicantCategory.extension_metadata.fields": [
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-curriculum-a-level",
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-curriculum-ib",
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-curriculum-international-other",
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-curriculum-us-hs",
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-residency-uniform"
+    ],
+    "AdmissionStage.extension_metadata.fields": [
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-stage-major-declaration",
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-stage-university-entry",
+      "ca-university-of-toronto:ca-university-of-toronto-stage-cmp1-entry",
+      "ca-university-of-toronto:ca-university-of-toronto-stage-out-of-stream-competitive",
+      "ca-university-of-toronto:ca-university-of-toronto-stage-progression-guarantee",
+      "de-tu-munich:de-tu-munich-stage-studienkolleg",
+      "gb-university-of-oxford:gb-university-of-oxford-stage-interview",
+      "nl-tu-delft:nl-tu-delft-stage-matching-selection"
+    ],
+    "CostProfile.extension_metadata.fields": [
+      "ae-nyu-abu-dhabi:cost-uniform",
+      "de-tu-munich:de-tu-munich-cost-eu-eea",
+      "nl-tu-delft:cp-nl-tu-delft-cse-2026-27-non-eu"
+    ],
+    "Scholarship.extension_metadata.fields": [
+      "ae-nyu-abu-dhabi:ae-sheikh-mohamed-bin-zayed-nyuad-scholarship",
+      "de-tu-munich:de-deutschlandstipendium-tum",
+      "gb-university-of-oxford:gb-university-of-oxford-scholarship-oxford-bursary"
+    ],
+    "FinancialAidPolicy.extension_metadata.fields": [
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-finaid-falcon-dirhams",
+      "ae-nyu-abu-dhabi:ae-nyu-abu-dhabi-finaid-need-based"
+    ]
+  },
+  "cost_profiles": 10,
+  "cost_profiles_with_omitted_basis": [
+    "drafts.costProfile-ca-university-of-toronto-cost-domestic-ontario",
+    "drafts.costProfile-ca-university-of-toronto-cost-domestic-other-province",
+    "drafts.costProfile-ca-university-of-toronto-cost-international"
+  ],
+  "populated_bases_with_blank_administering_body": [
+    "drafts.costProfile-cp-nl-tu-delft-cse-2026-27-eu-efta",
+    "drafts.costProfile-cp-nl-tu-delft-cse-2026-27-non-eu"
+  ],
+  "validator_errors": [],
+  "regenerated_399_documents_equal_previous_output": true,
+  "live_dataset_inspected": false
+}

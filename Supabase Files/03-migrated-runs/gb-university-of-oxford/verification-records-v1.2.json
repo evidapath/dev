@@ -1,0 +1,829 @@
+{
+  "run_id": "2026-09-22_gb-university-of-oxford_computer-science",
+  "schema_version": "1.2",
+  "verifier_pass_timestamp": null,
+  "verifier": "",
+  "note": "Carried forward from the V1.1 run's verification-records.json, formalized to the V1.2 VerificationRecord shape: absence_claim=true records were promoted to verification_status=VERIFIED_ABSENT; material_extension_fact is preserved as the now-formal schema field; NYUAD-run-specific informal semantic-QA flags were folded into conflict_or_limitation_notes since they are not part of the V1.2 schema (the semantic checks themselves are enforced by 04-pipeline/check_verification_coverage_v1_2.py instead). No new field-level verification claims were added or removed -- this is a reformatting pass, not new research, consistent with this synthesis being migration-only.",
+  "verification_records": [
+    {
+      "id": "vr-01",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-a-level",
+      "field_checked": "academic_threshold",
+      "proposed_value": "A*AA, including A*A in Maths and Further Maths if available (in any order)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-10"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:12Z",
+      "conflict_or_limitation_notes": "Verbatim match on both independent re-fetches, no discrepancy.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-02",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-a-level",
+      "field_checked": "standardized_tests",
+      "proposed_value": [
+        {
+          "test_name": "Test of Mathematics for University Admission (TMUA)",
+          "min_score": null,
+          "required": "required",
+          "notes": "Both papers mandatory, no pass mark, replaces MAT from the 2026 admissions round"
+        }
+      ],
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-03"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:30Z",
+      "conflict_or_limitation_notes": "Verbatim match including the MAT-replacement recency note.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:21:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-03",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-a-level",
+      "field_checked": "notes (interview process / cross-college reallocation)",
+      "proposed_value": "Interviewed by at least two colleges; cross-college reallocation pool exists.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-05"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:42:00Z",
+      "conflict_or_limitation_notes": "Verbatim match.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:27:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-04",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-ib",
+      "field_checked": "academic_threshold",
+      "proposed_value": "39 (including core points) with 766 at HL (the 7 must be in HL Mathematics)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:12Z",
+      "conflict_or_limitation_notes": "Verbatim match.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-05",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-advanced-highers",
+      "field_checked": "academic_threshold",
+      "proposed_value": "AA/AAB with an A in Mathematics",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:12Z",
+      "conflict_or_limitation_notes": "Verbatim match.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-06",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-ap-us",
+      "field_checked": "academic_threshold",
+      "proposed_value": null,
+      "verification_status": "UNKNOWN",
+      "source_refs": [
+        "src-10",
+        "src-11"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:43:30Z",
+      "conflict_or_limitation_notes": "src-10 re-confirmed AP's absence from the CS row. src-11 truncated before the United States section on three attempts -- genuine capture limitation. Stays UNKNOWN, routed to HUMAN_REVIEW.",
+      "blocking_status": "blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:34:00Z",
+      "verification_method": "independent_refetch (partial)"
+    },
+    {
+      "id": "vr-07",
+      "record_ref": "CostProfile:gb-university-of-oxford-cost-home",
+      "field_checked": "tuition_annual",
+      "proposed_value": 10050,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-02",
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:12Z",
+      "conflict_or_limitation_notes": "Verbatim match, academic year confirmed as 2027 entry.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:18:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-08",
+      "record_ref": "CostProfile:gb-university-of-oxford-cost-home",
+      "field_checked": "living_cost_source_basis",
+      "proposed_value": {
+        "kind": "genuine_cost_of_living_estimate",
+        "monthly_range": {
+          "min": 1475,
+          "max": 2175,
+          "currency": "GBP"
+        }
+      },
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:12Z",
+      "conflict_or_limitation_notes": "Verbatim match.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:24:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-09",
+      "record_ref": "CostProfile:gb-university-of-oxford-cost-home",
+      "field_checked": "extension_metadata.fields.college_fee_bundling_note",
+      "proposed_value": "College fees bundled into the single course fee.",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-02"
+      ],
+      "verifier_pass_timestamp": null,
+      "conflict_or_limitation_notes": "Not independently re-targeted this run. Capped at SUPPORTED per the independence rule.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:18:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-10",
+      "record_ref": "CostProfile:gb-university-of-oxford-cost-overseas",
+      "field_checked": "tuition_annual",
+      "proposed_value": 66580,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-02",
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:12Z",
+      "conflict_or_limitation_notes": "Verbatim match.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:18:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-11",
+      "record_ref": "CostProfile:gb-university-of-oxford-cost-overseas",
+      "field_checked": "living_cost_source_basis",
+      "proposed_value": {
+        "kind": "genuine_cost_of_living_estimate",
+        "monthly_range": {
+          "min": 1475,
+          "max": 2175,
+          "currency": "GBP"
+        }
+      },
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:12Z",
+      "conflict_or_limitation_notes": "Same underlying evidence as vr-08, re-stated as a separate CostProfile record.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:24:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-12",
+      "record_ref": "FinancialRequirement:gb-university-of-oxford-finreq-visa-maintenance",
+      "field_checked": "living_cost_source_basis",
+      "proposed_value": {
+        "kind": "government_minimum_income_threshold",
+        "monthly_range": {
+          "london_gbp": 1529,
+          "outside_london_gbp": 1171
+        },
+        "months_covered": 9,
+        "holding_period_days": 28
+      },
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-07"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:45Z",
+      "conflict_or_limitation_notes": "Verbatim match on amounts and 28-day rule; explicit check for a scheduled increase found none in the page body. [V1.2 reference migration: record_ref updated from CostProfile:gb-university-of-oxford-cost-visa-maintenance-funds to FinancialRequirement:gb-university-of-oxford-finreq-visa-maintenance because the underlying factual record changed entity type during the V1.1-to-V1.2 migration (CostProfile retired in favor of FinancialRequirement); the verification claim itself is unchanged and continues to apply to the same underlying fact, now carried by the replacement record.]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:32:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-13",
+      "record_ref": "FinancialRequirement:gb-university-of-oxford-finreq-visa-maintenance",
+      "field_checked": "extension_metadata.fields.oxford_region_classification",
+      "proposed_value": "UNCONFIRMED",
+      "verification_status": "UNKNOWN",
+      "source_refs": [
+        "src-07"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:45Z",
+      "conflict_or_limitation_notes": "gov.uk's page does not state which rate applies to Oxford -- confirmed absent on both fetches. [V1.2 reference migration: record_ref updated from CostProfile:gb-university-of-oxford-cost-visa-maintenance-funds to FinancialRequirement:gb-university-of-oxford-finreq-visa-maintenance because the underlying factual record changed entity type during the V1.1-to-V1.2 migration (CostProfile retired in favor of FinancialRequirement); the verification claim itself is unchanged and continues to apply to the same underlying fact, now carried by the replacement record.]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:32:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-14",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-reach-oxford",
+      "field_checked": "residency_restrictions",
+      "proposed_value": "Nationals of DAC (OECD Development Assistance Committee) countries only, ~180 eligible countries.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:20Z",
+      "conflict_or_limitation_notes": "Verbatim match. Split out of the former bundled vr-14 during the coverage hardening audit so this field is independently auditable.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-15",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-reach-oxford",
+      "field_checked": "award_amount",
+      "proposed_value": "Course fees, a grant for living costs, and one return air fare per year.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:20Z",
+      "conflict_or_limitation_notes": "Verbatim match.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-16",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-reach-oxford",
+      "field_checked": "award_type",
+      "proposed_value": "mixed",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:20Z",
+      "conflict_or_limitation_notes": "Classification of the verbatim-confirmed coverage description (fees + living grant + flight) into the 'mixed' enum value -- the underlying facts are independently re-verified; the enum mapping itself is an EvidaPath judgment call, not a sourced fact, and is not separately 'verifiable' beyond that mapping being reasonable.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-17",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-reach-oxford",
+      "field_checked": "renewable",
+      "proposed_value": true,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:20Z",
+      "conflict_or_limitation_notes": "Verbatim match ('receipt of the award in subsequent years is subject to satisfactory academic progress' confirms renewability in principle).",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-18",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-reach-oxford",
+      "field_checked": "renewal_conditions",
+      "proposed_value": "Subject to satisfactory academic progress each year; scholars submit annual reports.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:20Z",
+      "conflict_or_limitation_notes": "Verbatim match.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-19",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-reach-oxford",
+      "field_checked": "application_deadline",
+      "proposed_value": "2027-01-26",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:20Z",
+      "conflict_or_limitation_notes": "Verbatim match.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-20",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-reach-oxford",
+      "field_checked": "deadline_academic_year",
+      "proposed_value": "2027 entry",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:20Z",
+      "conflict_or_limitation_notes": "Verbatim match ('applications for 2027 entry close 26 January 2027').",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-21",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-reach-oxford",
+      "field_checked": "duration",
+      "proposed_value": "Full duration of the undergraduate course (3 or 4 years depending on programme).",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:20Z",
+      "conflict_or_limitation_notes": "Verbatim match.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-22",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-oxford-bursary",
+      "field_checked": "other_eligibility_criteria (central-vs-college-layer structure)",
+      "proposed_value": "Centrally standardized by household-income band, applies regardless of college; official page directs to a college/department/faculty funding search tool.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-08"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:55Z",
+      "conflict_or_limitation_notes": "Verbatim match.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:20:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-23",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-oxford-bursary",
+      "field_checked": "award_amount, deadline_academic_year (income-band table + financial-assessment deadline)",
+      "proposed_value": "GBP4,480/GBP3,930/GBP3,360/GBP2,230/GBP1,120 across 5 household-income bands; financial assessment must be completed by 30 May 2028",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-08"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T00:34:44Z",
+      "conflict_or_limitation_notes": "REMEDIATION-LOOP VERIFICATION (see remediation-log.json, remediation-01). Full table and assessment-deadline fact verbatim-confirmed.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T00:30:00Z",
+      "verification_method": "independent_refetch (remediation loop)"
+    },
+    {
+      "id": "vr-24",
+      "record_ref": "University:gb-university-of-oxford",
+      "field_checked": "canonical_name",
+      "proposed_value": "University of Oxford",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-12"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T11:39:43Z",
+      "conflict_or_limitation_notes": "Confirmed via a dedicated independent re-fetch of a second, distinct official page (src-12), added during the verification-coverage hardening audit -- University previously had record_status=VERIFIED with zero field-level VerificationRecords, which this and vr-25/vr-26 correct.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-25",
+      "record_ref": "University:gb-university-of-oxford",
+      "field_checked": "official_website",
+      "proposed_value": "https://www.ox.ac.uk/",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-12"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T11:39:43Z",
+      "conflict_or_limitation_notes": "Domain independently confirmed.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-26",
+      "record_ref": "University:gb-university-of-oxford",
+      "field_checked": "institution_type",
+      "proposed_value": "public",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-12"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T11:39:43Z",
+      "conflict_or_limitation_notes": "NOT verbatim-confirmed by any fetched source -- src-12 explicitly does not state a legal/institutional classification. 'public' is a reasonable, defensible classification (UK publicly-funded, chartered, self-governing institution, consistent with how UK HE statistics bodies classify Oxford) but is an EvidaPath judgment call, not a directly quoted fact. Honestly capped at SUPPORTED rather than VERIFIED. Never manufactured as verified.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch (fact not found; classification remains a judgment call)"
+    },
+    {
+      "id": "vr-27",
+      "record_ref": "Program:gb-university-of-oxford-ba-computer-science",
+      "field_checked": "program_name",
+      "proposed_value": "Computer Science",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T11:39:43Z",
+      "conflict_or_limitation_notes": "Confirmed via a fresh, distinct re-fetch of src-01 targeting Program-level fields specifically (different focus than the 2026-09-22 admissions/fee-focused fetches of the same URL) -- Program previously had record_status=VERIFIED with zero field-level VerificationRecords.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-28",
+      "record_ref": "Program:gb-university-of-oxford-ba-computer-science",
+      "field_checked": "degree_type, degree_type_local",
+      "proposed_value": "BA (3yr) / MCompSci (4yr); students apply for the 4-year course and decide by end of year 3 whether to continue, subject to 2:1+",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T11:39:43Z",
+      "conflict_or_limitation_notes": "Verbatim match, including the exact 2:1 progression mechanic.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-29",
+      "record_ref": "Program:gb-university-of-oxford-ba-computer-science",
+      "field_checked": "faculty_school",
+      "proposed_value": "Department of Computer Science",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-05"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T11:39:43Z",
+      "conflict_or_limitation_notes": "Confirmed on both this fresh re-fetch and the prior independent re-fetch of src-05 (vr-03's source).",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-30",
+      "record_ref": "Program:gb-university-of-oxford-ba-computer-science",
+      "field_checked": "field_of_study",
+      "proposed_value": "Computer Science",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T11:39:43Z",
+      "conflict_or_limitation_notes": "Course description ('understanding computer systems and networks at a deep level' using 'mathematical reasoning') independently confirms the field-of-study framing.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-31",
+      "record_ref": "Program:gb-university-of-oxford-ba-computer-science",
+      "field_checked": "duration_value, duration_unit",
+      "proposed_value": "3, years (primary BA track; 4-year MCompSci variant captured in degree_type_local)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T11:39:43Z",
+      "conflict_or_limitation_notes": "Verbatim match ('3 or 4 years').",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-32",
+      "record_ref": "Program:gb-university-of-oxford-ba-computer-science",
+      "field_checked": "official_program_url",
+      "proposed_value": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/computer-science",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T11:39:43Z",
+      "conflict_or_limitation_notes": "Self-referential by construction -- this is the exact URL fetched for src-01 and re-confirmed live during this pass.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-33",
+      "record_ref": "Program:gb-university-of-oxford-ba-computer-science",
+      "field_checked": "language_of_instruction",
+      "proposed_value": [
+        "en"
+      ],
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T11:39:43Z",
+      "conflict_or_limitation_notes": "NOT explicitly stated on the course page even on this dedicated re-fetch ('Language of Instruction: Not explicitly stated in the provided content'). English is overwhelmingly certain for a UK on-campus undergraduate course taught and assessed in English, but this is an inference, not a sourced fact -- honestly capped at SUPPORTED, non-blocking, never manufactured as VERIFIED.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:15:00Z",
+      "verification_method": "independent_refetch (fact not explicitly stated; inference retained at SUPPORTED)"
+    },
+    {
+      "id": "vr-34",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-ib",
+      "field_checked": "standardized_tests",
+      "proposed_value": [
+        {
+          "test_name": "Test of Mathematics for University Admission (TMUA)",
+          "min_score": null,
+          "required": "required",
+          "notes": "Same requirement as the A-Level route."
+        }
+      ],
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-03"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:30Z",
+      "conflict_or_limitation_notes": "src-03 states the TMUA applies to 'all applicants for Maths, Computer Science, or joint honours courses' without a curriculum-track carve-out -- independently re-fetched, confirming this applies identically to the IB track, not just A-Level. Added during the verification-coverage hardening audit, which found this record previously had record_status=VERIFIED with no standardized_tests-specific VerificationRecord of its own (it was riding on vr-02's coverage of the A-Level record only).",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:21:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-35",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-advanced-highers",
+      "field_checked": "standardized_tests",
+      "proposed_value": [
+        {
+          "test_name": "Test of Mathematics for University Admission (TMUA)",
+          "min_score": null,
+          "required": "required",
+          "notes": "Same requirement as the A-Level route."
+        }
+      ],
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-03"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T21:41:30Z",
+      "conflict_or_limitation_notes": "Same reasoning as vr-34, applied to the Advanced Highers track. Added during the verification-coverage hardening audit.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-22T21:21:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-36",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-a-level",
+      "field_checked": "required_subjects",
+      "proposed_value": [
+        "Mathematics",
+        "Further Mathematics (highly recommended where offered by the applicant's school)"
+      ],
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-10"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched both src-01 (course listing) and src-10 (summary table of admissions requirements) this pass. src-10's summary table marks Computer Science with '● Maths ■ Further Maths' (filled circle = essential, open/hollow square-equivalent = recommended-where-available), verbatim-consistent with the stored value. No discrepancy.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-37",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-a-level",
+      "field_checked": "language_requirements",
+      "proposed_value": "See records-v1.2.json for the full filled-in language_requirements entry.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-13",
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:32:00Z",
+      "conflict_or_limitation_notes": "Field was genuinely empty; researched and filled this pass. Oxford's general English Language Requirement (ELR) page (src-13, independently re-fetched twice) does NOT list A-Level as an automatic curriculum-based exemption category -- the general institutional policy applies (native-speaker + majority-English-speaking-country residency per src-14, or 2+ years educated full-time in English, or standard IELTS/TOEFL/equivalent test thresholds otherwise). This is a real, sourced general requirement, not a genuine absence -- most A-Level applicants satisfy it via the general exemptions rather than a curriculum-specific one, which is now stated explicitly in the field's notes.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-38",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-ib",
+      "field_checked": "required_subjects",
+      "proposed_value": [
+        "Mathematics (Higher Level, grade 7 required)"
+      ],
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-10"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:33:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched both src-01 and src-10 this pass; src-01's academic_threshold statement ('the 7 must be in HL Mathematics') corroborates this exact required-subject content. No discrepancy.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-39",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-ib",
+      "field_checked": "language_requirements",
+      "proposed_value": "See records-v1.2.json for the full filled-in language_requirements entry.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:34:00Z",
+      "conflict_or_limitation_notes": "Field was genuinely empty; researched and filled this pass. Oxford's ELR page (src-13) explicitly names 'studying (or have completed) the International Baccalaureate programme, if it is taught in English' as an exemption category -- a real, curriculum-specific, conditional exemption for the IB track, distinct from the A-Level/Advanced-Highers tracks. If the IB was not taught in English, standard test thresholds or another general exemption route apply.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-40",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-advanced-highers",
+      "field_checked": "required_subjects",
+      "proposed_value": [
+        "Mathematics"
+      ],
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-10"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:35:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched both src-01 and src-10 this pass; consistent with the stored value ('AA/AAB with an A in Mathematics'). No discrepancy.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-41",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-advanced-highers",
+      "field_checked": "language_requirements",
+      "proposed_value": "See records-v1.2.json for the full filled-in language_requirements entry.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-13",
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:36:00Z",
+      "conflict_or_limitation_notes": "Field was genuinely empty; researched and filled this pass. Same finding and reasoning as vr-37 (A-Level): Advanced Highers is NOT listed by Oxford's ELR page (src-13) as an automatic curriculum-based exemption category; the general institutional policy applies instead.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-42",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-ap-us",
+      "field_checked": "required_subjects",
+      "proposed_value": "AP Calculus BC plus two other Maths/Science AP subjects (see records-v1.2.json for full text).",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:40:00Z",
+      "conflict_or_limitation_notes": "Field was genuinely empty; researched and filled this pass. The Department of Computer Science's own admissions 'typical offers' page (src-15, cs.ox.ac.uk, official_university, independently fetched) gives a Computer-Science-specific AP subject-combination requirement not visible on the central summary table (src-10) or the truncated international-qualifications page (src-11). Exact grade thresholds remain in AdmissionsRequirement.academic_threshold, intentionally left unchanged -- out of scope for this remediation pass (see vr-06, still UNKNOWN); src-15 is flagged for a future pass that may resolve it.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-43",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-ap-us",
+      "field_checked": "standardized_tests",
+      "proposed_value": "TMUA (blanket requirement, required) + ACT/SAT recommended within the AP combination (see records-v1.2.json).",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-03",
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:42:00Z",
+      "conflict_or_limitation_notes": "Field was genuinely empty; researched and filled this pass. (1) src-03 (independently re-fetched) states the TMUA applies to 'all applicants for Maths, Computer Science, or joint honours courses' with no curriculum-track carve-out -- same reasoning already applied to the IB and Advanced Highers tracks in vr-34/vr-35, extended here to the AP-US track. (2) src-15 (Department of Computer Science, independently fetched) documents that AP-track applicants taking only three (not four) AP grade-5 exams must additionally submit an ACT or SAT score at a CS-specific minimum -- recorded as 'recommended' (the schema's test_required_flag enum only allows 'required'/'recommended', no 'conditional' value), not 'required', since it only applies under the three-AP route -- the field's own notes spell out the conditionality in full. Exact score minimums belong to academic_threshold, left unchanged this pass.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-44",
+      "record_ref": "AdmissionsRequirement:gb-university-of-oxford-admreq-ap-us",
+      "field_checked": "language_requirements",
+      "proposed_value": "See records-v1.2.json for the full filled-in language_requirements entry.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-13",
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:44:00Z",
+      "conflict_or_limitation_notes": "Field was genuinely empty; researched and filled this pass. Oxford's ELR page (src-13) exempts native English speakers who have always been resident and citizens of a UKVI-recognised majority English-speaking country. gov.uk's Immigration Rules Appendix English Language, EL 4.1 (src-14, official_government, independently fetched) confirms the United States of America is on that list. US-track applicants who meet the residency/citizenship test are therefore exempt; those who do not (e.g. non-US-citizen attending a US school) need the standard test thresholds or another general exemption route. This resolves a genuine research gap with real evidence, not a guess.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-45",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-oxford-bursary",
+      "field_checked": "award_type",
+      "proposed_value": "fixed_amount (reviewed and retained -- see notes)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-08"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:46:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched src-08 this pass and reviewed the award_type classification per item 5's instruction. Confirmed verbatim: the Oxford Bursary is 'a non-repayable Oxford Bursary to help with the costs of studying and living in Oxford,' paid as one of five fixed GBP amounts selected by a household-income band (a step function: GBP4,480/3,930/3,360/2,230/1,120), not a continuously variable amount. Considered 'living_cost_support' as an alternative given the living-cost framing, but the source explicitly frames the award as covering BOTH study and living costs (broader than living_cost_support alone), and -- more importantly -- every recipient still receives ONE specific, discrete GBP figure rather than a percentage of fees, an open-ended reimbursement, or a periodic stipend. 'fixed_amount' remains the best-fit enum value; the income-banding is a matter of which fixed amount a given recipient qualifies for, not a departure from the fixed_amount structure. Value retained unchanged in records-v1.2.json; this VR documents the review as instructed.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-46",
+      "record_ref": "Program:gb-university-of-oxford-ba-computer-science",
+      "field_checked": "extension_metadata.fields.related_variants_note",
+      "proposed_value": "Computer Science & Philosophy and Mathematics & Computer Science exist as separate joint-honours courses.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:50:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched src-01 (course listing page) this pass and confirmed both joint-honours courses -- 'Computer Science and Philosophy' and 'Mathematics and Computer Science' -- are real, currently-listed Oxford undergraduate courses (both appear under the Computer Science course listing's related-content links, with their own course descriptions). Confirms the extension fact as a scope note only; the joint courses themselves were not independently researched as separate programs this run, per the original stated scope limit.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-47",
+      "record_ref": "CostProfile:gb-university-of-oxford-cost-home",
+      "field_checked": "extension_metadata.fields.college_fee_bundling_note",
+      "proposed_value": "College fees are not itemized separately -- bundled into the single published course fee, divided between University and college on a formula basis.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-02"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:52:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched src-02 (course fees page) this pass, targeted specifically at the fee-bundling language. Verbatim match: 'The course fees you pay include your fees for both University and college services and are divided between the University (including your department or faculty) and your college on a formula basis.' This supersedes vr-09's SUPPORTED cap (vr-09 is left unmodified per the task's instructions) -- this fact is now independently re-targeted and confirmed at VERIFIED.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-48",
+      "record_ref": "CostProfile:gb-university-of-oxford-cost-overseas",
+      "field_checked": "extension_metadata.fields",
+      "proposed_value": "tuition_range_context: GBP66,580 is the CS-specific overseas rate; university-wide overseas range is GBP39,620-66,580 (excl. clinical medicine) with CS at the top. college_fee_bundling_note: same bundled structure as the Home profile.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-02"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:54:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched src-02 this pass, targeted at both the overseas range and the clinical-medicine caveat. Verbatim: overseas fees are 'Between £39,620 and £66,580*' with a footnote 'Clinical medicine fees will be significantly higher for Overseas students' -- confirming the stored GBP39,620-66,580 range explicitly EXCLUDES clinical medicine (important caveat, preserved here). Computer Science's own overseas fee of GBP66,580 (independently VERIFIED elsewhere, vr-10) sits exactly at the top bound of this non-clinical-medicine range, confirming 'Computer Science at the top of that range' is accurate as stated. College-fee-bundling portion re-confirmed via the same src-02 refetch as vr-47.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-49",
+      "record_ref": "Scholarship:gb-university-of-oxford-scholarship-reach-oxford",
+      "field_checked": "extension_metadata.fields.college_restriction",
+      "proposed_value": "None -- not all colleges participate every year, but successful applicants can be transferred between colleges as needed.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:56:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched src-06 (Reach Oxford Scholarship page) this pass, targeted specifically at college participation/transfer language. Verbatim match: 'Not all colleges are able to offer Reach Oxford Scholarships every year' and 'If you are accepted by a college that is not participating in the scheme, this will not prevent you from applying for and being awarded a scholarship... arrangements will be made to transfer you between colleges.' No discrepancy from the stored note.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-50",
+      "record_ref": "FinancialRequirement:gb-university-of-oxford-finreq-visa-maintenance",
+      "field_checked": "extension_metadata.fields.visa_maintenance_monthly_range, extension_metadata.fields.oxford_region_classification",
+      "proposed_value": "visa_maintenance_monthly_range unchanged (London GBP1,529/mo, outside-London GBP1,171/mo, 9 months, 28-day holding period). oxford_region_classification unchanged: UNCONFIRMED.",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-07"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T13:58:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched gov.uk/student-visa/money (src-07) this pass, focused specifically on the London-vs-outside-London distinction. Re-confirmed verbatim: '£1,529 per month (for up to 9 months) for courses in London' / '£1,171 per month (for up to 9 months) for courses outside London,' and that the applicable rate depends on where the COURSE is located, not where the student resides. The page defines London exhaustively: 'London means the City of London and the 32 London boroughs' -- an enumerated, closed definition that does not include Oxford. This is suggestive (Oxford, ~90km from London and not one of the 32 boroughs, would fall under 'outside London' by elimination from this definition) but gov.uk still does NOT name Oxford anywhere on the page, so this pass treats it as a logical inference, not an official confirmation, and per the task's explicit instruction not to guess an immigration-relevant rate, records-v1.2.json's oxford_region_classification text is left unmodified at 'UNCONFIRMED' -- this VR both reconfirms the underlying monthly-range figures at VERIFIED and reconfirms that the UNCONFIRMED characterization remains accurate today, while noting the definitional-elimination reasoning above for whoever picks this up next. vr-12/vr-13 (the prior pass's canonical-field VRs for this same entity) were left untouched per instructions; this is a new, additive material_extension_fact record.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": null,
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    }
+  ]
+}

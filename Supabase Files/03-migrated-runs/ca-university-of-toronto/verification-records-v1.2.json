@@ -1,0 +1,556 @@
+{
+  "run_id": "2026-09-23_ca-university-of-toronto_computer-science",
+  "schema_version": "1.2",
+  "verifier_pass_timestamp": null,
+  "verifier": "",
+  "note": "Carried forward from the V1.1 run's verification-records.json, formalized to the V1.2 VerificationRecord shape: absence_claim=true records were promoted to verification_status=VERIFIED_ABSENT; material_extension_fact is preserved as the now-formal schema field; NYUAD-run-specific informal semantic-QA flags were folded into conflict_or_limitation_notes since they are not part of the V1.2 schema (the semantic checks themselves are enforced by 04-pipeline/check_verification_coverage_v1_2.py instead). No new field-level verification claims were added or removed -- this is a reformatting pass, not new research, consistent with this synthesis being migration-only.",
+  "verification_records": [
+    {
+      "id": "vr-01",
+      "record_ref": "University:ca-university-of-toronto",
+      "field_checked": "canonical_name, official_website",
+      "proposed_value": "University of Toronto / https://www.utoronto.ca",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-16"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:47:10Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of the utoronto.ca homepage (distinct URL from the extraction-pass sources, src-16/src-17) confirms both the exact legal name and root domain.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-02",
+      "record_ref": "University:ca-university-of-toronto",
+      "field_checked": "institution_type",
+      "proposed_value": "public",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-16"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:47:10Z",
+      "conflict_or_limitation_notes": "utoronto.ca homepage: 'a globally top-ranked public research university in Toronto, Ontario, Canada' -- a stronger, more direct confirmation than the extraction-pass src-17 quote ('publicly funded universities worldwide'), and from a genuinely different page/fetch.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-03",
+      "record_ref": "Program:ca-university-of-toronto-computer-science",
+      "field_checked": "program_name",
+      "proposed_value": "Computer Science Specialist",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-09"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:47:55Z",
+      "conflict_or_limitation_notes": "Second, independent fetch of artsci.calendar.utoronto.ca/program/asspe1689 (extraction-pass fetch was src-09 at 12:26:00Z) re-confirms 'Computer Science Specialist (Science Program) - ASSPE1689' verbatim.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-04",
+      "record_ref": "Program:ca-university-of-toronto-computer-science",
+      "field_checked": "degree_type, degree_type_local",
+      "proposed_value": "BSc / Honours Bachelor of Science (HBSc)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-09"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:47:55Z",
+      "conflict_or_limitation_notes": "Same independent re-fetch re-confirms 'HBSc (Bachelor of Science)' degree type.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-05",
+      "record_ref": "Program:ca-university-of-toronto-computer-science",
+      "field_checked": "faculty_school",
+      "proposed_value": "Faculty of Arts & Science",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-09"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:47:55Z",
+      "conflict_or_limitation_notes": "Same independent re-fetch re-confirms the governing faculty.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-06",
+      "record_ref": "Program:ca-university-of-toronto-computer-science",
+      "field_checked": "field_of_study",
+      "proposed_value": "Computer Science",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-09"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:47:55Z",
+      "conflict_or_limitation_notes": "Same independent re-fetch re-confirms field of study, plus new detail: 'Students cannot combine the Computer Science Specialist (ASSPE1689) program with the Computer Science Major (ASMAJ1689) or the Computer Science Minor (ASMIN1689) for their degree' -- added to Program.extension_metadata narrative context.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-07",
+      "record_ref": "Program:ca-university-of-toronto-computer-science",
+      "field_checked": "official_program_url",
+      "proposed_value": "https://artsci.calendar.utoronto.ca/program/asspe1689",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-09"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:47:55Z",
+      "conflict_or_limitation_notes": "The URL was itself re-opened and confirmed live and on-topic during the independent re-fetch.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-08",
+      "record_ref": "Program:ca-university-of-toronto-computer-science",
+      "field_checked": "duration_value, duration_unit",
+      "proposed_value": "4 / years",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-09"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:47:55Z",
+      "conflict_or_limitation_notes": "NOT independently re-verified as a literal 'four years' statement -- no fetched official page states this directly. Value is derived from the 20.0-credit HBSc requirement at the standard ~5.0-credits/year full-time pace, and the Faculty explicitly permits self-paced progression. Capped at SUPPORTED rather than manufactured as VERIFIED. See Program.extension_metadata.fields.duration_derivation_note and missing-data.json.",
+      "blocking_status": "non_blocking",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-09",
+      "record_ref": "Program:ca-university-of-toronto-computer-science",
+      "field_checked": "language_of_instruction",
+      "proposed_value": "['en']",
+      "verification_status": "SUPPORTED",
+      "source_refs": [],
+      "verifier_pass_timestamp": null,
+      "conflict_or_limitation_notes": "No fetched official page explicitly states the language of instruction. Set to English based on context (Anglophone Ontario undergraduate program; every official page and course code fetched this run is in English) rather than a direct source statement. Capped at SUPPORTED, not VERIFIED, consistent with the 'never manufacture verification' rule -- directly parallel to the identical Oxford-run finding for the same field. See missing-data.json.",
+      "blocking_status": "non_blocking",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-10",
+      "record_ref": "AdmissionsRequirement:ca-university-of-toronto-admreq-ontario",
+      "field_checked": "required_subjects",
+      "proposed_value": "English (ENG4U/EAE4U), Calculus & Vectors (MCV4U)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-05"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:52:20Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of future.utoronto.ca/program/computer-science re-confirms both required subjects verbatim, and additionally confirms St. George does NOT list Advanced Functions as a separate requirement (unlike some other U of T campuses) -- added to notes.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-11",
+      "record_ref": "AdmissionsRequirement:ca-university-of-toronto-admreq-ontario",
+      "field_checked": "standardized_tests",
+      "proposed_value": "[] (none required)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-05"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:52:20Z",
+      "conflict_or_limitation_notes": "Same independent re-fetch explicitly confirms: 'No standardized test requirement (SAT, ACT, AP scores) is mentioned for Ontario high school applicants.' An empty array is a genuinely verified fact here, not an unresearched gap.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-12",
+      "record_ref": "AdmissionsRequirement:ca-university-of-toronto-admreq-ib",
+      "field_checked": "required_subjects",
+      "proposed_value": "English HL or SL; Mathematics: Analysis & Approaches SL/HL or Applications & Interpretation HL",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-07"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:53:05Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of the IB requirements page re-confirms both the English and math subject options verbatim.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-13",
+      "record_ref": "AdmissionsRequirement:ca-university-of-toronto-admreq-ib",
+      "field_checked": "standardized_tests",
+      "proposed_value": "[] (none required; SAT/ACT explicitly optional)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-07"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:53:05Z",
+      "conflict_or_limitation_notes": "Same re-fetch surfaced an explicit statement not captured in the extraction pass: 'Students who have written SAT or ACT tests, and wish to have these considered in their assessment, may submit their scores' -- explicitly optional, not required. Left out of the structured standardized_tests array (whose required/recommended enum cannot represent pure optionality) and instead disclosed in the record's notes field.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-14",
+      "record_ref": "CostProfile:ca-university-of-toronto-cost-domestic-ontario",
+      "field_checked": "tuition_annual",
+      "proposed_value": 6100,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-12"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T13:01:40Z",
+      "conflict_or_limitation_notes": "Confirmed across TWO independent re-fetches of the Tuition Fee Report PDF (13:01:40Z and again 13:05:15Z): Table B1 'Bachelors $6,100' (Ontario resident, Year 1) and Table B2 '2026 Computer Science... NA $6,100' consistently show the same figure.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-15",
+      "record_ref": "CostProfile:ca-university-of-toronto-cost-international",
+      "field_checked": "tuition_annual",
+      "proposed_value": 66110,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-11"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T13:00:05Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of the Tuition Explorer international query re-confirms $66,110.00 program fee, $2,100.29 incidental fee, and $948.00 UHIP -- identical to the extraction-pass read, cross-validated.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-16",
+      "record_ref": "Scholarship:ca-university-of-toronto-scholarship-pearson",
+      "field_checked": "residency_restrictions",
+      "proposed_value": "International students only (non-Canadian, study permit required)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T13:03:10Z",
+      "conflict_or_limitation_notes": "Independent re-fetch re-confirms verbatim.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-17",
+      "record_ref": "Scholarship:ca-university-of-toronto-scholarship-pearson",
+      "field_checked": "award_type, renewable, duration",
+      "proposed_value": "mixed (tuition+books+incidental+residence) / renewable / 4 years",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T13:03:10Z",
+      "conflict_or_limitation_notes": "Independent re-fetch re-confirms 'tuition, books, incidental fees and full residence support for four years' verbatim.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-18",
+      "record_ref": "Scholarship:ca-university-of-toronto-scholarship-pearson",
+      "field_checked": "application_deadline, deadline_academic_year",
+      "proposed_value": "School nom. Oct 9 2026 / admission app Oct 16 2026 / scholarship app Nov 6 2026 -- 2026/2027 cycle for Sept 2027 entry",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T13:03:10Z",
+      "conflict_or_limitation_notes": "All three dates re-confirmed identically on independent re-fetch.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-19",
+      "record_ref": "Scholarship:ca-university-of-toronto-scholarship-pearson",
+      "field_checked": "other_eligibility_criteria",
+      "proposed_value": "final-year 2026/2027 or graduated no earlier than June 2026; starting Sept 2027; one nomination per verified school per year",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T13:03:10Z",
+      "conflict_or_limitation_notes": "Re-confirmed verbatim on independent re-fetch.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-20",
+      "record_ref": "Scholarship:ca-university-of-toronto-scholarship-national",
+      "field_checked": "residency_restrictions",
+      "proposed_value": "Canadian citizen, permanent resident, or protected person",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T13:04:30Z",
+      "conflict_or_limitation_notes": "Independent re-fetch re-confirms verbatim.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-21",
+      "record_ref": "Scholarship:ca-university-of-toronto-scholarship-national",
+      "field_checked": "award_type, renewable, duration",
+      "proposed_value": "mixed (tuition+incidental+residence) / renewable / up to 4 years",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T13:04:30Z",
+      "conflict_or_limitation_notes": "Independent re-fetch re-confirms 'tuition, incidental and residence fees for up to four years' verbatim.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-22",
+      "record_ref": "Scholarship:ca-university-of-toronto-scholarship-national",
+      "field_checked": "application_deadline, deadline_academic_year",
+      "proposed_value": "School nom. Oct 9 2026 / admission app Oct 16 2026 / scholarship app Oct 30 2026 / reference letter Nov 6 2026 / interviews Feb 2027 -- 2026 cycle for Fall 2027 entry",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T13:04:30Z",
+      "conflict_or_limitation_notes": "All five milestones re-confirmed identically on independent re-fetch.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-23",
+      "record_ref": "Scholarship:ca-university-of-toronto-scholarship-national",
+      "field_checked": "other_eligibility_criteria",
+      "proposed_value": "final-year Canadian secondary school or first-year CEGEP; nominated for U of T National Book Award; ~15 scholars/~25 finalists per year",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T13:04:30Z",
+      "conflict_or_limitation_notes": "Re-confirmed verbatim on independent re-fetch.",
+      "blocking_status": "non_blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-24",
+      "record_ref": "AdmissionsRequirement:ca-university-of-toronto-admreq-a-level",
+      "field_checked": "required_subjects, academic_threshold, standardized_tests",
+      "proposed_value": null,
+      "verification_status": "UNKNOWN",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:20:50Z",
+      "conflict_or_limitation_notes": "Verification attempted: the primary Faculty of Arts & Science British-patterned/A-Level requirements page (artsci.utoronto.ca/future/ready-apply/admission-requirements/british-patterned) returned only a Cloudflare bot-detection screen on every attempt (3 attempts across the research and verification passes). No independent confirmation was possible. Record correctly remains HUMAN_REVIEW/UNKNOWN, not VERIFIED -- not counted in verification-coverage.json since coverage is only required for VERIFIED entities.",
+      "blocking_status": "blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-25",
+      "record_ref": "AdmissionsRequirement:ca-university-of-toronto-admreq-us",
+      "field_checked": "required_subjects, academic_threshold, standardized_tests",
+      "proposed_value": null,
+      "verification_status": "UNKNOWN",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T12:20:05Z",
+      "conflict_or_limitation_notes": "Verification attempted: the primary Faculty of Arts & Science US high school requirements page (artsci.utoronto.ca/future/ready-apply/admission-requirements/us-high-school) returned only a Cloudflare bot-detection screen on every attempt. The general future.utoronto.ca overview page yielded no concrete GPA/SAT/ACT/AP figures. Record correctly remains HUMAN_REVIEW/UNKNOWN.",
+      "blocking_status": "blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-26",
+      "record_ref": "CostProfile:ca-university-of-toronto-cost-domestic-other-province",
+      "field_checked": "tuition_annual",
+      "proposed_value": null,
+      "verification_status": "UNKNOWN",
+      "source_refs": [
+        "src-12"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T13:05:15Z",
+      "conflict_or_limitation_notes": "Verification attempted across THREE independent fetches of the same official Tuition Fee Report PDF, each returning a different figure for what should be the same Year-1 non-Ontario-resident domestic rate: $7,610 (fetch 2), then $7,610 again alongside a conflicting upper-year pairing (fetch 2, second read), then $14,180/$17,730 associated with a differently-labeled table section (fetch 3). This is treated as a fetch-tooling PDF-table-extraction reliability limitation on a complex multi-table document, not a confirmed disagreement between two authoritative sources (it is the SAME document read three times) -- recorded as UNKNOWN with the candidate figures disclosed in CostProfile.extension_metadata rather than picking one. This finding (that a distinct, higher non-Ontario domestic rate exists at all) is itself the product of independent re-verification catching what the extraction pass had missed -- see run-summary.md.",
+      "blocking_status": "blocking",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-27",
+      "record_ref": "AdmissionsRequirement:ca-university-of-toronto-admreq-ontario",
+      "field_checked": "language_requirements",
+      "proposed_value": "Exempt from a separate English test via 4+ years of full-time schooling in a recognized Canadian school",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-18"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T09:15:00Z",
+      "conflict_or_limitation_notes": "Independent fetch of future.utoronto.ca/english-language-requirements (not previously fetched this run) confirms Ontario/OSSD applicants qualify for the university's general Canadian-schooling English-proficiency exemption. This field was previously left as an empty array with no supporting research; it is now populated with real, sourced content rather than an unresearched gap. Distinguished from the separate ENG4U/EAE4U senior-level-English subject requirement (required_subjects), which the source explicitly states does NOT itself satisfy the proficiency requirement -- the two are independent requirements both satisfied by Ontario schooling.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-28",
+      "record_ref": "AdmissionsRequirement:ca-university-of-toronto-admreq-ib",
+      "field_checked": "language_requirements",
+      "proposed_value": "IB Diploma English A HL/SL >= 4 (or English B HL >= 7) satisfies the requirement",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-07",
+        "src-18"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T09:16:00Z",
+      "conflict_or_limitation_notes": "Independent re-verification of the existing (already-populated) language_requirements content via a SECOND, distinct official page (future.utoronto.ca/english-language-requirements, src-18) not used in the original extraction pass, which only cited the IB-specific page (src-07). The general English requirements page independently corroborates the IB English pathway and adds a previously-missing minimum score (4, or 7 for English B HL), used to fill min_score which had been null.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-29",
+      "record_ref": "AdmissionsRequirement:ca-university-of-toronto-admreq-a-level",
+      "field_checked": "language_requirements",
+      "proposed_value": "GCE A Level/AS Level/AICE English/English Language grade C (final or predicted) satisfies the requirement; UK-schooled applicants (4+ years) also qualify via the general country-of-schooling exemption",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-18"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T09:17:00Z",
+      "conflict_or_limitation_notes": "The primary curriculum-specific A-Level admissions page (artsci.utoronto.ca/.../british-patterned) remains Cloudflare-bot-blocked on this pass too (re-attempted), so required_subjects/academic_threshold/standardized_tests for this record remain UNKNOWN per vr-24 -- NOT reversed by this record. However, language_requirements is a SEPARATE, independently-accessible fact: U of T's general English Language Requirements page (src-18, a different URL, not bot-protected) explicitly lists a GCE A-Level English grade-C pathway and confirms the United Kingdom is on the country-of-schooling exemption list. This field was previously an empty, unresearched array; it is now populated with real sourced content. record_status intentionally left at HUMAN_REVIEW because other material fields on this same record remain genuinely unconfirmed.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-30",
+      "record_ref": "AdmissionsRequirement:ca-university-of-toronto-admreq-us",
+      "field_checked": "language_requirements",
+      "proposed_value": "Exempt from a separate English test via 4+ years of full-time schooling in the United States",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-18"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T09:18:00Z",
+      "conflict_or_limitation_notes": "The primary curriculum-specific US high-school admissions page remains Cloudflare-bot-blocked on this pass too (re-attempted), so required_subjects/academic_threshold/standardized_tests for this record remain UNKNOWN per vr-25 -- NOT reversed by this record. Language_requirements is independently resolved via U of T's general, always-accessible English Language Requirements page (src-18), which explicitly names 'United States of America' on its country-of-schooling exemption list; no US-curriculum-specific test (e.g. AP English) is listed among accepted pathways, so the general exemption is the applicable, confirmed mechanism. This field was previously an empty, unresearched array; it is now populated with real sourced content. record_status intentionally left at HUMAN_REVIEW because other material fields on this same record remain genuinely unconfirmed.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-31",
+      "record_ref": "CostProfile:ca-university-of-toronto-cost-international",
+      "field_checked": "mandatory_fees_annual",
+      "proposed_value": 3048.29,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-11"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T09:05:00Z",
+      "conflict_or_limitation_notes": "Fresh independent re-fetch of the Tuition Explorer international query (distinct fetch from the original extraction-pass read of src-11) re-confirms Incidental and System Access Fee $2,100.29 + UHIP $948.00 = $3,048.29 exactly, unchanged.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-32",
+      "record_ref": "Program:ca-university-of-toronto-computer-science",
+      "field_checked": "extension_metadata.fields.total_credit_requirement, extension_metadata.fields.duration_derivation_note",
+      "proposed_value": "12.0 FCE (>=1.5 at 400-level); duration_value=4 derived from 20.0-credit HBSc total at ~5.0 credits/year",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-09",
+        "src-19",
+        "src-20"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T09:26:00Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of artsci.calendar.utoronto.ca/program/asspe1689 (src-09) re-confirms '12.0 credits, including at least 1.5 credits at the 400-level' verbatim, and re-confirms no page states a literal '4 years' duration. Independent re-fetches of two additional official Academic Calendar pages not previously cited for this fact -- hbahbsc-requirements (src-20: confirms 20.0-credit HBSc total) and course-enrolment (src-19: confirms 'no more than 2.5 credits' per term recommended load, and 'Students may proceed towards the degree at a rate of their own choosing') -- independently substantiate every premise of the duration_derivation_note's arithmetic. Capped at SUPPORTED, not VERIFIED, since the '4 years' conclusion remains a derivation, not a directly-quoted official statement, consistent with vr-08's original treatment of duration_value/duration_unit.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-33",
+      "record_ref": "CostProfile:ca-university-of-toronto-cost-domestic-ontario",
+      "field_checked": "extension_metadata.fields.upper_year_tuition_step, extension_metadata.fields.domestic_incidental_fee_gap, extension_metadata.fields.ontario_vs_domestic_scope_note",
+      "proposed_value": "$11,420 CAD/year Ontario-resident upper-year rate",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-12"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T08:50:00Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of the Tuition Fee Report PDF (src-12), reading cohort-by-cohort this pass rather than a single aggregate read: the 2023, 2024, 2025 and 2026 entering cohorts all show an identical $11,420 Ontario-resident upper-year Computer Science rate, consistent with the document's own statement that Ontario-resident/domestic tuition is government-regulated and held flat. domestic_incidental_fee_gap and ontario_vs_domestic_scope_note are narrative/scope notes rather than independently re-checkable numeric facts; both remain accurate as previously stated (the domestic incidental fee genuinely was not isolated from the Tuition Explorer tool this pass either, and the other-province-vs-Ontario distinction is now further resolved -- see vr-34's CostProfile:ca-university-of-toronto-cost-domestic-other-province entry).",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-34",
+      "record_ref": "CostProfile:ca-university-of-toronto-cost-international",
+      "field_checked": "extension_metadata.fields.upper_year_tuition_step, extension_metadata.fields.annual_increase_note",
+      "proposed_value": "$72,480 CAD/year international upper-year rate (2026 entering cohort); annual increase applies only to new cohorts, not continuing students",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-12"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T08:58:00Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of the Tuition Fee Report PDF (src-12) initially returned a DIFFERENT figure ($69,030) on two passes, which appeared to conflict with the extraction-pass's $72,480. Resolved by reading the table cohort-by-cohort: Table D2 prices EACH ENTERING COHORT's own locked-in upper-year rate separately. The 2023/2024/2025 cohorts all show $69,030 (unchanged across those years), while the 2026 cohort (the one this run's Program/CostProfile records represent) shows $72,480 -- and $72,480/$69,030 = 1.050, an exact 5.0% increase matching src-12's own 'approximately 5% annual increase for new cohorts' text precisely. This also resolves the prior annual_increase_note ambiguity: since three consecutive already-admitted cohorts all show the SAME rate while only the newest cohort shows a higher one, continuing students' rates are confirmed held flat, not re-priced annually. What initially looked like a new discrepancy was fully explained, not a genuine source disagreement -- records-v1.2.json's annual_increase_note field was updated accordingly. A fresh search this pass also located an IRCC study-permit proof-of-funds figure ($23,448 CAD, src-22) but it was deliberately NOT written into this CostProfile's living_cost_source_basis (that field's V1.2 kind enum excludes visa/immigration proof-of-funds figures by design) -- it is instead modeled as its own FinancialRequirement record; see vr-39.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-35",
+      "record_ref": "CostProfile:ca-university-of-toronto-cost-domestic-other-province",
+      "field_checked": "tuition_annual, extension_metadata.fields.unconfirmed_candidate_figures, extension_metadata.fields.upper_year_tuition_step_candidate",
+      "proposed_value": 7610,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-12"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T09:00:00Z",
+      "conflict_or_limitation_notes": "RESOLVES vr-26's prior UNKNOWN. Three additional independent re-fetches of the same official Tuition Fee Report PDF this pass, reading it cohort-by-cohort rather than as a single flat table, converged on $7,610 as the 2026-entering-cohort's Year-1 non-Ontario-resident (NOR) Computer Science rate. This is corroborated by an internal ratio check: the confirmed Ontario-resident (OR) upper-year vs. NOR upper-year pair ($11,420 vs $14,260) has a premium ratio of 1.2487; pairing the confirmed OR Year-1 rate ($6,100) with $7,610 gives ratio 1.2475 -- essentially identical, strong internal evidence these two figures are the true paired Year-1 OR/NOR rates. The competing candidates from vr-26 are now explained rather than merely discarded: $14,180/$17,730 were traced this pass to a different row ('Bachelors', a general direct-entry category, not the Computer Science-specific program row) -- a genuine row-misattribution artifact of PDF-table extraction on this document, not an alternative true value for the same cell; $7,250 was traced to the 2025-entering-cohort's own (older) Year-1 NOR rate, distinct from the 2026 cohort's $7,610, consistent with NOR rates rising cohort-over-cohort while the government-regulated OR rate ($6,100) stays flat. tuition_annual is updated from null to $7,610 and record_status/verification_status are promoted to VERIFIED/VERIFIED accordingly. The corresponding NOR upper-year figure ($14,260, likely correct by the same logic) is NOT written to a canonical field, consistent with this run's convention of keeping upper-year steps in extension_metadata only, and because the 2026 cohort's own eventual upper-year rate has not yet been separately published (per the cohort-pricing pattern documented in cost-international's upper_year_tuition_step).",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-36",
+      "record_ref": "Scholarship:ca-university-of-toronto-scholarship-pearson",
+      "field_checked": "extension_metadata.fields.coverage_description",
+      "proposed_value": "Covers tuition, books, incidental fees, and full residence support for four years; ~37 Pearson Scholars/year",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T09:40:00Z",
+      "conflict_or_limitation_notes": "Fresh independent re-fetch of future.utoronto.ca/pearson-scholarships (distinct fetch from the original extraction-pass read of src-13) re-confirms verbatim: 'cover tuition, books, incidental fees and full residence support for four years' and 'Each year approximately 37 students will be named Pearson Scholars.' Unchanged from the original record.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-37",
+      "record_ref": "Scholarship:ca-university-of-toronto-scholarship-national",
+      "field_checked": "extension_metadata.fields.coverage_description",
+      "proposed_value": "Covers tuition, incidental and residence fees for up to four years; ~15 National Scholars/year",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T09:41:00Z",
+      "conflict_or_limitation_notes": "Fresh independent re-fetch of future.utoronto.ca/national-scholarships (distinct fetch from the original extraction-pass read of src-14) re-confirms verbatim: 'covers tuition, incidental and residence fees for up to four years of study' and 'Approximately 15 finalists will be designated as National Scholars.' Unchanged from the original record.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-38",
+      "record_ref": "DecisionPlan:ca-university-of-toronto-decisionplan-2027",
+      "field_checked": "application_deadline, verification_status",
+      "proposed_value": "2027-01-15",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-21"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T09:38:00Z",
+      "conflict_or_limitation_notes": "src-05 (the general CS program page) explicitly disclaims stating a deadline, but points to a separate 'Dates & Deadlines' section which was NOT fetched during the original research pass. Independently fetched this pass: future.utoronto.ca/deadlines (src-21), the university's dedicated official deadlines page, publishes the actual dates for the 2027 admissions cycle (Fall 2027 entry, matching this run's decision_context_academic_year): recommended early application November 7, 2026; final OUAC application deadline January 15, 2027; supporting documents February 1, 2027; and explicitly 'Computer Science Supplementary Application due February 1' (2027), directly corroborating the Program record's already-noted supplemental-application requirement for the same cycle. This is real, current, confirming evidence found through genuine additional research (not fabricated), so the record's own verification_status is promoted from UNKNOWN to VERIFIED and record_status from HUMAN_REVIEW to VERIFIED. decision_release_date remains null -- no decision-release date was found published on any page fetched, and is left as a disclosed absence rather than guessed.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-39",
+      "record_ref": "FinancialRequirement:ca-university-of-toronto-finreq-ircc-proof-of-funds",
+      "field_checked": "amount, requirement_type, administering_body",
+      "proposed_value": "$23,448 CAD annual IRCC study-permit living-expense proof-of-funds minimum",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-22"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T09:46:00Z",
+      "conflict_or_limitation_notes": "New record this pass, created from a fresh search undertaken per instruction to retry for a living-cost/proof-of-funds figure before accepting the international CostProfile's 'none found' absence. Independently fetched U of T's own Centre for International Experience study-permit page (src-22), which states the IRCC figure verbatim and explicitly attributes it to IRCC (not to U of T). Cross-checked via a general web search that surfaced multiple independent third-party immigration-consulting sources (not cited as evidence, only used to sanity-check that $23,448 effective September 1, 2026 is a real, current, widely-reported figure and not a one-off misread) all reporting the identical figure and effective date.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    }
+  ]
+}

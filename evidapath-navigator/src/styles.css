@@ -1,0 +1,170 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * EvidaPath Design System:
+ * The Socratic Navigator - Intelligence, calm, transparent, analytical, ambitious.
+ *
+ * Core Color Palette:
+ * - Deep Navy: #0A192F (oklch: 0.18 0.05 248)
+ * - Emerald Green: #059669 (oklch: 0.62 0.17 155)
+ * - Bronze / Amber: #B45309 (oklch: 0.52 0.15 62)
+ * - Warm Cream: #FDFBF7 (oklch: 0.988 0.006 85)
+ * - Pristine White: #FFFFFF (oklch: 1 0 0)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-bronze: var(--bronze);
+  --color-bronze-foreground: var(--bronze-foreground);
+
+  --color-navy: var(--navy);
+  --color-cream: var(--cream);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Pristine white and warm cream foundation */
+  --background: oklch(0.995 0.002 90);
+  --foreground: oklch(0.18 0.05 248); /* Deep Navy #0A192F */
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.05 248);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.05 248);
+
+  /* Primary action: Emerald Green #059669 */
+  --primary: oklch(0.6 0.17 155);
+  --primary-foreground: oklch(0.99 0 0);
+
+  /* Secondary: Soft navy-tinted cream/slate */
+  --secondary: oklch(0.965 0.008 245);
+  --secondary-foreground: oklch(0.18 0.05 248);
+
+  /* Muted backgrounds and texts */
+  --muted: oklch(0.965 0.006 90);
+  --muted-foreground: oklch(0.48 0.03 245);
+
+  /* Accent: Subtle emerald tint */
+  --accent: oklch(0.96 0.03 155);
+  --accent-foreground: oklch(0.25 0.09 155);
+
+  /* Bronze / Amber #B45309 */
+  --bronze: oklch(0.53 0.15 62);
+  --bronze-foreground: oklch(0.99 0 0);
+
+  /* Specific brand named tokens */
+  --navy: oklch(0.18 0.05 248);
+  --cream: oklch(0.988 0.006 85);
+
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.92 0.01 245);
+  --input: oklch(0.91 0.01 245);
+  --ring: oklch(0.6 0.17 155);
+
+  --chart-1: oklch(0.6 0.17 155); /* Emerald */
+  --chart-2: oklch(0.53 0.15 62); /* Bronze */
+  --chart-3: oklch(0.18 0.05 248); /* Navy */
+  --chart-4: oklch(0.7 0.12 185); /* Cyan-teal */
+  --chart-5: oklch(0.68 0.14 85); /* Golden warm */
+}
+
+.dark {
+  --background: oklch(0.14 0.04 248);
+  --foreground: oklch(0.98 0.005 90);
+  --card: oklch(0.18 0.05 248);
+  --card-foreground: oklch(0.98 0.005 90);
+  --popover: oklch(0.18 0.05 248);
+  --popover-foreground: oklch(0.98 0.005 90);
+  --primary: oklch(0.65 0.17 155);
+  --primary-foreground: oklch(0.12 0.04 248);
+  --secondary: oklch(0.22 0.04 248);
+  --secondary-foreground: oklch(0.98 0.005 90);
+  --muted: oklch(0.22 0.04 248);
+  --muted-foreground: oklch(0.72 0.02 245);
+  --accent: oklch(0.25 0.06 155);
+  --accent-foreground: oklch(0.95 0.02 155);
+  --bronze: oklch(0.65 0.16 62);
+  --bronze-foreground: oklch(0.12 0.04 248);
+  --navy: oklch(0.12 0.04 248);
+  --cream: oklch(0.2 0.04 248);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.26 0.03 248);
+  --input: oklch(0.26 0.03 248);
+  --ring: oklch(0.65 0.17 155);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}

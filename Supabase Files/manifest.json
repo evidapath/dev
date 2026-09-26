@@ -1,0 +1,534 @@
+{
+  "package_name": "evidapath-v1.2-schema-and-sanity-package",
+  "schema_version": "1.2",
+  "synthesis_date": "2026-09-23",
+  "institutions_synthesized": [
+    "nl-tu-delft",
+    "gb-university-of-oxford",
+    "ca-university-of-toronto",
+    "de-tu-munich",
+    "ae-nyu-abu-dhabi"
+  ],
+  "standing_constraints_honored": [
+    "No sixth university researched",
+    "No live Sanity project built or written to",
+    "No batch ingestion started",
+    "Synthesis/migration only -- no new research performed"
+  ],
+  "entity_counts_by_institution": {
+    "ae-nyu-abu-dhabi": {
+      "countries": 1,
+      "cities": 1,
+      "universities": 1,
+      "campuses": 1,
+      "colleges": 0,
+      "programs": 1,
+      "program_pathways": 0,
+      "applicant_categories": 5,
+      "admission_stages": 2,
+      "admissions_requirements": 4,
+      "decision_plans": 3,
+      "cost_profiles": 1,
+      "financial_requirements": 0,
+      "financial_aid_policies": 2,
+      "scholarships": 1,
+      "source_records": 16,
+      "derived_cost_estimates": 0
+    },
+    "ca-university-of-toronto": {
+      "countries": 1,
+      "cities": 1,
+      "universities": 1,
+      "campuses": 1,
+      "colleges": 0,
+      "programs": 1,
+      "program_pathways": 2,
+      "applicant_categories": 7,
+      "admission_stages": 3,
+      "admissions_requirements": 4,
+      "decision_plans": 1,
+      "cost_profiles": 3,
+      "financial_requirements": 0,
+      "financial_aid_policies": 0,
+      "scholarships": 2,
+      "source_records": 17,
+      "derived_cost_estimates": 2
+    },
+    "de-tu-munich": {
+      "countries": 1,
+      "cities": 2,
+      "universities": 1,
+      "campuses": 1,
+      "colleges": 0,
+      "programs": 1,
+      "program_pathways": 0,
+      "applicant_categories": 6,
+      "admission_stages": 3,
+      "admissions_requirements": 4,
+      "decision_plans": 1,
+      "cost_profiles": 2,
+      "financial_requirements": 1,
+      "financial_aid_policies": 0,
+      "scholarships": 1,
+      "source_records": 20,
+      "derived_cost_estimates": 0
+    },
+    "gb-university-of-oxford": {
+      "countries": 1,
+      "cities": 1,
+      "universities": 1,
+      "campuses": 1,
+      "colleges": 0,
+      "programs": 1,
+      "program_pathways": 1,
+      "applicant_categories": 6,
+      "admission_stages": 1,
+      "admissions_requirements": 4,
+      "decision_plans": 1,
+      "cost_profiles": 2,
+      "financial_requirements": 1,
+      "financial_aid_policies": 0,
+      "scholarships": 2,
+      "source_records": 12,
+      "derived_cost_estimates": 4
+    },
+    "nl-tu-delft": {
+      "countries": 1,
+      "cities": 1,
+      "universities": 1,
+      "campuses": 1,
+      "colleges": 0,
+      "programs": 1,
+      "program_pathways": 0,
+      "applicant_categories": 7,
+      "admission_stages": 1,
+      "admissions_requirements": 4,
+      "decision_plans": 1,
+      "cost_profiles": 2,
+      "financial_requirements": 1,
+      "financial_aid_policies": 0,
+      "scholarships": 2,
+      "source_records": 10,
+      "derived_cost_estimates": 0
+    }
+  },
+  "sanity_draft_document_totals": {
+    "combined_ndjson_documents": 342,
+    "raw_ndjson_sha256": "e8d35caa228a1526bd5600783dbe7fa5264a326836537f316e44ffa154c59757",
+    "resolved_ndjson_sha256": "8e3be9b949631dba4f633333f80473f188aa940e8991172967434a24f35fbc6b",
+    "unresolved_references_disclosed": 4
+  },
+  "qa_results": {
+    "validate_normalized_records_v1_2": "PASS (all 5 institutions)",
+    "check_fields_supported_v1_2": "PASS (all 5 institutions)",
+    "check_verification_coverage_v1_2": "FAIL (all 5 institutions) -- disclosed, itemized in 08-reporting/v1.2-freeze-report.md point 7, not fabricated or hidden"
+  },
+  "file_count": 81,
+  "files": [
+    {
+      "path": "README.md",
+      "size_bytes": 4504,
+      "sha256": "9205520f8291833b348d42838d42aae03ecf752acfc65ca4d29c415f5a085344"
+    },
+    {
+      "path": "01-gap-analysis/five-school-gap-matrix.json",
+      "size_bytes": 27192,
+      "sha256": "341a98be6d574075b68e15efe064c2e9b6893a07a47de27b2df217307c5f1588"
+    },
+    {
+      "path": "01-gap-analysis/five-school-gap-matrix.md",
+      "size_bytes": 23273,
+      "sha256": "fcdbadb72ffba174357ebc1d085f0f54c4c05a6d5077589b035bc676bdaac060"
+    },
+    {
+      "path": "02-schema-design/entity-relationship-overview.md",
+      "size_bytes": 6741,
+      "sha256": "0b2760594f5e514f628502771f248916a84d4c91c2940cd385f84e4b2aae2303"
+    },
+    {
+      "path": "02-schema-design/evidapath-schema-v1.2.json",
+      "size_bytes": 45255,
+      "sha256": "8c744d9509eee10c18ea454b03d5b4a84bfa69a28b45e801c7535891be57a88b"
+    },
+    {
+      "path": "02-schema-design/evidapath-schema-v1.2.md",
+      "size_bytes": 23038,
+      "sha256": "550f74f49cd0fb9eb2bb0378200e5406b3dc9048bfb5cfbe15602efc66fd26bf"
+    },
+    {
+      "path": "02-schema-design/v1.1-to-v1.2-migration.md",
+      "size_bytes": 8316,
+      "sha256": "b7dd044252db5f3980e9d1a8d908aafc4ec88655a9884574e422aa0aa59324ea"
+    },
+    {
+      "path": "03-migrated-runs/ae-nyu-abu-dhabi/migration-report.md",
+      "size_bytes": 5839,
+      "sha256": "f3795ebe30f3067ef4e4ade228b3b8b999130683e39b642d796ddf88615c10f9"
+    },
+    {
+      "path": "03-migrated-runs/ae-nyu-abu-dhabi/records-v1.2.json",
+      "size_bytes": 61712,
+      "sha256": "38ce0557579fc3d65113dfba99ba9a3b0a9bbf69076e353a711c0007cf00b083"
+    },
+    {
+      "path": "03-migrated-runs/ae-nyu-abu-dhabi/sanity-drafts-v1.2.ndjson",
+      "size_bytes": 94804,
+      "sha256": "8b29f47b15a3a2830948497fc83b05f85ec9b9db4159a7b80e91d5ec8f77590b"
+    },
+    {
+      "path": "03-migrated-runs/ae-nyu-abu-dhabi/verification-coverage-v1.2.json",
+      "size_bytes": 15679,
+      "sha256": "33e053f3af3abba00643a4aeddf25bd24de4daa9716c6762ba71102595424069"
+    },
+    {
+      "path": "03-migrated-runs/ae-nyu-abu-dhabi/verification-records-v1.2.json",
+      "size_bytes": 26250,
+      "sha256": "c807286613734955f1d4ebae915aa5bee237d363ec878ab11f8769df37ebd447"
+    },
+    {
+      "path": "03-migrated-runs/ca-university-of-toronto/migration-report.md",
+      "size_bytes": 5418,
+      "sha256": "15e735c604899b60a21d308075847539196dfd3296ced76c38c071e858278bc2"
+    },
+    {
+      "path": "03-migrated-runs/ca-university-of-toronto/records-v1.2.json",
+      "size_bytes": 66522,
+      "sha256": "aeee3d57b4f9b6bef223acae05c4d3bf03bf2b308fba5f779c456310dcff7924"
+    },
+    {
+      "path": "03-migrated-runs/ca-university-of-toronto/sanity-drafts-v1.2.ndjson",
+      "size_bytes": 97067,
+      "sha256": "62973a20d0a3ddc8bfdaaa8ec993669a67f2bfa8281b66e2f0c3c31bde552edd"
+    },
+    {
+      "path": "03-migrated-runs/ca-university-of-toronto/verification-coverage-v1.2.json",
+      "size_bytes": 12494,
+      "sha256": "ca482c7d0fa2201533841f3efa5bbbdcd32c4cc7deaac465d27dfc4fb427b61e"
+    },
+    {
+      "path": "03-migrated-runs/ca-university-of-toronto/verification-records-v1.2.json",
+      "size_bytes": 20224,
+      "sha256": "0e6e776280470f276bac67b4a51c3c2d91b71c91803c232f4abd103f95f939c6"
+    },
+    {
+      "path": "03-migrated-runs/de-tu-munich/migration-report.md",
+      "size_bytes": 6357,
+      "sha256": "e6803c2929743fee723a204d171497908cc736f6b55f959b0d88b52ddcc52e1b"
+    },
+    {
+      "path": "03-migrated-runs/de-tu-munich/records-v1.2.json",
+      "size_bytes": 54463,
+      "sha256": "64e333986e756a266061e7631351abd8001d9249b675b0219e10159c6e2443dc"
+    },
+    {
+      "path": "03-migrated-runs/de-tu-munich/sanity-drafts-v1.2.ndjson",
+      "size_bytes": 86430,
+      "sha256": "d7bd6e7570af695c4ebef0c47e597d3b1b62e99a67dea1e723a681a234c0bafd"
+    },
+    {
+      "path": "03-migrated-runs/de-tu-munich/verification-coverage-v1.2.json",
+      "size_bytes": 14663,
+      "sha256": "bd04e8ddf1dcb92deb2d2f0af28b42eae2dff669bd79d11d46c57062f30a2a79"
+    },
+    {
+      "path": "03-migrated-runs/de-tu-munich/verification-records-v1.2.json",
+      "size_bytes": 22770,
+      "sha256": "628bb496b9895ec038d1ae7577a8ada9cd2c8f340f0911fbf3e5399476e20560"
+    },
+    {
+      "path": "03-migrated-runs/gb-university-of-oxford/migration-report.md",
+      "size_bytes": 7699,
+      "sha256": "b753906ce4b96040ffde3cdcab48e39116dc9dc4836be7eb721460ec1577f605"
+    },
+    {
+      "path": "03-migrated-runs/gb-university-of-oxford/records-v1.2.json",
+      "size_bytes": 44999,
+      "sha256": "3f23d73afd8b653e029551ff52c017a554ce6a9780e31275e57817041452225a"
+    },
+    {
+      "path": "03-migrated-runs/gb-university-of-oxford/sanity-drafts-v1.2.ndjson",
+      "size_bytes": 81815,
+      "sha256": "c3686daa073f4102645b033a2d41b3599d86aa8d1356de5b0df4958de1632617"
+    },
+    {
+      "path": "03-migrated-runs/gb-university-of-oxford/verification-coverage-v1.2.json",
+      "size_bytes": 13936,
+      "sha256": "6f0f10d5f36b43bbbbbc29e24be7288726a9b35d13405fc43ea20a39cbaf0762"
+    },
+    {
+      "path": "03-migrated-runs/gb-university-of-oxford/verification-records-v1.2.json",
+      "size_bytes": 26554,
+      "sha256": "16d3e71e28d7195f19cc56742e9df2308855d5c877b04034d9c9c31f3cb92abc"
+    },
+    {
+      "path": "03-migrated-runs/nl-tu-delft/migration-report.md",
+      "size_bytes": 7250,
+      "sha256": "1f5754702bfacc9ecd915cdf7b5274c8072e24690e14b9d6c168dea4eb23b486"
+    },
+    {
+      "path": "03-migrated-runs/nl-tu-delft/records-v1.2.json",
+      "size_bytes": 32194,
+      "sha256": "07a6fcadcdd12b1db94a919fad4065cc4bb9bed4364ec91e2eff280be621fad1"
+    },
+    {
+      "path": "03-migrated-runs/nl-tu-delft/sanity-drafts-v1.2.ndjson",
+      "size_bytes": 48930,
+      "sha256": "53932bb01cc46bcef2a3d833e30de1845b57ecc5da2fe6d376df84d943a85f9f"
+    },
+    {
+      "path": "03-migrated-runs/nl-tu-delft/verification-coverage-v1.2.json",
+      "size_bytes": 4218,
+      "sha256": "36681b72db170c95af53462876fcfdb26eec6f3685af15a0a93cf9684930eb29"
+    },
+    {
+      "path": "03-migrated-runs/nl-tu-delft/verification-records-v1.2.json",
+      "size_bytes": 11043,
+      "sha256": "1b62b7113cac2981e797cd4a3e567d90c1dc7b1f63dfd69684bca51b86437bdf"
+    },
+    {
+      "path": "04-pipeline/check_fields_supported_v1_2.py",
+      "size_bytes": 4879,
+      "sha256": "9f9c77132b14102e88318398027da0b9b861bca3d4c42d35668b62ad28618091"
+    },
+    {
+      "path": "04-pipeline/check_verification_coverage_v1_2.py",
+      "size_bytes": 11837,
+      "sha256": "5b7dfaeea2b3a85163c7527fef8fa9d621e872f538bee31078b59183187c9d88"
+    },
+    {
+      "path": "04-pipeline/normalized_to_sanity_ndjson_v1_2.py",
+      "size_bytes": 7942,
+      "sha256": "b4066b9f9837a8a63b2c80aa725ae07128e5108b409ab127537840e2d9a93f63"
+    },
+    {
+      "path": "04-pipeline/validate_normalized_records_v1_2.py",
+      "size_bytes": 8948,
+      "sha256": "999f1735db937255aa4eac9d5513c4bf3478918a88b73c7ddd71715c0c8943ab"
+    },
+    {
+      "path": "05-sanity/README.md",
+      "size_bytes": 6862,
+      "sha256": "b9394d580e8e389f45f39f44214d8e2ba41c394852334cc38c606da816a38765"
+    },
+    {
+      "path": "05-sanity/sanity-content-model.md",
+      "size_bytes": 7836,
+      "sha256": "9c108f6de8e75edaf3393486a688aae86c8bb614b6cdd25c4abb817763a2dfcc"
+    },
+    {
+      "path": "05-sanity/schema.js",
+      "size_bytes": 2484,
+      "sha256": "c45efb8ac3f028d8a6ae0a6e694d7cfbe2b30d223c88c13137d7bd43073e1c7e"
+    },
+    {
+      "path": "05-sanity/validation-rules.md",
+      "size_bytes": 6247,
+      "sha256": "94b0e05eef7fc2fcb993ea5229715c4caba0668131b82677845e86b18d854781"
+    },
+    {
+      "path": "05-sanity/document-types/admissionStage.js",
+      "size_bytes": 3169,
+      "sha256": "fd04b385bbe6c08403203fa2df2ad1ad3bb9fa0a9814daeedf745731501527fa"
+    },
+    {
+      "path": "05-sanity/document-types/admissionsRequirement.js",
+      "size_bytes": 3380,
+      "sha256": "667d886a86c3ad1a15dc2ac8510d5cd115d5231f8d819a9f5d11bf460064467c"
+    },
+    {
+      "path": "05-sanity/document-types/applicantCategory.js",
+      "size_bytes": 1407,
+      "sha256": "3c5d18ff3af424c9ec57147a92aad90959e59ec5a59f9ea38b24e5231637f6c2"
+    },
+    {
+      "path": "05-sanity/document-types/campus.js",
+      "size_bytes": 1655,
+      "sha256": "f3ead4d0b2609944b565f9e3311b54433fa3391b94d42b2d4adcef6788c57a9f"
+    },
+    {
+      "path": "05-sanity/document-types/changeRecord.js",
+      "size_bytes": 2975,
+      "sha256": "a117710b65e787ac4abbb9092b130f5e1686433940609c9aa5460680ed98ea5d"
+    },
+    {
+      "path": "05-sanity/document-types/city.js",
+      "size_bytes": 995,
+      "sha256": "5315e6835f652e6acdd6203f9ea89910abab979c4ec7bc6338feae5d00dcb032"
+    },
+    {
+      "path": "05-sanity/document-types/college.js",
+      "size_bytes": 1686,
+      "sha256": "c9b779d3274204e311342571d818a618b9d32fe961c7c3f79b06bbbecc1eaca3"
+    },
+    {
+      "path": "05-sanity/document-types/costProfile.js",
+      "size_bytes": 4127,
+      "sha256": "94945d19b8937aff33505fa292d6829cae5c53b5d42b2b008e94eb6aff90b6cf"
+    },
+    {
+      "path": "05-sanity/document-types/country.js",
+      "size_bytes": 1120,
+      "sha256": "4d644799fc883e76be9240a52f750d31c7d30c386513dfc6bd7700c6837ff72b"
+    },
+    {
+      "path": "05-sanity/document-types/decisionPlan.js",
+      "size_bytes": 2756,
+      "sha256": "8ab3c8655fca527a2ecec53efd25aae733be9570573bb6370fa5a9d383943aad"
+    },
+    {
+      "path": "05-sanity/document-types/derivedCostEstimate.js",
+      "size_bytes": 1925,
+      "sha256": "ba794a8f475e61d60c33bcc9da47f7fc0b2f75ccca267d5a7713d0fd0a50870e"
+    },
+    {
+      "path": "05-sanity/document-types/financialAidPolicy.js",
+      "size_bytes": 3456,
+      "sha256": "59a8b0f49a00308228509a1069cceb817017803481443de441a2e4e18c59b2f1"
+    },
+    {
+      "path": "05-sanity/document-types/financialRequirement.js",
+      "size_bytes": 2968,
+      "sha256": "65b1205352dfe36f0b7dc3a9162e1520cbbb0b088566920196255c8adab46238"
+    },
+    {
+      "path": "05-sanity/document-types/program.js",
+      "size_bytes": 3819,
+      "sha256": "df2877e220c91617e2f93a5f0b77a4e7852da4c82e881aeb3c7e29b88f3f0edb"
+    },
+    {
+      "path": "05-sanity/document-types/programPathway.js",
+      "size_bytes": 2869,
+      "sha256": "33c7451931e0aa81cd56639c9e395d5bece2f7f3fecf1e1c7ba7e64b0dd8cdf5"
+    },
+    {
+      "path": "05-sanity/document-types/scholarship.js",
+      "size_bytes": 4645,
+      "sha256": "5eff667f9c2e6708d933fa2a14df143db59a23e57f7987b0d776901c88485f4d"
+    },
+    {
+      "path": "05-sanity/document-types/sourceRecord.js",
+      "size_bytes": 2093,
+      "sha256": "30a4a68ebe3a547dab08f44441de4226b5f592b31cb2edff13c0c8dc5ad96562"
+    },
+    {
+      "path": "05-sanity/document-types/university.js",
+      "size_bytes": 2572,
+      "sha256": "e43440aae8ab1e91684fd9daa767441317433dfa1e5f897169b7b4159f3669b7"
+    },
+    {
+      "path": "05-sanity/document-types/verificationRecord.js",
+      "size_bytes": 2997,
+      "sha256": "45c0481f879053c8ce4b2a01ea06d00e26f7351c59a07b36914175a65c90273f"
+    },
+    {
+      "path": "05-sanity/generation/gen_schema_files.py",
+      "size_bytes": 13245,
+      "sha256": "cf9542572006dce3b6d3e0fed86d2134a7f068ac649178d57a64abf644195a61"
+    },
+    {
+      "path": "05-sanity/import/five-school-sanity-drafts.ndjson",
+      "size_bytes": 409046,
+      "sha256": "e8d35caa228a1526bd5600783dbe7fa5264a326836537f316e44ffa154c59757"
+    },
+    {
+      "path": "05-sanity/import/five-school-sanity-drafts.resolved.ndjson",
+      "size_bytes": 446693,
+      "sha256": "8e3be9b949631dba4f633333f80473f188aa940e8991172967434a24f35fbc6b"
+    },
+    {
+      "path": "05-sanity/import/import-readme.md",
+      "size_bytes": 6954,
+      "sha256": "d5d719b2e04d222960b299fec57b7eb67993ad55a80b8da095f765861afad4a8"
+    },
+    {
+      "path": "05-sanity/import/resolve_references.py",
+      "size_bytes": 7263,
+      "sha256": "b7ea2a1d7090f129ffe04b51e8a8772d82782a01fa65c4f2468cf3590f2982a0"
+    },
+    {
+      "path": "05-sanity/object-types/acceptedAssessment.js",
+      "size_bytes": 1084,
+      "sha256": "05c5ffcb5101eabd94a00e66303f808c6196b625c9b6680160adb8aab0f23ae5"
+    },
+    {
+      "path": "05-sanity/object-types/applicationRequirement.js",
+      "size_bytes": 1365,
+      "sha256": "3ab33152c1f0200d11e5bea229a85d89ca0e30067c60b435d7d20603ab54d5ce"
+    },
+    {
+      "path": "05-sanity/object-types/extensionMetadata.js",
+      "size_bytes": 874,
+      "sha256": "fa8cad6d470b1e5f346edb42feed4e93c1f397a4583d125194e66317985aacad"
+    },
+    {
+      "path": "05-sanity/object-types/languageRequirement.js",
+      "size_bytes": 950,
+      "sha256": "b0fc5c8b9b2bc1071acf40a8ab88b7e9fb73cfae25f4b47f4faec19e5d9b47fd"
+    },
+    {
+      "path": "05-sanity/object-types/lineItem.js",
+      "size_bytes": 796,
+      "sha256": "c68c77abb95924e88fea52460c7037c6d0de151e9a541607c4778c687c53101b"
+    },
+    {
+      "path": "05-sanity/object-types/livingCostSourceBasis.js",
+      "size_bytes": 1026,
+      "sha256": "4dc1cd3e9621634bf4664aad5d87adc90b8c657de92a1b0a504754dd065deba2"
+    },
+    {
+      "path": "05-sanity/object-types/monthlyRange.js",
+      "size_bytes": 751,
+      "sha256": "6c4c4c6973878c3a684c71b52075bca0d00b386b8e0c70f2d65d68825204a4a7"
+    },
+    {
+      "path": "05-sanity/object-types/progressionRequirement.js",
+      "size_bytes": 859,
+      "sha256": "3354e3bdadc0962d86512207c3b8e845a6bc9bd90420de65e41c97c10b6c6261"
+    },
+    {
+      "path": "05-sanity/object-types/selectionCriterion.js",
+      "size_bytes": 1177,
+      "sha256": "b982457b41c70343e3926f6a6ee9d10872129d3e789079ae436e63092cf41a82"
+    },
+    {
+      "path": "05-sanity/object-types/testRequirement.js",
+      "size_bytes": 1037,
+      "sha256": "42c70e78286043d9c4621668850c0f4ff83076d97a646db4d7a802ff7fec40f2"
+    },
+    {
+      "path": "05-sanity/object-types/testingPolicy.js",
+      "size_bytes": 1104,
+      "sha256": "bb2497343f277b20815805717fe46fcf0a7721f01b8da1e071c9f09c32cc7da9"
+    },
+    {
+      "path": "06-batch-ingestion/batch-output-contract.md",
+      "size_bytes": 4713,
+      "sha256": "8921524592cc972ca2013c9a0654f8edd0f77a2c1d33f8752413abf8d650ca6a"
+    },
+    {
+      "path": "06-batch-ingestion/batch-spec.md",
+      "size_bytes": 6449,
+      "sha256": "0bf95f73772953a442137831557f0ac19b84cb4b9b3081539b1f22345bcb10c3"
+    },
+    {
+      "path": "06-batch-ingestion/example-batch-manifest.json",
+      "size_bytes": 2114,
+      "sha256": "13c8cf7af98b289a3cc4555dae67ef696d5cdd1580f63ea727219ebcc5b9131e"
+    },
+    {
+      "path": "07-directory-strategy/collection-model.md",
+      "size_bytes": 5800,
+      "sha256": "af9c7b780e50f815a836f3e31b9626fea8e78b316e80fb627710d9acf4ad10cf"
+    },
+    {
+      "path": "08-reporting/five-school-synthesis.md",
+      "size_bytes": 10399,
+      "sha256": "7b97cc768e4533e98a37e858dde81a95b0124257989230604a4e719451d63bac"
+    },
+    {
+      "path": "08-reporting/v1.2-freeze-report.md",
+      "size_bytes": 11567,
+      "sha256": "b84b65331f23602b999bf3f3dbf743a854173ac1b16adc7fd7fdebd36fa768bd"
+    }
+  ]
+}

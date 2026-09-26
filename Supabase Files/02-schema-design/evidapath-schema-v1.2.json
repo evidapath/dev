@@ -1,0 +1,1980 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evidapath.internal/schema/v1.2/evidapath-v1.2.schema.json",
+  "title": "EvidaPath University & Scholarship Intelligence -- V1.2 canonical schema (executable, implementation-ready)",
+  "description": "Machine-enforced representation of evidapath-schema-v1.2.md. Synthesized from five completed V1.1 stress-test runs (TU Delft, Oxford, Toronto, TU Munich, NYU Abu Dhabi). This file is the semantic contract, not the documentation -- if the two ever disagree, the markdown doc is authoritative and this file must be corrected to match it, never the reverse. additionalProperties is false everywhere a canonical field list exists; the ONLY escape hatch for a useful-but-not-yet-canonical fact is the explicit 'extension_metadata' object defined per entity.",
+  "$defs": {
+    "iso_date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "iso_datetime": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^https?://"
+    },
+    "record_status": {
+      "type": "string",
+      "enum": [
+        "RESEARCHED",
+        "STRUCTURED",
+        "VERIFIED",
+        "HUMAN_REVIEW",
+        "APPROVED",
+        "PUBLISHED"
+      ]
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "VERIFIED",
+        "VERIFIED_ABSENT",
+        "SUPPORTED",
+        "ESTIMATED",
+        "UNKNOWN",
+        "CONFLICT"
+      ]
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "official_university",
+        "official_government",
+        "scholarship_provider",
+        "recognized_authority",
+        "secondary"
+      ]
+    },
+    "institution_type": {
+      "type": "string",
+      "enum": [
+        "public",
+        "private-nonprofit",
+        "private-forprofit",
+        "joint-venture"
+      ]
+    },
+    "degree_type": {
+      "type": "string",
+      "enum": [
+        "BA",
+        "BSc",
+        "BEng",
+        "BBA",
+        "MA",
+        "MSc",
+        "MEng",
+        "MBA",
+        "PhD",
+        "other"
+      ]
+    },
+    "duration_unit": {
+      "type": "string",
+      "enum": [
+        "years",
+        "months",
+        "semesters"
+      ]
+    },
+    "applicant_category_dimension": {
+      "type": "string",
+      "enum": [
+        "prior_curriculum",
+        "residency_citizenship"
+      ]
+    },
+    "living_cost_source_basis_kind": {
+      "type": "string",
+      "enum": [
+        "genuine_cost_of_living_estimate",
+        "government_minimum_income_threshold",
+        "not_published"
+      ]
+    },
+    "tuition_basis": {
+      "type": "string",
+      "enum": [
+        "statutory",
+        "institutional",
+        "per-credit",
+        "per-program",
+        "other"
+      ]
+    },
+    "provider_type": {
+      "type": "string",
+      "enum": [
+        "institutional",
+        "government",
+        "external-private",
+        "university-fund"
+      ]
+    },
+    "award_type": {
+      "type": "string",
+      "enum": [
+        "full_tuition",
+        "partial_tuition",
+        "fixed_amount",
+        "stipend",
+        "living_cost_support",
+        "fee_waiver",
+        "mixed"
+      ]
+    },
+    "blocking_status": {
+      "type": "string",
+      "enum": [
+        "blocking",
+        "non_blocking"
+      ]
+    },
+    "resolution_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "accepted",
+        "rejected"
+      ]
+    },
+    "test_required_flag": {
+      "type": "string",
+      "enum": [
+        "required",
+        "recommended"
+      ]
+    },
+    "extension_metadata": {
+      "type": "object",
+      "description": "The ONLY sanctioned place for a real, source-backed fact that does not yet map onto a canonical v1.1 field. Never a general-purpose passthrough -- every key under 'fields' must be listed in 'proposed_v1_2_fields' if the intent is to eventually promote it to a canonical field, or left undocumented-but-flagged in 'note' if it's a one-off annotation not expected to become canonical.",
+      "additionalProperties": false,
+      "properties": {
+        "note": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "object"
+        },
+        "proposed_v1_2_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "note",
+        "fields"
+      ]
+    },
+    "test_requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "test_name",
+        "required"
+      ],
+      "properties": {
+        "test_name": {
+          "type": "string"
+        },
+        "min_score": {
+          "type": [
+            "string",
+            "number",
+            "null"
+          ]
+        },
+        "required": {
+          "$ref": "#/$defs/test_required_flag"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "language_requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "language"
+      ],
+      "properties": {
+        "language": {
+          "type": "string"
+        },
+        "test_name": {
+          "type": "string"
+        },
+        "min_score": {
+          "type": [
+            "string",
+            "number",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "line_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "amount",
+        "frequency"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "amount": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "frequency": {
+          "type": "string"
+        }
+      }
+    },
+    "living_cost_source_basis": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "description",
+        "administering_body"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/living_cost_source_basis_kind"
+        },
+        "description": {
+          "type": "string"
+        },
+        "administering_body": {
+          "type": "string"
+        }
+      }
+    },
+    "country": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "region",
+        "currency_default"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "currency_default": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        }
+      }
+    },
+    "city": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "country_ref"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z]{2}-[a-z0-9-]+$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "country_ref": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        }
+      }
+    },
+    "university": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "canonical_name",
+        "aliases",
+        "institution_type",
+        "country_ref",
+        "primary_city_ref",
+        "official_website",
+        "source_refs",
+        "record_status",
+        "last_researched",
+        "last_verified"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z]{2}-[a-z0-9-]+$"
+        },
+        "canonical_name": {
+          "type": "string"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "institution_type": {
+          "$ref": "#/$defs/institution_type"
+        },
+        "country_ref": {
+          "type": "string"
+        },
+        "primary_city_ref": {
+          "type": "string"
+        },
+        "official_website": {
+          "$ref": "#/$defs/url"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "record_status": {
+          "$ref": "#/$defs/record_status"
+        },
+        "last_researched": {
+          "$ref": "#/$defs/iso_date"
+        },
+        "last_verified": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        }
+      }
+    },
+    "campus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "university_ref",
+        "name",
+        "city_ref",
+        "country_ref",
+        "is_primary",
+        "official_url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "university_ref": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "city_ref": {
+          "type": "string"
+        },
+        "country_ref": {
+          "type": "string"
+        },
+        "is_primary": {
+          "type": "boolean"
+        },
+        "official_url": {
+          "$ref": "#/$defs/url"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        }
+      }
+    },
+    "program": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "university_ref",
+        "program_name",
+        "faculty_school",
+        "degree_type",
+        "degree_type_local",
+        "field_of_study",
+        "duration_value",
+        "duration_unit",
+        "language_of_instruction",
+        "official_program_url",
+        "decision_context_academic_year",
+        "source_refs",
+        "record_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "university_ref": {
+          "type": "string"
+        },
+        "campus_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "program_name": {
+          "type": "string"
+        },
+        "faculty_school": {
+          "type": "string"
+        },
+        "degree_type": {
+          "$ref": "#/$defs/degree_type"
+        },
+        "degree_type_local": {
+          "type": "string"
+        },
+        "field_of_study": {
+          "type": "string"
+        },
+        "duration_value": {
+          "type": "number"
+        },
+        "duration_unit": {
+          "$ref": "#/$defs/duration_unit"
+        },
+        "language_of_instruction": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+          }
+        },
+        "official_program_url": {
+          "$ref": "#/$defs/url"
+        },
+        "decision_context_academic_year": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "record_status": {
+          "$ref": "#/$defs/record_status"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        },
+        "college_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "application_platform": {
+          "type": "string"
+        },
+        "application_requirements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/application_requirement"
+          }
+        },
+        "testing_policy": {
+          "$ref": "#/$defs/testing_policy"
+        }
+      }
+    },
+    "applicant_category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "university_ref",
+        "dimension",
+        "label",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "university_ref": {
+          "type": "string"
+        },
+        "dimension": {
+          "$ref": "#/$defs/applicant_category_dimension"
+        },
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        }
+      }
+    },
+    "admissions_requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "program_ref",
+        "prior_curriculum_category_ref",
+        "curriculum_type",
+        "academic_threshold",
+        "required_subjects",
+        "standardized_tests",
+        "language_requirements",
+        "notes",
+        "source_refs",
+        "academic_year",
+        "last_checked",
+        "verification_status",
+        "record_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "program_ref": {
+          "type": "string"
+        },
+        "prior_curriculum_category_ref": {
+          "type": "string"
+        },
+        "curriculum_type": {
+          "type": "string"
+        },
+        "academic_threshold": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "required_subjects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "standardized_tests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/test_requirement"
+          }
+        },
+        "language_requirements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/language_requirement"
+          }
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "academic_year": {
+          "type": "string"
+        },
+        "last_checked": {
+          "$ref": "#/$defs/iso_date"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/verification_status"
+        },
+        "record_status": {
+          "$ref": "#/$defs/record_status"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        },
+        "admission_stage_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "cost_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "program_ref",
+        "academic_year",
+        "residency_category_ref",
+        "currency",
+        "tuition_annual",
+        "tuition_basis",
+        "mandatory_fees_annual",
+        "mandatory_fees_breakdown",
+        "estimated_living_costs_annual",
+        "living_cost_source_basis",
+        "other_material_costs",
+        "duration_years",
+        "source_refs",
+        "last_checked",
+        "verification_status",
+        "record_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "program_ref": {
+          "type": "string"
+        },
+        "academic_year": {
+          "type": "string"
+        },
+        "residency_category_ref": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "tuition_annual": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "tuition_basis": {
+          "$ref": "#/$defs/tuition_basis"
+        },
+        "mandatory_fees_annual": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "mandatory_fees_breakdown": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/line_item"
+          }
+        },
+        "estimated_living_costs_annual": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "living_cost_source_basis": {
+          "$ref": "#/$defs/living_cost_source_basis"
+        },
+        "other_material_costs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/line_item"
+          }
+        },
+        "duration_years": {
+          "type": "number"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "last_checked": {
+          "$ref": "#/$defs/iso_date"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/verification_status"
+        },
+        "record_status": {
+          "$ref": "#/$defs/record_status"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        },
+        "estimated_living_costs_monthly_range": {
+          "$ref": "#/$defs/monthly_range"
+        },
+        "college_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "program_pathway_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "estimated_living_costs_annual": {
+                "type": "number"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "living_cost_source_basis": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "scholarship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "provider",
+        "provider_type",
+        "institutions_covered",
+        "programs_covered",
+        "degree_levels",
+        "eligible_citizenships",
+        "residency_restrictions",
+        "academic_criteria",
+        "other_eligibility_criteria",
+        "award_type",
+        "award_amount",
+        "award_amount_currency",
+        "renewable",
+        "renewal_conditions",
+        "duration",
+        "application_deadline",
+        "deadline_academic_year",
+        "official_source_url",
+        "source_refs",
+        "last_checked",
+        "verification_status",
+        "record_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "provider_type": {
+          "$ref": "#/$defs/provider_type"
+        },
+        "institutions_covered": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "programs_covered": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "degree_levels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "eligible_citizenships": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "residency_restrictions": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "academic_criteria": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "other_eligibility_criteria": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "award_type": {
+          "$ref": "#/$defs/award_type"
+        },
+        "award_amount": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "award_amount_currency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Z]{3}$"
+        },
+        "renewable": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "renewal_conditions": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "duration": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "application_deadline": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "deadline_academic_year": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "official_source_url": {
+          "$ref": "#/$defs/url"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "last_checked": {
+          "$ref": "#/$defs/iso_date"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/verification_status"
+        },
+        "record_status": {
+          "$ref": "#/$defs/record_status"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        },
+        "college_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "source_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "url",
+        "source_organization",
+        "source_type",
+        "title",
+        "retrieved_at",
+        "fields_supported",
+        "excerpt",
+        "retrieval_method",
+        "notes"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^src-[0-9]+$"
+        },
+        "url": {
+          "$ref": "#/$defs/url"
+        },
+        "source_organization": {
+          "type": "string"
+        },
+        "source_type": {
+          "$ref": "#/$defs/source_type"
+        },
+        "title": {
+          "type": "string"
+        },
+        "retrieved_at": {
+          "$ref": "#/$defs/iso_datetime"
+        },
+        "fields_supported": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excerpt": {
+          "type": "string"
+        },
+        "retrieval_method": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "verification_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "record_ref",
+        "field_checked",
+        "proposed_value",
+        "verification_status",
+        "source_refs",
+        "verifier_pass_timestamp",
+        "conflict_or_limitation_notes",
+        "blocking_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "record_ref": {
+          "type": "string",
+          "pattern": "^[A-Za-z]+:.+$"
+        },
+        "field_checked": {
+          "type": "string"
+        },
+        "proposed_value": {},
+        "verification_status": {
+          "$ref": "#/$defs/verification_status"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "verifier_pass_timestamp": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "conflict_or_limitation_notes": {
+          "type": "string"
+        },
+        "blocking_status": {
+          "$ref": "#/$defs/blocking_status"
+        },
+        "extraction_pass_timestamp": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Additive audit metadata, not a canonical v1.1 field -- must never substitute for verifier_pass_timestamp."
+        },
+        "verification_method": {
+          "type": "string",
+          "description": "Additive audit metadata (e.g. independent_refetch vs cached_extraction_reread_only), not a canonical v1.1 field."
+        },
+        "material_extension_fact": {
+          "type": "boolean",
+          "description": "Formalized in V1.2 (was an ad hoc additive field in TUM/NYUAD runs). True when this VerificationRecord independently verifies a decision-relevant fact living in an entity's extension_metadata.fields rather than a canonical field."
+        }
+      }
+    },
+    "change_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "record_ref",
+        "field",
+        "previous_value",
+        "proposed_value",
+        "source_ref",
+        "reason_for_change",
+        "detected_date",
+        "resolution_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "record_ref": {
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        },
+        "previous_value": {},
+        "proposed_value": {},
+        "source_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason_for_change": {
+          "type": "string"
+        },
+        "detected_date": {
+          "$ref": "#/$defs/iso_date"
+        },
+        "resolution_status": {
+          "$ref": "#/$defs/resolution_status"
+        }
+      }
+    },
+    "derived_cost_estimate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "cost_profile_ref",
+        "field_name",
+        "value",
+        "inputs",
+        "formula_method",
+        "assumptions",
+        "calculation_version",
+        "calculated_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "cost_profile_ref": {
+          "type": "string"
+        },
+        "field_name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "formula_method": {
+          "type": "string"
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "calculation_version": {
+          "type": "string"
+        },
+        "calculated_at": {
+          "$ref": "#/$defs/iso_datetime"
+        }
+      }
+    },
+    "admission_stage_type": {
+      "type": "string",
+      "enum": [
+        "university_entry",
+        "faculty_entry",
+        "admission_category",
+        "qualification_recognition",
+        "preparatory_pathway",
+        "selection_stage",
+        "program_entry",
+        "major_declaration",
+        "progression"
+      ]
+    },
+    "financial_requirement_type": {
+      "type": "string",
+      "enum": [
+        "visa_proof_of_funds",
+        "blocked_account",
+        "government_minimum_resources",
+        "enrollment_deposit",
+        "other_liquidity_requirement"
+      ]
+    },
+    "financial_aid_policy_type": {
+      "type": "string",
+      "enum": [
+        "need_based",
+        "merit_based",
+        "mixed"
+      ]
+    },
+    "need_aware_or_blind": {
+      "type": "string",
+      "enum": [
+        "need_aware",
+        "need_blind",
+        "unknown"
+      ]
+    },
+    "pathway_type": {
+      "type": "string",
+      "enum": [
+        "primary",
+        "integrated_continuation",
+        "alternate_exit"
+      ]
+    },
+    "application_requirement_type": {
+      "type": "string",
+      "enum": [
+        "form",
+        "transcript_or_school_report",
+        "recommendation",
+        "essay",
+        "standardized_test_score",
+        "self_reported_record",
+        "interview_or_evaluation_event",
+        "financial_document",
+        "other"
+      ]
+    },
+    "decision_plan_type": {
+      "type": "string",
+      "enum": [
+        "early_decision_1",
+        "early_decision_2",
+        "regular_decision",
+        "rolling",
+        "single_stage",
+        "program_specific_stage"
+      ]
+    },
+    "requirement_necessity": {
+      "type": "string",
+      "enum": [
+        "required",
+        "recommended",
+        "optional"
+      ]
+    },
+    "selection_criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "criterion_name",
+        "description",
+        "mandatory"
+      ],
+      "properties": {
+        "criterion_name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "threshold_or_formula": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "weight": {
+          "type": [
+            "string",
+            "number",
+            "null"
+          ]
+        },
+        "mandatory": {
+          "type": "boolean"
+        }
+      }
+    },
+    "application_requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requirement_type",
+        "name",
+        "necessity"
+      ],
+      "properties": {
+        "requirement_type": {
+          "$ref": "#/$defs/application_requirement_type"
+        },
+        "name": {
+          "type": "string"
+        },
+        "necessity": {
+          "$ref": "#/$defs/requirement_necessity"
+        },
+        "description": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "accepted_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "test_name",
+        "necessity"
+      ],
+      "properties": {
+        "test_name": {
+          "type": "string"
+        },
+        "necessity": {
+          "$ref": "#/$defs/requirement_necessity"
+        },
+        "competitive_benchmark": {
+          "type": [
+            "string",
+            "number",
+            "null"
+          ],
+          "description": "A non-binding 'competitive applicants typically score' figure. Never represent this as a formal minimum unless the source states a real minimum."
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "testing_policy": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "policy_type",
+        "accepted_assessments",
+        "scope_note"
+      ],
+      "properties": {
+        "policy_type": {
+          "type": "string",
+          "enum": [
+            "required",
+            "optional",
+            "test_flexible",
+            "test_blind",
+            "not_applicable"
+          ]
+        },
+        "accepted_assessments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/accepted_assessment"
+          }
+        },
+        "scope_note": {
+          "type": "string",
+          "description": "Which cycle(s) this policy applies to, e.g. 'test-optional through 2027-2028 cycle'."
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "monthly_range": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "min",
+        "max",
+        "currency"
+      ],
+      "properties": {
+        "min": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "max": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        }
+      }
+    },
+    "progression_requirement": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "description"
+      ],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "gpa_or_class_threshold": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decision_point_timing": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "college": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "university_ref",
+        "name",
+        "source_refs",
+        "record_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "university_ref": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "official_url": {
+          "$ref": "#/$defs/url"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "record_status": {
+          "$ref": "#/$defs/record_status"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        }
+      }
+    },
+    "program_pathway": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "program_ref",
+        "pathway_type",
+        "degree_type",
+        "degree_type_local",
+        "duration_value",
+        "duration_unit",
+        "source_refs",
+        "verification_status",
+        "record_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "program_ref": {
+          "type": "string",
+          "description": "The base Program this pathway is reached from/through."
+        },
+        "pathway_type": {
+          "$ref": "#/$defs/pathway_type"
+        },
+        "degree_type": {
+          "$ref": "#/$defs/degree_type"
+        },
+        "degree_type_local": {
+          "type": "string"
+        },
+        "duration_value": {
+          "type": "number"
+        },
+        "duration_unit": {
+          "$ref": "#/$defs/duration_unit"
+        },
+        "progression_requirement": {
+          "$ref": "#/$defs/progression_requirement"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "verification_status": {
+          "$ref": "#/$defs/verification_status"
+        },
+        "record_status": {
+          "$ref": "#/$defs/record_status"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        }
+      }
+    },
+    "admission_stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "university_ref",
+        "program_ref",
+        "stage_type",
+        "sequence_order",
+        "name",
+        "description",
+        "criteria",
+        "source_refs",
+        "verification_status",
+        "record_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "university_ref": {
+          "type": "string"
+        },
+        "program_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Null when the stage applies at the university level (e.g. NYUAD's university_entry stage), not scoped to one program."
+        },
+        "applicant_category_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Null when the stage applies uniformly across all prior-curriculum categories."
+        },
+        "stage_type": {
+          "$ref": "#/$defs/admission_stage_type"
+        },
+        "sequence_order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/selection_criterion"
+          }
+        },
+        "decision_outcome_options": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "verification_status": {
+          "$ref": "#/$defs/verification_status"
+        },
+        "record_status": {
+          "$ref": "#/$defs/record_status"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        }
+      }
+    },
+    "decision_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "university_ref",
+        "program_ref",
+        "plan_type",
+        "academic_year",
+        "source_refs",
+        "verification_status",
+        "record_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "university_ref": {
+          "type": "string"
+        },
+        "program_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Null when the decision plan applies university-wide (e.g. NYUAD's ED/RD structure), not scoped to one program."
+        },
+        "plan_type": {
+          "$ref": "#/$defs/decision_plan_type"
+        },
+        "application_platform": {
+          "type": "string"
+        },
+        "binding": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "application_deadline": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decision_release_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "academic_year": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "verification_status": {
+          "$ref": "#/$defs/verification_status"
+        },
+        "record_status": {
+          "$ref": "#/$defs/record_status"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        }
+      }
+    },
+    "financial_requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "program_ref",
+        "residency_category_ref",
+        "requirement_type",
+        "amount",
+        "currency",
+        "refundable",
+        "administering_body",
+        "academic_year",
+        "source_refs",
+        "verification_status",
+        "record_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "program_ref": {
+          "type": "string"
+        },
+        "residency_category_ref": {
+          "type": "string"
+        },
+        "requirement_type": {
+          "$ref": "#/$defs/financial_requirement_type"
+        },
+        "amount": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Z]{3}$"
+        },
+        "refundable": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "frequency": {
+          "type": "string"
+        },
+        "administering_body": {
+          "type": "string"
+        },
+        "academic_year": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "verification_status": {
+          "$ref": "#/$defs/verification_status"
+        },
+        "record_status": {
+          "$ref": "#/$defs/record_status"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        }
+      }
+    },
+    "financial_aid_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "university_ref",
+        "program_ref",
+        "policy_type",
+        "need_aware_or_blind",
+        "award_basis_description",
+        "application_requirements",
+        "source_refs",
+        "verification_status",
+        "record_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "university_ref": {
+          "type": "string"
+        },
+        "program_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "policy_type": {
+          "$ref": "#/$defs/financial_aid_policy_type"
+        },
+        "need_assessment_mechanism": {
+          "type": "string"
+        },
+        "need_aware_or_blind": {
+          "$ref": "#/$defs/need_aware_or_blind"
+        },
+        "eligible_population_notes": {
+          "type": "string"
+        },
+        "award_basis_description": {
+          "type": "string",
+          "description": "Free-text description of how awards are determined. Deliberately has NO numeric award_amount field -- individualized aid amounts are not public market facts and belong in Supabase per-student, never fabricated here."
+        },
+        "max_award_cap_description": {
+          "type": "string"
+        },
+        "application_requirements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/application_requirement"
+          }
+        },
+        "renewable": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "renewal_conditions": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "application_deadline": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "academic_year": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "verification_status": {
+          "$ref": "#/$defs/verification_status"
+        },
+        "record_status": {
+          "$ref": "#/$defs/record_status"
+        },
+        "extension_metadata": {
+          "$ref": "#/$defs/extension_metadata"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "schema_version",
+    "countries",
+    "cities",
+    "universities",
+    "campuses",
+    "colleges",
+    "programs",
+    "program_pathways",
+    "applicant_categories",
+    "admission_stages",
+    "admissions_requirements",
+    "decision_plans",
+    "cost_profiles",
+    "financial_requirements",
+    "scholarships",
+    "financial_aid_policies",
+    "source_records",
+    "derived_cost_estimates"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "1.2"
+    },
+    "countries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/country"
+      }
+    },
+    "cities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/city"
+      }
+    },
+    "universities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/university"
+      }
+    },
+    "campuses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/campus"
+      }
+    },
+    "programs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/program"
+      }
+    },
+    "applicant_categories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/applicant_category"
+      }
+    },
+    "admissions_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/admissions_requirement"
+      }
+    },
+    "cost_profiles": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/cost_profile"
+      }
+    },
+    "scholarships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scholarship"
+      }
+    },
+    "source_records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source_record"
+      }
+    },
+    "derived_cost_estimates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/derived_cost_estimate"
+      }
+    },
+    "colleges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/college"
+      }
+    },
+    "program_pathways": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/program_pathway"
+      }
+    },
+    "admission_stages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/admission_stage"
+      }
+    },
+    "decision_plans": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/decision_plan"
+      }
+    },
+    "financial_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/financial_requirement"
+      }
+    },
+    "financial_aid_policies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/financial_aid_policy"
+      }
+    }
+  }
+}

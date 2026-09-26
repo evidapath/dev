@@ -1,0 +1,571 @@
+{
+  "run_id": "2026-09-23_ae-nyu-abu-dhabi_computer-science",
+  "schema_version": "1.2",
+  "verifier_pass_timestamp": null,
+  "verifier": "",
+  "note": "Carried forward from the V1.1 run's verification-records.json, formalized to the V1.2 VerificationRecord shape: absence_claim=true records were promoted to verification_status=VERIFIED_ABSENT; material_extension_fact is preserved as the now-formal schema field; NYUAD-run-specific informal semantic-QA flags were folded into conflict_or_limitation_notes since they are not part of the V1.2 schema (the semantic checks themselves are enforced by 04-pipeline/check_verification_coverage_v1_2.py instead). No new field-level verification claims were added or removed -- this is a reformatting pass, not new research, consistent with this synthesis being migration-only.",
+  "verification_records": [
+    {
+      "id": "vr-01",
+      "record_ref": "University:ae-nyu-abu-dhabi",
+      "field_checked": "canonical_name",
+      "proposed_value": "New York University Abu Dhabi",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Consistent across every official NYU/NYUAD page reviewed.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-02",
+      "record_ref": "University:ae-nyu-abu-dhabi",
+      "field_checked": "official_website",
+      "proposed_value": "https://nyuad.nyu.edu/",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Directly confirmed.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-03",
+      "record_ref": "University:ae-nyu-abu-dhabi",
+      "field_checked": "institution_type",
+      "proposed_value": "private-nonprofit",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "No NYUAD page states institution_type as a standalone fact; inferred from NYU's well-established private-nonprofit charter status. Capped SUPPORTED, not VERIFIED, since this is an inference rather than a direct NYUAD-specific statement.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-04",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "program_name",
+      "proposed_value": "Computer Science (BS)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "NYU Bulletins (registrar catalog) is the single authoritative record-of-degree source; independently re-opened during the verification pass and confirmed identical.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-05",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "degree_type_local, faculty_school",
+      "proposed_value": "Bachelor of Science (BS); Division of Science",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "degree_type_local is well-supported by src-04/src-08's explicit BA/BS distinction. faculty_school ('Division of Science') is inferred from the CS program's URL path (/academics/divisions/science/...) rather than an explicit quoted statement in the excerpts captured this run -- capped SUPPORTED.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-06",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "official_program_url",
+      "proposed_value": "https://bulletins.nyu.edu/undergraduate/abu-dhabi/programs/computer-science-bs/",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Directly confirmed as the canonical bulletin URL.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-07",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "duration_value, duration_unit",
+      "proposed_value": "4.0 years",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-08"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "No NYUAD page states program duration in years as a literal figure; derived from the standard 128-credit/32-course full-time NYU undergraduate load and corroborated by 'four years' housing-guarantee and ED/RD enrollment-year language. Capped SUPPORTED per the same discipline TUM applied to its semester-to-year duration conversion.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-08",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "language_of_instruction",
+      "proposed_value": "en",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-04",
+        "src-02"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Not explicitly stated as a standalone fact on any page reviewed; inferred from the English-proficiency admissions requirement and the English-language bulletin/course catalog itself. Uncontested but not a direct quote -- capped SUPPORTED.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-09",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "extension_metadata.fields.application_structure",
+      "proposed_value": "Common App, campus preference, single decision",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Directly and explicitly stated on the official NYUAD apply page; core stress-test #2 finding.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-10",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "extension_metadata.fields.decision_plans",
+      "proposed_value": "ED I Nov 1/Dec 15; ED II Jan 1/Feb 15; RD Jan 5/Apr 1 (2026-2027 cycle)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-05",
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched (src-15, PDF rendition, separate timestamp) and found byte-identical to the original HTML extraction (src-05). Genuine independent confirmation, not a cached re-read.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-11",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "extension_metadata.fields.holistic_admissions_process",
+      "proposed_value": "Common App + transcript + STARS + 1 recommendation + optional essay/tests + Candidate Weekend; no numeric threshold",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Directly stated. Reviewed under this run's holistic-admissions semantic QA rule: confirmed no admission probability, numeric threshold, or scoring model was invented from this holistic language. [holistic-admissions semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-12",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "extension_metadata.fields.major_declaration_timing",
+      "proposed_value": "CONFLICT: 'end of second year' (src-08) vs 'spring break of second year' (src-09)",
+      "verification_status": "CONFLICT",
+      "source_refs": [
+        "src-08",
+        "src-09"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Two official NYU sources state different major-declaration deadlines. Not resolved by guessing; logged in conflicts.json and pushes Program.record_status to HUMAN_REVIEW.",
+      "blocking_status": "blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-13",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "extension_metadata.fields.major_entry_structure",
+      "proposed_value": "University-general admission, major declared later, no competitive CS-specific cap found",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-09"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "src-09 lists 26 undergraduate majors with no stated competitive-entry or GPA-gate process for any of them, including Computer Science, beyond the general 2.0 cumulative GPA / C-or-higher graduation rule. This is a meaningful verified absence for the specific claim 'no competitive cap or extra GPA gate to declare Computer Science', though capped SUPPORTED overall because it rests on the absence of language in one bulletin section rather than an explicit university-wide policy statement ruling out any possible cap. [holistic-admissions semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-14",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "extension_metadata.fields.required_secondary_credential",
+      "proposed_value": "CS majors must also complete a minor/second major in a listed set of fields",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Directly and explicitly stated in the NYU Bulletins program description.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-15",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "extension_metadata.fields.financial_aid_policy",
+      "proposed_value": "Merit (limited) + need-based (CSS Profile, individualized, not fixed) for all non-Emirati applicants; need-blind/need-aware status unconfirmed",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-06",
+        "src-10",
+        "src-16"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched via src-16 (PDF rendition, separate timestamp). The re-fetch confirmed the core need-based/individualized-award language verbatim, but did NOT reproduce an explicit 'need-aware' (vs. need-blind) policy statement found only in the first-pass extraction summary -- that specific characterization is therefore NOT promoted to VERIFIED and is logged as UNKNOWN in missing-data.json (md-01). Reviewed under this run's financial-aid semantic QA rule: confirmed the individualized need-based aid pool and the named-but-variable Falcon Dirhams award are NOT represented as fixed Scholarship records anywhere in records.json -- only the genuinely fixed Sheikh Mohamed bin Zayed award is. [financial-aid semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-16",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "extension_metadata.fields.testing_policy_scope_note",
+      "proposed_value": "Test-optional confirmed through 2027-2028 cycle",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Directly stated; the one Fall-2027-relevant policy element already published, unlike decision-plan deadlines and Cost of Attendance for that future cycle.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-17",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "extension_metadata.fields.transfer_admission_status",
+      "proposed_value": "Not accepting transfer applications for 2026-27 cycle",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-05"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Directly stated; out of scope for this run's first-year CS record but preserved for completeness.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-18",
+      "record_ref": "AdmissionsRequirement:admreq-us-hs",
+      "field_checked": "academic_threshold, required_subjects, standardized_tests",
+      "proposed_value": "no published curriculum-specific cutoff; test-optional",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-02",
+        "src-05",
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "NYUAD's own entry-requirements page explicitly states applicants come from 'a wide range of educational systems and backgrounds' with no curriculum-specific numeric cutoff, and the test-optional policy is independently re-confirmed (src-15). VERIFIED ABSENCE, not an unresearched UNKNOWN. [holistic-admissions semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-19",
+      "record_ref": "AdmissionsRequirement:admreq-ib",
+      "field_checked": "academic_threshold, required_subjects, standardized_tests",
+      "proposed_value": "no published curriculum-specific cutoff; test-optional",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-02",
+        "src-05",
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Same VERIFIED ABSENCE basis as vr-18, applied to the IB Diploma applicant category -- NYUAD does not publish IB-specific point-total or subject requirements. [holistic-admissions semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-20",
+      "record_ref": "AdmissionsRequirement:admreq-a-level",
+      "field_checked": "academic_threshold, required_subjects, standardized_tests",
+      "proposed_value": "no published curriculum-specific cutoff; test-optional",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-02",
+        "src-05",
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Same VERIFIED ABSENCE basis as vr-18, applied to the GCE A-Level applicant category -- NYUAD does not publish A-Level-specific grade requirements. [holistic-admissions semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-21",
+      "record_ref": "AdmissionsRequirement:admreq-international-other",
+      "field_checked": "academic_threshold, required_subjects, standardized_tests",
+      "proposed_value": "no published curriculum-specific cutoff; test-optional",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-02",
+        "src-05",
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Same VERIFIED ABSENCE basis as vr-18, applied to the general international-qualification applicant category. [holistic-admissions semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-22",
+      "record_ref": "AdmissionsRequirement:admreq-us-hs",
+      "field_checked": "language_requirements",
+      "proposed_value": "English proficiency required unless exempt; no formal minimum score",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Directly stated. The 'no formal minimum score, only competitive benchmarks' element is itself a meaningful verified absence.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-23",
+      "record_ref": "AdmissionsRequirement:admreq-ib",
+      "field_checked": "language_requirements",
+      "proposed_value": "English proficiency required unless exempt; no formal minimum score",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Same basis as vr-22, applied to the IB category.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-24",
+      "record_ref": "AdmissionsRequirement:admreq-a-level",
+      "field_checked": "language_requirements",
+      "proposed_value": "English proficiency required unless exempt; no formal minimum score",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Same basis as vr-22, applied to the A-Level category.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-25",
+      "record_ref": "AdmissionsRequirement:admreq-international-other",
+      "field_checked": "language_requirements",
+      "proposed_value": "English proficiency required unless exempt; no formal minimum score",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Same basis as vr-22, applied to the general-international category.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-26",
+      "record_ref": "CostProfile:cost-uniform",
+      "field_checked": "tuition_annual",
+      "proposed_value": 68576,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-07",
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched via src-14 (PDF rendition, separate timestamp) -- figure matched exactly.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-27",
+      "record_ref": "CostProfile:cost-uniform",
+      "field_checked": "mandatory_fees_annual, mandatory_fees_breakdown",
+      "proposed_value": "15838 (2308+1730+5800+6000)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-07",
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched via src-14 -- all four line items matched exactly.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-28",
+      "record_ref": "CostProfile:cost-uniform",
+      "field_checked": "estimated_living_costs_annual, living_cost_source_basis.kind",
+      "proposed_value": "5914 (3550+2364), genuine_cost_of_living_estimate",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-07",
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched via src-14. living_cost_source_basis.kind confirmed as an ordinary non-billed planning estimate, explicitly NOT a visa/immigration deposit mechanism -- NYU's own wording ('won't appear on your bill') rules out the visa_proof_of_funds_deposit interpretation for this specific figure.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-29",
+      "record_ref": "CostProfile:cost-uniform",
+      "field_checked": "residency_category_ref (scope)",
+      "proposed_value": "single uniform Cost of Attendance, no citizenship-differentiated tier",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-07",
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "NYU's own published Cost of Attendance page states one figure with no citizenship-based variant anywhere in the document, independently re-confirmed via src-14. VERIFIED ABSENCE of a citizenship-tiered sticker cost -- a genuine structural difference from TU Munich/Toronto.",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch"
+    },
+    {
+      "id": "vr-30",
+      "record_ref": "Scholarship:ae-sheikh-mohamed-bin-zayed-nyuad-scholarship",
+      "field_checked": "award_amount, award_type",
+      "proposed_value": "100% of tuition + registration fees + study/travel expenses, full_tuition",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-11",
+        "src-06",
+        "src-10"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Directly and explicitly stated across three official NYUAD pages with consistent wording on the award's scope. Reviewed under this run's financial-aid semantic QA rule: confirmed this is a genuinely fixed, named award for a defined population, not a personalized package mislabeled as fixed. [financial-aid semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-31",
+      "record_ref": "Scholarship:ae-sheikh-mohamed-bin-zayed-nyuad-scholarship",
+      "field_checked": "eligible_citizenships, other_eligibility_criteria",
+      "proposed_value": "UAE nationals and children of an Emirati mother or father",
+      "verification_status": "CONFLICT",
+      "source_refs": [
+        "src-11",
+        "src-06",
+        "src-10"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "src-11 states 'children of Emirati mothers' while src-06/src-10 state 'children of an Emirati mother or father' -- an internal NYUAD wording inconsistency across its own official pages that materially affects who is eligible (a child of an Emirati father and non-Emirati mother). Not resolved by guessing; pushes Scholarship.record_status to HUMAN_REVIEW. [financial-aid semantic QA reviewed]",
+      "blocking_status": "blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "cached_extraction_reread_only"
+    },
+    {
+      "id": "vr-32",
+      "record_ref": "AdmissionsRequirement:admreq-us-hs",
+      "field_checked": "extension_metadata.fields (subject-gating absence + program-preparation recommendations)",
+      "proposed_value": "No formal admissions-gating subject requirement is published for entry to NYU Abu Dhabi (Computer Science is a later major declaration, not a direct-admission program); the Computer Science major page separately recommends quantitative coursework, including at least one semester of calculus, as program-preparation guidance rather than an admissions prerequisite.",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-02",
+        "src-03"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T16:40:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched NYU Abu Dhabi's official Entry Requirements page (src-02) and Computer Science Major page (src-03), applied to the US High School Diploma applicant category. The Entry Requirements page states NYU Abu Dhabi welcomes applicants from 'a wide range of educational systems and backgrounds' and evaluates them through a comprehensive/holistic review rather than curriculum-specific numeric or subject cutoffs -- no required_subjects list is published for this curriculum category, confirming the absence stated in extension_metadata.note. This absence claim was checked directly against the current live page text, not inferred from silence. Separately, the Computer Science Major page was re-fetched and confirms the extension_metadata.fields.quantitative_prerequisite_guidance claim near-verbatim: applicants are encouraged to have a strong foundation in algebra, pre-calculus, and/or calculus, including at least one semester of calculus, framed explicitly as preparation guidance rather than a formal admissions prerequisite. No curriculum-track-specific (IB-only or A-Level-only) coursework recommendations were found beyond this shared guidance -- extension_metadata content is identical and correctly shared across all four AdmissionsRequirement records for this reason. [holistic-admissions semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-33",
+      "record_ref": "AdmissionsRequirement:admreq-ib",
+      "field_checked": "extension_metadata.fields (subject-gating absence + program-preparation recommendations)",
+      "proposed_value": "No formal admissions-gating subject requirement is published for entry to NYU Abu Dhabi (Computer Science is a later major declaration, not a direct-admission program); the Computer Science major page separately recommends quantitative coursework, including at least one semester of calculus, as program-preparation guidance rather than an admissions prerequisite.",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-02",
+        "src-03"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T16:40:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched NYU Abu Dhabi's official Entry Requirements page (src-02) and Computer Science Major page (src-03), applied to the IB Diploma applicant category. The Entry Requirements page states NYU Abu Dhabi welcomes applicants from 'a wide range of educational systems and backgrounds' and evaluates them through a comprehensive/holistic review rather than curriculum-specific numeric or subject cutoffs -- no required_subjects list is published for this curriculum category, confirming the absence stated in extension_metadata.note. This absence claim was checked directly against the current live page text, not inferred from silence. Separately, the Computer Science Major page was re-fetched and confirms the extension_metadata.fields.quantitative_prerequisite_guidance claim near-verbatim: applicants are encouraged to have a strong foundation in algebra, pre-calculus, and/or calculus, including at least one semester of calculus, framed explicitly as preparation guidance rather than a formal admissions prerequisite. No curriculum-track-specific (IB-only or A-Level-only) coursework recommendations were found beyond this shared guidance -- extension_metadata content is identical and correctly shared across all four AdmissionsRequirement records for this reason. [holistic-admissions semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-34",
+      "record_ref": "AdmissionsRequirement:admreq-a-level",
+      "field_checked": "extension_metadata.fields (subject-gating absence + program-preparation recommendations)",
+      "proposed_value": "No formal admissions-gating subject requirement is published for entry to NYU Abu Dhabi (Computer Science is a later major declaration, not a direct-admission program); the Computer Science major page separately recommends quantitative coursework, including at least one semester of calculus, as program-preparation guidance rather than an admissions prerequisite.",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-02",
+        "src-03"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T16:40:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched NYU Abu Dhabi's official Entry Requirements page (src-02) and Computer Science Major page (src-03), applied to the GCE A-Level applicant category. The Entry Requirements page states NYU Abu Dhabi welcomes applicants from 'a wide range of educational systems and backgrounds' and evaluates them through a comprehensive/holistic review rather than curriculum-specific numeric or subject cutoffs -- no required_subjects list is published for this curriculum category, confirming the absence stated in extension_metadata.note. This absence claim was checked directly against the current live page text, not inferred from silence. Separately, the Computer Science Major page was re-fetched and confirms the extension_metadata.fields.quantitative_prerequisite_guidance claim near-verbatim: applicants are encouraged to have a strong foundation in algebra, pre-calculus, and/or calculus, including at least one semester of calculus, framed explicitly as preparation guidance rather than a formal admissions prerequisite. No curriculum-track-specific (IB-only or A-Level-only) coursework recommendations were found beyond this shared guidance -- extension_metadata content is identical and correctly shared across all four AdmissionsRequirement records for this reason. [holistic-admissions semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-35",
+      "record_ref": "AdmissionsRequirement:admreq-international-other",
+      "field_checked": "extension_metadata.fields (subject-gating absence + program-preparation recommendations)",
+      "proposed_value": "No formal admissions-gating subject requirement is published for entry to NYU Abu Dhabi (Computer Science is a later major declaration, not a direct-admission program); the Computer Science major page separately recommends quantitative coursework, including at least one semester of calculus, as program-preparation guidance rather than an admissions prerequisite.",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-02",
+        "src-03"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T16:40:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched NYU Abu Dhabi's official Entry Requirements page (src-02) and Computer Science Major page (src-03), applied to the general international-qualification applicant category. The Entry Requirements page states NYU Abu Dhabi welcomes applicants from 'a wide range of educational systems and backgrounds' and evaluates them through a comprehensive/holistic review rather than curriculum-specific numeric or subject cutoffs -- no required_subjects list is published for this curriculum category, confirming the absence stated in extension_metadata.note. This absence claim was checked directly against the current live page text, not inferred from silence. Separately, the Computer Science Major page was re-fetched and confirms the extension_metadata.fields.quantitative_prerequisite_guidance claim near-verbatim: applicants are encouraged to have a strong foundation in algebra, pre-calculus, and/or calculus, including at least one semester of calculus, framed explicitly as preparation guidance rather than a formal admissions prerequisite. No curriculum-track-specific (IB-only or A-Level-only) coursework recommendations were found beyond this shared guidance -- extension_metadata content is identical and correctly shared across all four AdmissionsRequirement records for this reason. [holistic-admissions semantic QA reviewed]",
+      "blocking_status": "non_blocking",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "verification_method": "independent_refetch",
+      "material_extension_fact": true
+    }
+  ]
+}

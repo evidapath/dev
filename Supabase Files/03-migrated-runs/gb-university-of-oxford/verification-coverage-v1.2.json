@@ -1,0 +1,495 @@
+{
+  "run_id": "2026-09-22_gb-university-of-oxford_computer-science",
+  "materiality_definition": {
+    "University": [
+      "canonical_name",
+      "official_website",
+      "institution_type"
+    ],
+    "Program": [
+      "program_name",
+      "degree_type_local",
+      "faculty_school",
+      "official_program_url",
+      "duration_value",
+      "duration_unit",
+      "language_of_instruction"
+    ],
+    "AdmissionsRequirement": [
+      "academic_threshold",
+      "required_subjects",
+      "standardized_tests",
+      "language_requirements"
+    ],
+    "CostProfile": [
+      "tuition_annual",
+      "mandatory_fees_annual",
+      "estimated_living_costs_annual",
+      "living_cost_source_basis"
+    ],
+    "Scholarship": [
+      "award_amount",
+      "award_type"
+    ]
+  },
+  "canonical_field_coverage": [
+    {
+      "check": "canonical_material_field",
+      "entity_type": "University",
+      "record_id": "gb-university-of-oxford",
+      "field": "canonical_name",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-24"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "University",
+      "record_id": "gb-university-of-oxford",
+      "field": "official_website",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-25"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "University",
+      "record_id": "gb-university-of-oxford",
+      "field": "institution_type",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-26"
+      ],
+      "best_verification_status": "SUPPORTED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "gb-university-of-oxford-ba-computer-science",
+      "field": "program_name",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-27"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "gb-university-of-oxford-ba-computer-science",
+      "field": "degree_type_local",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-28"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "gb-university-of-oxford-ba-computer-science",
+      "field": "faculty_school",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-29"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "gb-university-of-oxford-ba-computer-science",
+      "field": "official_program_url",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-32"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "gb-university-of-oxford-ba-computer-science",
+      "field": "duration_value",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-31"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "gb-university-of-oxford-ba-computer-science",
+      "field": "duration_unit",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-31"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "gb-university-of-oxford-ba-computer-science",
+      "field": "language_of_instruction",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-33"
+      ],
+      "best_verification_status": "SUPPORTED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-a-level",
+      "field": "academic_threshold",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-01"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-a-level",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-36"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-a-level",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-02"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-a-level",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-37"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-ib",
+      "field": "academic_threshold",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-04"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-ib",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-38"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-ib",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-34"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-ib",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-39"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-advanced-highers",
+      "field": "academic_threshold",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-05"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-advanced-highers",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-40"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-advanced-highers",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-35"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-advanced-highers",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-41"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-ap-us",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-42"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-ap-us",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-43"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "gb-university-of-oxford-admreq-ap-us",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-44"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "gb-university-of-oxford-cost-home",
+      "field": "tuition_annual",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-07"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "gb-university-of-oxford-cost-home",
+      "field": "living_cost_source_basis",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-08"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "gb-university-of-oxford-cost-overseas",
+      "field": "tuition_annual",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-10"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "gb-university-of-oxford-cost-overseas",
+      "field": "living_cost_source_basis",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-11"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Scholarship",
+      "record_id": "gb-university-of-oxford-scholarship-reach-oxford",
+      "field": "award_amount",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-15"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Scholarship",
+      "record_id": "gb-university-of-oxford-scholarship-reach-oxford",
+      "field": "award_type",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-16"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Scholarship",
+      "record_id": "gb-university-of-oxford-scholarship-oxford-bursary",
+      "field": "award_amount",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-23"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Scholarship",
+      "record_id": "gb-university-of-oxford-scholarship-oxford-bursary",
+      "field": "award_type",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-45"
+      ],
+      "best_verification_status": "VERIFIED"
+    }
+  ],
+  "meaningful_absence_coverage": [],
+  "material_extension_coverage": [
+    {
+      "check": "material_extension_fact",
+      "entity_type": "Program",
+      "record_id": "gb-university-of-oxford-ba-computer-science",
+      "extension_keys": [
+        "related_variants_note"
+      ],
+      "covered": true
+    },
+    {
+      "check": "material_extension_fact",
+      "entity_type": "CostProfile",
+      "record_id": "gb-university-of-oxford-cost-home",
+      "extension_keys": [
+        "college_fee_bundling_note"
+      ],
+      "covered": true
+    },
+    {
+      "check": "material_extension_fact",
+      "entity_type": "CostProfile",
+      "record_id": "gb-university-of-oxford-cost-overseas",
+      "extension_keys": [
+        "tuition_range_context",
+        "college_fee_bundling_note"
+      ],
+      "covered": true
+    },
+    {
+      "check": "material_extension_fact",
+      "entity_type": "Scholarship",
+      "record_id": "gb-university-of-oxford-scholarship-reach-oxford",
+      "extension_keys": [
+        "college_restriction"
+      ],
+      "covered": true
+    },
+    {
+      "check": "material_extension_fact",
+      "entity_type": "FinancialRequirement",
+      "record_id": "gb-university-of-oxford-finreq-visa-maintenance",
+      "extension_keys": [
+        "visa_maintenance_monthly_range",
+        "oxford_region_classification"
+      ],
+      "covered": true
+    }
+  ],
+  "new_entity_evidence_coverage": [
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "ProgramPathway",
+      "record_id": "gb-university-of-oxford-pathway-mcompsci",
+      "covered": true,
+      "source_ref_count": 1,
+      "verification_status": "VERIFIED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "AdmissionStage",
+      "record_id": "gb-university-of-oxford-stage-interview",
+      "covered": true,
+      "source_ref_count": 2,
+      "verification_status": "VERIFIED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "DecisionPlan",
+      "record_id": "gb-university-of-oxford-decisionplan-2027",
+      "covered": true,
+      "source_ref_count": 1,
+      "verification_status": "VERIFIED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "FinancialRequirement",
+      "record_id": "gb-university-of-oxford-finreq-visa-maintenance",
+      "covered": true,
+      "source_ref_count": 1,
+      "verification_status": "VERIFIED"
+    }
+  ],
+  "summary": {
+    "total_material_fields_checked": 33,
+    "not_covered_canonical": 0,
+    "total_verified_absent_claims_checked": 0,
+    "not_covered_absence": 0,
+    "total_material_extension_facts_checked": 5,
+    "not_covered_extension": 0,
+    "total_new_entity_records_checked": 4,
+    "not_covered_new_entity": 0
+  },
+  "overall_result": "PASS"
+}

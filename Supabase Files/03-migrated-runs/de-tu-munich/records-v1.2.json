@@ -1,0 +1,975 @@
+{
+  "run_id": "2026-09-23_de-tu-munich_informatics",
+  "schema_version": "1.2",
+  "countries": [
+    {
+      "id": "de",
+      "name": "Germany",
+      "region": "Europe",
+      "currency_default": "EUR"
+    }
+  ],
+  "cities": [
+    {
+      "id": "de-munich",
+      "name": "Munich",
+      "country_ref": "de"
+    },
+    {
+      "id": "de-garching",
+      "name": "Garching bei Muenchen",
+      "country_ref": "de"
+    }
+  ],
+  "universities": [
+    {
+      "id": "de-tu-munich",
+      "canonical_name": "Technical University of Munich",
+      "aliases": [
+        "TUM",
+        "Technische Universitaet Muenchen"
+      ],
+      "institution_type": "public",
+      "country_ref": "de",
+      "primary_city_ref": "de-munich",
+      "official_website": "https://www.tum.de",
+      "source_refs": [
+        "src-01",
+        "src-06",
+        "src-09"
+      ],
+      "record_status": "VERIFIED",
+      "last_researched": "2026-09-23",
+      "last_verified": "2026-09-23",
+      "extension_metadata": {
+        "note": "campuses is a derived reverse-FK per the schema doc, not a stored field -- see 03-normalized/records.json campuses[] for the campus list.",
+        "fields": {}
+      }
+    }
+  ],
+  "campuses": [
+    {
+      "id": "de-tu-munich-garching",
+      "university_ref": "de-tu-munich",
+      "name": "Garching (Garching bei Muenchen)",
+      "city_ref": "de-garching",
+      "country_ref": "de",
+      "is_primary": false,
+      "official_url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-bachelor-of-science-bsc",
+      "extension_metadata": {
+        "note": "TUM is a multi-campus university (Munich city centre/Stammgelaende, Garching, Weihenstephan, Straubing, Heilbronn, and TUM Asia/Singapore). The undergraduate Informatics B.Sc. is hosted specifically at Garching -- is_primary is set false because Garching is not TUM's historic/administrative main campus, only the campus for this program. Scope of this run is strictly limited to the Garching-hosted Informatics B.Sc.; other TUM campuses and programs are out of scope.",
+        "fields": {}
+      }
+    }
+  ],
+  "colleges": [],
+  "programs": [
+    {
+      "id": "de-tu-munich-informatics",
+      "university_ref": "de-tu-munich",
+      "campus_ref": "de-tu-munich-garching",
+      "program_name": "Informatics",
+      "faculty_school": "TUM School of Computation, Information and Technology (CIT)",
+      "degree_type": "BSc",
+      "degree_type_local": "Bachelor of Science (B.Sc.) -- Informatik",
+      "field_of_study": "Computer Science / Informatics",
+      "duration_value": 6,
+      "duration_unit": "semesters",
+      "language_of_instruction": [
+        "de"
+      ],
+      "official_program_url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-bachelor-of-science-bsc",
+      "decision_context_academic_year": "Winter Semester 2027/28 (Fall 2027 undergraduate entry decision context) -- NOTE: the most current officially published admissions/cost cycle at time of research is Winter Semester 2026/27; WS2027/28-specific figures have not been published by TUM and are NOT fabricated in this run. See individual AdmissionsRequirement/CostProfile records for their real sourced academic_year.",
+      "source_refs": [
+        "src-01",
+        "src-16"
+      ],
+      "record_status": "VERIFIED",
+      "application_platform": "TUMonline (formal application); uni-assist e.V. issues Preliminary Documentation (VPD) as a pre-screening step for all international applicants whose qualification was not obtained in the German system.",
+      "application_requirements": [
+        {
+          "requirement_type": "form",
+          "name": "TUMonline online application",
+          "necessity": "required",
+          "description": "",
+          "notes": "Window: 15 May - 15 July for Winter Semester entry."
+        },
+        {
+          "requirement_type": "financial_document",
+          "name": "uni-assist Preliminary Documentation (VPD)",
+          "necessity": "required",
+          "description": "Required for all applicants whose entrance qualification was not obtained in the German system.",
+          "notes": ""
+        },
+        {
+          "requirement_type": "transcript_or_school_report",
+          "name": "High school diploma / HZB (school-leaving certificate)",
+          "necessity": "required",
+          "description": "",
+          "notes": ""
+        },
+        {
+          "requirement_type": "other",
+          "name": "CV, ID, language certificates where applicable, subject transcripts for transfer applicants",
+          "necessity": "required",
+          "description": "",
+          "notes": ""
+        }
+      ],
+      "extension_metadata": {
+        "note": "V1.2 migration: qualification_recognition_framework, aptitude_assessment_eignungsfeststellungsverfahren, and studienkolleg_pathway are promoted out of extension_metadata into first-class AdmissionStage records (de-tu-munich-stage-qualification-recognition, -stage-aptitude-assessment, -stage-studienkolleg). application_route is promoted into Program.application_platform/application_requirements and the new DecisionPlan record. duration_conversion_note is resolved -- duration_unit now natively supports 'semesters' (V1.2 gm-18), so duration_value/duration_unit are VERIFIED (6 semesters, TUM's own stated Regelstudienzeit), not a derived SUPPORTED conversion. curriculum_structure is retained as genuine TUM-specific curriculum detail with no other canonical home.",
+        "fields": {
+          "curriculum_structure": {
+            "phase_1": "First 4 semesters: foundational computer science and mathematics modules",
+            "phase_2": "From semester 5: individual specialization electives (minimum 15 credits informatics electives), application-field modules (21 credits), soft-skills modules, bachelor thesis and colloquium in semester 6",
+            "source_refs": [
+              "src-16"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "program_pathways": [],
+  "applicant_categories": [
+    {
+      "id": "de-tu-munich-curriculum-abitur",
+      "university_ref": "de-tu-munich",
+      "dimension": "prior_curriculum",
+      "label": "German Abitur (Allgemeine Hochschulreife)",
+      "description": "The reference German secondary school-leaving qualification; treated as the direct-entrance standard against which other qualifications are assessed for equivalence."
+    },
+    {
+      "id": "de-tu-munich-curriculum-ib",
+      "university_ref": "de-tu-munich",
+      "dimension": "prior_curriculum",
+      "label": "International Baccalaureate (IB) Diploma",
+      "description": "Direct entrance if >=24 points, >=3 HL subjects meeting the group 1-4 distribution, and HL Mathematics (Analysis & Approaches or Applications & Interpretation) for technical-field access; SL-only math restricts access away from technical/natural-science/math fields."
+    },
+    {
+      "id": "de-tu-munich-curriculum-a-level",
+      "university_ref": "de-tu-munich",
+      "dimension": "prior_curriculum",
+      "label": "British-patterned GCE A-Level",
+      "description": "Direct entrance if 3 A-Level subjects at minimum grade C, at least 2 from a defined subject list; natural science studies specifically require 2 A-Levels from mathematics/biology/chemistry/physics/computer science. AS-Levels and GCSEs do not count."
+    },
+    {
+      "id": "de-tu-munich-curriculum-us-hs",
+      "university_ref": "de-tu-munich",
+      "dimension": "prior_curriculum",
+      "label": "U.S. High School Diploma / AP route",
+      "description": "A US high school diploma alone does not grant direct entrance. Direct entrance is possible only via AP examinations taken during high school with results issued directly by the College Board. Otherwise, ZAB assessment typically routes the applicant to Studienkolleg."
+    },
+    {
+      "id": "de-tu-munich-residency-eu-eea",
+      "university_ref": "de-tu-munich",
+      "dimension": "residency_citizenship",
+      "label": "EU/EEA or equivalent state (Iceland, Liechtenstein, Norway)",
+      "description": "Exempt from TUM's non-EU tuition fee."
+    },
+    {
+      "id": "de-tu-munich-residency-non-eu",
+      "university_ref": "de-tu-munich",
+      "dimension": "residency_citizenship",
+      "label": "Non-EU/EEA third-country national, newly enrolling Winter Semester 2024/25 or later",
+      "description": "Subject to TUM's non-EU tuition fee (2,000 or 3,000 EUR/semester bracket for Bachelor's programs; Informatics B.Sc. is confirmed at the 3,000 EUR/semester tier per TUM's official fee statute -- see CostProfile de-tu-munich-cost-non-eu)."
+    }
+  ],
+  "admission_stages": [
+    {
+      "id": "de-tu-munich-stage-qualification-recognition",
+      "university_ref": "de-tu-munich",
+      "program_ref": "de-tu-munich-informatics",
+      "applicant_category_ref": null,
+      "stage_type": "qualification_recognition",
+      "sequence_order": 1,
+      "name": "International qualification recognition (uni-assist VPD)",
+      "description": "Credentials equivalent to the German university entrance qualification (Abitur) grant direct admission eligibility. Subject-restricted qualifications carry the same restriction at TUM. All international applicants must obtain Preliminary Documentation (VPD) from uni-assist, which determines whether the credential grants general or subject-specific admission. Non-comparable qualifications route to Studienkolleg (see the separate preparatory_pathway stage).",
+      "criteria": [
+        {
+          "criterion_name": "Credential equivalence to Abitur",
+          "description": "Must be equivalent to the German university entrance qualification, or meet subject-restricted admission rules.",
+          "threshold_or_formula": null,
+          "weight": null,
+          "mandatory": true
+        }
+      ],
+      "decision_outcome_options": [
+        "direct_entrance_eligible",
+        "subject_restricted_eligible",
+        "studienkolleg_required"
+      ],
+      "source_refs": [
+        "src-03",
+        "src-04",
+        "src-05"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED"
+    },
+    {
+      "id": "de-tu-munich-stage-aptitude-assessment",
+      "university_ref": "de-tu-munich",
+      "program_ref": "de-tu-munich-informatics",
+      "applicant_category_ref": null,
+      "stage_type": "selection_stage",
+      "sequence_order": 2,
+      "name": "Eignungsfeststellungsverfahren (Aptitude Assessment, EFV)",
+      "description": "Two-stage, points-based Aptitude Assessment used for Bachelor Informatik in place of a numerus-clausus lottery/cutoff. Whether internationally-recognized-equivalent qualifications (A-Level, IB) run through an adapted version of this exact point formula, or a different process, is unresolved from official sources (open question, not guessed).",
+      "criteria": [
+        {
+          "criterion_name": "HZB average (Stage 1, 65% weight)",
+          "description": "School-leaving diploma average, converted via formula.",
+          "threshold_or_formula": "120 - 20*(grade)",
+          "weight": "65%",
+          "mandatory": true
+        },
+        {
+          "criterion_name": "Subject grades (Stage 1, 35% weight)",
+          "description": "Mathematik x3, Deutsch x1, Englisch x1, one natural science subject x2, converted via formula.",
+          "threshold_or_formula": "10 + 6*(average)",
+          "weight": "35%",
+          "mandatory": true
+        },
+        {
+          "criterion_name": "Bonus points",
+          "description": "Up to 6 bonus points: relevant apprenticeship (>1yr: 6pts), relevant internship (6-12mo: 3pts), MINT studies already completed at TUM (2pts), or Jugend Forscht/Math Olympiad at state level or above (2pts).",
+          "threshold_or_formula": "max 6 points",
+          "weight": null,
+          "mandatory": false
+        },
+        {
+          "criterion_name": "Stage-2 written test (73-83 point band only)",
+          "description": "~90-minute written test, ~20-30 questions, 50% German/50% English; final score 50% HZB average + 50% test result.",
+          "threshold_or_formula": "70+/100 = admission",
+          "weight": "50%",
+          "mandatory": false
+        }
+      ],
+      "decision_outcome_options": [
+        "direct_admission_84plus",
+        "stage2_invitation_73to83",
+        "rejection_72_or_below",
+        "admission_after_stage2_70plus",
+        "rejection_after_stage2_69_or_below"
+      ],
+      "source_refs": [
+        "src-15",
+        "src-16"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED"
+    },
+    {
+      "id": "de-tu-munich-stage-studienkolleg",
+      "university_ref": "de-tu-munich",
+      "program_ref": "de-tu-munich-informatics",
+      "applicant_category_ref": null,
+      "stage_type": "preparatory_pathway",
+      "sequence_order": 1,
+      "name": "Studienkolleg preparatory pathway (T-course track)",
+      "description": "Alternative branch at the qualification-recognition point (not a sequential step after Stage 2): when a qualification is not comparable to German standards, the applicant must complete Studienkolleg (2 semesters, T-course track for Informatics) and pass the Feststellungspruefung before admission eligibility exists at all. A fresh online application plus a new uni-assist VPD is required after completion.",
+      "criteria": [
+        {
+          "criterion_name": "German B2",
+          "description": "Required before Studienkolleg admission.",
+          "threshold_or_formula": "B2",
+          "weight": null,
+          "mandatory": true
+        },
+        {
+          "criterion_name": "Feststellungspruefung",
+          "description": "Exit examination; passing grants subject-specific access to the degree program.",
+          "threshold_or_formula": null,
+          "weight": null,
+          "mandatory": true
+        }
+      ],
+      "decision_outcome_options": [
+        "feststellungspruefung_passed_reapply_required",
+        "failed"
+      ],
+      "source_refs": [
+        "src-04",
+        "src-06"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "sequence_order is set to 1 (same as qualification-recognition) because this is an alternative branch at that decision point, not a step that follows Stage 2 of the aptitude assessment. Studienkolleg students are explicitly exempt from the non-EU tuition fee (see de-tu-munich-cost-eu-eea/non-eu CostProfile records).",
+        "fields": {}
+      }
+    }
+  ],
+  "admissions_requirements": [
+    {
+      "id": "de-tu-munich-admreq-abitur",
+      "program_ref": "de-tu-munich-informatics",
+      "prior_curriculum_category_ref": "de-tu-munich-curriculum-abitur",
+      "curriculum_type": "German Abitur (Allgemeine Hochschulreife)",
+      "academic_threshold": "No fixed numeric HZB-average cutoff is published for direct admission; instead a two-stage points-based Eignungsfeststellungsverfahren applies (see Program.extension_metadata.fields.aptitude_assessment_eignungsfeststellungsverfahren): 84+/100 points = direct admission, 73-83 = Stage 2 invitation, <=72 = rejection.",
+      "required_subjects": [
+        "Mathematik (weighted 3x in Stage 1 subject-grade component)",
+        "Deutsch (1x)",
+        "Englisch (1x)",
+        "one natural science subject: Physics, Chemistry, Biology, or Informatik, all 4 semesters (2x)"
+      ],
+      "standardized_tests": [
+        {
+          "test_name": "TUM Stage-2 Aptitude Test (for 73-83 point band only)",
+          "min_score": "70/100 combined (50% HZB average + 50% test)",
+          "required": "required",
+          "notes": "~90 minutes, ~20-30 questions, 50% German/50% English, math/logic/interdisciplinary problem-solving; held in Garching"
+        }
+      ],
+      "language_requirements": [
+        {
+          "language": "de",
+          "test_name": "Exempt -- no German-language certificate required",
+          "min_score": null,
+          "notes": "Confirmed on TUM's official Language Certificates page: 'Applicants holding a German university entrance qualification do not require verification of their German language skills.' The German Abitur is TUM's reference German entrance qualification, so Abitur holders are exempt from submitting a separate German proficiency certificate."
+        }
+      ],
+      "notes": "This is TUM's default/reference admissions pathway; all other curricula are first gated through the qualification-recognition framework before this or an equivalent process applies.",
+      "source_refs": [
+        "src-10",
+        "src-15",
+        "src-16"
+      ],
+      "academic_year": "Winter Semester 2026/27 (current published cycle; WS2027/28 not yet published)",
+      "last_checked": "2026-09-24",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "admission_stage_ref": "de-tu-munich-stage-aptitude-assessment"
+    },
+    {
+      "id": "de-tu-munich-admreq-ib",
+      "program_ref": "de-tu-munich-informatics",
+      "prior_curriculum_category_ref": "de-tu-munich-curriculum-ib",
+      "curriculum_type": "International Baccalaureate (IB) Diploma",
+      "academic_threshold": "Minimum 24 points from the six examination subjects; at least 3 subjects at Higher Level (HL) (alternatively 4).",
+      "required_subjects": [
+        "Two languages at HL or SL from IB subject groups 1 and 2",
+        "One social science subject from group 3",
+        "One natural science subject (Biology, Chemistry, or Physics) from group 4",
+        "Mathematics: HL 'Analysis and Approaches' or 'Applications and Interpretation' required for unrestricted access to technical fields (Informatics); SL-only Mathematics restricts access away from mathematics/natural-science/technical fields"
+      ],
+      "standardized_tests": [],
+      "language_requirements": [
+        {
+          "language": "de",
+          "test_name": "German-language proficiency certificate required (DSH-2, TestDaF TDN4 all modules, Goethe-Zertifikat C2, telc Deutsch C1 Hochschule, OeSD C2, or DSD II)",
+          "min_score": "DSH-2 or equivalent C1-level certificate per the KMK Rahmenordnung (RO-DT)",
+          "notes": "TUM's Language Certificates page exempts only (a) holders of a German university entrance qualification and (b) German citizens with an international HEQ who attended a German school for 2+ years -- an IB Diploma holder does not fall under either exemption, so a German-language certificate from the KMK-recognized list is required. IB itself does not confer German-language proficiency, so this is a real, distinct requirement layered on top of the IB academic criteria above."
+        }
+      ],
+      "notes": "Applicants with SL-only Mathematics are NOT directly eligible for this technical-field program under the general rule; an exception exists for schools on the official IB-Diploma Recognition Agreement list meeting other requirements. Independently re-verified (src-14 fetched twice, identical result).",
+      "source_refs": [
+        "src-10",
+        "src-14",
+        "src-21"
+      ],
+      "academic_year": "Current DAAD-published recognition rule (no specific admissions-cycle year attached; rule described as applying 'from 2021 onwards')",
+      "last_checked": "2026-09-24",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "admission_stage_ref": "de-tu-munich-stage-qualification-recognition"
+    },
+    {
+      "id": "de-tu-munich-admreq-a-level",
+      "program_ref": "de-tu-munich-informatics",
+      "prior_curriculum_category_ref": "de-tu-munich-curriculum-a-level",
+      "curriculum_type": "British-patterned GCE A-Level",
+      "academic_threshold": "3 A-Level subjects at minimum grade C each.",
+      "required_subjects": [
+        "At least 2 of the 3 A-Levels from: a language, history, geography, social studies/politics, economics, mathematics, biology, chemistry, physics, computer science",
+        "For natural science studies specifically (the category Informatics falls under): 2 A-Levels from mathematics, biology, chemistry, physics, computer science"
+      ],
+      "standardized_tests": [],
+      "language_requirements": [
+        {
+          "language": "de",
+          "test_name": "German-language proficiency certificate required (DSH-2, TestDaF TDN4 all modules, Goethe-Zertifikat C2, telc Deutsch C1 Hochschule, OeSD C2, or DSD II)",
+          "min_score": "DSH-2 or equivalent C1-level certificate per the KMK Rahmenordnung (RO-DT)",
+          "notes": "TUM's Language Certificates page exempts only (a) holders of a German university entrance qualification and (b) German citizens with an international HEQ who attended a German school for 2+ years -- a GCE A-Level holder does not fall under either exemption, so a German-language certificate from the KMK-recognized list is required. A British-patterned A-Level does not itself confer German-language proficiency, so this is a real, distinct requirement layered on top of the A-Level academic criteria above."
+        }
+      ],
+      "notes": "AS-Levels do not count. GCSEs do not count ('CANNOT be taken into consideration'). Predicted grades are not accepted -- final certificates only. Independently re-verified (src-11 fetched twice, identical result).",
+      "source_refs": [
+        "src-10",
+        "src-11",
+        "src-12",
+        "src-21"
+      ],
+      "academic_year": "Current DAAD/uni-assist published recognition rule",
+      "last_checked": "2026-09-24",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "admission_stage_ref": "de-tu-munich-stage-qualification-recognition"
+    },
+    {
+      "id": "de-tu-munich-admreq-us",
+      "program_ref": "de-tu-munich-informatics",
+      "prior_curriculum_category_ref": "de-tu-munich-curriculum-us-hs",
+      "curriculum_type": "U.S. High School Diploma / AP route",
+      "academic_threshold": "A US high school diploma alone does not grant direct university entrance in Germany. Credentials are assessed via ZAB (Central Office for Foreign Education) standards. Direct entrance is possible ONLY via AP examinations taken during high school, with results issued directly by the College Board (school-issued AP results are not accepted).",
+      "required_subjects": [
+        "High school diploma with grade 9-12 subject/grade overview and unweighted CGPA"
+      ],
+      "standardized_tests": [
+        {
+          "test_name": "AP (Advanced Placement) examinations",
+          "min_score": "Not specified on the fetched official/recognized-authority source -- exact subject count or score thresholds for direct entry were not published on the page reached",
+          "required": "recommended",
+          "notes": "Required only for the direct-entry exception; most US applicants without qualifying AP results are routed to Studienkolleg instead."
+        }
+      ],
+      "language_requirements": [
+        {
+          "language": "de",
+          "test_name": "German-language proficiency certificate required (DSH-2, TestDaF TDN4 all modules, Goethe-Zertifikat C2, telc Deutsch C1 Hochschule, OeSD C2, or DSD II)",
+          "min_score": "DSH-2 or equivalent C1-level certificate per the KMK Rahmenordnung (RO-DT)",
+          "notes": "TUM's Language Certificates page exempts only (a) holders of a German university entrance qualification and (b) German citizens with an international HEQ who attended a German school for 2+ years -- a US high school diploma holder does not fall under either exemption, so a German-language certificate from the KMK-recognized list is required. A US high school diploma (with or without AP results) does not itself confer German-language proficiency, so this is a real, distinct requirement layered on top of the AP-based academic route above."
+        }
+      ],
+      "notes": "Exact AP subject-count/score thresholds for direct entry are a genuine, disclosed gap (see missing-data.json) -- not guessed.",
+      "source_refs": [
+        "src-10",
+        "src-13",
+        "src-21"
+      ],
+      "academic_year": "Current uni-assist published country guidance",
+      "last_checked": "2026-09-24",
+      "verification_status": "SUPPORTED",
+      "record_status": "HUMAN_REVIEW",
+      "admission_stage_ref": "de-tu-munich-stage-qualification-recognition"
+    }
+  ],
+  "decision_plans": [
+    {
+      "id": "de-tu-munich-decisionplan-ws2026-27",
+      "university_ref": "de-tu-munich",
+      "program_ref": "de-tu-munich-informatics",
+      "plan_type": "single_stage",
+      "application_platform": "TUMonline (formal application); uni-assist (international pre-screening VPD)",
+      "binding": null,
+      "application_deadline": "2026-07-15",
+      "decision_release_date": null,
+      "academic_year": "Winter Semester 2026/27",
+      "notes": "New in V1.2 -- online application window 15 May - 15 July 2026 for WS2026/27; Stage-2 aptitude test (where applicable) 21 Aug 2026 is modeled as part of AdmissionStage de-tu-munich-stage-aptitude-assessment, not this DecisionPlan. WS2027/28 (Fall 2027) deadlines are not yet published and are not fabricated here.",
+      "source_refs": [
+        "src-01",
+        "src-16"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED"
+    }
+  ],
+  "cost_profiles": [
+    {
+      "id": "de-tu-munich-cost-eu-eea",
+      "program_ref": "de-tu-munich-informatics",
+      "academic_year": "2026 (semester fee current as of Summer Semester 2026; non-EU tuition policy framework effective from Winter Semester 2024/25)",
+      "residency_category_ref": "de-tu-munich-residency-eu-eea",
+      "currency": "EUR",
+      "tuition_annual": 0,
+      "tuition_basis": "statutory",
+      "mandatory_fees_annual": 194.0,
+      "mandatory_fees_breakdown": [
+        {
+          "label": "Basic Student Union contribution (Studierendenwerksbeitrag / Semesterbeitrag), Garching campus",
+          "amount": 97.0,
+          "frequency": "per semester"
+        }
+      ],
+      "estimated_living_costs_annual": 15600.0,
+      "living_cost_source_basis": {
+        "kind": "genuine_cost_of_living_estimate",
+        "description": "TUM-published Munich-area single-person-household monthly living cost range of EUR 1,300-2,000; the schema's single numeric field holds the low end annualized (1,300x12=15,600) -- see extension note for the full range.",
+        "administering_body": "Technical University of Munich (TUM)"
+      },
+      "other_material_costs": [],
+      "duration_years": 3.0,
+      "source_refs": [
+        "src-06",
+        "src-07",
+        "src-08",
+        "src-09"
+      ],
+      "last_checked": "2026-09-23",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "estimated_living_costs_monthly_range": {
+        "min": 1300,
+        "max": 2000,
+        "currency": "EUR"
+      },
+      "college_ref": null,
+      "program_pathway_ref": null,
+      "extension_metadata": {
+        "note": "V1.2 migration: living_cost_range promoted to the canonical estimated_living_costs_monthly_range field. Remaining facts (non-EU tuition tier ambiguity) retained here -- unresolved from official sources, not guessed.",
+        "fields": {}
+      }
+    },
+    {
+      "id": "de-tu-munich-cost-non-eu",
+      "program_ref": "de-tu-munich-informatics",
+      "academic_year": "2026 (semester fee current as of Summer Semester 2026; non-EU tuition policy framework effective from Winter Semester 2024/25)",
+      "residency_category_ref": "de-tu-munich-residency-non-eu",
+      "currency": "EUR",
+      "tuition_annual": 6000.0,
+      "tuition_basis": "statutory",
+      "mandatory_fees_annual": 194.0,
+      "mandatory_fees_breakdown": [
+        {
+          "label": "Basic Student Union contribution (Studierendenwerksbeitrag / Semesterbeitrag), Garching campus",
+          "amount": 97.0,
+          "frequency": "per semester"
+        }
+      ],
+      "estimated_living_costs_annual": 15600.0,
+      "living_cost_source_basis": {
+        "kind": "genuine_cost_of_living_estimate",
+        "description": "Same TUM-published Munich-area living cost range as the EU/EEA profile -- living costs are not residency-differentiated by TUM.",
+        "administering_body": "Technical University of Munich (TUM)"
+      },
+      "other_material_costs": [],
+      "duration_years": 3.0,
+      "source_refs": [
+        "src-01",
+        "src-06",
+        "src-22"
+      ],
+      "last_checked": "2026-09-24",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "college_ref": null,
+      "program_pathway_ref": null,
+      "extension_metadata": {
+        "note": "V1.2 migration: living_cost_range promoted to the canonical estimated_living_costs_monthly_range field. RESOLVED 2026-09-24: the prior non-EU tuition tier ambiguity (2,000 vs 3,000 EUR/semester) is now closed -- see fields.resolution below. unconfirmed_candidate_figures/confirmed_bracket_and_mechanism are retained verbatim as the audit trail of the original unresolved state.",
+        "fields": {
+          "unconfirmed_candidate_figures": [
+            "2,000 EUR/semester = 4,000 EUR/year",
+            "3,000 EUR/semester = 6,000 EUR/year"
+          ],
+          "confirmed_bracket_and_mechanism": "VERIFIED that Bachelor's tuition for non-EU third-country nationals newly enrolling WS2024/25+ falls in the 2,000-or-3,000 EUR/semester bracket; only the specific tier assigned to Informatics is unresolved.",
+          "resolution": "RESOLVED via TUM's official fee statute (Hochschulgebuehren- und Entgeltsatzung, amendment effective 2023-10-01, version 2024-012 dated 2024-02-12), whose fee-schedule annex lists 'Bachelor CIT Informatik, B.Sc.' explicitly at fee tier 2 = 3,000 EUR/semester (6,000 EUR/year). Independently re-fetched twice at distinct timestamps with an identical table row both times. tuition_annual updated from null to 6000.0 accordingly."
+        }
+      },
+      "estimated_living_costs_monthly_range": {
+        "min": 1300,
+        "max": 2000,
+        "currency": "EUR"
+      }
+    }
+  ],
+  "financial_requirements": [
+    {
+      "id": "de-tu-munich-finreq-blocked-account",
+      "program_ref": "de-tu-munich-informatics",
+      "residency_category_ref": "de-tu-munich-residency-non-eu",
+      "requirement_type": "blocked_account",
+      "amount": 11904,
+      "currency": "EUR",
+      "refundable": true,
+      "frequency": "annual (released at 1/12 per month)",
+      "administering_body": "German Federal Foreign Office (Auswaertiges Amt) / German diplomatic missions",
+      "academic_year": "2026 (current)",
+      "notes": "Migrated from V1.1 CostProfile de-tu-munich-cost-non-eu-immigration-liquidity, which existed only because V1.1 could not represent this fact any other way (a CostProfile can only carry one living_cost_source_basis.kind, and TUM's non-EU students face BOTH a genuine cost-of-living estimate (de-tu-munich-cost-non-eu) AND this separate blocked-account requirement). The mechanism (BAfoeG-linked, mission/purpose-dependent) is officially confirmed (src-19); the specific EUR 11,904/year figure is corroborated by two independent secondary sources but not found stated in euros on an official government page -- capped at SUPPORTED for the number itself, matching the original V1.1 record's verification_status.",
+      "source_refs": [
+        "src-19",
+        "src-20"
+      ],
+      "verification_status": "SUPPORTED",
+      "record_status": "HUMAN_REVIEW"
+    }
+  ],
+  "financial_aid_policies": [],
+  "scholarships": [
+    {
+      "id": "de-deutschlandstipendium-tum",
+      "name": "Deutschlandstipendium at TUM",
+      "provider": "Federal Government of Germany (BMBF) with private co-funders, administered by TUM",
+      "provider_type": "university-fund",
+      "institutions_covered": [
+        "de-tu-munich"
+      ],
+      "programs_covered": [
+        "de-tu-munich-informatics"
+      ],
+      "degree_levels": [
+        "BSc",
+        "MSc"
+      ],
+      "eligible_citizenships": [],
+      "residency_restrictions": "Not explicitly stated as citizenship-restricted on the official pages reached this run -- capped SUPPORTED for this field specifically (empty list reflects 'not confirmed', not 'confirmed open to all').",
+      "academic_criteria": "Merit-based but explicitly 'not purely a merit-based scholarship' -- academic performance plus personal responsibility/commitment and individual life circumstances are all weighed.",
+      "other_eligibility_criteria": "Both currently-enrolled TUM students AND high-school graduates who will begin studies at TUM in the coming semester (i.e. incoming first-year applicants) are explicitly eligible to apply.",
+      "award_type": "stipend",
+      "award_amount": "300",
+      "award_amount_currency": "EUR",
+      "renewable": true,
+      "renewal_conditions": "Renewal for subsequent years requires meeting a minimum grade and minimum accumulated ECTS credits annually; documented exceptions exist for illness, caregiving, or childcare responsibilities; otherwise the student must reapply as a new applicant.",
+      "duration": "Standard period of study (Regelstudienzeit), subject to annual renewal criteria",
+      "application_deadline": "Not yet published for the 2027/28 funding year -- exact dates to be announced Spring 2027",
+      "deadline_academic_year": "2027/28 funding year (next application period: Summer 2027)",
+      "official_source_url": "https://www.tum.de/en/studies/fees-and-financial-aid/scholarships/tum-scholarships/deutschlandstipendium",
+      "source_refs": [
+        "src-17",
+        "src-18"
+      ],
+      "last_checked": "2026-09-24",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "Scope limitation: only this one scholarship was researched to VERIFIED depth this run; a broader survey of TUM's full scholarship offerings for incoming international undergraduates was not exhaustively completed (see missing-data.json).",
+        "fields": {}
+      },
+      "college_ref": null
+    }
+  ],
+  "source_records": [
+    {
+      "id": "src-01",
+      "url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-bachelor-of-science-bsc",
+      "title": "Informatics - Bachelor of Science (B.Sc.)",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch (text-mode rendered page)",
+      "fields_supported": [
+        "Program.program_name",
+        "Program.degree_type",
+        "Program.degree_type_local",
+        "Program.duration_value",
+        "Program.duration_unit",
+        "Program.language_of_instruction",
+        "Program.official_program_url",
+        "CostProfile.mandatory_fees_annual",
+        "Program.extension_metadata.fields.application_route"
+      ],
+      "excerpt": "Official Program Name: 'Informatics - Bachelor of Science (B.Sc.)'. Degree Type: Bachelor of Science (B.Sc.). Faculty/School: TUM School of Computation, Information and Technology. Duration: '6 semesters (fulltime)' with 180 ECTS credits. Language of Instruction: German. Campus Location: 'Garching'. Admission Requirements: 'Aptitude Assessment for Bachelor'. Start Date: 'Winter Semester (October)'. Application Deadlines: 'Winter semester: 15.05. - 15.07.'. Student Fees: '97.00 EUR'.",
+      "notes": "Program-specific non-EU tuition tier (2,000 vs 3,000 EUR/semester) was NOT resolved from this page despite repeated fetch attempts -- see missing-data.json md-01."
+    },
+    {
+      "id": "src-02",
+      "url": "https://www.tum.de/en/studies/application/application-info-portal/admission-procedures",
+      "title": "Admission Procedures",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "Program.extension_metadata.fields.aptitude_assessment_eignungsfeststellungsverfahren"
+      ],
+      "excerpt": "TUM employs the 'Aptitude Assessment' (Eignungsfeststellungsverfahren) for specific Bachelor's/Master's programs, distinct from unrestricted admission and NC systems. Bachelor's: grade point average and subject-specific grades evaluated using a point system defined per-program. Depending on points: immediate admission, invitation to interview/written test, or rejection. 'no lotteries will be held after final selections have been made.'",
+      "notes": ""
+    },
+    {
+      "id": "src-03",
+      "url": "https://www.tum.de/en/studies/application/application-info-portal/application-international",
+      "title": "International Applicants",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "Program.extension_metadata.fields.application_route",
+        "Program.extension_metadata.fields.qualification_recognition_framework"
+      ],
+      "excerpt": "An applicant is 'international' when they 'have completed your secondary school education outside of Germany or with something other than a German Abitur.' International students who did not obtain their entrance qualification in the German education system must apply for Preliminary Documentation (VPD) via uni-assist.",
+      "notes": ""
+    },
+    {
+      "id": "src-04",
+      "url": "https://www.tum.de/en/studies/application/other-forms-of-study/preparatory-study-at-the-studienkolleg",
+      "title": "Preparatory Study at the Studienkolleg",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "Program.extension_metadata.fields.studienkolleg_pathway"
+      ],
+      "excerpt": "'Some international secondary school certificates do not directly qualify students to study at a German university.' Studienkolleg lasts 2 semesters, ending in the Feststellungspruefung, which enables 'subject-specific access to a degree program.' Studienkolleg Muenchen offers G/M/T/W course tracks (T = Technical/Mathematical/Natural Science, relevant to Informatics). German B2 required before admission. From WS2025/26, only one course track per applicant. After completion, a new online application + fresh uni-assist VPD is required.",
+      "notes": ""
+    },
+    {
+      "id": "src-05",
+      "url": "https://www.tum.de/en/studies/application/application-info-portal/higher-education-entrance-qualification/international-higher-education-entrance-qualification",
+      "title": "International Higher Education Entrance Qualification",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "Program.extension_metadata.fields.qualification_recognition_framework"
+      ],
+      "excerpt": "Applicants whose credentials are 'equivalent to the German university entrance qualification' may gain direct admission. If a qualification permits 'certain subjects only' in the home country, 'subject-bound admission also applies when you enroll as a student at TUM.' When qualifications are not comparable, applicants must complete Studienkolleg and pass the university qualification assessment examination. All international applicants must obtain a VPD from uni-assist, which verifies whether credentials entitle 'general or subject-specific university admission.'",
+      "notes": ""
+    },
+    {
+      "id": "src-06",
+      "url": "https://www.tum.de/en/studies/fees/tuition",
+      "title": "Tuition Fees for Students from Non-EU Countries",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T19:30:00Z",
+      "retrieval_method": "WebFetch (independent re-fetch, second pass)",
+      "fields_supported": [
+        "CostProfile.tuition_annual",
+        "CostProfile.residency_category_ref",
+        "CostProfile.extension_metadata.fields.tuition_exemptions"
+      ],
+      "excerpt": "Bachelor's programs: 'usually 2,000 or 3,000 euros per semester.' Master's: 'usually 4,000 or 6,000 euros per semester.' 'From the winter semester 2024/25, tuition fees for international students from third countries will only be charged for newly enrolled students in Bachelor's and Master's degree programs.' Exempt: EU/EEA/equivalent-state students; students already enrolled before WS2024/25 in the same program; doctoral/exchange/visiting students; Studienkolleg students; state-examination/non-degree program students.",
+      "notes": "Re-fetched independently at a distinct timestamp from the extraction pass; result identical to first fetch -- no discrepancy found. Program-specific tier (2,000 vs 3,000) for Informatics B.Sc. not resolved on this or the program detail page -- see md-01."
+    },
+    {
+      "id": "src-07",
+      "url": "https://www.tum.de/en/studies/fees",
+      "title": "Study fees and costs",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "CostProfile.estimated_living_costs_annual",
+        "CostProfile.living_cost_source_basis"
+      ],
+      "excerpt": "Cost of living estimates: Munich area 'approximately 1,300 to 2,000 euros (for a single-person household)' monthly. Straubing/Heilbronn 'approximately 900 to 1,200 euros' monthly. 'International students from third countries ... usually have to pay tuition fees.'",
+      "notes": ""
+    },
+    {
+      "id": "src-08",
+      "url": "https://www.tum.de/en/studies/fees-and-financial-aid/campus-munich-garching-wzw-and-tum-asia",
+      "title": "Semester fees payment at Munich, Garching, WZW and TUM Asia",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "CostProfile.mandatory_fees_annual",
+        "CostProfile.mandatory_fees_breakdown"
+      ],
+      "excerpt": "'Currently, the semester fee amounts to 97.00 Euro' -- described as the 'basic contribution for the student union', applicable to students at Munich, Garching, Weihenstephan (WZW), and TUM Asia campuses.",
+      "notes": ""
+    },
+    {
+      "id": "src-09",
+      "url": "https://www.studierendenwerk-muenchen-oberbayern.de/en/about-us/studierendenwerk-fee/faqs-regarding-the-studierendenwerk-fee/",
+      "title": "FAQs regarding the Studierendenwerk Fee",
+      "source_organization": "Studierendenwerk Muenchen Oberbayern (public-law student services institution)",
+      "source_type": "official_government",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "CostProfile.mandatory_fees_annual",
+        "CostProfile.mandatory_fees_breakdown",
+        "CostProfile.extension_metadata.fields.fee_effective_date"
+      ],
+      "excerpt": "'Current Amount: EUR 97 per semester (increased from EUR 85)', 'Effective Date: from the 2026 Summer Semester onwards'. Funds subsidized canteen meals, childcare, free advisory/counselling (social, BAfoeG, legal, coaching), student housing support. Does NOT include a public transport ticket -- a separate 'Semesterticket/Ermaessigungsticket' exists independently.",
+      "notes": ""
+    },
+    {
+      "id": "src-10",
+      "url": "https://www.tum.de/en/studies/application/application-info-portal/admission-requirements/language-certificates",
+      "title": "Language Certificates",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "AdmissionsRequirement.language_requirements",
+        "AdmissionsRequirement.extension_metadata.fields.language_requirement_absence_english"
+      ],
+      "excerpt": "'A list of certificates recognized as proof of German language proficiency can be found in the KMK framework regulations' (external PDF). 'Applicants holding a German university entrance qualification do not require verification of their German language skills.' 'German citizens with an international higher education entrance qualification who have spent at least two school years at a German school may submit two annual school certificates.' No mention of a separate English-language proficiency requirement for German-taught programs anywhere on this page.",
+      "notes": ""
+    },
+    {
+      "id": "src-11",
+      "url": "https://www.daad.de/en/studying-in-germany/requirements/gce/",
+      "title": "Recognition of the General Certificate of Education (GCE) in Germany",
+      "source_organization": "German Academic Exchange Service (DAAD)",
+      "source_type": "recognized_authority",
+      "retrieved_at": "2026-09-23T19:30:00Z",
+      "retrieval_method": "WebFetch (independent re-fetch, second pass)",
+      "fields_supported": [
+        "AdmissionsRequirement.required_subjects",
+        "AdmissionsRequirement.academic_threshold"
+      ],
+      "excerpt": "'you must provide evidence of 3 general, independent subjects at A Level with a minimum grade of C.' At least 2 of the 3 from a defined list (language, history, geography, social studies/politics, economics, mathematics, biology, chemistry, physics, computer science). 'Natural science studies' requires '2 A Level from: mathematics, biology, chemistry, physics, computer science.' GCSEs 'CANNOT be taken into consideration for access to higher education institutions in Germany.'",
+      "notes": "Re-fetched independently at a distinct timestamp; result identical to first fetch."
+    },
+    {
+      "id": "src-12",
+      "url": "https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/gb/",
+      "title": "uni-assist Country Information: United Kingdom",
+      "source_organization": "uni-assist e.V.",
+      "source_type": "recognized_authority",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "AdmissionsRequirement.extension_metadata.fields.a_level_documentation_rules"
+      ],
+      "excerpt": "'Predicted grades issued by your school are not sufficient for a university application in Germany.' 'Please always submit all of your A Levels because we can only determine which A Levels can be taken into consideration for a specific application once we have completed our evaluation.' 'AS Levels cannot be taken into consideration.' Directs applicants to anabin.kmk.org for detailed equivalency. uni-assist is the official document pre-screening body TUM directs applicants to for VPD issuance.",
+      "notes": ""
+    },
+    {
+      "id": "src-13",
+      "url": "https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/us/",
+      "title": "uni-assist Country Information: United States",
+      "source_organization": "uni-assist e.V.",
+      "source_type": "recognized_authority",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "AdmissionsRequirement.extension_metadata.fields.us_curriculum_route",
+        "AdmissionsRequirement.academic_threshold"
+      ],
+      "excerpt": "'A US high school diploma alone does not allow you to study in Germany.' Credentials assessed via ZAB (Central Office for Foreign Education) standards; typically qualifies for Studienkolleg. Direct admission possible ONLY through AP examinations: 'AP examinations can only be taken into consideration, if the examination was taken during your time at high school' and 'AP results must be issued by the College Board. Results issued by the High School are not sufficient.' Required: high school diploma with grade 9-12 subject/grade overview and unweighted CGPA.",
+      "notes": ""
+    },
+    {
+      "id": "src-14",
+      "url": "https://www.daad.de/en/studying-in-germany/requirements/ib-diploma/",
+      "title": "Recognition of the IB-Diploma in Germany",
+      "source_organization": "German Academic Exchange Service (DAAD)",
+      "source_type": "recognized_authority",
+      "retrieved_at": "2026-09-23T19:30:00Z",
+      "retrieval_method": "WebFetch (independent re-fetch, second pass)",
+      "fields_supported": [
+        "AdmissionsRequirement.academic_threshold",
+        "AdmissionsRequirement.required_subjects"
+      ],
+      "excerpt": "Minimum '24 points ... achieved from the six examination subjects'. 'At least three subjects must be completed at the Higher Level (HL)' (alternatively four). Required: two languages (group 1/2), a social science subject (group 3), a natural science subject -- Biology/Chemistry/Physics (group 4). Mathematics rule (from 2021): HL 'Analysis and Approaches' or 'Applications and Interpretation' -> 'direct university admission for all subjects.' SL Mathematics only -> access restricted to 'subjects that are not assigned to the mathematics, natural sciences and technical fields' (Informatics is a technical field). Exception: schools on the official IB-Diploma Recognition Agreement list may qualify for general access despite SL math if other requirements are met.",
+      "notes": "Re-fetched independently at a distinct timestamp; result identical to first fetch -- the HL-math-for-technical-fields rule is confirmed consistent both times."
+    },
+    {
+      "id": "src-15",
+      "url": "https://www.cit.tum.de/fileadmin/w00byx/cit/Studium/Studiengaenge/Bachelor_Informatik/UEbersicht_EFV_BSc_Informatik_inkl._Berechnungsbeispiel_SoSe25.pdf",
+      "title": "Uebersicht EFV B.Sc. Informatik inkl. Berechnungsbeispiel",
+      "source_organization": "TUM School of Computation, Information and Technology (CIT)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T19:30:00Z",
+      "retrieval_method": "WebFetch PDF text extraction (independent re-fetch, second pass)",
+      "fields_supported": [
+        "Program.extension_metadata.fields.aptitude_assessment_stage1",
+        "Program.extension_metadata.fields.aptitude_assessment_stage2",
+        "Program.extension_metadata.fields.aptitude_assessment_bonus_points"
+      ],
+      "excerpt": "Stage 1 (100-point scale): 65% HZB (school-leaving diploma) average via formula 120-20x(grade); 35% best individual subject grades (Mathematik 3x, Deutsch 1x, Englisch 1x, natural science [Physics/Chemistry/Biology/Informatik, all 4 semesters] 2x) via formula 10+6x(average); up to 6 bonus points (relevant apprenticeship >1yr: 6; relevant internship 6-12mo: 3; MINT studies at TUM: 2; Jugend Forscht/Math Olympiad state+: 2). Thresholds: '84 Punkte und mehr = direkte Zulassung'; '73-83 Punkte = Einladung zum Test (Stufe 2)'; '72 Punkte und weniger = Ablehnung'. Stage 2 (50% HZB average + 50% test result, ~90min, ~20-30 questions, 50% German/50% English, math/logic/interdisciplinary problem-solving): '70 Punkte und mehr = Eignung festgestellt = Zulassung'; '69 Punkte und weniger = keine Eignung = Absage'.",
+      "notes": "Re-fetched independently at a distinct timestamp; all thresholds and weightings identical on both passes -- no discrepancy. This is the run's single most material extension_metadata fact block."
+    },
+    {
+      "id": "src-16",
+      "url": "https://www.cit.tum.de/cit/studium/studiengaenge/bachelor-informatik/",
+      "title": "Bachelor Informatik (program overview)",
+      "source_organization": "TUM School of Computation, Information and Technology (CIT)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "Program.duration_value",
+        "Program.duration_unit",
+        "Program.extension_metadata.fields.curriculum_structure",
+        "Program.extension_metadata.fields.application_timeline",
+        "Program.extension_metadata.fields.application_fields"
+      ],
+      "excerpt": "'Regelstudienzeit: 6 Semester' / 180 ECTS. 'In den ersten vier Semestern erarbeiten Sie sich solide Grundkenntnisse. Ab dem 5. Semester koennen Sie individuelle Schwerpunkte setzen.' Application: '15. Mai bis 15. Juli' online via TUMonline for Winter Semester; Stage 2 test date 'Freitag, 21.08.2026' (confirming this is the Winter Semester 2026/27 admissions cycle, the current published cycle). Required documents: diploma, CV, ID, language certificates where applicable, uni-assist pre-screening for international applicants. Students select one 'Anwendungsfach' (application field): Elektrotechnik, Maschinenwesen, Mathematik, Medizin, or Wirtschaftswissenschaften; custom fields possible with examination-board approval.",
+      "notes": ""
+    },
+    {
+      "id": "src-17",
+      "url": "https://www.tum.de/en/studies/fees-and-financial-aid/scholarships/tum-scholarships/deutschlandstipendium",
+      "title": "The Deutschlandstipendium at TUM",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "Scholarship.award_amount",
+        "Scholarship.award_amount_currency",
+        "Scholarship.provider",
+        "Scholarship.academic_criteria"
+      ],
+      "excerpt": "Award: 'EUR 300 per month'. Funding: matched, 'the federal government helps out too' -- private-donor contributions are doubled by federal government pledges (2026 Matching Challenge). Selection: 'It's not just your grades that count, but also your personal achievements' -- academic performance, personal responsibility/commitment, individual life circumstances. Explicitly 'not purely a merit-based scholarship.'",
+      "notes": ""
+    },
+    {
+      "id": "src-18",
+      "url": "https://www.tum.de/en/studies/fees-and-financial-aid/scholarships/tum-scholarships/deutschlandstipendium/application",
+      "title": "Deutschlandstipendium -- Application and being sponsored",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "Scholarship.degree_levels",
+        "Scholarship.application_deadline",
+        "Scholarship.deadline_academic_year",
+        "Scholarship.renewable",
+        "Scholarship.renewal_conditions"
+      ],
+      "excerpt": "'Both Bachelor's and Master's students at TUM, as well as high school graduates who would like to begin their studies at TUM in the coming semester, can apply' -- confirms first-year/incoming applicants are eligible, not only continuing students. 'The next application period for the 2027/28 funding year will take place in the summer of 2027' -- exact dates announced spring 2027 (not yet published). 'The duration of the scholarship is based on your standard period of study.' Renewal requires minimum grade and ECTS thresholds annually, with documented exceptions for illness/caregiving/childcare; otherwise students reapply as new applicants.",
+      "notes": ""
+    },
+    {
+      "id": "src-19",
+      "url": "https://accra.diplo.de/gh-en/sperrkonto/388600",
+      "title": "Opening a blocked bank account (Sperrkonto) for students",
+      "source_organization": "Federal Foreign Office of Germany (Auswaertiges Amt)",
+      "source_type": "official_government",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "CostProfile.extension_metadata.fields.blocked_account_mechanism"
+      ],
+      "excerpt": "'The amount to be paid into the account varies depending on the purpose of your stay and is based on the maximum rates for support received by German students' (i.e., tied to BAfoeG maximum support/Bedarfssatz rates, not a fixed university-set figure). Applicants directed to 'the website of the competent mission abroad or in the Consular Services Portal' for the exact current amount -- no numeric figure is published on this specific official page.",
+      "notes": "Official Federal Foreign Office source confirming the MECHANISM (BAfoeG-linked, mission/purpose-dependent) but not the numeric figure. A second diplo.de mission page (maskat.diplo.de) was independently checked and gave an identical non-numeric answer. This is the authoritative source for the blocked-account MECHANISM; see src-20 for the corroborated but non-authoritative numeric figure."
+    },
+    {
+      "id": "src-20",
+      "url": "https://www.study.eu/article/germany-blocked-bank-accounts-for-students-guide",
+      "title": "Germany: Blocked bank accounts for students (Guide)",
+      "source_organization": "Study.eu (secondary/commercial study-abroad information site)",
+      "source_type": "secondary",
+      "retrieved_at": "2026-09-23T14:00:00Z",
+      "retrieval_method": "WebFetch",
+      "fields_supported": [
+        "CostProfile.extension_metadata.fields.blocked_account_unconfirmed_figure"
+      ],
+      "excerpt": "'The required amount for a German blocked account when applying for a student visa in 2026 is EUR 11,904 ... with a monthly withdrawal limit set at EUR 992.' States this is based on BAfoeG-defined estimated annual living expenses, consistent with the mechanism confirmed by src-19, but does not itself cite or link an official Auswaertiges Amt publication.",
+      "notes": "NOT treated as authoritative evidence per this project's source hierarchy (secondary/commercial site). Used only as a corroborating, non-authoritative candidate figure alongside a second independent secondary source (germany-visa.org) that reported the identical EUR 11,904 / EUR 992 figures. The exact number could not be confirmed on an official government page despite multiple fetch attempts -- see missing-data.json md-04."
+    },
+    {
+      "id": "src-21",
+      "url": "https://www.tum.de/fileadmin/w00bfo/www/Studium/Dokumente/Immatrikulationsamt/Sprachnachweis/2004_06_25_RO_DT.pdf",
+      "title": "Rahmenordnung ueber Deutsche Sprachpruefungen fuer das Studium an deutschen Hochschulen (RO-DT)",
+      "source_organization": "Kultusministerkonferenz (KMK) / hosted officially on tum.de",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-24T15:00:00Z",
+      "retrieval_method": "WebFetch PDF text extraction",
+      "fields_supported": [
+        "AdmissionsRequirement.language_requirements"
+      ],
+      "excerpt": "The KMK framework regulations document that TUM's Language Certificates page (src-10) directly links to as 'a list of certificates recognized as proof of German language proficiency'. Recognized routes to unrestricted admission: DSH-2 (Deutsche Sprachpruefung fuer den Hochschulzugang, level 2 minimum); TestDaF at TDN 4 minimum across all four modules; the German-language component of a Studienkolleg Feststellungspruefung. Exempting qualifications (no additional test required): Goethe-Zertifikat C2 (Grosses Deutsches Sprachdiplom), OeSD C2 (Oesterreichisches Sprachdiplom C2), telc Deutsch C1 Hochschule, DSD II (Deutsches Sprachdiplom der Kultusministerkonferenz, level II).",
+      "notes": "Hosted on TUM's own domain and directly cited by TUM's official Language Certificates page (src-10) as the authoritative certificate list; treated as official_university tier given that direct institutional endorsement, even though the regulation itself is a KMK (state-level) instrument."
+    },
+    {
+      "id": "src-22",
+      "url": "https://www.ed.tum.de/fileadmin/w00byg/ed/03_Studium/Ingenieurwissenschaften_B._Sc/Dokumente/2024-012__AES_TUM_Hochschulgebuehren_und_Entgeltsatzung_12.02.24.pdf",
+      "title": "Satzung zur Aenderung der Hochschulgebuehren- und Entgeltsatzung der TUM (2024-012, 12.02.2024)",
+      "source_organization": "Technical University of Munich (TUM)",
+      "source_type": "official_university",
+      "retrieved_at": "2026-09-24T15:00:00Z",
+      "retrieval_method": "WebFetch PDF text extraction (independent re-fetch, second pass)",
+      "fields_supported": [
+        "CostProfile.tuition_annual",
+        "CostProfile.extension_metadata.fields.resolution"
+      ],
+      "excerpt": "Official TUM statute (Satzung) governing university fees and charges, effective 2023-10-01. The fee-schedule annex assigns each Bachelor's/Master's program to a numbered fee tier for non-EU/third-country-national students. Exact row: 'Bachelor CIT Informatik, B.Sc. 2 3.000 €' -- i.e. TUM School of Computation, Information and Technology's Bachelor Informatik is assigned fee tier 2, which corresponds to 3,000 EUR per semester (6,000 EUR/year), resolving the 2,000-vs-3,000 EUR/semester ambiguity left open in src-01/src-06.",
+      "notes": "Re-fetched independently at a distinct timestamp within the same research session; the table row was identical on both passes -- no discrepancy. A binding institutional statute, ranked as an official_university primary source per this project's source hierarchy -- stronger evidence than the general (non-program-specific) tuition overview page."
+    }
+  ],
+  "derived_cost_estimates": []
+}

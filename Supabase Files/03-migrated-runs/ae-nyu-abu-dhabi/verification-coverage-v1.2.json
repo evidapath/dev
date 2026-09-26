@@ -1,0 +1,569 @@
+{
+  "run_id": "2026-09-23_ae-nyu-abu-dhabi_computer-science",
+  "materiality_definition": {
+    "University": [
+      "canonical_name",
+      "official_website",
+      "institution_type"
+    ],
+    "Program": [
+      "program_name",
+      "degree_type_local",
+      "faculty_school",
+      "official_program_url",
+      "duration_value",
+      "duration_unit",
+      "language_of_instruction"
+    ],
+    "AdmissionsRequirement": [
+      "academic_threshold",
+      "required_subjects",
+      "standardized_tests",
+      "language_requirements"
+    ],
+    "CostProfile": [
+      "tuition_annual",
+      "mandatory_fees_annual",
+      "estimated_living_costs_annual",
+      "living_cost_source_basis"
+    ],
+    "Scholarship": [
+      "award_amount",
+      "award_type"
+    ]
+  },
+  "canonical_field_coverage": [
+    {
+      "check": "canonical_material_field",
+      "entity_type": "University",
+      "record_id": "ae-nyu-abu-dhabi",
+      "field": "canonical_name",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-01"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "University",
+      "record_id": "ae-nyu-abu-dhabi",
+      "field": "official_website",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-02"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "University",
+      "record_id": "ae-nyu-abu-dhabi",
+      "field": "institution_type",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-03"
+      ],
+      "best_verification_status": "SUPPORTED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "ae-nyu-abu-dhabi-computer-science-bs",
+      "field": "program_name",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-04"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "ae-nyu-abu-dhabi-computer-science-bs",
+      "field": "degree_type_local",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-05"
+      ],
+      "best_verification_status": "SUPPORTED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "ae-nyu-abu-dhabi-computer-science-bs",
+      "field": "faculty_school",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-05"
+      ],
+      "best_verification_status": "SUPPORTED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "ae-nyu-abu-dhabi-computer-science-bs",
+      "field": "official_program_url",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-06"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "ae-nyu-abu-dhabi-computer-science-bs",
+      "field": "duration_value",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-07"
+      ],
+      "best_verification_status": "SUPPORTED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "ae-nyu-abu-dhabi-computer-science-bs",
+      "field": "duration_unit",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-07"
+      ],
+      "best_verification_status": "SUPPORTED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "ae-nyu-abu-dhabi-computer-science-bs",
+      "field": "language_of_instruction",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-08"
+      ],
+      "best_verification_status": "SUPPORTED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-us-hs",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-18"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-us-hs",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-18"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-us-hs",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-22"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-ib",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-19"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-ib",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-19"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-ib",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-23"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-a-level",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-20"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-a-level",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-20"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-a-level",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-24"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-international-other",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-21"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-international-other",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-21"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-international-other",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-25"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "cost-uniform",
+      "field": "tuition_annual",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-26"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "cost-uniform",
+      "field": "mandatory_fees_annual",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-27"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "cost-uniform",
+      "field": "estimated_living_costs_annual",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-28"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "cost-uniform",
+      "field": "living_cost_source_basis",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-28"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Scholarship",
+      "record_id": "ae-sheikh-mohamed-bin-zayed-nyuad-scholarship",
+      "field": "award_amount",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-30"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Scholarship",
+      "record_id": "ae-sheikh-mohamed-bin-zayed-nyuad-scholarship",
+      "field": "award_type",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-30"
+      ],
+      "best_verification_status": "VERIFIED"
+    }
+  ],
+  "meaningful_absence_coverage": [
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-13",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "extension_metadata.fields.major_entry_structure",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-15",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "field_checked": "extension_metadata.fields.financial_aid_policy",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-18",
+      "record_ref": "AdmissionsRequirement:admreq-us-hs",
+      "field_checked": "academic_threshold, required_subjects, standardized_tests",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-19",
+      "record_ref": "AdmissionsRequirement:admreq-ib",
+      "field_checked": "academic_threshold, required_subjects, standardized_tests",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-20",
+      "record_ref": "AdmissionsRequirement:admreq-a-level",
+      "field_checked": "academic_threshold, required_subjects, standardized_tests",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-21",
+      "record_ref": "AdmissionsRequirement:admreq-international-other",
+      "field_checked": "academic_threshold, required_subjects, standardized_tests",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-22",
+      "record_ref": "AdmissionsRequirement:admreq-us-hs",
+      "field_checked": "language_requirements",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-23",
+      "record_ref": "AdmissionsRequirement:admreq-ib",
+      "field_checked": "language_requirements",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-24",
+      "record_ref": "AdmissionsRequirement:admreq-a-level",
+      "field_checked": "language_requirements",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-25",
+      "record_ref": "AdmissionsRequirement:admreq-international-other",
+      "field_checked": "language_requirements",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-29",
+      "record_ref": "CostProfile:cost-uniform",
+      "field_checked": "residency_category_ref (scope)",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-32",
+      "record_ref": "AdmissionsRequirement:admreq-us-hs",
+      "field_checked": "extension_metadata.fields (subject-gating absence + program-preparation recommendations)",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-33",
+      "record_ref": "AdmissionsRequirement:admreq-ib",
+      "field_checked": "extension_metadata.fields (subject-gating absence + program-preparation recommendations)",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-34",
+      "record_ref": "AdmissionsRequirement:admreq-a-level",
+      "field_checked": "extension_metadata.fields (subject-gating absence + program-preparation recommendations)",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-35",
+      "record_ref": "AdmissionsRequirement:admreq-international-other",
+      "field_checked": "extension_metadata.fields (subject-gating absence + program-preparation recommendations)",
+      "covered": true
+    }
+  ],
+  "material_extension_coverage": [
+    {
+      "check": "material_extension_fact",
+      "entity_type": "Program",
+      "record_id": "ae-nyu-abu-dhabi-computer-science-bs",
+      "extension_keys": [
+        "required_secondary_credential",
+        "transfer_admission_status"
+      ],
+      "covered": true
+    },
+    {
+      "check": "material_extension_fact",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-us-hs",
+      "extension_keys": [
+        "quantitative_prerequisite_guidance"
+      ],
+      "covered": true
+    },
+    {
+      "check": "material_extension_fact",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-ib",
+      "extension_keys": [
+        "quantitative_prerequisite_guidance"
+      ],
+      "covered": true
+    },
+    {
+      "check": "material_extension_fact",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-a-level",
+      "extension_keys": [
+        "quantitative_prerequisite_guidance"
+      ],
+      "covered": true
+    },
+    {
+      "check": "material_extension_fact",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "admreq-international-other",
+      "extension_keys": [
+        "quantitative_prerequisite_guidance"
+      ],
+      "covered": true
+    }
+  ],
+  "new_entity_evidence_coverage": [
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "AdmissionStage",
+      "record_id": "ae-nyu-abu-dhabi-stage-university-entry",
+      "covered": true,
+      "source_ref_count": 2,
+      "verification_status": "VERIFIED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "AdmissionStage",
+      "record_id": "ae-nyu-abu-dhabi-stage-major-declaration",
+      "covered": true,
+      "source_ref_count": 2,
+      "verification_status": "CONFLICT"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "DecisionPlan",
+      "record_id": "ae-nyu-abu-dhabi-decisionplan-ed1",
+      "covered": true,
+      "source_ref_count": 2,
+      "verification_status": "VERIFIED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "DecisionPlan",
+      "record_id": "ae-nyu-abu-dhabi-decisionplan-ed2",
+      "covered": true,
+      "source_ref_count": 2,
+      "verification_status": "VERIFIED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "DecisionPlan",
+      "record_id": "ae-nyu-abu-dhabi-decisionplan-rd",
+      "covered": true,
+      "source_ref_count": 2,
+      "verification_status": "VERIFIED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "FinancialAidPolicy",
+      "record_id": "ae-nyu-abu-dhabi-finaid-need-based",
+      "covered": true,
+      "source_ref_count": 3,
+      "verification_status": "SUPPORTED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "FinancialAidPolicy",
+      "record_id": "ae-nyu-abu-dhabi-finaid-falcon-dirhams",
+      "covered": true,
+      "source_ref_count": 2,
+      "verification_status": "VERIFIED"
+    }
+  ],
+  "summary": {
+    "total_material_fields_checked": 28,
+    "not_covered_canonical": 0,
+    "total_verified_absent_claims_checked": 15,
+    "not_covered_absence": 0,
+    "total_material_extension_facts_checked": 5,
+    "not_covered_extension": 0,
+    "total_new_entity_records_checked": 7,
+    "not_covered_new_entity": 0
+  },
+  "overall_result": "PASS"
+}

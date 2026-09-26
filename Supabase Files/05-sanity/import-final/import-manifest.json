@@ -1,0 +1,204 @@
+{
+  "package": "evidapath-v1.2-final-sanity-import",
+  "purpose": "Verification-backlog closure: independently re-verify every previously-uncovered material field/extension-fact/new-entity record across all five institutions using authoritative primary sources, on top of the earlier reference-cleanup pass, then regenerate a clean, fully-resolved five-school Sanity draft import file.",
+  "prior_reference_fixes": [
+    {
+      "verification_record_id": "vr-25",
+      "institution": "de-tu-munich",
+      "old_record_ref": "CostProfile:de-tu-munich-cost-non-eu-immigration-liquidity",
+      "new_record_ref": "FinancialRequirement:de-tu-munich-finreq-blocked-account",
+      "field_checked": "living_cost_source_basis.kind (mechanism)",
+      "verification_status_preserved": "VERIFIED",
+      "blocking_status_preserved": "blocking"
+    },
+    {
+      "verification_record_id": "vr-26",
+      "institution": "de-tu-munich",
+      "old_record_ref": "CostProfile:de-tu-munich-cost-non-eu-immigration-liquidity",
+      "new_record_ref": "FinancialRequirement:de-tu-munich-finreq-blocked-account",
+      "field_checked": "estimated_living_costs_annual (11,904 EUR figure)",
+      "verification_status_preserved": "SUPPORTED",
+      "blocking_status_preserved": "blocking"
+    },
+    {
+      "verification_record_id": "vr-12",
+      "institution": "gb-university-of-oxford",
+      "old_record_ref": "CostProfile:gb-university-of-oxford-cost-visa-maintenance-funds",
+      "new_record_ref": "FinancialRequirement:gb-university-of-oxford-finreq-visa-maintenance",
+      "field_checked": "living_cost_source_basis",
+      "verification_status_preserved": "VERIFIED",
+      "blocking_status_preserved": "non_blocking"
+    },
+    {
+      "verification_record_id": "vr-13",
+      "institution": "gb-university-of-oxford",
+      "old_record_ref": "CostProfile:gb-university-of-oxford-cost-visa-maintenance-funds",
+      "new_record_ref": "FinancialRequirement:gb-university-of-oxford-finreq-visa-maintenance",
+      "field_checked": "extension_metadata.fields.oxford_region_classification",
+      "verification_status_preserved": "UNKNOWN",
+      "blocking_status_preserved": "non_blocking"
+    }
+  ],
+  "prior_reference_fixes_note": "Untouched by this pass -- confirmed still in place before and after the verification-closure work below.",
+  "verification_coverage_closure": {
+    "nl-tu-delft": {
+      "new_verification_records": ["vr-17", "vr-18"],
+      "new_source_records": [],
+      "records_v1.2_field_changes": [],
+      "coverage_before": "3 of 8 canonical fields uncovered, 1 of 1 material-extension facts uncovered",
+      "coverage_after": "PASS -- 0 uncovered"
+    },
+    "gb-university-of-oxford": {
+      "new_verification_records": ["vr-36","vr-37","vr-38","vr-39","vr-40","vr-41","vr-42","vr-43","vr-44","vr-45","vr-46","vr-47","vr-48","vr-49","vr-50"],
+      "new_source_records": ["src-13", "src-14", "src-15"],
+      "records_v1.2_field_changes": [
+        "AdmissionsRequirement gb-university-of-oxford-admreq-a-level.language_requirements: [] -> populated (general English-language-requirement policy, not curriculum-specific exemption)",
+        "AdmissionsRequirement gb-university-of-oxford-admreq-ib.language_requirements: [] -> populated (IB taught-in-English exemption, explicitly named)",
+        "AdmissionsRequirement gb-university-of-oxford-admreq-advanced-highers.language_requirements: [] -> populated",
+        "AdmissionsRequirement gb-university-of-oxford-admreq-ap-us.required_subjects/standardized_tests/language_requirements: [] -> populated (CS department typical-offer page + gov.uk majority-English-speaking-country list)"
+      ],
+      "coverage_before": "10 of 33 canonical fields uncovered, 5 of 5 material-extension facts uncovered",
+      "coverage_after": "PASS -- 0 uncovered",
+      "note": "vr-12/vr-13 untouched (confirmed). oxford_region_classification remains UNCONFIRMED -- not guessed."
+    },
+    "ca-university-of-toronto": {
+      "new_verification_records": ["vr-27","vr-28","vr-29","vr-30","vr-31","vr-32","vr-33","vr-34","vr-35","vr-36","vr-37","vr-38","vr-39"],
+      "new_source_records": ["src-18","src-19","src-20","src-21","src-22"],
+      "records_v1.2_field_changes": [
+        "AdmissionsRequirement ca-university-of-toronto-admreq-ontario.language_requirements: [] -> populated (Canadian-schooling exemption)",
+        "AdmissionsRequirement ca-university-of-toronto-admreq-ib.language_requirements: min_score filled in (4, or 7 for English B HL) -- was null",
+        "AdmissionsRequirement ca-university-of-toronto-admreq-a-level.language_requirements: [] -> populated (GCE A-Level English C+ pathway and UK-schooling exemption)",
+        "AdmissionsRequirement ca-university-of-toronto-admreq-us.language_requirements: [] -> populated (US-schooling exemption)",
+        "CostProfile ca-university-of-toronto-cost-domestic-other-province.tuition_annual: RESOLVED to 7610 (was a 3-way unresolved conflict); verification_status/record_status promoted to VERIFIED",
+        "DecisionPlan ca-university-of-toronto-decisionplan-2027: application_deadline set to 2027-01-15; verification_status/record_status promoted to VERIFIED (was UNKNOWN/HUMAN_REVIEW)",
+        "New FinancialRequirement record added: ca-university-of-toronto-finreq-ircc-proof-of-funds (IRCC study-permit proof-of-funds figure, CAD 23,448 -- added as FinancialRequirement per this schema's V1.2 design decision to route visa-proof-of-funds facts there rather than into CostProfile.living_cost_source_basis)"
+      ],
+      "coverage_before": "5 of 27 canonical fields uncovered, 6 of 6 material-extension facts uncovered, 1 of 4 new-entity records uncovered",
+      "coverage_after": "PASS -- 0 uncovered"
+    },
+    "de-tu-munich": {
+      "new_verification_records": ["vr-31","vr-32","vr-33","vr-34","vr-35","vr-36","vr-37","vr-38","vr-39","vr-40","vr-41","vr-42","vr-43","vr-44","vr-45"],
+      "new_source_records": ["src-21", "src-22"],
+      "records_v1.2_field_changes": [
+        "AdmissionsRequirement de-tu-munich-admreq-abitur.language_requirements: [] -> populated (exemption for German university-entrance-qualification holders)",
+        "AdmissionsRequirement de-tu-munich-admreq-ib.standardized_tests: [] -> VERIFIED_ABSENT (no TestAS or standardized test found); .language_requirements: [] -> populated (KMK Rahmenordnung accepted-certificate list: DSH-2, TestDaF TDN4, Goethe C2, telc C1 Hochschule, OSD C2, DSD II)",
+        "AdmissionsRequirement de-tu-munich-admreq-a-level.standardized_tests: [] -> VERIFIED_ABSENT; .language_requirements: [] -> populated (same certificate list)",
+        "AdmissionsRequirement de-tu-munich-admreq-us.language_requirements: [] -> populated (same certificate list)",
+        "CostProfile de-tu-munich-cost-non-eu.tuition_annual: RESOLVED to 6000.0 EUR/year (was null, unresolved 2000/3000-per-semester ambiguity); verification_status/record_status promoted HUMAN_REVIEW -> VERIFIED; old candidate figures preserved in extension_metadata as an audit trail"
+      ],
+      "coverage_before": "11 of 35 canonical fields uncovered, 1 of 2 material-extension facts uncovered",
+      "coverage_after": "PASS -- 0 uncovered",
+      "note": "vr-25/vr-26 untouched (confirmed)."
+    },
+    "ae-nyu-abu-dhabi": {
+      "new_verification_records": ["vr-32","vr-33","vr-34","vr-35"],
+      "new_source_records": [],
+      "records_v1.2_field_changes": [],
+      "coverage_before": "4 of 5 material-extension facts uncovered",
+      "coverage_after": "PASS -- 0 uncovered"
+    }
+  },
+  "schema_conformance_fix": {
+    "issue": "One research pass introduced a non-schema 'absence_claim' boolean field (a V1.1-era convention) onto 19 newly-added VerificationRecords across nl-tu-delft (2), ca-university-of-toronto (13), and ae-nyu-abu-dhabi (4) -- $defs/verification_record has additionalProperties:false and no absence_claim property in V1.2 (formally replaced by the VERIFIED_ABSENT + conflict_or_limitation_notes convention).",
+    "found_by": "independent schema-conformance check run against $defs/verification_record across all five institutions' verification-records-v1.2.json files before finalizing this package",
+    "fix": "absence_claim key stripped from all 19 records; no other field touched; semantic meaning already fully captured via verification_status (VERIFIED_ABSENT where applicable) and conflict_or_limitation_notes, so no information was lost",
+    "verified_clean": "re-ran the same conformance check post-fix across all five institutions: 0 disallowed properties, 0 missing required properties, 0 duplicate VerificationRecord IDs, 0 invalid enum values, 0 dangling source_refs"
+  },
+  "sanity_draft_totals": {
+    "combined_documents": 399,
+    "unique_ids": 399,
+    "combined_documents_before_this_pass": 342,
+    "unresolved_references_before_fix": 0,
+    "unresolved_references_after_fix": 0,
+    "per_type_counts": {
+      "admissionStage": 10, "admissionsRequirement": 20, "applicantCategory": 31,
+      "campus": 5, "city": 6, "costProfile": 10, "country": 5, "decisionPlan": 7,
+      "derivedCostEstimate": 6, "financialAidPolicy": 2, "financialRequirement": 4,
+      "program": 5, "programPathway": 3, "scholarship": 8, "sourceRecord": 85,
+      "university": 5, "verificationRecord": 187
+    }
+  },
+  "file_hashes": {
+    "five-school-sanity-drafts.ndjson": "c9e14c43133c081b121778d0c13e29013e16e4d3d04ee4cc1d1166e0846ac75b",
+    "five-school-sanity-drafts.resolved.ndjson": "44f2437c8aeba1ad4a174ef2110b91bac40d216846e321b9c1e8aeb882f2f4f6"
+  },
+  "prior_package_file_hashes": {
+    "note": "The prior (reference-cleanup-only) package's hashes, superseded by this package",
+    "five-school-sanity-drafts.ndjson": "b376366f10fd8098342422aa7efecaa530c04abcad516d33fcc57676cae21d12",
+    "five-school-sanity-drafts.resolved.ndjson": "d18a2e98059267a0784698f41d7e13a684d6b8199d82da2bb2d2650ecb8b9bd5"
+  },
+  "reproducibility": {
+    "method": "normalized_to_sanity_ndjson_v1_2.py --combine-dir, then resolve_references.py, run twice against unchanged input",
+    "result": "byte-identical on both runs (raw and resolved)"
+  },
+  "sanity_project": {
+    "project_id": "jxwrtsiz",
+    "dataset": "staging",
+    "note": "Import target only -- no write has been performed as part of producing this package."
+  },
+  "no_live_write_confirmation": "No Sanity API call, CLI import, or publish action was performed while producing this package. All steps were local, offline, deterministic file transforms plus WebSearch/WebFetch calls to public university/government evidence pages.",
+  "no_schema_redesign_confirmation": "The V1.2 JSON Schema (02-schema-design/evidapath-schema-v1.2.json) was not modified. All new/changed field values conform to existing schema types and enums.",
+  "no_new_university_confirmation": "No sixth university was researched. All research in this pass targeted previously-uncovered fields on the same five pilot institutions (TU Delft, Oxford, Toronto, TU Munich, NYU Abu Dhabi).",
+  "post_repair_2026_09_24": {
+    "purpose": "Sanity schema/transform alignment QA repair -- see 09-schema-transform-repair/schema-transform-alignment.md for the full field-by-field audit. Six bugs fixed in the TRANSFORM layer only (04-pipeline/normalized_to_sanity_ndjson_v1_2.py, 05-sanity/import/resolve_references.py, 05-sanity/generation/gen_schema_files.py); the JSON Schema and every institution's records-v1.2.json/verification-records-v1.2.json are unchanged.",
+    "bugs_fixed": [
+      "id field stripped from all 399 documents (missing on 399/399 before; 0/399 after)",
+      "extension_metadata.fields typed as plain string in the generated Sanity schema, raw dict copied through -> literal '[object Object]' in Studio (50 occurrences before; converted to a deterministic array-of-entries shape, 0 raw-dict occurrences after)",
+      "explicit null copied straight through instead of the key being omitted (84 documents / 164 null occurrences before; 0 after)",
+      "embedded array-of-object items (application_requirements, standardized_tests, language_requirements, mandatory_fees_breakdown, other_material_costs, accepted_assessments, criteria) missing Sanity _type/_key (87 items before; 0 after)",
+      "resolve_references.py only walked top-level document keys, missing one nested reference field (Program.testing_policy.source_refs, 1 occurrence) -- now recurses the full document tree",
+      "preview.select fell back to the bare id field (both title and subtitle) for 10 of 19 document types (270 of 399 documents) -- now composes existing canonical fields via prepare()"
+    ],
+    "sanity_draft_totals_unchanged": "Still 399 documents, 399 unique ids, 0 unresolved references -- this pass changed document SHAPE (added/fixed fields), not document COUNT or content.",
+    "file_hashes_before_this_pass": {
+      "five-school-sanity-drafts.ndjson": "c9e14c43133c081b121778d0c13e29013e16e4d3d04ee4cc1d1166e0846ac75b",
+      "five-school-sanity-drafts.resolved.ndjson": "44f2437c8aeba1ad4a174ef2110b91bac40d216846e321b9c1e8aeb882f2f4f6"
+    },
+    "file_hashes_after_this_pass": {
+      "five-school-sanity-drafts.ndjson": "616079ae2bddfd93b4a2a65d4440ad9fb82aab96efffd7f3e4de1a5d759e4857",
+      "five-school-sanity-drafts.resolved.ndjson": "185f5d9d47a6a4eca1afa3521b894605ac1090086327117b477191cd91e9a1b0"
+    },
+    "reproducibility": "normalized_to_sanity_ndjson_v1_2.py --combine-dir + resolve_references.py, run twice against unchanged input, byte-identical both times (raw and resolved) post-repair.",
+    "existing_source_data_qa_rerun": "validate_normalized_records_v1_2.py, check_fields_supported_v1_2.py, and check_verification_coverage_v1_2.py re-run against all five institutions' records-v1.2.json post-repair: all still PASS, identically to the pre-repair run (exit code 0, confirming the JSON-Schema-level source data was never the problem).",
+    "new_validator": "09-schema-transform-repair/validate_sanity_ndjson_v1_2.py -- a new, standalone, automated regression validator that checks the Sanity NDJSON OUTPUT (not just the JSON-Schema-level source data the existing validators check) for exactly this class of bug: missing id, explicit nulls, un-annotated embedded objects, duplicate _key, unresolved-looking references, raw-dict extension_metadata.fields. Verified to PASS against the repaired file and to correctly flag every bug above when run against the pre-repair file.",
+    "no_live_write_confirmation": "No Sanity API call, CLI import, or publish action was performed while producing this repair. All steps were local, offline, deterministic file transforms plus regenerating the Sanity schema files from the (unmodified) JSON Schema.",
+    "no_schema_redesign_confirmation": "evidapath-schema-v1.2.json was not modified in this pass either. No field was renamed, removed, or reinterpreted -- only the generator's mapping of existing JSON-Schema shapes to Sanity field types, and the transform's handling of existing field values, were corrected."
+  },
+  "contract_repair_2026_09_24_v2": {
+    "purpose": "Formal V1.2 -> Sanity serialization contract (05-sanity/contract/sanity-serialization-contract.md), validated against a 48-document fixture built from existing five-school records before being applied to the full dataset. Found and fixed two systemic bugs beyond post_repair_2026_09_24 above.",
+    "bugs_fixed": [
+      "extension_metadata present but fully contentless (blank note, empty fields, no proposed_v1_2_fields) still emitted and still tripped Rule.required() in Studio -- 7 of 50 populated blocks were exactly this, plus 21 more with a real note but an empty fields map that also tripped Rule.required() on fields alone. Fixed: note/fields no longer over-strictly required (NON_ENFORCED_REQUIRED), and the whole block is omitted when genuinely contentless.",
+      "VerificationRecord.proposed_value and ChangeRecord.{previous,proposed}_value are declared as untyped 'any value' ({}) in the JSON Schema (confirmed: the ONLY three such properties in the whole schema) and real data populates them with every JSON primitive shape (string/number/boolean/null/object/array) -- the generator defaulted this to a plain Sanity string field, the same [object Object] risk as extension_metadata.fields, for any object/array-shaped proposed value (confirmed present: gb-university-of-oxford-vr-08/-11/-12). Fixed with a new deterministic anyValueBox {value, value_type} shape."
+    ],
+    "fixture": {
+      "path": "09-schema-transform-repair/fixture/",
+      "method": "48 real records (2 institutions: ae-nyu-abu-dhabi, gb-university-of-oxford), selected as a deliberate seed set covering every required scenario then closed under full reference-dependency BFS (build_contract_fixture.py), run through the SAME unmodified pipeline scripts as the full dataset.",
+      "result": "48 Sanity documents, 0 contract-validator errors, 0 unresolved references, byte-identical across two independent runs. Underlying fixture source data independently re-passed validate_normalized_records_v1_2.py and check_fields_supported_v1_2.py for both institutions."
+    },
+    "reference_root_cause_audit": {
+      "method": "09-schema-transform-repair/reference_root_cause_audit.py, run against all 791 references in the corrected 399-document set and, for comparison, all 789 references in the original pre-repair file.",
+      "post_repair_result": "0 missing target, 0 wrong-allowed-type, 0 malformed _ref, 0 targets that themselves fail the contract validator (791/791 clean).",
+      "pre_repair_result": "0 missing target, 0 wrong-allowed-type, 0 malformed _ref, but 789 of 789 references (100%) pointed at a target that itself failed validation -- confirming the 'reference inherits its target's redness' theory directly, and confirming it was a symptom of the missing-id/null/embedded-object bugs already fixed, never a separate 6th root cause.",
+      "draft_published_mismatch": "Not testable from static files -- this dataset is entirely drafts.*-prefixed by construction; a genuine draft/published ID collision could only be checked against the live Sanity dataset itself."
+    },
+    "contract_validator": {
+      "path": "09-schema-transform-repair/validate_sanity_ndjson_v1_2.py",
+      "checks": "required id present; no explicit null anywhere; no raw-dict extension_metadata.fields; no present-but-contentless extension_metadata; every embedded array item has _type and a unique _key; every embedded single object has _type; no unresolved-looking reference; no reference pointing at a target of the wrong Sanity type; no untagged/mixed-shape object or array (object-coercion risk, including the literal '[object Object]' text); no top-level field absent from the JSON Schema's own $def; no enum value outside the JSON Schema's own enum list.",
+      "result_fixture": "48/48 documents, 0 errors",
+      "result_full": "399/399 documents, 0 errors"
+    },
+    "file_hashes_before_this_pass": {
+      "five-school-sanity-drafts.ndjson": "616079ae2bddfd93b4a2a65d4440ad9fb82aab96efffd7f3e4de1a5d759e4857",
+      "five-school-sanity-drafts.resolved.ndjson": "185f5d9d47a6a4eca1afa3521b894605ac1090086327117b477191cd91e9a1b0"
+    },
+    "file_hashes_after_this_pass": {
+      "five-school-sanity-drafts.ndjson": "1095576859827510c5d7dd9c2b65ad8d0ce3413b8f3e3de28af693ac7bb931d9",
+      "five-school-sanity-drafts.resolved.ndjson": "6455d07ed30e9d60e4e1ca1c5e87e71fbec4dcd52898c6a5f487e0c917007772"
+    },
+    "reproducibility": "Byte-identical raw and resolved output across two independent runs, for both the fixture and the full 399-document set.",
+    "genuine_domain_states_not_touched": "HUMAN_REVIEW / CONFLICT records (e.g. ae-nyu-abu-dhabi-stage-major-declaration, ae-sheikh-mohamed-bin-zayed-nyuad-scholarship and its vr-31) are unchanged and are not counted as technical validation failures -- they are real, evidence-backed research findings.",
+    "no_live_write_confirmation": "No Sanity API call, CLI import, or publish action was performed while producing this pass.",
+    "no_schema_redesign_confirmation": "evidapath-schema-v1.2.json was not modified. Both fixes are corrections to the generator's mapping of existing JSON-Schema shapes to Sanity field types and the transform's handling of existing field values -- no canonical field was added, removed, or reinterpreted.",
+    "no_universities_added_confirmation": "Only records already present in 03-migrated-runs were used, for both the fixture and the full run. No new research was performed."
+  }
+}

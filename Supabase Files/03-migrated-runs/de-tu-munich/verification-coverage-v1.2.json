@@ -1,0 +1,554 @@
+{
+  "run_id": "2026-09-23_de-tu-munich_informatics",
+  "materiality_definition": {
+    "University": [
+      "canonical_name",
+      "official_website",
+      "institution_type"
+    ],
+    "Program": [
+      "program_name",
+      "degree_type_local",
+      "faculty_school",
+      "official_program_url",
+      "duration_value",
+      "duration_unit",
+      "language_of_instruction"
+    ],
+    "AdmissionsRequirement": [
+      "academic_threshold",
+      "required_subjects",
+      "standardized_tests",
+      "language_requirements"
+    ],
+    "CostProfile": [
+      "tuition_annual",
+      "mandatory_fees_annual",
+      "estimated_living_costs_annual",
+      "living_cost_source_basis"
+    ],
+    "Scholarship": [
+      "award_amount",
+      "award_type"
+    ]
+  },
+  "canonical_field_coverage": [
+    {
+      "check": "canonical_material_field",
+      "entity_type": "University",
+      "record_id": "de-tu-munich",
+      "field": "canonical_name",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-01"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "University",
+      "record_id": "de-tu-munich",
+      "field": "official_website",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-03"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "University",
+      "record_id": "de-tu-munich",
+      "field": "institution_type",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-02"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "de-tu-munich-informatics",
+      "field": "program_name",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-04"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "de-tu-munich-informatics",
+      "field": "degree_type_local",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-05"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "de-tu-munich-informatics",
+      "field": "faculty_school",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-06"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "de-tu-munich-informatics",
+      "field": "official_program_url",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-07"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "de-tu-munich-informatics",
+      "field": "duration_value",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-08"
+      ],
+      "best_verification_status": "SUPPORTED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "de-tu-munich-informatics",
+      "field": "duration_unit",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-31"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Program",
+      "record_id": "de-tu-munich-informatics",
+      "field": "language_of_instruction",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-09"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-abitur",
+      "field": "academic_threshold",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-15"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-abitur",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-15b"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-abitur",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-32"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-abitur",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-33"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-ib",
+      "field": "academic_threshold",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-17",
+        "vr-18"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-ib",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-18"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-ib",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-34"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-ib",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-35"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-a-level",
+      "field": "academic_threshold",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-19"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-a-level",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-19"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-a-level",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-36"
+      ],
+      "best_verification_status": "VERIFIED_ABSENT"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-a-level",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-37"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-us",
+      "field": "academic_threshold",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-20"
+      ],
+      "best_verification_status": "SUPPORTED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-us",
+      "field": "required_subjects",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-38"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-us",
+      "field": "standardized_tests",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-39"
+      ],
+      "best_verification_status": "SUPPORTED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "AdmissionsRequirement",
+      "record_id": "de-tu-munich-admreq-us",
+      "field": "language_requirements",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-40"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "de-tu-munich-cost-eu-eea",
+      "field": "tuition_annual",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-21"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "de-tu-munich-cost-eu-eea",
+      "field": "mandatory_fees_annual",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-23-eu-eea"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "de-tu-munich-cost-eu-eea",
+      "field": "estimated_living_costs_annual",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-24-eu-eea"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "de-tu-munich-cost-eu-eea",
+      "field": "living_cost_source_basis",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-23-eu-eea"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "de-tu-munich-cost-non-eu",
+      "field": "tuition_annual",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-22",
+        "vr-42"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "de-tu-munich-cost-non-eu",
+      "field": "mandatory_fees_annual",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-23-non-eu"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "de-tu-munich-cost-non-eu",
+      "field": "estimated_living_costs_annual",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-24-non-eu"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "CostProfile",
+      "record_id": "de-tu-munich-cost-non-eu",
+      "field": "living_cost_source_basis",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-23-non-eu"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Scholarship",
+      "record_id": "de-deutschlandstipendium-tum",
+      "field": "award_amount",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-27"
+      ],
+      "best_verification_status": "VERIFIED"
+    },
+    {
+      "check": "canonical_material_field",
+      "entity_type": "Scholarship",
+      "record_id": "de-deutschlandstipendium-tum",
+      "field": "award_type",
+      "covered": true,
+      "verification_record_ids": [
+        "vr-41"
+      ],
+      "best_verification_status": "VERIFIED"
+    }
+  ],
+  "meaningful_absence_coverage": [
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-15",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-abitur",
+      "field_checked": "academic_threshold (absence of a fixed numeric HZB cutoff)",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-16",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "language_requirements (absence of a separate English proficiency requirement)",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-17",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-ib",
+      "field_checked": "academic_threshold (absence of a per-subject minimum grade beyond the 24-point aggregate)",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-30",
+      "record_ref": "Scholarship:de-deutschlandstipendium-tum",
+      "field_checked": "application_deadline + deadline_academic_year",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-34",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-ib",
+      "field_checked": "standardized_tests",
+      "covered": true
+    },
+    {
+      "check": "meaningful_absence_verified_absent",
+      "verification_record_id": "vr-36",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-a-level",
+      "field_checked": "standardized_tests",
+      "covered": true
+    }
+  ],
+  "material_extension_coverage": [
+    {
+      "check": "material_extension_fact",
+      "entity_type": "Program",
+      "record_id": "de-tu-munich-informatics",
+      "extension_keys": [
+        "curriculum_structure"
+      ],
+      "covered": true
+    },
+    {
+      "check": "material_extension_fact",
+      "entity_type": "CostProfile",
+      "record_id": "de-tu-munich-cost-non-eu",
+      "extension_keys": [
+        "unconfirmed_candidate_figures",
+        "confirmed_bracket_and_mechanism",
+        "resolution"
+      ],
+      "covered": true
+    }
+  ],
+  "new_entity_evidence_coverage": [
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "AdmissionStage",
+      "record_id": "de-tu-munich-stage-qualification-recognition",
+      "covered": true,
+      "source_ref_count": 3,
+      "verification_status": "VERIFIED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "AdmissionStage",
+      "record_id": "de-tu-munich-stage-aptitude-assessment",
+      "covered": true,
+      "source_ref_count": 2,
+      "verification_status": "VERIFIED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "AdmissionStage",
+      "record_id": "de-tu-munich-stage-studienkolleg",
+      "covered": true,
+      "source_ref_count": 2,
+      "verification_status": "VERIFIED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "DecisionPlan",
+      "record_id": "de-tu-munich-decisionplan-ws2026-27",
+      "covered": true,
+      "source_ref_count": 2,
+      "verification_status": "VERIFIED"
+    },
+    {
+      "check": "new_entity_evidence",
+      "entity_type": "FinancialRequirement",
+      "record_id": "de-tu-munich-finreq-blocked-account",
+      "covered": true,
+      "source_ref_count": 2,
+      "verification_status": "SUPPORTED"
+    }
+  ],
+  "summary": {
+    "total_material_fields_checked": 36,
+    "not_covered_canonical": 0,
+    "total_verified_absent_claims_checked": 6,
+    "not_covered_absence": 0,
+    "total_material_extension_facts_checked": 2,
+    "not_covered_extension": 0,
+    "total_new_entity_records_checked": 5,
+    "not_covered_new_entity": 0
+  },
+  "overall_result": "PASS"
+}

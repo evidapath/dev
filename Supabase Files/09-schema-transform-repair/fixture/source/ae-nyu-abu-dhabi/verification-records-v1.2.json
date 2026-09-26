@@ -1,0 +1,89 @@
+{
+  "verification_records": [
+    {
+      "blocking_status": "blocking",
+      "conflict_or_limitation_notes": "Two official NYU sources state different major-declaration deadlines. Not resolved by guessing; logged in conflicts.json and pushes Program.record_status to HUMAN_REVIEW.",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "field_checked": "extension_metadata.fields.major_declaration_timing",
+      "id": "vr-12",
+      "material_extension_fact": true,
+      "proposed_value": "CONFLICT: 'end of second year' (src-08) vs 'spring break of second year' (src-09)",
+      "record_ref": "Program:ae-nyu-abu-dhabi-computer-science-bs",
+      "source_refs": [
+        "src-08",
+        "src-09"
+      ],
+      "verification_method": "cached_extraction_reread_only",
+      "verification_status": "CONFLICT",
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z"
+    },
+    {
+      "blocking_status": "non_blocking",
+      "conflict_or_limitation_notes": "Same VERIFIED ABSENCE basis as vr-18, applied to the GCE A-Level applicant category -- NYUAD does not publish A-Level-specific grade requirements. [holistic-admissions semantic QA reviewed]",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "field_checked": "academic_threshold, required_subjects, standardized_tests",
+      "id": "vr-20",
+      "proposed_value": "no published curriculum-specific cutoff; test-optional",
+      "record_ref": "AdmissionsRequirement:admreq-a-level",
+      "source_refs": [
+        "src-02",
+        "src-05",
+        "src-15"
+      ],
+      "verification_method": "cached_extraction_reread_only",
+      "verification_status": "VERIFIED_ABSENT",
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z"
+    },
+    {
+      "blocking_status": "non_blocking",
+      "conflict_or_limitation_notes": "Directly and explicitly stated across three official NYUAD pages with consistent wording on the award's scope. Reviewed under this run's financial-aid semantic QA rule: confirmed this is a genuinely fixed, named award for a defined population, not a personalized package mislabeled as fixed. [financial-aid semantic QA reviewed]",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "field_checked": "award_amount, award_type",
+      "id": "vr-30",
+      "proposed_value": "100% of tuition + registration fees + study/travel expenses, full_tuition",
+      "record_ref": "Scholarship:ae-sheikh-mohamed-bin-zayed-nyuad-scholarship",
+      "source_refs": [
+        "src-11",
+        "src-06",
+        "src-10"
+      ],
+      "verification_method": "cached_extraction_reread_only",
+      "verification_status": "VERIFIED",
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z"
+    },
+    {
+      "blocking_status": "blocking",
+      "conflict_or_limitation_notes": "src-11 states 'children of Emirati mothers' while src-06/src-10 state 'children of an Emirati mother or father' -- an internal NYUAD wording inconsistency across its own official pages that materially affects who is eligible (a child of an Emirati father and non-Emirati mother). Not resolved by guessing; pushes Scholarship.record_status to HUMAN_REVIEW. [financial-aid semantic QA reviewed]",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "field_checked": "eligible_citizenships, other_eligibility_criteria",
+      "id": "vr-31",
+      "proposed_value": "UAE nationals and children of an Emirati mother or father",
+      "record_ref": "Scholarship:ae-sheikh-mohamed-bin-zayed-nyuad-scholarship",
+      "source_refs": [
+        "src-11",
+        "src-06",
+        "src-10"
+      ],
+      "verification_method": "cached_extraction_reread_only",
+      "verification_status": "CONFLICT",
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z"
+    },
+    {
+      "blocking_status": "non_blocking",
+      "conflict_or_limitation_notes": "Independently re-fetched NYU Abu Dhabi's official Entry Requirements page (src-02) and Computer Science Major page (src-03), applied to the GCE A-Level applicant category. The Entry Requirements page states NYU Abu Dhabi welcomes applicants from 'a wide range of educational systems and backgrounds' and evaluates them through a comprehensive/holistic review rather than curriculum-specific numeric or subject cutoffs -- no required_subjects list is published for this curriculum category, confirming the absence stated in extension_metadata.note. This absence claim was checked directly against the current live page text, not inferred from silence. Separately, the Computer Science Major page was re-fetched and confirms the extension_metadata.fields.quantitative_prerequisite_guidance claim near-verbatim: applicants are encouraged to have a strong foundation in algebra, pre-calculus, and/or calculus, including at least one semester of calculus, framed explicitly as preparation guidance rather than a formal admissions prerequisite. No curriculum-track-specific (IB-only or A-Level-only) coursework recommendations were found beyond this shared guidance -- extension_metadata content is identical and correctly shared across all four AdmissionsRequirement records for this reason. [holistic-admissions semantic QA reviewed]",
+      "extraction_pass_timestamp": "2026-09-23T13:30:00Z",
+      "field_checked": "extension_metadata.fields (subject-gating absence + program-preparation recommendations)",
+      "id": "vr-34",
+      "material_extension_fact": true,
+      "proposed_value": "No formal admissions-gating subject requirement is published for entry to NYU Abu Dhabi (Computer Science is a later major declaration, not a direct-admission program); the Computer Science major page separately recommends quantitative coursework, including at least one semester of calculus, as program-preparation guidance rather than an admissions prerequisite.",
+      "record_ref": "AdmissionsRequirement:admreq-a-level",
+      "source_refs": [
+        "src-02",
+        "src-03"
+      ],
+      "verification_method": "independent_refetch",
+      "verification_status": "VERIFIED_ABSENT",
+      "verifier_pass_timestamp": "2026-09-24T16:40:00Z"
+    }
+  ]
+}

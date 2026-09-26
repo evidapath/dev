@@ -1,0 +1,897 @@
+{
+  "run_id": "2026-09-22_gb-university-of-oxford_computer-science",
+  "schema_version": "1.2",
+  "countries": [
+    {
+      "id": "gb",
+      "name": "United Kingdom",
+      "region": "Europe",
+      "currency_default": "GBP"
+    }
+  ],
+  "cities": [
+    {
+      "id": "gb-oxford",
+      "name": "Oxford",
+      "country_ref": "gb"
+    }
+  ],
+  "universities": [
+    {
+      "id": "gb-university-of-oxford",
+      "canonical_name": "University of Oxford",
+      "aliases": [
+        "Oxford",
+        "Oxford University",
+        "University of Oxford"
+      ],
+      "institution_type": "public",
+      "country_ref": "gb",
+      "primary_city_ref": "gb-oxford",
+      "official_website": "https://www.ox.ac.uk/",
+      "source_refs": [
+        "src-01",
+        "src-12"
+      ],
+      "record_status": "VERIFIED",
+      "last_researched": "2026-09-22",
+      "last_verified": "2026-09-23",
+      "extension_metadata": {
+        "note": "V1.2 migration: the V1.1 note about Oxford's collegiate structure having no first-class entity is resolved -- see the new College entity and gb-university-of-oxford-college-* records.",
+        "fields": {}
+      }
+    }
+  ],
+  "campuses": [
+    {
+      "id": "gb-university-of-oxford-central",
+      "university_ref": "gb-university-of-oxford",
+      "name": "Oxford (central university, departments and constituent colleges)",
+      "city_ref": "gb-oxford",
+      "country_ref": "gb",
+      "is_primary": true,
+      "official_url": "https://www.ox.ac.uk/"
+    }
+  ],
+  "colleges": [],
+  "programs": [
+    {
+      "id": "gb-university-of-oxford-ba-computer-science",
+      "university_ref": "gb-university-of-oxford",
+      "campus_ref": null,
+      "program_name": "Computer Science",
+      "faculty_school": "Department of Computer Science",
+      "degree_type": "BA",
+      "degree_type_local": "BA (Hons) in Computer Science (3 years); MCompSci integrated master's (4 years) available via internal transfer at the end of year 3, subject to achieving 2:1 or higher in year-3 examinations",
+      "field_of_study": "Computer Science",
+      "duration_value": 3,
+      "duration_unit": "years",
+      "language_of_instruction": [
+        "en"
+      ],
+      "official_program_url": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/computer-science",
+      "decision_context_academic_year": "2027/2028 (Fall/Autumn 2027 undergraduate entry) -- test-set comparability label only, does not override sourced years on individual records below",
+      "source_refs": [
+        "src-01",
+        "src-05"
+      ],
+      "record_status": "VERIFIED",
+      "application_platform": "UCAS",
+      "application_requirements": [
+        {
+          "requirement_type": "form",
+          "name": "UCAS application",
+          "necessity": "required",
+          "description": "",
+          "notes": "UCAS code G400."
+        },
+        {
+          "requirement_type": "standardized_test_score",
+          "name": "Test of Mathematics for University Admission (TMUA)",
+          "necessity": "required",
+          "description": "Both Paper 1 and Paper 2 mandatory; no pass mark.",
+          "notes": "Replaces the MAT starting with the 2026 admissions round."
+        },
+        {
+          "requirement_type": "interview_or_evaluation_event",
+          "name": "Interview (at least two colleges)",
+          "necessity": "required",
+          "description": "Shortlisted candidates interviewed online by at least two colleges in December; cross-college reallocation pool operates.",
+          "notes": ""
+        }
+      ],
+      "extension_metadata": {
+        "note": "V1.2 migration: ucas_code and application_deadline promoted out of extension_metadata into a DecisionPlan record (gb-university-of-oxford-decisionplan-2027) and Program.application_requirements/application_platform. related_variants_note retained here as a genuine institution-specific scope note.",
+        "fields": {
+          "related_variants_note": "Computer Science & Philosophy and Mathematics & Computer Science exist as separate joint-honours courses; not researched independently this run per explicit scope limits."
+        }
+      }
+    }
+  ],
+  "program_pathways": [
+    {
+      "id": "gb-university-of-oxford-pathway-mcompsci",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "pathway_type": "integrated_continuation",
+      "degree_type": "MEng",
+      "degree_type_local": "MCompSci integrated master's (4 years)",
+      "duration_value": 4,
+      "duration_unit": "years",
+      "progression_requirement": {
+        "description": "Internal transfer from the 3-year BA to the 4-year integrated MCompSci at the end of year 3, subject to examination performance.",
+        "gpa_or_class_threshold": "2:1 or higher in year-3 examinations",
+        "decision_point_timing": "End of year 3"
+      },
+      "notes": "New in V1.2 -- resolves the V1.1 gap where this dual-track mechanic could only be described in Program.degree_type_local free text.",
+      "source_refs": [
+        "src-01"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED"
+    }
+  ],
+  "applicant_categories": [
+    {
+      "id": "gb-university-of-oxford-curriculum-a-level",
+      "university_ref": "gb-university-of-oxford",
+      "dimension": "prior_curriculum",
+      "label": "A-Level (England/Wales/Northern Ireland)",
+      "description": "Applicants whose prior qualification is the England/Wales/Northern Ireland A-Level."
+    },
+    {
+      "id": "gb-university-of-oxford-curriculum-ib",
+      "university_ref": "gb-university-of-oxford",
+      "dimension": "prior_curriculum",
+      "label": "International Baccalaureate Diploma",
+      "description": "Applicants whose prior qualification is the International Baccalaureate Diploma."
+    },
+    {
+      "id": "gb-university-of-oxford-curriculum-advanced-highers",
+      "university_ref": "gb-university-of-oxford",
+      "dimension": "prior_curriculum",
+      "label": "Scottish Advanced Highers",
+      "description": "Applicants whose prior qualification is the Scottish Advanced Highers."
+    },
+    {
+      "id": "gb-university-of-oxford-curriculum-ap-us",
+      "university_ref": "gb-university-of-oxford",
+      "dimension": "prior_curriculum",
+      "label": "US High School Diploma + AP",
+      "description": "Applicants presenting a US High School Diploma with Advanced Placement (AP) exams. Category retained to hold the field-level UNKNOWN on whether Oxford defines a CS-specific AP threshold -- its existence here is not confirmation that such a threshold exists."
+    },
+    {
+      "id": "gb-university-of-oxford-residency-home",
+      "university_ref": "gb-university-of-oxford",
+      "dimension": "residency_citizenship",
+      "label": "Home (UK fee status)",
+      "description": "Students classified as 'Home' for UK tuition-fee purposes."
+    },
+    {
+      "id": "gb-university-of-oxford-residency-overseas",
+      "university_ref": "gb-university-of-oxford",
+      "dimension": "residency_citizenship",
+      "label": "Overseas (international fee status)",
+      "description": "Students classified as 'Overseas'/international for UK tuition-fee purposes."
+    }
+  ],
+  "admission_stages": [
+    {
+      "id": "gb-university-of-oxford-stage-interview",
+      "university_ref": "gb-university-of-oxford",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "applicant_category_ref": null,
+      "stage_type": "selection_stage",
+      "sequence_order": 1,
+      "name": "Interview and cross-college reallocation pool",
+      "description": "Shortlisted candidates (across all curriculum tracks) are interviewed online by at least two colleges in December; a cross-college reallocation pool operates for candidates not offered a place by their first/second-choice college.",
+      "criteria": [
+        {
+          "criterion_name": "Interview evaluation",
+          "description": "Academic potential and aptitude assessed via at least two college interviews.",
+          "threshold_or_formula": null,
+          "weight": null,
+          "mandatory": true
+        }
+      ],
+      "decision_outcome_options": [
+        "offer",
+        "reallocation_pool_offer",
+        "rejection"
+      ],
+      "source_refs": [
+        "src-01",
+        "src-05"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "New in V1.2 -- previously only described in AdmissionsRequirement.notes free text, repeated identically across all three A-Level/IB/Advanced-Highers records.",
+        "fields": {}
+      }
+    }
+  ],
+  "admissions_requirements": [
+    {
+      "id": "gb-university-of-oxford-admreq-a-level",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "prior_curriculum_category_ref": "gb-university-of-oxford-curriculum-a-level",
+      "curriculum_type": "A-Level",
+      "academic_threshold": "A*AA, including A*A in Maths and Further Maths if available (in any order)",
+      "required_subjects": [
+        "Mathematics",
+        "Further Mathematics (highly recommended where offered by the applicant's school)"
+      ],
+      "standardized_tests": [
+        {
+          "test_name": "Test of Mathematics for University Admission (TMUA)",
+          "min_score": null,
+          "required": "required",
+          "notes": "Both Paper 1 and Paper 2 mandatory; no pass mark -- used alongside the application and school context for shortlisting. Replaces the MAT starting with the 2026 admissions round (first year: 2027 entry). Test dates 12-16 Oct 2026; registration opens 1 Jun 2026."
+        }
+      ],
+      "language_requirements": [
+        {
+          "language": "English",
+          "test_name": "IELTS Academic (or an accepted equivalent) unless exempt",
+          "min_score": "IELTS 7.5 overall, minimum 7.0 per component (or the equivalent threshold on an accepted alternative test), if not exempt",
+          "notes": "Oxford's general English Language Requirement (ELR) policy (src-13), not a curriculum-specific rule for A-Level. A-Level itself is NOT listed by Oxford as an automatic exemption category. Applicants are exempt from a separate English test only if they are a native English speaker who has always been resident and a citizen of a majority English-speaking country recognised by UKVI (src-14 -- gov.uk Immigration Rules Appendix English Language, EL 4.1, which includes the UK, Ireland, and other Anglophone countries), or have been educated full-time in English for at least the two most recent years (minimum 3 years total) before applying. Most A-Level-track applicants (typically UK/Ireland-domiciled, English-medium schooled) satisfy one of these general exemptions by virtue of their schooling/residency background, not because A-Level itself is a recognised curriculum exemption. Applicants who do not qualify for an exemption must meet a standard test threshold: IELTS Academic 7.5 overall (min. 7.0 per component), TOEFL iBT 110, Cambridge C1 Advanced/C2 Proficiency 191 overall (min. 185 per component), Oxford Test of English (Advanced) 165 overall, or Pearson PTE Academic 76, by 31 July in the year of the offer."
+        }
+      ],
+      "notes": "Interview: shortlisted candidates are interviewed online by at least two colleges in December; a cross-college reallocation pool operates for candidates not offered a place by their first/second-choice college. Historical 3-year average (2023-25): 21% interviewed, 7% successful, 55 places/year -- an explicitly historical statistic, never an admission-probability calculation. English-language proficiency requirements for A-Level-track applicants were not researched this run (see missing-data.json).",
+      "source_refs": [
+        "src-01",
+        "src-03",
+        "src-05",
+        "src-10"
+      ],
+      "academic_year": "2027 entry",
+      "last_checked": "2026-09-22",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "admission_stage_ref": "gb-university-of-oxford-stage-interview"
+    },
+    {
+      "id": "gb-university-of-oxford-admreq-ib",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "prior_curriculum_category_ref": "gb-university-of-oxford-curriculum-ib",
+      "curriculum_type": "International Baccalaureate",
+      "academic_threshold": "39 points (including core points) with 766 at Higher Level",
+      "required_subjects": [
+        "Mathematics (Higher Level, grade 7 required)"
+      ],
+      "standardized_tests": [
+        {
+          "test_name": "Test of Mathematics for University Admission (TMUA)",
+          "min_score": null,
+          "required": "required",
+          "notes": "Same requirement as the A-Level route -- see gb-university-of-oxford-admreq-a-level for full test detail."
+        }
+      ],
+      "language_requirements": [
+        {
+          "language": "English",
+          "test_name": "IELTS Academic (or an accepted equivalent) unless exempt",
+          "min_score": "IELTS 7.5 overall, minimum 7.0 per component (or the equivalent threshold on an accepted alternative test), if not exempt",
+          "notes": "IB Diploma applicants are explicitly exempt from Oxford's separate English-language test requirement if their IB programme was taught in English -- Oxford's general English Language Requirement (ELR) policy (src-13) names 'studying (or have completed) the International Baccalaureate programme, if it is taught in English' as a specific exemption category. If the IB was NOT taught in English, the standard test thresholds apply (IELTS Academic 7.5 overall, min. 7.0 per component; TOEFL iBT 110; C1 Advanced/C2 Proficiency 191; Oxford Test of English 165; Pearson PTE Academic 76), or another general exemption route (native-speaker/majority-English-speaking-country residency per src-14, or 2+ years educated full-time in English) may apply."
+        }
+      ],
+      "notes": "Same interview process as the A-Level route (at least two colleges, cross-college reallocation pool). English-language proficiency requirements for non-native-English IB applicants were not researched this run (see missing-data.json).",
+      "source_refs": [
+        "src-01",
+        "src-03"
+      ],
+      "academic_year": "2027 entry",
+      "last_checked": "2026-09-22",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "admission_stage_ref": "gb-university-of-oxford-stage-interview"
+    },
+    {
+      "id": "gb-university-of-oxford-admreq-advanced-highers",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "prior_curriculum_category_ref": "gb-university-of-oxford-curriculum-advanced-highers",
+      "curriculum_type": "Scottish Advanced Highers",
+      "academic_threshold": "AA/AAB with an A in Mathematics",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "standardized_tests": [
+        {
+          "test_name": "Test of Mathematics for University Admission (TMUA)",
+          "min_score": null,
+          "required": "required",
+          "notes": "Same requirement as the A-Level route -- see gb-university-of-oxford-admreq-a-level for full test detail."
+        }
+      ],
+      "language_requirements": [
+        {
+          "language": "English",
+          "test_name": "IELTS Academic (or an accepted equivalent) unless exempt",
+          "min_score": "IELTS 7.5 overall, minimum 7.0 per component (or the equivalent threshold on an accepted alternative test), if not exempt",
+          "notes": "Oxford's general English Language Requirement (ELR) policy (src-13), not a curriculum-specific rule for Scottish Advanced Highers. Scottish Advanced Highers, like A-Level, are NOT listed by Oxford as an automatic exemption category. Applicants are exempt from a separate English test only if they are a native English speaker who has always been resident and a citizen of a majority English-speaking country recognised by UKVI (src-14), or have been educated full-time in English for at least the two most recent years (minimum 3 years total) before applying. Most Advanced-Highers-track applicants (UK-domiciled, English-medium schooled) satisfy one of these general exemptions by virtue of their schooling/residency background, not because Advanced Highers itself is a recognised curriculum exemption. Applicants who do not qualify for an exemption must meet a standard test threshold: IELTS Academic 7.5 overall (min. 7.0 per component), TOEFL iBT 110, Cambridge C1 Advanced/C2 Proficiency 191 overall (min. 185 per component), Oxford Test of English (Advanced) 165 overall, or Pearson PTE Academic 76, by 31 July in the year of the offer."
+        }
+      ],
+      "notes": "Same interview process as the A-Level route (at least two colleges, cross-college reallocation pool).",
+      "source_refs": [
+        "src-01",
+        "src-03"
+      ],
+      "academic_year": "2027 entry",
+      "last_checked": "2026-09-22",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "admission_stage_ref": "gb-university-of-oxford-stage-interview"
+    },
+    {
+      "id": "gb-university-of-oxford-admreq-ap-us",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "prior_curriculum_category_ref": "gb-university-of-oxford-curriculum-ap-us",
+      "curriculum_type": "US High School Diploma + AP",
+      "academic_threshold": null,
+      "required_subjects": [
+        "AP Calculus BC (required within the AP subject combination) plus two other Maths/Science AP subjects, per the Department of Computer Science's published US/AP-qualifications subject-combination requirement (src-15). Exact grade/score thresholds remain part of AdmissionsRequirement.academic_threshold, which this pass left unchanged (out of this remediation's scope) -- see this record's associated VerificationRecord for detail."
+      ],
+      "standardized_tests": [
+        {
+          "test_name": "Test of Mathematics for University Admission (TMUA)",
+          "min_score": null,
+          "required": "required",
+          "notes": "Same blanket requirement as the other curriculum tracks -- src-03 states the TMUA applies to 'all applicants for Maths, Computer Science, or joint honours courses' without any curriculum-track carve-out, following the same reasoning already applied to the IB and Advanced Highers tracks (vr-34, vr-35)."
+        },
+        {
+          "test_name": "ACT or SAT (part of the AP-track academic-threshold combination)",
+          "min_score": null,
+          "required": "recommended",
+          "notes": "Not universally mandatory -- recorded as 'recommended' rather than 'required' because it is conditional on which AP route is taken. Per the Department of Computer Science's published US/AP-qualifications guidance (src-15), applicants presenting three (rather than four) AP exams at grade 5 must additionally submit an ACT or SAT score, at a Computer-Science-specific minimum, as part of meeting the overall academic threshold; NOT required at all under the four-AP route. Exact score thresholds are part of AdmissionsRequirement.academic_threshold, which remains UNKNOWN per the prior verification pass (vr-06) and was intentionally not modified by this remediation pass, which was scoped only to required_subjects/standardized_tests/language_requirements."
+        }
+      ],
+      "language_requirements": [
+        {
+          "language": "English",
+          "test_name": "IELTS Academic (or an accepted equivalent) unless exempt",
+          "min_score": "IELTS 7.5 overall, minimum 7.0 per component (or the equivalent threshold on an accepted alternative test), if not exempt",
+          "notes": "US applicants whose first language is English and who have always been resident and citizens of the United States qualify for Oxford's native-speaker exemption from a separate English test, because the United States of America appears on the UK Home Office's 'majority English speaking countries' list (gov.uk Immigration Rules Appendix English Language, section EL 4.1 -- src-14) that Oxford's general ELR policy (src-13) defers to. Applicants who do not meet this residency/citizenship test (e.g. attending a US school as a non-US-citizen/non-continuous-resident) would need to meet the standard test thresholds (IELTS Academic 7.5 overall, min. 7.0 per component, or an accepted equivalent) or another general exemption route (2+ years educated full-time in English)."
+        }
+      ],
+      "notes": "No CS-specific AP threshold found in Oxford's central admissions-requirements summary table (src-10, independently re-verified), which lists A-Level/Advanced Highers/IB only. The one page that could authoritatively confirm or deny a defined AP pathway (the international-qualifications page, src-11) could not be fully captured -- extraction truncated before the 'United States' section across three separate attempts on two URL variants, including the independent verification re-fetch. Recorded as UNKNOWN due to a genuine, reproducible capture limitation, never asserted as 'Oxford has no AP pathway.' Requires a manual page visit or direct admissions-office confirmation before this can be resolved either way.",
+      "source_refs": [
+        "src-10",
+        "src-11"
+      ],
+      "academic_year": "2027 entry",
+      "last_checked": "2026-09-22",
+      "verification_status": "UNKNOWN",
+      "record_status": "HUMAN_REVIEW",
+      "admission_stage_ref": null
+    }
+  ],
+  "decision_plans": [
+    {
+      "id": "gb-university-of-oxford-decisionplan-2027",
+      "university_ref": "gb-university-of-oxford",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "plan_type": "single_stage",
+      "application_platform": "UCAS",
+      "binding": false,
+      "application_deadline": "2026-10-15T18:00:00+01:00",
+      "decision_release_date": null,
+      "academic_year": "2027/2028 (2027 entry)",
+      "notes": "New in V1.2 -- promoted from Program.extension_metadata.fields.application_deadline / ucas_code (UCAS code G400).",
+      "source_refs": [
+        "src-01"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED"
+    }
+  ],
+  "cost_profiles": [
+    {
+      "id": "gb-university-of-oxford-cost-home",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "academic_year": "2027/28",
+      "residency_category_ref": "gb-university-of-oxford-residency-home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "tuition_basis": "statutory",
+      "mandatory_fees_annual": null,
+      "mandatory_fees_breakdown": [],
+      "estimated_living_costs_annual": null,
+      "living_cost_source_basis": {
+        "kind": "genuine_cost_of_living_estimate",
+        "description": "Oxford's own published estimate: GBP 1,475-2,175 per month for the 2027-28 academic year. Oxford does NOT publish a single annual figure -- estimated_living_costs_annual is left null rather than calculated, per instruction. Students are typically in Oxford ~6 months/year across three 8-week terms, but Oxford's own guidance suggests budgeting over a 9-month period; see 03-normalized/records.json derived_cost_estimates for an EvidaPath-calculated annualized range built from this figure, kept clearly separate from this source fact.",
+        "administering_body": "University of Oxford"
+      },
+      "other_material_costs": [],
+      "duration_years": 3,
+      "source_refs": [
+        "src-02",
+        "src-04"
+      ],
+      "last_checked": "2026-09-22",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "estimated_living_costs_monthly_range": {
+        "min": 1475,
+        "max": 2175,
+        "currency": "GBP"
+      },
+      "extension_metadata": {
+        "note": "V1.2 migration: living_cost_monthly_range promoted to the new canonical CostProfile.estimated_living_costs_monthly_range field. Remaining facts (college fee bundling, tuition range context, visa maintenance detail) have no other canonical home and are retained here.",
+        "fields": {
+          "college_fee_bundling_note": "College fees are not itemized separately -- Oxford states the single published course fee 'is divided between the University (including your department or faculty) and your college on a formula basis.' This claim was captured in research but NOT independently re-targeted during the verification pass (capped at SUPPORTED -- see verification-records.json vr-09)."
+        }
+      }
+    },
+    {
+      "id": "gb-university-of-oxford-cost-overseas",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "academic_year": "2027/28",
+      "residency_category_ref": "gb-university-of-oxford-residency-overseas",
+      "currency": "GBP",
+      "tuition_annual": 66580,
+      "tuition_basis": "institutional",
+      "mandatory_fees_annual": null,
+      "mandatory_fees_breakdown": [],
+      "estimated_living_costs_annual": null,
+      "living_cost_source_basis": {
+        "kind": "genuine_cost_of_living_estimate",
+        "description": "Same Oxford-published living-cost estimate as the Home profile (GBP 1,475-2,175/month, 2027-28) -- Oxford does not publish a separate overseas living-cost figure. estimated_living_costs_annual left null; see derived_cost_estimates for the separately-tracked EvidaPath calculation.",
+        "administering_body": "University of Oxford"
+      },
+      "other_material_costs": [],
+      "duration_years": 3,
+      "source_refs": [
+        "src-02",
+        "src-04"
+      ],
+      "last_checked": "2026-09-22",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "estimated_living_costs_monthly_range": {
+        "min": 1475,
+        "max": 2175,
+        "currency": "GBP"
+      },
+      "extension_metadata": {
+        "note": "V1.2 migration: living_cost_monthly_range promoted to the new canonical CostProfile.estimated_living_costs_monthly_range field. Remaining facts (college fee bundling, tuition range context, visa maintenance detail) have no other canonical home and are retained here.",
+        "fields": {
+          "tuition_range_context": "GBP 66,580 is the Computer Science-specific overseas rate; the university-wide overseas range is GBP 39,620-66,580 depending on programme, with Computer Science at the top of that range.",
+          "college_fee_bundling_note": "Same bundled-fee structure as the Home profile -- see gb-university-of-oxford-cost-home."
+        }
+      }
+    }
+  ],
+  "financial_requirements": [
+    {
+      "id": "gb-university-of-oxford-finreq-visa-maintenance",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "residency_category_ref": "gb-university-of-oxford-residency-overseas",
+      "requirement_type": "government_minimum_resources",
+      "amount": null,
+      "currency": "GBP",
+      "refundable": false,
+      "frequency": "held for 28 consecutive days before visa application",
+      "administering_body": "UK Government (Home Office / UK Visas and Immigration)",
+      "academic_year": "n/a -- immigration rule, not tied to an academic-year publication cycle",
+      "notes": "Migrated from the V1.1 gb-university-of-oxford-cost-visa-maintenance-funds CostProfile record, which represented a UK Student visa financial (maintenance) threshold, not a tuition or genuine living-cost figure. amount is left null because it is a range (GBP 1,171-1,529/month, 9 months), not a single figure -- see extension_metadata for the structured range, matching the treatment of the underlying V1.1 record.",
+      "source_refs": [
+        "src-07"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "Range detail retained -- FinancialRequirement.amount is a single number, insufficient for this range-shaped government threshold.",
+        "fields": {
+          "visa_maintenance_monthly_range": {
+            "london_gbp": 1529,
+            "outside_london_gbp": 1171,
+            "months_covered": 9,
+            "holding_period_days": 28
+          },
+          "oxford_region_classification": "UNCONFIRMED -- gov.uk's page does not state which rate applies to Oxford."
+        }
+      }
+    }
+  ],
+  "financial_aid_policies": [],
+  "scholarships": [
+    {
+      "id": "gb-university-of-oxford-scholarship-reach-oxford",
+      "name": "Reach Oxford Scholarship",
+      "provider": "University of Oxford",
+      "provider_type": "institutional",
+      "institutions_covered": [
+        "gb-university-of-oxford"
+      ],
+      "programs_covered": [],
+      "degree_levels": [
+        "undergraduate"
+      ],
+      "eligible_citizenships": [],
+      "residency_restrictions": "Nationals of countries on the OECD Development Assistance Committee (DAC) list -- approximately 180 countries; excludes high-income countries. Full country list not enumerated in this run (not directly transcribed from source) -- see the official page for the current DAC list.",
+      "academic_criteria": "Renewal in subsequent years is subject to satisfactory academic progress.",
+      "other_eligibility_criteria": null,
+      "award_type": "mixed",
+      "award_amount": "Course fees, a grant for living costs, and one return air fare per year, for the full duration of the course (3 or 4 years depending on programme).",
+      "award_amount_currency": "GBP",
+      "renewable": true,
+      "renewal_conditions": "Subject to satisfactory academic progress each year; scholars submit annual reports on academic and social activities.",
+      "duration": "Full duration of the undergraduate course (3 or 4 years depending on programme).",
+      "application_deadline": "2027-01-26",
+      "deadline_academic_year": "2027 entry",
+      "official_source_url": "https://www.ox.ac.uk/admissions/undergraduate/fees-and-funding/oxford-bursaries-and-scholarships/reach-oxford",
+      "source_refs": [
+        "src-06"
+      ],
+      "last_checked": "2026-09-22",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "University-wide, not tied to a single college; programs_covered is left empty (rather than listing only Computer Science) because the scholarship is not program-specific.",
+        "fields": {
+          "college_restriction": "None -- not all colleges participate every year, but successful applicants can be transferred between colleges as needed."
+        },
+        "proposed_v1_2_fields": []
+      },
+      "college_ref": null
+    },
+    {
+      "id": "gb-university-of-oxford-scholarship-oxford-bursary",
+      "name": "Oxford Bursary",
+      "provider": "University of Oxford",
+      "provider_type": "institutional",
+      "institutions_covered": [
+        "gb-university-of-oxford"
+      ],
+      "programs_covered": [],
+      "degree_levels": [
+        "undergraduate"
+      ],
+      "eligible_citizenships": [],
+      "residency_restrictions": "UK/Home-fee-status students; eligibility is determined by a household-income assessment conducted by regional funding agencies when applicants apply for UK government financial support.",
+      "academic_criteria": null,
+      "other_eligibility_criteria": "Standardized centrally by household-income band, applies regardless of college. Distinct from a separate college/department/faculty-level funding search tool Oxford's own bursaries page directs students to -- that layer is NOT modeled in this record (see 07-reporting/run-summary.md V1.2 discussion).",
+      "award_type": "fixed_amount",
+      "award_amount": "Household-income-banded, per year: GBP 4,480 (income <= GBP 25,000); GBP 3,930 (GBP 25,001-32,500); GBP 3,360 (GBP 32,501-37,500); GBP 2,230 (GBP 37,501-42,875); GBP 1,120 (GBP 42,876-50,000).",
+      "award_amount_currency": "GBP",
+      "renewable": null,
+      "renewal_conditions": null,
+      "duration": null,
+      "application_deadline": null,
+      "deadline_academic_year": "2027/28 -- financial assessment must be completed by 30 May 2028 to be considered (an assessment-completion deadline, not a separate scholarship-application deadline; there is no separate application -- eligibility flows from the UK government household-income assessment).",
+      "official_source_url": "https://www.ox.ac.uk/admissions/undergraduate/fees-and-funding/oxford-bursaries-and-scholarships",
+      "source_refs": [
+        "src-08"
+      ],
+      "last_checked": "2026-09-23",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "renewable, renewal_conditions, and duration are left null -- not stated on the source page even after independent re-fetch (see missing-data.json, non-blocking). award_amount and deadline_academic_year were originally incomplete after extraction/normalization and were completed via the controlled verification-remediation loop (see 04-verification/remediation-log.json, remediation-01) rather than being mutated directly during verification.",
+        "fields": {},
+        "proposed_v1_2_fields": []
+      },
+      "college_ref": null
+    }
+  ],
+  "source_records": [
+    {
+      "id": "src-01",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/computer-science",
+      "source_organization": "University of Oxford",
+      "source_type": "official_university",
+      "title": "Computer Science | University of Oxford -- course listing page",
+      "retrieved_at": "2026-09-22T21:15:00Z",
+      "fields_supported": [
+        "Program.degree_type (BA -- primary enum value; MCompSci route captured in degree_type_local)",
+        "Program.degree_type_local (captures the BA/MCompSci dual-track mechanic)",
+        "Program.duration_value (3)",
+        "Program.duration_unit (years)",
+        "Program.extension_metadata.fields.ucas_code (G400 -- no canonical Program field, routed to extension)",
+        "Program.extension_metadata.fields.application_deadline (15 Oct 2026 -- no canonical Program field, routed to extension)",
+        "AdmissionsRequirement.academic_threshold (gb-university-of-oxford-admreq-a-level)",
+        "AdmissionsRequirement.academic_threshold (gb-university-of-oxford-admreq-ib)",
+        "AdmissionsRequirement.academic_threshold (gb-university-of-oxford-admreq-advanced-highers)",
+        "AdmissionsRequirement.notes (interview-required fact, all three curriculum tracks)"
+      ],
+      "excerpt": "A*AA, including A*A in Maths and Further Maths if available (in any order). International Baccalaureate: 39 (including core points) with 766 at HL (the 7 must be in HL Mathematics). Advanced Highers: AA/AAB with an A in Mathematics. UCAS code G400. Shortlisted candidates will be invited to at least one online interview. 3-year average (2023-25): 21% interviewed, 7% successful, 55 places available.",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "notes": "Independently re-fetched during verification; verbatim match."
+    },
+    {
+      "id": "src-02",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/fees-and-funding/course-fees",
+      "source_organization": "University of Oxford",
+      "source_type": "official_university",
+      "title": "Course fees | University of Oxford",
+      "retrieved_at": "2026-09-22T21:18:00Z",
+      "fields_supported": [
+        "CostProfile.tuition_annual (gb-university-of-oxford-cost-home)",
+        "CostProfile.tuition_annual (gb-university-of-oxford-cost-overseas)",
+        "CostProfile.tuition_basis (statutory/institutional classification reasoning)",
+        "CostProfile.extension_metadata.fields.college_fee_bundling_note (no canonical CostProfile field for this fact)"
+      ],
+      "excerpt": "Home students: £10,050 for undergraduate students undertaking their first degree. Overseas students: between £39,620 and £66,580 depending on the programme. The course fees you pay include your fees for both University and college services and are divided between the University and your college on a formula basis.",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "notes": ""
+    },
+    {
+      "id": "src-03",
+      "url": "https://www.maths.ox.ac.uk/study-here/undergraduate-study/tmua",
+      "source_organization": "University of Oxford, Mathematical Institute",
+      "source_type": "official_university",
+      "title": "TMUA | Mathematical Institute, University of Oxford",
+      "retrieved_at": "2026-09-22T21:21:00Z",
+      "fields_supported": [
+        "AdmissionsRequirement.standardized_tests (gb-university-of-oxford-admreq-a-level)",
+        "AdmissionsRequirement.standardized_tests (gb-university-of-oxford-admreq-ib)",
+        "AdmissionsRequirement.standardized_tests (gb-university-of-oxford-admreq-advanced-highers)"
+      ],
+      "excerpt": "All applicants for Maths, Computer Science, or joint honours courses must take the TMUA. Two papers, 75 minutes each, 20 MCQ per paper, calculators prohibited. There is no 'pass' mark for the TMUA. For the 2026 admissions round, the MAT will not take place, and all applicants will take the TMUA instead.",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "notes": "Independently re-fetched during verification; verbatim match."
+    },
+    {
+      "id": "src-04",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/computer-science",
+      "source_organization": "University of Oxford",
+      "source_type": "official_university",
+      "title": "Computer Science | University of Oxford -- course listing page (fee-focused refetch)",
+      "retrieved_at": "2026-09-22T21:24:00Z",
+      "fields_supported": [
+        "CostProfile.tuition_annual (gb-university-of-oxford-cost-home)",
+        "CostProfile.tuition_annual (gb-university-of-oxford-cost-overseas)",
+        "CostProfile.living_cost_source_basis (both Home and Overseas cost profiles)",
+        "CostProfile.extension_metadata.fields.living_cost_monthly_range (no canonical CostProfile field for a range)"
+      ],
+      "excerpt": "Home fee: £10,050. Overseas fee: £66,580. Living costs for the 2027-28 academic year are estimated to be between £1,475 and £2,175 for each month you are in Oxford.",
+      "retrieval_method": "WebFetch (extraction pass, distinct fee-focused fetch of same URL as src-01)",
+      "notes": ""
+    },
+    {
+      "id": "src-05",
+      "url": "https://www.cs.ox.ac.uk/admissions/undergraduate/why_oxford/formal-admissions-criteria.html",
+      "source_organization": "University of Oxford, Department of Computer Science",
+      "source_type": "official_university",
+      "title": "Formal admissions criteria | Department of Computer Science, University of Oxford",
+      "retrieved_at": "2026-09-22T21:27:00Z",
+      "fields_supported": [
+        "AdmissionsRequirement.notes (interview process / cross-college reallocation pool, all curriculum tracks)",
+        "Program.faculty_school (Department of Computer Science)"
+      ],
+      "excerpt": "Candidates invited to interview will be interviewed by at least two colleges. The Mathematical Sciences Admissions Group takes active steps to ensure that (whenever possible) such candidates may be offered places at other colleges.",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "notes": "Independently re-fetched during verification; verbatim match."
+    },
+    {
+      "id": "src-06",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/fees-and-funding/oxford-bursaries-and-scholarships/reach-oxford",
+      "source_organization": "University of Oxford",
+      "source_type": "scholarship_provider",
+      "title": "Reach Oxford Scholarship | University of Oxford",
+      "retrieved_at": "2026-09-22T21:30:00Z",
+      "fields_supported": [
+        "Scholarship.residency_restrictions (gb-university-of-oxford-scholarship-reach-oxford)",
+        "Scholarship.award_amount",
+        "Scholarship.award_type",
+        "Scholarship.renewable",
+        "Scholarship.renewal_conditions",
+        "Scholarship.application_deadline",
+        "Scholarship.deadline_academic_year",
+        "Scholarship.duration",
+        "Scholarship.extension_metadata.fields.college_restriction (no canonical field for the college-transfer detail)"
+      ],
+      "excerpt": "Applicants must be nationals of countries who receive official development assistance from the DAC. Course fees, a grant for living costs and one return air fare per year. Around 2-3 awards per year. Applications for 2027 entry close 26 January 2027.",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "notes": "Independently re-fetched during verification; verbatim match. source_type corrected from the invalid 'official_scholarship_provider' to the canonical 'scholarship_provider'."
+    },
+    {
+      "id": "src-07",
+      "url": "https://www.gov.uk/student-visa/money",
+      "source_organization": "UK Government (Home Office)",
+      "source_type": "official_government",
+      "title": "Student visa: Money you need | GOV.UK",
+      "retrieved_at": "2026-09-22T21:32:00Z",
+      "fields_supported": [
+        "CostProfile.living_cost_source_basis (gb-university-of-oxford-cost-visa-maintenance-funds)",
+        "CostProfile.extension_metadata.fields.visa_maintenance_monthly_range (no canonical field for a monthly range)",
+        "DerivedCostEstimate.value (derived-visa-funds-total-low-9mo, derived-visa-funds-total-high-9mo -- these EvidaPath calculations use this source's rates as an input, not as a source of the total itself)"
+      ],
+      "excerpt": "London: £1,529 per month (for up to 9 months). Outside London: £1,171 per month (for up to 9 months). You must have this money for at least 28 days in a row.",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "notes": "Independently re-fetched during verification, including an explicit check for any stated upcoming change; none found in the page body."
+    },
+    {
+      "id": "src-08",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/fees-and-funding/oxford-bursaries-and-scholarships",
+      "source_organization": "University of Oxford",
+      "source_type": "scholarship_provider",
+      "title": "Oxford Bursaries and Scholarships | University of Oxford",
+      "retrieved_at": "2026-09-22T21:20:00Z",
+      "fields_supported": [
+        "Scholarship.provider_type (gb-university-of-oxford-scholarship-oxford-bursary)",
+        "Scholarship.other_eligibility_criteria",
+        "Scholarship.award_amount (via the verification-remediation loop, vr-16 -- see remediation-log.json)",
+        "Scholarship.deadline_academic_year (via the verification-remediation loop, vr-16)",
+        "SCHEMA-GAP EVIDENCE ONLY (not a normalized field): this source's redirect to a separate college/department/faculty-level funding search tool is cited as structural evidence in the V1.2 College-entity proposal in run-summary.md -- it does not populate any structured field itself."
+      ],
+      "excerpt": "The Oxford Bursary is standardized centrally by household-income band, applying to all eligible students regardless of college. The Fees, funding and scholarship search provides a comprehensive list of awards being offered by the colleges, departments and faculties.",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "notes": "Independently re-fetched twice more: once during the original verification pass, and once during the verification-discovered-fact remediation loop (see remediation-log.json) which confirmed the exact income-band table. source_type corrected from 'official_scholarship_provider' to 'scholarship_provider'."
+    },
+    {
+      "id": "src-09",
+      "url": "https://www.oxfordstudent.com/2026/05/22/oxford-colleges-report-9-3bn-in-funds-how-much-reaches-students-in-hardship/",
+      "source_organization": "The Oxford Student (independent student newspaper)",
+      "source_type": "secondary",
+      "title": "Oxford colleges report £9.3bn in funds. How much reaches students in hardship? -- The Oxford Student",
+      "retrieved_at": "2026-09-22T21:29:00Z",
+      "fields_supported": [
+        "SCHEMA-GAP EVIDENCE ONLY (not a normalized field): used exclusively as corroborating evidence for the V1.2 College-entity proposal (material college-to-college hardship-fund variance) in run-summary.md. Per the source hierarchy, this secondary source was never used as the cited authority for any structured field value."
+      ],
+      "excerpt": "Oxford's 36 colleges held GBP 9.26bn in funds collectively as of July 2025. St Anne's College reported GBP 91,000 in unrestricted hardship awards plus GBP 416,000 through the Oxford Bursary scheme; St Catherine's College reported GBP 10,000 in restricted hardship awards, GBP 92,000 through Oxford Bursary, and GBP 27,000 in fee waivers.",
+      "retrieval_method": "WebFetch (discovery/corroboration only, per source hierarchy)",
+      "notes": "NOT used to populate any structured field -- corroboration only for the V1.2 College-entity discussion."
+    },
+    {
+      "id": "src-10",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/courses/admissions-requirements/summary-table-of-admissions-requirements",
+      "source_organization": "University of Oxford",
+      "source_type": "official_university",
+      "title": "Summary table of admissions requirements | University of Oxford",
+      "retrieved_at": "2026-09-22T21:34:00Z",
+      "fields_supported": [
+        "AdmissionsRequirement.academic_threshold (gb-university-of-oxford-admreq-a-level -- corroboration of src-01's value)",
+        "AdmissionsRequirement.academic_threshold (gb-university-of-oxford-admreq-ap-us -- evidence of ABSENCE from this table, supports the null value, not a positive value)"
+      ],
+      "excerpt": "Computer Science: A*AA including A*A in Maths and Further Maths if available (in any order). TMUA listed as the required test. No Advanced Placement (AP) score is listed in this table for Computer Science.",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "notes": "Independently re-fetched during verification; AP absence from the CS row re-confirmed."
+    },
+    {
+      "id": "src-11",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/applying-to-oxford/for-international-students/international-qualifications",
+      "source_organization": "University of Oxford",
+      "source_type": "official_university",
+      "title": "International qualifications | University of Oxford (capture incomplete)",
+      "retrieved_at": "2026-09-22T21:36:00Z",
+      "fields_supported": [
+        "AdmissionsRequirement.academic_threshold (gb-university-of-oxford-admreq-ap-us -- evidence of a genuine capture limitation, not a positive or negative value; see missing-data.json md-01)"
+      ],
+      "excerpt": "Under Canada: 'We understand that many Canadian students may take the International Baccalaureate, or tests (SATs and APs) from the American education system alongside their Canadian qualifications.' All applicants must meet their course's qualification requirements to accept an offer at Oxford.",
+      "retrieval_method": "WebFetch (extraction pass -- CAPTURE INCOMPLETE, truncated before the 'United States' section on three separate attempts across two URL variants)",
+      "notes": "Genuine, reproducible tool-extraction limitation, not evidence of an actual policy absence."
+    },
+    {
+      "id": "src-12",
+      "url": "https://www.ox.ac.uk/about",
+      "source_organization": "University of Oxford",
+      "source_type": "official_university",
+      "title": "About the University | University of Oxford",
+      "retrieved_at": "2026-09-23T11:39:43Z",
+      "fields_supported": [
+        "University.canonical_name (independent verification pass, added during the verification-coverage hardening audit)",
+        "University.official_website"
+      ],
+      "excerpt": "University of Oxford. Domain: www.ox.ac.uk. Describes itself as 'the oldest university in the English-speaking world' and a 'world-leading centre of learning, teaching and research.' Does not explicitly state a legal/institutional classification (e.g. 'public university') on this page.",
+      "retrieval_method": "WebFetch (independent verification pass, added during the verification-coverage hardening audit -- this run's University/Program entities previously had record_status=VERIFIED with zero backing field-level VerificationRecords, which this fetch and src-01's re-read below correct)",
+      "notes": "institution_type ('public') is NOT verbatim-confirmed by this or any fetched source -- it is a reasonable classification (UK publicly-funded, chartered, self-governing institution) rather than a directly quoted fact, and is recorded at SUPPORTED, non-blocking, not VERIFIED. See missing-data.json."
+    },
+    {
+      "id": "src-13",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/applying-to-oxford/for-international-students/ELR",
+      "source_organization": "University of Oxford",
+      "source_type": "official_university",
+      "title": "English language and visa requirements | University of Oxford",
+      "retrieved_at": "2026-09-24T13:05:00Z",
+      "fields_supported": [
+        "AdmissionsRequirement.language_requirements (gb-university-of-oxford-admreq-a-level)",
+        "AdmissionsRequirement.language_requirements (gb-university-of-oxford-admreq-ib)",
+        "AdmissionsRequirement.language_requirements (gb-university-of-oxford-admreq-advanced-highers)",
+        "AdmissionsRequirement.language_requirements (gb-university-of-oxford-admreq-ap-us)"
+      ],
+      "excerpt": "If your first language is English and you have always been a resident and citizen of a majority English-speaking country recognised by UK Visas and Immigration (UKVI)... studying (or have completed) the International Baccalaureate programme, if it is taught in English... studying (or have completed) the Singapore Integrated Programme (SIPCAL)... been educated full-time in English for at least the two most recent years before applying [minimum three years total before Oxford entry]. IELTS Academic: 7.5 overall, minimum 7.0 per component. TOEFL iBT: 110. Cambridge C1 Advanced/C2 Proficiency: 191 overall, minimum 185 per component. Oxford Test of English (Advanced): 165 overall. Pearson PTE Academic: 76. If you are offered a place, you will need to show the correct level of proficiency by 31 July in the year you receive your offer.",
+      "retrieval_method": "WebFetch (verification-remediation pass)",
+      "notes": "Fetched twice this pass with different prompts to independently confirm both the exemption-category list and the full test-score table; consistent both times. A-Level and Scottish Advanced Highers are NOT named as automatic curriculum-based exemption categories on this page; IB is, conditional on being taught in English."
+    },
+    {
+      "id": "src-14",
+      "url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-english-language",
+      "source_organization": "UK Government (Home Office)",
+      "source_type": "official_government",
+      "title": "Immigration Rules Appendix English Language | GOV.UK",
+      "retrieved_at": "2026-09-24T13:12:00Z",
+      "fields_supported": [
+        "AdmissionsRequirement.language_requirements (gb-university-of-oxford-admreq-ap-us -- confirms the USA is on UKVI's 'majority English speaking countries' list, EL 4.1, which src-13's native-speaker exemption is defined by reference to)"
+      ],
+      "excerpt": "EL 4.1 -- majority English speaking countries: Antigua and Barbuda, Australia, The Bahamas, Barbados, Belize, The British Overseas Territories, Canada, Dominica, Grenada, Guyana, Jamaica, Malta, New Zealand, St Kitts and Nevis, St Lucia, St Vincent and the Grenadines, Trinidad and Tobago, United States of America.",
+      "retrieval_method": "WebFetch (verification-remediation pass)",
+      "notes": "Used only to resolve whether the USA is a UKVI-recognised majority-English-speaking country for Oxford's ELR native-speaker exemption; not used for any tuition/fee/visa-maintenance figure."
+    },
+    {
+      "id": "src-15",
+      "url": "https://www.cs.ox.ac.uk/admissions/undergraduate/why_oxford/offers.html",
+      "source_organization": "University of Oxford, Department of Computer Science",
+      "source_type": "official_university",
+      "title": "Typical offers | Department of Computer Science, University of Oxford",
+      "retrieved_at": "2026-09-24T13:20:00Z",
+      "fields_supported": [
+        "AdmissionsRequirement.required_subjects (gb-university-of-oxford-admreq-ap-us)",
+        "AdmissionsRequirement.standardized_tests (gb-university-of-oxford-admreq-ap-us)"
+      ],
+      "excerpt": "Either four APs at grade 5 including Calculus BC and two other maths or science subjects. OR Three APs at Grade 5 in Calculus BC and two other Maths or Science subjects and either a score of 32 (33 for Maths and Computer Science) or above in the ACT or 1470 (1480 for Maths and Computer Science) or above (out of 1600) in the SAT with a score of at least 770 in Mathematics. Calculus AB and Calculus BC cannot be counted as two separate subjects... We do not require the optional essay for either the ACT or the SAT.",
+      "retrieval_method": "WebFetch (verification-remediation pass)",
+      "notes": "This page gives a Computer-Science-specific AP/ACT/SAT academic-threshold combination that src-10/src-11 could not surface (src-11's capture limitation before the United States section on the general international-qualifications page persisted on a fresh independent re-attempt this pass -- see src-11's notes, unchanged). Used here only to populate required_subjects and standardized_tests, which were genuinely empty and in this remediation's scope; AdmissionsRequirement.academic_threshold itself was left unchanged (out of scope for this pass) even though this source is also informative there -- flagged for a future pass."
+    }
+  ],
+  "derived_cost_estimates": [
+    {
+      "id": "derived-oxford-living-low-9mo-home",
+      "cost_profile_ref": "gb-university-of-oxford-cost-home",
+      "field_name": "estimated_annual_living_cost_low_9mo",
+      "value": 13275,
+      "inputs": [
+        "Oxford's published monthly living-cost low bound: GBP 1,475/month (src-04)",
+        "Oxford's own suggested 9-month budgeting period (src-04)"
+      ],
+      "formula_method": "low_monthly_bound * 9 months",
+      "assumptions": [
+        "Uses Oxford's own suggested 9-month budgeting guidance, not the ~6-month term-time-only figure, as the more conservative planning figure",
+        "This is an EvidaPath calculation, never presented as a figure Oxford itself publishes as an annual total"
+      ],
+      "calculation_version": "v1.0-oxford-9mo",
+      "calculated_at": "2026-09-23T00:40:00Z"
+    },
+    {
+      "id": "derived-oxford-living-high-9mo-home",
+      "cost_profile_ref": "gb-university-of-oxford-cost-home",
+      "field_name": "estimated_annual_living_cost_high_9mo",
+      "value": 19575,
+      "inputs": [
+        "Oxford's published monthly living-cost high bound: GBP 2,175/month (src-04)",
+        "Oxford's own suggested 9-month budgeting period (src-04)"
+      ],
+      "formula_method": "high_monthly_bound * 9 months",
+      "assumptions": [
+        "Uses Oxford's own suggested 9-month budgeting guidance, not the ~6-month term-time-only figure",
+        "This is an EvidaPath calculation, never presented as a figure Oxford itself publishes"
+      ],
+      "calculation_version": "v1.0-oxford-9mo",
+      "calculated_at": "2026-09-23T00:40:00Z"
+    },
+    {
+      "id": "derived-oxford-living-low-9mo-overseas",
+      "cost_profile_ref": "gb-university-of-oxford-cost-overseas",
+      "field_name": "estimated_annual_living_cost_low_9mo",
+      "value": 13275,
+      "inputs": [
+        "Oxford's published monthly living-cost low bound: GBP 1,475/month (src-04)",
+        "Oxford's own suggested 9-month budgeting period (src-04)"
+      ],
+      "formula_method": "low_monthly_bound * 9 months",
+      "assumptions": [
+        "Identical underlying published range to the Home profile -- Oxford does not publish a separate overseas living-cost figure",
+        "This is an EvidaPath calculation, never presented as a figure Oxford itself publishes"
+      ],
+      "calculation_version": "v1.0-oxford-9mo",
+      "calculated_at": "2026-09-23T00:40:00Z"
+    },
+    {
+      "id": "derived-oxford-living-high-9mo-overseas",
+      "cost_profile_ref": "gb-university-of-oxford-cost-overseas",
+      "field_name": "estimated_annual_living_cost_high_9mo",
+      "value": 19575,
+      "inputs": [
+        "Oxford's published monthly living-cost high bound: GBP 2,175/month (src-04)",
+        "Oxford's own suggested 9-month budgeting period (src-04)"
+      ],
+      "formula_method": "high_monthly_bound * 9 months",
+      "assumptions": [
+        "Identical underlying published range to the Home profile",
+        "This is an EvidaPath calculation, never presented as a figure Oxford itself publishes"
+      ],
+      "calculation_version": "v1.0-oxford-9mo",
+      "calculated_at": "2026-09-23T00:40:00Z"
+    }
+  ]
+}

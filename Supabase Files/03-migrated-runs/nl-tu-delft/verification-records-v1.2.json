@@ -1,0 +1,251 @@
+{
+  "run_id": "2026-09-22_nl-tu-delft_cse",
+  "schema_version": "1.2",
+  "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+  "verifier": "EvidaPath University & Scholarship Intelligence Agent -- second independent pass (same session, distinct pass from Normalization)",
+  "note": "Carried forward from the V1.1 run's verification-records.json, formalized to the V1.2 VerificationRecord shape: absence_claim=true records were promoted to verification_status=VERIFIED_ABSENT; material_extension_fact is preserved as the now-formal schema field; NYUAD-run-specific informal semantic-QA flags were folded into conflict_or_limitation_notes since they are not part of the V1.2 schema (the semantic checks themselves are enforced by 04-pipeline/check_verification_coverage_v1_2.py instead). No new field-level verification claims were added or removed -- this is a reformatting pass, not new research, consistent with this synthesis being migration-only.",
+  "verification_records": [
+    {
+      "id": "vr-01",
+      "record_ref": "University:nl-tu-delft",
+      "field_checked": "canonical_name, official_website",
+      "proposed_value": "Delft University of Technology / https://www.tudelft.nl/en/",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-02",
+        "src-05"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Consistent across every official page fetched in this run.",
+      "blocking_status": "non_blocking"
+    },
+    {
+      "id": "vr-02",
+      "record_ref": "Program:nl-tu-delft-bsc-computer-science-engineering",
+      "field_checked": "duration_value, duration_unit, total_credits",
+      "proposed_value": "3 years, 180 EC",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-05"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "",
+      "blocking_status": "non_blocking"
+    },
+    {
+      "id": "vr-03",
+      "record_ref": "Program:nl-tu-delft-bsc-computer-science-engineering",
+      "field_checked": "language_of_instruction",
+      "proposed_value": "English track selected as representative; bilingual Dutch-English track also exists",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-05"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Program-scope choice (English track), not an ambiguity in the source.",
+      "blocking_status": "non_blocking"
+    },
+    {
+      "id": "vr-04",
+      "record_ref": "AdmissionsRequirement:ar-nl-tu-delft-cse-dutch-vwo",
+      "field_checked": "required_subjects",
+      "proposed_value": "Mathematics B",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Value itself is a direct quote (high confidence), but the source page references a fuller per-VWO-profile table not captured in this pass -- record may be incomplete, not wrong.",
+      "blocking_status": "blocking"
+    },
+    {
+      "id": "vr-05",
+      "record_ref": "AdmissionsRequirement:ar-nl-tu-delft-cse-dutch-vwo",
+      "field_checked": "academic_year",
+      "proposed_value": "not explicitly labeled; inferred Sept 2027 entry from Jan 15 deadline",
+      "verification_status": "UNKNOWN",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Genuine gap: the source page does not display an academic-year label. Inference is reasonable but unconfirmed. Needs the page re-read closer to the actual cycle roll-forward, or a direct question to TU Delft admissions.",
+      "blocking_status": "blocking"
+    },
+    {
+      "id": "vr-06",
+      "record_ref": "AdmissionsRequirement:ar-nl-tu-delft-cse-ib",
+      "field_checked": "required_subjects, academic_threshold",
+      "proposed_value": "Mathematics AA HL required; no minimum overall IB point total published",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Re-opened src-04; the absence of a point-total requirement is stated behavior (subject-specific only), confirmed on reread, not an extraction gap. Confidently VERIFIED as an absence.",
+      "blocking_status": "non_blocking"
+    },
+    {
+      "id": "vr-07",
+      "record_ref": "AdmissionsRequirement:ar-nl-tu-delft-cse-ib",
+      "field_checked": "language_requirements",
+      "proposed_value": "TOEFL iBT 90 / IELTS 6.5 / Cambridge CAE-CPE, general bachelor's requirement, exemption if IB completed with English as exam subject",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-03"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "This is TU Delft's general bachelor's-level English requirement, not confirmed as CSE-programme-specific in a CSE-specific page.",
+      "blocking_status": "blocking"
+    },
+    {
+      "id": "vr-08",
+      "record_ref": "AdmissionsRequirement:ar-nl-tu-delft-cse-alevel",
+      "field_checked": "required_subjects, notes (GCSE requirement)",
+      "proposed_value": "Mathematics A-Level + six GCSEs grades A-C",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Direct quote confirmed on reread; no overall UCAS point total is published, confirmed as an actual absence.",
+      "blocking_status": "non_blocking"
+    },
+    {
+      "id": "vr-09",
+      "record_ref": "AdmissionsRequirement:ar-nl-tu-delft-cse-alevel",
+      "field_checked": "language_requirements",
+      "proposed_value": "Likely exempt for UK nationals; not confirmed for all A-Level holders regardless of nationality",
+      "verification_status": "UNKNOWN",
+      "source_refs": [
+        "src-03"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Exemption list names UK nationals specifically, not 'all A-Level holders' -- a non-UK-national A-Level holder's status is genuinely unconfirmed.",
+      "blocking_status": "blocking"
+    },
+    {
+      "id": "vr-10",
+      "record_ref": "AdmissionsRequirement:ar-nl-tu-delft-cse-us-ap",
+      "field_checked": "standardized_tests, academic_threshold",
+      "proposed_value": "AP Calculus AB/BC min score 3, plus 4 AP exams total baseline",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Direct quote confirmed on reread.",
+      "blocking_status": "non_blocking"
+    },
+    {
+      "id": "vr-11",
+      "record_ref": "CostProfile:cp-nl-tu-delft-cse-2026-27-eu-efta",
+      "field_checked": "tuition_annual, tuition_basis",
+      "proposed_value": "EUR 2,694, statutory, 2026/2027",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-02",
+        "src-08"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Cross-checked between the official fee page and an independent secondary source (Delta, citing CBS/HOP data); both agree exactly.",
+      "blocking_status": "non_blocking"
+    },
+    {
+      "id": "vr-12",
+      "record_ref": "CostProfile:cp-nl-tu-delft-cse-2026-27-eu-efta",
+      "field_checked": "mandatory_fees_annual, living_cost_source_basis",
+      "proposed_value": "EUR 285 housing fee (purpose unexplained by source); living costs not published for this category",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-02"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "The EUR 285 figure is certain; what it specifically covers is not stated by TU Delft in the fetched content.",
+      "blocking_status": "blocking"
+    },
+    {
+      "id": "vr-13",
+      "record_ref": "CostProfile:cp-nl-tu-delft-cse-2026-27-non-eu",
+      "field_checked": "tuition_annual, tuition_basis, mandatory_fees_breakdown",
+      "proposed_value": "EUR 19,906 institutional; EUR 254 visa fee; EUR 285 housing fee; 2026/2027",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-02"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Directly from the authoritative 2026/2027 comparison table; internally consistent (sums to the stated EUR 34,106 total).",
+      "blocking_status": "non_blocking"
+    },
+    {
+      "id": "vr-14",
+      "record_ref": "CostProfile:cp-nl-tu-delft-cse-2026-27-non-eu",
+      "field_checked": "estimated_living_costs_annual, living_cost_source_basis",
+      "proposed_value": "EUR 14,200, kind=visa_proof_of_funds_deposit, administered by IND, refunded ~3 weeks after start",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-02"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "This is the finding that drove the v1.1 schema change. Explicitly confirmed by the source's own refund/IND language -- correctly classified as a deposit mechanism, not a spending estimate.",
+      "blocking_status": "non_blocking"
+    },
+    {
+      "id": "vr-15",
+      "record_ref": "Scholarship:sch-nl-tu-delft-holland-scholarship-status-unknown",
+      "field_checked": "institutions_covered (TU Delft participation)",
+      "proposed_value": "unresolved -- see conflict_or_limitation_notes",
+      "verification_status": "CONFLICT",
+      "source_refs": [
+        "src-07",
+        "src-06",
+        "src-09",
+        "src-10"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Government source omits TU Delft from its participating-institution content; three separate TU-Delft-owned pages neither confirm nor list a bachelor's-level Holland Scholarship. A text-mode fetch of src-07 may not reflect a JS-rendered filter -- this needs a live re-check or a direct question to TU Delft admissions before it can move off CONFLICT.",
+      "blocking_status": "blocking"
+    },
+    {
+      "id": "vr-16",
+      "record_ref": "Scholarship:sch-nl-tu-delft-van-effen-excellence",
+      "field_checked": "degree_levels, award_type, deadline",
+      "proposed_value": "MSc only; full tuition + living contribution; 2026-12-01 deadline for 2027/2028 MSc entry",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-22T20:35:00Z",
+      "conflict_or_limitation_notes": "Consistent across src-06, src-09, src-10. Out of scope for the BSc scholarship graph but the record itself is accurate.",
+      "blocking_status": "non_blocking"
+    },
+    {
+      "id": "vr-17",
+      "record_ref": "CostProfile:cp-nl-tu-delft-cse-2026-27-non-eu",
+      "field_checked": "mandatory_fees_annual",
+      "proposed_value": "EUR 539 (= EUR 254 residence permit/visa fee + EUR 285 housing fee)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-02"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T16:20:00Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of the official 2026/2027 tuition/finances comparison table (src-02) confirms EUR 254 (residence permit/visa) + EUR 285 (housing fee) = EUR 539, matching the stored mandatory_fees_annual value and the pre-existing mandatory_fees_breakdown array exactly. Note for context (not a discrepancy): the re-fetched page marks both line items '**' with the annotation that they 'will be deducted from Living Costs amount' -- i.e. this EUR 539 is subtracted from the EUR 14,200 IND proof-of-funds deposit (see nl-tu-delft-finreq-ind-proof-of-funds) rather than being an additional out-of-pocket charge on top of it. This does not change the field value being verified, only clarifies its relationship to the living-costs figure.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-18",
+      "record_ref": "Scholarship:sch-nl-tu-delft-holland-scholarship-status-unknown",
+      "field_checked": "award_amount, award_type",
+      "proposed_value": "EUR 5,000, award_type=fixed_amount, paid in the first year of study only",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-07"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T16:20:00Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of the official Nuffic/Study in NL NL Scholarship page (src-07) directly confirms: 'The scholarship amounts to EUR 5,000. You will receive this in the first year of your studies' and 'this is not a full-tuition scholarship' -- i.e. a fixed one-time amount, consistent with the stored award_amount=5000 and award_type=fixed_amount. This VerificationRecord also serves as the material-extension-fact coverage for this Scholarship's extension_metadata.fields.conflict_detail: that note documents that TU Delft's own participation as a Holland Scholarship-offering institution for this cycle is unresolved (Nuffic's institution-filter content did not list TU Delft when fetched; no TU-Delft-owned page independently confirms a bachelor's-level award). This re-pass did not change that -- see vr-15, which remains CONFLICT and is left untouched. A search for corroboration this pass surfaced only unofficial aggregator/commercial sites (e.g. collegedunia.com, freestudenttools.com, brightscholarship.com), which per source-hierarchy policy are not treated as evidence for the participation question. Net effect: the EUR 5,000 / fixed_amount facts are properties of the national scholarship program itself and are independently VERIFIED against the authoritative government/Nuffic source regardless of TU Delft's participation status; whether an applicant to TU Delft specifically should expect to receive it remains the separate, still-open question tracked by vr-15 and institutions_covered.",
+      "blocking_status": "blocking",
+      "material_extension_fact": true
+    }
+  ]
+}

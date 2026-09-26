@@ -1,0 +1,321 @@
+{
+  "admission_stages": [],
+  "admissions_requirements": [],
+  "applicant_categories": [
+    {
+      "description": "Students classified as 'Home' for UK tuition-fee purposes.",
+      "dimension": "residency_citizenship",
+      "id": "gb-university-of-oxford-residency-home",
+      "label": "Home (UK fee status)",
+      "university_ref": "gb-university-of-oxford"
+    },
+    {
+      "description": "Students classified as 'Overseas'/international for UK tuition-fee purposes.",
+      "dimension": "residency_citizenship",
+      "id": "gb-university-of-oxford-residency-overseas",
+      "label": "Overseas (international fee status)",
+      "university_ref": "gb-university-of-oxford"
+    }
+  ],
+  "campuses": [],
+  "cities": [
+    {
+      "country_ref": "gb",
+      "id": "gb-oxford",
+      "name": "Oxford"
+    }
+  ],
+  "colleges": [],
+  "cost_profiles": [
+    {
+      "academic_year": "2027/28",
+      "currency": "GBP",
+      "duration_years": 3,
+      "estimated_living_costs_annual": null,
+      "estimated_living_costs_monthly_range": {
+        "currency": "GBP",
+        "max": 2175,
+        "min": 1475
+      },
+      "extension_metadata": {
+        "fields": {
+          "college_fee_bundling_note": "College fees are not itemized separately -- Oxford states the single published course fee 'is divided between the University (including your department or faculty) and your college on a formula basis.' This claim was captured in research but NOT independently re-targeted during the verification pass (capped at SUPPORTED -- see verification-records.json vr-09)."
+        },
+        "note": "V1.2 migration: living_cost_monthly_range promoted to the new canonical CostProfile.estimated_living_costs_monthly_range field. Remaining facts (college fee bundling, tuition range context, visa maintenance detail) have no other canonical home and are retained here."
+      },
+      "id": "gb-university-of-oxford-cost-home",
+      "last_checked": "2026-09-22",
+      "living_cost_source_basis": {
+        "administering_body": "University of Oxford",
+        "description": "Oxford's own published estimate: GBP 1,475-2,175 per month for the 2027-28 academic year. Oxford does NOT publish a single annual figure -- estimated_living_costs_annual is left null rather than calculated, per instruction. Students are typically in Oxford ~6 months/year across three 8-week terms, but Oxford's own guidance suggests budgeting over a 9-month period; see 03-normalized/records.json derived_cost_estimates for an EvidaPath-calculated annualized range built from this figure, kept clearly separate from this source fact.",
+        "kind": "genuine_cost_of_living_estimate"
+      },
+      "mandatory_fees_annual": null,
+      "mandatory_fees_breakdown": [],
+      "other_material_costs": [],
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "record_status": "VERIFIED",
+      "residency_category_ref": "gb-university-of-oxford-residency-home",
+      "source_refs": [
+        "src-02",
+        "src-04"
+      ],
+      "tuition_annual": 10050,
+      "tuition_basis": "statutory",
+      "verification_status": "VERIFIED"
+    }
+  ],
+  "countries": [
+    {
+      "currency_default": "GBP",
+      "id": "gb",
+      "name": "United Kingdom",
+      "region": "Europe"
+    }
+  ],
+  "decision_plans": [],
+  "derived_cost_estimates": [],
+  "financial_aid_policies": [],
+  "financial_requirements": [
+    {
+      "academic_year": "n/a -- immigration rule, not tied to an academic-year publication cycle",
+      "administering_body": "UK Government (Home Office / UK Visas and Immigration)",
+      "amount": null,
+      "currency": "GBP",
+      "extension_metadata": {
+        "fields": {
+          "oxford_region_classification": "UNCONFIRMED -- gov.uk's page does not state which rate applies to Oxford.",
+          "visa_maintenance_monthly_range": {
+            "holding_period_days": 28,
+            "london_gbp": 1529,
+            "months_covered": 9,
+            "outside_london_gbp": 1171
+          }
+        },
+        "note": "Range detail retained -- FinancialRequirement.amount is a single number, insufficient for this range-shaped government threshold."
+      },
+      "frequency": "held for 28 consecutive days before visa application",
+      "id": "gb-university-of-oxford-finreq-visa-maintenance",
+      "notes": "Migrated from the V1.1 gb-university-of-oxford-cost-visa-maintenance-funds CostProfile record, which represented a UK Student visa financial (maintenance) threshold, not a tuition or genuine living-cost figure. amount is left null because it is a range (GBP 1,171-1,529/month, 9 months), not a single figure -- see extension_metadata for the structured range, matching the treatment of the underlying V1.1 record.",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "record_status": "VERIFIED",
+      "refundable": false,
+      "requirement_type": "government_minimum_resources",
+      "residency_category_ref": "gb-university-of-oxford-residency-overseas",
+      "source_refs": [
+        "src-07"
+      ],
+      "verification_status": "VERIFIED"
+    }
+  ],
+  "program_pathways": [
+    {
+      "degree_type": "MEng",
+      "degree_type_local": "MCompSci integrated master's (4 years)",
+      "duration_unit": "years",
+      "duration_value": 4,
+      "id": "gb-university-of-oxford-pathway-mcompsci",
+      "notes": "New in V1.2 -- resolves the V1.1 gap where this dual-track mechanic could only be described in Program.degree_type_local free text.",
+      "pathway_type": "integrated_continuation",
+      "program_ref": "gb-university-of-oxford-ba-computer-science",
+      "progression_requirement": {
+        "decision_point_timing": "End of year 3",
+        "description": "Internal transfer from the 3-year BA to the 4-year integrated MCompSci at the end of year 3, subject to examination performance.",
+        "gpa_or_class_threshold": "2:1 or higher in year-3 examinations"
+      },
+      "record_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verification_status": "VERIFIED"
+    }
+  ],
+  "programs": [
+    {
+      "application_platform": "UCAS",
+      "application_requirements": [
+        {
+          "description": "",
+          "name": "UCAS application",
+          "necessity": "required",
+          "notes": "UCAS code G400.",
+          "requirement_type": "form"
+        },
+        {
+          "description": "Both Paper 1 and Paper 2 mandatory; no pass mark.",
+          "name": "Test of Mathematics for University Admission (TMUA)",
+          "necessity": "required",
+          "notes": "Replaces the MAT starting with the 2026 admissions round.",
+          "requirement_type": "standardized_test_score"
+        },
+        {
+          "description": "Shortlisted candidates interviewed online by at least two colleges in December; cross-college reallocation pool operates.",
+          "name": "Interview (at least two colleges)",
+          "necessity": "required",
+          "notes": "",
+          "requirement_type": "interview_or_evaluation_event"
+        }
+      ],
+      "campus_ref": null,
+      "decision_context_academic_year": "2027/2028 (Fall/Autumn 2027 undergraduate entry) -- test-set comparability label only, does not override sourced years on individual records below",
+      "degree_type": "BA",
+      "degree_type_local": "BA (Hons) in Computer Science (3 years); MCompSci integrated master's (4 years) available via internal transfer at the end of year 3, subject to achieving 2:1 or higher in year-3 examinations",
+      "duration_unit": "years",
+      "duration_value": 3,
+      "extension_metadata": {
+        "fields": {
+          "related_variants_note": "Computer Science & Philosophy and Mathematics & Computer Science exist as separate joint-honours courses; not researched independently this run per explicit scope limits."
+        },
+        "note": "V1.2 migration: ucas_code and application_deadline promoted out of extension_metadata into a DecisionPlan record (gb-university-of-oxford-decisionplan-2027) and Program.application_requirements/application_platform. related_variants_note retained here as a genuine institution-specific scope note."
+      },
+      "faculty_school": "Department of Computer Science",
+      "field_of_study": "Computer Science",
+      "id": "gb-university-of-oxford-ba-computer-science",
+      "language_of_instruction": [
+        "en"
+      ],
+      "official_program_url": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/computer-science",
+      "program_name": "Computer Science",
+      "record_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-05"
+      ],
+      "university_ref": "gb-university-of-oxford"
+    }
+  ],
+  "run_id": "2026-09-22_gb-university-of-oxford_computer-science",
+  "schema_version": "1.2",
+  "scholarships": [],
+  "source_records": [
+    {
+      "excerpt": "A*AA, including A*A in Maths and Further Maths if available (in any order). International Baccalaureate: 39 (including core points) with 766 at HL (the 7 must be in HL Mathematics). Advanced Highers: AA/AAB with an A in Mathematics. UCAS code G400. Shortlisted candidates will be invited to at least one online interview. 3-year average (2023-25): 21% interviewed, 7% successful, 55 places available.",
+      "fields_supported": [
+        "Program.degree_type (BA -- primary enum value; MCompSci route captured in degree_type_local)",
+        "Program.degree_type_local (captures the BA/MCompSci dual-track mechanic)",
+        "Program.duration_value (3)",
+        "Program.duration_unit (years)",
+        "Program.extension_metadata.fields.ucas_code (G400 -- no canonical Program field, routed to extension)",
+        "Program.extension_metadata.fields.application_deadline (15 Oct 2026 -- no canonical Program field, routed to extension)",
+        "AdmissionsRequirement.academic_threshold (gb-university-of-oxford-admreq-a-level)",
+        "AdmissionsRequirement.academic_threshold (gb-university-of-oxford-admreq-ib)",
+        "AdmissionsRequirement.academic_threshold (gb-university-of-oxford-admreq-advanced-highers)",
+        "AdmissionsRequirement.notes (interview-required fact, all three curriculum tracks)"
+      ],
+      "id": "src-01",
+      "notes": "Independently re-fetched during verification; verbatim match.",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "retrieved_at": "2026-09-22T21:15:00Z",
+      "source_organization": "University of Oxford",
+      "source_type": "official_university",
+      "title": "Computer Science | University of Oxford -- course listing page",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/computer-science"
+    },
+    {
+      "excerpt": "Home students: \u00a310,050 for undergraduate students undertaking their first degree. Overseas students: between \u00a339,620 and \u00a366,580 depending on the programme. The course fees you pay include your fees for both University and college services and are divided between the University and your college on a formula basis.",
+      "fields_supported": [
+        "CostProfile.tuition_annual (gb-university-of-oxford-cost-home)",
+        "CostProfile.tuition_annual (gb-university-of-oxford-cost-overseas)",
+        "CostProfile.tuition_basis (statutory/institutional classification reasoning)",
+        "CostProfile.extension_metadata.fields.college_fee_bundling_note (no canonical CostProfile field for this fact)"
+      ],
+      "id": "src-02",
+      "notes": "",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "retrieved_at": "2026-09-22T21:18:00Z",
+      "source_organization": "University of Oxford",
+      "source_type": "official_university",
+      "title": "Course fees | University of Oxford",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/fees-and-funding/course-fees"
+    },
+    {
+      "excerpt": "Home fee: \u00a310,050. Overseas fee: \u00a366,580. Living costs for the 2027-28 academic year are estimated to be between \u00a31,475 and \u00a32,175 for each month you are in Oxford.",
+      "fields_supported": [
+        "CostProfile.tuition_annual (gb-university-of-oxford-cost-home)",
+        "CostProfile.tuition_annual (gb-university-of-oxford-cost-overseas)",
+        "CostProfile.living_cost_source_basis (both Home and Overseas cost profiles)",
+        "CostProfile.extension_metadata.fields.living_cost_monthly_range (no canonical CostProfile field for a range)"
+      ],
+      "id": "src-04",
+      "notes": "",
+      "retrieval_method": "WebFetch (extraction pass, distinct fee-focused fetch of same URL as src-01)",
+      "retrieved_at": "2026-09-22T21:24:00Z",
+      "source_organization": "University of Oxford",
+      "source_type": "official_university",
+      "title": "Computer Science | University of Oxford -- course listing page (fee-focused refetch)",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/computer-science"
+    },
+    {
+      "excerpt": "Candidates invited to interview will be interviewed by at least two colleges. The Mathematical Sciences Admissions Group takes active steps to ensure that (whenever possible) such candidates may be offered places at other colleges.",
+      "fields_supported": [
+        "AdmissionsRequirement.notes (interview process / cross-college reallocation pool, all curriculum tracks)",
+        "Program.faculty_school (Department of Computer Science)"
+      ],
+      "id": "src-05",
+      "notes": "Independently re-fetched during verification; verbatim match.",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "retrieved_at": "2026-09-22T21:27:00Z",
+      "source_organization": "University of Oxford, Department of Computer Science",
+      "source_type": "official_university",
+      "title": "Formal admissions criteria | Department of Computer Science, University of Oxford",
+      "url": "https://www.cs.ox.ac.uk/admissions/undergraduate/why_oxford/formal-admissions-criteria.html"
+    },
+    {
+      "excerpt": "London: \u00a31,529 per month (for up to 9 months). Outside London: \u00a31,171 per month (for up to 9 months). You must have this money for at least 28 days in a row.",
+      "fields_supported": [
+        "CostProfile.living_cost_source_basis (gb-university-of-oxford-cost-visa-maintenance-funds)",
+        "CostProfile.extension_metadata.fields.visa_maintenance_monthly_range (no canonical field for a monthly range)",
+        "DerivedCostEstimate.value (derived-visa-funds-total-low-9mo, derived-visa-funds-total-high-9mo -- these EvidaPath calculations use this source's rates as an input, not as a source of the total itself)"
+      ],
+      "id": "src-07",
+      "notes": "Independently re-fetched during verification, including an explicit check for any stated upcoming change; none found in the page body.",
+      "retrieval_method": "WebFetch (extraction pass)",
+      "retrieved_at": "2026-09-22T21:32:00Z",
+      "source_organization": "UK Government (Home Office)",
+      "source_type": "official_government",
+      "title": "Student visa: Money you need | GOV.UK",
+      "url": "https://www.gov.uk/student-visa/money"
+    },
+    {
+      "excerpt": "University of Oxford. Domain: www.ox.ac.uk. Describes itself as 'the oldest university in the English-speaking world' and a 'world-leading centre of learning, teaching and research.' Does not explicitly state a legal/institutional classification (e.g. 'public university') on this page.",
+      "fields_supported": [
+        "University.canonical_name (independent verification pass, added during the verification-coverage hardening audit)",
+        "University.official_website"
+      ],
+      "id": "src-12",
+      "notes": "institution_type ('public') is NOT verbatim-confirmed by this or any fetched source -- it is a reasonable classification (UK publicly-funded, chartered, self-governing institution) rather than a directly quoted fact, and is recorded at SUPPORTED, non-blocking, not VERIFIED. See missing-data.json.",
+      "retrieval_method": "WebFetch (independent verification pass, added during the verification-coverage hardening audit -- this run's University/Program entities previously had record_status=VERIFIED with zero backing field-level VerificationRecords, which this fetch and src-01's re-read below correct)",
+      "retrieved_at": "2026-09-23T11:39:43Z",
+      "source_organization": "University of Oxford",
+      "source_type": "official_university",
+      "title": "About the University | University of Oxford",
+      "url": "https://www.ox.ac.uk/about"
+    }
+  ],
+  "universities": [
+    {
+      "aliases": [
+        "Oxford",
+        "Oxford University",
+        "University of Oxford"
+      ],
+      "canonical_name": "University of Oxford",
+      "country_ref": "gb",
+      "extension_metadata": {
+        "fields": {},
+        "note": "V1.2 migration: the V1.1 note about Oxford's collegiate structure having no first-class entity is resolved -- see the new College entity and gb-university-of-oxford-college-* records."
+      },
+      "id": "gb-university-of-oxford",
+      "institution_type": "public",
+      "last_researched": "2026-09-22",
+      "last_verified": "2026-09-23",
+      "official_website": "https://www.ox.ac.uk/",
+      "primary_city_ref": "gb-oxford",
+      "record_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-12"
+      ]
+    }
+  ]
+}

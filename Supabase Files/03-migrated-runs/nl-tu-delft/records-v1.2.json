@@ -1,0 +1,627 @@
+{
+  "run_id": "2026-09-22_nl-tu-delft_cse",
+  "schema_version": "1.2",
+  "countries": [
+    {
+      "id": "nl",
+      "name": "Netherlands",
+      "region": "Europe",
+      "currency_default": "EUR"
+    }
+  ],
+  "cities": [
+    {
+      "id": "nl-delft",
+      "name": "Delft",
+      "country_ref": "nl"
+    }
+  ],
+  "universities": [
+    {
+      "id": "nl-tu-delft",
+      "canonical_name": "Delft University of Technology",
+      "aliases": [
+        "TU Delft",
+        "Technische Universiteit Delft"
+      ],
+      "institution_type": "public",
+      "country_ref": "nl",
+      "primary_city_ref": "nl-delft",
+      "official_website": "https://www.tudelft.nl/en/",
+      "source_refs": [
+        "src-01",
+        "src-02"
+      ],
+      "record_status": "STRUCTURED",
+      "last_researched": "2026-09-22",
+      "last_verified": null
+    }
+  ],
+  "campuses": [
+    {
+      "id": "nl-tu-delft-main",
+      "university_ref": "nl-tu-delft",
+      "name": "TU Delft main campus",
+      "city_ref": "nl-delft",
+      "country_ref": "nl",
+      "is_primary": true,
+      "official_url": "https://www.tudelft.nl/en/"
+    }
+  ],
+  "colleges": [],
+  "programs": [
+    {
+      "id": "nl-tu-delft-bsc-computer-science-engineering",
+      "university_ref": "nl-tu-delft",
+      "campus_ref": "nl-tu-delft-main",
+      "program_name": "Bachelor of Computer Science and Engineering",
+      "faculty_school": "Faculty of Electrical Engineering, Mathematics and Computer Science (EEMCS)",
+      "degree_type": "BSc",
+      "degree_type_local": "BSc (Dutch WO bachelor's)",
+      "field_of_study": "Computer Science",
+      "duration_value": 3,
+      "duration_unit": "years",
+      "language_of_instruction": [
+        "nl",
+        "en"
+      ],
+      "official_program_url": "https://www.tudelft.nl/en/onderwijs/opleidingen/bachelors/computer-science-and-engineering/bachelor-of-computer-science-and-engineering/about-the-programme",
+      "decision_context_academic_year": "2027/2028 (Fall 2027 undergraduate entry) -- test-set comparability label only, per Suhail's instruction #4. Does NOT override the sourced academic_year on individual admissions/cost/scholarship records below.",
+      "source_refs": [
+        "src-05"
+      ],
+      "record_status": "STRUCTURED",
+      "extension_metadata": {
+        "note": "V1.2 migration: total_credits and language_notes are not canonical V1.1/V1.2 Program fields and are relocated here unchanged (no data lost).",
+        "fields": {
+          "total_credits": "180 EC (ECTS)",
+          "language_notes": "Two tracks exist: a Dutch-English bilingual track and a fully English-taught track. This record represents the English track for comparability with the other four test universities."
+        }
+      }
+    }
+  ],
+  "program_pathways": [],
+  "applicant_categories": [
+    {
+      "id": "nl-tu-delft-curriculum-dutch-vwo",
+      "university_ref": "nl-tu-delft",
+      "dimension": "prior_curriculum",
+      "label": "Dutch VWO / Gymnasium diploma",
+      "description": "Holder of a Dutch VWO (pre-university) diploma."
+    },
+    {
+      "id": "nl-tu-delft-curriculum-ib",
+      "university_ref": "nl-tu-delft",
+      "dimension": "prior_curriculum",
+      "label": "International Baccalaureate Diploma Programme",
+      "description": "IB Diploma Programme holder, full diploma (not IBCP)."
+    },
+    {
+      "id": "nl-tu-delft-curriculum-alevel",
+      "university_ref": "nl-tu-delft",
+      "dimension": "prior_curriculum",
+      "label": "GCE A-Levels",
+      "description": "UK-system A-Level holder, plus required GCSEs."
+    },
+    {
+      "id": "nl-tu-delft-curriculum-us-hs-ap",
+      "university_ref": "nl-tu-delft",
+      "dimension": "prior_curriculum",
+      "label": "US High School Diploma + AP",
+      "description": "US high school diploma with required Advanced Placement exams."
+    },
+    {
+      "id": "nl-tu-delft-residency-eu-efta",
+      "university_ref": "nl-tu-delft",
+      "dimension": "residency_citizenship",
+      "label": "EU/EFTA (incl. Dutch, Swiss)",
+      "description": "EU, EEA, Swiss nationals; pay the statutory tuition fee."
+    },
+    {
+      "id": "nl-tu-delft-residency-non-eu",
+      "university_ref": "nl-tu-delft",
+      "dimension": "residency_citizenship",
+      "label": "Non-EU/EEA (incl. UK)",
+      "description": "Nationals outside EU/EEA/Switzerland (UK nationals included post-Brexit); pay the institutional tuition fee."
+    },
+    {
+      "id": "nl-tu-delft-residency-surinamese",
+      "university_ref": "nl-tu-delft",
+      "dimension": "residency_citizenship",
+      "label": "Surinamese nationals",
+      "description": "Treaty arrangement: pay statutory tuition fee but subject to the non-EU living-cost/visa fee schedule."
+    }
+  ],
+  "admission_stages": [
+    {
+      "id": "nl-tu-delft-stage-matching-selection",
+      "university_ref": "nl-tu-delft",
+      "program_ref": "nl-tu-delft-bsc-computer-science-engineering",
+      "applicant_category_ref": null,
+      "stage_type": "selection_stage",
+      "sequence_order": 1,
+      "name": "Matching & Selection procedure (numerus fixus)",
+      "description": "Computer Science and Engineering is a numerus fixus programme with a limited number of places, filled through a Matching & Selection procedure rather than diploma-alone admission. Registration deadline January 15 for the numerus fixus cycle.",
+      "criteria": [
+        {
+          "criterion_name": "Matching & Selection",
+          "description": "Capacity-limited numerus fixus selection procedure; the exact scoring/matching criteria are not published on the official sources fetched this run.",
+          "threshold_or_formula": null,
+          "weight": null,
+          "mandatory": true
+        }
+      ],
+      "decision_outcome_options": [
+        "offer",
+        "waitlist",
+        "rejection"
+      ],
+      "source_refs": [
+        "src-01"
+      ],
+      "verification_status": "SUPPORTED",
+      "record_status": "STRUCTURED",
+      "extension_metadata": {
+        "note": "New in V1.2 -- generalizes the AdmissionStage concept (evidenced by Toronto/TUM/NYUAD) to TU Delft's own numerus fixus procedure, which was previously only described in AdmissionsRequirement.notes free text.",
+        "fields": {}
+      }
+    }
+  ],
+  "admissions_requirements": [
+    {
+      "id": "ar-nl-tu-delft-cse-dutch-vwo",
+      "program_ref": "nl-tu-delft-bsc-computer-science-engineering",
+      "prior_curriculum_category_ref": "nl-tu-delft-curriculum-dutch-vwo",
+      "curriculum_type": "Dutch VWO / Gymnasium",
+      "academic_threshold": null,
+      "required_subjects": [
+        "Mathematics B"
+      ],
+      "standardized_tests": [],
+      "language_requirements": [],
+      "notes": "Numerus fixus programme with a Matching & Selection procedure; a diploma alone does not guarantee a place. The source page references a per-VWO-profile subject table that was not reproduced in the fetched content -- extraction gap, not a null-value finding. Needs a direct, non-summarized page read before promotion past SUPPORTED.",
+      "source_refs": [
+        "src-01"
+      ],
+      "academic_year": "not explicitly labeled on source; Jan 15 numerus fixus deadline implies Sept 2027 entry -- see verification record for this field",
+      "last_checked": "2026-09-22",
+      "verification_status": "SUPPORTED",
+      "record_status": "STRUCTURED",
+      "admission_stage_ref": "nl-tu-delft-stage-matching-selection"
+    },
+    {
+      "id": "ar-nl-tu-delft-cse-ib",
+      "program_ref": "nl-tu-delft-bsc-computer-science-engineering",
+      "prior_curriculum_category_ref": "nl-tu-delft-curriculum-ib",
+      "curriculum_type": "International Baccalaureate Diploma Programme",
+      "academic_threshold": null,
+      "required_subjects": [
+        "Mathematics: Analysis & Approaches (AA), Higher Level"
+      ],
+      "standardized_tests": [],
+      "language_requirements": [
+        {
+          "language": "en",
+          "test_name": "Exempt if IB completed with English as an examination subject",
+          "min_score": null,
+          "notes": "General TU Delft bachelor's English requirement (not CSE-specific): TOEFL iBT 90 / IELTS Academic 6.5 / Cambridge CAE or CPE for English-taught programmes, if not otherwise exempt."
+        }
+      ],
+      "notes": "TU Delft explicitly does NOT accept the IB Career-related Programme (IBCP). No minimum overall IB point total is stated -- requirement is subject-specific (Math AA HL) only. This is a confirmed finding, not a data gap: do not backfill a plausible point total from secondary sites.",
+      "source_refs": [
+        "src-04",
+        "src-03"
+      ],
+      "academic_year": "not explicitly labeled on source; Jan 15 numerus fixus deadline implies Sept 2027 entry -- see verification record for this field",
+      "last_checked": "2026-09-22",
+      "verification_status": "SUPPORTED",
+      "record_status": "STRUCTURED",
+      "admission_stage_ref": "nl-tu-delft-stage-matching-selection"
+    },
+    {
+      "id": "ar-nl-tu-delft-cse-alevel",
+      "program_ref": "nl-tu-delft-bsc-computer-science-engineering",
+      "prior_curriculum_category_ref": "nl-tu-delft-curriculum-alevel",
+      "curriculum_type": "GCE A-Levels (England/Wales/NI system)",
+      "academic_threshold": null,
+      "required_subjects": [
+        "Mathematics (A-Level)"
+      ],
+      "standardized_tests": [],
+      "language_requirements": [
+        {
+          "language": "en",
+          "test_name": "Likely exempt (UK nationals / English-medium secondary education) -- not independently confirmed for all A-Level holders regardless of nationality",
+          "min_score": null,
+          "notes": "General exemption list includes UK nationals only, not all A-Level holders."
+        }
+      ],
+      "notes": "Also requires six GCSEs (or England grades 9-4) in different subjects at grades A-C, in addition to the Mathematics A-Level. No overall UCAS points/grade threshold specified in the fetched content.",
+      "source_refs": [
+        "src-04"
+      ],
+      "academic_year": "not explicitly labeled on source; Jan 15 numerus fixus deadline implies Sept 2027 entry -- see verification record for this field",
+      "last_checked": "2026-09-22",
+      "verification_status": "SUPPORTED",
+      "record_status": "STRUCTURED",
+      "admission_stage_ref": "nl-tu-delft-stage-matching-selection"
+    },
+    {
+      "id": "ar-nl-tu-delft-cse-us-ap",
+      "program_ref": "nl-tu-delft-bsc-computer-science-engineering",
+      "prior_curriculum_category_ref": "nl-tu-delft-curriculum-us-hs-ap",
+      "curriculum_type": "US High School Diploma + Advanced Placement",
+      "academic_threshold": "Accredited US high school diploma plus a minimum of 4 College Board AP exams overall",
+      "required_subjects": [
+        "AP Calculus AB or BC, minimum score of 3"
+      ],
+      "standardized_tests": [
+        {
+          "test_name": "AP Calculus AB or BC",
+          "min_score": 3,
+          "required": "required",
+          "notes": "Only Calculus AP is mandatory for this specific programme; the general 4-AP-exam rule is a TU Delft-wide bachelor's admission baseline, not CSE-specific."
+        }
+      ],
+      "language_requirements": [],
+      "notes": "",
+      "source_refs": [
+        "src-04"
+      ],
+      "academic_year": "not explicitly labeled on source; Jan 15 numerus fixus deadline implies Sept 2027 entry -- see verification record for this field",
+      "last_checked": "2026-09-22",
+      "verification_status": "SUPPORTED",
+      "record_status": "STRUCTURED",
+      "admission_stage_ref": "nl-tu-delft-stage-matching-selection"
+    }
+  ],
+  "decision_plans": [
+    {
+      "id": "nl-tu-delft-decisionplan-numerus-fixus",
+      "university_ref": "nl-tu-delft",
+      "program_ref": "nl-tu-delft-bsc-computer-science-engineering",
+      "plan_type": "single_stage",
+      "application_platform": "Studielink",
+      "binding": null,
+      "application_deadline": "2027-01-15",
+      "decision_release_date": null,
+      "academic_year": "2027/2028 (Sept 2027 entry, numerus fixus cycle)",
+      "notes": "New in V1.2 -- the January 15 registration deadline was previously only present as free text inside AdmissionsRequirement.notes ('Registration deadline is January 15 for numerus fixus programs').",
+      "source_refs": [
+        "src-01"
+      ],
+      "verification_status": "SUPPORTED",
+      "record_status": "STRUCTURED"
+    }
+  ],
+  "cost_profiles": [
+    {
+      "id": "cp-nl-tu-delft-cse-2026-27-eu-efta",
+      "program_ref": "nl-tu-delft-bsc-computer-science-engineering",
+      "academic_year": "2026/2027",
+      "residency_category_ref": "nl-tu-delft-residency-eu-efta",
+      "currency": "EUR",
+      "tuition_annual": 2694,
+      "tuition_basis": "statutory",
+      "mandatory_fees_annual": 285,
+      "mandatory_fees_breakdown": [
+        {
+          "label": "TU Delft housing fee",
+          "amount": 285,
+          "frequency": "annual"
+        }
+      ],
+      "estimated_living_costs_annual": null,
+      "living_cost_source_basis": {
+        "kind": "not_published",
+        "description": "TU Delft's own tuition/finances page explicitly declines to estimate living costs for EU/EFTA students and refers applicants to the Study in NL website instead.",
+        "administering_body": ""
+      },
+      "other_material_costs": [],
+      "duration_years": 3,
+      "source_refs": [
+        "src-02",
+        "src-08"
+      ],
+      "last_checked": "2026-09-22",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED"
+    },
+    {
+      "id": "cp-nl-tu-delft-cse-2026-27-non-eu",
+      "program_ref": "nl-tu-delft-bsc-computer-science-engineering",
+      "academic_year": "2026/2027",
+      "residency_category_ref": "nl-tu-delft-residency-non-eu",
+      "currency": "EUR",
+      "tuition_annual": 19906,
+      "tuition_basis": "institutional",
+      "mandatory_fees_annual": 539,
+      "mandatory_fees_breakdown": [
+        {
+          "label": "Residence permit / visa fee (IND)",
+          "amount": 254,
+          "frequency": "annual, first year"
+        },
+        {
+          "label": "TU Delft housing fee",
+          "amount": 285,
+          "frequency": "annual"
+        }
+      ],
+      "estimated_living_costs_annual": null,
+      "living_cost_source_basis": {
+        "kind": "not_published",
+        "description": "TU Delft does not publish a separate genuine cost-of-living estimate for non-EU/EEA students distinct from the IND proof-of-funds requirement; that figure is now represented exclusively as a FinancialRequirement record (nl-tu-delft-finreq-ind-proof-of-funds), per V1.2's narrowed living_cost_source_basis_kind enum.",
+        "administering_body": ""
+      },
+      "other_material_costs": [],
+      "duration_years": 3,
+      "source_refs": [
+        "src-02"
+      ],
+      "last_checked": "2026-09-22",
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED",
+      "extension_metadata": {
+        "note": "V1.2 migration: this record's V1.1 estimated_living_costs_annual=14200 with living_cost_source_basis.kind=visa_proof_of_funds_deposit was relocated to a new FinancialRequirement record (nl-tu-delft-finreq-ind-proof-of-funds) because V1.2 no longer permits visa_proof_of_funds_deposit as a CostProfile living-cost kind. No data was lost -- see migration-report.md.",
+        "fields": {}
+      }
+    }
+  ],
+  "financial_requirements": [
+    {
+      "id": "nl-tu-delft-finreq-ind-proof-of-funds",
+      "program_ref": "nl-tu-delft-bsc-computer-science-engineering",
+      "residency_category_ref": "nl-tu-delft-residency-non-eu",
+      "requirement_type": "visa_proof_of_funds",
+      "amount": 14200,
+      "currency": "EUR",
+      "refundable": true,
+      "frequency": "annual (refunded ~3 weeks after programme start)",
+      "administering_body": "Immigration and Naturalisation Service (IND), the Netherlands",
+      "academic_year": "2026/2027",
+      "notes": "Migrated from V1.1 CostProfile cp-nl-tu-delft-cse-2026-27-non-eu.estimated_living_costs_annual + living_cost_source_basis (kind=visa_proof_of_funds_deposit), which conflated this immigration liquidity requirement with a living-cost estimate. TU Delft refunds this amount (after deducting permit and housing fees) to the student's own account approximately three weeks after the programme starts -- it is the student's own money, not a genuine cost-of-living estimate.",
+      "source_refs": [
+        "src-02"
+      ],
+      "verification_status": "VERIFIED",
+      "record_status": "VERIFIED"
+    }
+  ],
+  "financial_aid_policies": [],
+  "scholarships": [
+    {
+      "id": "sch-nl-tu-delft-holland-scholarship-status-unknown",
+      "name": "Holland Scholarship / NL Scholarship (applicability to TU Delft bachelor's programmes)",
+      "provider": "Dutch Ministry of Education, Culture and Science, administered by Nuffic (Study in NL)",
+      "provider_type": "government",
+      "institutions_covered": [],
+      "programs_covered": [],
+      "degree_levels": [
+        "undergraduate",
+        "postgraduate-taught"
+      ],
+      "eligible_citizenships": [
+        "non-EEA (any, subject to no prior Dutch qualification)"
+      ],
+      "residency_restrictions": "Applicant must not hold a prior degree from a Dutch institution",
+      "academic_criteria": null,
+      "other_eligibility_criteria": "Full-time bachelor's or master's programme at a participating institution",
+      "award_type": "fixed_amount",
+      "award_amount": "5000",
+      "award_amount_currency": "EUR",
+      "renewable": false,
+      "renewal_conditions": "Paid in first year of study only, per source",
+      "duration": "One-time, first year",
+      "application_deadline": null,
+      "deadline_academic_year": "2026/2027 (application window opened 1 Nov 2025 per Nuffic; per-institution closing dates vary)",
+      "official_source_url": "https://www.studyinnl.org/finances/nl-scholarship",
+      "source_refs": [
+        "src-07",
+        "src-06",
+        "src-09",
+        "src-10"
+      ],
+      "last_checked": "2026-09-22",
+      "verification_status": "CONFLICT",
+      "record_status": "HUMAN_REVIEW",
+      "extension_metadata": {
+        "note": "V1.2 migration: V1.1's non-canonical 'conflict_detail' field is relocated here unchanged.",
+        "fields": {
+          "conflict_detail": "Nuffic's own Study in NL page (src-07) did not list TU Delft among participating institutions at the time of this fetch. TU Delft's own scholarships page (src-06), its 2025-2027 scholarships news article (src-09), and a faculty student-portal scholarship page (src-10) mention the Holland Scholarship only in passing metadata or not at all, and list no bachelor's-level scholarships at all -- only two MSc-level scholarships. Deliberately kept at HUMAN_REVIEW / CONFLICT rather than asserted either way. Needs a direct check of TU Delft's admission office or a live (JS-rendered) Study in NL institution filter."
+        }
+      }
+    },
+    {
+      "id": "sch-nl-tu-delft-van-effen-excellence",
+      "name": "Justus & Louise van Effen Excellence Scholarship",
+      "provider": "Justus & Louise van Effen Excellence Foundation",
+      "provider_type": "university-fund",
+      "institutions_covered": [
+        "nl-tu-delft"
+      ],
+      "programs_covered": [],
+      "degree_levels": [
+        "postgraduate-taught"
+      ],
+      "eligible_citizenships": [
+        "any (non-Dutch/non-EEA emphasis implied by 'international applicant')"
+      ],
+      "residency_restrictions": null,
+      "academic_criteria": "Excellent international applicant, described as among the top 10% of applicants to the relevant MSc programme, conditionally admitted to a 2-year regular TU Delft MSc programme",
+      "other_eligibility_criteria": null,
+      "award_type": "mixed",
+      "award_amount": "Full tuition fees plus a living-expense contribution",
+      "award_amount_currency": "EUR",
+      "renewable": true,
+      "renewal_conditions": "Conditional on completing at least 48 of 60 ECTS credits in year one",
+      "duration": "Up to 2 years (duration of MSc programme)",
+      "application_deadline": "2026-12-01",
+      "deadline_academic_year": "2027/2028 MSc entry",
+      "official_source_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships",
+      "source_refs": [
+        "src-06"
+      ],
+      "last_checked": "2026-09-22",
+      "verification_status": "SUPPORTED",
+      "record_status": "STRUCTURED",
+      "extension_metadata": {
+        "note": "V1.2 migration: V1.1's non-canonical 'notes' field is relocated here unchanged.",
+        "fields": {
+          "v11_notes": "MASTER'S-LEVEL ONLY. Included for completeness/context as TU Delft's flagship scholarship, but does NOT cover the BSc Computer Science and Engineering programme this run tests. Out of scope for this university's undergraduate scholarship graph; retained so the gap (no verified bachelor's scholarship found) stays visible rather than silently dropped."
+        }
+      }
+    }
+  ],
+  "source_records": [
+    {
+      "id": "src-01",
+      "url": "https://www.tudelft.nl/en/onderwijs/opleidingen/bachelors/computer-science-and-engineering/bachelor-of-computer-science-and-engineering/from-application-to-enrollment/admission-requirements",
+      "source_organization": "TU Delft",
+      "source_type": "official_university",
+      "title": "Admission requirements - Computer Science & Engineering",
+      "retrieved_at": "2026-09-22T00:00:00Z",
+      "fields_supported": [
+        "AdmissionsRequirement.curriculum_type (ar-nl-tu-delft-cse-dutch-vwo)",
+        "AdmissionsRequirement.required_subjects (ar-nl-tu-delft-cse-dutch-vwo)",
+        "AdmissionsRequirement.notes (ar-nl-tu-delft-cse-dutch-vwo)"
+      ],
+      "excerpt": "Required level: 'VWO / Gymnasium'. Required subject: Mathematics B must be included in curriculum. Numerus fixus: 'there are a limited number of spots' filled through a Matching & Selection procedure. International diplomas: 'TU Delft determines equivalency after registration. Registration deadline is January 15 for numerus clausus programs.'",
+      "retrieval_method": "WebFetch tool (LLM-mediated extraction of fetched HTML; quotes verbatim as returned)",
+      "notes": "Did not include the full per-VWO-profile subject table referenced on the page; flagged for a direct, non-summarized follow-up read."
+    },
+    {
+      "id": "src-02",
+      "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/tuition-fee-finances",
+      "source_organization": "TU Delft",
+      "source_type": "official_university",
+      "title": "Tuition Fee & Finances",
+      "retrieved_at": "2026-09-22T00:00:00Z",
+      "fields_supported": [
+        "CostProfile.tuition_annual (cp-nl-tu-delft-cse-2026-27-eu-efta)",
+        "CostProfile.tuition_annual (cp-nl-tu-delft-cse-2026-27-non-eu)"
+      ],
+      "excerpt": "2026/2027 comparison table: BSc & MSc EU/EFTA tuition EUR 2,694, housing fee EUR 285, total EUR 2,979. BSc non-EU (incl UK) tuition EUR 19,906, living costs EUR 14,200, residence permit/visa fee EUR 254, housing fee EUR 285, total EUR 34,106. 'The Living Costs per year are based on rules of the Immigration and Naturalisation Service (IND).' 'TU Delft refunds living costs after deducting permit and housing fees to your bank account approximately three weeks following program start.'",
+      "retrieval_method": "WebFetch tool, 3 passes against the same URL with different extraction prompts, consolidated",
+      "notes": "Primary source for both cost profiles; contains the authoritative full fee table for 2026/2027."
+    },
+    {
+      "id": "src-03",
+      "url": "https://www.tudelft.nl/en/education/admission-and-application/bsc-international-diploma/1-admission-requirements/",
+      "source_organization": "TU Delft",
+      "source_type": "official_university",
+      "title": "BSc International admission requirements (general)",
+      "retrieved_at": "2026-09-22T00:00:00Z",
+      "fields_supported": [
+        "AdmissionsRequirement.language_requirements (ar-nl-tu-delft-cse-ib)"
+      ],
+      "excerpt": "English-taught programmes: TOEFL iBT 90 / IELTS Academic 6.5 / Cambridge CPE or CAE. Exemptions include nationals from USA, UK, Ireland, Australia, New Zealand, Canada; qualifying international diplomas (IB, European Baccalaureate, Surinam VWO) with English as an exam subject.",
+      "retrieval_method": "WebFetch tool (LLM-mediated extraction; quotes verbatim as returned)",
+      "notes": "Tool's own summary flagged that the page does not display an explicit academic-year label."
+    },
+    {
+      "id": "src-04",
+      "url": "https://www.tudelft.nl/en/education/admission-and-application/bsc-international-diploma/admission-requirements/diploma-with-additional-requirements",
+      "source_organization": "TU Delft",
+      "source_type": "official_university",
+      "title": "Diploma with additional requirements (subject-level detail by curriculum)",
+      "retrieved_at": "2026-09-22T00:00:00Z",
+      "fields_supported": [
+        "AdmissionsRequirement.required_subjects (ar-nl-tu-delft-cse-ib)",
+        "AdmissionsRequirement.required_subjects (ar-nl-tu-delft-cse-alevel)",
+        "AdmissionsRequirement.required_subjects (ar-nl-tu-delft-cse-us-ap)",
+        "AdmissionsRequirement.standardized_tests (ar-nl-tu-delft-cse-us-ap)"
+      ],
+      "excerpt": "IB: 'Mathematics: AA HL' required; 'only accepts the Mathematics course Analysis & Approaches HL' and does not accept IBCP. A-Levels: Mathematics only, plus six GCSEs grades A-C. AP: 'Calculus A/B or B/C' minimum score 3, plus 4 AP exams total for the general bachelor's baseline.",
+      "retrieval_method": "WebFetch tool (LLM-mediated extraction; quotes verbatim as returned)",
+      "notes": "No minimum overall IB point total found for this programme -- a real finding (subject-specific requirement only), not a gap to backfill."
+    },
+    {
+      "id": "src-05",
+      "url": "https://www.tudelft.nl/en/onderwijs/opleidingen/bachelors/computer-science-and-engineering/bachelor-of-computer-science-and-engineering/about-the-programme",
+      "source_organization": "TU Delft",
+      "source_type": "official_university",
+      "title": "About the Computer Science and Engineering programme",
+      "retrieved_at": "2026-09-22T00:00:00Z",
+      "fields_supported": [
+        "Program.duration_value (nl-tu-delft-bsc-computer-science-engineering)",
+        "Program.language_of_instruction (nl-tu-delft-bsc-computer-science-engineering)"
+      ],
+      "excerpt": "'180 EC, 36 months.' 'The Bachelor Computer Science and Engineering consists of two tracks: The Bilingual track (Dutch-English) and the English track.' 'The English track is fully taught in English.'",
+      "retrieval_method": "WebFetch tool (LLM-mediated extraction; quotes verbatim as returned)",
+      "notes": ""
+    },
+    {
+      "id": "src-06",
+      "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships",
+      "source_organization": "TU Delft",
+      "source_type": "official_university",
+      "title": "Scholarships (central TU Delft scholarships page)",
+      "retrieved_at": "2026-09-22T00:00:00Z",
+      "fields_supported": [
+        "Scholarship.institutions_covered (sch-nl-tu-delft-van-effen-excellence)",
+        "Scholarship.institutions_covered (sch-nl-tu-delft-holland-scholarship-status-unknown)"
+      ],
+      "excerpt": "'excellent international applicant (conditionally) admitted to one of the 2-year regular TU Delft MSc programmes'; award 'full tuition fees plus living expense contribution'; deadline '1 December 2026 (23:59 CET)'. 'The Holland Scholarship is meant for international students from outside the European Economic Area (EEA)' appears only in page metadata; no details in main content.",
+      "retrieval_method": "WebFetch tool, 2 passes with different extraction prompts, consolidated",
+      "notes": "Lists only MSc-level scholarships; no bachelor's scholarships present on this page."
+    },
+    {
+      "id": "src-07",
+      "url": "https://www.studyinnl.org/finances/nl-scholarship",
+      "source_organization": "Nuffic (Study in NL) / Dutch Ministry of Education, Culture and Science",
+      "source_type": "official_government",
+      "title": "NL Scholarship (Holland Scholarship)",
+      "retrieved_at": "2026-09-22T00:00:00Z",
+      "fields_supported": [
+        "Scholarship.institutions_covered (sch-nl-tu-delft-holland-scholarship-status-unknown)"
+      ],
+      "excerpt": "'EUR 5,000. You will receive this in the first year of your studies' -- 'this is not a full-tuition scholarship.' Eligibility: non-EEA nationality, no prior Dutch degree. 'The application for the academic year 2026-2027 opened on 1 November 2025.' TU Delft did not appear in the fetched participating-institution content.",
+      "retrieval_method": "WebFetch tool (LLM-mediated extraction; quotes verbatim as returned)",
+      "notes": "A text-mode fetch may not reflect a JS-rendered institution filter; re-check directly before treating as conclusive."
+    },
+    {
+      "id": "src-08",
+      "url": "https://delta.tudelft.nl/en/article/tuition-fees-rise-to-nearly-e2700-in-september-2026",
+      "source_organization": "Delta (TU Delft independent student publication, reporting HOP/CBS data)",
+      "source_type": "secondary",
+      "title": "Tuition fees rise to nearly €2,700 in September 2026",
+      "retrieved_at": "2026-09-22T00:00:00Z",
+      "fields_supported": [
+        "CostProfile.tuition_annual (cp-nl-tu-delft-cse-2026-27-eu-efta)"
+      ],
+      "excerpt": "'Starting in September 2026, students in higher education will pay 2,694 euros in annual tuition fees.'",
+      "retrieval_method": "WebFetch tool (LLM-mediated extraction; quotes verbatim as returned)",
+      "notes": "Corroboration only -- not used as the primary source for any field; the official src-02 figure is primary."
+    },
+    {
+      "id": "src-09",
+      "url": "https://www.tudelft.nl/2024/global/academic-scholarships-open-for-international-students-2025-2027",
+      "source_organization": "TU Delft",
+      "source_type": "official_university",
+      "title": "Academic scholarships open for international students 2025-2027",
+      "retrieved_at": "2026-09-22T00:00:00Z",
+      "fields_supported": [
+        "Scholarship.institutions_covered (sch-nl-tu-delft-holland-scholarship-status-unknown)"
+      ],
+      "excerpt": "Lists African Water Corridor, Ena Voûte, TU Delft Scholarship for Water Governance, and Justus & Louise van Effen -- all Master's-level. No bachelor's scholarships mentioned. Holland/NL Scholarship not mentioned in this document.",
+      "retrieval_method": "WebFetch tool (LLM-mediated extraction; quotes verbatim as returned)",
+      "notes": "News article, dated 2024 origin, still live in 2026 -- adds to the case that no bachelor's scholarship is currently documented by TU Delft itself."
+    },
+    {
+      "id": "src-10",
+      "url": "https://www.tudelft.nl/en/student/faculties/tpm-student-portal/international-students/financal-matters/scholarship",
+      "source_organization": "TU Delft (Faculty of Technology, Policy and Management student portal)",
+      "source_type": "official_university",
+      "title": "Scholarship - Guidance for international students (TPM student portal)",
+      "retrieved_at": "2026-09-22T00:00:00Z",
+      "fields_supported": [
+        "Scholarship.institutions_covered (sch-nl-tu-delft-holland-scholarship-status-unknown)"
+      ],
+      "excerpt": "Van Effen: 16 full scholarships (MSc). MSc Electrical Engineering: 2 partial scholarships. 'The Holland Scholarship is meant for international students from outside the European Economic Area (EEA)' appears only in page metadata; not in reviewable body content.",
+      "retrieval_method": "WebFetch tool (LLM-mediated extraction; quotes verbatim as returned)",
+      "notes": "Faculty-level page; corroborates that no bachelor's-level Holland Scholarship detail is published anywhere TU Delft-owned that was checked."
+    }
+  ],
+  "derived_cost_estimates": []
+}

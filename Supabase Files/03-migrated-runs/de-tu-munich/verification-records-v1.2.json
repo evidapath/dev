@@ -1,0 +1,661 @@
+{
+  "run_id": "2026-09-23_de-tu-munich_informatics",
+  "schema_version": "1.2",
+  "verifier_pass_timestamp": null,
+  "verifier": "",
+  "note": "Carried forward from the V1.1 run's verification-records.json, formalized to the V1.2 VerificationRecord shape: absence_claim=true records were promoted to verification_status=VERIFIED_ABSENT; material_extension_fact is preserved as the now-formal schema field; NYUAD-run-specific informal semantic-QA flags were folded into conflict_or_limitation_notes since they are not part of the V1.2 schema (the semantic checks themselves are enforced by 04-pipeline/check_verification_coverage_v1_2.py instead). No new field-level verification claims were added or removed -- this is a reformatting pass, not new research, consistent with this synthesis being migration-only.",
+  "verification_records": [
+    {
+      "id": "vr-01",
+      "record_ref": "University:de-tu-munich",
+      "field_checked": "canonical_name",
+      "proposed_value": "Technical University of Munich",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Consistent across every fetched official page; independently re-confirmed.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-02",
+      "record_ref": "University:de-tu-munich",
+      "field_checked": "institution_type",
+      "proposed_value": "public",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-06",
+        "src-09"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Bavarian public university with statutory (state-set) tuition framework and a public-law Studierendenwerk.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-03",
+      "record_ref": "University:de-tu-munich",
+      "field_checked": "official_website",
+      "proposed_value": "https://www.tum.de",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Root domain of every official page fetched.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-04",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "program_name",
+      "proposed_value": "Informatics",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Official TUM English program name, confirmed not to be 'Computer Science'.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-05",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "degree_type_local",
+      "proposed_value": "Bachelor of Science (B.Sc.) -- Informatik",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-16"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-06",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "faculty_school",
+      "proposed_value": "TUM School of Computation, Information and Technology (CIT)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-16"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-07",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "official_program_url",
+      "proposed_value": "https://www.tum.de/en/studies/degree-programs/detail/informatics-bachelor-of-science-bsc",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-08",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "duration_value + duration_unit",
+      "proposed_value": "3.0 years (converted from 6 semesters)",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-01",
+        "src-16"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Exact arithmetic conversion (6/2=3.0), but V1.1's duration_unit enum has no native 'semesters' option and TUM does not itself publish a years-denominated figure -- capped SUPPORTED, mirroring the identical honest cap applied to Program.duration at both Oxford and Toronto.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-09",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "language_of_instruction",
+      "proposed_value": "German (de)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Explicitly stated as the required proficiency/instruction language on the official program page.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-10",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "extension_metadata.fields.qualification_recognition_framework",
+      "proposed_value": "direct / subject-restricted / Studienkolleg-required three-way framework, VPD via uni-assist",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-03",
+        "src-05"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-read against both source pages in the verification pass; consistent both times.",
+      "blocking_status": "blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-11",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "extension_metadata.fields.aptitude_assessment_eignungsfeststellungsverfahren.stage_1",
+      "proposed_value": "100-point scale, 65%/35% weighting, subject multipliers, 84/73-83/72 thresholds",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched at a distinct timestamp from the extraction pass (14:00Z vs 19:30Z) -- all point thresholds and weightings identical on both passes, no discrepancy found. This is the run's single most material extension fact.",
+      "blocking_status": "blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-12",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "extension_metadata.fields.aptitude_assessment_eignungsfeststellungsverfahren.stage_2",
+      "proposed_value": "50/50 weighting, 90min test, 70/69 thresholds",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-15",
+        "src-16"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-verified alongside stage_1.",
+      "blocking_status": "blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-13",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "extension_metadata.fields.studienkolleg_pathway",
+      "proposed_value": "2 semesters, T-course, Feststellungspruefung, German B2 prerequisite",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-04"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "",
+      "blocking_status": "blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-14",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "extension_metadata.fields.application_route",
+      "proposed_value": "TUMonline + uni-assist/VPD two-platform workflow",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-03",
+        "src-16"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "",
+      "blocking_status": "blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-15",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-abitur",
+      "field_checked": "academic_threshold (absence of a fixed numeric HZB cutoff)",
+      "proposed_value": "No fixed numeric minimum average is published; the point-based EFV formula is used instead",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "MEANINGFUL ABSENCE CLAIM: independently confirmed on re-fetch that the official EFV overview document describes a formula/threshold-band system, not a single minimum-average cutoff. This is a confirmed absence, not an unresearched gap.",
+      "blocking_status": "blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-15b",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-abitur",
+      "field_checked": "required_subjects",
+      "proposed_value": "Mathematik (3x), Deutsch (1x), Englisch (1x), one natural science subject (2x) -- the EFV Stage-1 subject-grade weighting",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Same source as vr-15/vr-11; independently re-fetched, weightings identical on both passes.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-16",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "language_requirements (absence of a separate English proficiency requirement)",
+      "proposed_value": "No separate English-language certificate/test requirement found for this German-taught program",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-10"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "MEANINGFUL ABSENCE CLAIM: the official Language Certificates page covers only German-language proof; no English requirement is mentioned anywhere on that page for this program.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-17",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-ib",
+      "field_checked": "academic_threshold (absence of a per-subject minimum grade beyond the 24-point aggregate)",
+      "proposed_value": "DAAD's official IB recognition page states only the 24-point aggregate and HL-subject-count/composition rules -- no additional per-subject minimum grade is published",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "MEANINGFUL ABSENCE CLAIM, independently re-confirmed on re-fetch (both passes state only the aggregate and composition rules).",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-18",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-ib",
+      "field_checked": "academic_threshold, required_subjects",
+      "proposed_value": "24pt min, 3 HL, group composition, HL-math-for-technical-fields rule",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-14"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched at 19:30Z; identical to the 14:00Z extraction-pass fetch. The HL-math restriction for technical fields (which includes Informatics) is the run's most consequential IB-specific finding.",
+      "blocking_status": "blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-19",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-a-level",
+      "field_checked": "academic_threshold, required_subjects",
+      "proposed_value": "3 A-Levels grade C+, natural-science 2-of-5 subject rule",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-11",
+        "src-12"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched (src-11) at 19:30Z; identical to extraction pass.",
+      "blocking_status": "blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-20",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-us",
+      "field_checked": "academic_threshold",
+      "proposed_value": "US HS diploma alone insufficient; AP-via-College-Board exception; exact AP score/subject thresholds for direct entry not published on the reached page",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Capped at SUPPORTED, not VERIFIED: the core routing rule (diploma insufficient, AP exception, ZAB assessment) is clearly and consistently stated, but the exact AP subject-count/score thresholds for the direct-entry exception were not found on the official/recognized-authority page reached, despite the page being reachable (unlike Oxford's and Toronto's Cloudflare-blocked pages). This is a genuine content gap on the source, not an access failure.",
+      "blocking_status": "blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-21",
+      "record_ref": "CostProfile:de-tu-munich-cost-eu-eea",
+      "field_checked": "tuition_annual (0, EU/EEA exempt)",
+      "proposed_value": 0,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-fetched (src-06) at 19:30Z; exemption list identical to extraction pass.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-22",
+      "record_ref": "CostProfile:de-tu-munich-cost-non-eu",
+      "field_checked": "tuition_annual (program-specific tier)",
+      "proposed_value": null,
+      "verification_status": "UNKNOWN",
+      "source_refs": [
+        "src-01",
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "5 independent fetch attempts across 3 official TUM pages could not surface the Informatics-specific tier within the 2,000/3,000 EUR bracket. Genuine access limitation (content appears to sit behind a client-rendered element not captured by text-mode fetch), not an absence of tuition. Capped UNKNOWN, blocking.",
+      "blocking_status": "blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-23-eu-eea",
+      "record_ref": "CostProfile:de-tu-munich-cost-eu-eea",
+      "field_checked": "mandatory_fees_annual, living_cost_source_basis.kind (194.00 EUR = 97.00 EUR x2 semesters)",
+      "proposed_value": 194.0,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-08",
+        "src-09"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-confirmed via the Studierendenwerk's own FAQ page, which additionally gives the effective date (Summer Semester 2026 onward, increased from 85 EUR) -- a stronger, more precise source than the general TUM campus-fees page alone.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-24-eu-eea",
+      "record_ref": "CostProfile:de-tu-munich-cost-eu-eea",
+      "field_checked": "estimated_living_costs_annual (genuine cost-of-living estimate)",
+      "proposed_value": "1,300-2,000 EUR/month range, 15,600 EUR/year low-end recorded",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-07"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "TUM-published range; single-number field necessarily loses the range -- see extension_metadata.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-23-non-eu",
+      "record_ref": "CostProfile:de-tu-munich-cost-non-eu",
+      "field_checked": "mandatory_fees_annual, living_cost_source_basis.kind (194.00 EUR = 97.00 EUR x2 semesters)",
+      "proposed_value": 194.0,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-08",
+        "src-09"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Independently re-confirmed via the Studierendenwerk's own FAQ page, which additionally gives the effective date (Summer Semester 2026 onward, increased from 85 EUR) -- a stronger, more precise source than the general TUM campus-fees page alone.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-24-non-eu",
+      "record_ref": "CostProfile:de-tu-munich-cost-non-eu",
+      "field_checked": "estimated_living_costs_annual (genuine cost-of-living estimate)",
+      "proposed_value": "1,300-2,000 EUR/month range, 15,600 EUR/year low-end recorded",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-07"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "TUM-published range; single-number field necessarily loses the range -- see extension_metadata.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-25",
+      "record_ref": "FinancialRequirement:de-tu-munich-finreq-blocked-account",
+      "field_checked": "living_cost_source_basis.kind (mechanism)",
+      "proposed_value": "visa_proof_of_funds_deposit, BAfoeG-rate-linked, mission-dependent",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-19"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Federal Foreign Office (Auswaertiges Amt) official page confirms the MECHANISM directly; independently cross-checked against a second diplo.de mission page with an identical (non-numeric) answer. [V1.2 reference migration: record_ref updated from CostProfile:de-tu-munich-cost-non-eu-immigration-liquidity to FinancialRequirement:de-tu-munich-finreq-blocked-account because the underlying factual record changed entity type during the V1.1-to-V1.2 migration (CostProfile retired in favor of FinancialRequirement); the verification claim itself is unchanged and continues to apply to the same underlying fact, now carried by the replacement record.]",
+      "blocking_status": "blocking",
+      "material_extension_fact": true
+    },
+    {
+      "id": "vr-26",
+      "record_ref": "FinancialRequirement:de-tu-munich-finreq-blocked-account",
+      "field_checked": "estimated_living_costs_annual (11,904 EUR figure)",
+      "proposed_value": 11904.0,
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-20"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "The specific EUR 11,904/year (EUR 992/month) figure is corroborated by two independent secondary sources (study.eu and germany-visa.org, both consistent) but could not be confirmed on an official government page stating the number in euros, despite checking two different diplo.de mission pages plus the Federal Foreign Office's general guidance. Per this project's source hierarchy, secondary/commercial sources are not authoritative evidence -- capped SUPPORTED rather than VERIFIED for the number itself, while the MECHANISM (vr-25) is separately VERIFIED via an official source. [V1.2 reference migration: record_ref updated from CostProfile:de-tu-munich-cost-non-eu-immigration-liquidity to FinancialRequirement:de-tu-munich-finreq-blocked-account because the underlying factual record changed entity type during the V1.1-to-V1.2 migration (CostProfile retired in favor of FinancialRequirement); the verification claim itself is unchanged and continues to apply to the same underlying fact, now carried by the replacement record.]",
+      "blocking_status": "blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-27",
+      "record_ref": "Scholarship:de-deutschlandstipendium-tum",
+      "field_checked": "award_amount + award_amount_currency",
+      "proposed_value": "300 EUR/month",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-17"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-28",
+      "record_ref": "Scholarship:de-deutschlandstipendium-tum",
+      "field_checked": "other_eligibility_criteria (first-year/incoming eligibility)",
+      "proposed_value": "Incoming high-school graduates beginning at TUM the coming semester are explicitly eligible, not only continuing students",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-18"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "Directly satisfies the run's requirement that a modeled scholarship be relevant to the target (incoming Fall 2027 / prospective) applicant population.",
+      "blocking_status": "blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-29",
+      "record_ref": "Scholarship:de-deutschlandstipendium-tum",
+      "field_checked": "renewable, renewal_conditions",
+      "proposed_value": "True; annual grade/ECTS thresholds with documented hardship exceptions",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-18"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-30",
+      "record_ref": "Scholarship:de-deutschlandstipendium-tum",
+      "field_checked": "application_deadline + deadline_academic_year",
+      "proposed_value": "Not yet published for 2027/28; next cycle Summer 2027",
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-18"
+      ],
+      "verifier_pass_timestamp": "2026-09-23T19:30:00Z",
+      "conflict_or_limitation_notes": "This is itself a VERIFIED absence-of-a-published-date claim for the WS2027/28-aligned cycle -- consistent with the run's academic-year discipline (not fabricating an unpublished future date).",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-31",
+      "record_ref": "Program:de-tu-munich-informatics",
+      "field_checked": "duration_unit",
+      "proposed_value": "semesters",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-01",
+        "src-16"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "Independent field-level re-verification distinct from vr-08 (which covers the derived years-conversion, 6 semesters / 2 = 3.0 years, capped SUPPORTED because TUM doesn't publish a years figure). This record instead re-confirms the raw, natively-published figure itself: both the official program page (src-01: '6 semesters (fulltime)') and the CIT program overview (src-16: 'Regelstudienzeit: 6 Semester') independently and identically state 6 semesters as the Regelstudienzeit. Since V1.2's duration_unit enum natively supports 'semesters' (V1.2 gm-18), no conversion or derivation is involved for this field -- VERIFIED directly.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-32",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-abitur",
+      "field_checked": "standardized_tests",
+      "proposed_value": "TUM Stage-2 Aptitude Test (73-83 point band only), 70/100 combined threshold",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of the official CIT EFV PDF (src-15) on 2026-09-24, a separate pass from the 2026-09-23 extraction/verification fetches: Stage-2 structure (~90 minutes, ~20-30 questions, 50% German/50% English, 50% HZB average + 50% test result, 70+/69- thresholds) identical on this third independent read. No discrepancy across three fetches.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-33",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-abitur",
+      "field_checked": "language_requirements",
+      "proposed_value": "Exempt -- no German-language certificate required for Abitur holders",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-10"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "MEANINGFUL, SUBSTANTIVE FINDING (not left as an unexplained empty array): TUM's official Language Certificates page independently re-fetched 2026-09-24 states plainly 'Applicants holding a German university entrance qualification do not require verification of their German language skills.' The Abitur is TUM's own reference German entrance qualification (see de-tu-munich-curriculum-abitur), so this exemption applies directly and unambiguously. records-v1.2.json's language_requirements array was populated with this exemption statement rather than left as an unexplained empty array.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-34",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-ib",
+      "field_checked": "standardized_tests",
+      "proposed_value": null,
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-02",
+        "src-03",
+        "src-15"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "MEANINGFUL ABSENCE CLAIM: independently checked TUM's Admission Procedures page (src-02, re-fetched 2026-09-24), the International Applicants page (src-03, re-fetched 2026-09-24), and the official EFV PDF (src-15, re-fetched 2026-09-24) -- none of the three mentions TestAS or any other standardized aptitude test for IB Diploma holders. Whether IB applicants instead run through an adapted version of the Abitur EFV point formula, or a separate un-published process, remains a genuinely open question (see AdmissionStage de-tu-munich-stage-aptitude-assessment's own note) -- but that open question is about admission MECHANISM, not about a standardized TEST requirement, which is confirmed absent across every official page checked.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-35",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-ib",
+      "field_checked": "language_requirements",
+      "proposed_value": "German-language proficiency certificate required (DSH-2 / TestDaF TDN4 / Goethe-Zertifikat C2 / telc Deutsch C1 Hochschule / OeSD C2 / DSD II)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-10",
+        "src-21"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "The empty language_requirements array flagged by the coverage checker was NOT a genuine absence: TUM's Language Certificates page (src-10) exempts only German-entrance-qualification holders and German citizens with 2+ years at a German school -- neither applies to an IB Diploma holder by default. Independently re-fetched the KMK Rahmenordnung (src-21, new this pass) for the specific recognized-certificate list and minimum levels (DSH-2, TestDaF TDN4 all modules, Goethe-Zertifikat C2, telc Deutsch C1 Hochschule, OeSD C2, DSD II). records-v1.2.json's language_requirements array was populated accordingly rather than left as an unexplained empty array.",
+      "blocking_status": "blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-36",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-a-level",
+      "field_checked": "standardized_tests",
+      "proposed_value": null,
+      "verification_status": "VERIFIED_ABSENT",
+      "source_refs": [
+        "src-02",
+        "src-03",
+        "src-11",
+        "src-12"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "MEANINGFUL ABSENCE CLAIM, same research pattern and same result as vr-34: TUM's Admission Procedures page (src-02) and International Applicants page (src-03), both re-fetched 2026-09-24, plus the DAAD GCE recognition page (src-11) and the uni-assist UK country page (src-12), contain no mention of TestAS or any other standardized aptitude test for A-Level holders.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-37",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-a-level",
+      "field_checked": "language_requirements",
+      "proposed_value": "German-language proficiency certificate required (DSH-2 / TestDaF TDN4 / Goethe-Zertifikat C2 / telc Deutsch C1 Hochschule / OeSD C2 / DSD II)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-10",
+        "src-21"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "Same research pattern and finding as vr-35: an A-Level holder does not fall under either of src-10's stated exemptions, so the KMK-recognized German-certificate list (src-21) applies. records-v1.2.json's language_requirements array was populated accordingly rather than left as an unexplained empty array.",
+      "blocking_status": "blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-38",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-us",
+      "field_checked": "required_subjects",
+      "proposed_value": "High school diploma with grade 9-12 subject/grade overview and unweighted CGPA",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of the uni-assist US country page (src-13) on 2026-09-24: identical wording confirmed on this second independent read -- 'high school diploma with grade 9-12 subject/grade overview and unweighted CGPA' required as part of the credential file.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-39",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-us",
+      "field_checked": "standardized_tests",
+      "proposed_value": "AP (Advanced Placement) examinations, College-Board-issued results only, taken during high school",
+      "verification_status": "SUPPORTED",
+      "source_refs": [
+        "src-13"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of src-13 on 2026-09-24 reconfirms the core rule identically to the original pass: 'AP examinations can only be taken into consideration, if the examination was taken during your time at high school' and 'AP results must be issued by the College Board. Results issued by the High School are not sufficient.' Capped SUPPORTED rather than VERIFIED for the same reason as the record-level cap (vr-20): the exact AP subject-count/score thresholds for the direct-entry exception are still not published on this or any other official/recognized-authority page reached -- a genuine, disclosed content gap, not an access failure or a guess.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-40",
+      "record_ref": "AdmissionsRequirement:de-tu-munich-admreq-us",
+      "field_checked": "language_requirements",
+      "proposed_value": "German-language proficiency certificate required (DSH-2 / TestDaF TDN4 / Goethe-Zertifikat C2 / telc Deutsch C1 Hochschule / OeSD C2 / DSD II)",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-10",
+        "src-21"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "Same research pattern and finding as vr-35/vr-37: a US high school diploma (with or without AP results) does not fall under either of src-10's stated exemptions, so the KMK-recognized German-certificate list (src-21) applies. records-v1.2.json's language_requirements array was populated accordingly rather than left as an unexplained empty array.",
+      "blocking_status": "blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-41",
+      "record_ref": "Scholarship:de-deutschlandstipendium-tum",
+      "field_checked": "award_type",
+      "proposed_value": "stipend",
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-17"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "Independent re-fetch of TUM's official Deutschlandstipendium page (src-17) on 2026-09-24: TUM's own English-language page consistently uses 'scholarship' (e.g. 'Deutschlandstipendium scholarship holders', 'not purely a merit-based scholarship'); the German name 'Deutschlandstipendium' itself translates literally to 'Germany Stipend'. Structurally the award is a fixed EUR 300/month recurring payment for the standard period of study, subject to annual renewal criteria -- the schema's 'stipend' category (distinct from a one-off 'fixed_amount' or a 'full_tuition'/'partial_tuition' waiver) is the accurate structural classification and matches the award's own German name. No change to the existing value was needed; this VerificationRecord closes the coverage gap for a field that was already correct.",
+      "blocking_status": "non_blocking",
+      "material_extension_fact": false
+    },
+    {
+      "id": "vr-42",
+      "record_ref": "CostProfile:de-tu-munich-cost-non-eu",
+      "field_checked": "tuition_annual, extension_metadata.fields.resolution",
+      "proposed_value": 6000.0,
+      "verification_status": "VERIFIED",
+      "source_refs": [
+        "src-22",
+        "src-06"
+      ],
+      "verifier_pass_timestamp": "2026-09-24T15:00:00Z",
+      "conflict_or_limitation_notes": "RESOLVES the previously-UNKNOWN program-specific non-EU tuition tier (vr-22): TUM's official fee statute (Hochschulgebuehren- und Entgeltsatzung, amendment 2024-012, effective 2023-10-01; src-22, new this pass) contains a fee-schedule annex listing 'Bachelor CIT Informatik, B.Sc. 2 3.000 €' -- fee tier 2, 3,000 EUR/semester, i.e. 6,000 EUR/year for two semesters. Independently re-fetched twice at distinct timestamps within this pass; the table row was identical both times, no discrepancy. This directly matches one of the two previously-unconfirmed candidate figures recorded in the CostProfile's extension_metadata (the 3,000 EUR/semester candidate) and resolves the ambiguity via a binding official source rather than by picking between the two candidates. records-v1.2.json updated: tuition_annual null -> 6000.0, verification_status UNKNOWN -> VERIFIED, record_status HUMAN_REVIEW -> VERIFIED, source_refs +src-22, extension_metadata.fields.resolution added documenting this finding while the original unconfirmed_candidate_figures/confirmed_bracket_and_mechanism fields are preserved verbatim as an audit trail of the prior unresolved state. This also closes the material_extension_fact coverage gap for CostProfile:de-tu-munich-cost-non-eu's extension_metadata.fields.",
+      "blocking_status": "blocking",
+      "material_extension_fact": true
+    }
+  ]
+}

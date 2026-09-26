@@ -1,0 +1,32 @@
+{
+  "_comment": "ILLUSTRATIVE ONLY. This manifest is a design artifact showing the shape a real batch manifest would take -- it does not name a real, decided-upon batch, and no institution listed here has been researched as part of this synthesis. No batch has been started.",
+  "batch_id": "example-computer-science-001",
+  "batch_definition_date": null,
+  "status": "not_started",
+  "program_family": "computer-science",
+  "target_academic_year_context": "Fall 2027",
+  "schema_version": "1.2",
+  "pipeline_skill_version": "evidapath-university-intelligence (schema/pipeline v1.1 process, v1.2 schema output)",
+  "batch_size": 10,
+  "institutions": [
+    {
+      "canonical_id_prefix": "EXAMPLE-ONLY",
+      "display_name": "EXAMPLE-ONLY -- no real institution has been assigned to this manifest",
+      "country": "EXAMPLE-ONLY",
+      "target_program_family": "computer-science",
+      "run_folder": "runs/{YYYY-MM-DD}_{canonical-id}_computer-science/",
+      "status": "not_started"
+    }
+  ],
+  "process_notes": [
+    "One representative program per institution (default: undergraduate Computer Science), per the pipeline skill's scope-discipline rule, unless a batch is explicitly defined with a different scope.",
+    "Every institution in a batch runs the full seven-phase pipeline independently; one institution's CONFLICT or blocked source never stalls another's run.",
+    "Canonical IDs are assigned before research begins to prevent cross-institution ID collisions being discovered mid-batch (see batch-spec.md step 1).",
+    "HUMAN_REVIEW -> APPROVED still requires Suhail's explicit sign-off, per institution, per record -- batching changes nothing about this gate.",
+    "This manifest's 'status' fields are the only per-run state a batch manifest needs to track at this design stage; a real implementation may add per-phase timestamps once a batch actually begins."
+  ],
+  "aggregate_qa_rollup": {
+    "_comment": "Populated only after every institution in the batch reaches 04-verification -- see batch-output-contract.md for the exact shape.",
+    "status": "not_applicable_no_batch_run"
+  }
+}
