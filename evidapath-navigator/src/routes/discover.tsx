@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import {
   Search,
   Filter,
@@ -12,7 +13,8 @@ import {
   Check,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { UNIVERSITIES_DATA } from "../lib/mock-data";
+import { getUniversities } from "../lib/universities.functions";
+import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
@@ -43,8 +45,30 @@ function DiscoverPage() {
   const [selectedCountry, setSelectedCountry] = useState("All");
   const [maxBudget, setMaxBudget] = useState(80000);
   const [selectedDuration, setSelectedDuration] = useState("All");
+  const [universities, setUniversities] = useState<University[]>([]);
+  const [source, setSource] = useState<"sanity" | "mock" | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const filtered = UNIVERSITIES_DATA.filter((u) => {
+  const fetchUniversities = useServerFn(getUniversities);
+  useEffect(() => {
+    let active = true;
+    fetchUniversities()
+      .then((res) => {
+        if (!active) return;
+        setUniversities(res.universities);
+        setSource(res.source);
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [fetchUniversities]);
+
+  const countries = Array.from(new Set(universities.map((u) => u.country).filter(Boolean))).sort();
+
+  const filtered = universities.filter((u) => {
     const matchesSearch =
       u.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       u.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -78,8 +102,9 @@ function DiscoverPage() {
         <div className="flex items-center gap-2 text-[11px] text-muted-foreground bg-secondary/50 border border-border rounded-lg px-3 py-2">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
           <span>
-            Illustrative product preview. Live analysis will use verified EvidaPath data. University
-            data currently being verified.
+            {source === "sanity"
+              ? "Live data connected. NYU Abu Dhabi is verified against official sources; the other institutions are marked verification in progress. Budget filtering applies only where cost is verified."
+              : "Illustrative product preview. Live analysis will use verified EvidaPath data. University data currently being verified."}
           </span>
         </div>
       </div>
@@ -115,12 +140,11 @@ function DiscoverPage() {
               className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
             >
               <option value="All">All Jurisdictions</option>
-              <option value="United Kingdom">United Kingdom</option>
-              <option value="Canada">Canada</option>
-              <option value="Germany">Germany</option>
-              <option value="Netherlands">Netherlands</option>
-              <option value="Singapore">Singapore</option>
-              <option value="United Arab Emirates">United Arab Emirates</option>
+              {countries.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -166,7 +190,8 @@ function DiscoverPage() {
       {/* Results Count & Transparency note */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-muted-foreground">
         <span>
-          Showing <strong>{filtered.length}</strong> illustrative university profiles
+          Showing <strong>{filtered.length}</strong>{" "}
+          {source === "sanity" ? "university profiles" : "illustrative university profiles"}
         </span>
         <div className="flex items-center gap-1.5">
           <ShieldCheck className="w-3.5 h-3.5 text-muted-foreground" />
@@ -175,81 +200,87 @@ function DiscoverPage() {
       </div>
 
       {/* Grid of Results */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.map((univ) => (
-          <div
-            key={univ.id}
-            className="rounded-2xl border border-border bg-card p-6 shadow-xs hover:border-primary/40 transition-all flex flex-col justify-between space-y-5"
-          >
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl">{univ.flag}</span>
-                <span className="text-xs font-mono bg-secondary px-2.5 py-0.5 rounded text-foreground font-semibold">
-                  {univ.durationYears} Years • {univ.costs.currency}
-                </span>
-              </div>
-
-              <div>
-                <h3 className="font-display font-bold text-lg text-foreground">{univ.name}</h3>
-                <p className="text-xs text-muted-foreground flex items-center gap-1 mt-0.5">
-                  <MapPin className="w-3 h-3 text-muted-foreground" />
-                  {univ.city}, {univ.country}
-                </p>
-              </div>
-
-              {/* Requirements & Costs */}
-              <div className="bg-secondary/40 rounded-xl p-3 border border-border/80 space-y-2 text-xs">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Academic Threshold:</span>
-                  <span className="font-medium text-muted-foreground text-right">
-                    {univ.academicRequirements.target}
+      {loading ? (
+        <p className="text-sm text-muted-foreground">Loading verified university data…</p>
+      ) : filtered.length === 0 ? (
+        <p className="text-sm text-muted-foreground">No universities match your filters.</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filtered.map((univ) => (
+            <div
+              key={univ.id}
+              className="rounded-2xl border border-border bg-card p-6 shadow-xs hover:border-primary/40 transition-all flex flex-col justify-between space-y-5"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl">{univ.flag}</span>
+                  <span className="text-xs font-mono bg-secondary px-2.5 py-0.5 rounded text-foreground font-semibold">
+                    {univ.durationYears} Years • {univ.costs.currency}
                   </span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Annual Total Cost:</span>
-                  <span className="font-mono font-bold text-muted-foreground">
-                    {formatCost(univ.costs.totalAnnual, univ.costs.currency)}
-                  </span>
+
+                <div>
+                  <h3 className="font-display font-bold text-lg text-foreground">{univ.name}</h3>
+                  <p className="text-xs text-muted-foreground flex items-center gap-1 mt-0.5">
+                    <MapPin className="w-3 h-3 text-muted-foreground" />
+                    {univ.city}, {univ.country}
+                  </p>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Degree Total Outlay:</span>
-                  <span className="font-mono font-semibold text-muted-foreground">
-                    {formatCost(univ.costs.totalDegree, univ.costs.currency)}
+
+                {/* Requirements & Costs */}
+                <div className="bg-secondary/40 rounded-xl p-3 border border-border/80 space-y-2 text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Academic Threshold:</span>
+                    <span className="font-medium text-muted-foreground text-right">
+                      {univ.academicRequirements.target}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Annual Total Cost:</span>
+                    <span className="font-mono font-bold text-muted-foreground">
+                      {formatCost(univ.costs.totalAnnual, univ.costs.currency)}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Degree Total Outlay:</span>
+                    <span className="font-mono font-semibold text-muted-foreground">
+                      {formatCost(univ.costs.totalDegree, univ.costs.currency)}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Affordability Index Badge */}
+                <div className="flex items-center justify-between text-xs pt-1">
+                  <span className="text-muted-foreground">Affordability Index:</span>
+                  <span className="font-semibold px-2 py-0.5 rounded text-[11px] bg-secondary text-muted-foreground">
+                    {univ.affordabilityIndex.category}
                   </span>
                 </div>
               </div>
 
-              {/* Affordability Index Badge */}
-              <div className="flex items-center justify-between text-xs pt-1">
-                <span className="text-muted-foreground">Affordability Index:</span>
-                <span className="font-semibold px-2 py-0.5 rounded text-[11px] bg-secondary text-muted-foreground">
-                  {univ.affordabilityIndex.category}
-                </span>
+              <div className="pt-4 border-t border-border flex items-center justify-between">
+                <Link to="/analyze">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-border text-foreground hover:bg-secondary text-xs"
+                  >
+                    Analyze Fit
+                  </Button>
+                </Link>
+                <Link to="/academic-readiness">
+                  <Button
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
+                  >
+                    Add to My Path
+                  </Button>
+                </Link>
               </div>
             </div>
-
-            <div className="pt-4 border-t border-border flex items-center justify-between">
-              <Link to="/analyze">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-border text-foreground hover:bg-secondary text-xs"
-                >
-                  Analyze Fit
-                </Button>
-              </Link>
-              <Link to="/academic-readiness">
-                <Button
-                  size="sm"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
-                >
-                  Add to My Path
-                </Button>
-              </Link>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
