@@ -3,7 +3,9 @@
 // The service-role key is NEVER used here.
 
 import { getSupabaseServerClient } from "./supabase.server";
+import { getUniversitiesFromSanity } from "./sanity.server";
 import { UNIVERSITIES_DATA } from "./mock-data";
+import type { University } from "./mock-data";
 import type {
   StudentApplication,
   StudentOffer,
@@ -37,8 +39,9 @@ export function annualAwardAmount(a: StudentAward): number {
 export function buildAnalysis(
   application: StudentApplication,
   awards: StudentAward[],
+  universities: University[],
 ): OfferAnalysis {
-  const uni = UNIVERSITIES_DATA.find((u) => u.id === application.sanity_university_id);
+  const uni = universities.find((u) => u.id === application.sanity_university_id);
   const annualCost = uni?.costs.totalAnnual ?? null;
   const duration = uni?.durationYears ?? null;
   const totalAwardAnnual = awards.reduce((sum, a) => sum + annualAwardAmount(a), 0);
@@ -116,6 +119,17 @@ export async function listOfferCompositesSvc(): Promise<OfferComposite[]> {
   const apps = (appsRes.data ?? []) as StudentApplication[];
   const enrollments = (enrollRes.data ?? []) as StudentEnrollmentDecision[];
 
+  // Cost inputs for the offer analysis come from verified Sanity data (keyed by
+  // the application's sanity_university_id). Fall back to the illustrative mock set
+  // only if Sanity is unreachable, so the vault never breaks on a data outage.
+  let universities: University[];
+  try {
+    universities = await getUniversitiesFromSanity();
+    if (universities.length === 0) universities = UNIVERSITIES_DATA;
+  } catch {
+    universities = UNIVERSITIES_DATA;
+  }
+
   return offers
     .map((offer) => {
       const application = apps.find((a) => a.id === offer.application_id);
@@ -132,7 +146,7 @@ export async function listOfferCompositesSvc(): Promise<OfferComposite[]> {
         awards: offerAwards,
         documents: offerDocs,
         enrollment,
-        analysis: buildAnalysis(application, offerAwards),
+        analysis: buildAnalysis(application, offerAwards, universities),
       } satisfies OfferComposite;
     })
     .filter((c): c is OfferComposite => c !== null);

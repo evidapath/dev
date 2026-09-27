@@ -20,7 +20,8 @@ import {
   upsertApplication,
   deleteApplication,
 } from "../lib/offer-vault.functions";
-import { UNIVERSITIES_DATA } from "../lib/mock-data";
+import type { University } from "../lib/mock-data";
+import { getUniversities } from "../lib/universities.functions";
 import type { ApplicationStatus, StudentApplication } from "../lib/offer-vault.types";
 import { APPLICATION_STATUSES } from "../lib/offer-vault.types";
 import {
@@ -68,10 +69,18 @@ function ApplicationsPage() {
   const upsertFn = useServerFn(upsertApplication);
   const deleteFn = useServerFn(deleteApplication);
 
+  const getUnivFn = useServerFn(getUniversities);
+
   const { data: applications = [] } = useQuery({
     queryKey: ["applications"],
     queryFn: () => listFn(),
   });
+
+  const { data: uniData } = useQuery({
+    queryKey: ["universities"],
+    queryFn: () => getUnivFn(),
+  });
+  const universities = uniData?.universities ?? [];
 
   const [editing, setEditing] = useState<Partial<StudentApplication> | null>(null);
 
@@ -118,13 +127,7 @@ function ApplicationsPage() {
       <div className="flex items-center justify-between">
         <h2 className="font-display font-bold text-lg text-foreground">Your applications</h2>
         <Button
-          onClick={() =>
-            setEditing({
-              sanity_university_id: UNIVERSITIES_DATA[0].id,
-              university_name: UNIVERSITIES_DATA[0].name,
-              status: "planning",
-            })
-          }
+          onClick={() => setEditing({ status: "planning" })}
           className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold flex items-center gap-1.5"
         >
           <Plus className="w-4 h-4" /> Add Application
@@ -138,13 +141,7 @@ function ApplicationsPage() {
           description="Track the universities you're applying to and update the status as decisions arrive. Add your first application to begin."
           action={
             <Button
-              onClick={() =>
-                setEditing({
-                  sanity_university_id: UNIVERSITIES_DATA[0].id,
-                  university_name: UNIVERSITIES_DATA[0].name,
-                  status: "planning",
-                })
-              }
+              onClick={() => setEditing({ status: "planning" })}
               className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold mt-2"
             >
               <Plus className="w-4 h-4" /> Add your first application
@@ -209,6 +206,7 @@ function ApplicationsPage() {
       {editing && (
         <ApplicationEditor
           initial={editing}
+          universities={universities}
           onClose={() => setEditing(null)}
           onSave={(input) => upsertMut.mutate(input)}
           saving={upsertMut.isPending}
@@ -228,16 +226,18 @@ function ApplicationsPage() {
 
 function ApplicationEditor({
   initial,
+  universities,
   onClose,
   onSave,
   saving,
 }: {
   initial: Partial<StudentApplication>;
+  universities: University[];
   onClose: () => void;
   onSave: (input: Partial<StudentApplication>) => void;
   saving: boolean;
 }) {
-  const [univId, setUnivId] = useState(initial.sanity_university_id ?? UNIVERSITIES_DATA[0].id);
+  const [univId, setUnivId] = useState(initial.sanity_university_id ?? universities[0]?.id ?? "");
   const [programName, setProgramName] = useState(initial.program_name ?? "");
   const [cycle, setCycle] = useState(initial.application_cycle ?? "");
   const [decisionPlan, setDecisionPlan] = useState(initial.decision_plan ?? "");
@@ -246,13 +246,13 @@ function ApplicationEditor({
     (initial.status as ApplicationStatus) ?? "planning",
   );
 
-  const selectedUniv = UNIVERSITIES_DATA.find((u) => u.id === univId) ?? UNIVERSITIES_DATA[0];
+  const selectedUniv = universities.find((u) => u.id === univId) ?? universities[0];
 
   const submit = () => {
     onSave({
-      id: initial.id,
+      ...(initial.id ? { id: initial.id } : {}),
       sanity_university_id: univId,
-      university_name: selectedUniv.name,
+      university_name: selectedUniv?.name ?? "",
       sanity_program_id: null,
       sanity_campus_id: null,
       program_name: programName || null,
@@ -281,7 +281,7 @@ function ApplicationEditor({
         <div>
           <label className={labelCls}>University</label>
           <select value={univId} onChange={(e) => setUnivId(e.target.value)} className={inputCls}>
-            {UNIVERSITIES_DATA.map((u) => (
+            {universities.map((u) => (
               <option key={u.id} value={u.id}>
                 {u.flag} {u.name}
               </option>
