@@ -61,6 +61,9 @@ export interface Scholarship {
   countriesOfStudy: string[];
   academicThreshold: string;
   awardValue: number | null;
+  // Human-readable award as sourced (percentages, income-banded tables, text).
+  // Preferred for display when present; awardValue stays null for non-numeric awards.
+  awardSummary?: string;
   awardFrequency: string;
   deadline: string;
   verificationStatus: string;

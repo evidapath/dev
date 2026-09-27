@@ -14,7 +14,7 @@
 //     otherwise it stays null ("pending") rather than showing a partial total.
 //   - any field with no verified value stays null / "Pending verified data".
 
-import type { University } from "./mock-data";
+import type { University, Scholarship } from "./mock-data";
 
 const PROJECT =
   process.env["SANITY_PROJECT_ID"] || import.meta.env["SANITY_PROJECT_ID"] || "jxwrtsiz";
@@ -201,4 +201,105 @@ function adapt(u: SanityUniversity): University {
 export async function getUniversitiesFromSanity(): Promise<University[]> {
   const rows = await sanityQuery<SanityUniversity[]>(UNIVERSITIES_QUERY);
   return (rows || []).map(adapt);
+}
+
+// ── Scholarships ─────────────────────────────────────────────────────────────
+
+const SCHOLARSHIPS_QUERY = `*[_type=="scholarship"] | order(name){
+  id, name, provider, eligible_citizenships, residency_restrictions, academic_criteria,
+  other_eligibility_criteria, award_amount, award_amount_currency, deadline_academic_year,
+  renewable, renewal_conditions, duration, record_status, verification_status,
+  official_source_url, last_checked, institutions_covered,
+  "coveredUniversities": *[_type=="university" && id in ^.institutions_covered]{
+    id, canonical_name, "country": country_ref->name
+  }
+}`;
+
+interface SanityScholarship {
+  id: string;
+  name: string;
+  provider: string | null;
+  eligible_citizenships: string[] | null;
+  residency_restrictions: string | null;
+  academic_criteria: string | null;
+  other_eligibility_criteria: string | null;
+  award_amount: string | number | null;
+  award_amount_currency: string | null;
+  deadline_academic_year: string | null;
+  renewable: boolean | null;
+  renewal_conditions: string | null;
+  duration: string | null;
+  record_status: string | null;
+  verification_status: string | null;
+  official_source_url: string | null;
+  last_checked: string | null;
+  institutions_covered: string[] | null;
+  coveredUniversities: { id: string; canonical_name: string; country: string | null }[] | null;
+}
+
+// Scholarship verification label. Honest about uncertainty (#7): an explicit
+// source CONFLICT is surfaced, never resolved; only a scholarship whose covered
+// university we have primary-source fact-checked AND that is VERIFIED may read
+// "verified"; HUMAN_REVIEW reads "under review"; everything else "in progress".
+function scholarshipConfidence(s: SanityScholarship): string {
+  if (s.verification_status === "CONFLICT") {
+    return "Sources conflict — shown, not resolved";
+  }
+  const covered = s.coveredUniversities || [];
+  const factChecked = covered.some((u) => FACT_CHECKED.has(u.id));
+  if (factChecked && s.record_status === "VERIFIED") {
+    return "Verified against official sources";
+  }
+  if (s.record_status === "HUMAN_REVIEW") {
+    return "Under review — see eligibility notes";
+  }
+  return "Verification in progress";
+}
+
+function adaptScholarship(s: SanityScholarship): Scholarship {
+  const covered = s.coveredUniversities || [];
+  const universitiesCovered = covered.map((u) => u.canonical_name).join(", ") || PENDING;
+  const countriesOfStudy = Array.from(
+    new Set(covered.map((u) => u.country).filter((c): c is string => !!c)),
+  );
+
+  const citizenship =
+    s.residency_restrictions ||
+    (s.eligible_citizenships || []).map((c) => c.toUpperCase()).join(", ") ||
+    PENDING;
+
+  // Award is heterogeneous (percent, income-banded, text, or a number). Show it
+  // as sourced text; keep the numeric field null unless it is a clean number.
+  const awardValue = typeof s.award_amount === "number" ? s.award_amount : null;
+  const awardText =
+    s.award_amount != null && String(s.award_amount).trim() !== ""
+      ? `${s.award_amount}${s.award_amount_currency ? ` ${s.award_amount_currency}` : ""}`
+      : undefined;
+
+  const eligibilityParts = [s.residency_restrictions, s.other_eligibility_criteria].filter(Boolean);
+
+  return {
+    id: s.id,
+    name: s.name,
+    provider: s.provider || PENDING,
+    universitiesCovered,
+    citizenshipEligible: citizenship,
+    countriesOfStudy,
+    academicThreshold: s.academic_criteria || PENDING,
+    awardValue,
+    ...(awardText ? { awardSummary: awardText } : {}),
+    awardFrequency: s.renewable ? "renewable" : s.duration || "",
+    deadline: s.deadline_academic_year || PENDING,
+    verificationStatus: scholarshipConfidence(s),
+    lastChecked: s.last_checked || "Not yet verified",
+    officialSource: s.official_source_url || "",
+    eligibilitySummary: eligibilityParts.join(" ") || PENDING,
+    renewalCriteria: s.renewal_conditions || "",
+  };
+}
+
+/** Fetch scholarships from Sanity and adapt to the app's Scholarship shape. */
+export async function getScholarshipsFromSanity(): Promise<Scholarship[]> {
+  const rows = await sanityQuery<SanityScholarship[]>(SCHOLARSHIPS_QUERY);
+  return (rows || []).map(adaptScholarship);
 }

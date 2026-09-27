@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import {
   BookOpen,
   ShieldCheck,
@@ -11,7 +12,8 @@ import {
   Clock,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { SCHOLARSHIPS_DATA } from "../lib/mock-data";
+import { getScholarships } from "../lib/scholarships.functions";
+import type { Scholarship } from "../lib/mock-data";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
 export const Route = createFileRoute("/scholarships")({
@@ -42,8 +44,33 @@ export const Route = createFileRoute("/scholarships")({
 function ScholarshipsGraphPage() {
   const [search, setSearch] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("All");
+  const [scholarships, setScholarships] = useState<Scholarship[]>([]);
+  const [source, setSource] = useState<"sanity" | "mock" | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const filtered = SCHOLARSHIPS_DATA.filter((s) => {
+  const fetchScholarships = useServerFn(getScholarships);
+  useEffect(() => {
+    let active = true;
+    fetchScholarships()
+      .then((res) => {
+        if (!active) return;
+        setScholarships(res.scholarships);
+        setSource(res.source);
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [fetchScholarships]);
+
+  const countries = useMemo(
+    () => Array.from(new Set(scholarships.flatMap((s) => s.countriesOfStudy))).sort(),
+    [scholarships],
+  );
+
+  const filtered = scholarships.filter((s) => {
     const matchesSearch =
       s.name.toLowerCase().includes(search.toLowerCase()) ||
       s.provider.toLowerCase().includes(search.toLowerCase()) ||
@@ -74,8 +101,9 @@ function ScholarshipsGraphPage() {
         <div className="flex items-center gap-2 text-[11px] text-muted-foreground bg-secondary/50 border border-border rounded-lg px-3 py-2">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
           <span>
-            Illustrative product preview. Live analysis will use verified EvidaPath data.
-            Scholarship records currently being verified.
+            {source === "sanity"
+              ? "Live data connected. Scholarship records are sourced to official pages; where official sources conflict, EvidaPath shows the conflict rather than resolving it."
+              : "Illustrative product preview. Live analysis will use verified EvidaPath data. Scholarship records currently being verified."}
           </span>
         </div>
       </div>
@@ -100,11 +128,11 @@ function ScholarshipsGraphPage() {
             className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
           >
             <option value="All">All Study Countries</option>
-            <option value="Canada">Canada</option>
-            <option value="Germany">Germany</option>
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="Netherlands">Netherlands</option>
-            <option value="United Arab Emirates">United Arab Emirates</option>
+            {countries.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -116,80 +144,87 @@ function ScholarshipsGraphPage() {
       </div>
 
       {/* Scholarship Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.map((s) => (
-          <div
-            key={s.id}
-            className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between space-y-5 hover:border-primary/40 transition-all"
-          >
-            <div className="space-y-3">
-              <div className="flex items-center justify-between text-[11px]">
-                <span className="text-muted-foreground font-semibold flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  {s.verificationStatus}
-                </span>
-                <span className="text-muted-foreground font-mono">{s.lastChecked}</span>
+      {loading ? (
+        <p className="text-sm text-muted-foreground">Loading verified scholarship data…</p>
+      ) : filtered.length === 0 ? (
+        <p className="text-sm text-muted-foreground">No scholarships match your search.</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filtered.map((s) => (
+            <div
+              key={s.id}
+              className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between space-y-5 hover:border-primary/40 transition-all"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-[11px]">
+                  <span className="text-muted-foreground font-semibold flex items-center gap-1">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    {s.verificationStatus}
+                  </span>
+                  <span className="text-muted-foreground font-mono">{s.lastChecked}</span>
+                </div>
+
+                <div>
+                  <h3 className="font-display font-bold text-lg text-foreground">{s.name}</h3>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    Provider: <strong>{s.provider}</strong>
+                  </p>
+                </div>
+
+                <div className="bg-secondary/40 rounded-xl p-3 border border-border/80 space-y-2 text-xs">
+                  <div>
+                    <span className="text-muted-foreground block text-[10px] uppercase font-semibold">
+                      Institutions Covered
+                    </span>
+                    <span className="font-medium text-foreground">{s.universitiesCovered}</span>
+                  </div>
+                  <div>
+                    <span className="text-muted-foreground block text-[10px] uppercase font-semibold">
+                      Eligible Citizenship
+                    </span>
+                    <span className="font-medium text-foreground">{s.citizenshipEligible}</span>
+                  </div>
+                  <div>
+                    <span className="text-muted-foreground block text-[10px] uppercase font-semibold">
+                      Academic Threshold
+                    </span>
+                    <span className="font-medium text-foreground">{s.academicThreshold}</span>
+                  </div>
+                </div>
+
+                <div className="text-xs text-muted-foreground leading-relaxed">
+                  {s.eligibilitySummary}
+                </div>
               </div>
 
-              <div>
-                <h3 className="font-display font-bold text-lg text-foreground">{s.name}</h3>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  Provider: <strong>{s.provider}</strong>
-                </p>
-              </div>
+              <div className="pt-4 border-t border-border flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground block">
+                    Award Value
+                  </span>
+                  <span className="font-mono font-bold text-sm text-muted-foreground line-clamp-2">
+                    {s.awardSummary
+                      ? s.awardSummary
+                      : s.awardValue === null
+                        ? "Pending verified data"
+                        : `$${s.awardValue.toLocaleString()} / ${s.awardFrequency}`}
+                  </span>
+                </div>
 
-              <div className="bg-secondary/40 rounded-xl p-3 border border-border/80 space-y-2 text-xs">
-                <div>
-                  <span className="text-muted-foreground block text-[10px] uppercase font-semibold">
-                    Institutions Covered
-                  </span>
-                  <span className="font-medium text-foreground">{s.universitiesCovered}</span>
-                </div>
-                <div>
-                  <span className="text-muted-foreground block text-[10px] uppercase font-semibold">
-                    Eligible Citizenship
-                  </span>
-                  <span className="font-medium text-foreground">{s.citizenshipEligible}</span>
-                </div>
-                <div>
-                  <span className="text-muted-foreground block text-[10px] uppercase font-semibold">
-                    Academic Threshold
-                  </span>
-                  <span className="font-medium text-foreground">{s.academicThreshold}</span>
-                </div>
-              </div>
-
-              <div className="text-xs text-muted-foreground leading-relaxed">
-                {s.eligibilitySummary}
+                <Link to="/fund">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="text-xs border-border text-foreground hover:bg-secondary"
+                  >
+                    Add to Capital Plan
+                  </Button>
+                </Link>
               </div>
             </div>
-
-            <div className="pt-4 border-t border-border flex items-center justify-between">
-              <div>
-                <span className="text-[10px] uppercase tracking-wider text-muted-foreground block">
-                  Award Value
-                </span>
-                <span className="font-mono font-bold text-sm text-muted-foreground">
-                  {s.awardValue === null
-                    ? "Pending verified data"
-                    : `$${s.awardValue.toLocaleString()}`}{" "}
-                  / {s.awardFrequency}
-                </span>
-              </div>
-
-              <Link to="/fund">
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="text-xs border-border text-foreground hover:bg-secondary"
-                >
-                  Add to Capital Plan
-                </Button>
-              </Link>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
