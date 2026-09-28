@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { getUniversities } from "../lib/universities.functions";
+import { getProfile, upsertProfile } from "../lib/profile.functions";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { DataStatus, StatusChip, PendingValue } from "../components/DataStatus";
@@ -96,11 +97,57 @@ function FindMyPathPage() {
     };
   }, [fetchUniversities]);
 
+  // Prefill from a saved profile so a returning (signed-in) student sees their
+  // answers persist. Silently ignored when signed out (intake still works locally).
+  const getProfileFn = useServerFn(getProfile);
+  const upsertProfileFn = useServerFn(upsertProfile);
+  useEffect(() => {
+    let active = true;
+    getProfileFn()
+      .then((p) => {
+        if (!active || !p) return;
+        setAnswers((a) => ({
+          ...a,
+          curriculum: p.curriculum ?? a.curriculum,
+          gradeBand: p.grade_band ?? a.gradeBand,
+          subject: p.intended_subject ?? a.subject,
+          region: p.preferred_region ?? a.region,
+          budget: p.annual_budget != null ? String(p.annual_budget) : a.budget,
+          citizenship: p.citizenship ?? a.citizenship,
+          preferences: p.preferences ?? a.preferences,
+        }));
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, [getProfileFn]);
+
   const set = (k: keyof IntakeAnswers, v: string) => setAnswers((a) => ({ ...a, [k]: v }));
+
+  // Persist the profile when the student finishes the intake. Best-effort:
+  // signed-out users just don't persist (the results still render from session).
+  const saveProfile = () => {
+    const budget = Number(answers.budget);
+    upsertProfileFn({
+      data: {
+        curriculum: answers.curriculum || null,
+        grade_band: answers.gradeBand || null,
+        intended_subject: answers.subject || null,
+        preferred_region: answers.region || null,
+        annual_budget: Number.isFinite(budget) ? budget : null,
+        citizenship: answers.citizenship || null,
+        preferences: answers.preferences || null,
+      },
+    }).catch(() => {});
+  };
 
   const next = () => {
     if (step < STEPS.length - 1) setStep(step + 1);
-    else setShowResults(true);
+    else {
+      saveProfile();
+      setShowResults(true);
+    }
   };
   const back = () => (step > 0 ? setStep(step - 1) : null);
 

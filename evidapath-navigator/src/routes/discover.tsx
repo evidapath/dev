@@ -12,8 +12,10 @@ import {
   MapPin,
   Check,
 } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { getUniversities } from "../lib/universities.functions";
+import { saveUniversity } from "../lib/profile.functions";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
@@ -67,6 +69,15 @@ function DiscoverPage() {
   }, [fetchUniversities]);
 
   const countries = Array.from(new Set(universities.map((u) => u.country).filter(Boolean))).sort();
+
+  // Save a university to the student's persisted "My Path" (Supabase, RLS-scoped).
+  // Signed-out students are prompted to sign in rather than silently failing.
+  const saveUniFn = useServerFn(saveUniversity);
+  const addToMyPath = (u: University) => {
+    saveUniFn({ data: { sanity_university_id: u.id, university_name: u.name } })
+      .then(() => toast.success(`${u.shortName} saved to your path.`))
+      .catch(() => toast.error("Sign in to save universities to your path."));
+  };
 
   const filtered = universities.filter((u) => {
     const matchesSearch =
@@ -268,14 +279,13 @@ function DiscoverPage() {
                     Analyze Fit
                   </Button>
                 </Link>
-                <Link to="/academic-readiness">
-                  <Button
-                    size="sm"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
-                  >
-                    Add to My Path
-                  </Button>
-                </Link>
+                <Button
+                  onClick={() => addToMyPath(univ)}
+                  size="sm"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
+                >
+                  Add to My Path
+                </Button>
               </div>
             </div>
           ))}

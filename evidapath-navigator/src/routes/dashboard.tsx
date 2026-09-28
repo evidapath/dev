@@ -1,4 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { toast } from "sonner";
 import {
   LayoutDashboard,
   Compass,
@@ -19,6 +22,8 @@ import { Button } from "../components/ui/button";
 import { useAuth } from "../components/AuthContext";
 import { requireAuth } from "../lib/route-guard";
 import { DataStatus } from "../components/DataStatus";
+import { listSavedUniversities, removeSavedUniversity } from "../lib/profile.functions";
+import type { SavedUniversity } from "../lib/profile.types";
 
 export const Route = createFileRoute("/dashboard")({
   beforeLoad: ({ context, location }) => requireAuth(context, location.pathname),
@@ -122,6 +127,9 @@ function DashboardPage() {
           </Button>
         </Link>
       </div>
+
+      {/* Saved universities — the student's persisted "My Path" picks */}
+      <SavedUniversitiesSection />
 
       {/* Journey progress — what comes next */}
       <div className="space-y-4">
@@ -236,6 +244,81 @@ function DashboardPage() {
         connected to your account. Your data is accessed only through your authenticated session and
         is subject to Row Level Security.
       </DataStatus>
+    </div>
+  );
+}
+
+// The student's persisted "My Path" universities (Supabase, RLS-scoped).
+function SavedUniversitiesSection() {
+  const listFn = useServerFn(listSavedUniversities);
+  const removeFn = useServerFn(removeSavedUniversity);
+  const [saved, setSaved] = useState<SavedUniversity[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    listFn()
+      .then((rows) => {
+        if (active) setSaved(rows);
+      })
+      .catch(() => {})
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [listFn]);
+
+  const remove = (sanityId: string) => {
+    removeFn({ data: { sanity_university_id: sanityId } })
+      .then(() => setSaved((s) => s.filter((u) => u.sanity_university_id !== sanityId)))
+      .catch(() => toast.error("Could not remove."));
+  };
+
+  if (loading) return null;
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <h3 className="font-display font-bold text-base text-foreground">
+          Your saved universities
+        </h3>
+        <Link to="/discover" className="text-xs text-primary font-semibold">
+          Add more →
+        </Link>
+      </div>
+      {saved.length === 0 ? (
+        <div className="rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground">
+          No saved universities yet. Add the ones you're considering from{" "}
+          <Link to="/discover" className="text-primary font-semibold">
+            Discover
+          </Link>
+          .
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {saved.map((u) => (
+            <div
+              key={u.id}
+              className="rounded-2xl border border-border bg-card p-4 flex items-center justify-between gap-3"
+            >
+              <div className="min-w-0">
+                <p className="font-semibold text-sm text-foreground truncate">
+                  {u.university_name ?? u.sanity_university_id}
+                </p>
+                <p className="text-[11px] text-muted-foreground">Saved to your path</p>
+              </div>
+              <button
+                onClick={() => remove(u.sanity_university_id)}
+                className="text-[11px] text-muted-foreground hover:text-destructive shrink-0"
+              >
+                Remove
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
