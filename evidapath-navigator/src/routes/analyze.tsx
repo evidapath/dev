@@ -343,22 +343,30 @@ function AnalyzePage() {
                 different tuition structures or admission predictability:
               </p>
 
-              <div className="space-y-2.5">
-                {analysis.pathwayFlexibility.options.map((opt, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3 rounded-lg border border-border bg-secondary/30 flex items-center justify-between text-xs"
-                  >
-                    <div>
-                      <span className="font-semibold text-foreground block">{opt.name}</span>
-                      <span className="text-[10px] text-muted-foreground">{opt.type}</span>
+              {source === "sanity" ? (
+                <p className="text-xs text-muted-foreground italic">
+                  EvidaPath will surface verified alternative pathways once they are sourced for
+                  this university. We do not suggest specific alternatives until they are verified
+                  against real data.
+                </p>
+              ) : (
+                <div className="space-y-2.5">
+                  {analysis.pathwayFlexibility.options.map((opt, idx) => (
+                    <div
+                      key={idx}
+                      className="p-3 rounded-lg border border-border bg-secondary/30 flex items-center justify-between text-xs"
+                    >
+                      <div>
+                        <span className="font-semibold text-foreground block">{opt.name}</span>
+                        <span className="text-[10px] text-muted-foreground">{opt.type}</span>
+                      </div>
+                      <span className="font-mono font-bold text-muted-foreground">
+                        {opt.costDelta}
+                      </span>
                     </div>
-                    <span className="font-mono font-bold text-muted-foreground">
-                      {opt.costDelta}
-                    </span>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
 
               <div className="pt-2 border-t border-border flex justify-between items-center text-xs">
                 <span className="text-muted-foreground">
