@@ -145,6 +145,7 @@ function prettyType(t: string | null): string {
 const FACT_CHECKED = new Set<string>([
   "ae-nyu-abu-dhabi", // fact-checks/nyuad-2026-09-27.md
   "nl-tu-delft", // fact-checks/tu-delft-2026-10-03.md
+  "ca-university-of-toronto", // fact-checks/toronto-2026-10-03.md
 ]);
 
 // Student-facing confidence label. "Verified" means EvidaPath has checked this
