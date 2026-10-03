@@ -190,6 +190,11 @@ function UniversitiesDirectoryPage() {
                       {formatCost(univ.costs.totalDegree, univ.costs.currency)}
                     </span>
                   </div>
+                  {univ.costResidencyNote && (
+                    <p className="text-[10px] text-bronze pt-1 leading-snug">
+                      {univ.costResidencyNote}
+                    </p>
+                  )}
                 </div>
 
                 {/* Affordability Index & Evidence */}

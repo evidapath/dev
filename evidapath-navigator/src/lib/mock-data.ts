@@ -41,6 +41,10 @@ export interface University {
   };
   scholarshipsAvailable: number | null;
   scholarshipCoverageMax: number | null;
+  // When a university prices by residency (e.g. EU vs non-EU), the displayed cost is
+  // the international (non-EU) rate and this note discloses the other tier. Null when
+  // a single uniform cost applies. Prevents silently showing one tier as universal.
+  costResidencyNote?: string;
   evidenceConfidence: string;
   lastVerified: string;
   officialSourceUrl: string;

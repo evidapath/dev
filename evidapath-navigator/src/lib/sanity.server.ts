@@ -32,8 +32,9 @@ const UNIVERSITIES_QUERY = `*[_type=="university"] | order(canonical_name){
   "programs": *[_type=="program" && references(^._id)]{
     program_name, degree_type, duration_value, duration_unit, field_of_study,
     language_of_instruction, record_status,
-    "cost": *[_type=="costProfile" && references(^._id)][0]{
-      tuition_annual, mandatory_fees_annual, estimated_living_costs_annual, currency, duration_years
+    "costs": *[_type=="costProfile" && references(^._id)]{
+      tuition_annual, tuition_basis, mandatory_fees_annual, estimated_living_costs_annual,
+      currency, duration_years, "residencyDesc": residency_category_ref->description
     }
   },
   "scholarshipCount": count(*[_type=="scholarship" && ^.id in institutions_covered])
@@ -41,10 +42,12 @@ const UNIVERSITIES_QUERY = `*[_type=="university"] | order(canonical_name){
 
 interface SanityCost {
   tuition_annual: number | null;
+  tuition_basis: string | null;
   mandatory_fees_annual: number | null;
   estimated_living_costs_annual: number | null;
   currency: string | null;
   duration_years: number | null;
+  residencyDesc: string | null;
 }
 interface SanityProgram {
   program_name: string | null;
@@ -54,7 +57,7 @@ interface SanityProgram {
   field_of_study: string | null;
   language_of_instruction: string[] | null;
   record_status: string | null;
-  cost: SanityCost | null;
+  costs: SanityCost[] | null;
 }
 interface SanityUniversity {
   id: string;
@@ -100,9 +103,29 @@ function flagEmoji(cc: string | null): string {
 }
 
 function durationYears(p: SanityProgram | undefined): number {
-  if (!p || p.duration_value == null) return p?.cost?.duration_years ?? 0;
+  if (!p || p.duration_value == null) return p?.costs?.[0]?.duration_years ?? 0;
   const unit = (p.duration_unit || "").toLowerCase();
   return unit.startsWith("semester") ? p.duration_value / 2 : p.duration_value;
+}
+
+// A program may have several cost profiles priced by residency (e.g. EU statutory
+// vs non-EU institutional at Dutch universities). Show the HIGHEST tier: for
+// EvidaPath's international audience that is their actual rate, and overstating
+// cost is the safe error for a family's financial decision — never understate
+// (#2, #7). Disclose the lower tier(s) in a note so it is never presented as the
+// single universal price.
+function selectCost(costs: SanityCost[] | null): { chosen: SanityCost | null; note?: string } {
+  const priced = (costs || []).filter((c) => c.tuition_annual != null);
+  if (priced.length === 0) return { chosen: (costs || [])[0] ?? null };
+  const sorted = [...priced].sort((a, b) => (b.tuition_annual ?? 0) - (a.tuition_annual ?? 0));
+  const chosen = sorted[0]!;
+  if (sorted.length === 1) return { chosen };
+  const lowest = sorted[sorted.length - 1]!;
+  const cur = chosen.currency || "";
+  const note =
+    `Residency-based pricing: showing the highest tier (international / non-domestic students). ` +
+    `Lower tiers pay from ${cur} ${(lowest.tuition_annual ?? 0).toLocaleString()}/yr.`;
+  return { chosen, note };
 }
 
 function prettyType(t: string | null): string {
@@ -139,7 +162,7 @@ function confidenceLabel(universityId: string): string {
 
 function adapt(u: SanityUniversity): University {
   const program = (u.programs || [])[0];
-  const cost = program?.cost || null;
+  const { chosen: cost, note: costResidencyNote } = selectCost(program?.costs ?? null);
 
   const tuition = cost?.tuition_annual ?? null;
   const fees = cost?.mandatory_fees_annual ?? null;
@@ -188,6 +211,7 @@ function adapt(u: SanityUniversity): University {
     },
     scholarshipsAvailable: u.scholarshipCount ?? null,
     scholarshipCoverageMax: null,
+    ...(costResidencyNote ? { costResidencyNote } : {}),
     evidenceConfidence: confidenceLabel(u.id),
     lastVerified: u.last_verified || "Not yet verified",
     officialSourceUrl: u.official_website || "",
