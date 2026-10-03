@@ -119,17 +119,22 @@ function prettyType(t: string | null): string {
 // sufficient — the freeze report documents real coverage gaps on schools whose
 // record_status is VERIFIED. Add a university id here only after a primary-source
 // fact-check (see fact-checks/<school>-<date>.md).
-const FACT_CHECKED = new Set<string>(["ae-nyu-abu-dhabi"]);
+const FACT_CHECKED = new Set<string>([
+  "ae-nyu-abu-dhabi", // fact-checks/nyuad-2026-09-27.md
+  "nl-tu-delft", // fact-checks/tu-delft-2026-10-03.md
+]);
 
-// Student-facing confidence label. "Verified" requires BOTH an EvidaPath
-// primary-source fact-check AND a VERIFIED-or-higher Sanity record_status.
-// Everything else is honestly "verification in progress".
-function confidenceLabel(universityId: string, status: string | null): string {
-  const verifiedStatus = status === "VERIFIED" || status === "APPROVED" || status === "PUBLISHED";
-  if (FACT_CHECKED.has(universityId) && verifiedStatus) {
-    return "Verified against official sources";
-  }
-  return "Verification in progress";
+// Student-facing confidence label. "Verified" means EvidaPath has checked this
+// university's displayed facts against official PRIMARY sources (logged in
+// fact-checks/). The FACT_CHECKED allowlist IS that authority — Sanity's own
+// record_status is a separate internal pipeline state and is intentionally NOT
+// gated on here (a school can be STRUCTURED in Sanity yet fully primary-source
+// verified by us, e.g. TU Delft). A school is added to FACT_CHECKED only after
+// a logged primary-source pass, so the allowlist is the correct gate.
+function confidenceLabel(universityId: string): string {
+  return FACT_CHECKED.has(universityId)
+    ? "Verified against official sources"
+    : "Verification in progress";
 }
 
 function adapt(u: SanityUniversity): University {
@@ -183,7 +188,7 @@ function adapt(u: SanityUniversity): University {
     },
     scholarshipsAvailable: u.scholarshipCount ?? null,
     scholarshipCoverageMax: null,
-    evidenceConfidence: confidenceLabel(u.id, u.record_status),
+    evidenceConfidence: confidenceLabel(u.id),
     lastVerified: u.last_verified || "Not yet verified",
     officialSourceUrl: u.official_website || "",
     alternativePathways: [],
