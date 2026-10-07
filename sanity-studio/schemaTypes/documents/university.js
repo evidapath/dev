@@ -86,6 +86,29 @@ export default defineType({
       title: 'Extension Metadata',
       type: 'extensionMetadata',
     }),
+    // EvidaPath independent primary-source verification (distinct from the
+    // pipeline `record_status`). Drives the student-facing "verified" label.
+    // Set only after a logged fact-check (see repo fact-checks/).
+    defineField({
+      name: 'evidapath_verified',
+      title: 'EvidaPath Verified (primary-source)',
+      type: 'boolean',
+      description:
+        'True only after EvidaPath has checked this university\'s displayed facts against official primary sources. Drives the student-facing "Verified against official sources" label.',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'evidapath_verified_at',
+      title: 'EvidaPath Verified At',
+      type: 'string',
+      description: 'ISO date of the primary-source verification.',
+    }),
+    defineField({
+      name: 'evidapath_verification_note',
+      title: 'EvidaPath Verification Note',
+      type: 'text',
+      description: 'Which fact-check log covers this, and any caveats.',
+    }),
   ],
   preview: {
     select: { title: 'canonical_name', subtitle: 'id' },

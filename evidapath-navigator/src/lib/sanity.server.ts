@@ -25,6 +25,7 @@ const PENDING = "Pending verified data";
 
 const UNIVERSITIES_QUERY = `*[_type=="university"] | order(canonical_name){
   id, canonical_name, aliases, institution_type, official_website, record_status, last_verified,
+  evidapath_verified,
   "country": country_ref->name,
   "countryCode": country_ref->id,
   "countryCurrency": country_ref->currency_default,
@@ -67,6 +68,7 @@ interface SanityUniversity {
   official_website: string | null;
   record_status: string | null;
   last_verified: string | null;
+  evidapath_verified: boolean | null;
   country: string | null;
   countryCode: string | null;
   countryCurrency: string | null;
@@ -151,13 +153,14 @@ const FACT_CHECKED = new Set<string>([
 
 // Student-facing confidence label. "Verified" means EvidaPath has checked this
 // university's displayed facts against official PRIMARY sources (logged in
-// fact-checks/). The FACT_CHECKED allowlist IS that authority — Sanity's own
-// record_status is a separate internal pipeline state and is intentionally NOT
-// gated on here (a school can be STRUCTURED in Sanity yet fully primary-source
-// verified by us, e.g. TU Delft). A school is added to FACT_CHECKED only after
-// a logged primary-source pass, so the allowlist is the correct gate.
-function confidenceLabel(universityId: string): string {
-  return FACT_CHECKED.has(universityId)
+// fact-checks/). Source of truth is Sanity's `evidapath_verified` flag (set by
+// scripts/mark_verified_in_sanity.py after a logged pass, visible in Studio).
+// The FACT_CHECKED allowlist is kept as a migration fallback so the label does
+// not regress before the Sanity flag is written; remove it once Sanity carries
+// the flag for every verified school. Sanity's own `record_status` is a separate
+// pipeline state and is intentionally NOT used here.
+function confidenceLabel(universityId: string, sanityVerified: boolean | null): string {
+  return sanityVerified === true || FACT_CHECKED.has(universityId)
     ? "Verified against official sources"
     : "Verification in progress";
 }
@@ -214,7 +217,7 @@ function adapt(u: SanityUniversity): University {
     scholarshipsAvailable: u.scholarshipCount ?? null,
     scholarshipCoverageMax: null,
     ...(costResidencyNote ? { costResidencyNote } : {}),
-    evidenceConfidence: confidenceLabel(u.id),
+    evidenceConfidence: confidenceLabel(u.id, u.evidapath_verified),
     lastVerified: u.last_verified || "Not yet verified",
     officialSourceUrl: u.official_website || "",
     alternativePathways: [],
