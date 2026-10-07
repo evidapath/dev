@@ -30,6 +30,7 @@ VERIFIED = {
     "university-nl-tu-delft": ("2026-10-03", "fact-checks/tu-delft-2026-10-03.md (both residency tiers)"),
     "university-ca-university-of-toronto": ("2026-10-03", "fact-checks/toronto-2026-10-03.md (intl tuition exact)"),
     "university-gb-university-of-oxford": ("2026-10-07", "fact-checks/oxford-2026-10-03.md (resolved 2026-10-07)"),
+    "university-de-tu-munich": ("2026-10-07", "fact-checks/tu-munich-2026-10-07.md (non-EU EUR6,000 exact; German-taught)"),
 }
 
 

@@ -149,6 +149,7 @@ const FACT_CHECKED = new Set<string>([
   "nl-tu-delft", // fact-checks/tu-delft-2026-10-03.md
   "ca-university-of-toronto", // fact-checks/toronto-2026-10-03.md
   "gb-university-of-oxford", // fact-checks/oxford-2026-10-03.md (resolved 2026-10-07)
+  "de-tu-munich", // fact-checks/tu-munich-2026-10-07.md
 ]);
 
 // Student-facing confidence label. "Verified" means EvidaPath has checked this
