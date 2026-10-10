@@ -97,7 +97,7 @@ function UniversitiesDirectoryPage() {
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
           <span>
             {source === "sanity"
-              ? "Live data connected. NYU Abu Dhabi is verified against official sources; the other institutions are marked verification in progress. Every figure traces to an official source."
+              ? "Live data connected. Every figure traces to an official source, and each university shows its verification status. Where official sources are incomplete or conflict, we show that rather than inventing a number."
               : "Illustrative product preview. Live analysis will use verified EvidaPath data. University data currently being verified."}
           </span>
         </div>

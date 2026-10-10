@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { requireAuth } from "../lib/route-guard";
-import { useEffect, useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
+import { useState } from "react";
 import {
   BarChart3,
   AlertCircle,
@@ -14,8 +13,7 @@ import {
   DollarSign,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { getUniversities } from "../lib/universities.functions";
-import type { University } from "../lib/mock-data";
+import { UNIVERSITIES_DATA } from "../lib/mock-data";
 import { SAMPLE_DECISION_ANALYSIS } from "../lib/decision-model";
 import { isPending } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
@@ -49,45 +47,13 @@ export const Route = createFileRoute("/analyze")({
 });
 
 function AnalyzePage() {
-  const [selectedUnivId, setSelectedUnivId] = useState("");
+  const [selectedUnivId, setSelectedUnivId] = useState("oxford-univ");
   const [studentGrades, setStudentGrades] = useState("A*AA");
   const [targetSubject, setTargetSubject] = useState("Computer Science");
-  const [universities, setUniversities] = useState<University[]>([]);
-  const [source, setSource] = useState<"sanity" | "mock" | null>(null);
-  const [loading, setLoading] = useState(true);
 
-  const fetchUniversities = useServerFn(getUniversities);
-  useEffect(() => {
-    let active = true;
-    fetchUniversities()
-      .then((res) => {
-        if (!active) return;
-        setUniversities(res.universities);
-        setSource(res.source);
-        const first = res.universities[0];
-        if (first) setSelectedUnivId((cur) => cur || first.id);
-      })
-      .finally(() => {
-        if (active) setLoading(false);
-      });
-    return () => {
-      active = false;
-    };
-  }, [fetchUniversities]);
-
-  const univ = universities.find((u) => u.id === selectedUnivId) || universities[0];
-  // SAMPLE_DECISION_ANALYSIS is an ILLUSTRATIVE analytical framework, NOT computed
-  // from verified inputs. Real Sanity ids don't key into it, so it always resolves
-  // to the sample — shown clearly labeled as illustrative, never as real analysis.
-  const analysis = SAMPLE_DECISION_ANALYSIS["oxford-univ"]!;
-
-  if (loading || !univ) {
-    return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <p className="text-sm text-muted-foreground">Loading verified university data…</p>
-      </div>
-    );
-  }
+  const univ = UNIVERSITIES_DATA.find((u) => u.id === selectedUnivId) || UNIVERSITIES_DATA[0];
+  const analysis =
+    SAMPLE_DECISION_ANALYSIS[selectedUnivId] || SAMPLE_DECISION_ANALYSIS["oxford-univ"];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
@@ -108,9 +74,8 @@ function AnalyzePage() {
         <div className="flex items-center gap-2 text-[11px] text-muted-foreground bg-secondary/50 border border-border rounded-lg px-3 py-2">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
           <span>
-            {source === "sanity"
-              ? "University identity and cost data below are live from EvidaPath and traced to official sources. The fit scoring, readiness metrics and improvement levers are an ILLUSTRATIVE framework — not yet computed from your verified inputs — and are labeled as such."
-              : "Illustrative product preview. Live analysis will use verified EvidaPath data with source attribution and confidence indicators."}
+            Illustrative product preview. Live analysis will use verified EvidaPath data with source
+            attribution and confidence indicators.
           </span>
         </div>
       </div>
@@ -127,7 +92,7 @@ function AnalyzePage() {
               onChange={(e) => setSelectedUnivId(e.target.value)}
               className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
             >
-              {universities.map((u) => (
+              {UNIVERSITIES_DATA.map((u) => (
                 <option key={u.id} value={u.id}>
                   {u.flag} {u.name} ({u.country})
                 </option>
@@ -186,9 +151,9 @@ function AnalyzePage() {
           </div>
 
           <div className="flex items-center gap-3 text-xs">
-            <span className="font-semibold text-foreground">Fit scoring:</span>
+            <span className="font-semibold text-foreground">Evidence Strength:</span>
             <span className="px-2.5 py-1 rounded-full bg-secondary text-muted-foreground font-mono font-medium border border-border">
-              Illustrative framework
+              {analysis.admissionsEvidence.evidenceStrength}
             </span>
           </div>
         </div>
@@ -204,7 +169,7 @@ function AnalyzePage() {
                   Current Position & Prerequisites
                 </h3>
                 <span className="text-xs font-semibold px-2 py-0.5 rounded bg-secondary text-muted-foreground">
-                  Illustrative example
+                  {analysis.academicReadiness.status}
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -238,8 +203,8 @@ function AnalyzePage() {
                   <TrendingUp className="w-4 h-4 text-primary" />
                   <span>Controllable Levers ({analysis.improvementLevers.length})</span>
                 </h3>
-                <span className="text-[11px] text-muted-foreground font-semibold">
-                  Illustrative framework
+                <span className="text-[11px] text-primary font-semibold">
+                  Ranked by Actionability
                 </span>
               </div>
 
@@ -287,17 +252,17 @@ function AnalyzePage() {
               {/* The pivotal 3-number visual */}
               <div className="bg-secondary/40 rounded-xl p-4 border border-border space-y-3">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-muted-foreground">
-                    Cost of Attendance ({univ.durationYears}-yr):
-                  </span>
+                  <span className="text-muted-foreground">Cost of Attendance:</span>
                   <span className="font-mono font-bold text-sm text-muted-foreground">
-                    {money(univ.costs.totalDegree, univ.costs.currency)}
+                    {money(analysis.financialFit.fourYearCommitment)}
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-primary font-medium">Expected / Identified Funding:</span>
                   <span className="font-mono font-bold text-sm text-primary">
-                    Pending verified data
+                    {isPending(analysis.financialFit.identifiedFunding)
+                      ? "Pending verified data"
+                      : `-${money(analysis.financialFit.identifiedFunding)}`}
                   </span>
                 </div>
                 <div className="pt-2 border-t border-border flex justify-between items-center text-xs">
@@ -305,7 +270,7 @@ function AnalyzePage() {
                     Remaining Family Gap:
                   </span>
                   <span className="font-mono font-extrabold text-base text-bronze">
-                    Pending verified data
+                    {money(analysis.financialFit.remainingFamilyGap)}
                   </span>
                 </div>
               </div>
@@ -343,30 +308,22 @@ function AnalyzePage() {
                 different tuition structures or admission predictability:
               </p>
 
-              {source === "sanity" ? (
-                <p className="text-xs text-muted-foreground italic">
-                  EvidaPath will surface verified alternative pathways once they are sourced for
-                  this university. We do not suggest specific alternatives until they are verified
-                  against real data.
-                </p>
-              ) : (
-                <div className="space-y-2.5">
-                  {analysis.pathwayFlexibility.options.map((opt, idx) => (
-                    <div
-                      key={idx}
-                      className="p-3 rounded-lg border border-border bg-secondary/30 flex items-center justify-between text-xs"
-                    >
-                      <div>
-                        <span className="font-semibold text-foreground block">{opt.name}</span>
-                        <span className="text-[10px] text-muted-foreground">{opt.type}</span>
-                      </div>
-                      <span className="font-mono font-bold text-muted-foreground">
-                        {opt.costDelta}
-                      </span>
+              <div className="space-y-2.5">
+                {analysis.pathwayFlexibility.options.map((opt, idx) => (
+                  <div
+                    key={idx}
+                    className="p-3 rounded-lg border border-border bg-secondary/30 flex items-center justify-between text-xs"
+                  >
+                    <div>
+                      <span className="font-semibold text-foreground block">{opt.name}</span>
+                      <span className="text-[10px] text-muted-foreground">{opt.type}</span>
                     </div>
-                  ))}
-                </div>
-              )}
+                    <span className="font-mono font-bold text-muted-foreground">
+                      {opt.costDelta}
+                    </span>
+                  </div>
+                ))}
+              </div>
 
               <div className="pt-2 border-t border-border flex justify-between items-center text-xs">
                 <span className="text-muted-foreground">
@@ -382,12 +339,12 @@ function AnalyzePage() {
   );
 }
 
-function formatTuition(univ: University): string {
+function formatTuition(univ: (typeof UNIVERSITIES_DATA)[number]): string {
   if (isPending(univ.costs.tuitionPerYear)) return "Pending verified data";
   return `$${univ.costs.tuitionPerYear!.toLocaleString()} ${univ.costs.currency}`;
 }
 
-function formatLiving(univ: University): string {
+function formatLiving(univ: (typeof UNIVERSITIES_DATA)[number]): string {
   if (isPending(univ.costs.livingPerYear)) return "Pending verified data";
   return `$${univ.costs.livingPerYear!.toLocaleString()} ${univ.costs.currency}`;
 }

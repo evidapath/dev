@@ -1,6 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
+import { useState } from "react";
 import {
   ArrowRight,
   ArrowLeft,
@@ -16,10 +15,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { getUniversities } from "../lib/universities.functions";
-import { getProfile, upsertProfile } from "../lib/profile.functions";
-import type { University } from "../lib/mock-data";
-import { formatCost } from "../lib/format";
+import { UNIVERSITIES_DATA } from "../lib/mock-data";
 import { DataStatus, StatusChip, PendingValue } from "../components/DataStatus";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
@@ -80,94 +76,31 @@ function FindMyPathPage() {
   const [answers, setAnswers] = useState<IntakeAnswers>(DEFAULTS);
   const [showResults, setShowResults] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
-  const [universities, setUniversities] = useState<University[]>([]);
-  const [source, setSource] = useState<"sanity" | "mock" | null>(null);
   const navigate = useNavigate();
-
-  const fetchUniversities = useServerFn(getUniversities);
-  useEffect(() => {
-    let active = true;
-    fetchUniversities().then((res) => {
-      if (!active) return;
-      setUniversities(res.universities);
-      setSource(res.source);
-    });
-    return () => {
-      active = false;
-    };
-  }, [fetchUniversities]);
-
-  // Prefill from a saved profile so a returning (signed-in) student sees their
-  // answers persist. Silently ignored when signed out (intake still works locally).
-  const getProfileFn = useServerFn(getProfile);
-  const upsertProfileFn = useServerFn(upsertProfile);
-  useEffect(() => {
-    let active = true;
-    getProfileFn()
-      .then((p) => {
-        if (!active || !p) return;
-        setAnswers((a) => ({
-          ...a,
-          curriculum: p.curriculum ?? a.curriculum,
-          gradeBand: p.grade_band ?? a.gradeBand,
-          subject: p.intended_subject ?? a.subject,
-          region: p.preferred_region ?? a.region,
-          budget: p.annual_budget != null ? String(p.annual_budget) : a.budget,
-          citizenship: p.citizenship ?? a.citizenship,
-          preferences: p.preferences ?? a.preferences,
-        }));
-      })
-      .catch(() => {});
-    return () => {
-      active = false;
-    };
-  }, [getProfileFn]);
 
   const set = (k: keyof IntakeAnswers, v: string) => setAnswers((a) => ({ ...a, [k]: v }));
 
-  // Persist the profile when the student finishes the intake. Best-effort:
-  // signed-out users just don't persist (the results still render from session).
-  const saveProfile = () => {
-    const budget = Number(answers.budget);
-    upsertProfileFn({
-      data: {
-        curriculum: answers.curriculum || null,
-        grade_band: answers.gradeBand || null,
-        intended_subject: answers.subject || null,
-        preferred_region: answers.region || null,
-        annual_budget: Number.isFinite(budget) ? budget : null,
-        citizenship: answers.citizenship || null,
-        preferences: answers.preferences || null,
-      },
-    }).catch(() => {});
-  };
-
   const next = () => {
     if (step < STEPS.length - 1) setStep(step + 1);
-    else {
-      saveProfile();
-      setShowResults(true);
-    }
+    else setShowResults(true);
   };
   const back = () => (step > 0 ? setStep(step - 1) : null);
 
   // Simple, transparent pathway selection from the illustrative dataset.
   // No admissions probabilities. Filters by region + subject match where
   // possible; otherwise shows the full illustrative set.
-  const pathways = universities
-    .filter((u) => {
-      const regionOk =
-        answers.region === "Open to anywhere" ||
-        answers.region === "All" ||
-        u.country === answers.region;
-      const subjectOk =
-        answers.subject.trim() === "" ||
-        u.programs.some((p) => p.toLowerCase().includes(answers.subject.toLowerCase())) ||
-        answers.subject.toLowerCase().includes("computer") ||
-        answers.subject.toLowerCase().includes("any");
-      return regionOk && subjectOk;
-    })
-    .slice(0, 8);
+  const pathways = UNIVERSITIES_DATA.filter((u) => {
+    const regionOk =
+      answers.region === "Open to anywhere" ||
+      answers.region === "All" ||
+      u.country === answers.region;
+    const subjectOk =
+      answers.subject.trim() === "" ||
+      u.programs.some((p) => p.toLowerCase().includes(answers.subject.toLowerCase())) ||
+      answers.subject.toLowerCase().includes("computer") ||
+      answers.subject.toLowerCase().includes("any");
+    return regionOk && subjectOk;
+  }).slice(0, 8);
 
   if (showResults) {
     return (
@@ -185,10 +118,9 @@ function FindMyPathPage() {
             evidence are illustrative until verified data is connected — tap any option to go
             deeper.
           </p>
-          <DataStatus level={source === "sanity" ? "live" : "illustrative"}>
-            {source === "sanity"
-              ? "Live data connected. Figures trace to official sources and each university shows its verification status. These are pathways to explore, not admissions predictions — no probabilities are invented."
-              : "Illustrative product preview. Live analysis will use verified EvidaPath data as datasets are built and verified."}
+          <DataStatus level="illustrative">
+            Illustrative product preview. Live analysis will use verified EvidaPath data as datasets
+            are built and verified.
           </DataStatus>
         </div>
 
@@ -228,9 +160,7 @@ function FindMyPathPage() {
                     </div>
                   </div>
                   <div className="hidden sm:flex items-center gap-4 shrink-0">
-                    <StatusChip
-                      level={u.evidenceConfidence.startsWith("Verified") ? "live" : "pending"}
-                    />
+                    <StatusChip level="illustrative" />
                     <ChevronDown
                       className={`w-4 h-4 text-muted-foreground transition-transform ${
                         isOpen ? "rotate-180" : ""
@@ -247,9 +177,7 @@ function FindMyPathPage() {
                   </div>
                   <div>
                     <p className="text-muted-foreground">Est. annual cost</p>
-                    <p className="font-mono text-foreground">
-                      {formatCost(u.costs.totalAnnual, u.costs.currency)}
-                    </p>
+                    <PendingValue />
                   </div>
                   <div>
                     <p className="text-muted-foreground">Funding potential</p>
@@ -282,13 +210,13 @@ function FindMyPathPage() {
                       <div className="rounded-lg border border-border bg-secondary/30 p-3 space-y-1.5">
                         <p className="font-semibold text-foreground">Cost & funding</p>
                         <p className="text-muted-foreground">
-                          Tuition/yr: {formatCost(u.costs.tuitionPerYear, u.costs.currency)}
+                          Tuition/yr: <PendingValue />
                         </p>
                         <p className="text-muted-foreground">
-                          Living/yr: {formatCost(u.costs.livingPerYear, u.costs.currency)}
+                          Living/yr: <PendingValue />
                         </p>
                         <p className="text-muted-foreground">
-                          Total degree: {formatCost(u.costs.totalDegree, u.costs.currency)}
+                          Total degree: <PendingValue />
                         </p>
                         <p className="text-muted-foreground">
                           Affordability: {u.affordabilityIndex.category}
