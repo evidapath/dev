@@ -68,12 +68,17 @@ def main():
         print("\nDRY RUN — no writes. Re-run with SANITY_TOKEN set and --execute.")
         return
     token = get_token()
-    # Only patch published docs (drafts patched best-effort; ignore missing-draft errors
-    # by patching published first, drafts in a separate lenient pass).
-    pub = [{"patch": {"id": i, "set": {"evidapath_verified": True,
-            "evidapath_verified_at": d, "evidapath_verification_note": n}}}
-           for i, (d, n) in VERIFIED.items()]
-    body = json.dumps({"mutations": pub})
+    # Patch BOTH the published doc and its draft (if present) so Studio — which
+    # shows the draft when one exists — reflects verification too, and so a later
+    # "publish" of the draft doesn't clear the flag. Drafts exist for all five
+    # (original import), so these patches apply.
+    muts = []
+    for i, (d, n) in VERIFIED.items():
+        patch_set = {"set": {"evidapath_verified": True,
+                             "evidapath_verified_at": d, "evidapath_verification_note": n}}
+        muts.append({"patch": {"id": i, **patch_set}})
+        muts.append({"patch": {"id": f"drafts.{i}", **patch_set}})
+    body = json.dumps({"mutations": muts})
     with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as tf:
         tf.write(body); payload = tf.name
     url = f"https://{PROJECT}.api.sanity.io/v2021-06-07/data/mutate/{DATASET}?returnIds=false"
