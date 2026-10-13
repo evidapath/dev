@@ -38,7 +38,7 @@ const UNIVERSITIES_QUERY = `*[_type=="university"] | order(canonical_name){
       currency, duration_years, "residencyDesc": residency_category_ref->description
     }
   },
-  "scholarshipCount": count(*[_type=="scholarship" && ^.id in institutions_covered])
+  "scholarshipCount": count(*[_type=="scholarship" && ^.id in institutions_covered && ("undergraduate" in degree_levels || "BSc" in degree_levels)])
 }`;
 
 interface SanityCost {
@@ -240,7 +240,11 @@ export async function getUniversitiesFromSanity(): Promise<University[]> {
 
 // ── Scholarships ─────────────────────────────────────────────────────────────
 
-const SCHOLARSHIPS_QUERY = `*[_type=="scholarship"] | order(name){
+// Only UNDERGRADUATE scholarships — EvidaPath's programs are all bachelor's. The data
+// tags degree_levels (values are inconsistent: 'undergraduate' or 'BSc'); a scholarship
+// tagged only postgraduate (e.g. TU Delft's van Effen, MSc-only) must NOT show for an
+// undergrad applicant (#2/#7 — it would advertise funding they're ineligible for).
+const SCHOLARSHIPS_QUERY = `*[_type=="scholarship" && ("undergraduate" in degree_levels || "BSc" in degree_levels)] | order(name){
   id, name, provider, eligible_citizenships, residency_restrictions, academic_criteria,
   other_eligibility_criteria, award_amount, award_amount_currency, deadline_academic_year,
   renewable, renewal_conditions, duration, record_status, verification_status,
