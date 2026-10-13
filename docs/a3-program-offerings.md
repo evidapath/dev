@@ -36,3 +36,24 @@ template, verify end-to-end in the app, then replicate to the others. Do NOT aut
 NOTE: tuition often differs by program/faculty (e.g. Toronto Engineering vs Arts&Sci CS
 have different international fees; Oxford fee band differs by subject). Must fetch
 program-specific costs, not reuse CS's (Suhail: "program-specific, not university-wide").
+
+## Step 2 progress — Oxford template (research started 2026-10-13)
+
+**Validated the program-specific-fee rule — fees differ a LOT by program at the same uni:**
+- Oxford **Engineering Science**: overseas **£66,580** (2027, confirmed — top band, same as CS);
+  Home £10,050; A*A*A (A*s in Maths/Further Maths/Physics); **ESAT** test (NOT CS's TMUA);
+  4-yr MEng; English; UCAS deadline 15 Oct.
+- Oxford **Economics & Management**: overseas **£43,600** (2026/27; 2027 not yet published —
+  record honestly as 2026/27 pending 2027); Home ~£10,050; A*AA (Maths required); **TARA**
+  test; 3-yr BA; English; UCAS deadline 15 Oct.
+- ⇒ Reusing CS's £66,580 for E&M would overstate by ~£23k/yr. Per-program research is mandatory.
+
+**Remaining per-program data still to fetch before creating Oxford's records:** admissions
+requirements per curriculum (IB/US/other) for each, English-language requirement, decision
+dates. Same depth as the original 5 CS programs.
+
+## Honest scope note
+Step 2 (create ~11 programs, each = program + per-curriculum admissions + residency-tiered
+costs + deadlines + language + sources, all verified) is a large multi-session build,
+comparable in effort to the original 5-university research. Best resourced deliberately,
+depth-first one university at a time. Not a single-turn task.
