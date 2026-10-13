@@ -33,7 +33,7 @@ const UNIVERSITIES_QUERY = `*[_type=="university"] | order(canonical_name){
   "deadlines": *[_type=="decisionPlan" && references(^._id)] | order(application_deadline){
     plan_type, application_deadline, decision_release_date, binding, application_platform
   },
-  "programs": *[_type=="program" && references(^._id)]{
+  "programs": *[_type=="program" && references(^._id)] | order(program_name){
     program_name, degree_type, duration_value, duration_unit, field_of_study,
     language_of_instruction, record_status,
     "costs": *[_type=="costProfile" && references(^._id)]{
@@ -191,7 +191,12 @@ function confidenceLabel(universityId: string, sanityVerified: boolean | null): 
 }
 
 function adapt(u: SanityUniversity): University {
-  const program = (u.programs || [])[0];
+  // Feature Computer Science as the headline program when present (keeps the
+  // current display stable as more programs are added), else the first by name.
+  // ponytail: the Universities card is single-program; a program selector is the
+  // real fix once multiple programs per uni exist (see docs/a3-program-offerings.md).
+  const progs = u.programs || [];
+  const program = progs.find((p) => p.field_of_study === "Computer Science") || progs[0];
   const { chosen: cost, note: costResidencyNote } = selectCost(program?.costs ?? null);
 
   const tuition = cost?.tuition_annual ?? null;

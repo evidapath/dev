@@ -78,6 +78,31 @@ drift (programs/admissions/costs need many required fields + references). **Reco
 programs through Suhail's pipeline or the Studio editor (schema-enforced), not hand-written NDJSON.**
 Confirm his preferred path before creating records.
 
+## A3 template BUILT — Oxford E&M (2026-10-13)
+
+`sanity-studio/scripts/create_program_oxford_em.py` — generates 7 interlinked docs for
+Oxford Economics & Management (2 sourceRecords + program + 2 admissionsReqs + 2
+costProfiles), cloning the verified CS program's schema shape and reusing the shared
+applicant-category + interview-stage records (validated to exist before write). Dry-run
+clean. **Subhan runs with a write token:**
+  `SANITY_TOKEN=<write> python3 scripts/create_program_oxford_em.py --execute`
+Idempotent (createOrReplace). This is the proven TEMPLATE — replicate for the other ~10.
+
+### App multi-program readiness (done + still-needed)
+- DONE: adapter now features the Computer Science program as the headline per uni (stable)
+  and the programs GROQ query orders by name — so adding E&M will NOT scramble Oxford's
+  displayed tuition (was a real regression risk: CS GBP66,580 vs E&M GBP43,600).
+- STILL NEEDED before E&M data is fully usable to a student: a **program selector** on
+  Universities/Analyze so a student picks the program and sees THAT program's specific
+  cost/admissions (Suhail's rule: program-specific, not university-wide). Until then the
+  card shows CS as the headline and lists other program names only.
+
+### Recommended sequence
+1. (optional now) run the E&M generator → data in Sanity, CS still headline, E&M listed.
+2. Build the program selector (app) → per-program cost/admissions display.
+3. Replicate the generator for the other ~10 programs (research done for Oxford;
+   NYUAD/Toronto/Delft/TUM still need per-program primary-source research).
+
 ## Honest scope note
 Step 2 (create ~11 programs, each = program + per-curriculum admissions + residency-tiered
 costs + deadlines + language + sources, all verified) is a large multi-session build,
