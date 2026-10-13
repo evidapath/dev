@@ -155,9 +155,27 @@ A program card implies "you can apply to this." Only model DIRECT-ENTRY programs
   its own admission), or an explicit "entered after first-year/after admission" note. This is a
   small product/UX decision — flag to decide, don't silently create misleading records.
 
-### Still to build (each needs full non-leading verification first)
-- TU Delft: Aerospace Engineering (English, direct-entry, numerus fixus). 
-- TU Munich: Aerospace (English) + Management & Technology (English option).
+### Aerospace fees VERIFIED (2026-10-14) — specs partially ready
+- **TU Delft Aerospace** (BSc, English, direct-entry, numerus fixus): non-EU institutional
+  **€19,906** (= CSE; Dutch fee II is program-wide), EU statutory **€2,694** ✓. Reuses Delft
+  categories (curriculum alevel/vwo/ib/us-hs-ap; residency eu-efta/non-eu/surinamese; stage
+  matching-selection). STILL TO VERIFY before build: Aerospace-specific prereqs (likely Maths
+  AND Physics — unlike CSE which is Maths-only; must confirm, don't assume), deadline (numerus
+  fixus 15 Jan), living figure.
+- **TU Munich Aerospace** (BSc, English, School of Engineering & Design): non-EU **€3,000/sem
+  = €6,000/yr** (2026-27, = Informatics) ✓ + €97/sem (€194/yr) student-union fee.
+  ⚠️ **VERIFIED fee-increase complication:** TUM raises non-EU bachelor tuition for **WS 2027/28
+  new entrants to €3,400/sem (€6,800/yr)** for engineering-tier (grandfathered for current
+  students). So a 2027-entry Aerospace/Informatics student pays €6,800/yr, not €6,000. This
+  also means the EXISTING Informatics costProfile (€6,000) is correct for 2026-27 entry but
+  STALE for 2027-28 entry. DECISION NEEDED: standardize TUM on 2026-27 (€6,000, current) or
+  2027-28 (€6,800, announced) entry — and apply consistently to BOTH Informatics and Aerospace.
+  Do not mix years silently. Living: existing Informatics uses €15,600/yr + Sperrkonto €11,904
+  (German visa proof-of-funds); reuse with source, don't invent a new range.
+
+### Still to build (each needs the above verified first)
+- TU Delft Aerospace (verify prereqs), TU Munich Aerospace (resolve fee-year), TUM Management &
+  Technology (English option — verify fee/admission; business family).
 - Toronto Economics + NYUAD majors: represent as post-admission (per rule above), not direct-entry.
 
 ## Honest scope note
