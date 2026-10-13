@@ -134,10 +134,31 @@ All values primary-source verified (non-leading), in `create_programs.py` as `to
 Caught + fixed a self-hallucination risk: initial spec had an unverified living range + IELTS score;
 both re-verified vs utoronto.ca before finalizing (the zero-hallucination discipline working).
 
+### Toronto Rotman Commerce (Business) — VERIFIED + spec ready (2026-10-14)
+`toronto-rotman` in create_programs.py. Direct-entry BCom. All verified non-leading:
+intl first-year CAD 66,110 + 2,100.29 incidental + 948 UHIP; prereqs English (ENG4U) +
+Calculus & Vectors (MCV4U, weighted); mid-high 80s avg; Supplemental Application (video+
+written); IELTS 6.5/6.0. ONLY the intl first-year fee included — upper-year "deregulated"
+fee NOT published/verified → flagged, not invented (#7). Run `--only toronto-rotman --execute`.
+First BUSINESS program in the dataset.
+
+### 🔴 CRITICAL modeling rule — direct-entry vs post-admission (don't hallucinate admission paths)
+A program card implies "you can apply to this." Only model DIRECT-ENTRY programs that way:
+- **Direct-entry (OK to model):** Oxford's courses, Toronto CS/Engineering/Rotman Commerce.
+- **POST-ADMISSION programs of study (do NOT model as direct-entry):**
+  - **Toronto Economics** — NOT direct from high school. You enter Arts & Science, take
+    ECO101/102 + first-year math, THEN apply to the Economics program on grades. Creating a
+    direct-entry Economics card would hallucinate an admission path that doesn't exist.
+  - **NYUAD majors (Econ/Business/Eng)** — unified holistic admission to NYUAD; major declared
+    later. Same issue + uniform cost.
+  Honest representation for these: a "majors available" list (not a direct-entry program with
+  its own admission), or an explicit "entered after first-year/after admission" note. This is a
+  small product/UX decision — flag to decide, don't silently create misleading records.
+
 ### Still to build (each needs full non-leading verification first)
-- Toronto: Rotman Commerce (BCom, competitive, Supp App Feb 1) + Economics (Arts&Sci).
-- TU Delft: Aerospace Engineering (English). TU Munich: Aerospace + Management & Technology.
-- NYUAD: Engineering/Economics/Business majors — UNIFORM cost+admission (model last, lightly).
+- TU Delft: Aerospace Engineering (English, direct-entry, numerus fixus). 
+- TU Munich: Aerospace (English) + Management & Technology (English option).
+- Toronto Economics + NYUAD majors: represent as post-admission (per rule above), not direct-entry.
 
 ## Honest scope note
 Step 2 (create ~11 programs, each = program + per-curriculum admissions + residency-tiered

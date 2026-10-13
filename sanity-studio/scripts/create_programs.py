@@ -158,6 +158,71 @@ PROGRAMS = {
             "notes": "U of T general English requirement; not Engineering-specific. Verified vs future.utoronto.ca/english-language-requirements.",
         },
     },
+    "toronto-rotman": {
+        "uni": "ca-university-of-toronto",
+        "prog_suffix": "bcom-rotman-commerce",
+        "program_name": "Commerce (Rotman Commerce)",
+        "field_of_study": "Business",
+        "degree_type": "BCom",
+        "degree_type_local": "Bachelor of Commerce (BCom), Rotman Commerce within the Faculty of Arts & Science; "
+        "specialist programs in Finance & Economics, Accounting, or Management",
+        "duration_value": 4, "duration_unit": "years", "language": ["en"],
+        "faculty": "Rotman Commerce (Faculty of Arts & Science)",
+        "url": "https://rotmancommerce.utoronto.ca/future-students/",
+        "platform": "OUAC", "decision_year": "2026-27 cycle, Fall 2027 entry",
+        "application_requirements": [
+            {"_key": "r1", "_type": "applicationRequirement", "name": "OUAC application",
+             "necessity": "required", "requirement_type": "form", "description": "", "notes": "Ontario Universities' Application Centre."},
+            {"_key": "r2", "_type": "applicationRequirement", "name": "Rotman Commerce Supplemental Application",
+             "necessity": "required", "requirement_type": "other",
+             "description": "Written + video responses considered with the academic record.",
+             "notes": "Recommended by Dec 1, 2026; main application deadline Jan 15, 2027."},
+        ],
+        "sources": {
+            "adm": {
+                "suffix": "src-rotman-adm",
+                "title": "Rotman Commerce -- Future Students admission requirements (Ontario / outside Ontario), U of T",
+                "url": "https://rotmancommerce.utoronto.ca/future-students/ontario-applicants/",
+                "excerpt": "Six Grade 12 U/M incl English (ENG4U) and Calculus & Vectors (MCV4U; special attention). "
+                "Outside Ontario: senior English + a calculus course (incl AP Calculus). Overall grade 11/12 average in the mid-high 80s+ recommended. Rotman Commerce Supplemental Application required.",
+            },
+            "fee": {
+                "suffix": "src-rotman-fee",
+                "title": "Rotman Commerce -- tuition & fees for international students, U of T (2026-27)",
+                "url": "https://rotmancommerce.utoronto.ca/current-students/international-student-welcome-guide/tuition-fees-scholarships-for-international-students/",
+                "excerpt": "International first-year program fee CAD 66,110 + 2,100.29 incidental + 948 UHIP. "
+                "From year two, Rotman Commerce charges a higher 'deregulated' program fee.",
+            },
+        },
+        "admissions": [
+            {"suffix": "ontario-ossd", "cat": "curriculum-ontario-ossd", "curriculum": "Ontario Secondary School Diploma (OSSD), 4U/M",
+             "threshold": "Six 4U/M courses; overall grade 11/12 average in the mid-high 80s+ recommended; MCV4U weighted heavily",
+             "subjects": ["English (ENG4U)", "Calculus & Vectors (MCV4U)", "four additional 4U/M"]},
+            {"suffix": "a-level", "cat": "curriculum-a-level", "curriculum": "GCE A-Level",
+             "threshold": "Senior-level English and a Calculus course; competitive grades (mid-high 80s+ equivalent)",
+             "subjects": ["English", "Mathematics (Calculus)"]},
+            {"suffix": "ib", "cat": "curriculum-ib", "curriculum": "International Baccalaureate",
+             "threshold": "English and HL/SL Mathematics with calculus; competitive grades",
+             "subjects": ["English", "Mathematics (with calculus)"]},
+            {"suffix": "us", "cat": "curriculum-us", "curriculum": "US High School / AP",
+             "threshold": "Senior English and a calculus course (e.g. AP Calculus); competitive grades",
+             "subjects": ["English", "Calculus (e.g. AP Calculus)"]},
+        ],
+        "costs": [
+            {"suffix": "international", "cat": "residency-international", "tuition": 66110,
+             "basis": "institutional", "year": "2026-27", "mandatory_fees_annual": 3048.29,
+             "note": "International FIRST-YEAR program fee (matches Arts & Science); + 2,100.29 incidental + 948 UHIP. "
+             "From year two Rotman Commerce charges a higher 'deregulated' fee (not published here; verify per year)."},
+        ],
+        "living": {"min": 1500, "max": 2500, "currency": "CAD", "admin_body": "University of Toronto",
+                   "desc": "U of T estimates ~CAD 2,000/month total living expenses; residence + meal CAD 15,167-24,910/yr."},
+        "currency": "CAD",
+        "lang_req": {
+            "test_name": "IELTS Academic (or accepted equivalent) unless exempt",
+            "min_score": "IELTS Academic 6.5 overall, no band below 6.0 (per U of T English Language Requirements), unless exempt.",
+            "notes": "U of T general English requirement. Verified vs future.utoronto.ca/english-language-requirements.",
+        },
+    },
 }
 
 
