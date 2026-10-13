@@ -16,10 +16,10 @@ Legend: ✅ verified vs primary source · 🟡 exists, unverified · 🔴 missin
 | Application **deadlines** | ✅ | ✅ | ✅ | ✅ | ✅ (✏️ year) |
 | Language of instruction | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Admissions requirements (per curriculum) | ✅ | ✅ | ✅(✏️) | ✅ | 🟡 |
-| Tests (SAT/ACT/English/admissions) | ✅ | 🟡 | 🟡 | 🟡 | 🟡 |
-| Required documents | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
-| Scholarships (eligibility/award/conditions) | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
-| Financial aid | 🟡 | 🔴 | 🔴 | 🔴 | 🔴 |
+| Tests (SAT/ACT/English/admissions) | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Required documents | ✅ | ✅ | ✅ | 🔴 | ✅(✏️) |
+| Scholarships (eligibility/award/conditions) | ✅ | ✅ | ✅ | ✏️🔴 | ✅ |
+| Financial aid | ✅ | ✅(Home) | ✅(dom) | 🔴 none for BSc | ✅ |
 | Programs beyond CS (Eng/Business/Econ) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
 
 ## A2.1 — Application deadlines (verified 2026-10-13)
@@ -62,7 +62,52 @@ Language of instruction confirmed all 5: Oxford/NYUAD/Toronto = English; TU Delf
    Calculus equivalent) — currently empty; a CS applicant needs it. OSSD record already correct.
 5. **TU Delft** enrich: IB = Maths AA HL; US = Calculus A/B or B/C (published, useful for Discover/Analyze).
 
-## Next categories (A2.3+)
-- A2.3 Tests + required documents — verify all 5.
+## A2.3 — Tests + documents (verified 2026-10-13)
+
+| Uni | Tests | Documents | Verdict |
+|---|---|---|---|
+| Oxford | TMUA required | UCAS, TMUA, Interview (≥2 colleges) | ✅ |
+| NYUAD | test-optional (SAT/ACT recommended) | Common App + school report/STARS/rec/profile/essay/candidate weekend | ✅ |
+| Toronto | none (correct) | OUAC (TAD) + CS Supplemental Application | ✅ |
+| TU Munich | none (correct) | TUMonline + uni-assist VPD + HZB + CV | ✅ ✏️ **VPD mis-typed `financial_document` → should be credential/other** |
+| TU Delft | none | **EMPTY** — no application docs/platform on the program record | 🔴 **gap: add Studielink registration + numerus-fixus selection/matching steps** |
+
+### A2.3 corrections to apply
+6. **TU Munich** VPD requirement_type: `financial_document` → correct type (credential pre-assessment / other).
+7. **TU Delft** application_requirements: add Studielink registration + CSE Matching & Selection (numerus fixus) steps (currently empty).
+
+## A2.4 — Scholarships + aid (verified 2026-10-13)
+
+| Scholarship | Covers | Verdict |
+|---|---|---|
+| Sheikh MBZ (NYUAD) | NYUAD | ✅ 100% tuition+fees, guaranteed for eligible Emiratis; HUMAN_REVIEW eligibility conflict (mother vs mother-or-father) already surfaced |
+| Oxford Bursary | Oxford | ✅ income-banded (£4,480→£1,120), **GUARANTEED** for Home/UK students — NOT international |
+| Reach Oxford | Oxford | ✅ fees+living+airfare, competitive, for low-income-country international students |
+| Lester B. Pearson | Toronto | ✅ international full-ride, highly competitive (✏️ award_amount null — should state full-ride) |
+| National Scholarship | Toronto | ✅ **domestic** (Canadian/PR), competitive |
+| Deutschlandstipendium | TUM | ✅ €300/mo, competitive, open to BSc international |
+| Holland/NL Scholarship | TU Delft | 🟡 €5,000 one-time non-EEA; **CONFLICT** (applicability to Delft BSc) already surfaced |
+| **Justus & Louise van Effen** | TU Delft | 🔴 **MASTER'S-ONLY — wrongly matched to the BSc program.** Official: "no scholarships/aid for Bachelor applicants… not eligible if you are a TU Delft bachelor's student." MUST exclude from BSc matching. |
+
+**Key findings:**
+- **van Effen is MSc-only** and must not show for the BSc applicant (critical eligibility error).
+- **TU Delft has NO institutional bachelor scholarships** — honest "no guaranteed funding" signal for a student (only the uncertain NL Scholarship).
+- Guaranteed-vs-competitive (Suhail's standard): GUARANTEED = Oxford Bursary (income), Sheikh MBZ (eligible Emiratis); COMPETITIVE = Pearson, Reach, National, Deutschlandstipendium. Worth surfacing this distinction in the app.
+
+### A2.4 corrections to apply
+8. **van Effen**: exclude from BSc TU Delft matching (mark postgraduate-only; app should
+   filter scholarships by the program's degree level). CRITICAL.
+9. **Pearson / National**: populate award_amount (full-ride description) — currently null.
+10. Consider a guaranteed-vs-competitive flag surfaced in the Scholarships UI.
+
+---
+## ✅ Phase A2 (verify EXISTING data) COMPLETE for the 5 — all 4 categories done.
+Zero hallucinated facts found. Issues are staleness/completeness/eligibility-match:
+TUM deadline stale, Toronto A-Level subjects empty, TU Delft app-docs empty + TUM VPD
+mistyped, **van Effen MSc-only wrongly matched to BSc**. 10 corrections batched.
+Remaining Phase A: A3 (add Engineering/Business/Economics programs) + A4 (surface in app)
++ apply the 10 corrections (one Sanity write session).
+
+## Next categories (archived)
 - A2.4 Scholarships (eligibility/award/deadline/conditions) + aid — verify all 5.
 - A3 Programs: add Engineering/Business/Economics per uni (same bar).
