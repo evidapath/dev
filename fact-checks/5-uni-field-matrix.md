@@ -14,8 +14,8 @@ Legend: ✅ verified vs primary source · 🟡 exists, unverified · 🔴 missin
 |---|---|---|---|---|---|
 | Fees / tuition / cost (intl + domestic) | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Application **deadlines** | ✅ | ✅ | ✅ | ✅ | ✅ (✏️ year) |
-| Language of instruction | ✅ | 🟡 | 🟡 | ✅ | ✅ |
-| Admissions requirements (per curriculum) | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
+| Language of instruction | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Admissions requirements (per curriculum) | ✅ | ✅ | ✅(✏️) | ✅ | 🟡 |
 | Tests (SAT/ACT/English/admissions) | ✅ | 🟡 | 🟡 | 🟡 | 🟡 |
 | Required documents | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
 | Scholarships (eligibility/award/conditions) | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
@@ -44,8 +44,25 @@ future.utoronto.ca/program/computer-science + /deadlines;
 tudelft.nl/.../from-application-to-enrollment/application-procedure;
 tum.de/.../application/dates-and-deadlines + /detail/informatics-bachelor-of-science-bsc.
 
-## Next categories (A2.2+)
-- A2.2 Admissions requirements per curriculum (grades/subjects) + language — verify all 5.
+## A2.2 — Admissions requirements + language (verified 2026-10-13)
+
+Verified the A-Level curriculum record + language per uni (the shared international route):
+| Uni | Stored A-Level req | Primary source | Verdict |
+|---|---|---|---|
+| Oxford | A*AA incl Maths; Further Maths rec; TMUA; IELTS 7.5/7.0 | ox.ac.uk CS admissions | ✅ EXACT |
+| NYUAD | holistic, no subject reqs; test-optional; English benchmarks | nyuad entry-requirements | ✅ (prior) |
+| TU Delft | Maths required; **Physics NOT required**; EN track | tudelft.nl admission-requirements | ✅ EXACT (incl. correctly NOT requiring Physics; bonus: 6 GCE A-C / 3 A-levels A-C, IB Maths AA HL, US Calculus) |
+| TU Munich | 3 A-Levels grade C, nat-sci subjects (Maths/Bio/Chem/Phys/CS); German DSH-2/C1 | daad.de GCE + tum.de language | 🟡 sourced to DAAD (authoritative for German entry) — accept |
+| Toronto | **A-Level record EMPTY** (no subjects/threshold); OSSD record OK (Calculus MCV4U, English ENG4U); English C | future.utoronto.ca | ✏️ **A-Level curriculum record needs Maths/Calculus-equivalent requirement added** (OSSD record is fine) |
+
+Language of instruction confirmed all 5: Oxford/NYUAD/Toronto = English; TU Delft = Dutch+English (English track fully in English); TU Munich = German (proficiency required).
+
+### A2.2 correction/enrichment to apply
+4. **Toronto** A-Level admissionsRequirement: add required subject (Mathematics /
+   Calculus equivalent) — currently empty; a CS applicant needs it. OSSD record already correct.
+5. **TU Delft** enrich: IB = Maths AA HL; US = Calculus A/B or B/C (published, useful for Discover/Analyze).
+
+## Next categories (A2.3+)
 - A2.3 Tests + required documents — verify all 5.
 - A2.4 Scholarships (eligibility/award/deadline/conditions) + aid — verify all 5.
 - A3 Programs: add Engineering/Business/Economics per uni (same bar).
