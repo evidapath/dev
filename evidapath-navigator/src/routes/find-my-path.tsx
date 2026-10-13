@@ -15,9 +15,10 @@ import {
   Scale,
   ChevronDown,
 } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { getUniversities } from "../lib/universities.functions";
-import { getProfile, upsertProfile } from "../lib/profile.functions";
+import { getProfile, upsertProfile, saveUniversity } from "../lib/profile.functions";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { DataStatus, StatusChip, PendingValue } from "../components/DataStatus";
@@ -122,6 +123,21 @@ function FindMyPathPage() {
       active = false;
     };
   }, [getProfileFn]);
+
+  // Save a pathway's university to the student's persisted path (Supabase).
+  const saveUniFn = useServerFn(saveUniversity);
+  const saveUni = (u: University) => {
+    saveUniFn({ data: { sanity_university_id: u.id, university_name: u.name } })
+      .then(() => toast.success(`${u.shortName} saved to your path.`))
+      .catch((err: Error) => {
+        console.error("[find-my-path] save university failed:", err);
+        toast.error(
+          /not authenticated/i.test(err?.message ?? "")
+            ? "Sign in to save universities to your path."
+            : "Could not save — please try again.",
+        );
+      });
+  };
 
   const set = (k: keyof IntakeAnswers, v: string) => setAnswers((a) => ({ ...a, [k]: v }));
 
@@ -313,11 +329,14 @@ function FindMyPathPage() {
                           Explore this option <ArrowRight className="w-3 h-3" />
                         </Button>
                       </Link>
-                      <Link to="/sign-in">
-                        <Button size="sm" variant="outline" className="border-border text-xs">
-                          <Save className="w-3 h-3" /> Save
-                        </Button>
-                      </Link>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="border-border text-xs"
+                        onClick={() => saveUni(u)}
+                      >
+                        <Save className="w-3 h-3" /> Save
+                      </Button>
                       <Link to="/compare-offers">
                         <Button size="sm" variant="outline" className="border-border text-xs">
                           <Scale className="w-3 h-3" /> Compare
