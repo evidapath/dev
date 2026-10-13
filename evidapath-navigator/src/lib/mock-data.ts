@@ -60,6 +60,11 @@ export interface University {
     subjects: string[];
     tests: string[];
   }[];
+  // Per-program detail (one entry per program). Lets the UI offer a program
+  // selector so a student sees THAT program's own cost + admissions rather than
+  // a single university-wide view (Suhail: program-specific, not university-wide).
+  // The flat fields above mirror the featured (CS/first) program for compatibility.
+  programDetails?: ProgramView[];
   evidenceConfidence: string;
   lastVerified: string;
   officialSourceUrl: string;
@@ -69,6 +74,28 @@ export interface University {
     admitProfileDetail: string;
     uncertaintyNote: string;
   };
+}
+
+export interface ProgramView {
+  name: string;
+  fieldOfStudy: string;
+  degree: string;
+  durationYears: number;
+  costs: {
+    tuitionPerYear: number | null;
+    livingPerYear: number | null;
+    mandatoryFees: number | null;
+    currency: string;
+    totalAnnual: number | null;
+    totalDegree: number | null;
+  };
+  costResidencyNote?: string;
+  admissionsByCurriculum: {
+    curriculum: string;
+    threshold: string | null;
+    subjects: string[];
+    tests: string[];
+  }[];
 }
 
 export interface Scholarship {

@@ -14,7 +14,7 @@
 //     otherwise it stays null ("pending") rather than showing a partial total.
 //   - any field with no verified value stays null / "Pending verified data".
 
-import type { University, Scholarship } from "./mock-data";
+import type { University, Scholarship, ProgramView } from "./mock-data";
 
 const PROJECT =
   process.env["SANITY_PROJECT_ID"] || import.meta.env["SANITY_PROJECT_ID"] || "jxwrtsiz";
@@ -190,41 +190,19 @@ function confidenceLabel(universityId: string, sanityVerified: boolean | null): 
     : "Verification in progress";
 }
 
-function adapt(u: SanityUniversity): University {
-  // Feature Computer Science as the headline program when present (keeps the
-  // current display stable as more programs are added), else the first by name.
-  // ponytail: the Universities card is single-program; a program selector is the
-  // real fix once multiple programs per uni exist (see docs/a3-program-offerings.md).
-  const progs = u.programs || [];
-  const program = progs.find((p) => p.field_of_study === "Computer Science") || progs[0];
-  const { chosen: cost, note: costResidencyNote } = selectCost(program?.costs ?? null);
-
+// Build the self-contained view (cost + duration + admissions) for ONE program.
+// Used both for each entry of programDetails[] and for the featured flat fields.
+function buildProgramView(p: SanityProgram, countryCurrency: string | null): ProgramView {
+  const { chosen: cost, note } = selectCost(p.costs ?? null);
   const tuition = cost?.tuition_annual ?? null;
   const fees = cost?.mandatory_fees_annual ?? null;
   const living = cost?.estimated_living_costs_annual ?? null;
-  const currency = cost?.currency || u.countryCurrency || "";
-
-  // Only emit a total when the full cost picture is known (#7: no partial total
-  // masquerading as complete). tuition may legitimately be 0 (tuition-free).
+  const currency = cost?.currency || countryCurrency || "";
   const complete = tuition != null && fees != null && living != null;
   const totalAnnual = complete ? tuition + fees + living : null;
-  const years = durationYears(program);
+  const years = durationYears(p);
   const totalDegree = totalAnnual != null && years > 0 ? totalAnnual * years : null;
-
-  const aliases = u.aliases || [];
-  const shortName = aliases[aliases.length - 1] || u.canonical_name;
-
-  // Verified deadlines + per-curriculum admissions (surfaced only when present).
-  const deadlines = (u.deadlines || [])
-    .filter((d) => d.application_deadline)
-    .map((d) => ({
-      label: prettyType(d.plan_type),
-      deadline: d.application_deadline,
-      decisionDate: d.decision_release_date,
-      binding: d.binding,
-      platform: d.application_platform,
-    }));
-  const admissionsByCurriculum = (program?.admissions || [])
+  const admissionsByCurriculum = (p.admissions || [])
     .filter((a) => a.curriculum_type)
     .map((a) => ({
       curriculum: a.curriculum_type as string,
@@ -233,6 +211,64 @@ function adapt(u: SanityUniversity): University {
       tests: (a.tests || [])
         .filter((t) => t.test_name && t.required !== "not_required")
         .map((t) => `${t.test_name}${t.required ? ` (${t.required})` : ""}`),
+    }));
+  return {
+    name: p.program_name || "Program",
+    fieldOfStudy: p.field_of_study || "",
+    degree: p.degree_type || "",
+    durationYears: years,
+    costs: {
+      tuitionPerYear: tuition,
+      livingPerYear: living,
+      mandatoryFees: fees,
+      currency,
+      totalAnnual,
+      totalDegree,
+    },
+    ...(note ? { costResidencyNote: note } : {}),
+    admissionsByCurriculum,
+  };
+}
+
+function adapt(u: SanityUniversity): University {
+  const progs = u.programs || [];
+  // Feature Computer Science as the headline program when present (keeps display
+  // stable as programs are added); programDetails[] carries all for the selector.
+  const featuredIdx = Math.max(
+    0,
+    progs.findIndex((p) => p.field_of_study === "Computer Science"),
+  );
+  const built = progs.map((p) => buildProgramView(p, u.countryCurrency));
+  // Put the featured (CS) program first so programDetails[0] is the headline and
+  // the UI selector can default to index 0.
+  const programDetails =
+    built.length > 1 && featuredIdx > 0
+      ? [built[featuredIdx]!, ...built.filter((_, i) => i !== featuredIdx)]
+      : built;
+  const featured = programDetails[0];
+
+  const tuition = featured?.costs.tuitionPerYear ?? null;
+  const fees = featured?.costs.mandatoryFees ?? null;
+  const living = featured?.costs.livingPerYear ?? null;
+  const currency = featured?.costs.currency || u.countryCurrency || "";
+  const totalAnnual = featured?.costs.totalAnnual ?? null;
+  const years = featured?.durationYears ?? 0;
+  const totalDegree = featured?.costs.totalDegree ?? null;
+  const costResidencyNote = featured?.costResidencyNote;
+  const admissionsByCurriculum = featured?.admissionsByCurriculum ?? [];
+
+  const aliases = u.aliases || [];
+  const shortName = aliases[aliases.length - 1] || u.canonical_name;
+
+  // Verified deadlines (surfaced only when present).
+  const deadlines = (u.deadlines || [])
+    .filter((d) => d.application_deadline)
+    .map((d) => ({
+      label: prettyType(d.plan_type),
+      deadline: d.application_deadline,
+      decisionDate: d.decision_release_date,
+      binding: d.binding,
+      platform: d.application_platform,
     }));
 
   return {
@@ -270,6 +306,7 @@ function adapt(u: SanityUniversity): University {
     ...(costResidencyNote ? { costResidencyNote } : {}),
     ...(deadlines.length ? { deadlines } : {}),
     ...(admissionsByCurriculum.length ? { admissionsByCurriculum } : {}),
+    ...(programDetails.length > 1 ? { programDetails } : {}),
     evidenceConfidence: confidenceLabel(u.id, u.evidapath_verified),
     lastVerified: u.last_verified || "Not yet verified",
     officialSourceUrl: u.official_website || "",

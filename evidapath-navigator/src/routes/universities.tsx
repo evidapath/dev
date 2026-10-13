@@ -140,171 +140,194 @@ function UniversitiesDirectoryPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((univ) => (
-            <div
-              key={univ.id}
-              className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between space-y-6 hover:border-primary/40 transition-all"
-            >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-3xl">{univ.flag}</span>
-                  <span className="text-xs font-mono font-semibold bg-secondary px-2.5 py-0.5 rounded text-foreground">
-                    {univ.durationYears > 0
-                      ? `${univ.durationYears}-Year Degree`
-                      : "Duration pending"}
-                  </span>
-                </div>
-
-                <div>
-                  <h3 className="font-display font-bold text-lg text-foreground">{univ.name}</h3>
-                  <p className="text-xs text-muted-foreground flex items-center gap-1 mt-0.5">
-                    <MapPin className="w-3 h-3 text-muted-foreground" />
-                    {univ.city}, {univ.country}
-                  </p>
-                </div>
-
-                {/* Cost & Requirements Table */}
-                <div className="bg-secondary/40 rounded-xl p-3.5 border border-border space-y-2 text-xs">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Academic Threshold:</span>
-                    <span className="font-medium text-muted-foreground text-right">
-                      {univ.academicRequirements.target}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Tuition / year:</span>
-                    <span className="font-mono font-medium text-muted-foreground">
-                      {formatCost(univ.costs.tuitionPerYear, univ.costs.currency)}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Living / year (Est):</span>
-                    <span className="font-mono font-medium text-muted-foreground">
-                      {formatCost(univ.costs.livingPerYear, univ.costs.currency)}
-                    </span>
-                  </div>
-                  <div className="flex justify-between pt-1 border-t border-border/60">
-                    <span className="text-muted-foreground font-semibold">
-                      Total Degree Outlay:
-                    </span>
-                    <span className="font-mono font-bold text-muted-foreground">
-                      {formatCost(univ.costs.totalDegree, univ.costs.currency)}
-                    </span>
-                  </div>
-                  {univ.costResidencyNote && (
-                    <p className="text-[10px] text-bronze pt-1 leading-snug">
-                      {univ.costResidencyNote}
-                    </p>
-                  )}
-                </div>
-
-                {/* Affordability Index & Evidence */}
-                <div className="space-y-2 text-xs">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Affordability Index:</span>
-                    <span className="font-semibold px-2 py-0.5 rounded text-[11px] bg-secondary text-muted-foreground">
-                      {univ.affordabilityIndex.category}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between text-[11px] text-muted-foreground pt-1">
-                    <span className="flex items-center gap-1">
-                      <span
-                        className={`inline-block w-1.5 h-1.5 rounded-full ${
-                          univ.evidenceConfidence.startsWith("Verified")
-                            ? "bg-primary"
-                            : "bg-bronze"
-                        }`}
-                      />
-                      <strong>{univ.evidenceConfidence}</strong>
-                    </span>
-                    <span>Verified: {univ.lastVerified}</span>
-                  </div>
-                </div>
-
-                {/* Verified admissions + deadlines (surfaced from Sanity) */}
-                {(univ.deadlines?.length || univ.admissionsByCurriculum?.length) && (
-                  <details className="text-xs border-t border-border/60 pt-2">
-                    <summary className="cursor-pointer text-primary font-semibold select-none">
-                      Admissions & deadlines
-                    </summary>
-                    <div className="mt-2 space-y-3">
-                      {univ.deadlines && univ.deadlines.length > 0 && (
-                        <div className="space-y-1">
-                          <p className="text-[10px] uppercase font-semibold text-muted-foreground">
-                            Application deadlines
-                          </p>
-                          {univ.deadlines.map((d, i) => (
-                            <div
-                              key={i}
-                              className="flex justify-between gap-2 text-muted-foreground"
-                            >
-                              <span>
-                                {d.label}
-                                {d.binding ? " (binding)" : ""}
-                              </span>
-                              <span className="font-mono text-right">
-                                {(d.deadline ?? "").slice(0, 10)}
-                                {d.decisionDate ? ` · decision ${d.decisionDate.slice(0, 10)}` : ""}
-                              </span>
-                            </div>
-                          ))}
-                          {univ.deadlines[0]?.platform && (
-                            <p className="text-[10px] text-muted-foreground">
-                              via {univ.deadlines[0].platform}
-                            </p>
-                          )}
-                        </div>
-                      )}
-                      {univ.admissionsByCurriculum && univ.admissionsByCurriculum.length > 0 && (
-                        <div className="space-y-1.5">
-                          <p className="text-[10px] uppercase font-semibold text-muted-foreground">
-                            Entry requirements by qualification
-                          </p>
-                          {univ.admissionsByCurriculum.map((a, i) => (
-                            <div key={i} className="rounded bg-secondary/40 p-2 space-y-0.5">
-                              <p className="font-semibold text-foreground">{a.curriculum}</p>
-                              {a.threshold && (
-                                <p className="text-muted-foreground">{a.threshold}</p>
-                              )}
-                              {a.subjects.length > 0 && (
-                                <p className="text-muted-foreground">
-                                  Subjects: {a.subjects.join("; ")}
-                                </p>
-                              )}
-                              {a.tests.length > 0 && (
-                                <p className="text-muted-foreground">Tests: {a.tests.join(", ")}</p>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </details>
-                )}
-              </div>
-
-              <div className="pt-4 border-t border-border flex items-center justify-between">
-                <Link to="/find-my-path">
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="border-border text-foreground hover:bg-secondary text-xs"
-                  >
-                    Would this work for you?
-                  </Button>
-                </Link>
-                <Link to="/find-my-path">
-                  <Button
-                    size="sm"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
-                  >
-                    Analyze My Fit →
-                  </Button>
-                </Link>
-              </div>
-            </div>
+            <UniversityCard key={univ.id} univ={univ} />
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
+// One university card. When the university has multiple programs (programDetails),
+// shows a program selector so the student sees THAT program's own cost + admissions
+// (Suhail: program-specific, not university-wide). Falls back to the flat fields for
+// single-program universities.
+function UniversityCard({ univ }: { univ: University }) {
+  const details = univ.programDetails;
+  const [sel, setSel] = useState(0);
+  const pv = details?.[sel];
+
+  // Displayed values: the selected program view when present, else the flat fields.
+  const costs = pv?.costs ?? univ.costs;
+  const durationYears = pv?.durationYears ?? univ.durationYears;
+  const residencyNote = pv?.costResidencyNote ?? univ.costResidencyNote;
+  const admissions = pv?.admissionsByCurriculum ?? univ.admissionsByCurriculum;
+
+  return (
+    <div className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between space-y-6 hover:border-primary/40 transition-all">
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <span className="text-3xl">{univ.flag}</span>
+          <span className="text-xs font-mono font-semibold bg-secondary px-2.5 py-0.5 rounded text-foreground">
+            {durationYears > 0 ? `${durationYears}-Year Degree` : "Duration pending"}
+          </span>
+        </div>
+
+        <div>
+          <h3 className="font-display font-bold text-lg text-foreground">{univ.name}</h3>
+          <p className="text-xs text-muted-foreground flex items-center gap-1 mt-0.5">
+            <MapPin className="w-3 h-3 text-muted-foreground" />
+            {univ.city}, {univ.country}
+          </p>
+        </div>
+
+        {/* Program selector (only when the university has more than one program) */}
+        {details && details.length > 1 && (
+          <div>
+            <label className="block text-[10px] uppercase font-semibold text-muted-foreground mb-1">
+              Program
+            </label>
+            <select
+              value={sel}
+              onChange={(e) => setSel(Number(e.target.value))}
+              className="w-full h-9 px-2 rounded-lg border border-input bg-background text-xs text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
+            >
+              {details.map((p, i) => (
+                <option key={i} value={i}>
+                  {p.name}
+                  {p.degree ? ` (${p.degree})` : ""}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        {/* Cost & Requirements Table */}
+        <div className="bg-secondary/40 rounded-xl p-3.5 border border-border space-y-2 text-xs">
+          <div className="flex justify-between">
+            <span className="text-muted-foreground">Academic Threshold:</span>
+            <span className="font-medium text-muted-foreground text-right">
+              {univ.academicRequirements.target}
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-muted-foreground">Tuition / year:</span>
+            <span className="font-mono font-medium text-muted-foreground">
+              {formatCost(costs.tuitionPerYear, costs.currency)}
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-muted-foreground">Living / year (Est):</span>
+            <span className="font-mono font-medium text-muted-foreground">
+              {formatCost(costs.livingPerYear, costs.currency)}
+            </span>
+          </div>
+          <div className="flex justify-between pt-1 border-t border-border/60">
+            <span className="text-muted-foreground font-semibold">Total Degree Outlay:</span>
+            <span className="font-mono font-bold text-muted-foreground">
+              {formatCost(costs.totalDegree, costs.currency)}
+            </span>
+          </div>
+          {residencyNote && (
+            <p className="text-[10px] text-bronze pt-1 leading-snug">{residencyNote}</p>
+          )}
+        </div>
+
+        {/* Affordability Index & Evidence */}
+        <div className="space-y-2 text-xs">
+          <div className="flex justify-between items-center">
+            <span className="text-muted-foreground">Affordability Index:</span>
+            <span className="font-semibold px-2 py-0.5 rounded text-[11px] bg-secondary text-muted-foreground">
+              {univ.affordabilityIndex.category}
+            </span>
+          </div>
+          <div className="flex items-center justify-between text-[11px] text-muted-foreground pt-1">
+            <span className="flex items-center gap-1">
+              <span
+                className={`inline-block w-1.5 h-1.5 rounded-full ${
+                  univ.evidenceConfidence.startsWith("Verified") ? "bg-primary" : "bg-bronze"
+                }`}
+              />
+              <strong>{univ.evidenceConfidence}</strong>
+            </span>
+            <span>Verified: {univ.lastVerified}</span>
+          </div>
+        </div>
+
+        {/* Verified admissions + deadlines (surfaced from Sanity) */}
+        {(univ.deadlines?.length || admissions?.length) && (
+          <details className="text-xs border-t border-border/60 pt-2">
+            <summary className="cursor-pointer text-primary font-semibold select-none">
+              Admissions & deadlines
+            </summary>
+            <div className="mt-2 space-y-3">
+              {univ.deadlines && univ.deadlines.length > 0 && (
+                <div className="space-y-1">
+                  <p className="text-[10px] uppercase font-semibold text-muted-foreground">
+                    Application deadlines
+                  </p>
+                  {univ.deadlines.map((d, i) => (
+                    <div key={i} className="flex justify-between gap-2 text-muted-foreground">
+                      <span>
+                        {d.label}
+                        {d.binding ? " (binding)" : ""}
+                      </span>
+                      <span className="font-mono text-right">
+                        {(d.deadline ?? "").slice(0, 10)}
+                        {d.decisionDate ? ` · decision ${d.decisionDate.slice(0, 10)}` : ""}
+                      </span>
+                    </div>
+                  ))}
+                  {univ.deadlines[0]?.platform && (
+                    <p className="text-[10px] text-muted-foreground">
+                      via {univ.deadlines[0].platform}
+                    </p>
+                  )}
+                </div>
+              )}
+              {admissions && admissions.length > 0 && (
+                <div className="space-y-1.5">
+                  <p className="text-[10px] uppercase font-semibold text-muted-foreground">
+                    Entry requirements by qualification
+                  </p>
+                  {admissions.map((a, i) => (
+                    <div key={i} className="rounded bg-secondary/40 p-2 space-y-0.5">
+                      <p className="font-semibold text-foreground">{a.curriculum}</p>
+                      {a.threshold && <p className="text-muted-foreground">{a.threshold}</p>}
+                      {a.subjects.length > 0 && (
+                        <p className="text-muted-foreground">Subjects: {a.subjects.join("; ")}</p>
+                      )}
+                      {a.tests.length > 0 && (
+                        <p className="text-muted-foreground">Tests: {a.tests.join(", ")}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </details>
+        )}
+      </div>
+
+      <div className="pt-4 border-t border-border flex items-center justify-between">
+        <Link to="/find-my-path">
+          <Button
+            size="sm"
+            variant="outline"
+            className="border-border text-foreground hover:bg-secondary text-xs"
+          >
+            Would this work for you?
+          </Button>
+        </Link>
+        <Link to="/find-my-path">
+          <Button
+            size="sm"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
+          >
+            Analyze My Fit →
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }
