@@ -123,10 +123,21 @@ Programs differ in whether cost/admission are program-specific. Model each hones
 - **TU Delft / TU Munich** — Aerospace is a distinct English program; verify its own
   fees (likely same statutory/institutional tiers as CSE but confirm, don't assume).
 
-### Verified-so-far for the next builds (partial — complete before creating records)
-- Toronto Engineering international tuition CAD 72,860 + fees (2026-27) ✓ [one source; reconfirm].
-  Still needed: 3 residency tiers, admissions per curriculum (prereqs Calculus/Chem/Physics),
-  deadline, language — all to primary-source bar.
+### Toronto Engineering — FULLY VERIFIED + spec ready (2026-10-14)
+All values primary-source verified (non-leading), in `create_programs.py` as `toronto-eng`:
+- Intl tuition **CAD 72,860** + 2,266.83 incidental + 948 UHIP (= 3,214.83 fees) ✓
+- Domestic Ontario **CAD 14,460** + 2,266.83 incidental ✓ (2.4x Arts&Sci CS's 6,100 — program-specific!)
+- Prereqs: Calculus/Physics/Chemistry (Ontario MHF4U/MCV4U/SPH4U/SCH4U/ENG4U), min 70% each ✓
+- IELTS 6.5 overall, no band <6.0 ✓; living ~CAD 2,000/mo (U of T estimate) ✓
+- No standardized test (OSP supplementary profile instead); no reused admission stage (Eng ≠ CS admission)
+- Other-province domestic tier OMITTED (not verified — not invented; #7). Run `--only toronto-eng --execute`.
+Caught + fixed a self-hallucination risk: initial spec had an unverified living range + IELTS score;
+both re-verified vs utoronto.ca before finalizing (the zero-hallucination discipline working).
+
+### Still to build (each needs full non-leading verification first)
+- Toronto: Rotman Commerce (BCom, competitive, Supp App Feb 1) + Economics (Arts&Sci).
+- TU Delft: Aerospace Engineering (English). TU Munich: Aerospace + Management & Technology.
+- NYUAD: Engineering/Economics/Business majors — UNIFORM cost+admission (model last, lightly).
 
 ## Honest scope note
 Step 2 (create ~11 programs, each = program + per-curriculum admissions + residency-tiered

@@ -88,6 +88,76 @@ PROGRAMS = {
             "notes": "Oxford general ELR policy; exemptions for English-medium education/residency.",
         },
     },
+    "toronto-eng": {
+        "uni": "ca-university-of-toronto",
+        "prog_suffix": "basc-engineering",
+        "program_name": "Engineering (Applied Science)",
+        "field_of_study": "Engineering",
+        "degree_type": "BASc",
+        "degree_type_local": "Bachelor of Applied Science (BASc), Faculty of Applied Science & Engineering; "
+        "first-year common/stream entry (Core-8 programs, Engineering Science, TrackOne)",
+        "duration_value": 4, "duration_unit": "years", "language": ["en"],
+        "faculty": "Faculty of Applied Science & Engineering",
+        "url": "https://discover.engineering.utoronto.ca/",
+        "platform": "OUAC", "decision_year": "2026-27 cycle, Fall 2027 entry",
+        # No standardized admissions test (Canada); provide explicit application_requirements.
+        "application_requirements": [
+            {"_key": "r1", "_type": "applicationRequirement", "name": "OUAC application",
+             "necessity": "required", "requirement_type": "form", "description": "", "notes": "Ontario Universities' Application Centre."},
+            {"_key": "r2", "_type": "applicationRequirement", "name": "Online Student Profile (OSP)",
+             "necessity": "required", "requirement_type": "other",
+             "description": "Mandatory supplementary profile (written + video components).", "notes": ""},
+        ],
+        "sources": {
+            "adm": {
+                "suffix": "src-eng-adm",
+                "title": "Admission Requirements -- Faculty of Applied Science & Engineering, U of T",
+                "url": "https://engineering.calendar.utoronto.ca/admission-requirements",
+                "excerpt": "Prerequisites: senior-level Calculus, Physics and Chemistry (Ontario: MHF4U, MCV4U, "
+                "SPH4U, SCH4U, ENG4U + one). Minimum 70% in each prerequisite; Online Student Profile required; no standardized test.",
+            },
+            "fee": {
+                "suffix": "src-eng-fee",
+                "title": "Finances -- Future Engineering Undergraduates, U of T (2026-27)",
+                "url": "https://discover.engineering.utoronto.ca/finances/",
+                "excerpt": "International tuition CAD 72,860 + 2,266.83 incidental + 948 UHIP (2026-27). "
+                "Domestic Ontario tuition CAD 14,460 + 2,266.83 incidental.",
+            },
+        },
+        "admissions": [
+            {"suffix": "ontario-ossd", "cat": "curriculum-ontario-ossd", "curriculum": "Ontario Secondary School Diploma (OSSD), 4U/M",
+             "threshold": "Six 4U/M courses; minimum 70% in each prerequisite (Faculty selects competitively on the whole profile)",
+             "subjects": ["English (ENG4U)", "Advanced Functions (MHF4U)", "Calculus & Vectors (MCV4U)",
+                          "Chemistry (SCH4U)", "Physics (SPH4U)", "one additional 4U/M"]},
+            {"suffix": "a-level", "cat": "curriculum-a-level", "curriculum": "GCE A-Level",
+             "threshold": "Senior-level Mathematics (with Calculus), Physics and Chemistry; competitive grades (prerequisite minimum 70% equivalent)",
+             "subjects": ["Mathematics (Calculus)", "Physics", "Chemistry"]},
+            {"suffix": "ib", "cat": "curriculum-ib", "curriculum": "International Baccalaureate",
+             "threshold": "HL Mathematics, Physics and Chemistry; competitive grades",
+             "subjects": ["Mathematics (HL)", "Physics (HL)", "Chemistry (HL)"]},
+            {"suffix": "us", "cat": "curriculum-us", "curriculum": "US High School / AP",
+             "threshold": "Senior-level Calculus, Physics and Chemistry (AP Calculus/Physics/Chemistry); competitive grades",
+             "subjects": ["Calculus", "Physics", "Chemistry"]},
+        ],
+        # No single admission stage (Engineering admission differs from CS); omit stage.
+        "costs": [
+            {"suffix": "domestic-ontario", "cat": "residency-domestic-ontario", "tuition": 14460,
+             "basis": "statutory", "year": "2026-27", "mandatory_fees_annual": 2266.83,
+             "note": "Ontario-resident regulated Engineering tuition 2026-27 (markedly higher than Arts & Science's CAD 6,100)."},
+            {"suffix": "international", "cat": "residency-international", "tuition": 72860,
+             "basis": "institutional", "year": "2026-27", "mandatory_fees_annual": 3214.83,
+             "note": "International Engineering tuition 2026-27: CAD 72,860 + 2,266.83 incidental + 948 UHIP. Higher than Arts & Science CS's CAD 66,110."},
+        ],
+        "living": {"min": 1500, "max": 2500, "currency": "CAD", "admin_body": "University of Toronto",
+                   "desc": "U of T estimates ~CAD 2,000/month total living expenses (housing, food, transport, etc.); "
+                   "first-year residence + meal plan CAD 15,167-24,910/yr. Source: studentlife/utm.utoronto.ca."},
+        "currency": "CAD",
+        "lang_req": {
+            "test_name": "IELTS Academic (or accepted equivalent) unless exempt",
+            "min_score": "IELTS Academic 6.5 overall, no band below 6.0 (per U of T English Language Requirements), unless exempt by English-medium schooling.",
+            "notes": "U of T general English requirement; not Engineering-specific. Verified vs future.utoronto.ca/english-language-requirements.",
+        },
+    },
 }
 
 
@@ -118,12 +188,12 @@ def build_docs(key, s):
         "official_program_url": s["url"], "application_platform": s["platform"],
         "decision_context_academic_year": s["decision_year"], "record_status": "VERIFIED",
         "university_ref": wref(f"university-{uni}"),
-        "application_requirements": [
+        "application_requirements": s.get("application_requirements") or [
             {"_key": "r1", "_type": "applicationRequirement", "name": "UCAS application",
-             "necessity": "required", "requirement_type": "form", "description": "", "notes": s["ucas_code_note"]},
+             "necessity": "required", "requirement_type": "form", "description": "", "notes": s.get("ucas_code_note", "")},
             {"_key": "r2", "_type": "applicationRequirement", "name": s["test_name"],
              "necessity": "required", "requirement_type": "standardized_test_score",
-             "description": "", "notes": s["test_note"]},
+             "description": "", "notes": s.get("test_note", "")},
             {"_key": "r3", "_type": "applicationRequirement", "name": "Interview (at least two colleges)",
              "necessity": "required", "requirement_type": "interview_or_evaluation_event",
              "description": "Shortlisted candidates interviewed by colleges in December.", "notes": ""},
@@ -132,42 +202,52 @@ def build_docs(key, s):
         "extension_metadata": {"_type": "extensionMetadata"},
     })
 
+    has_test = bool(s.get("test_name"))
+    stage = s.get("stage")  # optional; omit admission_stage_ref when absent
+    admin_body = s["living"].get("admin_body", "University of Oxford")
     for a in s["admissions"]:
-        docs.append({
+        req = {
             "_id": f"admissionsRequirement-{uni}-admreq-{ps}-{a['suffix']}", "_type": "admissionsRequirement",
             "id": f"{uni}-admreq-{ps}-{a['suffix']}", "curriculum_type": a["curriculum"],
             "academic_threshold": a["threshold"], "academic_year": "2027 entry",
             "required_subjects": a["subjects"], "program_ref": wref(prog_id),
             "prior_curriculum_category_ref": wref(f"applicantCategory-{uni}-{a['cat']}"),
-            "admission_stage_ref": wref(f"admissionStage-{uni}-{s['stage']}"),
             "record_status": "VERIFIED", "last_checked": "2026-10-13",
             "language_requirements": [{"_key": "lr1", "_type": "languageRequirement", "language": "English",
                 **s["lang_req"]}],
-            "standardized_tests": [{"_key": "st1", "_type": "testRequirement",
-                "test_name": s["test_name"], "required": "required", "notes": s["test_note"]}],
             "source_refs": [wref(src_adm, "s1")],
-        })
+        }
+        if stage:
+            req["admission_stage_ref"] = wref(f"admissionStage-{uni}-{stage}")
+        if has_test:
+            req["standardized_tests"] = [{"_key": "st1", "_type": "testRequirement",
+                "test_name": s["test_name"], "required": "required", "notes": s.get("test_note", "")}]
+        docs.append(req)
 
     for c in s["costs"]:
-        docs.append({
+        cp = {
             "_id": f"costProfile-{uni}-cost-{ps}-{c['suffix']}", "_type": "costProfile",
             "id": f"{uni}-cost-{ps}-{c['suffix']}", "academic_year": c["year"], "currency": s["currency"],
             "duration_years": s["duration_value"], "tuition_annual": c["tuition"], "tuition_basis": c["basis"],
             "program_ref": wref(prog_id), "residency_category_ref": wref(f"applicantCategory-{uni}-{c['cat']}"),
             "record_status": "VERIFIED", "verification_status": "VERIFIED", "last_checked": "2026-10-13",
-            "mandatory_fees_breakdown": [], "other_material_costs": [],
+            "mandatory_fees_breakdown": c.get("mandatory_fees_breakdown", []), "other_material_costs": [],
             "estimated_living_costs_monthly_range": {"_type": "monthlyRange", "currency": s["living"]["currency"],
                 "min": s["living"]["min"], "max": s["living"]["max"]},
             "living_cost_source_basis": {"_type": "livingCostSourceBasis",
-                "kind": "genuine_cost_of_living_estimate", "administering_body": "University of Oxford",
+                "kind": "genuine_cost_of_living_estimate", "administering_body": admin_body,
                 "description": s["living"]["desc"]},
             "source_refs": [wref(src_fee, "s1")],
             "extension_metadata": ({"_type": "extensionMetadata", "fields": [
                 {"_key": "fee_note", "_type": "extensionMetadataFieldEntry", "key": "fee_note",
                  "value": c["note"], "value_type": "string"}]} if c["note"] else {"_type": "extensionMetadata"}),
-        })
+        }
+        if c.get("mandatory_fees_annual") is not None:
+            cp["mandatory_fees_annual"] = c["mandatory_fees_annual"]
+        docs.append(cp)
 
-    reused = [f"university-{uni}", f"admissionStage-{uni}-{s['stage']}"] + \
+    reused = [f"university-{uni}"] + \
+             ([f"admissionStage-{uni}-{stage}"] if stage else []) + \
              [f"applicantCategory-{uni}-{a['cat']}" for a in s["admissions"]] + \
              [f"applicantCategory-{uni}-{c['cat']}" for c in s["costs"]]
     return docs, sorted(set(reused))
