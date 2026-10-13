@@ -139,7 +139,9 @@ function FindMyPathPage() {
         citizenship: answers.citizenship || null,
         preferences: answers.preferences || null,
       },
-    }).catch(() => {});
+      // Best-effort (signed-out users just don't persist), but never swallow the
+      // error silently — log it so a real failure is visible, not hidden.
+    }).catch((err: Error) => console.error("[find-my-path] profile save failed:", err));
   };
 
   const next = () => {

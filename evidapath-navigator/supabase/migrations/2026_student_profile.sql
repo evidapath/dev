@@ -60,3 +60,12 @@ create policy "student_saved_universities_all_own" on public.student_saved_unive
   for all to authenticated
   using (auth.uid() is not null and user_id = auth.uid())
   with check (auth.uid() is not null and user_id = auth.uid());
+
+-- Table-level GRANTs for the authenticated role. RLS (above) restricts WHICH
+-- rows; the role still needs base table privilege. Supabase auto-grants when a
+-- table is created via the SQL editor / default privileges, but NOT via this
+-- raw-migration path -- so grant explicitly (applied to prod 2026-10-13 as
+-- migration grant_authenticated_on_profile_tables). Without this, inserts fail
+-- with "42501 permission denied for table ..." even though RLS would allow them.
+grant select, insert, update, delete on public.student_profiles to authenticated;
+grant select, insert, update, delete on public.student_saved_universities to authenticated;

@@ -76,7 +76,15 @@ function DiscoverPage() {
   const addToMyPath = (u: University) => {
     saveUniFn({ data: { sanity_university_id: u.id, university_name: u.name } })
       .then(() => toast.success(`${u.shortName} saved to your path.`))
-      .catch(() => toast.error("Sign in to save universities to your path."));
+      .catch((err: Error) => {
+        // Surface the real reason rather than always blaming sign-in. A silent/
+        // misleading catch here hid a table-GRANT bug for weeks.
+        console.error("[addToMyPath] save failed:", err);
+        const msg = /not authenticated/i.test(err?.message ?? "")
+          ? "Sign in to save universities to your path."
+          : "Could not save — please try again.";
+        toast.error(msg);
+      });
   };
 
   const filtered = universities.filter((u) => {
