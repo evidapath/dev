@@ -52,6 +52,32 @@ program-specific costs, not reuse CS's (Suhail: "program-specific, not universit
 requirements per curriculum (IB/US/other) for each, English-language requirement, decision
 dates. Same depth as the original 5 CS programs.
 
+### Oxford template — verified data ready for record creation (2026-10-13)
+
+**Engineering Science** (MEng, 4 years, English; specialise Y3 into Biomedical/Chemical/
+Civil/Electrical/Information/Mechanical):
+- A-Level: A*A*A (A*s in Maths & Further Maths/Physics; Maths+Physics required) · **ESAT** test
+- IB: 40 incl core (776 at HL, 7s in HL Maths + Physics) · ESAT
+- Overseas tuition **£66,580** (2027, confirmed) · Home £10,050 · no separate college fee (combined)
+- English: IELTS 7.5/7.0, TOEFL 110, C1 191 · UCAS deadline 15 Oct, decision ~Jan
+- Sources: eng.ox.ac.uk/study/undergraduate/applications/entry-requirements; ox.ac.uk course fees/summary table
+
+**Economics & Management** (BA, 3 years, English):
+- A-Level: A*AA (Maths at A/A*) · **TARA** test
+- IB: 39 incl core (766 at HL) · TARA
+- Overseas tuition **£43,600** (2026/27; 2027 not yet published — record as 2026/27, flag pending) · Home ~£10,050
+- English: IELTS 7.5/7.0 · UCAS deadline 15 Oct, decision ~Jan
+- Sources: economics.ox.ac.uk/undergraduate-admissions-criteria; sbs.ox.ac.uk E&M; ox.ac.uk course fees
+
+US-HS/AP admissions thresholds for these two still to fetch before finalizing (A-Level+IB done).
+
+## Creation mechanism (decide with Suhail before writing)
+The original data came from Suhail's pipeline (normalized records → `normalized_to_sanity_ndjson_v1_2.py`),
+giving schema-correct interlinked docs. Adding programs via ad-hoc API mutations risks schema
+drift (programs/admissions/costs need many required fields + references). **Recommend: add new
+programs through Suhail's pipeline or the Studio editor (schema-enforced), not hand-written NDJSON.**
+Confirm his preferred path before creating records.
+
 ## Honest scope note
 Step 2 (create ~11 programs, each = program + per-curriculum admissions + residency-tiered
 costs + deadlines + language + sources, all verified) is a large multi-session build,
