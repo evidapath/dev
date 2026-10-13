@@ -103,6 +103,31 @@ Idempotent (createOrReplace). This is the proven TEMPLATE — replicate for the 
 3. Replicate the generator for the other ~10 programs (research done for Oxford;
    NYUAD/Toronto/Delft/TUM still need per-program primary-source research).
 
+## Modeling note — uniform vs tiered (verified 2026-10-14)
+
+Programs differ in whether cost/admission are program-specific. Model each honestly:
+
+- **NYU Abu Dhabi — UNIFORM.** The data documents it: NYUAD publishes a single
+  citizenship-undifferentiated Cost of Attendance ($68,576 total), unified holistic
+  admission (apply to NYUAD, declare major later). So its Engineering/Economics/Business
+  majors share the SAME cost + SAME admissions as CS. Adding them = program docs that
+  reference the uniform cost + holistic admissions (NOT invented per-major differences —
+  that would be a subtle hallucination of program-specific admission that doesn't exist).
+  Lower demonstrative value (nothing differs); do these LAST or lightly.
+- **Toronto — TIERED, genuinely program-specific (HIGH value).** Verified: Faculty of
+  Applied Science & Engineering international tuition **CAD 72,860** (2026-27) + 2,266.83
+  incidental + 948 UHIP — DIFFERENT from Arts & Science CS's CAD 66,110. Rotman Commerce
+  (BCom) is a separate competitive program (73%+ prereq avg, Supplementary App Feb 1).
+  This is where the program selector earns its keep.
+- **Oxford — TIERED (done):** CS £66,580 vs E&M £43,600 vs Eng £66,580.
+- **TU Delft / TU Munich** — Aerospace is a distinct English program; verify its own
+  fees (likely same statutory/institutional tiers as CSE but confirm, don't assume).
+
+### Verified-so-far for the next builds (partial — complete before creating records)
+- Toronto Engineering international tuition CAD 72,860 + fees (2026-27) ✓ [one source; reconfirm].
+  Still needed: 3 residency tiers, admissions per curriculum (prereqs Calculus/Chem/Physics),
+  deadline, language — all to primary-source bar.
+
 ## Honest scope note
 Step 2 (create ~11 programs, each = program + per-curriculum admissions + residency-tiered
 costs + deadlines + language + sources, all verified) is a large multi-session build,
