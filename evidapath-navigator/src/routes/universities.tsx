@@ -219,6 +219,67 @@ function UniversitiesDirectoryPage() {
                     <span>Verified: {univ.lastVerified}</span>
                   </div>
                 </div>
+
+                {/* Verified admissions + deadlines (surfaced from Sanity) */}
+                {(univ.deadlines?.length || univ.admissionsByCurriculum?.length) && (
+                  <details className="text-xs border-t border-border/60 pt-2">
+                    <summary className="cursor-pointer text-primary font-semibold select-none">
+                      Admissions & deadlines
+                    </summary>
+                    <div className="mt-2 space-y-3">
+                      {univ.deadlines && univ.deadlines.length > 0 && (
+                        <div className="space-y-1">
+                          <p className="text-[10px] uppercase font-semibold text-muted-foreground">
+                            Application deadlines
+                          </p>
+                          {univ.deadlines.map((d, i) => (
+                            <div
+                              key={i}
+                              className="flex justify-between gap-2 text-muted-foreground"
+                            >
+                              <span>
+                                {d.label}
+                                {d.binding ? " (binding)" : ""}
+                              </span>
+                              <span className="font-mono text-right">
+                                {(d.deadline ?? "").slice(0, 10)}
+                                {d.decisionDate ? ` · decision ${d.decisionDate.slice(0, 10)}` : ""}
+                              </span>
+                            </div>
+                          ))}
+                          {univ.deadlines[0]?.platform && (
+                            <p className="text-[10px] text-muted-foreground">
+                              via {univ.deadlines[0].platform}
+                            </p>
+                          )}
+                        </div>
+                      )}
+                      {univ.admissionsByCurriculum && univ.admissionsByCurriculum.length > 0 && (
+                        <div className="space-y-1.5">
+                          <p className="text-[10px] uppercase font-semibold text-muted-foreground">
+                            Entry requirements by qualification
+                          </p>
+                          {univ.admissionsByCurriculum.map((a, i) => (
+                            <div key={i} className="rounded bg-secondary/40 p-2 space-y-0.5">
+                              <p className="font-semibold text-foreground">{a.curriculum}</p>
+                              {a.threshold && (
+                                <p className="text-muted-foreground">{a.threshold}</p>
+                              )}
+                              {a.subjects.length > 0 && (
+                                <p className="text-muted-foreground">
+                                  Subjects: {a.subjects.join("; ")}
+                                </p>
+                              )}
+                              {a.tests.length > 0 && (
+                                <p className="text-muted-foreground">Tests: {a.tests.join(", ")}</p>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </details>
+                )}
               </div>
 
               <div className="pt-4 border-t border-border flex items-center justify-between">

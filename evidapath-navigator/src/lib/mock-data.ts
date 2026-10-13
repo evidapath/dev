@@ -45,6 +45,21 @@ export interface University {
   // the international (non-EU) rate and this note discloses the other tier. Null when
   // a single uniform cost applies. Prevents silently showing one tier as universal.
   costResidencyNote?: string;
+  // Verified application deadlines (decision plans) and per-curriculum admissions
+  // requirements, surfaced from Sanity. Optional so the mock set still typechecks.
+  deadlines?: {
+    label: string;
+    deadline: string | null;
+    decisionDate: string | null;
+    binding: boolean | null;
+    platform: string | null;
+  }[];
+  admissionsByCurriculum?: {
+    curriculum: string;
+    threshold: string | null;
+    subjects: string[];
+    tests: string[];
+  }[];
   evidenceConfidence: string;
   lastVerified: string;
   officialSourceUrl: string;

@@ -30,12 +30,20 @@ const UNIVERSITIES_QUERY = `*[_type=="university"] | order(canonical_name){
   "countryCode": country_ref->id,
   "countryCurrency": country_ref->currency_default,
   "city": primary_city_ref->name,
+  "deadlines": *[_type=="decisionPlan" && references(^._id)] | order(application_deadline){
+    plan_type, application_deadline, decision_release_date, binding, application_platform
+  },
   "programs": *[_type=="program" && references(^._id)]{
     program_name, degree_type, duration_value, duration_unit, field_of_study,
     language_of_instruction, record_status,
     "costs": *[_type=="costProfile" && references(^._id)]{
       tuition_annual, tuition_basis, mandatory_fees_annual, estimated_living_costs_annual,
       currency, duration_years, "residencyDesc": residency_category_ref->description
+    },
+    "admissions": *[_type=="admissionsRequirement" && references(^._id)]{
+      curriculum_type, academic_threshold, required_subjects,
+      "tests": standardized_tests[]{test_name, required, notes},
+      "languages": language_requirements[]{language, min_score}
     }
   },
   "scholarshipCount": count(*[_type=="scholarship" && ^.id in institutions_covered && ("undergraduate" in degree_levels || "BSc" in degree_levels)])
@@ -50,6 +58,13 @@ interface SanityCost {
   duration_years: number | null;
   residencyDesc: string | null;
 }
+interface SanityAdmissionReq {
+  curriculum_type: string | null;
+  academic_threshold: string | null;
+  required_subjects: string[] | null;
+  tests: { test_name: string | null; required: string | null; notes: string | null }[] | null;
+  languages: { language: string | null; min_score: string | null }[] | null;
+}
 interface SanityProgram {
   program_name: string | null;
   degree_type: string | null;
@@ -59,6 +74,14 @@ interface SanityProgram {
   language_of_instruction: string[] | null;
   record_status: string | null;
   costs: SanityCost[] | null;
+  admissions: SanityAdmissionReq[] | null;
+}
+interface SanityDeadline {
+  plan_type: string | null;
+  application_deadline: string | null;
+  decision_release_date: string | null;
+  binding: boolean | null;
+  application_platform: string | null;
 }
 interface SanityUniversity {
   id: string;
@@ -73,6 +96,7 @@ interface SanityUniversity {
   countryCode: string | null;
   countryCurrency: string | null;
   city: string | null;
+  deadlines: SanityDeadline[] | null;
   programs: SanityProgram[] | null;
   scholarshipCount: number | null;
 }
@@ -185,6 +209,27 @@ function adapt(u: SanityUniversity): University {
   const aliases = u.aliases || [];
   const shortName = aliases[aliases.length - 1] || u.canonical_name;
 
+  // Verified deadlines + per-curriculum admissions (surfaced only when present).
+  const deadlines = (u.deadlines || [])
+    .filter((d) => d.application_deadline)
+    .map((d) => ({
+      label: prettyType(d.plan_type),
+      deadline: d.application_deadline,
+      decisionDate: d.decision_release_date,
+      binding: d.binding,
+      platform: d.application_platform,
+    }));
+  const admissionsByCurriculum = (program?.admissions || [])
+    .filter((a) => a.curriculum_type)
+    .map((a) => ({
+      curriculum: a.curriculum_type as string,
+      threshold: a.academic_threshold,
+      subjects: (a.required_subjects || []).filter((s): s is string => !!s),
+      tests: (a.tests || [])
+        .filter((t) => t.test_name && t.required !== "not_required")
+        .map((t) => `${t.test_name}${t.required ? ` (${t.required})` : ""}`),
+    }));
+
   return {
     id: u.id,
     name: u.canonical_name,
@@ -218,6 +263,8 @@ function adapt(u: SanityUniversity): University {
     scholarshipsAvailable: u.scholarshipCount ?? null,
     scholarshipCoverageMax: null,
     ...(costResidencyNote ? { costResidencyNote } : {}),
+    ...(deadlines.length ? { deadlines } : {}),
+    ...(admissionsByCurriculum.length ? { admissionsByCurriculum } : {}),
     evidenceConfidence: confidenceLabel(u.id, u.evidapath_verified),
     lastVerified: u.last_verified || "Not yet verified",
     officialSourceUrl: u.official_website || "",
