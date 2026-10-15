@@ -18,7 +18,12 @@ import {
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { getUniversities } from "../lib/universities.functions";
-import { getProfile, upsertProfile, saveUniversity } from "../lib/profile.functions";
+import {
+  getProfile,
+  upsertProfile,
+  saveUniversity,
+  listSavedUniversities,
+} from "../lib/profile.functions";
 import { useAuth } from "../components/AuthContext";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
@@ -82,6 +87,7 @@ function FindMyPathPage() {
   const [answers, setAnswers] = useState<IntakeAnswers>(DEFAULTS);
   const [showResults, setShowResults] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
   const [universities, setUniversities] = useState<University[]>([]);
   const [source, setSource] = useState<"sanity" | "mock" | null>(null);
   const navigate = useNavigate();
@@ -103,8 +109,15 @@ function FindMyPathPage() {
   // answers persist. Silently ignored when signed out (intake still works locally).
   const getProfileFn = useServerFn(getProfile);
   const upsertProfileFn = useServerFn(upsertProfile);
+  const listSavedFn = useServerFn(listSavedUniversities);
   useEffect(() => {
     let active = true;
+    listSavedFn()
+      .then((rows) => {
+        if (!active) return;
+        setSavedIds(new Set(rows.map((r) => r.sanity_university_id)));
+      })
+      .catch(() => {});
     getProfileFn()
       .then((p) => {
         if (!active || !p) return;
@@ -123,13 +136,16 @@ function FindMyPathPage() {
     return () => {
       active = false;
     };
-  }, [getProfileFn]);
+  }, [getProfileFn, listSavedFn]);
 
   // Save a pathway's university to the student's persisted path (Supabase).
   const saveUniFn = useServerFn(saveUniversity);
   const saveUni = (u: University) => {
     saveUniFn({ data: { sanity_university_id: u.id, university_name: u.name } })
-      .then(() => toast.success(`${u.shortName} saved to your path.`))
+      .then(() => {
+        setSavedIds((s) => new Set(s).add(u.id));
+        toast.success(`${u.shortName} saved to your path.`);
+      })
       .catch((err: Error) => {
         console.error("[find-my-path] save university failed:", err);
         toast.error(
@@ -360,8 +376,17 @@ function FindMyPathPage() {
                         variant="outline"
                         className="border-border text-xs"
                         onClick={() => saveUni(u)}
+                        disabled={savedIds.has(u.id)}
                       >
-                        <Save className="w-3 h-3" /> Save
+                        {savedIds.has(u.id) ? (
+                          <>
+                            <Check className="w-3 h-3" /> Saved
+                          </>
+                        ) : (
+                          <>
+                            <Save className="w-3 h-3" /> Save
+                          </>
+                        )}
                       </Button>
                       <Link to="/compare-offers">
                         <Button size="sm" variant="outline" className="border-border text-xs">
