@@ -223,6 +223,117 @@ PROGRAMS = {
             "notes": "U of T general English requirement. Verified vs future.utoronto.ca/english-language-requirements.",
         },
     },
+    "delft-aero": {
+        "uni": "nl-tu-delft", "uni_name": "Delft University of Technology",
+        "prog_suffix": "bsc-aerospace-engineering",
+        "program_name": "Aerospace Engineering", "field_of_study": "Engineering",
+        "degree_type": "BSc",
+        "degree_type_local": "BSc Aerospace Engineering (English stream); numerus fixus (max 440 places 2026-27)",
+        "duration_value": 3, "duration_unit": "years", "language": ["en"],
+        "faculty": "Faculty of Aerospace Engineering",
+        "url": "https://www.tudelft.nl/en/onderwijs/opleidingen/bachelors/ae/bsc-aerospace-engineering",
+        "platform": "Studielink", "decision_year": "2027/2028 (Sept 2027 entry, numerus fixus)",
+        "application_requirements": [
+            {"_key": "r1", "_type": "applicationRequirement", "name": "Studielink registration",
+             "necessity": "required", "requirement_type": "form",
+             "description": "Register in Studielink before 15 January (numerus fixus).", "notes": ""},
+            {"_key": "r2", "_type": "applicationRequirement", "name": "Matching & Selection (numerus fixus)",
+             "necessity": "required", "requirement_type": "other",
+             "description": "Ranked selection procedure; limited places (max 440 in 2026-27).", "notes": ""},
+        ],
+        "sources": {
+            "adm": {"suffix": "src-aero-adm",
+                "title": "Admission Requirements -- BSc Aerospace Engineering, TU Delft",
+                "url": "https://www.tudelft.nl/en/onderwijs/opleidingen/bachelors/ae/bsc-aerospace-engineering/from-application-to-enrolment/admission-requirements",
+                "excerpt": "A-Level: Mathematics + Physics (A-C). IB: Mathematics AA HL + Physics HL. US: Calculus A/B or B/C + Physics 1&2 or Physics C. Dutch VWO: Physics + Mathematics B. Numerus fixus, register before 15 January."},
+            "fee": {"suffix": "src-aero-fee",
+                "title": "Study Costs -- BSc Aerospace Engineering, TU Delft (2026-2027)",
+                "url": "https://www.tudelft.nl/en/onderwijs/opleidingen/bachelors/ae/bsc-aerospace-engineering/from-application-to-enrolment/tuition-and-additional-fees",
+                "excerpt": "Statutory tuition fee EUR 2,694 (EU/EEA/Swiss). Institutional tuition fee II EUR 19,906 (non-EU) for 2026-2027."},
+        },
+        "admissions": [
+            {"suffix": "a-level", "cat": "curriculum-alevel", "curriculum": "GCE A-Levels",
+             "threshold": "Mathematics and Physics at A-Level, grades A-C", "subjects": ["Mathematics (A-Level)", "Physics (A-Level)"]},
+            {"suffix": "ib", "cat": "curriculum-ib", "curriculum": "International Baccalaureate Diploma Programme",
+             "threshold": "Mathematics: Analysis & Approaches HL, and Physics HL", "subjects": ["Mathematics AA HL", "Physics HL"]},
+            {"suffix": "us-hs-ap", "cat": "curriculum-us-hs-ap", "curriculum": "US High School Diploma + Advanced Placement",
+             "threshold": "AP Calculus A/B or B/C (B/C preferred) and AP Physics 1&2 or Physics C: Mechanics",
+             "subjects": ["AP Calculus A/B or B/C", "AP Physics 1&2 or Physics C"]},
+            {"suffix": "dutch-vwo", "cat": "curriculum-dutch-vwo", "curriculum": "Dutch VWO / Gymnasium",
+             "threshold": "VWO diploma including Physics and Mathematics B", "subjects": ["Physics (Natuurkunde)", "Mathematics B (Wiskunde B)"]},
+        ],
+        "stage": "stage-matching-selection",
+        "costs": [
+            {"suffix": "eu-efta", "cat": "residency-eu-efta", "tuition": 2694, "basis": "statutory",
+             "year": "2026-2027", "note": None},
+            {"suffix": "non-eu", "cat": "residency-non-eu", "tuition": 19906, "basis": "institutional",
+             "year": "2026-2027", "note": "Institutional fee II for non-EU/EEA bachelor's (program-wide Dutch rate; = CSE)."},
+        ],
+        "living": None,  # TU Delft does not publish a program living-cost estimate; not fabricated.
+        "currency": "EUR",
+        "lang_req": {"test_name": "English proficiency (IELTS/TOEFL) unless exempt",
+            "min_score": "Required for the English stream unless exempt (e.g. 3+ years English-medium education); see TU Delft language requirements.",
+            "notes": "English-taught program; exemption rules per TU Delft."},
+    },
+    "tum-aero": {
+        "uni": "de-tu-munich", "uni_name": "Technical University of Munich",
+        "prog_suffix": "bsc-aerospace",
+        "program_name": "Aerospace", "field_of_study": "Engineering",
+        "degree_type": "BSc",
+        "degree_type_local": "Aerospace B.Sc. (6 semesters), 100% English-taught, TUM School of Engineering and Design",
+        "duration_value": 6, "duration_unit": "semesters", "language": ["en"],
+        "faculty": "TUM School of Engineering and Design",
+        "url": "https://www.tum.de/en/studies/degree-programs/detail/aerospace-bachelor-of-science-bsc",
+        "platform": "TUMonline", "decision_year": "Winter Semester 2026/27",
+        "application_requirements": [
+            {"_key": "r1", "_type": "applicationRequirement", "name": "TUMonline online application",
+             "necessity": "required", "requirement_type": "form", "description": "", "notes": ""},
+            {"_key": "r2", "_type": "applicationRequirement", "name": "uni-assist Preliminary Documentation (VPD)",
+             "necessity": "required", "requirement_type": "other",
+             "description": "Credential pre-assessment for applicants with a non-German qualification.", "notes": ""},
+            {"_key": "r3", "_type": "applicationRequirement", "name": "Aptitude assessment (Eignungsfeststellung)",
+             "necessity": "required", "requirement_type": "interview_or_evaluation_event",
+             "description": "Program aptitude assessment.", "notes": ""},
+        ],
+        "sources": {
+            "adm": {"suffix": "src-aero-adm",
+                "title": "Aerospace -- Bachelor of Science (B.Sc.), TUM",
+                "url": "https://www.tum.de/en/studies/degree-programs/detail/aerospace-bachelor-of-science-bsc",
+                "excerpt": "Aerospace B.Sc., 6 semesters, 100% English-taught, TUM School of Engineering and Design; aptitude assessment required."},
+            "fee": {"suffix": "src-aero-fee",
+                "title": "Tuition Fees for Students from Non-EU Countries, TUM",
+                "url": "https://www.tum.de/en/studies/fees/tuition",
+                "excerpt": "Non-EU bachelor tuition EUR 3,000/semester (2026-27). Student-union fee EUR 97/semester. EU/EEA: no tuition. Announced increase to EUR 3,400/semester for WS 2027/28 new entrants."},
+        },
+        "admissions": [
+            {"suffix": "a-level", "cat": "curriculum-a-level", "curriculum": "British-patterned GCE A-Level",
+             "threshold": "A-Level with mathematics and physics/science subjects; recognised as HZB; aptitude assessment",
+             "subjects": ["Mathematics", "Physics"]},
+            {"suffix": "ib", "cat": "curriculum-ib", "curriculum": "International Baccalaureate (IB) Diploma",
+             "threshold": "IB Diploma recognised as HZB with Mathematics and Physics; aptitude assessment",
+             "subjects": ["Mathematics", "Physics"]},
+            {"suffix": "us-hs", "cat": "curriculum-us-hs", "curriculum": "U.S. High School Diploma / AP route",
+             "threshold": "US HS diploma + AP (Calculus, Physics) to meet HZB; aptitude assessment",
+             "subjects": ["AP Calculus", "AP Physics"]},
+            {"suffix": "abitur", "cat": "curriculum-abitur", "curriculum": "German Abitur",
+             "threshold": "Allgemeine Hochschulreife (Abitur) with mathematics and physics; aptitude assessment",
+             "subjects": ["Mathematics", "Physics"]},
+        ],
+        "stage": "stage-aptitude-assessment",
+        "costs": [
+            {"suffix": "eu-eea", "cat": "residency-eu-eea", "tuition": 0, "basis": "statutory",
+             "year": "2026-27 (Summer Semester 2026 basis)", "mandatory_fees_annual": 194,
+             "note": "No tuition for EU/EEA; EUR 97/semester (EUR 194/yr) student-union fee applies."},
+            {"suffix": "non-eu", "cat": "residency-non-eu", "tuition": 6000, "basis": "institutional",
+             "year": "2026-27 (Summer Semester 2026 basis)", "mandatory_fees_annual": 194,
+             "note": "EUR 3,000/semester (2026-27) + EUR 97/sem union fee. TUM has announced an increase to EUR 3,400/semester (EUR 6,800/yr) for engineering-tier NON-EU students entering WS 2027/28 (current students grandfathered)."},
+        ],
+        "living": None,  # Munich living estimate exists on the Informatics record but not re-verified here; omit rather than copy unverified.
+        "currency": "EUR",
+        "lang_req": {"test_name": "English proficiency (IELTS/TOEFL) unless exempt",
+            "min_score": "Required for the English-taught program unless exempt; per TUM language certificate rules.",
+            "notes": "Aerospace B.Sc. is English-taught (unlike TUM Informatics, which is German-taught)."},
+    },
 }
 
 
@@ -269,7 +380,8 @@ def build_docs(key, s):
 
     has_test = bool(s.get("test_name"))
     stage = s.get("stage")  # optional; omit admission_stage_ref when absent
-    admin_body = s["living"].get("admin_body", "University of Oxford")
+    living = s.get("living")  # optional; when absent, cost has no living estimate ("not_published")
+    admin_body = (living or {}).get("admin_body", s.get("uni_name", ""))
     for a in s["admissions"]:
         req = {
             "_id": f"admissionsRequirement-{uni}-admreq-{ps}-{a['suffix']}", "_type": "admissionsRequirement",
@@ -297,16 +409,19 @@ def build_docs(key, s):
             "program_ref": wref(prog_id), "residency_category_ref": wref(f"applicantCategory-{uni}-{c['cat']}"),
             "record_status": "VERIFIED", "verification_status": "VERIFIED", "last_checked": "2026-10-13",
             "mandatory_fees_breakdown": c.get("mandatory_fees_breakdown", []), "other_material_costs": [],
-            "estimated_living_costs_monthly_range": {"_type": "monthlyRange", "currency": s["living"]["currency"],
-                "min": s["living"]["min"], "max": s["living"]["max"]},
-            "living_cost_source_basis": {"_type": "livingCostSourceBasis",
+            "living_cost_source_basis": ({"_type": "livingCostSourceBasis",
                 "kind": "genuine_cost_of_living_estimate", "administering_body": admin_body,
-                "description": s["living"]["desc"]},
+                "description": living["desc"]} if living else {"_type": "livingCostSourceBasis",
+                "kind": "not_published",
+                "description": "No official living-cost estimate captured for this program; not fabricated."}),
             "source_refs": [wref(src_fee, "s1")],
             "extension_metadata": ({"_type": "extensionMetadata", "fields": [
                 {"_key": "fee_note", "_type": "extensionMetadataFieldEntry", "key": "fee_note",
                  "value": c["note"], "value_type": "string"}]} if c["note"] else {"_type": "extensionMetadata"}),
         }
+        if living:
+            cp["estimated_living_costs_monthly_range"] = {"_type": "monthlyRange",
+                "currency": living["currency"], "min": living["min"], "max": living["max"]}
         if c.get("mandatory_fees_annual") is not None:
             cp["mandatory_fees_annual"] = c["mandatory_fees_annual"]
         docs.append(cp)
