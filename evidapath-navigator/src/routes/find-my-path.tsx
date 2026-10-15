@@ -19,6 +19,7 @@ import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { getUniversities } from "../lib/universities.functions";
 import { getProfile, upsertProfile, saveUniversity } from "../lib/profile.functions";
+import { useAuth } from "../components/AuthContext";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { DataStatus, StatusChip, PendingValue } from "../components/DataStatus";
@@ -137,6 +138,31 @@ function FindMyPathPage() {
             : "Could not save — please try again.",
         );
       });
+  };
+
+  // Bottom "Save my path" action. When signed in: save ALL shown pathways + the
+  // profile, then go to the dashboard. When signed out: send to sign-in (the
+  // intake stays in session). Previously this was a dead <Link to="/sign-in">
+  // that saved nothing even for logged-in users (the reported bug).
+  const { user } = useAuth();
+  const saveMyPath = () => {
+    if (!user) {
+      navigate({ to: "/sign-in", search: { redirect: "/dashboard" } });
+      return;
+    }
+    saveProfile();
+    Promise.allSettled(
+      pathways.map((u) =>
+        saveUniFn({ data: { sanity_university_id: u.id, university_name: u.name } }),
+      ),
+    )
+      .then((results) => {
+        const ok = results.filter((r) => r.status === "fulfilled").length;
+        if (ok > 0) toast.success(`Saved ${ok} universit${ok === 1 ? "y" : "ies"} to your path.`);
+        else toast.error("Could not save your path — please try again.");
+        navigate({ to: "/dashboard" });
+      })
+      .catch(() => toast.error("Could not save your path — please try again."));
   };
 
   const set = (k: keyof IntakeAnswers, v: string) => setAnswers((a) => ({ ...a, [k]: v }));
@@ -367,11 +393,12 @@ function FindMyPathPage() {
                 Browse all universities
               </Button>
             </Link>
-            <Link to="/sign-in">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm">
-                Save my path & sign in <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
+            <Button
+              onClick={saveMyPath}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm"
+            >
+              {user ? "Save my path" : "Save my path & sign in"} <ArrowRight className="w-4 h-4" />
+            </Button>
           </div>
         </div>
       </div>
