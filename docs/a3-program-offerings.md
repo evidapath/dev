@@ -208,9 +208,28 @@ A program card implies "you can apply to this." Only model DIRECT-ENTRY programs
   Unlike CS, Economics has **no upper-year deregulated jump**. Reuses A&S cats; spec `toronto-econ`.
 - txn kcH2R0mkNwiyOfxLSPURo8.
 
-### Still to build
-- **NYUAD majors** (Engineering, Economics, Business): post-admission (unified holistic NYUAD admission;
-  major declared after entry). Single NYUAD cost structure (not per-major). IN PROGRESS 2026-10-20.
+### NYUAD majors (Engineering / Economics / Business) — FULLY VERIFIED + CREATED (2026-10-20)
+- Modeled post-admission: NYUAD admission is **university-wide, holistic, test-optional** (SAT/ACT
+  *recommended* through 2027-28, no minimum), single Common App decision; **major declared after entry**.
+  All majors share the identical admission + the single university-wide cost (residency-uniform).
+- Degrees verified vs NYUAD primary sources: **General Engineering = BS**, **Economics = BA**,
+  **Business, Organizations and Society = BA**. Cost (NYU Bulletins COA 2026-27): tuition **$68,576** +
+  direct non-tuition $15,838 (health/books/food/housing) = $84,414 direct; ~$90,328 total COA — same for all.
+- Reuses the already-verified NYUAD CS record's categories (a-level/ib/international-other/us-hs),
+  residency-uniform, and stage-university-entry. Generator extended with `std_tests` (so SAT/ACT show as
+  *recommended*, not required) + per-spec `checked` date + `uni_name` source attribution.
+- Specs `nyuad-eng` / `nyuad-econ` / `nyuad-bos`; txn BcdgJJSSVUTtE5oktKga9m.
+
+### ✅ A3 coverage COMPLETE — all 5 universities now cover CS + Engineering + Business + Economics
+(where the university offers them; Delft/TUM are technical unis with no Business/Economics bachelor's).
+Program count now ~15 across the 5. Next phase per Suhail: mass-import the next batch of schools
+using this same verified pipeline (generator + primary-source verification + dry-run + execute).
+
+### Known data-hygiene follow-ups (non-blocking)
+- Duplicate costProfiles: TUM Informatics (4 rows vs 2) and Toronto CS (6 vs 3); identical values so
+  display is unaffected (selectCost picks the same figure). Dedupe when convenient.
+- NYUAD CS exists as both a draft and a published doc; the new NYUAD majors are published-only. Frontend
+  uses perspective=published, so all render; tidy the stray CS draft when convenient.
 
 ## Honest scope note
 Step 2 (create ~11 programs, each = program + per-curriculum admissions + residency-tiered

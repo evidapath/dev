@@ -29,6 +29,68 @@ def wref(ref, key=None):
     return r
 
 
+# NYUAD admission is UNIVERSITY-WIDE and identical across majors (holistic, test-optional,
+# single Common App decision; major declared AFTER entry). So all NYUAD majors share the same
+# admission shape — only field/degree/major differ. These mirror the already-verified NYUAD CS record.
+_NYUAD_CURRICULA = [
+    ("a-level", "curriculum-a-level", "GCE A-Level"),
+    ("ib", "curriculum-ib", "International Baccalaureate Diploma"),
+    ("international-other", "curriculum-international-other", "General International Secondary Qualification"),
+    ("us-hs", "curriculum-us-hs", "US High School Diploma"),
+]
+_NYUAD_LANG = {
+    "test_name": "TOEFL iBT / Duolingo English Test / IELTS Academic / PTE Academic / Cambridge C1 Advanced or C2 Proficiency / iTEP",
+    "min_score": "No formal minimum; competitive benchmarks: TOEFL 100+, Duolingo 130+, IELTS 7.5+, PTE 70+, Cambridge 191+, iTEP 4.5+",
+    "notes": "Required for non-native English speakers unless 3+ consecutive years of study in an English-only curriculum "
+             "immediately prior to application; most non-native-English applicants are still expected to submit a score.",
+}
+_NYUAD_TESTS = [
+    {"test_name": "SAT", "required": "recommended",
+     "notes": "Test-optional through the 2027-2028 cycle; NYU states no minimum score, only that submitted scores are 'an important criteria' when provided."},
+    {"test_name": "ACT", "required": "recommended", "notes": "Same test-optional policy as SAT."},
+]
+
+
+def nyuad_adms(threshold, subjects=None):
+    """Four-curriculum admissions list for a NYUAD major (identical holistic admission)."""
+    return [{"suffix": sfx, "cat": cat, "curriculum": label,
+             "threshold": threshold, "subjects": subjects or []}
+            for sfx, cat, label in _NYUAD_CURRICULA]
+
+
+_NYUAD_APPREQS = [
+    {"_key": "r1", "_type": "applicationRequirement", "name": "Common Application (university-wide)",
+     "necessity": "required", "requirement_type": "form",
+     "description": "Apply to NYU Abu Dhabi via the Common Application; a single admission decision is issued.",
+     "notes": "Admission is to the university, not to a specific major."},
+    {"_key": "r2", "_type": "applicationRequirement", "name": "Major declared after admission (post-admission)",
+     "necessity": "required", "requirement_type": "other",
+     "description": "Not a direct-entry major. Students are admitted to NYUAD holistically and declare this major "
+     "after entry; admission criteria do not vary by major.", "notes": ""},
+]
+# University-wide cost of attendance — identical for every major and residency (hence residency-uniform).
+_NYUAD_COSTS = [
+    {"suffix": "uniform", "cat": "residency-uniform", "tuition": 68576, "basis": "institutional",
+     "year": "2026-2027", "mandatory_fees_annual": 15838,
+     "note": "University-wide cost of attendance, identical for all majors and residencies. Tuition 68,576 + direct "
+     "non-tuition (health 2,308 + books 1,730 + food 5,800 + housing 6,000 = 15,838) = 84,414 direct; + ~5,914 "
+     "indirect => ~90,328 total COA (2026-27)."},
+]
+_NYUAD_SOURCES = {
+    "adm": {"suffix": "src-nyuad-adm", "title": "Entry Requirements - NYU Abu Dhabi",
+        "url": "https://nyuad.nyu.edu/en/apply/undergraduate/apply/entry-requirements.html",
+        "excerpt": "NYU Abu Dhabi admission is university-wide and holistic via the Common Application (single decision). "
+        "Test-optional (SAT/ACT) through the 2027-2028 cycle; no minimum scores. English proficiency "
+        "(TOEFL/IELTS/Duolingo/PTE/Cambridge/iTEP) required for non-native speakers unless exempt (3+ yrs English-medium). "
+        "Students are admitted to the university and declare a major after entry."},
+    "fee": {"suffix": "src-nyuad-fee", "title": "Cost of Attendance | NYU Bulletins (Abu Dhabi, 2026-2027)",
+        "url": "https://bulletins.nyu.edu/undergraduate/abu-dhabi/cost-attendance/",
+        "excerpt": "Direct Costs: Tuition $68,576; Student Health Insurance $2,308; Books and Supplies $1,730; Food "
+        "$5,800; Housing $6,000; Total Direct $84,414. Indirect ~$5,914. Total Cost of Attendance $90,328. Academic "
+        "Year 2026-2027. University-wide (same for all majors)."},
+}
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Verified program specs. uni = university slug (e.g. gb-university-of-oxford).
 # cats/stage = reused existing record id suffixes under that uni.
@@ -486,6 +548,69 @@ PROGRAMS = {
             "min_score": "IELTS Academic 6.5 overall, no band below 6.0 (per U of T English Language Requirements), unless exempt.",
             "notes": "U of T general English requirement. Verified vs future.utoronto.ca/english-language-requirements."},
     },
+    "nyuad-eng": {
+        "uni": "ae-nyu-abu-dhabi", "uni_name": "New York University Abu Dhabi",
+        "prog_suffix": "bs-general-engineering", "checked": "2026-10-20",
+        "program_name": "General Engineering (BS)", "field_of_study": "Engineering",
+        "degree_type": "BSc",
+        "degree_type_local": "Bachelor of Science, General Engineering (NYUAD Engineering division). "
+        "POST-ADMISSION: admission is university-wide via the Common Application; students declare the Engineering "
+        "major after entry. Disciplines: General Engineering, Bioengineering, Civil, Computer, Electrical, "
+        "Mechanical Engineering.",
+        "duration_value": 4, "duration_unit": "years", "language": ["en"],
+        "faculty": "Engineering Division",
+        "url": "https://nyuad.nyu.edu/en/academics/undergraduate/majors-and-minors/general-engineering-major.html",
+        "platform": "Common Application (university-wide; campus preference for Abu Dhabi/NYC/Shanghai, single decision issued)",
+        "decision_year": "2026-2027 (Fall 2027 entry)",
+        "application_requirements": _NYUAD_APPREQS, "std_tests": _NYUAD_TESTS,
+        "sources": _NYUAD_SOURCES,
+        "admissions": nyuad_adms(
+            "Holistic, whole-candidate admission to NYU Abu Dhabi (not to the major); highly selective, no fixed "
+            "grade cutoff. Strong preparation in mathematics and physics is expected for the Engineering track."),
+        "stage": "stage-university-entry",
+        "costs": _NYUAD_COSTS, "living": None, "currency": "USD", "lang_req": _NYUAD_LANG,
+    },
+    "nyuad-econ": {
+        "uni": "ae-nyu-abu-dhabi", "uni_name": "New York University Abu Dhabi",
+        "prog_suffix": "ba-economics", "checked": "2026-10-20",
+        "program_name": "Economics (BA)", "field_of_study": "Economics",
+        "degree_type": "BA",
+        "degree_type_local": "Bachelor of Arts, Economics (NYUAD Social Science division). "
+        "POST-ADMISSION: admission is university-wide via the Common Application; students declare the Economics "
+        "major after entry (admission criteria do not vary by major).",
+        "duration_value": 4, "duration_unit": "years", "language": ["en"],
+        "faculty": "Social Science Division",
+        "url": "https://nyuad.nyu.edu/en/academics/undergraduate/majors-and-minors.html",
+        "platform": "Common Application (university-wide; campus preference for Abu Dhabi/NYC/Shanghai, single decision issued)",
+        "decision_year": "2026-2027 (Fall 2027 entry)",
+        "application_requirements": _NYUAD_APPREQS, "std_tests": _NYUAD_TESTS,
+        "sources": _NYUAD_SOURCES,
+        "admissions": nyuad_adms(
+            "Holistic, whole-candidate admission to NYU Abu Dhabi (not to the major); highly selective, no fixed "
+            "grade cutoff. A strong quantitative/mathematics background is recommended for Economics."),
+        "stage": "stage-university-entry",
+        "costs": _NYUAD_COSTS, "living": None, "currency": "USD", "lang_req": _NYUAD_LANG,
+    },
+    "nyuad-bos": {
+        "uni": "ae-nyu-abu-dhabi", "uni_name": "New York University Abu Dhabi",
+        "prog_suffix": "ba-business-organizations-society", "checked": "2026-10-20",
+        "program_name": "Business, Organizations and Society (BA)", "field_of_study": "Business",
+        "degree_type": "BA",
+        "degree_type_local": "Bachelor of Arts, Business, Organizations and Society (NYUAD Social Science division). "
+        "POST-ADMISSION: admission is university-wide via the Common Application; students declare the major after "
+        "entry (admission criteria do not vary by major).",
+        "duration_value": 4, "duration_unit": "years", "language": ["en"],
+        "faculty": "Social Science Division",
+        "url": "https://nyuad.nyu.edu/en/academics/undergraduate/majors-and-minors/business-organizations-and-society-major.html",
+        "platform": "Common Application (university-wide; campus preference for Abu Dhabi/NYC/Shanghai, single decision issued)",
+        "decision_year": "2026-2027 (Fall 2027 entry)",
+        "application_requirements": _NYUAD_APPREQS, "std_tests": _NYUAD_TESTS,
+        "sources": _NYUAD_SOURCES,
+        "admissions": nyuad_adms(
+            "Holistic, whole-candidate admission to NYU Abu Dhabi (not to the major); highly selective, no fixed grade cutoff."),
+        "stage": "stage-university-entry",
+        "costs": _NYUAD_COSTS, "living": None, "currency": "USD", "lang_req": _NYUAD_LANG,
+    },
 }
 
 
@@ -501,7 +626,7 @@ def build_docs(key, s):
         sc = s["sources"][which]
         docs.append({
             "_id": sid, "_type": "sourceRecord", "id": sc["suffix"],
-            "source_organization": "University of Oxford" if uni.startswith("gb-university-of-oxford") else uni,
+            "source_organization": "University of Oxford" if uni.startswith("gb-university-of-oxford") else s.get("uni_name", uni),
             "source_type": "official_university", "title": sc["title"], "url": sc["url"],
             "excerpt": sc["excerpt"], "notes": "",
             "retrieval_method": "WebSearch/WebFetch (primary-source verification, EvidaPath A3)",
@@ -549,7 +674,10 @@ def build_docs(key, s):
         }
         if stage:
             req["admission_stage_ref"] = wref(f"admissionStage-{uni}-{stage}")
-        if has_test:
+        if s.get("std_tests"):  # explicit test list (e.g. NYUAD recommended/test-optional SAT/ACT)
+            req["standardized_tests"] = [{"_key": f"st{i+1}", "_type": "testRequirement", **t}
+                                         for i, t in enumerate(s["std_tests"])]
+        elif has_test:
             req["standardized_tests"] = [{"_key": "st1", "_type": "testRequirement",
                 "test_name": s["test_name"], "required": "required", "notes": s.get("test_note", "")}]
         docs.append(req)
@@ -605,7 +733,7 @@ def main():
     only = None
     if "--only" in sys.argv:
         only = sys.argv[sys.argv.index("--only") + 1]
-    keys = [only] if only else list(PROGRAMS)
+    keys = only.split(",") if only else list(PROGRAMS)
     all_docs, all_reused = [], set()
     for k in keys:
         if k not in PROGRAMS:
