@@ -190,8 +190,27 @@ A program card implies "you can apply to this." Only model DIRECT-ENTRY programs
 - Living: **omitted** (no official program estimate; not fabricated — same discipline as Aerospace).
 - Spec `tum-mgt` in create_programs.py; dry-run clean (9 docs). **Completes Business coverage.**
 
-### Still to build (each needs the above verified first)
-- Toronto Economics + NYUAD majors: represent as post-admission (per rule above), not direct-entry.
+### Decisions made by Subhan's delegation (2026-10-20) — "everything is up to me"
+- **TUM fee-year:** standardize on **2026-27 current/verified rates** (Aerospace/Informatics €6,000/yr,
+  M&T €4,000/yr), announced WS2027/28 increases disclosed in cost notes. Verified all TUM costProfiles
+  already consistent — no rework. (Hygiene follow-up: Informatics + Toronto CS each have DUPLICATE
+  costProfiles — 4/6 rows instead of 2/3; identical values so display unaffected; dedupe later.)
+- **Post-admission display:** model admission at the REAL entry point (Faculty/holistic), state the
+  post-admission path in degree_type_local, document the major-declaration step in application_requirements,
+  use the Faculty's cost; never invent a program-specific test/deadline/direct application.
+
+### Toronto Economics (Economics) — FULLY VERIFIED + CREATED (2026-10-20)
+- **BA Economics, Faculty of Arts & Science (St. George).** POST-ADMISSION: apply to A&S **Social Sciences**
+  stream (OUAC code **TAX**), prereqs **ENG4U + MCV4U**; Economics Major/Specialist/Minor is a POSt enrolled
+  after year 1 via ECO101H1+ECO102H1 (min **63% Major / 70% Specialist**) or ECO105Y1 (80%) + MAT.
+- Cost (verified via **Tuition Explorer**, which lists "Social Sciences" explicitly in the year-1 stream):
+  international **CAD 66,110** + 2,100.29 incidental + 948 UHIP; domestic Ontario **CAD 6,100** (Table B1).
+  Unlike CS, Economics has **no upper-year deregulated jump**. Reuses A&S cats; spec `toronto-econ`.
+- txn kcH2R0mkNwiyOfxLSPURo8.
+
+### Still to build
+- **NYUAD majors** (Engineering, Economics, Business): post-admission (unified holistic NYUAD admission;
+  major declared after entry). Single NYUAD cost structure (not per-major). IN PROGRESS 2026-10-20.
 
 ## Honest scope note
 Step 2 (create ~11 programs, each = program + per-curriculum admissions + residency-tiered

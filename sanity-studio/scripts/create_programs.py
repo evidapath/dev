@@ -411,6 +411,81 @@ PROGRAMS = {
             "Engineering specialization is 100% English). Certificate per TUM language rules unless exempt.",
             "notes": "Unlike TUM Aerospace (English-only), Management and Technology is bilingual English/German."},
     },
+    "toronto-econ": {
+        "uni": "ca-university-of-toronto", "uni_name": "University of Toronto",
+        "prog_suffix": "ba-economics", "checked": "2026-10-20",
+        "program_name": "Economics", "field_of_study": "Economics",
+        "degree_type": "BA",
+        "degree_type_local": "Bachelor of Arts in Economics, Faculty of Arts & Science (St. George). "
+        "POST-ADMISSION: you apply to Arts & Science via the Social Sciences admission stream "
+        "(OUAC code TAX), NOT to Economics directly. The Economics Major/Specialist/Minor is a "
+        "Program of Study (POSt) enrolled after first year on meeting ECO101H1 + ECO102H1 "
+        "(min 63% for Major, 70% for Specialist) or ECO105Y1 (80%), plus the required MAT course. "
+        "A Financial Economics Specialist (BSc, Science program) also exists.",
+        "duration_value": 4, "duration_unit": "years", "language": ["en"],
+        "faculty": "Faculty of Arts & Science (Department of Economics)",
+        "url": "https://www.economics.utoronto.ca/index.php/index/undergraduate/load/overview",
+        "platform": "OUAC", "decision_year": "2026-27 cycle, Fall 2027 entry",
+        "application_requirements": [
+            {"_key": "r1", "_type": "applicationRequirement", "name": "OUAC application (Arts & Science, Social Sciences stream)",
+             "necessity": "required", "requirement_type": "form",
+             "description": "Apply to the Faculty of Arts & Science via the Social Sciences admission stream (OUAC code TAX).",
+             "notes": "Admission is to Arts & Science, not to Economics directly."},
+            {"_key": "r2", "_type": "applicationRequirement", "name": "Economics Program of Study (POSt) — post-admission",
+             "necessity": "required", "requirement_type": "other",
+             "description": "Not a direct-entry program. Enrol in the Economics Major/Specialist/Minor AFTER first year "
+             "by meeting ECO101H1 + ECO102H1 (min 63% Major / 70% Specialist) or ECO105Y1 (80%), plus the required MAT course.",
+             "notes": "Grade thresholds per economics.utoronto.ca (POSt enrolment)."},
+        ],
+        "sources": {
+            "adm": {"suffix": "src-econ-adm",
+                "title": "Economics (St. George) admission + Undergraduate POSt requirements, U of T",
+                "url": "https://future.utoronto.ca/undergraduate-programs/economics/",
+                "excerpt": "Economics is admitted via the Faculty of Arts & Science 'Social Sciences' stream "
+                "(OUAC code TAX). Ontario prerequisites: English (ENG4U/EAE4U) and Calculus & Vectors (MCV4U). "
+                "The Economics program is a post-admission Program of Study: enrol after first year via ECO101H1 + "
+                "ECO102H1 (min 63% Major, 70% Specialist) or ECO105Y1 (80%) + MAT (per economics.utoronto.ca)."},
+            "fee": {"suffix": "src-econ-fee",
+                "title": "Tuition Explorer -- Arts & Science International Fees 2026-27 (Admission Streams Year 1)",
+                "url": "https://tuitionexplorer.registrar.utoronto.ca/index.php?academicYear=2026-27&sessionType=1&studyLevel=UG&residency=INT&campus=UTSG&faculty=ARTSC-UG",
+                "excerpt": "Admission Streams Year 1 (Commerce, Computer Science, Humanities, Life Sciences, "
+                "Mathematical and Physical Sciences, Social Sciences) 2026/27 International: Program Fee CAD 66,110 + "
+                "Incidental/System Access 2,100.29 + UHIP 948 = 69,158.29. Domestic Ontario-resident Year-1 A&S rate "
+                "CAD 6,100 (Table B1). International tuition rises ~5%/yr for new cohorts."},
+        },
+        "admissions": [
+            {"suffix": "ontario-ossd", "cat": "curriculum-ontario-ossd", "curriculum": "Ontario Secondary School Diploma (OSSD), 4U/M",
+             "threshold": "Six 4U/M courses including English (ENG4U) and Calculus & Vectors (MCV4U); competitive admission to the Arts & Science Social Sciences stream",
+             "subjects": ["English (ENG4U)", "Calculus & Vectors (MCV4U)", "four additional 4U/M"]},
+            {"suffix": "a-level", "cat": "curriculum-a-level", "curriculum": "GCE A-Level",
+             "threshold": "Senior-level English and a Calculus course; competitive grades for Social Sciences admission",
+             "subjects": ["English", "Mathematics (Calculus)"]},
+            {"suffix": "ib", "cat": "curriculum-ib", "curriculum": "International Baccalaureate",
+             "threshold": "English and Mathematics (with calculus, e.g. Analysis & Approaches); competitive grades",
+             "subjects": ["English", "Mathematics (with calculus)"]},
+            {"suffix": "us", "cat": "curriculum-us", "curriculum": "US High School / AP",
+             "threshold": "Senior English and a calculus course (e.g. AP Calculus); competitive grades",
+             "subjects": ["English", "Calculus (e.g. AP Calculus)"]},
+        ],
+        # No single admission stage (admission is to Arts & Science; Economics is post-admission POSt). Omit stage.
+        "costs": [
+            {"suffix": "domestic-ontario", "cat": "residency-domestic-ontario", "tuition": 6100,
+             "basis": "statutory", "year": "2026-27",
+             "note": "Regulated Ontario-resident Year-1 Arts & Science rate (Table B1; division-wide, = CS Arts & Science)."},
+            {"suffix": "international", "cat": "residency-international", "tuition": 66110,
+             "basis": "institutional", "year": "2026-27", "mandatory_fees_annual": 3048.29,
+             "note": "Arts & Science 'Social Sciences' admission-stream Year-1 international rate (= CS/Commerce/Humanities "
+             "Year-1); + 2,100.29 incidental + 948 UHIP. Rises ~5%/yr for new cohorts. Unlike CS, Economics (Social "
+             "Sciences) has NO upper-year deregulated jump."},
+        ],
+        "living": {"min": 1500, "max": 2500, "currency": "CAD", "admin_body": "University of Toronto",
+                   "desc": "U of T estimates ~CAD 2,000/month total living expenses; residence + meal CAD 15,167-24,910/yr."},
+        "currency": "CAD",
+        "lang_req": {
+            "test_name": "IELTS Academic (or accepted equivalent) unless exempt",
+            "min_score": "IELTS Academic 6.5 overall, no band below 6.0 (per U of T English Language Requirements), unless exempt.",
+            "notes": "U of T general English requirement. Verified vs future.utoronto.ca/english-language-requirements."},
+    },
 }
 
 
@@ -419,6 +494,7 @@ def build_docs(key, s):
     prog_id = f"program-{uni}-{ps}"
     src_adm = f"sourceRecord-{uni}-{s['sources']['adm']['suffix']}"
     src_fee = f"sourceRecord-{uni}-{s['sources']['fee']['suffix']}"
+    checked = s.get("checked", "2026-10-13")  # verification date (per-spec)
     docs = []
 
     for which, sid in (("adm", src_adm), ("fee", src_fee)):
@@ -429,7 +505,7 @@ def build_docs(key, s):
             "source_type": "official_university", "title": sc["title"], "url": sc["url"],
             "excerpt": sc["excerpt"], "notes": "",
             "retrieval_method": "WebSearch/WebFetch (primary-source verification, EvidaPath A3)",
-            "retrieved_at": "2026-10-13T00:00:00Z", "fields_supported": [],
+            "retrieved_at": f"{checked}T00:00:00Z", "fields_supported": [],
         })
 
     docs.append({
@@ -466,7 +542,7 @@ def build_docs(key, s):
             "academic_threshold": a["threshold"], "academic_year": "2027 entry",
             "required_subjects": a["subjects"], "program_ref": wref(prog_id),
             "prior_curriculum_category_ref": wref(f"applicantCategory-{uni}-{a['cat']}"),
-            "record_status": "VERIFIED", "last_checked": "2026-10-13",
+            "record_status": "VERIFIED", "last_checked": checked,
             "language_requirements": [{"_key": "lr1", "_type": "languageRequirement", "language": "English",
                 **s["lang_req"]}],
             "source_refs": [wref(src_adm, "s1")],
@@ -484,7 +560,7 @@ def build_docs(key, s):
             "id": f"{uni}-cost-{ps}-{c['suffix']}", "academic_year": c["year"], "currency": s["currency"],
             "duration_years": s["duration_value"], "tuition_annual": c["tuition"], "tuition_basis": c["basis"],
             "program_ref": wref(prog_id), "residency_category_ref": wref(f"applicantCategory-{uni}-{c['cat']}"),
-            "record_status": "VERIFIED", "verification_status": "VERIFIED", "last_checked": "2026-10-13",
+            "record_status": "VERIFIED", "verification_status": "VERIFIED", "last_checked": checked,
             "mandatory_fees_breakdown": c.get("mandatory_fees_breakdown", []), "other_material_costs": [],
             "living_cost_source_basis": ({"_type": "livingCostSourceBasis",
                 "kind": "genuine_cost_of_living_estimate", "administering_body": admin_body,
