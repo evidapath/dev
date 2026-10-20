@@ -551,7 +551,7 @@ PROGRAMS = {
     "nyuad-eng": {
         "uni": "ae-nyu-abu-dhabi", "uni_name": "New York University Abu Dhabi",
         "prog_suffix": "bs-general-engineering", "checked": "2026-10-20",
-        "program_name": "General Engineering (BS)", "field_of_study": "Engineering",
+        "program_name": "General Engineering", "field_of_study": "Engineering",
         "degree_type": "BSc",
         "degree_type_local": "Bachelor of Science, General Engineering (NYUAD Engineering division). "
         "POST-ADMISSION: admission is university-wide via the Common Application; students declare the Engineering "
@@ -573,7 +573,7 @@ PROGRAMS = {
     "nyuad-econ": {
         "uni": "ae-nyu-abu-dhabi", "uni_name": "New York University Abu Dhabi",
         "prog_suffix": "ba-economics", "checked": "2026-10-20",
-        "program_name": "Economics (BA)", "field_of_study": "Economics",
+        "program_name": "Economics", "field_of_study": "Economics",
         "degree_type": "BA",
         "degree_type_local": "Bachelor of Arts, Economics (NYUAD Social Science division). "
         "POST-ADMISSION: admission is university-wide via the Common Application; students declare the Economics "
@@ -594,7 +594,7 @@ PROGRAMS = {
     "nyuad-bos": {
         "uni": "ae-nyu-abu-dhabi", "uni_name": "New York University Abu Dhabi",
         "prog_suffix": "ba-business-organizations-society", "checked": "2026-10-20",
-        "program_name": "Business, Organizations and Society (BA)", "field_of_study": "Business",
+        "program_name": "Business, Organizations and Society", "field_of_study": "Business",
         "degree_type": "BA",
         "degree_type_local": "Bachelor of Arts, Business, Organizations and Society (NYUAD Social Science division). "
         "POST-ADMISSION: admission is university-wide via the Common Application; students declare the major after "
