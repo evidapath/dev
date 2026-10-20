@@ -173,9 +173,24 @@ A program card implies "you can apply to this." Only model DIRECT-ENTRY programs
   Do not mix years silently. Living: existing Informatics uses €15,600/yr + Sperrkonto €11,904
   (German visa proof-of-funds); reuse with source, don't invent a new range.
 
+### TU Munich Management & Technology (Business) — FULLY VERIFIED + spec ready (2026-10-20)
+- **M&T B.Sc.**, Campus Munich, **TUM School of Management**, 6 semesters / 180 ECTS; ~70%
+  management + a ~30% technology track (Chemistry, Mech Eng, Informatics, EE&IT, Computer Eng,
+  or Medicine). **Bilingual English/German** (Computer Eng track 100% English) — NOT English-only
+  like Aerospace; language field is `["en","de"]`.
+- ⚠️ **Fee tier caught (did NOT assume = Aerospace):** TUM bachelor non-EU tuition is tiered
+  **€2,000 OR €3,000/sem**. M&T is the **LOWER €2,000/sem (= €4,000/yr)** tier (verified on the
+  official TUM School of Management program page), NOT Aerospace's €3,000/sem engineering tier.
+  EU/EEA **€0**. + €97/sem (€194/yr) Munich student-union fee. WS 2027/28 increase: €2,300/sem for
+  new non-EU bachelor entrants (noted; current students grandfathered).
+- Admission = **two-part aptitude assessment** (final grade/GPA + half-year grades in German or
+  English, Mathematics, and an advanced natural science **incl. Informatics**) — NOT Physics-specific
+  like Aerospace. Reuses TUM cats a-level/ib/us-hs/abitur + residency eu-eea/non-eu + stage
+  aptitude-assessment. TUMonline + uni-assist VPD; winter application 15.05–15.07.
+- Living: **omitted** (no official program estimate; not fabricated — same discipline as Aerospace).
+- Spec `tum-mgt` in create_programs.py; dry-run clean (9 docs). **Completes Business coverage.**
+
 ### Still to build (each needs the above verified first)
-- TU Delft Aerospace (verify prereqs), TU Munich Aerospace (resolve fee-year), TUM Management &
-  Technology (English option — verify fee/admission; business family).
 - Toronto Economics + NYUAD majors: represent as post-admission (per rule above), not direct-entry.
 
 ## Honest scope note

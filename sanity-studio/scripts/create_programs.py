@@ -334,6 +334,83 @@ PROGRAMS = {
             "min_score": "Required for the English-taught program unless exempt; per TUM language certificate rules.",
             "notes": "Aerospace B.Sc. is English-taught (unlike TUM Informatics, which is German-taught)."},
     },
+    "tum-mgt": {
+        "uni": "de-tu-munich", "uni_name": "Technical University of Munich",
+        "prog_suffix": "bsc-management-and-technology",
+        "program_name": "Management and Technology", "field_of_study": "Business",
+        "degree_type": "BSc",
+        "degree_type_local": "Management and Technology B.Sc. (6 semesters, 180 ECTS), Campus Munich, "
+        "TUM School of Management; ~70% management + a ~30% technology specialization "
+        "(Chemistry, Mechanical Engineering, Informatics, Electrical & Information Technology, "
+        "Computer Engineering, or Medicine). Bilingual English/German (Computer Engineering spec 100% English).",
+        "duration_value": 6, "duration_unit": "semesters", "language": ["en", "de"],
+        "faculty": "TUM School of Management",
+        "url": "https://www.tum.de/en/studies/degree-programs/detail/management-and-technology-bachelor-of-science-bsc",
+        "platform": "TUMonline", "decision_year": "Winter Semester 2026/27",
+        "application_requirements": [
+            {"_key": "r1", "_type": "applicationRequirement", "name": "TUMonline online application",
+             "necessity": "required", "requirement_type": "form",
+             "description": "", "notes": "Winter-semester application period 15 May - 15 July."},
+            {"_key": "r2", "_type": "applicationRequirement", "name": "uni-assist Preliminary Documentation (VPD)",
+             "necessity": "required", "requirement_type": "other",
+             "description": "Credential pre-assessment for applicants with a non-German qualification.", "notes": ""},
+            {"_key": "r3", "_type": "applicationRequirement", "name": "Aptitude assessment (Eignungsfeststellungsverfahren)",
+             "necessity": "required", "requirement_type": "interview_or_evaluation_event",
+             "description": "Two-part aptitude assessment. Scores the final Abitur/GPA plus four half-year grades "
+             "in German or English, Mathematics, and an advanced natural science (including Informatics).", "notes": ""},
+        ],
+        "sources": {
+            "adm": {"suffix": "src-mgt-adm",
+                "title": "Management and Technology (Campus Munich) -- Bachelor of Science (B.Sc.), TUM",
+                "url": "https://www.tum.de/en/studies/degree-programs/detail/management-and-technology-bachelor-of-science-bsc",
+                "excerpt": "Management and Technology B.Sc., 6 semesters, 180 ECTS, TUM School of Management, "
+                "English and German (Computer Engineering specialization 100% English). Two-part aptitude "
+                "assessment scoring final grade/GPA plus half-year grades in German or English, Mathematics, "
+                "and an advanced natural science including Informatics. Winter-semester application 15.05-15.07."},
+            "fee": {"suffix": "src-mgt-fee",
+                "title": "Bachelor in Management & Technology (Munich) -- tuition, TUM School of Management; TUM tuition for non-EU students",
+                "url": "https://www.mgt.tum.de/programs/bachelor-management-technology/munich",
+                "excerpt": "Non-EU/EEA tuition EUR 2,000/semester (the lower TUM bachelor tier; TUM engineering "
+                "programs are EUR 3,000/semester). EU/EEA: no tuition. Munich student-union semester fee EUR 97 "
+                "(SS 2026). TUM has announced bachelor non-EU fees rising to EUR 2,300/semester for WS 2027/28 "
+                "new entrants (per tum.de/en/studies/fees/tuition)."},
+        },
+        "admissions": [
+            {"suffix": "a-level", "cat": "curriculum-a-level", "curriculum": "British-patterned GCE A-Level",
+             "threshold": "A-Level recognised as HZB; admission via the two-part aptitude assessment "
+             "(final grade + half-year grades in German or English, Mathematics, and an advanced natural science incl. Informatics)",
+             "subjects": ["Mathematics", "An advanced natural science (incl. Informatics)", "German or English"]},
+            {"suffix": "ib", "cat": "curriculum-ib", "curriculum": "International Baccalaureate (IB) Diploma",
+             "threshold": "IB Diploma recognised as HZB; admission via the two-part aptitude assessment "
+             "(final grade + half-year grades in German or English, Mathematics, and an advanced natural science incl. Informatics)",
+             "subjects": ["Mathematics", "An advanced natural science (incl. Informatics)", "German or English"]},
+            {"suffix": "us-hs", "cat": "curriculum-us-hs", "curriculum": "U.S. High School Diploma / AP route",
+             "threshold": "US HS diploma + AP as needed to meet HZB; admission via the two-part aptitude assessment "
+             "(final grade/GPA + grades in German or English, Mathematics, and an advanced natural science incl. Informatics)",
+             "subjects": ["Mathematics", "An advanced natural science (incl. Informatics)", "English"]},
+            {"suffix": "abitur", "cat": "curriculum-abitur", "curriculum": "German Abitur",
+             "threshold": "Allgemeine Hochschulreife (Abitur); admission via the two-part aptitude assessment "
+             "(final grade + half-year grades in German or English, Mathematics, and an advanced natural science incl. Informatics)",
+             "subjects": ["Mathematics", "An advanced natural science (incl. Informatics)", "German or English"]},
+        ],
+        "stage": "stage-aptitude-assessment",
+        "costs": [
+            {"suffix": "eu-eea", "cat": "residency-eu-eea", "tuition": 0, "basis": "statutory",
+             "year": "2026-27", "mandatory_fees_annual": 194,
+             "note": "No tuition for EU/EEA; EUR 97/semester (EUR 194/yr) Munich student-union fee applies."},
+            {"suffix": "non-eu", "cat": "residency-non-eu", "tuition": 4000, "basis": "institutional",
+             "year": "2026-27", "mandatory_fees_annual": 194,
+             "note": "EUR 2,000/semester (2026-27) -- the LOWER TUM bachelor tier, not the EUR 3,000/sem engineering tier "
+             "(e.g. Aerospace). + EUR 97/sem union fee. TUM announced an increase to EUR 2,300/semester for non-EU "
+             "bachelor entrants in WS 2027/28 (current students grandfathered)."},
+        ],
+        "living": None,  # No official program living-cost estimate published; not fabricated (same as TUM Aerospace).
+        "currency": "EUR",
+        "lang_req": {"test_name": "German or English proficiency unless exempt",
+            "min_score": "Sufficient German OR English language skills required (program is bilingual; the Computer "
+            "Engineering specialization is 100% English). Certificate per TUM language rules unless exempt.",
+            "notes": "Unlike TUM Aerospace (English-only), Management and Technology is bilingual English/German."},
+    },
 }
 
 
