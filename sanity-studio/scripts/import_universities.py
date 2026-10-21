@@ -138,27 +138,37 @@ UNIVERSITIES = {
         ],
         "deadline_note": "Fall intake: applications received after ~21 May may not be considered (per AUS).",
         "living": None,  # No AUS program living estimate verified this pass; dorm charges exist but not captured. Not fabricated.
+        # provider_type enum: institutional/government/external-private/university-fund.
+        # award_type enum: full_tuition/partial_tuition/fixed_amount/stipend/living_cost_support/fee_waiver/mixed.
+        # competitive-vs-guaranteed is captured in other_eligibility_criteria (schema has no such enum).
         "scholarships": [
             {"suffix": "presidents", "name": "President's Scholarship", "provider": "American University of Sharjah",
-             "aid_type": "competitive_merit", "renewable": True, "deadline": "2027-04-01",
-             "award_summary": "100% of tuition and lab fees, plus monthly stipend, housing, travel tickets and medical insurance.",
-             "eligibility": "Highly competitive merit award. IELTS 7.0 / TOEFL iBT 94; e.g. American curriculum 98% CGPA "
-             "(grades 10–11) + three AP grade-5 or SAT composite 1400. Requirements vary by curriculum."},
+             "provider_type": "institutional", "award_type": "mixed", "renewable": True,
+             "award_amount": "100% of tuition and lab fees, plus monthly stipend, housing, travel tickets and medical insurance.",
+             "academic_criteria": "IELTS 7.0 / TOEFL iBT 94; e.g. American curriculum 98% CGPA (grades 10–11) + three AP "
+             "grade-5 or SAT composite 1400 (requirements vary by curriculum).",
+             "other_eligibility_criteria": "COMPETITIVE merit award (not guaranteed); separate application required.",
+             "application_deadline": "April 1", "deadline_academic_year": "2027-2028"},
             {"suffix": "chancellors", "name": "Chancellor's Scholarship", "provider": "American University of Sharjah",
-             "aid_type": "competitive_merit", "renewable": True, "deadline": "2027-04-01",
-             "award_summary": "Full coverage of tuition and lab fees, plus application fee waiver, housing and medical insurance.",
-             "eligibility": "Competitive merit award, slightly below President's. IELTS 7.0 / TOEFL iBT 94; e.g. American "
-             "curriculum 98% CGPA (grades 10–11) + two AP grade-5 or SAT composite 1200."},
+             "provider_type": "institutional", "award_type": "mixed", "renewable": True,
+             "award_amount": "Full coverage of tuition and lab fees, plus application fee waiver, housing and medical insurance.",
+             "academic_criteria": "IELTS 7.0 / TOEFL iBT 94; e.g. American curriculum 98% CGPA (grades 10–11) + two AP "
+             "grade-5 or SAT composite 1200.",
+             "other_eligibility_criteria": "COMPETITIVE merit award, just below President's; separate application required.",
+             "application_deadline": "April 1", "deadline_academic_year": "2027-2028"},
             {"suffix": "merit", "name": "Merit Scholarships", "provider": "American University of Sharjah",
-             "aid_type": "automatic_merit", "renewable": True, "deadline": None,
-             "award_summary": "10–20% of tuition and lab fees.",
-             "eligibility": "Automatically offered at admission (no separate competitive application) to students with a "
-             "95% minimum average in grades 10–11. Transfer students ineligible; award not guaranteed."},
+             "provider_type": "institutional", "award_type": "partial_tuition", "renewable": True,
+             "award_amount": "10–20% of tuition and lab fees.",
+             "academic_criteria": "95% minimum average in grades 10–11.",
+             "other_eligibility_criteria": "AUTOMATIC at admission (no competitive application); not guaranteed; "
+             "transfer students ineligible.", "application_deadline": None, "deadline_academic_year": None},
             {"suffix": "family-grant", "name": "Family Tuition Grant", "provider": "American University of Sharjah",
-             "aid_type": "guaranteed_need", "renewable": True, "deadline": None,
-             "award_summary": "25% tuition discount for the second and subsequent siblings enrolled simultaneously.",
-             "eligibility": "Need-based, guaranteed if eligible: multiple siblings enrolled at the same time; ineligible "
-             "if a sibling holds a 100% scholarship."},
+             "provider_type": "institutional", "award_type": "partial_tuition", "renewable": True,
+             "award_amount": "25% tuition discount for the second and subsequent siblings enrolled simultaneously.",
+             "academic_criteria": "",
+             "other_eligibility_criteria": "Need-based, GUARANTEED if eligible: multiple siblings enrolled "
+             "simultaneously; ineligible if a sibling holds a 100% scholarship.",
+             "application_deadline": None, "deadline_academic_year": None},
         ],
     },
 }
@@ -265,16 +275,26 @@ def build_docs(slug, s):
                 "min": living["min"], "max": living["max"]}
         docs.append(cp)
 
-    # Scholarships
+    # Scholarships — schema fields: provider_type, institutions_covered (uni id strings),
+    # programs_covered, degree_levels, eligible_citizenships, award_type, award_amount,
+    # academic_criteria, other_eligibility_criteria, official_source_url, verification_status, etc.
+    schol_src = s["sources"]["schol"]
     for sch in s.get("scholarships", []):
         doc = {"_id": D + f"scholarship-{slug}-{sch['suffix']}", "_type": "scholarship",
             "id": f"{slug}-{sch['suffix']}", "name": sch["name"], "provider": sch["provider"],
-            "degree_levels": ["undergraduate"], "aid_type": sch["aid_type"], "renewable": sch["renewable"],
-            "award_summary": sch["award_summary"], "eligibility_summary": sch["eligibility"],
-            "university_ref": wref(uni_id), "record_status": "VERIFIED",
-            "source_refs": [wref(src_id("schol"), "s1")]}
-        if sch.get("deadline"):
-            doc["deadline"] = sch["deadline"]
+            "provider_type": sch["provider_type"], "institutions_covered": [slug],
+            "programs_covered": ["all-undergraduate-majors"], "degree_levels": ["undergraduate"],
+            "eligible_citizenships": ["all"], "award_type": sch["award_type"],
+            "award_amount": sch["award_amount"], "academic_criteria": sch.get("academic_criteria", ""),
+            "other_eligibility_criteria": sch.get("other_eligibility_criteria", ""),
+            "renewable": sch["renewable"], "official_source_url": schol_src["url"],
+            "source_refs": [wref(src_id("schol"), "s1")], "last_checked": s["verified_at"],
+            "verification_status": "VERIFIED", "record_status": "VERIFIED",
+            "extension_metadata": {"_type": "extensionMetadata"}}
+        if sch.get("application_deadline"):
+            doc["application_deadline"] = sch["application_deadline"]
+        if sch.get("deadline_academic_year"):
+            doc["deadline_academic_year"] = sch["deadline_academic_year"]
         docs.append(doc)
 
     reused = [f"country-{cc}"]  # published country must exist
