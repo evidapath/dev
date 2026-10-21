@@ -145,15 +145,40 @@ function ScholarshipsGraphPage() {
 
       {/* Scholarship Cards Grid */}
       {loading ? (
-        <p className="text-sm text-muted-foreground">Loading verified scholarship data…</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div
+              key={i}
+              className="rounded-2xl border border-border bg-card p-6 space-y-5 motion-safe:animate-in motion-safe:fade-in fill-mode-both"
+              style={{ animationDelay: `${Math.min(i, 8) * 60}ms`, animationDuration: "400ms" }}
+              aria-hidden="true"
+            >
+              <div className="animate-pulse space-y-5">
+                <div className="flex items-center justify-between">
+                  <div className="h-3 w-24 rounded bg-muted" />
+                  <div className="h-3 w-16 rounded bg-muted" />
+                </div>
+                <div className="space-y-2">
+                  <div className="h-5 w-3/4 rounded bg-muted" />
+                  <div className="h-3 w-1/2 rounded bg-muted" />
+                </div>
+                <div className="h-24 w-full rounded-xl bg-muted" />
+                <div className="h-9 w-full rounded-lg bg-muted" />
+              </div>
+            </div>
+          ))}
+        </div>
       ) : filtered.length === 0 ? (
-        <p className="text-sm text-muted-foreground">No scholarships match your search.</p>
+        <p className="text-sm text-muted-foreground animate-in fade-in duration-300">
+          No scholarships match your search.
+        </p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((s) => (
+          {filtered.map((s, i) => (
             <div
               key={s.id}
-              className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between space-y-5 hover:border-primary/40 transition-all"
+              className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between space-y-5 transition-all duration-200 ease-out hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-3 fill-mode-both"
+              style={{ animationDelay: `${Math.min(i, 8) * 60}ms`, animationDuration: "450ms" }}
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-[11px]">

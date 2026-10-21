@@ -167,4 +167,34 @@
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
+
+  /* Smoothness layer: gentle, consistent motion across the app. */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Interactive elements ease their state changes instead of snapping. */
+  a,
+  button,
+  select,
+  input,
+  textarea,
+  [role="button"],
+  [data-slot="button"] {
+    transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+
+  /* Respect users who prefer reduced motion: disable all animation/transition. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }

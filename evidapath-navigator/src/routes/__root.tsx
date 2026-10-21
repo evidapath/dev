@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -155,6 +156,9 @@ import { Footer } from "../components/Footer";
 
 function RootComponent() {
   const { queryClient, auth } = Route.useRouteContext();
+  // Key the content wrapper by pathname so each navigation re-triggers a gentle
+  // fade/slide-in — makes route changes feel smooth instead of an instant swap.
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -163,7 +167,12 @@ function RootComponent() {
           <Header />
           <main className="flex-1">
             {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-            <Outlet />
+            <div
+              key={pathname}
+              className="h-full motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-1 duration-300 ease-out"
+            >
+              <Outlet />
+            </div>
           </main>
           <Footer />
         </div>

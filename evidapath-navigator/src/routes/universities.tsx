@@ -134,16 +134,55 @@ function UniversitiesDirectoryPage() {
 
       {/* University Profiles Grid */}
       {loading ? (
-        <p className="text-sm text-muted-foreground">Loading verified university data…</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <UniversityCardSkeleton key={i} index={i} />
+          ))}
+        </div>
       ) : filtered.length === 0 ? (
-        <p className="text-sm text-muted-foreground">No universities match your search.</p>
+        <p className="text-sm text-muted-foreground animate-in fade-in duration-300">
+          No universities match your search.
+        </p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((univ) => (
-            <UniversityCard key={univ.id} univ={univ} />
+          {filtered.map((univ, i) => (
+            <UniversityCard key={univ.id} univ={univ} index={i} />
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
+// Skeleton placeholder shown while verified data loads — keeps the grid layout
+// stable (no pop-in / layout shift) and signals progress with a gentle pulse.
+function UniversityCardSkeleton({ index = 0 }: { index?: number }) {
+  return (
+    <div
+      className="rounded-2xl border border-border bg-card p-6 space-y-6 motion-safe:animate-in motion-safe:fade-in fill-mode-both"
+      style={{ animationDelay: `${Math.min(index, 8) * 60}ms`, animationDuration: "400ms" }}
+      aria-hidden="true"
+    >
+      <div className="animate-pulse space-y-6">
+        <div className="flex items-center justify-between">
+          <div className="h-8 w-8 rounded-full bg-muted" />
+          <div className="h-5 w-24 rounded bg-muted" />
+        </div>
+        <div className="space-y-2">
+          <div className="h-5 w-3/4 rounded bg-muted" />
+          <div className="h-3 w-1/2 rounded bg-muted" />
+        </div>
+        <div className="h-9 w-full rounded-lg bg-muted" />
+        <div className="space-y-2.5">
+          <div className="h-3 w-full rounded bg-muted" />
+          <div className="h-3 w-5/6 rounded bg-muted" />
+          <div className="h-3 w-2/3 rounded bg-muted" />
+        </div>
+        <div className="flex gap-2 pt-2">
+          <div className="h-9 w-28 rounded-lg bg-muted" />
+          <div className="h-9 w-28 rounded-lg bg-muted" />
+        </div>
+      </div>
     </div>
   );
 }
@@ -152,7 +191,7 @@ function UniversitiesDirectoryPage() {
 // shows a program selector so the student sees THAT program's own cost + admissions
 // (Suhail: program-specific, not university-wide). Falls back to the flat fields for
 // single-program universities.
-function UniversityCard({ univ }: { univ: University }) {
+function UniversityCard({ univ, index = 0 }: { univ: University; index?: number }) {
   const details = univ.programDetails;
   const [sel, setSel] = useState(0);
   const pv = details?.[sel];
@@ -164,7 +203,10 @@ function UniversityCard({ univ }: { univ: University }) {
   const admissions = pv?.admissionsByCurriculum ?? univ.admissionsByCurriculum;
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between space-y-6 hover:border-primary/40 transition-all">
+    <div
+      className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between space-y-6 transition-all duration-200 ease-out hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-3 fill-mode-both"
+      style={{ animationDelay: `${Math.min(index, 8) * 60}ms`, animationDuration: "450ms" }}
+    >
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <span className="text-3xl">{univ.flag}</span>
