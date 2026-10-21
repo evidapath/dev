@@ -171,6 +171,112 @@ UNIVERSITIES = {
              "application_deadline": None, "deadline_academic_year": None},
         ],
     },
+    "ae-uaeu": {
+        "canonical_name": "United Arab Emirates University", "aliases": ["UAEU"], "country_cc": "ae",
+        "city": {"slug": "ae-al-ain", "name": "Al Ain"},
+        "website": "https://www.uaeu.ac.ae/", "institution_type": "public",
+        "verified_at": "2026-10-21", "currency": "AED",
+        "verification_note": "fact-checks/ae-uaeu-2026-10-21.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "United Arab Emirates University — official site (uaeu.ac.ae)",
+                "url": "https://www.uaeu.ac.ae/",
+                "excerpt": "UAEU is the UAE's flagship public (federal) university, in Al Ain, Abu Dhabi emirate; "
+                "English medium. Colleges incl. Information Technology (CIT), Engineering, and Business and Economics (CBE)."},
+            "adm": {"suffix": "src-adm", "title": "Undergraduate Admissions / English requirements — UAEU",
+                "url": "https://www.uaeu.ac.ae/en/admission/undergraduate-admissions-current-student.shtml",
+                "excerpt": "International applicants: Grade 12 certificate or equivalent. English for direct admission: "
+                "EmSAT Achieve English 1250, or TOEFL ITP 525 / iBT 70, or IELTS Academic 5.5; EmSAT English 1100–1225 "
+                "may be conditionally admitted with foundation English. Deadlines: 1st semester May–Jul, 2nd semester Sep–Nov."},
+            "fee": {"suffix": "src-fee", "title": "Program and Housing Rates — International Undergraduate Students (2026/27) — UAEU",
+                "url": "https://www.uaeu.ac.ae/en/dvcsae/student_account_office/program-and-housing-rates-international-students-undergraduate-students.shtml",
+                "excerpt": "International undergraduate rate AY 2026/27 onwards: AED 2,661 per credit hour. Computer Science "
+                "120 cr = AED 319,320; Business/Economics programs 120 cr = AED 319,320; Engineering (College of "
+                "Engineering) 132 cr = AED 351,252. These are INTERNATIONAL-student rates; UAE nationals are "
+                "government-sponsored."},
+            "schol": {"suffix": "src-schol", "title": "Undergraduate Scholarships (International Students) — UAEU",
+                "url": "https://www.uaeu.ac.ae/en/admission/undergraduate-scholarships.shtml",
+                "excerpt": "International-student tuition-waiver scholarships from AY 2025/26: Full Tuition Waiver — "
+                "min 98% Grade-12 + TOEFL ITP 590 / iBT 105 / IELTS 7.5. 75% Tuition Waiver — min 95% Grade-12 + "
+                "TOEFL ITP 550 / iBT 85 / IELTS 6.5."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level / IGCSE qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "American High School Diploma", "US-curriculum high school diploma holders."),
+            ("uae-shs", "UAE Secondary School Certificate", "UAE national secondary school certificate holders."),
+        ],
+        "residencies": [
+            ("international", "International students",
+             "International (non-UAE-national) undergraduate students. UAE nationals are government-sponsored (national rate not separately published)."),
+        ],
+        # University default cost = 120-credit programs (CS / Business / Economics). Engineering overrides (132 cr).
+        "cost": {"residency": "international", "tuition": 79830, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": 0,
+            "note": "International rate AY2026/27: AED 2,661/credit × 120 credits = AED 319,320 total program fee "
+            "(~AED 79,830/yr over 4 years). UAE nationals are government-sponsored (national rate not separately "
+            "published). Excludes housing and other charges."},
+        "lang_req": {"test_name": "EmSAT Achieve English / TOEFL / IELTS (unless exempt)",
+            "min_score": "EmSAT Achieve English 1250, or TOEFL ITP 525 / iBT 70, or IELTS Academic 5.5 for direct "
+            "admission. EmSAT English 1100–1225 may be conditionally admitted with foundation English courses.",
+            "notes": "English is the medium of instruction at UAEU."},
+        "std_tests": [
+            {"test_name": "EmSAT Achieve (UAE)", "required": "required",
+             "notes": "EmSAT Achieve English >= 1250 (or TOEFL/IELTS equivalent) for direct admission; EmSAT "
+             "Mathematics is also required for STEM programs. International equivalents accepted."},
+        ],
+        "deadline_note": "Application deadlines: first semester May–July; second semester September–November.",
+        "living": None,  # UAEU publishes housing rates but no program cost-of-living estimate captured; not fabricated.
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science",
+             "degree": "BSc", "degree_local": "Bachelor of Science in Computer Science, College of Information Technology (CIT).",
+             "faculty": "College of Information Technology", "duration": 4,
+             "url": "https://www.uaeu.ac.ae/en/catalog/undergraduate/programs/bachelor-of-science-in-computer-science.shtml",
+             "subjects_note": "Grade 12 certificate; strong mathematics (EmSAT Math for STEM); English per requirements",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "us-hs": ["Mathematics"], "uae-shs": ["Mathematics"]}},
+            {"suffix": "bsc-eng", "program_name": "Engineering", "field": "Engineering",
+             "degree": "BSc", "degree_local": "Bachelor of Science in Engineering, College of Engineering; "
+             "specializations across the college (e.g. civil, electrical, mechanical, chemical).",
+             "faculty": "College of Engineering", "duration": 4,
+             "url": "https://www.uaeu.ac.ae/en/eng/",
+             "subjects_note": "Grade 12 certificate; Mathematics and Physics (EmSAT Math for STEM); English per requirements",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "us-hs": ["Mathematics", "Physics"], "uae-shs": ["Mathematics", "Physics"]},
+             "cost": {"residency": "international", "tuition": 87813, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "International rate AY2026/27: AED 2,661/credit × 132 credits = AED 351,252 total program fee "
+                 "(~AED 87,813/yr over 4 years) — higher than the 120-credit CS/Business/Economics programs. UAE "
+                 "nationals government-sponsored. Excludes housing."}},
+            {"suffix": "bba", "program_name": "Business Administration", "field": "Business",
+             "degree": "BBA", "degree_local": "Bachelor of Business Administration, College of Business and Economics "
+             "(CBE); majors incl. Marketing, Human Resources, Supply Chain & Logistics, Entrepreneurship.",
+             "faculty": "College of Business and Economics", "duration": 4,
+             "url": "https://www.uaeu.ac.ae/en/cbe/",
+             "subjects_note": "Grade 12 certificate; Mathematics; English per requirements",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "us-hs": ["Mathematics"], "uae-shs": ["Mathematics"]}},
+            {"suffix": "b-econ", "program_name": "Economics", "field": "Economics",
+             "degree": "BSc", "degree_local": "Bachelor of Economics, College of Business and Economics (CBE).",
+             "faculty": "College of Business and Economics", "duration": 4,
+             "url": "https://www.uaeu.ac.ae/en/cbe/",
+             "subjects_note": "Grade 12 certificate; Mathematics; English per requirements",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "us-hs": ["Mathematics"], "uae-shs": ["Mathematics"]}},
+        ],
+        "scholarships": [
+            {"suffix": "full-waiver", "name": "Full Tuition Waiver (International Students)",
+             "provider": "United Arab Emirates University", "provider_type": "institutional", "award_type": "full_tuition",
+             "renewable": True, "award_amount": "100% tuition waiver.",
+             "academic_criteria": "Minimum 98% in the General Secondary School Certificate (Grade 12) + English: "
+             "TOEFL ITP 590 / iBT 105 / IELTS Academic 7.5.",
+             "other_eligibility_criteria": "Merit-based scholarship for international students (from AY 2025/26); "
+             "awarded on meeting the threshold.", "application_deadline": None, "deadline_academic_year": "2026-2027"},
+            {"suffix": "partial-75", "name": "75% Tuition Waiver (International Students)",
+             "provider": "United Arab Emirates University", "provider_type": "institutional", "award_type": "partial_tuition",
+             "renewable": True, "award_amount": "75% tuition waiver.",
+             "academic_criteria": "Minimum 95% in the General Secondary School Certificate (Grade 12) + English: "
+             "TOEFL ITP 550 / iBT 85 / IELTS Academic 6.5.",
+             "other_eligibility_criteria": "Merit-based scholarship for international students (from AY 2025/26).",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
 }
 
 
@@ -217,9 +323,10 @@ def build_docs(slug, s):
             "id": f"{slug}-residency-{rid}", "dimension": "residency", "label": label,
             "description": desc, "university_ref": wref(uni_id)})
 
-    cost, lang = s["cost"], s["lang_req"]
+    lang = s["lang_req"]
     living = s.get("living")
     for p in s["programs"]:
+        cost = p.get("cost", s.get("cost"))  # per-program cost override; else university default
         ps, prog_id = p["suffix"], f"program-{slug}-{p['suffix']}"
         docs.append({"_id": D + prog_id, "_type": "program", "id": f"{slug}-{ps}",
             "program_name": p["program_name"], "field_of_study": p["field"], "degree_type": p["degree"],
