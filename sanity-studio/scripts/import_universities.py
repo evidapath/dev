@@ -1299,6 +1299,275 @@ UNIVERSITIES = {
              "application_deadline": None, "deadline_academic_year": "2026-2027"},
         ],
     },
+    "us-cornell": {
+        "canonical_name": "Cornell University", "aliases": ["Cornell"], "country_cc": "us",
+        "city": {"slug": "us-ithaca-ny", "name": "Ithaca"},
+        "website": "https://www.cornell.edu/", "institution_type": "private-nonprofit",
+        "verified_at": "2026-10-21", "currency": "USD",
+        "verification_note": "fact-checks/us-cornell-2026-10-21.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Cornell University — undergraduate colleges & programs",
+                "url": "https://www.cornell.edu/academics/",
+                "excerpt": "Cornell offers Computer Science (Bowers CIS; B.A. in Arts & Sciences or B.S. in Engineering), "
+                "Engineering (College of Engineering, B.S.), Economics (Arts & Sciences, B.A.), and Applied Economics & "
+                "Management (the Dyson School, B.S. — business). All four pillars present."},
+            "adm": {"suffix": "src-adm", "title": "International applicants / financial aid — Cornell",
+                "url": "https://finaid.cornell.edu/first-year-and-transfer-students-international",
+                "excerpt": "Holistic admission; international admission is NEED-AWARE. English proficiency expected of "
+                "international applicants. Standardized-testing policy varies by year — verify current requirement."},
+            "fee": {"suffix": "src-fee", "title": "Cost to Attend — Cornell Office of Financial Aid",
+                "url": "https://finaid.cornell.edu/cost-to-attend",
+                "excerpt": "Endowed colleges (incl. CS, Engineering, Arts & Sciences, SC Johnson Business): tuition "
+                "$73,946 (2026-27, board-approved). Most recent published breakdown: mandatory fees $1,024, housing "
+                "$13,744, food $7,604, books $1,234, personal $2,182 (total ≈ $99,734). Dyson/AEM (contract college) is "
+                "$49,816 for NY residents but $73,946 for non-residents/international."},
+            "schol": {"suffix": "src-schol", "title": "Financial Aid — Cornell Office of Financial Aid",
+                "url": "https://finaid.cornell.edu/grants-and-scholarships",
+                "excerpt": "Meets 100% of demonstrated financial need for all admitted undergraduates (incl. "
+                "international). Aid is a package of Cornell grants, work-study and reasonable student loans (NOT "
+                "loan-free). Domestic: families up to $125,000 have tuition covered; up to $75,000 have full cost covered."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "US High School Diploma", "US high school diploma / American curriculum applicants."),
+            ("international-other", "General International Secondary Qualification", "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("all-students", "International / non-NY-resident rate",
+             "Modeled at the international (non-NY-resident) rate. NY residents pay less in the contract colleges (e.g. Dyson AEM $49,816). Need-based aid differs by family need."),
+        ],
+        "cost": {"residency": "all-students", "tuition": 73946, "basis": "institutional",
+            "year": "2026-2027 (tuition board-approved; fees/living per most recent published breakdown)", "mandatory_fees_annual": 1024,
+            "note": "Endowed-college (and international contract-college) tuition $73,946 for 2026-27 (board-approved). "
+            "Fees $1,024 (activity $424 + health $600); living below. Total COA ≈ $99,734. Dyson/AEM & other contract "
+            "colleges charge NY residents $49,816 but non-residents/international $73,946. Cornell meets 100% of need "
+            "(package includes loans) — net cost depends on family need."},
+        "lang_req": {"test_name": "TOEFL / IELTS Academic (international, if applicable)",
+            "min_score": "English proficiency expected of international applicants; see Cornell's current minimums.",
+            "notes": "Context for non-native English speakers."},
+        "std_tests": [
+            {"test_name": "SAT or ACT", "required": "recommended",
+             "notes": "Cornell's standardized-testing policy varies by year/college; verify the current requirement for your entry year."},
+        ],
+        "deadline_note": "Apply via the Common Application (early decision ~Nov; regular decision ~Jan 2).",
+        "living": {"min": 2064, "max": 2752, "currency": "USD", "admin_body": "Cornell University",
+            "desc": "Cornell endowed-college non-tuition/fees (most recent published): housing $13,744 + food $7,604 + "
+            "books $1,234 + personal $2,182 = $24,764/yr (~$2,064–2,752/mo over 12 vs 9 months). Total COA ≈ $99,734."},
+        "programs": [
+            {"suffix": "cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "Computer Science (Bowers CIS) — B.A. (Arts & Sciences) or B.S. (Engineering).",
+             "faculty": "Bowers College of Computing and Information Science", "duration": 4,
+             "url": "https://www.cornell.edu/academics/", "subjects_note": "Holistic review; strong preparation in mathematics and science expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "B.S. engineering majors (e.g. Mechanical, Electrical & Computer, Civil, Chemical, Operations Research), Cornell College of Engineering.",
+             "faculty": "College of Engineering", "duration": 4,
+             "url": "https://www.engineering.cornell.edu/", "subjects_note": "Holistic review; strong preparation in mathematics and physics expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "economics", "program_name": "Economics", "field": "Economics", "degree": "BA",
+             "degree_local": "B.A. in Economics, College of Arts & Sciences.",
+             "faculty": "Department of Economics (Arts & Sciences)", "duration": 4,
+             "url": "https://www.cornell.edu/academics/", "subjects_note": "Holistic review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "dyson-aem", "program_name": "Applied Economics & Management (Dyson)", "field": "Business", "degree": "BSc",
+             "degree_local": "B.S. in Applied Economics & Management, the Charles H. Dyson School (SC Johnson College of Business).",
+             "faculty": "Dyson School (SC Johnson College of Business)", "duration": 4,
+             "url": "https://dyson.cornell.edu/programs/undergraduate/", "subjects_note": "Holistic review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+        ],
+        "scholarships": [
+            {"suffix": "need-based-aid", "name": "Need-Based Financial Aid (meets 100% of demonstrated need)",
+             "provider": "Cornell University", "provider_type": "institutional", "award_type": "mixed", "renewable": True,
+             "award_amount": "Meets 100% of demonstrated need via Cornell grants, work-study and reasonable loans (NOT loan-free).",
+             "academic_criteria": "Awarded on demonstrated financial need.",
+             "other_eligibility_criteria": "Meets full need for all admitted students incl. international; admission is "
+             "NEED-AWARE for international. NO merit scholarships. Domestic: tuition covered up to $125k family income, full cost up to $75k.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+    "us-nyu": {
+        "canonical_name": "New York University", "aliases": ["NYU"], "country_cc": "us",
+        "city": {"slug": "us-new-york-ny", "name": "New York"},
+        "website": "https://www.nyu.edu/", "institution_type": "private-nonprofit",
+        "verified_at": "2026-10-21", "currency": "USD",
+        "verification_note": "fact-checks/us-nyu-2026-10-21.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "New York University — undergraduate schools",
+                "url": "https://www.nyu.edu/academics.html",
+                "excerpt": "NYU (New York campus) offers Computer Science (Courant, Arts & Science B.A.; also Tandon "
+                "B.S.), Engineering (Tandon School of Engineering, B.S.), Economics (Arts & Science, B.A.), and Business "
+                "(Leonard N. Stern School of Business, B.S. in Business). All four pillars."},
+            "adm": {"suffix": "src-adm", "title": "Undergraduate admissions / aid — NYU",
+                "url": "https://www.nyu.edu/admissions/financial-aid-and-scholarships.html",
+                "excerpt": "Holistic admission (need-aware). English proficiency expected of international applicants. "
+                "Standardized testing is test-flexible — verify the current policy for your entry year."},
+            "fee": {"suffix": "src-fee", "title": "Cost of Attendance 2026-27 — NYU",
+                "url": "https://www.nyu.edu/admissions/financial-aid-and-scholarships/cost-of-attendance.html",
+                "excerpt": "2026-27: Arts & Science / Tandon Engineering tuition & fees $68,576, food & housing $26,438, "
+                "total COA $100,998. Stern (Business) tuition & fees $70,464, total COA $102,886. Indirect (books/"
+                "transport/personal) ≈ $5,984."},
+            "schol": {"suffix": "src-schol", "title": "The NYU Promise / Financial Aid — NYU",
+                "url": "https://www.nyu.edu/admissions/financial-aid-and-scholarships/applying-as-a-prospective-undergraduate-student/first-year-applicants/the-nyu-promise.html",
+                "excerpt": "The NYU Promise (from 2024-25): every first-year undergraduate — domestic AND international — "
+                "admitted to the New York campus has 100% of demonstrated need met through scholarships and grants. "
+                "Families with income under $100,000 (typical assets) do not pay tuition."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "US High School Diploma", "US high school diploma / American curriculum applicants."),
+            ("international-other", "General International Secondary Qualification", "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("all-students", "All students (uniform tuition per school)",
+             "US private university: same tuition for domestic and international students (differs by school). Need-based aid differs by family need."),
+        ],
+        "cost": {"residency": "all-students", "tuition": 68576, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": 0,
+            "note": "Arts & Science / Tandon Engineering: tuition & fees $68,576 (combined), food & housing $26,438, "
+            "indirect ≈ $5,984 => total COA $100,998. (Stern Business is higher — see that program.) NYU meets 100% of "
+            "demonstrated need for first-years incl. international (NYU Promise); families < $100k income pay no tuition."},
+        "lang_req": {"test_name": "TOEFL / IELTS Academic / Duolingo (international, if applicable)",
+            "min_score": "English proficiency expected of international applicants; see NYU's current minimums.",
+            "notes": "Context for non-native English speakers."},
+        "std_tests": [
+            {"test_name": "SAT or ACT", "required": "recommended",
+             "notes": "NYU is test-flexible (accepts several exams / test-optional in recent cycles); verify the current policy."},
+        ],
+        "deadline_note": "Apply via the Common Application (early decision I ~Nov 1; ED II / regular ~Jan).",
+        "living": {"min": 2701, "max": 3602, "currency": "USD", "admin_body": "New York University",
+            "desc": "NYU COA 2026-27 non-tuition: food & housing $26,438 + indirect (books/transport/personal) ≈ $5,984 "
+            "= $32,422/yr (~$2,701–3,602/mo over 12 vs 9 months); NYC cost of living is high."},
+        "programs": [
+            {"suffix": "cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "Computer Science — B.A. (Courant, Arts & Science) or B.S. (Tandon School of Engineering).",
+             "faculty": "Courant Institute / Tandon", "duration": 4,
+             "url": "https://www.nyu.edu/academics.html", "subjects_note": "Holistic review; strong preparation in mathematics and science expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "B.S. engineering majors, NYU Tandon School of Engineering.",
+             "faculty": "Tandon School of Engineering", "duration": 4,
+             "url": "https://engineering.nyu.edu/", "subjects_note": "Holistic review; strong preparation in mathematics and physics expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "economics", "program_name": "Economics", "field": "Economics", "degree": "BA",
+             "degree_local": "B.A. in Economics, College of Arts & Science.",
+             "faculty": "Department of Economics (Arts & Science)", "duration": 4,
+             "url": "https://www.nyu.edu/academics.html", "subjects_note": "Holistic review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "stern-business", "program_name": "Business (Stern)", "field": "Business", "degree": "BSc",
+             "degree_local": "B.S. in Business, Leonard N. Stern School of Business.",
+             "faculty": "Stern School of Business", "duration": 4,
+             "url": "https://www.stern.nyu.edu/programs-admissions/undergraduate", "subjects_note": "Holistic review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []},
+             "cost": {"residency": "all-students", "tuition": 70464, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "Stern (Business): tuition & fees $70,464 (combined) + food & housing $26,438 + indirect ≈ $5,984 "
+                 "=> total COA $102,886 (higher than Arts & Science / Tandon). NYU Promise meets 100% of need."}},
+        ],
+        "scholarships": [
+            {"suffix": "need-based-aid", "name": "Need-Based Financial Aid (the NYU Promise — meets 100% of need)",
+             "provider": "New York University", "provider_type": "institutional", "award_type": "mixed", "renewable": True,
+             "award_amount": "Meets 100% of demonstrated need via scholarships and grants. Families < $100k income pay no tuition.",
+             "academic_criteria": "Awarded on demonstrated financial need.",
+             "other_eligibility_criteria": "The NYU Promise (from 2024-25): full demonstrated need met for first-year "
+             "undergraduates, domestic AND international, at the New York campus. Admission is need-aware.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+    "us-usc": {
+        "canonical_name": "University of Southern California", "aliases": ["USC"], "country_cc": "us",
+        "city": {"slug": "us-los-angeles-ca", "name": "Los Angeles"},
+        "website": "https://www.usc.edu/", "institution_type": "private-nonprofit",
+        "verified_at": "2026-10-21", "currency": "USD",
+        "verification_note": "fact-checks/us-usc-2026-10-21.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "USC — undergraduate schools & majors",
+                "url": "https://www.usc.edu/academics/",
+                "excerpt": "USC offers Computer Science (Viterbi School of Engineering, B.S.), Engineering (Viterbi, "
+                "B.S.), Economics (Dornsife College, B.A.), and Business Administration (Marshall School of Business, "
+                "B.S.). Undergraduate tuition is the same across all schools and the same for resident and nonresident students."},
+            "adm": {"suffix": "src-adm", "title": "Financial Aid & Scholarships / admission — USC",
+                "url": "https://admission.usc.edu/cost-and-financial-aid/financial-aid-and-scholarships/",
+                "excerpt": "Holistic admission. English proficiency expected of international applicants. Standardized "
+                "testing policy varies by year (test-optional in recent cycles) — verify current requirement."},
+            "fee": {"suffix": "src-fee", "title": "Undergraduate Cost of Attendance 2026-27 — USC Financial Aid",
+                "url": "https://financialaid.usc.edu/undergraduate-financial-aid/cost-of-attendance/",
+                "excerpt": "2026-27 on-campus total $103,162: tuition (12–18 units) $75,384; mandatory fees $1,952; "
+                "housing $13,510; food $8,442; books $670; transportation/personal $3,204. Tuition is the same across "
+                "USC schools and the same for residents and nonresidents."},
+            "schol": {"suffix": "src-schol", "title": "Scholarship Guide / Affordability — USC Admission",
+                "url": "https://admission.usc.edu/scholarship-guide/",
+                "excerpt": "USC meets USC-determined need via merit scholarships, need-based grants, work-study and "
+                "loans. Families earning <= $80,000 (typical assets) attend tuition-free. Competitive MERIT scholarships: "
+                "Trustee (full tuition), Presidential (half tuition), Deans (quarter tuition), plus full-ride Mork Family "
+                "and Stamps; ~10% of the entering class receives a merit award."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "US High School Diploma", "US high school diploma / American curriculum applicants."),
+            ("international-other", "General International Secondary Qualification", "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("all-students", "All students (uniform tuition)",
+             "US private university: same tuition for residents, nonresidents and international students, across all schools. Need-based aid and merit scholarships reduce net cost."),
+        ],
+        "cost": {"residency": "all-students", "tuition": 75384, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": 1952,
+            "note": "2026-27 on-campus total COA $103,162: tuition $75,384 (12–18 units) + fees $1,952 + housing $13,510 "
+            "+ food $8,442 + books $670 + transport/personal $3,204. SAME tuition across schools and for residents/"
+            "nonresidents. USC meets USC-determined need (incl. merit + grants + work-study + loans); < $80k income "
+            "tuition-free. Competitive merit scholarships also available (see scholarships)."},
+        "lang_req": {"test_name": "TOEFL / IELTS Academic / Duolingo (international, if applicable)",
+            "min_score": "English proficiency expected of international applicants; see USC's current minimums.",
+            "notes": "Context for non-native English speakers."},
+        "std_tests": [
+            {"test_name": "SAT or ACT", "required": "recommended",
+             "notes": "USC's standardized-testing policy varies by year (test-optional in recent cycles); verify the current requirement."},
+        ],
+        "deadline_note": "Apply via the Common Application (scholarship consideration deadline ~Dec 1; regular ~Jan 15).",
+        "living": {"min": 2152, "max": 2870, "currency": "USD", "admin_body": "University of Southern California",
+            "desc": "USC COA 2026-27 non-tuition/fees: housing $13,510 + food $8,442 + books $670 + transport/personal "
+            "$3,204 = $25,826/yr (~$2,152–2,870/mo over 12 vs 9 months)."},
+        "programs": [
+            {"suffix": "cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "B.S. in Computer Science, USC Viterbi School of Engineering.",
+             "faculty": "Viterbi School of Engineering", "duration": 4,
+             "url": "https://www.usc.edu/academics/", "subjects_note": "Holistic review; strong preparation in mathematics and science expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "B.S. engineering majors, USC Viterbi School of Engineering.",
+             "faculty": "Viterbi School of Engineering", "duration": 4,
+             "url": "https://viterbischool.usc.edu/", "subjects_note": "Holistic review; strong preparation in mathematics and physics expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "economics", "program_name": "Economics", "field": "Economics", "degree": "BA",
+             "degree_local": "B.A. in Economics, USC Dornsife College of Letters, Arts & Sciences.",
+             "faculty": "Department of Economics (Dornsife)", "duration": 4,
+             "url": "https://www.usc.edu/academics/", "subjects_note": "Holistic review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "marshall-business", "program_name": "Business Administration (Marshall)", "field": "Business", "degree": "BSc",
+             "degree_local": "B.S. in Business Administration, USC Marshall School of Business.",
+             "faculty": "Marshall School of Business", "duration": 4,
+             "url": "https://www.marshall.usc.edu/programs/undergraduate-programs", "subjects_note": "Holistic review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+        ],
+        "scholarships": [
+            {"suffix": "need-based-aid", "name": "Need-Based Financial Aid (meets USC-determined need)",
+             "provider": "University of Southern California", "provider_type": "institutional", "award_type": "mixed", "renewable": True,
+             "award_amount": "Meets USC-determined need via grants, work-study and loans. Families <= $80k income attend tuition-free.",
+             "academic_criteria": "Awarded on demonstrated financial need.",
+             "other_eligibility_criteria": "Need-based; international students may be considered but aid for internationals is limited relative to domestic.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+            {"suffix": "merit", "name": "Merit Scholarships (Trustee / Presidential / Deans)",
+             "provider": "University of Southern California", "provider_type": "institutional", "award_type": "mixed", "renewable": True,
+             "award_amount": "Trustee = full tuition; Presidential = half tuition; Deans = quarter tuition; plus full-ride Mork Family & Stamps.",
+             "academic_criteria": "Highly competitive academic merit.",
+             "other_eligibility_criteria": "COMPETITIVE merit awards (open to international applicants); ~10% of the "
+             "entering class receives one. Scholarship-consideration application deadline ~Dec 1.",
+             "application_deadline": "December 1", "deadline_academic_year": "2026-2027"},
+        ],
+    },
 }
 
 
