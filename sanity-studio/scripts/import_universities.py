@@ -558,6 +558,115 @@ UNIVERSITIES = {
              "application_deadline": None, "deadline_academic_year": "2026-2027"},
         ],
     },
+    "ae-university-of-sharjah": {
+        "canonical_name": "University of Sharjah", "aliases": ["UOS"], "country_cc": "ae",
+        "city": {"slug": "ae-sharjah", "name": "Sharjah"},
+        "website": "https://www.sharjah.ac.ae/", "institution_type": "public",
+        "verified_at": "2026-10-21", "currency": "AED",
+        "verification_note": "fact-checks/ae-university-of-sharjah-2026-10-21.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Sharjah — Undergraduate Admissions",
+                "url": "https://www.sharjah.ac.ae/Admissions/Undergraduate",
+                "excerpt": "University of Sharjah (UOS) is a public university in Sharjah, UAE; English medium for its "
+                "English-taught programs. Colleges incl. Computing & Informatics, Engineering, Business Administration. "
+                "Undergraduate programs include Computer Science, Computer Engineering, Business Administration majors, "
+                "and Economics (New)."},
+            "adm": {"suffix": "src-adm", "title": "Undergraduate Admission Policy / English — University of Sharjah",
+                "url": "https://www.sharjah.ac.ae/Admissions/Undergraduate-Admission-FAQs",
+                "excerpt": "English proficiency for English-taught programs: TOEFL ITP 550 / Academic IELTS 6.0 / EmSAT "
+                "English 1400 (IBT TOEFL and PTE Academic also accepted). Grade 12 with a minimum ~70% average (varies "
+                "by program; some engineering programs higher)."},
+            "fee": {"suffix": "src-fee", "title": "Undergraduate Tuition Fees (AED) — University of Sharjah",
+                "url": "https://uosadmission.sharjah.ac.ae/assets/image/Tuition_Fees_En.pdf",
+                "excerpt": "Per official UOS tuition schedule: Computer Science & Computing programs, Business "
+                "Administration majors, Economics (New), and Electrical & Electronics / Computer Engineering = AED 2,529 "
+                "per credit hour; AED 30,351 per semester (12–16 credits); ~AED 60,703 per year. (Mechanical ~2,772, "
+                "Nuclear ~2,786 are higher.) Semester fee covers 12–16 credits."},
+            "schol": {"suffix": "src-schol", "title": "Financial Aid & Scholarships — University of Sharjah",
+                "url": "https://www.sharjah.ac.ae/Admissions/Financial-Aids/Student-Support-Fund",
+                "excerpt": "New high-school graduates receive a 50% reduction in first-semester tuition (all colleges "
+                "except Medicine & Dentistry). Full scholarships for the top five UAE high-school graduates (full tuition, "
+                "entire duration). Student Support Fund (SSF): need-based aid for undergraduates, available after the "
+                "first academic year."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level / IGCSE qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "American High School Diploma", "US-curriculum high school diploma holders."),
+            ("uae-shs", "UAE Secondary School Certificate", "UAE national secondary school certificate holders."),
+        ],
+        "residencies": [
+            ("all-students", "All students (uniform base tuition)",
+             "UOS charges the same base per-credit tuition by program; scholarships (incl. the 50% new-grad reduction), not nationality, reduce net cost."),
+        ],
+        "cost": {"residency": "all-students", "tuition": 60703, "basis": "institutional",
+            "year": "2026-2027 (per current UOS tuition schedule)", "mandatory_fees_annual": 0,
+            "note": "AED 2,529/credit; AED 30,351/semester (covers 12–16 credits) => ~AED 60,703/yr for Computer "
+            "Science, Business Administration, Economics (New) and Electrical/Computer Engineering. (Mechanical ~2,772/"
+            "credit, Nuclear ~2,786 are higher — not modeled here.) University services fees and dorms additional. "
+            "NOTE: an earlier web summary cited AED 2,347/credit; the official UOS tuition schedule says 2,529 — the "
+            "schedule is used here."},
+        "lang_req": {"test_name": "TOEFL ITP / Academic IELTS / EmSAT English / TOEFL iBT / PTE Academic",
+            "min_score": "TOEFL ITP 550, or Academic IELTS 6.0, or EmSAT English 1400 (IBT TOEFL and PTE Academic also accepted).",
+            "notes": "Required for English-taught programs."},
+        "std_tests": [
+            {"test_name": "EmSAT (or accepted equivalent)", "required": "required",
+             "notes": "Admission testing per UOS; Grade-12 minimum ~70% average (varies by program; some engineering higher)."},
+        ],
+        "deadline_note": "Apply via the University of Sharjah online admissions portal (uosadmission.sharjah.ac.ae).",
+        "living": None,  # UOS publishes dorm rates but no full cost-of-living estimate captured; not fabricated.
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "Bachelor of Science in Computer Science, College of Computing and Informatics.",
+             "faculty": "College of Computing and Informatics", "duration": 4,
+             "url": "https://www.sharjah.ac.ae/academics/degree/undergraduate/computer-engineering",
+             "subjects_note": "Grade 12 (~70% min); Mathematics; English per requirements",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "us-hs": ["Mathematics"], "uae-shs": ["Mathematics"]}},
+            {"suffix": "bsc-eng", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "Bachelor of Science in Engineering, College of Engineering (e.g. Electrical & Electronics, "
+             "Computer, Civil, Industrial Engineering). Representative rate shown; Mechanical/Nuclear are higher.",
+             "faculty": "College of Engineering", "duration": 4,
+             "url": "https://www.sharjah.ac.ae/academics/degree/undergraduate/computer-engineering",
+             "subjects_note": "Grade 12 (~70% min, some higher); Mathematics and Physics; English per requirements",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "us-hs": ["Mathematics", "Physics"], "uae-shs": ["Mathematics", "Physics"]}},
+            {"suffix": "bba", "program_name": "Business Administration", "field": "Business", "degree": "BBA",
+             "degree_local": "Bachelor of Business Administration, College of Business Administration (majors incl. "
+             "Management, Marketing, Human Resources, Finance, Supply Chain).",
+             "faculty": "College of Business Administration", "duration": 4,
+             "url": "https://www.sharjah.ac.ae/Admissions/Undergraduate",
+             "subjects_note": "Grade 12 (~70% min); Mathematics; English per requirements",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "us-hs": ["Mathematics"], "uae-shs": ["Mathematics"]}},
+            {"suffix": "b-econ", "program_name": "Economics", "field": "Economics", "degree": "BSc",
+             "degree_local": "Bachelor in Economics (listed as 'Economics (New)'), College of Business Administration. "
+             "Fee follows the Business college schedule.",
+             "faculty": "College of Business Administration", "duration": 4,
+             "url": "https://www.sharjah.ac.ae/Admissions/Undergraduate",
+             "subjects_note": "Grade 12 (~70% min); Mathematics; English per requirements",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "us-hs": ["Mathematics"], "uae-shs": ["Mathematics"]}},
+        ],
+        "scholarships": [
+            {"suffix": "new-grad-50", "name": "New High-School Graduate Scholarship (50% first semester)",
+             "provider": "University of Sharjah", "provider_type": "institutional", "award_type": "partial_tuition",
+             "renewable": False, "award_amount": "50% reduction in first-semester tuition fees.",
+             "academic_criteria": "New high-school graduates.",
+             "other_eligibility_criteria": "AUTOMATIC for new high-school graduates in all colleges except Medicine and "
+             "Dentistry; first semester only (not renewed).", "application_deadline": None, "deadline_academic_year": "2026-2027"},
+            {"suffix": "top5-full", "name": "Full Scholarship — Top 5 UAE High-School Graduates",
+             "provider": "University of Sharjah", "provider_type": "institutional", "award_type": "full_tuition",
+             "renewable": True, "award_amount": "Full tuition for the entire undergraduate duration.",
+             "academic_criteria": "Among the top five high-school graduates in the UAE.",
+             "other_eligibility_criteria": "COMPETITIVE and highly limited (top 5 nationally); accredited programs incl. "
+             "engineering, business administration, computer science & engineering.", "application_deadline": None,
+             "deadline_academic_year": "2026-2027"},
+            {"suffix": "ssf", "name": "Student Support Fund (need-based)",
+             "provider": "University of Sharjah", "provider_type": "institutional", "award_type": "partial_tuition",
+             "renewable": True, "award_amount": "Need-based financial assistance (amount varies by need).",
+             "academic_criteria": "",
+             "other_eligibility_criteria": "NEED-BASED; undergraduate students only; cannot apply in the first semester "
+             "(available after completing the first academic year).", "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
 }
 
 
