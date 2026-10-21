@@ -277,6 +277,192 @@ UNIVERSITIES = {
              "application_deadline": None, "deadline_academic_year": "2026-2027"},
         ],
     },
+    "us-princeton": {
+        "canonical_name": "Princeton University", "aliases": ["Princeton"], "country_cc": "us",
+        "city": {"slug": "us-princeton", "name": "Princeton"},
+        "website": "https://www.princeton.edu/", "institution_type": "private-nonprofit",
+        "verified_at": "2026-10-21", "currency": "USD",
+        "verification_note": "fact-checks/us-princeton-2026-10-21.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Princeton University — official site & Academics",
+                "url": "https://www.princeton.edu/academics/areas-of-study",
+                "excerpt": "Princeton offers A.B. (Bachelor of Arts) and B.S.E. (Bachelor of Science in Engineering) "
+                "degrees. Computer Science offers BOTH A.B. and B.S.E.; Economics is an A.B.; B.S.E. is granted by six "
+                "SEAS departments (CEE, CBE, CS, ECE, MAE, ORFE). Princeton offers NO standalone undergraduate business "
+                "major (only a Finance minor and certificates)."},
+            "adm": {"suffix": "src-adm", "title": "Standardized Testing & International Students — Princeton Admission",
+                "url": "https://admission.princeton.edu/apply/standardized-testing",
+                "excerpt": "Test-optional for fall 2026 and fall 2027 entry; standardized testing required again from "
+                "fall 2028 entry (2027-28 cycle). International applicants whose native language is not English and who "
+                "attend a school where English is not the language of instruction must submit TOEFL / IELTS Academic / "
+                "Duolingo / PTE Academic."},
+            "fee": {"suffix": "src-fee", "title": "Cost of Attendance 2026-27 — Princeton Admission",
+                "url": "https://admission.princeton.edu/cost-aid/fees-payment-options",
+                "excerpt": "2026-27 estimated cost of attendance $94,624: tuition $68,140; housing $13,010; food $9,110; "
+                "fees $314; books/supplies $1,050; personal $3,000. Student Health Plan $4,220 if not otherwise insured. "
+                "Same sticker price for all students; Princeton meets 100% of demonstrated need with grant aid."},
+            "schol": {"suffix": "src-schol", "title": "How Princeton's Aid Program Works — Princeton Admission",
+                "url": "https://admission.princeton.edu/cost-aid/how-princetons-aid-program-works",
+                "excerpt": "Princeton meets 100% of demonstrated financial need with grant aid (no loans) for all admitted "
+                "students; admission is need-blind including for international students (full need met the same as for US "
+                "students). Average aid package 2026-27 > $83,000. Princeton offers NO academic or athletic merit scholarships."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "US High School Diploma", "US high school diploma / American curriculum applicants."),
+            ("international-other", "General International Secondary Qualification", "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("all-students", "All students (uniform tuition)",
+             "US private university: the same sticker tuition for domestic and international students (no residency split). Need-based aid differs by family need."),
+        ],
+        "cost": {"residency": "all-students", "tuition": 68140, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": 314,
+            "note": "Sticker cost of attendance 2026-27 = $94,624 (tuition 68,140 + fees 314 + housing 13,010 + food "
+            "9,110 + books 1,050 + personal 3,000). Student Health Plan $4,220 extra if uninsured. SAME sticker for all "
+            "students; Princeton is need-blind and meets 100% of demonstrated need with GRANT aid (no loans), so most "
+            "families pay far less — affordability depends on family need, not a published discount."},
+        "lang_req": {"test_name": "TOEFL / IELTS Academic / Duolingo / PTE Academic (if required)",
+            "min_score": "Required only if English is not your native language AND you attend a school where English is "
+            "not the language of instruction; Princeton does not publish fixed minimum scores.",
+            "notes": "Not required for applicants educated in English-medium schools."},
+        "std_tests": [
+            {"test_name": "SAT or ACT", "required": "recommended",
+             "notes": "Test-optional for fall 2026 and fall 2027 entry; standardized testing REQUIRED again from fall "
+             "2028 entry (2027-28 application cycle)."},
+        ],
+        "deadline_note": "Apply via the Common/Coalition Application (single-choice early action ~Nov 1; regular decision ~Jan 1).",
+        "living": {"min": 2180, "max": 2910, "currency": "USD", "admin_body": "Princeton University",
+            "desc": "Princeton COA 2026-27 non-tuition/fees: housing $13,010 + food $9,110 + books $1,050 + personal "
+            "$3,000 = $26,170/yr (~$2,180–2,910/mo over 12 vs 9 months). Student Health Plan $4,220 extra if uninsured."},
+        "programs": [
+            {"suffix": "cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "Computer Science — offered as A.B. (Bachelor of Arts) or B.S.E. (Bachelor of Science in Engineering).",
+             "faculty": "Department of Computer Science (School of Engineering & Applied Science)", "duration": 4,
+             "url": "https://www.cs.princeton.edu/ugrad/undergraduate-degrees-requirements",
+             "subjects_note": "Holistic whole-application review; strong preparation in mathematics and science expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "bse-engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "B.S.E. (Bachelor of Science in Engineering), School of Engineering & Applied Science; "
+             "departments: Civil & Environmental, Chemical & Biological, Electrical & Computer, Mechanical & Aerospace, "
+             "Operations Research & Financial Engineering (and Computer Science).",
+             "faculty": "School of Engineering and Applied Science", "duration": 4,
+             "url": "https://engineering.princeton.edu/undergraduate-studies/concentrations",
+             "subjects_note": "Holistic whole-application review; strong preparation in mathematics and physics expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "ab-economics", "program_name": "Economics", "field": "Economics", "degree": "BA",
+             "degree_local": "A.B. (Bachelor of Arts) in Economics. Prerequisites incl. ECO 100/101/202 + MAT 175 "
+             "(calculus) by end of sophomore year (C or better).",
+             "faculty": "Department of Economics", "duration": 4,
+             "url": "https://economics.princeton.edu/undergraduate-program/concentration-requirements/",
+             "subjects_note": "Holistic whole-application review; strong quantitative preparation (calculus) expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+        ],
+        # Princeton has NO undergraduate Business major (verified) — omitted, not fabricated.
+        "scholarships": [
+            {"suffix": "need-based-aid", "name": "Need-Based Financial Aid (meets 100% of demonstrated need)",
+             "provider": "Princeton University", "provider_type": "institutional", "award_type": "mixed", "renewable": True,
+             "award_amount": "Grant aid meeting 100% of demonstrated financial need (no loans); average package 2026-27 > $83,000.",
+             "academic_criteria": "Awarded solely on demonstrated financial need; admission is need-blind for all applicants, including international.",
+             "other_eligibility_criteria": "GUARANTEED for every admitted student with demonstrated need, all four years. "
+             "Princeton offers NO academic or athletic merit scholarships (aid is 100% need-based).",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+    "us-mit": {
+        "canonical_name": "Massachusetts Institute of Technology", "aliases": ["MIT"], "country_cc": "us",
+        "city": {"slug": "us-cambridge-ma", "name": "Cambridge"},
+        "website": "https://www.mit.edu/", "institution_type": "private-nonprofit",
+        "verified_at": "2026-10-21", "currency": "USD",
+        "verification_note": "fact-checks/us-mit-2026-10-21.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "MIT — Degree Charts / undergraduate majors",
+                "url": "https://catalog.mit.edu/degree-charts/",
+                "excerpt": "MIT grants the S.B. (Bachelor of Science). Course 6-3 Computer Science and Engineering (EECS); "
+                "Course 14-1 Economics (SHASS); Course 15 Management (Sloan: 15-1 Management, 15-2 Business Analytics, "
+                "15-3 Finance); numerous engineering courses (2 Mechanical, 16 Aerospace, 6 Electrical, 10 Chemical, 1 Civil)."},
+            "adm": {"suffix": "src-adm", "title": "MIT Admissions — testing & international English requirements",
+                "url": "https://mitadmissions.org/apply/firstyear/tests-scores/",
+                "excerpt": "SAT or ACT is REQUIRED (e.g. fall 2025 entrants SAT 1520–1570, ACT 34–35 mid-50%). "
+                "International applicants who need to demonstrate English proficiency: minimum IELTS 7.0 or TOEFL iBT 100; "
+                "applications without required English scores may not be reviewed."},
+            "fee": {"suffix": "src-fee", "title": "Cost of Attendance 2026-2027 — MIT Student Financial Services",
+                "url": "https://sfs.mit.edu/undergraduate-students/the-cost-of-attendance/coa/",
+                "excerpt": "2026-27 total cost of attendance $92,760: tuition $66,720; student life fee $420; housing "
+                "$14,090; food $8,104; books/materials $930; personal $2,496. Same sticker for all students; MIT meets "
+                "full demonstrated need."},
+            "schol": {"suffix": "src-schol", "title": "Making MIT Affordable / Financial Aid — MIT SFS",
+                "url": "https://sfs.mit.edu/undergraduate-students/the-cost-of-attendance/making-mit-affordable/",
+                "excerpt": "MIT is need-blind for ALL applicants incl. international and meets 100% of demonstrated need "
+                "for all four years; no merit scholarships, no loans. Since fall 2025, families earning < $200,000 "
+                "typically pay no tuition; families < $100,000 typically contribute nothing to cost of attendance."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "US High School Diploma", "US high school diploma / American curriculum applicants."),
+            ("international-other", "General International Secondary Qualification", "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("all-students", "All students (uniform tuition)",
+             "US private university: the same sticker tuition for domestic and international students (no residency split). Need-based aid differs by family need."),
+        ],
+        "cost": {"residency": "all-students", "tuition": 66720, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": 420,
+            "note": "Sticker cost of attendance 2026-27 = $92,760 (tuition 66,720 + student-life fee 420 + housing 14,090 "
+            "+ food 8,104 + books 930 + personal 2,496). SAME sticker for all students; MIT is need-blind (incl. "
+            "international) and meets 100% of demonstrated need with grants (no loans). Since fall 2025, families earning "
+            "< $200k typically pay no tuition and < $100k typically contribute nothing — net cost depends on family need."},
+        "lang_req": {"test_name": "IELTS Academic / TOEFL iBT (if required)",
+            "min_score": "IELTS Academic 7.0 or TOEFL iBT 100 minimum for international applicants required to demonstrate English proficiency.",
+            "notes": "Applications may not be reviewed without required English scores."},
+        "std_tests": [
+            {"test_name": "SAT or ACT", "required": "required",
+             "notes": "SAT or ACT is required (fall 2025 entrants: SAT 1520–1570, ACT 34–35 mid-50%)."},
+        ],
+        "deadline_note": "Apply via MIT's own application (early action ~Nov 1; regular action ~Jan 1).",
+        "living": {"min": 2135, "max": 2850, "currency": "USD", "admin_body": "Massachusetts Institute of Technology",
+            "desc": "MIT COA 2026-27 non-tuition/fees: housing $14,090 + food $8,104 + books $930 + personal $2,496 = "
+            "$25,620/yr (~$2,135–2,850/mo over 12 vs 9 months)."},
+        "programs": [
+            {"suffix": "cs-6-3", "program_name": "Computer Science and Engineering", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "S.B. in Computer Science and Engineering (Course 6-3), Dept. of EECS / Schwarzman College of Computing.",
+             "faculty": "Department of Electrical Engineering and Computer Science", "duration": 4,
+             "url": "https://www.eecs.mit.edu/academics/undergraduate-programs/curriculum/6-3-computer-science-and-engineering/",
+             "subjects_note": "Holistic whole-application review; strong preparation in mathematics and science expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "S.B. in engineering (e.g. Mechanical (2), Aerospace (16), Electrical (6-1/6-2), Chemical (10), Civil & Environmental (1)).",
+             "faculty": "MIT School of Engineering", "duration": 4,
+             "url": "https://catalog.mit.edu/degree-charts/",
+             "subjects_note": "Holistic whole-application review; strong preparation in mathematics and physics expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "econ-14-1", "program_name": "Economics", "field": "Economics", "degree": "BSc",
+             "degree_local": "S.B. in Economics (Course 14-1), School of Humanities, Arts & Social Sciences.",
+             "faculty": "Department of Economics", "duration": 4,
+             "url": "https://catalog.mit.edu/subjects/14/",
+             "subjects_note": "Holistic whole-application review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "mgmt-15", "program_name": "Management (Sloan)", "field": "Business", "degree": "BSc",
+             "degree_local": "S.B. via MIT Sloan (Course 15): 15-1 Management, 15-2 Business Analytics, or 15-3 Finance.",
+             "faculty": "MIT Sloan School of Management", "duration": 4,
+             "url": "https://mitsloan.mit.edu/programs/undergraduate/undergraduate-programs",
+             "subjects_note": "Holistic whole-application review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+        ],
+        "scholarships": [
+            {"suffix": "need-based-aid", "name": "Need-Based Financial Aid (meets 100% of demonstrated need)",
+             "provider": "Massachusetts Institute of Technology", "provider_type": "institutional", "award_type": "mixed",
+             "renewable": True,
+             "award_amount": "Grant aid meeting 100% of demonstrated need (no loans). Families < $200k income typically "
+             "pay no tuition; < $100k typically contribute nothing (since fall 2025).",
+             "academic_criteria": "Awarded solely on demonstrated financial need; admission is need-blind for all applicants, including international.",
+             "other_eligibility_criteria": "GUARANTEED for every admitted student with demonstrated need, all four years. "
+             "MIT offers NO merit scholarships (aid is 100% need-based).",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
 }
 
 
