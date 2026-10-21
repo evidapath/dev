@@ -1035,6 +1035,266 @@ UNIVERSITIES = {
              "application_deadline": None, "deadline_academic_year": "2025-2026"},
         ],
     },
+    "us-harvard": {
+        "canonical_name": "Harvard University", "aliases": ["Harvard", "Harvard College"], "country_cc": "us",
+        "city": {"slug": "us-cambridge-ma", "name": "Cambridge"},
+        "website": "https://www.harvard.edu/", "institution_type": "private-nonprofit",
+        "verified_at": "2026-10-21", "currency": "USD",
+        "verification_note": "fact-checks/us-harvard-2026-10-21.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Harvard College — Concentrations (fields of study)",
+                "url": "https://college.harvard.edu/academics/liberal-arts-sciences/concentrations",
+                "excerpt": "Harvard College offers ~50 concentrations incl. Computer Science, Engineering (Biomedical, "
+                "Electrical, Environmental Science & Engineering, Mechanical) and Economics. Harvard offers NO "
+                "undergraduate business concentration (business is graduate-only at HBS)."},
+            "adm": {"suffix": "src-adm", "title": "International Applicants / testing — Harvard College",
+                "url": "https://college.harvard.edu/admissions/apply/international-applicants",
+                "excerpt": "Holistic admission. SAT or ACT required (reinstated for students entering fall 2025 onward). "
+                "International applicants: English proficiency expected; TOEFL/IELTS/Duolingo may be submitted."},
+            "fee": {"suffix": "src-fee", "title": "Cost of Attendance 2026-27 — Harvard College",
+                "url": "https://college.harvard.edu/financial-aid/how-aid-works",
+                "excerpt": "2026-27 billed costs $91,634: tuition $62,226; housing $14,250; food $8,942; student services "
+                "fee $4,272; health services fee $1,944. Plus personal ~$2,500 and books ~$1,000. Health insurance $4,954 "
+                "if not otherwise covered. Same sticker for all; Harvard meets 100% of demonstrated need."},
+            "schol": {"suffix": "src-schol", "title": "How Aid Works / Affordability — Harvard College",
+                "url": "https://college.harvard.edu/financial-aid/how-aid-works",
+                "excerpt": "Need-based aid for all students regardless of nationality; need-blind admission including for "
+                "international students; meets 100% of demonstrated need. No merit-based (or athletic) scholarships."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "US High School Diploma", "US high school diploma / American curriculum applicants."),
+            ("international-other", "General International Secondary Qualification", "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("all-students", "All students (uniform tuition)",
+             "US private university: same sticker tuition for domestic and international students. Need-based aid differs by family need."),
+        ],
+        "cost": {"residency": "all-students", "tuition": 62226, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": 6216,
+            "note": "Billed cost of attendance 2026-27 = $91,634 (tuition 62,226 + housing 14,250 + food 8,942 + student "
+            "services 4,272 + health services 1,944); mandatory_fees here = student-services + health-services fees "
+            "(6,216). Personal ~2,500 + books ~1,000 unbilled. Health insurance $4,954 extra if uninsured. SAME sticker "
+            "for all; Harvard is need-blind (incl. international) and meets 100% of demonstrated need — most pay far less."},
+        "lang_req": {"test_name": "TOEFL / IELTS Academic / Duolingo (international, if applicable)",
+            "min_score": "English proficiency expected of international applicants; Harvard does not publish a fixed minimum score.",
+            "notes": "Context for non-native English speakers; not required where prior education was in English."},
+        "std_tests": [
+            {"test_name": "SAT or ACT", "required": "required",
+             "notes": "Standardized testing required (reinstated for students entering fall 2025 onward)."},
+        ],
+        "deadline_note": "Apply via the Common/Coalition Application (restrictive early action ~Nov 1; regular ~Jan 1).",
+        "living": {"min": 2224, "max": 2966, "currency": "USD", "admin_body": "Harvard University",
+            "desc": "Harvard COA 2026-27 non-tuition/fees: housing $14,250 + food $8,942 + books $1,000 + personal "
+            "$2,500 = $26,692/yr (~$2,224–2,966/mo over 12 vs 9 months). Health insurance $4,954 extra if uninsured."},
+        "programs": [
+            {"suffix": "cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "Computer Science concentration (A.B. or S.B.), Harvard John A. Paulson School of Engineering & Applied Sciences.",
+             "faculty": "Harvard SEAS", "duration": 4,
+             "url": "https://college.harvard.edu/academics/liberal-arts-sciences/concentrations",
+             "subjects_note": "Holistic whole-application review; strong preparation in mathematics and science expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "Engineering concentrations (S.B./A.B.): Biomedical, Electrical, Environmental Science & Engineering, Mechanical (Harvard SEAS).",
+             "faculty": "Harvard SEAS", "duration": 4,
+             "url": "https://college.harvard.edu/academics/liberal-arts-sciences/concentrations",
+             "subjects_note": "Holistic whole-application review; strong preparation in mathematics and physics expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "economics", "program_name": "Economics", "field": "Economics", "degree": "BA",
+             "degree_local": "Economics concentration (A.B.), Harvard Faculty of Arts & Sciences.",
+             "faculty": "Department of Economics", "duration": 4,
+             "url": "https://www.economics.harvard.edu/concentrator-guide",
+             "subjects_note": "Holistic whole-application review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+        ],
+        # Harvard has NO undergraduate business concentration (verified) — omitted, not fabricated.
+        "scholarships": [
+            {"suffix": "need-based-aid", "name": "Need-Based Financial Aid (meets 100% of demonstrated need)",
+             "provider": "Harvard University", "provider_type": "institutional", "award_type": "mixed", "renewable": True,
+             "award_amount": "Grant-based aid meeting 100% of demonstrated financial need (no loans).",
+             "academic_criteria": "Awarded solely on demonstrated financial need; admission is need-blind for all applicants, including international.",
+             "other_eligibility_criteria": "GUARANTEED for every admitted student with demonstrated need, all four years. "
+             "Harvard offers NO merit-based or athletic scholarships.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+    "us-stanford": {
+        "canonical_name": "Stanford University", "aliases": ["Stanford"], "country_cc": "us",
+        "city": {"slug": "us-stanford-ca", "name": "Stanford"},
+        "website": "https://www.stanford.edu/", "institution_type": "private-nonprofit",
+        "verified_at": "2026-10-21", "currency": "USD",
+        "verification_note": "fact-checks/us-stanford-2026-10-21.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Stanford — undergraduate majors",
+                "url": "https://majors.stanford.edu/majors/text-only-lists-majors-and-offerings",
+                "excerpt": "Stanford offers Computer Science (B.S.), Engineering (School of Engineering, 10 departmental "
+                "majors incl. EE, ME, Aero/Astro, Bioengineering, MS&E), and Economics (B.A.). Stanford offers NO "
+                "undergraduate business degree (the GSB is graduate; undergrads may take GSB 'Pathfinder' courses only)."},
+            "adm": {"suffix": "src-adm", "title": "International Applicants / testing — Stanford Admission",
+                "url": "https://admission.stanford.edu/apply/international/index.html",
+                "excerpt": "Holistic admission. SAT or ACT required (reinstated for the 2025-26 cycle onward). Admission "
+                "is need-blind for US applicants but NEED-AWARE for international applicants. English proficiency expected."},
+            "fee": {"suffix": "src-fee", "title": "Undergraduate Tuition & Student Budget 2026-27 — Stanford",
+                "url": "https://financialaid.stanford.edu/undergrad/budget/index.html",
+                "excerpt": "2026-27: tuition $67,731; standard room & board $22,944; total cost of attendance $97,545 "
+                "(incl. fees, books, personal). Same sticker for all; Stanford meets full demonstrated need. Families "
+                "earning < $100,000 typically pay no tuition, room or board; < $150,000 typically pay no tuition."},
+            "schol": {"suffix": "src-schol", "title": "Afford / Financial Aid — Stanford Admission",
+                "url": "https://admission.stanford.edu/afford/",
+                "excerpt": "Need-based aid; meets full demonstrated need for admitted students. No merit scholarships "
+                "(aside from a limited number of athletic scholarships). Need-blind for US applicants; need-aware for "
+                "international applicants."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "US High School Diploma", "US high school diploma / American curriculum applicants."),
+            ("international-other", "General International Secondary Qualification", "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("all-students", "All students (uniform tuition)",
+             "US private university: same sticker tuition for domestic and international students. Need-based aid differs by family need."),
+        ],
+        "cost": {"residency": "all-students", "tuition": 67731, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": 0,
+            "note": "Total cost of attendance 2026-27 = $97,545 (tuition 67,731 + room & board 22,944 + fees/books/"
+            "personal). SAME sticker for all. Stanford meets full demonstrated need: families < $100k income typically "
+            "pay no tuition/room/board; < $150k typically pay no tuition. NOTE: need-blind for US applicants but "
+            "NEED-AWARE for international applicants — net cost and admission chances for internationals depend on need."},
+        "lang_req": {"test_name": "TOEFL / IELTS Academic / Duolingo (international, if applicable)",
+            "min_score": "English proficiency expected of international applicants; Stanford does not publish a fixed minimum score.",
+            "notes": "Context for non-native English speakers."},
+        "std_tests": [
+            {"test_name": "SAT or ACT", "required": "required",
+             "notes": "Standardized testing required (reinstated for the 2025-26 application cycle onward)."},
+        ],
+        "deadline_note": "Apply via the Common/Coalition Application (restrictive early action ~Nov 1; regular ~Jan 5).",
+        "living": {"min": 2485, "max": 3313, "currency": "USD", "admin_body": "Stanford University",
+            "desc": "Stanford COA 2026-27 non-tuition ≈ $29,814/yr (standard room & board $22,944 + fees, books, "
+            "personal ≈ $6,870); ~$2,485–3,313/mo over 12 vs 9 months. Total COA $97,545."},
+        "programs": [
+            {"suffix": "cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "B.S. in Computer Science, Stanford School of Engineering.",
+             "faculty": "Stanford School of Engineering", "duration": 4,
+             "url": "https://bulletin.stanford.edu/programs/CS-BS",
+             "subjects_note": "Holistic whole-application review; strong preparation in mathematics and science expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "B.S. engineering majors (e.g. Electrical, Mechanical, Aeronautics & Astronautics, Bioengineering, Management Science & Engineering), Stanford School of Engineering.",
+             "faculty": "Stanford School of Engineering", "duration": 4,
+             "url": "https://engineering.stanford.edu/students-academics/academics/undergraduate-degree-programs",
+             "subjects_note": "Holistic whole-application review; strong preparation in mathematics and physics expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "economics", "program_name": "Economics", "field": "Economics", "degree": "BA",
+             "degree_local": "B.A. in Economics, Stanford School of Humanities & Sciences.",
+             "faculty": "Department of Economics", "duration": 4,
+             "url": "https://bulletin.stanford.edu/programs/ECON-BA",
+             "subjects_note": "Holistic whole-application review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+        ],
+        # Stanford has NO undergraduate business degree (verified) — omitted, not fabricated.
+        "scholarships": [
+            {"suffix": "need-based-aid", "name": "Need-Based Financial Aid (meets full demonstrated need)",
+             "provider": "Stanford University", "provider_type": "institutional", "award_type": "mixed", "renewable": True,
+             "award_amount": "Need-based aid meeting full demonstrated need. Families < $100k income typically pay no "
+             "tuition/room/board; < $150k typically pay no tuition.",
+             "academic_criteria": "Awarded on demonstrated financial need.",
+             "other_eligibility_criteria": "Meets full need for admitted students. NO merit scholarships (aside from a "
+             "limited number of athletic awards). Admission is need-blind for US applicants but NEED-AWARE for international applicants.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+    "us-upenn": {
+        "canonical_name": "University of Pennsylvania", "aliases": ["Penn", "UPenn"], "country_cc": "us",
+        "city": {"slug": "us-philadelphia-pa", "name": "Philadelphia"},
+        "website": "https://www.upenn.edu/", "institution_type": "private-nonprofit",
+        "verified_at": "2026-10-21", "currency": "USD",
+        "verification_note": "fact-checks/us-upenn-2026-10-21.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Pennsylvania — undergraduate schools",
+                "url": "https://catalog.upenn.edu/undergraduate/",
+                "excerpt": "Penn's four undergraduate schools incl. Arts & Sciences (Economics B.A.), the School of "
+                "Engineering & Applied Science (Computer Science and engineering, B.S.E.), and the Wharton School "
+                "(business, B.S. in Economics). Same tuition across all schools."},
+            "adm": {"suffix": "src-adm", "title": "Undergraduate admissions / aid — University of Pennsylvania",
+                "url": "https://catalog.upenn.edu/undergraduate/academic-resources/financial-aid/",
+                "excerpt": "Holistic admission. Penn meets 100% of demonstrated need with grant-based aid and no loans. "
+                "Need-blind for US applicants (and Canada/Mexico); need-aware for other international applicants. "
+                "English proficiency expected of international applicants."},
+            "fee": {"suffix": "src-fee", "title": "Undergraduate Cost of Attendance 2026-27 — Penn SRFS",
+                "url": "https://srfs.upenn.edu/costs-budgeting/undergraduate-cost-attendance",
+                "excerpt": "2026-27: tuition $65,670; fees $8,308; room $13,644; meal plan $6,960 (= $94,582 tuition/"
+                "fees/room/board). On-campus total budget $99,082 (incl. books, transport, personal). Same tuition "
+                "across Arts & Sciences, Wharton and Engineering."},
+            "schol": {"suffix": "src-schol", "title": "Financial Aid (no-loan) — University of Pennsylvania",
+                "url": "https://srfs.upenn.edu/costs-budgeting/undergraduate-cost-attendance",
+                "excerpt": "Penn meets 100% of demonstrated need with grant-based aid and WITHOUT loans. Need-blind for "
+                "US (and Canada/Mexico) applicants; need-aware for other international applicants. No merit scholarships."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "US High School Diploma", "US high school diploma / American curriculum applicants."),
+            ("international-other", "General International Secondary Qualification", "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("all-students", "All students (uniform tuition)",
+             "US private university: same sticker tuition for domestic and international students (same across all schools). Need-based aid differs by family need."),
+        ],
+        "cost": {"residency": "all-students", "tuition": 65670, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": 8308,
+            "note": "2026-27: tuition 65,670 + fees 8,308 + room 13,644 + meal 6,960 = 94,582; on-campus total budget "
+            "$99,082 (incl. books/transport/personal). SAME tuition across Arts & Sciences, Wharton and Engineering. "
+            "Penn meets 100% of demonstrated need with grant aid and NO loans; need-blind for US/Canada/Mexico "
+            "applicants, need-aware for other internationals — net cost depends on family need."},
+        "lang_req": {"test_name": "TOEFL / IELTS Academic / Duolingo (international, if applicable)",
+            "min_score": "English proficiency expected of international applicants; Penn does not publish a single fixed minimum score.",
+            "notes": "Context for non-native English speakers."},
+        "std_tests": [
+            {"test_name": "SAT or ACT", "required": "recommended",
+             "notes": "Penn's standardized-testing policy has varied by year (test-optional in recent cycles); verify the current requirement for your entry year."},
+        ],
+        "deadline_note": "Apply via the Common/Coalition Application (early decision ~Nov 1; regular ~Jan).",
+        "living": {"min": 2092, "max": 2789, "currency": "USD", "admin_body": "University of Pennsylvania",
+            "desc": "Penn COA 2026-27 non-tuition/fees: room $13,644 + meal $6,960 + books/transport/personal ≈ $4,500 "
+            "= ~$25,104/yr (~$2,092–2,789/mo over 12 vs 9 months). Fees $8,308 billed separately."},
+        "programs": [
+            {"suffix": "cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "B.S.E. in Computer Science, School of Engineering & Applied Science (Dept. of CIS).",
+             "faculty": "Penn Engineering (SEAS)", "duration": 4,
+             "url": "https://catalog.upenn.edu/undergraduate/",
+             "subjects_note": "Holistic whole-application review; strong preparation in mathematics and science expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "B.S.E. engineering majors (e.g. Mechanical, Electrical, Bioengineering, Chemical & Biomolecular), Penn Engineering.",
+             "faculty": "Penn Engineering (SEAS)", "duration": 4,
+             "url": "https://catalog.upenn.edu/undergraduate/",
+             "subjects_note": "Holistic whole-application review; strong preparation in mathematics and physics expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "economics", "program_name": "Economics", "field": "Economics", "degree": "BA",
+             "degree_local": "B.A. in Economics, School of Arts & Sciences.",
+             "faculty": "Department of Economics (School of Arts & Sciences)", "duration": 4,
+             "url": "https://catalog.upenn.edu/undergraduate/",
+             "subjects_note": "Holistic whole-application review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "wharton-business", "program_name": "Business (Wharton)", "field": "Business", "degree": "BSc",
+             "degree_local": "B.S. in Economics (the Wharton School undergraduate business degree), with concentrations (Finance, Management, Marketing, etc.).",
+             "faculty": "The Wharton School", "duration": 4,
+             "url": "https://catalog.upenn.edu/undergraduate/",
+             "subjects_note": "Holistic whole-application review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+        ],
+        "scholarships": [
+            {"suffix": "need-based-aid", "name": "Need-Based Financial Aid (no-loan, meets 100% of need)",
+             "provider": "University of Pennsylvania", "provider_type": "institutional", "award_type": "mixed", "renewable": True,
+             "award_amount": "Grant-based aid meeting 100% of demonstrated financial need, with NO loans.",
+             "academic_criteria": "Awarded on demonstrated financial need.",
+             "other_eligibility_criteria": "Meets 100% of need for admitted students (grant-based, no loans). NO merit "
+             "scholarships. Need-blind for US / Canada / Mexico applicants; need-aware for other international applicants.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
 }
 
 
