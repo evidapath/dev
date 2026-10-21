@@ -19,7 +19,7 @@ import { useAuth } from "../components/AuthContext";
 
 export const Route = createFileRoute("/sign-in")({
   validateSearch: (search: Record<string, unknown>) => ({
-    redirect: typeof search.redirect === "string" ? search.redirect : undefined,
+    redirect: typeof search["redirect"] === "string" ? search["redirect"] : undefined,
   }),
   head: () => ({
     meta: [
@@ -288,7 +288,7 @@ function SignInPage() {
                 </label>
                 <input
                   type="password"
-                  required={mode !== "reset"}
+                  required
                   minLength={mode === "signup" ? 6 : undefined}
                   autoComplete={mode === "signin" ? "current-password" : "new-password"}
                   placeholder="••••••••"

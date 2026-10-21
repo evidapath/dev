@@ -134,6 +134,7 @@ export function Header() {
           ) : (
             <Link
               to="/sign-in"
+              search={{ redirect: undefined }}
               className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-1"
             >
               <LogIn className="w-4 h-4" />
@@ -221,6 +222,7 @@ export function Header() {
             ) : (
               <Link
                 to="/sign-in"
+                search={{ redirect: undefined }}
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 py-2 text-sm text-muted-foreground font-medium"
               >

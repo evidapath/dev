@@ -91,7 +91,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/sign-in" className="hover:text-primary transition-colors">
+                <Link
+                  to="/sign-in"
+                  search={{ redirect: undefined }}
+                  className="hover:text-primary transition-colors"
+                >
                   Sign In
                 </Link>
               </li>
