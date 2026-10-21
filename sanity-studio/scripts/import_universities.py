@@ -25,7 +25,11 @@ D = "drafts."  # all generated docs are drafts
 
 
 def wref(ref, key=None, draft=True):
-    r = {"_ref": (D + ref if draft else ref), "_type": "reference", "_weak": True}
+    # Internal refs ALWAYS point to the BASE id (no drafts. prefix). Even though the docs live as
+    # drafts (drafts.<id>), Sanity's "drafts" perspective overlays drafts onto base ids, so a weak
+    # ref to the base id resolves to the draft in that perspective — and resolves to the published doc
+    # after publishing (which strips the drafts. prefix). The `draft` arg is kept for call-site compat.
+    r = {"_ref": ref, "_type": "reference", "_weak": True}
     if key:
         r["_key"] = key
     return r

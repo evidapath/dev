@@ -110,9 +110,13 @@ async function sanityQuery<T>(query: string): Promise<T> {
       "SANITY_READ_TOKEN is not configured (add it to .dev.vars locally / Cloudflare env in prod).",
     );
   }
+  // Production reads ONLY published content. Dev may opt into previewing unpublished
+  // drafts (e.g. the Batch-2 university imports) by setting SANITY_PERSPECTIVE=drafts
+  // in .dev.vars — never set this in production.
+  const perspective = process.env["SANITY_PERSPECTIVE"] || "published";
   const url =
     `https://${PROJECT}.api.sanity.io/v${API_VERSION}/data/query/${DATASET}` +
-    `?perspective=published&query=${encodeURIComponent(query)}`;
+    `?perspective=${perspective}&query=${encodeURIComponent(query)}`;
   const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
   if (!res.ok) {
     throw new Error(`Sanity query failed: ${res.status} ${await res.text()}`);
