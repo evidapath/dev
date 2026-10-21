@@ -463,6 +463,101 @@ UNIVERSITIES = {
              "application_deadline": None, "deadline_academic_year": "2026-2027"},
         ],
     },
+    "ae-khalifa": {
+        "canonical_name": "Khalifa University of Science and Technology", "aliases": ["Khalifa University", "KU"],
+        "country_cc": "ae", "city": {"slug": "ae-abu-dhabi", "name": "Abu Dhabi", "reuse_published": True},
+        "website": "https://www.ku.ac.ae/", "institution_type": "public",
+        "verified_at": "2026-10-21", "currency": "AED",
+        "verification_note": "fact-checks/ae-khalifa-2026-10-21.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Undergraduate Degree Programs — Khalifa University",
+                "url": "https://www.ku.ac.ae/academics/undergraduate-programs",
+                "excerpt": "Khalifa University of Science and Technology (Abu Dhabi) is a STEM-focused public research "
+                "university. Undergraduate B.Sc. programs: Computer Science (AI and Cybersecurity concentrations), "
+                "Computer Engineering, Applied Mathematics/Statistics/Data Science, and Engineering (Aerospace, "
+                "Biomedical, Chemical, Civil, Electrical, Industrial & Systems, Mechanical, Petroleum). No undergraduate "
+                "Business or Economics programs."},
+            "adm": {"suffix": "src-adm", "title": "Undergraduate Admissions / English requirements — Khalifa University",
+                "url": "https://www.ku.ac.ae/undergraduate-admissions",
+                "excerpt": "English (direct): IELTS Academic 6.0 / TOEFL iBT 79 / EmSAT English 1400; conditional "
+                "IELTS 5.5 / iBT 70 / EmSAT 1250. Grade 12 within the last two years; strong grades (UAE stream 80% "
+                "Advanced/Elite, 90% General). Computer Science requires Mathematics (a science optional). SAT Math >= "
+                "700 may be considered."},
+            "fee": {"suffix": "src-fee", "title": "Fee and Payment Guidelines — Khalifa University",
+                "url": "https://www.ku.ac.ae/fee-and-payment-guidelines",
+                "excerpt": "B.Sc. tuition AED 2,500 per credit hour; approximately AED 81,250 per year over a 4-year "
+                "normal duration. Uniform across Engineering and Science colleges and across nationalities (no "
+                "national/expat base-rate difference). Seat-holding deposit AED 5,000 (one-time). Year not explicitly stated."},
+            "schol": {"suffix": "src-schol", "title": "Partial Scholarships for International Students — Khalifa University",
+                "url": "https://www.ku.ac.ae/partial-scholarships-for-international-students",
+                "excerpt": "Partial scholarships for international undergraduates (maintain CGPA 3.0+): College of Science "
+                "75% tuition discount (net ~AED 25,000/yr); College of Engineering 50% discount (net ~AED 50,000/yr), "
+                "against a stated base tuition of AED 100,000/yr. Excludes summer terms, dorms and transport."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level / IGCSE qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "American High School Diploma / SAT", "US-curriculum applicants (SAT Math may be considered)."),
+            ("uae-shs", "UAE Secondary School Certificate", "UAE national secondary school certificate holders."),
+        ],
+        "residencies": [
+            ("all-students", "All students (uniform base tuition)",
+             "Khalifa charges the same base per-credit tuition for all students (no national/expat base-rate split); "
+             "scholarships, not nationality, determine net cost."),
+        ],
+        "cost": {"residency": "all-students", "tuition": 81250, "basis": "institutional",
+            "year": "2026-2027 (year not explicitly stated on KU fee page)", "mandatory_fees_annual": 0,
+            "note": "SOURCE CONFLICT (shown, not reconciled): KU fee page = AED 2,500/credit ≈ AED 81,250/yr over 4 "
+            "years; KU scholarship page states a 'base tuition AED 100,000/yr' against which discounts are computed "
+            "(≈40-credit nominal load). Both from ku.ac.ae. tuition_annual uses the fee-page 81,250 basis; the "
+            "scholarship net figures below use KU's 100,000 base. One-time seat-holding deposit AED 5,000. Dorms and "
+            "transport are extra. Uniform across colleges and nationalities."},
+        "lang_req": {"test_name": "IELTS Academic / TOEFL iBT / EmSAT English",
+            "min_score": "Direct admission: IELTS 6.0 / TOEFL iBT 79 / EmSAT English 1400. Conditional: IELTS 5.5 / "
+            "TOEFL iBT 70 / EmSAT English 1250.", "notes": "English is the medium of instruction."},
+        "std_tests": [
+            {"test_name": "EmSAT / SAT (as applicable)", "required": "required",
+             "notes": "Admission requires EmSAT (or accepted equivalent); SAT Math >= 700 may be considered, especially "
+             "for international / non-UAE-system applicants. Strong Grade-12 results required (UAE stream 80% Advanced/"
+             "Elite, 90% General)."},
+        ],
+        "deadline_note": "Apply via the Khalifa University online admissions portal (ku.ac.ae/ug-apply).",
+        "living": None,  # Dorms/transport are charged separately; no program cost-of-living estimate captured. Not fabricated.
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "Bachelor of Science in Computer Science (concentrations in Artificial Intelligence and "
+             "Cybersecurity), College of Computing and Mathematical Sciences.",
+             "faculty": "College of Computing and Mathematical Sciences", "duration": 4,
+             "url": "https://www.ku.ac.ae/academics/undergraduate-programs",
+             "subjects_note": "Grade 12 certificate; Mathematics required (a science optional); strong grades + EmSAT/English",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "us-hs": ["Mathematics"], "uae-shs": ["Mathematics"]}},
+            {"suffix": "bsc-eng", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "Bachelor of Science in Engineering, College of Engineering; disciplines: Aerospace, "
+             "Biomedical, Chemical, Civil, Electrical, Industrial & Systems, Mechanical, Petroleum, and Computer Engineering.",
+             "faculty": "College of Engineering", "duration": 4,
+             "url": "https://www.ku.ac.ae/academics/undergraduate-programs",
+             "subjects_note": "Grade 12 certificate; Mathematics and Physics; strong grades + EmSAT/English",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "us-hs": ["Mathematics", "Physics"], "uae-shs": ["Mathematics", "Physics"]}},
+        ],
+        # STEM-only university: NO Business or Economics undergraduate programs (verified absent) — omitted, not fabricated.
+        "scholarships": [
+            {"suffix": "sci-75", "name": "Partial Scholarship — College of Science (75%)",
+             "provider": "Khalifa University", "provider_type": "institutional", "award_type": "partial_tuition",
+             "renewable": True, "award_amount": "75% tuition discount (net ~AED 25,000/yr on KU's AED 100,000/yr base).",
+             "academic_criteria": "Maintain a cumulative GPA of 3.0 or higher during studies.",
+             "other_eligibility_criteria": "Partial scholarship for international undergraduates in College of Science "
+             "programs (incl. Computer Science). Excludes summer terms, dorms and transport.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+            {"suffix": "eng-50", "name": "Partial Scholarship — College of Engineering (50%)",
+             "provider": "Khalifa University", "provider_type": "institutional", "award_type": "partial_tuition",
+             "renewable": True, "award_amount": "50% tuition discount (net ~AED 50,000/yr on KU's AED 100,000/yr base).",
+             "academic_criteria": "Maintain a cumulative GPA of 3.0 or higher during studies.",
+             "other_eligibility_criteria": "Partial scholarship for international undergraduates in College of "
+             "Engineering programs. Excludes summer terms, dorms and transport.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
 }
 
 
@@ -483,14 +578,18 @@ def build_docs(slug, s):
             "retrieval_method": "WebSearch/WebFetch (primary-source verification, EvidaPath Batch 2)",
             "retrieved_at": f"{s['verified_at']}T00:00:00Z", "fields_supported": []})
 
-    # City (country reused from the already-published country-<cc>, weak ref, NO drafts prefix)
-    docs.append({"_id": D + city_id, "_type": "city", "id": s["city"]["slug"], "name": s["city"]["name"],
-        "country_ref": wref(f"country-{cc}", draft=False)})
+    # City. If reuse_published, point at an already-published city-<slug> (e.g. city-ae-abu-dhabi
+    # from NYUAD) and do NOT create a duplicate; else create a draft city.
+    reuse_city = s["city"].get("reuse_published", False)
+    if not reuse_city:
+        docs.append({"_id": D + city_id, "_type": "city", "id": s["city"]["slug"], "name": s["city"]["name"],
+            "country_ref": wref(f"country-{cc}", draft=False)})
+    city_ref = wref(city_id, draft=not reuse_city)
 
     # University
     docs.append({"_id": D + uni_id, "_type": "university", "id": slug,
         "canonical_name": s["canonical_name"], "aliases": s.get("aliases", []),
-        "country_ref": wref(f"country-{cc}", draft=False), "primary_city_ref": wref(city_id),
+        "country_ref": wref(f"country-{cc}", draft=False), "primary_city_ref": city_ref,
         "official_website": s["website"], "institution_type": s["institution_type"],
         "record_status": "VERIFIED", "evidapath_verified": True, "evidapath_verified_at": s["verified_at"],
         "last_verified": s["verified_at"], "last_researched": s["verified_at"],
@@ -591,6 +690,8 @@ def build_docs(slug, s):
         docs.append(doc)
 
     reused = [f"country-{cc}"]  # published country must exist
+    if s["city"].get("reuse_published"):
+        reused.append(city_id)  # reused published city must exist
     return docs, reused
 
 
