@@ -3968,6 +3968,405 @@ UNIVERSITIES = {
         ],
     },
 
+    # ── NETHERLANDS BATCH (3 universities, Batch-2 slots 41–43) ─────────────────────────────────
+    # country-nl is already published in Sanity staging.
+    # KEY difference from Germany: ALL programs below are ENGLISH-medium — no Dutch language required.
+    # Application platform: Studielink.nl (Dutch national application system) for all three.
+    # Application fee: €100 non-refundable for international diploma holders (all three universities).
+    # EU/EEA students pay the Dutch statutory tuition fee (~€2,694/yr 2026-27); non-EU pay
+    # institutional rates (significantly higher — confirmed per-program below).
+    # IELTS required for UAE A-level students (UAE school location does not qualify for UK-study exemption).
+    # No institutional Bachelor scholarships at TU/e or UT Twente (confirmed); UvA has limited AMS.
+    # decision_context_year: "2026-2027 (Fall 2027 entry)".
+
+    "nl-tue": {
+        "canonical_name": "Eindhoven University of Technology",
+        "aliases": ["TU/e", "TU Eindhoven", "Technische Universiteit Eindhoven"],
+        "country_cc": "nl",
+        "city": {"slug": "nl-eindhoven", "name": "Eindhoven"},
+        "website": "https://www.tue.nl/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "EUR",
+        "verification_note": "fact-checks/nl-tue-2026-10-25.md",
+        "application_platform_name": "Studielink (studielink.nl)",
+        "decision_context_year": "2026-2027 (Fall 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Eindhoven University of Technology — Official Website",
+                "url": "https://www.tue.nl/",
+                "excerpt": "TU/e (Technische Universiteit Eindhoven), Eindhoven, North Brabant, Netherlands; "
+                "public technical university (part of the 4TU network). All Bachelor programmes are taught "
+                "in English through the TU/e Bachelor College model. Strong in Electrical Engineering, "
+                "Computer Science and Engineering, Mechanical Engineering, Industrial Engineering, and Data "
+                "Science. Non-EU institutional tuition fee: €18,600/year (2026-27)."},
+            "adm": {"suffix": "src-adm",
+                "title": "TU/e — Admission to the Bachelor and Language Proficiency Requirements",
+                "url": "https://www.tue.nl/en/education/become-a-tue-student/admission-and-enrollment/"
+                "admission-to-the-bachelor",
+                "excerpt": "Apply via Studielink by January 15 for fall intake. TU/e Bachelor programmes "
+                "taught entirely in English. English language requirement: IELTS Academic 6.5 overall, "
+                "minimum 6.0 per section (test from a single test date; online IELTS not accepted). "
+                "BSc Computer Science and Engineering requires A-level Mathematics. Some programmes have "
+                "selection tests including Mathematics, Physics, and programme-content tests. "
+                "International diplomas (A-levels, IB, US HS, Abitur etc.) accepted via eligibility check. "
+                "€100 non-refundable application fee for students with international diplomas."},
+            "fee": {"suffix": "src-fee",
+                "title": "TU/e — Tuition Fees (2026-2027)",
+                "url": "https://www.tue.nl/en/education/become-a-tue-student/tuition-fees-and-other-study-costs/"
+                "tuition-fee",
+                "excerpt": "Non-EEA institutional tuition fee for all Bachelor programmes: €18,600/year (2026-27). "
+                "EU/EEA students pay Dutch statutory tuition fee (~€2,694/year). Non-EEA students who started "
+                "in 2025-26 or 2026-27 are covered by a transitional lower rate through August 31, 2030 "
+                "(2027-28 rate for that cohort: €19,200). New entrants to WS 2027-28 will pay the standard "
+                "institutional fee at that year's rate (expected ~€19,100-€19,600 at ~2.85% annual increase). "
+                "No institutional scholarships available for Bachelor students at TU/e."},
+            "schol": {"suffix": "src-schol",
+                "title": "TU/e — Scholarships and Grants",
+                "url": "https://www.tue.nl/en/education/become-a-tue-student/scholarships-and-grants",
+                "excerpt": "TU/e does NOT offer institutional scholarships for Bachelor students. "
+                "External scholarship options (partner organisations, country-specific grants) are listed on "
+                "this page. Future note: TU/e's High Potential Bachelor Scholarship supports top TU/e "
+                "Bachelor graduates transitioning to specific TU/e Master programmes — NOT an undergraduate "
+                "scholarship. UAE students should explore DAAD and Netherlands Government scholarships."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications from international schools."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed via TU/e eligibility review."),
+        ],
+        "residencies": [
+            ("international", "International (non-EU/non-EEA) students",
+             "Non-EEA students pay the institutional tuition fee. EU/EEA students pay the Dutch statutory "
+             "fee (~€2,694/yr, 2026-27). UAE students are classified as non-EU/EEA."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "English",
+            "req_name": "English language proficiency",
+            "test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS Academic: overall 6.5, minimum 6.0 in each section. "
+                         "Also accepted: TOEFL iBT (from Jan 21, 2026) 4.5 overall 4.5/section; "
+                         "Cambridge C1 Advanced 176/169; Pearson PTE Academic 61/46.",
+            "notes": "All TU/e Bachelor programmes are taught in English. Tests must be from a single test "
+                     "date; scores cannot exceed 2 years old. Online IELTS not accepted. "
+                     "UAE A-level students from UAE-based schools typically need to provide IELTS — the "
+                     "exemption for English secondary education applies to schools in specific countries "
+                     "(UK, US, Ireland, Australia, NZ, Canada) not UAE. Verify current exemption policy with "
+                     "TU/e admissions.",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply via Studielink (studielink.nl) by January 15, 2027 for Fall 2027 entry "
+            "(September 2027 start). After Studielink registration, complete TU/e-specific steps including "
+            "language proficiency and document upload. Some programmes (CSE, ME) require a Selection "
+            "Procedure: Motivation & Capacities Questionnaire + tests (Mathematics, Physics, programme "
+            "content). €100 application fee required for international diploma holders. "
+            "Studielink opens October 1, 2026.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cse", "program_name": "Computer Science and Engineering",
+             "field": "Computer Science", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Science in Computer Science and Engineering (CSE), TU/e Bachelor "
+             "College, Eindhoven University of Technology. 3 years (180 ECTS). TAUGHT IN ENGLISH. "
+             "Programme subject to selection procedure (Motivation & Capacities Questionnaire + test). "
+             "Combines computer science theory with engineering applications.",
+             "faculty": "TU/e Bachelor College", "duration": 3,
+             "url": "https://www.tue.nl/en/education/bachelor-college/bachelor-computer-science-and-engineering",
+             "subjects_note": "Mathematics at A-level required. Grade threshold assessed by TU/e eligibility "
+                              "review. Selection procedure includes maths component. IELTS 6.5 required.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 18600, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "Non-EU: €18,600/year (2026-27 institutional fee). EU/EEA pay statutory ~€2,694/yr. "
+                 "Note: students starting in 2027-28 may pay a slightly higher rate (expected ~€19,100–€19,600 "
+                 "at ~2.85% annual indexation from the 2026-27 base). No institutional Bachelor scholarships."}},
+            {"suffix": "bsc-ee", "program_name": "Electrical Engineering",
+             "field": "Engineering", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Science in Electrical Engineering, TU/e Bachelor College, "
+             "Eindhoven University of Technology. 3 years (180 ECTS). TAUGHT IN ENGLISH. "
+             "Part of TU/e's strong EE department; Eindhoven is home to semiconductor ecosystem (ASML, NXP).",
+             "faculty": "TU/e Bachelor College", "duration": 3,
+             "url": "https://www.tue.nl/en/education/degree-programs/bachelor-programs",
+             "subjects_note": "Mathematics and Physics at A-level required (standard for EE; specific grade "
+                              "minimum not published — assessed via eligibility review). IELTS 6.5 required. "
+                              "Programme taught in English.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 18600, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "Non-EU: €18,600/year (2026-27). Same institutional fee applies to all TU/e "
+                 "Bachelor programmes regardless of discipline."}},
+        ],
+        "scholarships": [],  # TU/e explicitly confirms no institutional Bachelor scholarships; external options only
+    },
+
+    "nl-uva": {
+        "canonical_name": "University of Amsterdam",
+        "aliases": ["UvA", "Universiteit van Amsterdam", "University of Amsterdam (UvA)"],
+        "country_cc": "nl",
+        "city": {"slug": "nl-amsterdam", "name": "Amsterdam"},
+        "website": "https://www.uva.nl/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "EUR",
+        "verification_note": "fact-checks/nl-uva-2026-10-25.md",
+        "application_platform_name": "Studielink (studielink.nl)",
+        "decision_context_year": "2026-2027 (Fall 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Amsterdam — Official Website",
+                "url": "https://www.uva.nl/",
+                "excerpt": "University of Amsterdam (Universiteit van Amsterdam, UvA), Amsterdam, Netherlands; "
+                "large public research university. Strengths: economics, social sciences, humanities, law, "
+                "science (incl. Computer Science). BSc Economics and Business Economics taught in English "
+                "(with optional Dutch track). BSc Computer Science taught in English — joint programme with "
+                "VU Amsterdam. Non-EU institutional fees for 2027-28: Faculty of Science (CS) €21,900; "
+                "Faculty of Economics and Business (Econ & Business) €15,730."},
+            "adm": {"suffix": "src-adm",
+                "title": "UvA — Applying for a Bachelor's Programme",
+                "url": "https://www.uva.nl/en/education/admissions/bachelors/applying-for-a-degree-programme.html",
+                "excerpt": "Apply via Studielink; most programmes deadline January 15 for Fall intake "
+                "(numerus fixus / selection programmes). IELTS Academic 6.5 overall, minimum 6.0 per section "
+                "required for non-exempted students. Exemption: secondary education in Australia, Canada "
+                "(excl. Quebec), Ireland, New Zealand, UK, or USA. UAE A-level students attending UAE-based "
+                "schools do NOT qualify for automatic exemption — IELTS required. "
+                "A-level qualifications accepted; international diplomas assessed by UvA. "
+                "€100 application fee for international diploma holders."},
+            "fee": {"suffix": "src-fee",
+                "title": "UvA — Tuition Fees for Non-EU/EEA Students (2027-2028)",
+                "url": "https://www.uva.nl/en/education/fees-and-funding/tuition-fees/tuition-fees.html",
+                "excerpt": "UvA institutional tuition fees for non-EU/EEA Bachelor students (2027-2028): "
+                "Faculty of Economics and Business: €15,730/year. Faculty of Science: €21,900/year. "
+                "Faculty of Humanities: €17,600/year. EU/EEA students pay statutory tuition (~€2,694/yr). "
+                "Students enrolling before September 1, 2026 have their tuition rate indexed annually; "
+                "new entrants from 2027-28 pay the rates above. Indexation: 2.85% annually."},
+            "schol": {"suffix": "src-schol",
+                "title": "UvA — Amsterdam Merit Scholarship (AMS) for Bachelor Students",
+                "url": "https://www.uva.nl/en/education/fees-and-funding/bachelors-scholarships-and-loans/"
+                "faculty-scholarships/faculty-scholarships.html",
+                "excerpt": "Amsterdam Merit Scholarship (AMS): €6,000/year for 3 years (€18,000 total) for "
+                "exceptionally talented non-EU students. Very limited — approximately 1 scholarship per "
+                "Bachelor programme per academic year. Requirements: non-EU nationality, 90–100% / A++ "
+                "academic grades, not eligible for Dutch study grant or loan. Competitive — not automatic. "
+                "Availability varies by programme and year; some programmes cannot grant AMS for a given "
+                "cohort. Check UvA programme pages for current-year availability."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed by UvA admissions."),
+        ],
+        "residencies": [
+            ("international", "International (non-EU/non-EEA) students",
+             "Non-EEA students pay UvA's institutional tuition fee (programme-specific). EU/EEA students pay "
+             "the Dutch statutory tuition fee (~€2,694/yr, 2026-27). UAE students are non-EU."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "English",
+            "req_name": "English language proficiency",
+            "test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS Academic: overall 6.5, minimum 6.0 in each individual section. "
+                         "Also accepted: TOEFL iBT 92 (22/section); Cambridge C1 Advanced 175 (170/section); "
+                         "Cambridge C2 Proficiency 180 (170/section); Pearson PTE Academic 71.",
+            "notes": "Both BSc CS and BSc Economics and Business Economics are taught in English. IELTS waiver "
+                     "applies only if secondary education was completed IN English-speaking countries (UK, US, "
+                     "Ireland, Australia, NZ, Canada) — UAE-based A-level schools do NOT qualify. "
+                     "Test scores must be current (max 2 years old). Economics programme also offers a Dutch-"
+                     "language track (not relevant for UAE applicants). Apply via Studielink by January 15.",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply via Studielink (studielink.nl). Deadline: January 15, 2027 for programmes "
+            "with numerus fixus (selective intake) for Fall 2027 entry. Non-selective programmes may accept "
+            "applications until April 15 — check individual programme pages. €100 application fee for "
+            "international diploma holders. BSc CS (joint UvA-VU) likely has selective intake — apply by "
+            "January 15. IELTS required at application stage for UAE students.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science",
+             "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Science in Computer Science, joint programme of University of "
+             "Amsterdam (UvA) and Vrije Universiteit Amsterdam (VU). Faculty of Science, UvA. 3 years "
+             "(180 ECTS). TAUGHT IN ENGLISH. Prestigious joint UvA-VU programme; strong research environment "
+             "in Amsterdam's tech ecosystem.",
+             "faculty": "Faculty of Science (joint UvA-VU Amsterdam)", "duration": 3,
+             "url": "https://www.uva.nl/en/programmes/bachelors/computer-science/computer-science.html",
+             "subjects_note": "Mathematics at A-level required (high achievement expected). Grade threshold "
+                              "assessed by UvA eligibility review. IELTS 6.5 required for UAE students. "
+                              "Selection procedure for numerus fixus intake — apply by January 15.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 21900, "basis": "institutional",
+                 "year": "2027-2028",
+                 "mandatory_fees_annual": None,
+                 "note": "Faculty of Science institutional fee: €21,900/year (2027-28 confirmed from UvA "
+                 "official fee page). EU/EEA statutory fee ~€2,694/yr. Source: UvA tuition fees page. "
+                 "Note: this is the 2027-28 figure which applies to the 2027 entry cohort; "
+                 "2026-27 rate was approximately €21,293 (back-calculated at 2.85% indexation)."}},
+            {"suffix": "bsc-economics", "program_name": "Economics and Business Economics",
+             "field": "Economics", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Science in Economics and Business Economics, Faculty of Economics "
+             "and Business, University of Amsterdam. 3 years (180 ECTS). TAUGHT IN ENGLISH (Dutch track also "
+             "available — not relevant for UAE students). Strong reputation in economics; Amsterdam is a "
+             "major European financial centre.",
+             "faculty": "Faculty of Economics and Business", "duration": 3,
+             "url": "https://www.uva.nl/en/programmes/bachelors/economics--business-economics/"
+                    "economics--business-economics.html",
+             "subjects_note": "Mathematics required; economics aptitude assumed. Grade threshold assessed by "
+                              "UvA. IELTS 6.5 required for UAE students. Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 15730, "basis": "institutional",
+                 "year": "2027-2028",
+                 "mandatory_fees_annual": None,
+                 "note": "Faculty of Economics and Business institutional fee: €15,730/year (2027-28 confirmed "
+                 "from UvA official fee page). Significantly lower than UvA Science/Humanities rates. "
+                 "EU/EEA statutory fee ~€2,694/yr."}},
+        ],
+        "scholarships": [
+            {"suffix": "ams", "name": "Amsterdam Merit Scholarship (AMS)",
+             "provider": "University of Amsterdam",
+             "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": True,
+             "award_amount": "€6,000/year for the duration of the programme (total €18,000 over 3 years).",
+             "academic_criteria": "Exceptional academic results: 90–100% / A++ grades in secondary education. "
+             "Non-EU/non-EEA nationality required.",
+             "other_eligibility_criteria": "COMPETITIVE — very limited. Approximately 1 scholarship per "
+             "Bachelor programme per academic year. Not eligible if entitled to Dutch study grant or loan. "
+             "Availability varies by programme and cohort — confirm with UvA programme office before applying. "
+             "Application process and timeline published on faculty scholarship pages.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "nl-ut": {
+        "canonical_name": "University of Twente",
+        "aliases": ["UT", "UT Twente", "Universiteit Twente", "Universiteit Twente (UT)"],
+        "country_cc": "nl",
+        "city": {"slug": "nl-enschede", "name": "Enschede"},
+        "website": "https://www.utwente.nl/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "EUR",
+        "verification_note": "fact-checks/nl-ut-2026-10-25.md",
+        "application_platform_name": "Studielink (studielink.nl)",
+        "decision_context_year": "2026-2027 (Fall 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Twente — Official Website",
+                "url": "https://www.utwente.nl/",
+                "excerpt": "University of Twente (Universiteit Twente, UT), Enschede, Overijssel, Netherlands; "
+                "public technical university with a compact campus. Known for engineering, applied sciences, "
+                "and business programmes. All Bachelor programmes listed below are taught in English. "
+                "Non-EU fee tiers (2026-27): STEM/technical programmes €16,400/year; business programmes "
+                "€12,300/year. University of Twente Scholarship (UTS) is Masters-only."},
+            "adm": {"suffix": "src-adm",
+                "title": "UT Twente — Bachelor Admission and Language Requirements",
+                "url": "https://www.utwente.nl/en/education/bachelor/how-to-apply/language-requirements/",
+                "excerpt": "English language requirement for all UT Bachelor programmes: IELTS Academic 6.0 "
+                "overall, minimum 5.5 per section. Also accepted: TOEFL iBT 80 (minimum 17/section). "
+                "International certificate equivalent to Dutch VWO required (A-levels, IB Diploma, Abitur, "
+                "US HS diploma accepted). A-level Mathematics required for Technical Computer Science and "
+                "Mechanical Engineering. Apply via Studielink; non-EU/visa students: deadline May 1, 2027. "
+                "€100 application fee."},
+            "fee": {"suffix": "src-fee",
+                "title": "UT Twente — Tuition Fees for Non-EU/EEA Students (2026-2027)",
+                "url": "https://www.utwente.nl/en/education/bachelor/tuition-fees/",
+                "excerpt": "Non-EU/EEA institutional tuition fees (2026-27): Technical Computer Science "
+                "€16,400/year (STEM/Bèta tier); Mechanical Engineering €16,400/year (STEM tier); "
+                "International Business Administration €12,300/year (Gamma/Alpha tier). "
+                "EU/EEA students pay Dutch statutory fee (~€2,694/yr). Note: students also pay an €100 "
+                "application fee. No institutional Bachelor scholarships at UT Twente "
+                "(UTS scholarship is Masters-only)."},
+            "schol": {"suffix": "src-schol",
+                "title": "UT Twente — Scholarship Finder",
+                "url": "https://www.utwente.nl/en/education/scholarship-finder/",
+                "excerpt": "University of Twente Scholarship (UTS) is exclusively for non-EU students "
+                "applying to MSc (Master's) programmes — NOT available for Bachelor students. "
+                "External scholarship options are listed in the UT scholarship finder, including country-"
+                "specific grants and the Dutch NL Scholarship. Bachelor students are recommended to explore "
+                "external funding (DAAD, home country scholarships, NL Scholarship programme)."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications equivalent to Dutch VWO."),
+        ],
+        "residencies": [
+            ("international", "International (non-EU/non-EEA) students",
+             "Non-EEA students pay UT institutional fee (programme-tier dependent). EU/EEA students pay "
+             "Dutch statutory fee (~€2,694/yr). UAE students are non-EU. Fee tier: STEM programmes "
+             "€16,400/yr; business/gamma programmes €12,300/yr."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "English",
+            "req_name": "English language proficiency",
+            "test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS Academic: overall 6.0, minimum 5.5 per section. "
+                         "Also accepted: TOEFL iBT 80 (minimum 17/section).",
+            "notes": "All three UT Twente Bachelor programmes below are taught in English. "
+                     "Lower IELTS bar (6.0) than TU/e or UvA (6.5) — accessible for UAE students. "
+                     "UAE A-level students typically need IELTS certificate (UAE school location does not "
+                     "qualify for English-speaking country exemption). Test valid for 2 years. "
+                     "Apply via Studielink; non-EU/visa deadline May 1, 2027 (earlier than January 15 "
+                     "deadline at most other Dutch universities).",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply via Studielink (studielink.nl). Non-EU/EEA students requiring a Dutch visa: "
+            "deadline May 1, 2027 for Fall 2027 entry. EU/EEA students: deadline June 1, 2027. "
+            "Earlier is recommended — some programmes may fill before the deadline. "
+            "Studielink opens October 1, 2026. €100 application fee required. "
+            "After Studielink, upload documents via UT's application portal.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-tcs", "program_name": "Technical Computer Science",
+             "field": "Computer Science", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Science in Technical Computer Science (Technische Informatica), "
+             "Faculty of Electrical Engineering, Mathematics and Computer Science (EEMCS), University of "
+             "Twente. 3 years (180 ECTS). TAUGHT IN ENGLISH. Combines CS theory with engineering applications; "
+             "strong in embedded systems and software.",
+             "faculty": "Faculty of Electrical Engineering, Mathematics and Computer Science (EEMCS)",
+             "duration": 3,
+             "url": "https://www.utwente.nl/en/education/bachelor/programmes/technical-computer-science/",
+             "subjects_note": "Mathematics at A-level required. Grade assessed by UT eligibility review. "
+                              "IELTS 6.0 overall (minimum 5.5/section) required for UAE students. "
+                              "Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 16400, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "Non-EU: €16,400/year (2026-27 STEM/Bèta tier, confirmed from UT official fee page). "
+                 "EU/EEA pay ~€2,694/yr statutory. No institutional Bachelor scholarship at UT Twente."}},
+            {"suffix": "bsc-me", "program_name": "Mechanical Engineering",
+             "field": "Engineering", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Science in Mechanical Engineering, Faculty of Engineering "
+             "Technology (ET), University of Twente. 3 years (180 ECTS). TAUGHT IN ENGLISH. "
+             "Strong in design and manufacturing; UT has a manufacturing-focused campus.",
+             "faculty": "Faculty of Engineering Technology (ET)", "duration": 3,
+             "url": "https://www.utwente.nl/en/education/bachelor/programmes/mechanical-engineering/",
+             "subjects_note": "Mathematics and Physics at A-level required. Grade assessed by UT. "
+                              "IELTS 6.0 required. Programme in English.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 16400, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "Non-EU: €16,400/year (2026-27 STEM tier, confirmed from UT official fee page)."}},
+            {"suffix": "bsc-iba", "program_name": "International Business Administration",
+             "field": "Business", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Science in International Business Administration (IBA), BMS Faculty "
+             "(Behavioural, Management and Social Sciences), University of Twente. 3 years (180 ECTS). "
+             "TAUGHT IN ENGLISH. Combines business management with technology focus (UT's engineering culture). "
+             "Lower fee tier than STEM programmes.",
+             "faculty": "Faculty of Behavioural, Management and Social Sciences (BMS)", "duration": 3,
+             "url": "https://www.utwente.nl/en/education/bachelor/programmes/international-business-administration/",
+             "subjects_note": "Mathematics at A-level recommended; business aptitude expected. Grade assessed "
+                              "by UT. IELTS 6.0 required. Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 12300, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "Non-EU: €12,300/year (2026-27 Gamma/business tier, confirmed from UT fee page). "
+                 "Lower than STEM fee tier. EU/EEA pay ~€2,694/yr statutory."}},
+        ],
+        "scholarships": [],  # No institutional Bachelor scholarships at UT Twente (UTS is Masters-only only)
+    },
+
     "de-lmu": {
         "canonical_name": "LMU Munich",
         "aliases": ["LMU", "Ludwig-Maximilians-Universität München", "Ludwig Maximilian University of Munich"],

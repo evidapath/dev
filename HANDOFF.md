@@ -16,7 +16,7 @@ Key constraint: **never publish hallucinated facts**. Every data field that isn'
 
 **Goal:** Import 50 universities into Sanity as DRAFTS (not published). Suhail's requirement doc lists all 50 with required fields.
 
-### Status — 40/50 done as drafts
+### Status — 43/50 done as drafts
 
 | Done | Schools |
 |------|---------|
@@ -25,14 +25,11 @@ Key constraint: **never publish hallucinated facts**. Every data field that isn'
 | UK (7/7) | Cambridge, Imperial, UCL, Warwick, Manchester, Birmingham, Nottingham |
 | Canada (5/5) | Waterloo, UBC, McGill, McMaster, Alberta |
 | Germany (5/5) | RWTH Aachen, Heidelberg, TU Berlin, KIT, LMU Munich |
+| Netherlands (3/3) | TU/e Eindhoven, UvA Amsterdam, University of Twente |
 
-### Remaining (10 schools)
+### Remaining (7 schools)
 
-- ~~**US (2):** Purdue, ASU~~ ✓
-- ~~**UK (7):** Cambridge, Imperial, UCL, Warwick, Manchester, Birmingham, Nottingham~~ ✓
-- ~~**Canada (5):** Waterloo, UBC, McGill, McMaster, Alberta~~ ✓
-- ~~**Germany (5):** RWTH Aachen, Heidelberg, TU Berlin, KIT, LMU Munich~~ ✓
-- **Netherlands (3):** Eindhoven (TU/e), Amsterdam (UvA), Twente (UT)
+- ~~**Netherlands (3):** TU/e Eindhoven, UvA Amsterdam, University of Twente~~ ✓
 - **Malaysia (4):** Malaya, Monash Malaysia, Nottingham Malaysia, Taylor's — **needs `country-my` created first**
 - **Australia (4):** Melbourne, Sydney, Monash, UNSW — **needs `country-au` created first**
 
@@ -146,16 +143,18 @@ Actually run them before acting, not just when reminded. When one changes the pl
 
 ## Next step
 
-Continue Batch-2 with **Netherlands batch** (3 schools, `country-nl` already published):
-Eindhoven (TU/e), Amsterdam (UvA), Twente (UT).
+Continue Batch-2 with **Malaysia batch** (4 schools — needs `country-my` created first):
+Malaya, Monash Malaysia, Nottingham Malaysia, Taylor's.
 
-Then Malaysia (4 — needs `country-my`), Australia (4 — needs `country-au`).
+Then Australia (4 — needs `country-au`).
 
-**Germany batch DONE (40/50).** Before publishing Canada schools, verify McGill and McMaster fees from primary sources (both had PDF/SharePoint access issues this pass).
+**Netherlands batch DONE (43/50).** Before publishing Canada schools, verify McGill and McMaster fees from primary sources (both had PDF/SharePoint access issues this pass).
 
 Each uni: 6–8 primary-source lookups. Do in batches of 3–4. Draft-only, verify before moving on.
 
 **UK batch notes (25/50):** build_docs updated with `application_platform_name` + `decision_context_year` + per-programme `std_tests` — all UK schools use these. `country-gb` already published. Cambridge UCAS deadline is 15 Oct (NOT January). Birmingham fees not publicly disclosed (null stored — honest). Nottingham fees are 2027/28 proxies.
+
+**Netherlands batch notes (43/50):** `country-nl` already published. KEY difference from Germany: ALL 3 NL universities teach listed programmes in English — no Dutch language required. Application platform: Studielink.nl for all three. UAE A-level students need IELTS (UAE school location does not qualify for UK-study English exemption). €100 application fee at all three. EU/EEA pay Dutch statutory fee (~€2,694/yr); non-EU pay institutional rates. Scholarships: TU/e and UT Twente have NO institutional Bachelor scholarships (confirmed); UvA has Amsterdam Merit Scholarship (€6,000/yr, very limited — ~1 per programme per year, non-EU only). IELTS thresholds: TU/e and UvA require 6.5 overall / 6.0 per section; UT Twente requires only 6.0 overall / 5.5 per section. Deadlines: TU/e Jan 15; UvA Jan 15 for numerus fixus; UT Twente May 1 for non-EU/visa (earlier than most NL universities). Fees: TU/e €18,600/yr all programmes; UvA CS €21,900/yr (2027-28), UvA Economics €15,730/yr (2027-28); UT TCS/ME €16,400/yr, IBA €12,300/yr (all 2026-27). UvA fees are 2027-28 figures (only year confirmed from primary source). de-lmu spec appears after NL block in the file due to insertion order — functionally correct.
 
 **Germany batch notes (40/50):** `country-de` already published. CRITICAL structural difference: ALL German Bachelor programmes are in German (exception: KIT Carl Benz School BSc Mechanical Engineering International is English-medium). Primary language requirement is German C1 (TestDaF TDN 4-4-4-4 or DSH-2), NOT English. Fee tiers: Baden-Württemberg state law (Heidelberg, KIT) charges non-EU students €1,500/semester tuition; NRW (RWTH), Berlin (TU Berlin), and Bavaria-LMU are FREE for non-EU students (semester contribution only). LMU Munich confirmed NO non-EU tuition despite Bavaria's 2024/25 fee introduction (TUM only adopted it). Fees: RWTH €716/year, Heidelberg €3,380/year, TU Berlin €758/year, KIT €3,368/year, LMU €194/year. All Deutschlandstipendium scholarships (€300/month, competitive). build_docs updated: `lang_instruction` per-programme field + `lang_req.language` + `lang_req.req_name` fields (backward-compatible). Application platforms: uni-assist VPD for most; KIT Carl Benz has own portal; LMU direct (no uni-assist). Standard deadline July 15; Carl Benz April 30.
 
