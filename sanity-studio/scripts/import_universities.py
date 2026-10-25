@@ -1826,6 +1826,806 @@ UNIVERSITIES = {
              "application_deadline": None, "deadline_academic_year": "2026-2027"},
         ],
     },
+
+    # ── UK BATCH (7 universities, Batch-2 slots 19–25) ──────────────────────────────────────
+    # country-gb already published in Sanity staging. All 7 are DRAFTS.
+    # Application platform: UCAS. Cambridge early deadline 15 Oct 2026; all others Jan 2027.
+    # Tuition: international (overseas fee status) rates only — Home/domestic not shown.
+
+    "uk-cambridge": {
+        "canonical_name": "University of Cambridge", "aliases": ["Cambridge"], "country_cc": "gb",
+        "city": {"slug": "uk-cambridge-gb", "name": "Cambridge"},
+        "website": "https://www.cam.ac.uk/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "GBP",
+        "verification_note": "fact-checks/uk-cambridge-2026-10-25.md",
+        "application_platform_name": "UCAS Application",
+        "decision_context_year": "2026-2027 (September 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Cambridge Undergraduate Study",
+                "url": "https://www.undergraduate.study.cam.ac.uk/",
+                "excerpt": "University of Cambridge, UK; collegiate research university; English medium. Undergraduate "
+                "courses include Computer Science (BA, 3 years, Group 4 fee band), Engineering (MEng, 4 years, "
+                "Group 4), and Economics (BA, 3 years, Group 1 fee band). No undergraduate Business programme. "
+                "All applicants apply through UCAS by the early Oxbridge deadline (15 October 2026 for 2027 entry)."},
+            "adm": {"suffix": "src-adm", "title": "International Students — Cambridge Undergraduate",
+                "url": "https://www.undergraduate.study.cam.ac.uk/international-students",
+                "excerpt": "All overseas applicants apply via UCAS by 15 October 2026 at 6pm UK time. English: "
+                "IELTS Academic 7.5 overall, minimum 7.0 in each element (required unless previous education was "
+                "entirely in English). Accepted qualifications: A-levels (typically A*A*A), IB (41-42 with 776 at HL). "
+                "Cambridge admissions assessments: TMUA (Computer Science, Economics); ESAT (Engineering). "
+                "Interview is part of the selection process for shortlisted applicants."},
+            "fee": {"suffix": "src-fee", "title": "International Fees and Costs — Cambridge Undergraduate",
+                "url": "https://www.undergraduate.study.cam.ac.uk/international-students/international-fees-and-costs",
+                "excerpt": "2027 entry international (overseas) tuition: Group 4 (Computer Science, Engineering, "
+                "Natural Sciences) £46,872/year; Group 1 (Arts, Humanities, Economics) £30,798/year. "
+                "College fee is ADDITIONAL and varies by college — confirmed with individual college at offer stage. "
+                "Living costs estimated £13,380–£20,520/year (excluding college fee)."},
+            "schol": {"suffix": "src-schol", "title": "Scholarships and Bursaries — Cambridge Undergraduate",
+                "url": "https://www.undergraduate.study.cam.ac.uk/fees-funding/scholarships-bursaries",
+                "excerpt": "Cambridge Trust (Cambridge Commonwealth, European and International Trust) awards for "
+                "overseas undergraduates with demonstrated financial need — applied for after receiving a college offer. "
+                "Deadline: February for the following October entry. Cambridge does not offer merit-based undergraduate "
+                "scholarships; institutional aid is need-based only."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications; Cambridge considers a wide range of qualifications."),
+        ],
+        "residencies": [
+            ("international", "International (overseas fee status)",
+             "Students classified as 'overseas' for UK fee purposes. UK Home students pay the lower Home fee rate."),
+        ],
+        # University-level cost is a placeholder; all three programmes override with their group-specific fee.
+        "cost": {"residency": "international", "tuition": None, "basis": "institutional", "year": "2027 entry",
+            "mandatory_fees_annual": None,
+            "note": "Cambridge charges by course group: Group 4 (CS, Engineering) £46,872/yr; Group 1 (Economics) "
+            "£30,798/yr (2027 entry). College fee is ADDITIONAL — varies by college, not published centrally, "
+            "confirmed at offer stage. All per-programme costs stored on each programme record."},
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS 7.5 overall, with no element below 7.0.",
+            "notes": "Required if first language is not English and previous education was not entirely in English. "
+            "Test must be no more than two years old at course start."},
+        "std_tests": [
+            {"test_name": "UCAS Application", "required": "required",
+             "notes": "Apply via UCAS (Institution code: CAM). Deadline: 15 October 2026 at 6pm UK time."},
+        ],
+        "deadline_note": "UCAS deadline: 15 October 2026 at 6pm UK (early Oxbridge deadline — NOT the standard January date). "
+            "Institution code: CAM. Admissions assessments: TMUA for CS and Economics, ESAT for Engineering. "
+            "Shortlisted applicants invited to interview in December.",
+        "living": {"min": 1115, "max": 1710, "currency": "GBP", "admin_body": "University of Cambridge",
+            "desc": "Cambridge estimated living costs (2027 entry): £13,380–£20,520/year (~£1,115–£1,710/month). "
+            "Excludes college fee (separate, varies by college, confirmed at offer)."},
+        "programs": [
+            {"suffix": "ba-cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BA",
+             "degree_local": "BA in Computer Science, University of Cambridge. 3-year honours course. Group 4 fee band. "
+             "Covers algorithms, machine learning, systems, programming languages, and theory of computation. "
+             "TMUA admissions assessment required.",
+             "faculty": "Department of Computer Science and Technology", "duration": 3,
+             "url": "https://www.undergraduate.study.cam.ac.uk/courses/computer-science",
+             "subjects_note": "A*A*A at A-level; Mathematics required; TMUA admissions test required",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "std_tests": [
+                 {"test_name": "TMUA (Test of Mathematics for University Admissions)", "required": "required",
+                  "notes": "Required for Cambridge Computer Science applicants. Assesses mathematical thinking."},
+             ],
+             "cost": {"residency": "international", "tuition": 46872, "basis": "institutional", "year": "2027 entry",
+                 "mandatory_fees_annual": None,
+                 "note": "£46,872/yr (Group 4) for international students, Cambridge BA Computer Science, 2027 entry. "
+                 "College fee additional (amount varies by college — not published centrally)."}},
+            {"suffix": "meng-engineering", "program_name": "Engineering", "field": "Engineering", "degree": "MEng",
+             "degree_local": "MEng in Engineering, University of Cambridge. 4-year integrated Master's. Group 4 fee band. "
+             "General Engineering for first two years; specialise in Year 3 and 4 across Electrical, Mechanical, "
+             "Civil, Chemical, Aerospace, Information, and Manufacturing Engineering. ESAT required.",
+             "faculty": "Department of Engineering", "duration": 4,
+             "url": "https://www.undergraduate.study.cam.ac.uk/courses/engineering",
+             "subjects_note": "A*A*A at A-level; Mathematics and Physics expected; ESAT admissions test required",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"], "international-other": []},
+             "std_tests": [
+                 {"test_name": "ESAT (Engineering and Science Admissions Test)", "required": "required",
+                  "notes": "Required for Cambridge Engineering applicants. Tests Mathematics and Physics at A-level standard."},
+             ],
+             "cost": {"residency": "international", "tuition": 46872, "basis": "institutional", "year": "2027 entry",
+                 "mandatory_fees_annual": None,
+                 "note": "£46,872/yr (Group 4) for international students, Cambridge MEng Engineering, 2027 entry. "
+                 "College fee additional."}},
+            {"suffix": "ba-economics", "program_name": "Economics", "field": "Economics", "degree": "BA",
+             "degree_local": "BA in Economics, University of Cambridge. 3-year honours course. Group 1 fee band "
+             "(lower rate than STEM courses). Microeconomics, macroeconomics, econometrics, and economic theory. "
+             "TMUA admissions assessment required.",
+             "faculty": "Faculty of Economics", "duration": 3,
+             "url": "https://www.undergraduate.study.cam.ac.uk/courses/economics",
+             "subjects_note": "A*A*A at A-level; strong Mathematics background expected; TMUA admissions test required",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "std_tests": [
+                 {"test_name": "TMUA (Test of Mathematics for University Admissions)", "required": "required",
+                  "notes": "Required for Cambridge Economics applicants. Assesses mathematical thinking and reasoning."},
+             ],
+             "cost": {"residency": "international", "tuition": 30798, "basis": "institutional", "year": "2027 entry",
+                 "mandatory_fees_annual": None,
+                 "note": "£30,798/yr (Group 1) for international students, Cambridge BA Economics, 2027 entry. "
+                 "Significantly lower than Group 4 (CS/Engineering). College fee additional."}},
+        ],
+        # Cambridge has no undergraduate Business programme — omitted, not fabricated.
+        "scholarships": [
+            {"suffix": "cambridge-trust", "name": "Cambridge Trust International Award",
+             "provider": "Cambridge Commonwealth, European and International Trust",
+             "provider_type": "institutional", "award_type": "partial_tuition", "renewable": True,
+             "award_amount": "Variable; assessed on financial need after receiving a college offer. Covers partial "
+             "tuition and/or maintenance. Not a fixed amount — decided case by case.",
+             "academic_criteria": "Must have received an offer of admission from a Cambridge college.",
+             "other_eligibility_criteria": "NEED-BASED only — available to overseas students with demonstrated financial "
+             "need. Application after receiving a college offer; deadline typically February for October entry. "
+             "Cambridge does NOT offer merit-based undergraduate scholarships.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "uk-imperial": {
+        "canonical_name": "Imperial College London", "aliases": ["Imperial"], "country_cc": "gb",
+        "city": {"slug": "uk-london-gb", "name": "London"},
+        "website": "https://www.imperial.ac.uk/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "GBP",
+        "verification_note": "fact-checks/uk-imperial-2026-10-25.md",
+        "application_platform_name": "UCAS Application",
+        "decision_context_year": "2026-2027 (September 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Imperial College London — Undergraduate Study",
+                "url": "https://www.imperial.ac.uk/study/ug/",
+                "excerpt": "Imperial College London; London research university; English medium. Undergraduate "
+                "programmes: MEng Computing (4 years), MEng/BEng Engineering across departments (3/4 years), "
+                "and BSc Economics, Finance and Data Science via Imperial Business School (3 years). Imperial has NO "
+                "standalone undergraduate Business or Economics degree — BSc Economics, Finance and Data Science is "
+                "the sole economics/business UG offering."},
+            "adm": {"suffix": "src-adm", "title": "Applying to Imperial — Undergraduate",
+                "url": "https://www.imperial.ac.uk/study/ug/apply/",
+                "excerpt": "Apply via UCAS (Institution code: I50). Standard January 2027 deadline. English: "
+                "most UG programmes require Higher Level — IELTS 7.0 overall, minimum 6.5 in all elements. "
+                "MEng Computing: A*A*A (A* in Mathematics; A* in Further Mathematics also typical/expected). "
+                "BSc Economics, Finance and Data Science: A*AA (A* in Mathematics). Engineering MEng: A*A*A "
+                "(A* in Mathematics; Physics typically required by department)."},
+            "fee": {"suffix": "src-fee", "title": "Undergraduate Tuition Fees — Imperial College London",
+                "url": "https://www.imperial.ac.uk/study/fees-and-funding/undergraduate/tuition-fees/",
+                "excerpt": "2026-27 international (overseas) undergraduate tuition: Engineering and Computing "
+                "£45,500/year; Imperial Business School (BSc Economics, Finance and Data Science) £42,700/year. "
+                "Fees set for the duration of the course for the 2026 entry cohort."},
+            "schol": {"suffix": "src-schol",
+                "title": "Undergraduate Scholarships — Imperial College London",
+                "url": "https://www.imperial.ac.uk/study/fees-and-funding/scholarships-search/international-baccalaureate-excellence-scholarships-20262027.php",
+                "excerpt": "IB Excellence Scholarships 2026-27: £5,000/year for duration of study; 23 scholarships "
+                "across Faculty of Engineering, Faculty of Natural Sciences, and Imperial Business School. For IB "
+                "Diploma holders entering autumn 2026. COMPETITIVE. GREAT Scholarships (£15,000 towards tuition, "
+                "UK government funded, limited countries) also available. No general merit scholarship for all "
+                "international UG applicants."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications accepted at equivalent standard."),
+        ],
+        "residencies": [
+            ("international", "International (overseas fee status)",
+             "Students classified as 'overseas' for UK fee purposes."),
+        ],
+        "cost": {"residency": "international", "tuition": None, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": None,
+            "note": "Imperial charges by faculty: Engineering/Computing £45,500/yr; Business School £42,700/yr. "
+            "Per-programme tuition stored on each record."},
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS 7.0 overall, with no element below 6.5 (Higher Level, most UG programmes).",
+            "notes": "Higher Level English requirement for Engineering/Computing and Business School UG. "
+            "TOEFL iBT equivalent accepted. Test must be no more than two years old."},
+        "std_tests": [
+            {"test_name": "UCAS Application", "required": "required",
+             "notes": "Apply via UCAS (Institution code: I50). Standard January 2027 deadline."},
+        ],
+        "deadline_note": "Apply via UCAS by January 2027 (standard UCAS equal consideration deadline). Institution code: I50.",
+        "living": None,
+        "programs": [
+            {"suffix": "meng-computing", "program_name": "Computing (Computer Science)", "field": "Computer Science",
+             "degree": "MEng",
+             "degree_local": "MEng Computing, Department of Computing, Imperial College London. 4-year integrated "
+             "Master's. Streams: Artificial Intelligence, Machine Learning, Visual Computing, Software Engineering, "
+             "and others. Related: MEng Computing (AI), MEng Computing (Software Engineering).",
+             "faculty": "Department of Computing", "duration": 4,
+             "url": "https://www.imperial.ac.uk/computing/prospective-students/courses/ug/",
+             "subjects_note": "A*A*A with A* in Mathematics (A* in Further Mathematics also typical/expected)",
+             "subjects": {"a-level": ["Mathematics", "Further Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 45500, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "£45,500/yr for international students, Imperial MEng Computing, 2026-2027."}},
+            {"suffix": "meng-engineering", "program_name": "Engineering", "field": "Engineering", "degree": "MEng",
+             "degree_local": "MEng Engineering, Imperial College London. 4-year integrated Master's. Departments: "
+             "Aeronautics, Civil, Electrical & Electronic, Mechanical, Chemical, Bioengineering, Materials, "
+             "and Earth Science & Engineering. 3-year BEng also available in some departments.",
+             "faculty": "Faculty of Engineering", "duration": 4,
+             "url": "https://www.imperial.ac.uk/study/ug/programmes/engineering/",
+             "subjects_note": "A*A*A with A* in Mathematics (Physics or relevant science typically required by department)",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 45500, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "£45,500/yr for international students, Imperial MEng Engineering, 2026-2027."}},
+            {"suffix": "bsc-econ-finance-ds", "program_name": "Economics, Finance and Data Science",
+             "field": "Economics", "degree": "BSc",
+             "degree_local": "BSc Economics, Finance and Data Science, Imperial Business School. 3-year programme "
+             "combining microeconomics, macroeconomics, quantitative finance, and data science. This is Imperial's "
+             "sole undergraduate economics/business offering — there is NO standalone BSc Economics or BSc Business "
+             "Management at Imperial.",
+             "faculty": "Imperial Business School", "duration": 3,
+             "url": "https://www.imperial.ac.uk/business-school/undergraduate/economics-finance-data-science/",
+             "subjects_note": "A*AA with A* in Mathematics",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 42700, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "£42,700/yr for international students, Imperial BSc Economics Finance Data Science, 2026-2027."}},
+        ],
+        # Imperial has no standalone Business Management undergraduate degree.
+        "scholarships": [
+            {"suffix": "ib-excellence", "name": "International Baccalaureate Excellence Scholarship",
+             "provider": "Imperial College London", "provider_type": "institutional",
+             "award_type": "partial_tuition", "renewable": True,
+             "award_amount": "£5,000 per year for the full duration of the degree.",
+             "academic_criteria": "IB Diploma holder entering autumn 2026. Academic excellence required.",
+             "other_eligibility_criteria": "COMPETITIVE — 23 scholarships across Faculty of Engineering, "
+             "Faculty of Natural Sciences, and Imperial Business School. IB Diploma applicants only.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "uk-ucl": {
+        "canonical_name": "University College London", "aliases": ["UCL"], "country_cc": "gb",
+        "city": {"slug": "uk-london-gb", "name": "London"},
+        "website": "https://www.ucl.ac.uk/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "GBP",
+        "verification_note": "fact-checks/uk-ucl-2026-10-25.md",
+        "application_platform_name": "UCAS Application",
+        "decision_context_year": "2026-2027 (September 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "UCL — Undergraduate Study",
+                "url": "https://www.ucl.ac.uk/prospective-students/undergraduate/",
+                "excerpt": "University College London (UCL); Bloomsbury, London; English medium. Undergraduate "
+                "programmes include: BSc Computer Science (3 years), BEng Engineering across departments "
+                "(3 years, MEng 4 years), BSc Economics (3 years), and BSc Management/International Management "
+                "(3 years, UCL School of Management). All applications via UCAS."},
+            "adm": {"suffix": "src-adm", "title": "Entry Requirements — UCL Undergraduate",
+                "url": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/how-apply/entry-requirements",
+                "excerpt": "UCL Computer Science BSc: A*A*A (A* in Mathematics or Further Mathematics); TARA "
+                "admissions test required for all UCL CS UG programmes (Critical Thinking, Problem Solving, "
+                "Writing Task modules). UCL Economics BSc: A*AA (A* in Mathematics); IELTS Level 4: 7.5/7.0. "
+                "Engineering: typically A*A*A or A*AA depending on department (course pages returning 403 this "
+                "research pass — verify per dept). UCL uses 5 English proficiency levels; Economics = Level 4 "
+                "(7.5/7.0); most Engineering = Level 2 (7.0/6.5) — verify from programme page."},
+            "fee": {"suffix": "src-fee", "title": "Tuition Fees — UCL Undergraduate 2026-27",
+                "url": "https://www.ucl.ac.uk/students/fees",
+                "excerpt": "2026-27 international (overseas) undergraduate tuition: BSc Computer Science "
+                "£46,700/year; most BEng/MEng Engineering £42,700/year; BSc Economics £39,200/year; "
+                "BSc Management/International Management £42,700/year."},
+            "schol": {"suffix": "src-schol", "title": "Scholarships — UCL",
+                "url": "https://www.ucl.ac.uk/scholarships/",
+                "excerpt": "UCL offers various scholarships including the Telles Scholarship for Engineering. "
+                "Most UCL UG scholarships are need-based or UK-focused; no general merit scholarship for all "
+                "international UG applicants identified at this time."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications accepted at equivalent standard."),
+        ],
+        "residencies": [
+            ("international", "International (overseas fee status)",
+             "Students classified as 'overseas' for UK fee purposes."),
+        ],
+        "cost": {"residency": "international", "tuition": None, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": None,
+            "note": "UCL fees vary by programme: CS £46,700/yr; Engineering £42,700/yr; Economics £39,200/yr; "
+            "Management £42,700/yr. Per-programme tuition stored on each programme record."},
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "Varies by programme level. Economics BSc (Level 4): IELTS 7.5 overall, min 7.0 per "
+            "element. Most UG programmes (Level 2): IELTS 7.0 overall, min 6.5 per element — verify from "
+            "individual programme page.",
+            "notes": "UCL uses 5 English proficiency levels. Economics confirmed Level 4 (7.5/7.0). CS and "
+            "Engineering levels not verified from primary source this pass (course pages returned 403). "
+            "TOEFL equivalent accepted."},
+        "std_tests": [
+            {"test_name": "UCAS Application", "required": "required",
+             "notes": "Apply via UCAS (Institution code: U80). Standard January 2027 deadline."},
+        ],
+        "deadline_note": "Apply via UCAS by January 2027 (standard UCAS equal consideration deadline). Institution code: U80. "
+            "CS applicants must also register for and sit the TARA admissions assessment.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "BSc Computer Science, UCL Department of Computer Science. 3-year programme. "
+             "TARA admissions test required for all UCL CS UG programmes.",
+             "faculty": "UCL Department of Computer Science", "duration": 3,
+             "url": "https://www.ucl.ac.uk/prospective-students/undergraduate/degrees/computer-science-bsc-2026",
+             "subjects_note": "A*A*A with A* in Mathematics or Further Mathematics; TARA admissions test required",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "std_tests": [
+                 {"test_name": "TARA (Test for Academic Reasoning for Admissions)", "required": "required",
+                  "notes": "Required for all UCL CS UG programmes. Three modules: Critical Thinking, Problem Solving, Writing Task."},
+             ],
+             "cost": {"residency": "international", "tuition": 46700, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "£46,700/yr for international students, UCL BSc Computer Science, 2026-2027."}},
+            {"suffix": "beng-engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BEng",
+             "degree_local": "BEng Engineering, UCL Faculty of Engineering Sciences. 3-year BEng (4-year MEng "
+             "also available). Departments: Chemical, Civil Environmental & Geomatic, Electronic & Electrical, "
+             "Mechanical, Biochemical, and others. Most departments: £42,700/yr international.",
+             "faculty": "UCL Faculty of Engineering Sciences", "duration": 3,
+             "url": "https://www.ucl.ac.uk/engineering/",
+             "subjects_note": "A-level offer typically A*A*A or A*AA depending on engineering dept (not verified from primary source this pass — course pages returned 403; verify per dept)",
+             "subjects": {"a-level": [], "ib": [], "international-other": []},
+             "cost": {"residency": "international", "tuition": 42700, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "£42,700/yr for international students, most UCL BEng Engineering, 2026-2027."}},
+            {"suffix": "bsc-economics", "program_name": "Economics", "field": "Economics", "degree": "BSc",
+             "degree_local": "BSc Economics (Econ), UCL Department of Economics. 3-year programme.",
+             "faculty": "UCL Department of Economics", "duration": 3,
+             "url": "https://www.ucl.ac.uk/prospective-students/undergraduate/degrees/economics-bsc-econ-2026",
+             "subjects_note": "A*AA with A* in Mathematics; IELTS Level 4: 7.5 overall, min 7.0 per element",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 39200, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "£39,200/yr for international students, UCL BSc Economics, 2026-2027. "
+                 "NOTE: Economics IELTS requirement is Level 4 (7.5/7.0) — higher than most UCL UG programmes."}},
+            {"suffix": "bsc-management", "program_name": "Management", "field": "Business", "degree": "BSc",
+             "degree_local": "BSc Management or BSc International Management, UCL School of Management. 3-year "
+             "programme covering strategy, operations, finance, marketing, and organisational behaviour.",
+             "faculty": "UCL School of Management", "duration": 3,
+             "url": "https://www.ucl.ac.uk/school-of-management/study/undergraduate/",
+             "subjects_note": "A-level offer not verified from primary source this pass (course pages returned 403)",
+             "subjects": {"a-level": [], "ib": [], "international-other": []},
+             "cost": {"residency": "international", "tuition": 42700, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "£42,700/yr for international students, UCL BSc Management/International Management, 2026-2027."}},
+        ],
+        "scholarships": [],
+        # No general merit scholarship for all international UCL UG applicants identified at this time.
+    },
+
+    "uk-warwick": {
+        "canonical_name": "University of Warwick", "aliases": ["Warwick"], "country_cc": "gb",
+        "city": {"slug": "uk-coventry-gb", "name": "Coventry"},
+        "website": "https://warwick.ac.uk/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "GBP",
+        "verification_note": "fact-checks/uk-warwick-2026-10-25.md",
+        "application_platform_name": "UCAS Application",
+        "decision_context_year": "2026-2027 (September 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Warwick — Undergraduate Study",
+                "url": "https://warwick.ac.uk/study/undergraduate/",
+                "excerpt": "University of Warwick; Coventry, UK; English medium. Undergraduate programmes: "
+                "BSc Computer Science (3 years), BEng/MEng Engineering (3/4 years), BA/BSc Economics (3 years), "
+                "and Warwick Business School (WBS) degrees (3 years). International fee £35,530/year across all "
+                "target programmes (2026-27)."},
+            "adm": {"suffix": "src-adm", "title": "Undergraduate Entry Requirements — Warwick",
+                "url": "https://warwick.ac.uk/study/undergraduate/applying/",
+                "excerpt": "Apply via UCAS (Institution code: W20). Standard January 2027 deadline. A-level offers: "
+                "CS BSc A*A*A (A* in Mathematics); Economics A*AA (A in Mathematics); Engineering BEng AAA "
+                "(Maths + Physics); Engineering MEng A*AA (Maths + Physics). English language bands: "
+                "Band A (CS) = IELTS 6.0 overall / min 5.5 per component; Band B = 6.5/6.0; Band C (Economics) = "
+                "7.0 overall / min 6.5 per component. Engineering/WBS band not verified from primary source."},
+            "fee": {"suffix": "src-fee", "title": "Undergraduate Fees — University of Warwick",
+                "url": "https://warwick.ac.uk/study/undergraduate/fees/",
+                "excerpt": "2026-27 international (overseas) undergraduate tuition: £35,530/year for most UG "
+                "programmes including Computer Science, Engineering, Economics, and Warwick Business School. "
+                "Uniform fee across all four target pillars."},
+            "schol": {"suffix": "src-schol",
+                "title": "Undergraduate Global Excellence Scholarship — Warwick",
+                "url": "https://warwick.ac.uk/study/undergraduate/applying/scholarships/",
+                "excerpt": "Warwick Undergraduate Global Excellence Scholarship: for international (overseas fee) "
+                "self-funded students holding an offer. 2025 cohort awards: 6 full-fee, 148 half-fee, 103 25%-fee, "
+                "6 at £2,000. Competitive — 547 scholars from 72 countries since 2021. Deadline for 2026/27 "
+                "entry was 27 February 2026 (passed); check for 2027/28 entry dates."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications accepted at equivalent standard."),
+        ],
+        "residencies": [
+            ("international", "International (overseas fee status)",
+             "Students classified as 'overseas' for UK fee purposes."),
+        ],
+        # Warwick charges a uniform £35,530/yr across all four target programmes.
+        "cost": {"residency": "international", "tuition": 35530, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": 0,
+            "note": "£35,530/yr for international students, 2026-27. Uniform across CS, Engineering, Economics, "
+            "and Warwick Business School programmes."},
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "Varies by programme band. CS (Band A): IELTS 6.0 overall, min 5.5 per component. "
+            "Economics (Band C): IELTS 7.0 overall, min 6.5 per component. Engineering/WBS bands not verified.",
+            "notes": "Warwick assigns each programme to an English language band. Band A = 6.0/5.5; Band B = 6.5/6.0; "
+            "Band C = 7.0/6.5 (tests taken on/after 1 September 2024). Verify your programme's band at "
+            "warwick.ac.uk/study/undergraduate/applying/english-language-requirements/."},
+        "std_tests": [
+            {"test_name": "UCAS Application", "required": "required",
+             "notes": "Apply via UCAS (Institution code: W20). Standard January 2027 deadline."},
+        ],
+        "deadline_note": "Apply via UCAS by January 2027 (standard UCAS equal consideration deadline). Institution code: W20.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "BSc Computer Science, Department of Computer Science, University of Warwick. 3-year "
+             "programme. English language Band A: IELTS 6.0/5.5.",
+             "faculty": "Department of Computer Science", "duration": 3,
+             "url": "https://warwick.ac.uk/study/undergraduate/courses/bsc-computer-science/",
+             "subjects_note": "A*A*A with A* in Mathematics; Band A English: IELTS 6.0 overall, min 5.5 per component",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []}},
+            {"suffix": "beng-engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BEng",
+             "degree_local": "BEng Engineering, School of Engineering, University of Warwick. 3-year BEng (4-year "
+             "MEng also available — MEng offer A*AA). Disciplines: Civil, Electrical, Mechanical, Manufacturing, "
+             "Biomedical, Systems Engineering. BEng offer: AAA (Maths + Physics).",
+             "faculty": "School of Engineering", "duration": 3,
+             "url": "https://warwick.ac.uk/study/undergraduate/courses/beng-engineering/",
+             "subjects_note": "BEng: AAA (Mathematics + Physics); MEng: A*AA (Mathematics + Physics); IELTS band not verified from primary source this pass",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"], "international-other": []}},
+            {"suffix": "ba-economics", "program_name": "Economics", "field": "Economics", "degree": "BA",
+             "degree_local": "BA Economics, Department of Economics, University of Warwick. 3-year programme. "
+             "Strong quantitative focus. English language Band C: IELTS 7.0/6.5.",
+             "faculty": "Department of Economics", "duration": 3,
+             "url": "https://warwick.ac.uk/study/undergraduate/courses/bsc-economics/",
+             "subjects_note": "A*AA with A in Mathematics (A* overall grade, A in Maths); Band C English: IELTS 7.0 overall, min 6.5 per component",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []}},
+            {"suffix": "bsc-business", "program_name": "Business", "field": "Business", "degree": "BSc",
+             "degree_local": "Warwick Business School (WBS) undergraduate degree. Programmes include: "
+             "BSc Accounting & Finance, BSc Management, BSc International Business (3 years). "
+             "A-level offer and English language band not verified from primary source this pass.",
+             "faculty": "Warwick Business School", "duration": 3,
+             "url": "https://www.wbs.ac.uk/courses/undergraduate/",
+             "subjects_note": "A-level offer and English language band not verified from primary source this pass — verify from wbs.ac.uk",
+             "subjects": {"a-level": [], "ib": [], "international-other": []}},
+        ],
+        "scholarships": [
+            {"suffix": "global-excellence", "name": "Warwick Undergraduate Global Excellence Scholarship",
+             "provider": "University of Warwick", "provider_type": "institutional",
+             "award_type": "partial_tuition", "renewable": True,
+             "award_amount": "Variable and competitive: full-fee, half-fee, 25%-fee, or £2,000 (2025 cohort: "
+             "6 full-fee, 148 half-fee, 103 25%-fee, 6 at £2,000 — across all international applicants).",
+             "academic_criteria": "Exceptional academic achievement; must hold an offer to study at Warwick.",
+             "other_eligibility_criteria": "COMPETITIVE — available to international self-funded students. "
+             "Application separate from UCAS; 2026/27 deadline was 27 February 2026 (passed). "
+             "Award renewable for duration of course.",
+             "application_deadline": None, "deadline_academic_year": "2027-2028"},
+        ],
+    },
+
+    "uk-manchester": {
+        "canonical_name": "University of Manchester", "aliases": ["Manchester", "UoM"], "country_cc": "gb",
+        "city": {"slug": "uk-manchester-gb", "name": "Manchester"},
+        "website": "https://www.manchester.ac.uk/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "GBP",
+        "verification_note": "fact-checks/uk-manchester-2026-10-25.md",
+        "application_platform_name": "UCAS Application",
+        "decision_context_year": "2026-2027 (September 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Manchester — Undergraduate Study",
+                "url": "https://www.manchester.ac.uk/study/undergraduate/",
+                "excerpt": "University of Manchester; Russell Group; English medium. Target UG programmes: "
+                "BSc Computer Science (3 years, £39,700/yr international), BEng Mechanical Engineering (3 years, "
+                "£35,700/yr), BSc Management via Alliance MBS (3 years, £33,100/yr), BSc Economics (3 years, "
+                "£33,100/yr). All via UCAS (Institution code: M20)."},
+            "adm": {"suffix": "src-adm", "title": "Entry Requirements — University of Manchester UG 2026",
+                "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2026/",
+                "excerpt": "BSc Computer Science (2026): A*AA including A* in Mathematics and one science "
+                "(Biology, Chemistry, CS, Further Maths, Physics, Statistics). BEng Mechanical Engineering "
+                "(2026): A*A*A including Mathematics, Physics, and one further subject. BSc Economics: AAA "
+                "including Mathematics. BSc Management: A-level offer not verified this pass — verify from "
+                "Alliance MBS. IELTS: 6.5 overall, no sub-test below 6.5 (verified for CS and Engineering)."},
+            "fee": {"suffix": "src-fee", "title": "International Fees — University of Manchester",
+                "url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/fees/",
+                "excerpt": "2026-27 international (overseas) undergraduate tuition: BSc Computer Science "
+                "£39,700/year; BEng Mechanical Engineering £35,700/year; BSc Management £33,100/year; "
+                "BSc Economics £33,100/year."},
+            "schol": {"suffix": "src-schol", "title": "Global Futures Scholarships — University of Manchester 2026",
+                "url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/",
+                "excerpt": "Global Futures Scholarships 2026: 330+ awards, >£6 million total. UAE: up to £36,000 "
+                "(£12,000/year over 3 years), merit-based. Assessed on academic excellence and application "
+                "responses (form emailed to eligible offer-holders). Self-funded applicants, direct first-year "
+                "entry 2026, A-level/IB/French Bac/Indian Standard XII. Country-specific deadlines."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications accepted at equivalent standard."),
+        ],
+        "residencies": [
+            ("international", "International (overseas fee status)",
+             "Students classified as 'overseas' for UK fee purposes."),
+        ],
+        "cost": {"residency": "international", "tuition": None, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": None,
+            "note": "Manchester fees vary: CS £39,700/yr; Engineering £35,700/yr; Management £33,100/yr; "
+            "Economics £33,100/yr. Per-programme tuition stored on each programme record."},
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS 6.5 overall, no sub-test below 6.5.",
+            "notes": "IELTS 6.5/6.5 verified for CS (2026) and Mechanical Engineering (2026). Economics and "
+            "Management IELTS not separately confirmed this pass — likely same standard; verify from programme."},
+        "std_tests": [
+            {"test_name": "UCAS Application", "required": "required",
+             "notes": "Apply via UCAS (Institution code: M20). Standard January 2027 deadline."},
+        ],
+        "deadline_note": "Apply via UCAS by January 2027 (standard UCAS equal consideration deadline). Institution code: M20.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "BSc Computer Science, Department of Computer Science, University of Manchester. "
+             "3-year programme.",
+             "faculty": "Department of Computer Science", "duration": 3,
+             "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2026/00560/bsc-computer-science/",
+             "subjects_note": "A*AA including A* in Mathematics and one science subject (Biology, Chemistry, CS, Further Maths, Physics, or Statistics)",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 39700, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "£39,700/yr for international students, Manchester BSc Computer Science, 2026-2027."}},
+            {"suffix": "beng-mechanical-eng", "program_name": "Engineering (Mechanical)", "field": "Engineering",
+             "degree": "BEng",
+             "degree_local": "BEng Mechanical Engineering, Dept of Mechanical Aerospace & Civil Engineering, "
+             "University of Manchester. 3-year BEng (4-year MEng also available). Other engineering disciplines "
+             "(Electrical, Civil, Chemical, Aerospace) offered at comparable fees.",
+             "faculty": "Faculty of Science and Engineering", "duration": 3,
+             "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2026/03389/beng-mechanical-engineering/",
+             "subjects_note": "A*A*A including Mathematics, Physics, and one further subject",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 35700, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "£35,700/yr for international students, Manchester BEng Mechanical Engineering, 2026-2027."}},
+            {"suffix": "bsc-management", "program_name": "Management", "field": "Business", "degree": "BSc",
+             "degree_local": "BSc Management, Alliance Manchester Business School (Alliance MBS), University "
+             "of Manchester. 3-year programme. Related: BSc International Management, BSc Accounting.",
+             "faculty": "Alliance Manchester Business School", "duration": 3,
+             "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2026/",
+             "subjects_note": "A-level offer not verified from primary source this pass — verify from alliancembs.manchester.ac.uk",
+             "subjects": {"a-level": [], "ib": [], "international-other": []},
+             "cost": {"residency": "international", "tuition": 33100, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "£33,100/yr for international students, Manchester BSc Management, 2026-2027."}},
+            {"suffix": "bsc-economics", "program_name": "Economics", "field": "Economics", "degree": "BSc",
+             "degree_local": "BSc Economics, School of Social Sciences, University of Manchester. 3-year "
+             "programme. Optional industrial placement (4 years).",
+             "faculty": "School of Social Sciences — Economics", "duration": 3,
+             "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2026/01066/bsc-economics/",
+             "subjects_note": "AAA including Mathematics",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 33100, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "£33,100/yr for international students, Manchester BSc Economics, 2026-2027."}},
+        ],
+        "scholarships": [
+            {"suffix": "global-futures-uae", "name": "Global Futures Scholarship (UAE)",
+             "provider": "University of Manchester", "provider_type": "institutional",
+             "award_type": "partial_tuition", "renewable": True,
+             "award_amount": "Up to £12,000/year (£36,000 over 3 years) for UAE-based applicants.",
+             "academic_criteria": "Merit-based — academic excellence (grades) and scholarship application responses.",
+             "other_eligibility_criteria": "COMPETITIVE — one of 330+ global awards. UAE applicants: direct "
+             "first-year 2026 entry, self-funded, with A-level/IB/French Bac/Indian Standard XII qualifications. "
+             "Application form emailed to eligible offer-holders. UAE deadline — check manchester.ac.uk/uae.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "uk-birmingham": {
+        "canonical_name": "University of Birmingham", "aliases": ["Birmingham", "UoB"], "country_cc": "gb",
+        "city": {"slug": "uk-birmingham-gb", "name": "Birmingham"},
+        "website": "https://www.birmingham.ac.uk/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "GBP",
+        "verification_note": "fact-checks/uk-birmingham-2026-10-25.md",
+        "application_platform_name": "UCAS Application",
+        "decision_context_year": "2026-2027 (September 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Birmingham — Undergraduate Study",
+                "url": "https://www.birmingham.ac.uk/study/undergraduate/",
+                "excerpt": "University of Birmingham; Russell Group; English medium. Target UG programmes: "
+                "BSc Computer Science, BEng Engineering, BSc Business Management (Birmingham Business School), "
+                "BSc Economics. International tuition fees are NOT published per programme — they are communicated "
+                "individually in the offer letter, per Birmingham's own fees page."},
+            "adm": {"suffix": "src-adm", "title": "Entry Requirements — University of Birmingham UG",
+                "url": "https://www.birmingham.ac.uk/study/undergraduate/",
+                "excerpt": "BSc Computer Science: A*AA including Mathematics (grade A required); IELTS 6.0 overall, "
+                "no band below 5.5. BSc Economics: AAA including Mathematics; IELTS 6.5 overall (component "
+                "minimum not confirmed this pass — verify from programme page). BEng Engineering and BSc Business "
+                "Management: A-level and IELTS not verified from primary source this pass."},
+            "fee": {"suffix": "src-fee", "title": "Tuition Fees (International) — University of Birmingham",
+                "url": "https://www.birmingham.ac.uk/international/students/finance/fees",
+                "excerpt": "IMPORTANT: University of Birmingham does not publish programme-specific international "
+                "fees publicly. From their fees page: 'Confirmation of your exact tuition fee will be included "
+                "with your offer letter.' Fee not publicly listed = stored as null, not estimated."},
+            "schol": {"suffix": "src-schol", "title": "Scholarships — University of Birmingham",
+                "url": "https://www.birmingham.ac.uk/study/scholarships-funding/",
+                "excerpt": "Birmingham international UG scholarships are region-specific: High Fliers (£5,000) "
+                "for Europe, China, Turkey only. GEES Global Futures (£2,000) for India/Bangladesh only. "
+                "No general merit scholarship open to UAE/GCC UG applicants was identified at this time."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications accepted at equivalent standard."),
+        ],
+        "residencies": [
+            ("international", "International (overseas fee status)",
+             "Students classified as 'overseas' for UK fee purposes. International fees not published per "
+             "programme — amount confirmed in individual offer letter."),
+        ],
+        # Birmingham does not publish international fees per programme — null is correct and honest.
+        "cost": {"residency": "international", "tuition": None, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": None,
+            "note": "University of Birmingham does not publicly disclose per-programme international tuition fees. "
+            "Their fees page states: 'Confirmation of your exact tuition fee will be included with your offer letter.' "
+            "Stored as null — not estimated. Student must obtain the confirmed fee from the offer letter."},
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "CS: IELTS 6.0 overall, no band below 5.5. Economics: IELTS 6.5 overall (component "
+            "minimum verify from programme page). Engineering/Business Management: not verified this pass.",
+            "notes": "IELTS 6.0/5.5 confirmed for BSc Computer Science. IELTS 6.5 for Economics from prior "
+            "research pass — verify from birmingham.ac.uk. Engineering and Business IELTS not confirmed."},
+        "std_tests": [
+            {"test_name": "UCAS Application", "required": "required",
+             "notes": "Apply via UCAS (Institution code: B32). Standard January 2027 deadline."},
+        ],
+        "deadline_note": "Apply via UCAS by January 2027 (standard UCAS equal consideration deadline). Institution code: B32.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "BSc Computer Science, School of Computer Science, University of Birmingham. "
+             "3-year programme. A-level: A*AA including Mathematics (grade A). IELTS: 6.0/5.5.",
+             "faculty": "School of Computer Science", "duration": 3,
+             "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/computer-science-courses/computer-science-bsc",
+             "subjects_note": "A*AA including Mathematics (grade A required); IELTS 6.0 overall, no band below 5.5",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []}},
+            {"suffix": "beng-engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BEng",
+             "degree_local": "BEng Engineering, School of Engineering, University of Birmingham. 3-year BEng "
+             "(MEng 4-year also available). Disciplines: Mechanical, Electrical, Chemical, Civil, Materials. "
+             "A-level offer not verified from primary source this pass.",
+             "faculty": "School of Engineering", "duration": 3,
+             "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/engineering-courses/",
+             "subjects_note": "A-level offer not verified from primary source this pass — verify from programme page at birmingham.ac.uk",
+             "subjects": {"a-level": [], "ib": [], "international-other": []}},
+            {"suffix": "bsc-business", "program_name": "Business Management", "field": "Business", "degree": "BSc",
+             "degree_local": "BSc Business Management (or BSc Commerce), Birmingham Business School, University "
+             "of Birmingham. 3-year programme. A-level and IELTS not verified this pass.",
+             "faculty": "Birmingham Business School", "duration": 3,
+             "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/business-courses/",
+             "subjects_note": "A-level offer not verified from primary source this pass — verify from programme page",
+             "subjects": {"a-level": [], "ib": [], "international-other": []}},
+            {"suffix": "bsc-economics", "program_name": "Economics", "field": "Economics", "degree": "BSc",
+             "degree_local": "BSc Economics, Department of Economics, University of Birmingham. 3-year programme. "
+             "A-level: AAA including Mathematics. IELTS: 6.5 overall.",
+             "faculty": "Department of Economics", "duration": 3,
+             "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/economics-courses/",
+             "subjects_note": "AAA including Mathematics; IELTS 6.5 overall (component minimum verify from programme page)",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []}},
+        ],
+        # No scholarship applicable for UAE/GCC undergraduate applicants found at this time.
+        "scholarships": [],
+    },
+
+    "uk-nottingham": {
+        "canonical_name": "University of Nottingham", "aliases": ["Nottingham", "UoN"], "country_cc": "gb",
+        "city": {"slug": "uk-nottingham-gb", "name": "Nottingham"},
+        "website": "https://www.nottingham.ac.uk/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "GBP",
+        "verification_note": "fact-checks/uk-nottingham-2026-10-25.md",
+        "application_platform_name": "UCAS Application",
+        "decision_context_year": "2026-2027 (September 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Nottingham — Undergraduate Study",
+                "url": "https://www.nottingham.ac.uk/ugstudy/",
+                "excerpt": "University of Nottingham; Russell Group; English medium. Target UG programmes: "
+                "BSc Computer Science (3 years), BEng Engineering (3 years), BSc Economics (3 years), "
+                "BSc Business Management via NUBS (3 years). Fees below are 2027/28 figures (best available "
+                "proxy — 2026/27 international fees not yet published at time of research)."},
+            "adm": {"suffix": "src-adm", "title": "International Applicants — University of Nottingham UG",
+                "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/international-applicants/",
+                "excerpt": "Apply via UCAS (Institution code: N84). Standard January 2027 deadline. English: "
+                "IELTS 6.5 overall, no band below 6.0 (most programmes). BSc Computer Science (2027/28): "
+                "typically AAA at A-level (or AAB with A in Computer Science). A-level offers for Engineering, "
+                "Economics, and Business not verified from primary source this pass."},
+            "fee": {"suffix": "src-fee", "title": "International Tuition Fees — University of Nottingham",
+                "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/international-applicants/tuition-fees.aspx",
+                "excerpt": "2027/28 entry international (overseas) tuition (proxy — 2026/27 not yet published): "
+                "Computer Science BSc £33,500/year; Engineering BEng £33,000/year; Economics BSc £26,800/year; "
+                "Business Management BSc £24,700/year. Fees may increase for 2026/27 — verify from Nottingham."},
+            "schol": {"suffix": "src-schol",
+                "title": "International Undergraduate Excellence Scholarship — Nottingham",
+                "url": "https://www.nottingham.ac.uk/studywithus/international-applicants/scholarships-funding-finance/international-undergraduate-excellence-scholarships.aspx",
+                "excerpt": "International Undergraduate Excellence Scholarship: £5,000 deducted from first-year "
+                "tuition. AUTOMATIC at admission — no separate application. For students achieving AAA at "
+                "A-level or international equivalent. International fee-paying students, Year 1 full-time UG "
+                "at Nottingham UK campus (BA/BSc/BEng/MEng etc.). Excludes Medicine, Pharmacy, Vet Medicine, "
+                "Architecture, Foundation Year."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications accepted at equivalent standard."),
+        ],
+        "residencies": [
+            ("international", "International (overseas fee status)",
+             "Students classified as 'overseas' for UK fee purposes."),
+        ],
+        "cost": {"residency": "international", "tuition": None, "basis": "institutional",
+            "year": "2027-2028 (proxy; 2026-27 not yet published)",
+            "mandatory_fees_annual": None,
+            "note": "Nottingham fees vary: CS £33,500/yr; Engineering £33,000/yr; Economics £26,800/yr; "
+            "Business £24,700/yr — all 2027/28 proxy figures. 2026/27 fees not yet published. "
+            "Per-programme tuition stored on each record. Verify from nottingham.ac.uk once published."},
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS 6.5 overall, no band below 6.0.",
+            "notes": "IELTS 6.5/6.0 applies to most Nottingham UG programmes. Verify from individual programme page. "
+            "TOEFL and PTE equivalents accepted."},
+        "std_tests": [
+            {"test_name": "UCAS Application", "required": "required",
+             "notes": "Apply via UCAS (Institution code: N84). Standard January 2027 deadline."},
+        ],
+        "deadline_note": "Apply via UCAS by January 2027 (standard UCAS equal consideration deadline). Institution code: N84.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "BSc Computer Science, School of Computer Science, University of Nottingham. "
+             "3-year programme. Related: MSci Computer Science (4 years).",
+             "faculty": "School of Computer Science", "duration": 3,
+             "url": "https://www.nottingham.ac.uk/ugstudy/courses/computer-science/g400-computer-science-bsc-hons.aspx",
+             "subjects_note": "Typically AAA (or AAB with A in Computer Science); IELTS 6.5 overall, no band below 6.0",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 33500, "basis": "institutional",
+                 "year": "2027-2028 (proxy)",
+                 "mandatory_fees_annual": 0,
+                 "note": "£33,500/yr, Nottingham BSc Computer Science (2027/28 proxy — 2026/27 not yet published)."}},
+            {"suffix": "beng-engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BEng",
+             "degree_local": "BEng Engineering, Faculty of Engineering, University of Nottingham. 3-year BEng "
+             "(MEng 4-year also available). Disciplines: Mechanical, Electrical, Civil, Chemical, Aerospace. "
+             "A-level offer not verified from primary source this pass.",
+             "faculty": "Faculty of Engineering", "duration": 3,
+             "url": "https://www.nottingham.ac.uk/ugstudy/subjects/engineering/",
+             "subjects_note": "A-level offer not verified from primary source this pass (typically AAA with Maths and Physics); IELTS 6.5/6.0",
+             "subjects": {"a-level": [], "ib": [], "international-other": []},
+             "cost": {"residency": "international", "tuition": 33000, "basis": "institutional",
+                 "year": "2027-2028 (proxy)",
+                 "mandatory_fees_annual": 0,
+                 "note": "£33,000/yr, Nottingham BEng Engineering (2027/28 proxy)."}},
+            {"suffix": "bsc-economics", "program_name": "Economics", "field": "Economics", "degree": "BSc",
+             "degree_local": "BSc Economics, School of Economics, University of Nottingham. 3-year programme. "
+             "A-level offer not verified from primary source this pass.",
+             "faculty": "School of Economics", "duration": 3,
+             "url": "https://www.nottingham.ac.uk/ugstudy/subjects/economics/",
+             "subjects_note": "A-level offer not verified from primary source this pass (typically AAA including Maths); IELTS 6.5/6.0",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 26800, "basis": "institutional",
+                 "year": "2027-2028 (proxy)",
+                 "mandatory_fees_annual": 0,
+                 "note": "£26,800/yr, Nottingham BSc Economics (2027/28 proxy)."}},
+            {"suffix": "bsc-business", "program_name": "Business", "field": "Business", "degree": "BSc",
+             "degree_local": "BSc Business Management, Nottingham University Business School (NUBS). 3-year "
+             "programme. A-level offer not verified from primary source this pass.",
+             "faculty": "Nottingham University Business School", "duration": 3,
+             "url": "https://www.nottingham.ac.uk/ugstudy/subjects/business-economics/",
+             "subjects_note": "A-level offer not verified from primary source this pass; IELTS 6.5/6.0",
+             "subjects": {"a-level": [], "ib": [], "international-other": []},
+             "cost": {"residency": "international", "tuition": 24700, "basis": "institutional",
+                 "year": "2027-2028 (proxy)",
+                 "mandatory_fees_annual": 0,
+                 "note": "£24,700/yr, Nottingham BSc Business Management (2027/28 proxy)."}},
+        ],
+        "scholarships": [
+            {"suffix": "excellence", "name": "International Undergraduate Excellence Scholarship",
+             "provider": "University of Nottingham", "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": False,
+             "award_amount": "£5,000 deducted from first-year tuition fees.",
+             "academic_criteria": "AAA grades at A-level or international equivalent, assessed at admission.",
+             "other_eligibility_criteria": "AUTOMATIC at admission — no separate application required. "
+             "International fee-paying students, Year 1 full-time UG at Nottingham UK campus "
+             "(BA/BSc/BEng/MEng etc.). Excludes Medicine, Pharmacy, Veterinary Medicine, Architecture, "
+             "Foundation Year.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
 }
 
 
@@ -1885,10 +2685,12 @@ def build_docs(slug, s):
             "program_name": p["program_name"], "field_of_study": p["field"], "degree_type": p["degree"],
             "degree_type_local": p["degree_local"], "duration_value": p["duration"], "duration_unit": "years",
             "language_of_instruction": ["en"], "faculty_school": p["faculty"], "official_program_url": p["url"],
-            "application_platform": "AUS online application", "decision_context_academic_year": "2026-2027 (Fall 2027 entry)",
+            "application_platform": s.get("application_platform_name", "AUS online application"),
+            "decision_context_academic_year": s.get("decision_context_year", "2026-2027 (Fall 2027 entry)"),
             "record_status": "VERIFIED", "university_ref": wref(uni_id),
             "application_requirements": [
-                {"_key": "r1", "_type": "applicationRequirement", "name": "AUS online application",
+                {"_key": "r1", "_type": "applicationRequirement",
+                 "name": s.get("application_platform_name", "AUS online application"),
                  "necessity": "required", "requirement_type": "form", "description": "", "notes": s.get("deadline_note", "")},
                 {"_key": "r2", "_type": "applicationRequirement", "name": "Subject prerequisites",
                  "necessity": "required", "requirement_type": "other",
@@ -1910,9 +2712,10 @@ def build_docs(slug, s):
                 "record_status": "VERIFIED", "last_checked": s["verified_at"],
                 "language_requirements": [{"_key": "lr1", "_type": "languageRequirement", "language": "English", **lang}],
                 "source_refs": [wref(src_id("adm"), "s1")]}
-            if s.get("std_tests"):
+            prog_tests = p.get("std_tests", s.get("std_tests"))  # per-programme override, else university default
+            if prog_tests:
                 req["standardized_tests"] = [{"_key": f"st{i+1}", "_type": "testRequirement", **t}
-                                             for i, t in enumerate(s["std_tests"])]
+                                             for i, t in enumerate(prog_tests)]
             docs.append(req)
 
         cp = {"_id": D + f"costProfile-{slug}-cost-{ps}-{cost['residency']}", "_type": "costProfile",

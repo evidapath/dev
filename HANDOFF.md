@@ -16,18 +16,18 @@ Key constraint: **never publish hallucinated facts**. Every data field that isn'
 
 **Goal:** Import 50 universities into Sanity as DRAFTS (not published). Suhail's requirement doc lists all 50 with required fields.
 
-### Status — 16/50 done as drafts
+### Status — 25/50 done as drafts
 
 | Done | Schools |
 |------|---------|
 | UAE (8/8) | AUS, UAEU, Khalifa, UOS, Birmingham Dubai, Heriot-Watt Dubai, RIT Dubai, Canadian U Dubai |
-| US (8/9) | Princeton, MIT, Harvard, Stanford, UPenn, Cornell, NYU, USC |
-| Remaining US | Purdue, ASU |
+| US (10/10) | Princeton, MIT, Harvard, Stanford, UPenn, Cornell, NYU, USC, Purdue, ASU |
+| UK (7/7) | Cambridge, Imperial, UCL, Warwick, Manchester, Birmingham, Nottingham |
 
-### Remaining (34 schools)
+### Remaining (25 schools)
 
-- **US (2):** Purdue, ASU
-- **UK (7):** Cambridge, Imperial, UCL, Warwick, Manchester, Birmingham, Nottingham
+- ~~**US (2):** Purdue, ASU~~ ✓
+- ~~**UK (7):** Cambridge, Imperial, UCL, Warwick, Manchester, Birmingham, Nottingham~~ ✓
 - **Canada (5):** Waterloo, UBC, McGill, McMaster, Alberta
 - **Germany (5):** RWTH Aachen, Heidelberg, TU Berlin, KIT, LMU Munich
 - **Netherlands (3):** Eindhoven (TU/e), Amsterdam (UvA), Twente (UT)
@@ -144,4 +144,11 @@ Actually run them before acting, not just when reminded. When one changes the pl
 
 ## Next step
 
-Continue Batch-2 with **Purdue + ASU** (US schools, no new country doc needed), then UK batch. Each uni takes ~6–8 primary-source lookups; do in controlled batches of 2–4, verify before moving on.
+Continue Batch-2 with **Canada batch** (5 schools, `country-ca` already published):
+Waterloo, UBC, McGill, McMaster, Alberta.
+
+Then Germany (5), Netherlands (3), Malaysia (4 — needs `country-my`), Australia (4 — needs `country-au`).
+
+Each uni: 6–8 primary-source lookups. Do in batches of 3–4. Draft-only, verify before moving on.
+
+**UK batch notes (25/50):** build_docs updated with `application_platform_name` + `decision_context_year` + per-programme `std_tests` — all UK schools use these. `country-gb` already published. Cambridge UCAS deadline is 15 Oct (NOT January). Birmingham fees not publicly disclosed (null stored — honest). Nottingham fees are 2027/28 proxies.
