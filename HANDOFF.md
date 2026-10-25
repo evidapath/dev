@@ -16,7 +16,7 @@ Key constraint: **never publish hallucinated facts**. Every data field that isn'
 
 **Goal:** Import 50 universities into Sanity as DRAFTS (not published). Suhail's requirement doc lists all 50 with required fields.
 
-### Status — 35/50 done as drafts
+### Status — 40/50 done as drafts
 
 | Done | Schools |
 |------|---------|
@@ -24,13 +24,14 @@ Key constraint: **never publish hallucinated facts**. Every data field that isn'
 | US (10/10) | Princeton, MIT, Harvard, Stanford, UPenn, Cornell, NYU, USC, Purdue, ASU |
 | UK (7/7) | Cambridge, Imperial, UCL, Warwick, Manchester, Birmingham, Nottingham |
 | Canada (5/5) | Waterloo, UBC, McGill, McMaster, Alberta |
+| Germany (5/5) | RWTH Aachen, Heidelberg, TU Berlin, KIT, LMU Munich |
 
-### Remaining (15 schools)
+### Remaining (10 schools)
 
 - ~~**US (2):** Purdue, ASU~~ ✓
 - ~~**UK (7):** Cambridge, Imperial, UCL, Warwick, Manchester, Birmingham, Nottingham~~ ✓
 - ~~**Canada (5):** Waterloo, UBC, McGill, McMaster, Alberta~~ ✓
-- **Germany (5):** RWTH Aachen, Heidelberg, TU Berlin, KIT, LMU Munich
+- ~~**Germany (5):** RWTH Aachen, Heidelberg, TU Berlin, KIT, LMU Munich~~ ✓
 - **Netherlands (3):** Eindhoven (TU/e), Amsterdam (UvA), Twente (UT)
 - **Malaysia (4):** Malaya, Monash Malaysia, Nottingham Malaysia, Taylor's — **needs `country-my` created first**
 - **Australia (4):** Melbourne, Sydney, Monash, UNSW — **needs `country-au` created first**
@@ -145,15 +146,17 @@ Actually run them before acting, not just when reminded. When one changes the pl
 
 ## Next step
 
-Continue Batch-2 with **Germany batch** (5 schools, `country-de` already published):
-RWTH Aachen, Heidelberg, TU Berlin, KIT, LMU Munich.
+Continue Batch-2 with **Netherlands batch** (3 schools, `country-nl` already published):
+Eindhoven (TU/e), Amsterdam (UvA), Twente (UT).
 
-Then Netherlands (3, `country-nl` already published), Malaysia (4 — needs `country-my`), Australia (4 — needs `country-au`).
+Then Malaysia (4 — needs `country-my`), Australia (4 — needs `country-au`).
 
-**Canada batch DONE (35/50).** Before publishing Canada schools, verify McGill and McMaster fees from primary sources (both had PDF/SharePoint access issues this pass).
+**Germany batch DONE (40/50).** Before publishing Canada schools, verify McGill and McMaster fees from primary sources (both had PDF/SharePoint access issues this pass).
 
 Each uni: 6–8 primary-source lookups. Do in batches of 3–4. Draft-only, verify before moving on.
 
 **UK batch notes (25/50):** build_docs updated with `application_platform_name` + `decision_context_year` + per-programme `std_tests` — all UK schools use these. `country-gb` already published. Cambridge UCAS deadline is 15 Oct (NOT January). Birmingham fees not publicly disclosed (null stored — honest). Nottingham fees are 2027/28 proxies.
+
+**Germany batch notes (40/50):** `country-de` already published. CRITICAL structural difference: ALL German Bachelor programmes are in German (exception: KIT Carl Benz School BSc Mechanical Engineering International is English-medium). Primary language requirement is German C1 (TestDaF TDN 4-4-4-4 or DSH-2), NOT English. Fee tiers: Baden-Württemberg state law (Heidelberg, KIT) charges non-EU students €1,500/semester tuition; NRW (RWTH), Berlin (TU Berlin), and Bavaria-LMU are FREE for non-EU students (semester contribution only). LMU Munich confirmed NO non-EU tuition despite Bavaria's 2024/25 fee introduction (TUM only adopted it). Fees: RWTH €716/year, Heidelberg €3,380/year, TU Berlin €758/year, KIT €3,368/year, LMU €194/year. All Deutschlandstipendium scholarships (€300/month, competitive). build_docs updated: `lang_instruction` per-programme field + `lang_req.language` + `lang_req.req_name` fields (backward-compatible). Application platforms: uni-assist VPD for most; KIT Carl Benz has own portal; LMU direct (no uni-assist). Standard deadline July 15; Carl Benz April 30.
 
 **Canada batch notes (35/50):** `country-ca` already published. OUAC for Ontario (Waterloo, McMaster); direct portals for UBC, McGill, Alberta. No SAT/ACT required for A-level/IB applicants. Key data notes: Waterloo fees from primary source (official 2026 fee schedule — CS/Eng $69,884, AFM $55,346, Economics $54,020). UBC fees from secondary sources (fees page 403; Board-approved rates confirmed in multiple sources). McGill fees MEDIUM confidence (PDF binary-compressed — BEng $65,168, BCom $71,687, BSc CS ~$64,786, BA Econ ~$54,000). McMaster fees LOW-MEDIUM confidence (cost estimator only — CS $56,233, Eng $69,354, Business $50,003, Social Sci $45,158). Alberta Engineering $49,952 + Business $46,547 + CS $39,792 confirmed; Economics/Arts fee nulled (not found). McMaster and McGill fees must be verified from primary sources before go-live. Alberta tuition guarantee (locked at admission rate for program duration + 1 yr). McGill requires Quebec CAQ in addition to study permit.

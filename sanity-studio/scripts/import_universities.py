@@ -3450,6 +3450,647 @@ UNIVERSITIES = {
              "application_deadline": "2027-01-10", "deadline_academic_year": "2026-2027"},
         ],
     },
+
+    # ── GERMANY BATCH (5 universities, Batch-2 slots 36–40) ─────────────────────────────────────
+    # country-de is already published in Sanity staging.
+    # CRITICAL: All 5 German universities teach Bachelor programmes PRIMARILY in German.
+    # Exception: KIT Carl Benz School BSc Mechanical Engineering International is English-medium.
+    # Primary language requirement = German C1 (TestDaF TDN 4-4-4-4 or DSH-2) — NOT English.
+    # Application platform: uni-assist.de (VPD document) for most; Carl Benz has own KIT portal.
+    # Standard deadline: July 15 for Winter Semester 2027/28. Carl Benz: April 30.
+    # Fee tiers:
+    #   Baden-Württemberg state law: Heidelberg + KIT charge €1,500/semester non-EU tuition.
+    #   NRW (RWTH) + Berlin (TU Berlin) + Bavaria-LMU: FREE for non-EU, semester contribution only.
+    #   LMU Munich confirmed NO non-EU tuition despite Bavaria's 2024/25 fee introduction (TUM only).
+    # decision_context_year: "2026-2027 (Winter Semester 2027/28 entry)".
+    # build_docs changes applied: lang_req["language"], lang_req["req_name"], per-programme lang_instruction.
+
+    "de-rwth-aachen": {
+        "canonical_name": "RWTH Aachen University",
+        "aliases": ["RWTH", "RWTH Aachen", "Rheinisch-Westfälische Technische Hochschule Aachen"],
+        "country_cc": "de",
+        "city": {"slug": "de-aachen", "name": "Aachen"},
+        "website": "https://www.rwth-aachen.de/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "EUR",
+        "verification_note": "fact-checks/de-rwth-aachen-2026-10-25.md",
+        "application_platform_name": "uni-assist + RWTH Application Portal",
+        "decision_context_year": "2026-2027 (Winter Semester 2027/28 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "RWTH Aachen University — Official Website",
+                "url": "https://www.rwth-aachen.de/",
+                "excerpt": "RWTH Aachen University, Aachen, North Rhine-Westphalia, Germany; public technical "
+                "university. Faculties include: Mathematics/Computer Science/Natural Sciences (Faculty 1), "
+                "Mechanical Engineering (Faculty 4), and Business and Economics (Faculty 8). Tuition-free for "
+                "all students (EU and non-EU); semester contribution ~€358/semester (2026) applies. NRW state "
+                "does not impose non-EU tuition fees."},
+            "adm": {"suffix": "src-adm",
+                "title": "RWTH Aachen — International Admission Requirements",
+                "url": "https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/"
+                "internationale-studieninteressierte/organisation-des-studienaufenthaltes/"
+                "~bqmn/internationale-studierende/?lidx=1",
+                "excerpt": "International students apply via uni-assist for Vorprüfungsdokumentation (VPD / "
+                "preliminary review document). German C1 proficiency required: TestDaF TDN 4 in all four "
+                "sections or DSH-2. A-level qualifications assessed via Anabin database by uni-assist; at "
+                "least three A-level subjects including Mathematics for CS/Engineering. Application deadline "
+                "for Winter Semester: July 15. BSc Computer Science is admission-restricted (NC); ~8–10% of "
+                "places reserved for international students."},
+            "fee": {"suffix": "src-fee",
+                "title": "RWTH Aachen — Semester Contributions",
+                "url": "https://www.rwth-aachen.de/cms/root/studium/Im-Studium/~blsb/Semesterbeitraege/?lidx=1",
+                "excerpt": "Semester contribution (Summer Semester 2026): €358.34 total = student body "
+                "contribution €13.77 + Semesterticket (Deutschlandticket/NRW) €216.57 + Studierendenwerk "
+                "€128.00. No tuition fees for any Bachelor or consecutive Master programme — identical for "
+                "EU and non-EU students. Annual cost two semesters: approximately €716."},
+            "schol": {"suffix": "src-schol",
+                "title": "RWTH Aachen — Deutschlandstipendium",
+                "url": "https://www.rwth-aachen.de/cms/root/transfer/spenden-sponsoring/"
+                "deutschlandstipendium/~emd/bewerben/?lidx=1",
+                "excerpt": "Deutschlandstipendium at RWTH: €300/month for at least two semesters, renewable. "
+                "Funded 50% by Federal Ministry of Education and Research, 50% by private sponsors. Open to "
+                "all nationalities enrolled or newly enrolling at RWTH. Next application period: June 2027 "
+                "for WS 2027/28. Selection on academic merit, talent, engagement. Not automatic."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed via uni-assist."),
+        ],
+        "residencies": [
+            ("international", "International (non-EU/non-German) students",
+             "Students from outside the EU/EEA. RWTH charges NO separate non-EU tuition — all students pay "
+             "the same semester contribution (~€358/semester). Fees are purely administrative/service-based."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "German",
+            "req_name": "German language proficiency (C1)",
+            "test_name": "TestDaF or DSH (German C1 proficiency)",
+            "min_score": "TestDaF: TDN 4 in each of 4 sections (Lesen, Hören, Schreiben, Sprechen — TDN 4-4-4-4). "
+                         "Alternatively: DSH-2 or DSH-3.",
+            "notes": "All RWTH Bachelor programmes are taught in German. German C1 is the primary language "
+                     "requirement — English proficiency is not separately tested (A-levels/IB demonstrate "
+                     "English competency). UAE students typically need 1–2 years of dedicated German study to "
+                     "reach C1 from A2 level. TestDaF test centres are available in the UAE and worldwide. "
+                     "Note: Kombiniertes Zertifikat digitaler TestDaF is NOT accepted by some universities — "
+                     "check RWTH's current accepted certificates list before registering.",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply via uni-assist.de well before the deadline — VPD processing takes several weeks. "
+            "Winter Semester 2027/28 deadline: July 15, 2027 (some NC programmes may have earlier cut-offs). "
+            "After receiving VPD, submit to RWTH's online application portal. German TestDaF/DSH certificate "
+            "required at enrolment (not at application stage in most cases). "
+            "CS (Informatik) is admission-restricted; apply by early June for maximum consideration.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science",
+             "degree": "BSc", "lang_instruction": ["de"],
+             "degree_local": "Bachelor of Science in Informatik (Computer Science), Faculty of Mathematics, "
+             "Computer Science and Natural Sciences (Faculty 1), RWTH Aachen University. Standard study period: "
+             "6 semesters (3 years). TAUGHT IN GERMAN — German C1 (TestDaF/DSH) required. Admission restricted "
+             "(NC); ~8–10% international student quota applies.",
+             "faculty": "Faculty of Mathematics, Computer Science and Natural Sciences", "duration": 3,
+             "url": "https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/studiengaenge/"
+                    "liste-aktuelle-studiengaenge/studiengangbeschreibung/~bnzs/informatik-b-sc-/?lidx=1",
+             "subjects_note": "Mathematics at A-level required. Grade threshold assessed holistically via "
+                              "uni-assist based on overall A-level profile (no published per-subject minimum "
+                              "grade). German C1 (TestDaF/DSH) mandatory. Programme taught entirely in German.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 716, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "€716/year (€358.34/semester × 2). No tuition fee — semester contribution only "
+                 "(student body + Studierendenwerk + NRW Deutschlandticket). Identical for EU and non-EU."}},
+            {"suffix": "bsc-mech-eng", "program_name": "Mechanical Engineering", "field": "Engineering",
+             "degree": "BSc", "lang_instruction": ["de"],
+             "degree_local": "Bachelor of Science in Maschinenbau (Mechanical Engineering), Faculty of "
+             "Mechanical Engineering (Faculty 4), RWTH Aachen University. Standard study period: 7 semesters "
+             "(3.5 years; displayed as 4 years here for field compatibility). TAUGHT IN GERMAN. "
+             "RWTH Engineering is internationally highly ranked.",
+             "faculty": "Faculty of Mechanical Engineering", "duration": 4,
+             "url": "https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/studiengaenge/"
+                    "liste-aktuelle-studiengaenge/studiengangbeschreibung/~bnev/maschinenbau-b-sc-/?lidx=1",
+             "subjects_note": "Mathematics and Physics at A-level required. Grade threshold assessed via "
+                              "uni-assist holistically. German C1 mandatory. Programme taught in German.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 716, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "€716/year. Same semester contribution as all RWTH programmes. No tuition fee."}},
+        ],
+        "scholarships": [
+            {"suffix": "deutschlandstipendium", "name": "Deutschlandstipendium (Germany Scholarship)",
+             "provider": "RWTH Aachen University / Federal Ministry of Education and Research",
+             "provider_type": "institutional",
+             "award_type": "monthly_stipend", "renewable": True,
+             "award_amount": "€300/month for at least 2 semesters (starting Winter Semester), renewable. "
+             "50% funded by Federal Government, 50% by private sponsors.",
+             "academic_criteria": "Excellent academic achievement or strong evidence of future potential. "
+             "Social engagement, talent, and individual circumstances also considered.",
+             "other_eligibility_criteria": "COMPETITIVE — application required. Open to all nationalities "
+             "enrolled or newly enrolling at RWTH Aachen. Next application period: June 2027 for WS 2027/28.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "de-heidelberg": {
+        "canonical_name": "Heidelberg University",
+        "aliases": ["Heidelberg", "Uni Heidelberg", "Ruprecht-Karls-Universität Heidelberg",
+                    "Ruprecht-Karls-Universität"],
+        "country_cc": "de",
+        "city": {"slug": "de-heidelberg", "name": "Heidelberg"},
+        "website": "https://www.uni-heidelberg.de/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "EUR",
+        "verification_note": "fact-checks/de-heidelberg-2026-10-25.md",
+        "application_platform_name": "Heidelberg University Application Portal",
+        "decision_context_year": "2026-2027 (Winter Semester 2027/28 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Heidelberg University — Official Website",
+                "url": "https://www.uni-heidelberg.de/",
+                "excerpt": "Heidelberg University (founded 1386), Heidelberg, Baden-Württemberg, Germany; oldest "
+                "university in Germany and one of Europe's most prestigious research universities. Strong in "
+                "natural sciences (incl. Computer Science), social sciences, medicine, and humanities. "
+                "Baden-Württemberg state law: non-EU international students pay €1,500/semester tuition fee in "
+                "addition to the semester administrative fee (~€189.80/semester as of 2026/27)."},
+            "adm": {"suffix": "src-adm",
+                "title": "Heidelberg — Application for Bachelor Programmes (Mathematics and Computer Science Faculty)",
+                "url": "https://www.mathinf.uni-heidelberg.de/en/studies/application-bachelor-programs",
+                "excerpt": "Admission to Bachelor Computer Science (100%) requires passing a university entrance "
+                "exam (Hochschuleignungsprüfung / internal selection procedure). Application portal opens June 1 "
+                "each year; deadline July 15. International qualifications (A-level, IB) assessed under ZAB "
+                "evaluation recommendations. German proficiency: DSH-2 minimum (must be proven at enrolment); "
+                "TestDaF TDN 4 in all sections accepted. Language of instruction: German. ~8–10% international "
+                "student quota for NC programmes."},
+            "fee": {"suffix": "src-fee",
+                "title": "Heidelberg University — Semester Fees and Non-EU Tuition",
+                "url": "https://www.uni-heidelberg.de/en/study/management-of-studies/semester-fees",
+                "excerpt": "Semester fee (2026/27 Winter Semester): €189.80 per semester for all students. "
+                "Non-EU international students additionally pay €1,500/semester tuition fee under "
+                "Baden-Württemberg Landeshochschulgebührengesetz (LHGebG). Total per semester (non-EU): "
+                "€1,689.80. Annual total for two semesters (non-EU): €3,379.60 (tuition €3,000 + admin fees "
+                "€379.60). EU/EEA students pay only the €189.80/semester admin fee."},
+            "schol": {"suffix": "src-schol",
+                "title": "Heidelberg University — Deutschlandstipendium",
+                "url": "https://www.uni-heidelberg.de/en/friends-supporters/germany-scholarship/how-can-i-apply",
+                "excerpt": "Deutschlandstipendium at Heidelberg: €300/month for two semesters, renewable. Open "
+                "to all nationalities enrolled at Heidelberg. Applications accepted August 1–31 each year for "
+                "the funding period starting Winter Semester. Income-independent. Selection based on academic "
+                "excellence and engagement."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed by Heidelberg admissions."),
+        ],
+        "residencies": [
+            ("international", "International (non-EU/non-German) students",
+             "Students from outside EU/EEA paying the non-EU tuition fee under Baden-Württemberg state law. "
+             "Total: €1,689.80/semester (€1,500 non-EU fee + €189.80 admin). EU/EEA students pay €189.80/semester only."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "German",
+            "req_name": "German language proficiency (C1)",
+            "test_name": "TestDaF or DSH (German C1 proficiency)",
+            "min_score": "DSH-2 (minimum) or DSH-3. TestDaF: TDN 4 in all 4 sections (TDN 4-4-4-4). "
+                         "Certificate must be presented at enrolment.",
+            "notes": "All Heidelberg Bachelor programmes are taught in German. German proficiency at C1 level "
+                     "is required — English is not separately tested for German-medium programmes. "
+                     "Heidelberg's International Study Centre (ISZ) offers DSH preparation courses. "
+                     "BSc CS 100% requires an entrance examination in addition to language proof. "
+                     "UAE A-level/IB students: plan 1–2 years for German C1 preparation.",
+        },
+        "std_tests": [],
+        "deadline_note": "Application portal opens June 1, 2027. Deadline: July 15, 2027 for Winter Semester "
+            "2027/28. Apply directly via Heidelberg's online application portal (not uni-assist). "
+            "BSc Computer Science (100%) requires an internal entrance examination — check dates once the "
+            "portal opens. German language certificate required at enrolment.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science",
+             "degree": "BSc", "lang_instruction": ["de"],
+             "degree_local": "Bachelor of Science in Informatik (Computer Science) 100%, Faculty of "
+             "Mathematics and Computer Science, Heidelberg University. Standard period: 6 semesters (3 years). "
+             "TAUGHT IN GERMAN. Admission requires an internal entrance examination (Hochschuleignungsprüfung) "
+             "in addition to language proof and university entrance qualification. ~8–10% places for "
+             "international applicants.",
+             "faculty": "Faculty of Mathematics and Computer Science", "duration": 3,
+             "url": "https://www.informatik.uni-heidelberg.de/studium/bachelor/bsc100?lang=en",
+             "subjects_note": "Mathematics at A-level required. Internal entrance examination required for CS "
+                              "admission. Grade threshold assessed via ZAB framework. German C1 mandatory. "
+                              "Programme taught in German.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 3000, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": 380,
+                 "note": "Non-EU students: €1,500/semester non-EU tuition (BW state law) + €189.80/semester "
+                 "admin fee. Annual total (non-EU): approx. €3,380 (€3,000 tuition + €380 admin). "
+                 "EU/EEA students pay €380/year admin fee only."}},
+            {"suffix": "bsc-economics", "program_name": "Economics", "field": "Economics",
+             "degree": "BSc", "lang_instruction": ["de"],
+             "degree_local": "Bachelor of Science in Volkswirtschaftslehre (Economics) 100%, Faculty of "
+             "Economics and Social Sciences, Heidelberg University. Standard period: 6 semesters (3 years). "
+             "TAUGHT IN GERMAN. Admission not restricted (no NC for some intakes) — check current admissions "
+             "status at application time.",
+             "faculty": "Faculty of Economics and Social Sciences", "duration": 3,
+             "url": "https://www.uni-heidelberg.de/en/study/all-subjects/economics/economics-bachelor-100",
+             "subjects_note": "Mathematics at A-level recommended; assessed holistically via ZAB framework. "
+                              "German C1 mandatory. Programme taught in German.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 3000, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": 380,
+                 "note": "Non-EU students: €1,500/semester + €189.80/semester. Same fee structure as all "
+                 "Heidelberg programmes under BW state law. Annual total: approx. €3,380."}},
+        ],
+        "scholarships": [
+            {"suffix": "deutschlandstipendium", "name": "Deutschlandstipendium (Germany Scholarship)",
+             "provider": "Heidelberg University / Federal Ministry of Education and Research",
+             "provider_type": "institutional",
+             "award_type": "monthly_stipend", "renewable": True,
+             "award_amount": "€300/month for two semesters, renewable. Income-independent.",
+             "academic_criteria": "Outstanding academic achievement and evidence of future potential. "
+             "Social commitment and individual circumstances also considered.",
+             "other_eligibility_criteria": "COMPETITIVE — application required August 1–31 each year. "
+             "Open to all nationalities enrolled at Heidelberg.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "de-tu-berlin": {
+        "canonical_name": "Technical University of Berlin",
+        "aliases": ["TU Berlin", "Technische Universität Berlin", "TU Berlin (Technische Universität)"],
+        "country_cc": "de",
+        "city": {"slug": "de-berlin", "name": "Berlin"},
+        "website": "https://www.tu.berlin/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "EUR",
+        "verification_note": "fact-checks/de-tu-berlin-2026-10-25.md",
+        "application_platform_name": "uni-assist VPD + TU Berlin Application Portal",
+        "decision_context_year": "2026-2027 (Winter Semester 2027/28 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "TU Berlin — Official Website",
+                "url": "https://www.tu.berlin/",
+                "excerpt": "Technische Universität Berlin, Berlin, Germany; major public technical university "
+                "and one of Germany's top engineering and CS schools. Schools include Electrical Engineering "
+                "and Computer Science (EECS) and several engineering and science faculties. "
+                "Berlin (state) does not impose non-EU tuition fees — all students pay only the standard "
+                "semester fee (€379.06 for WS 2026/27, includes Berlin semester ticket)."},
+            "adm": {"suffix": "src-adm",
+                "title": "TU Berlin — Admission Requirements for International Students (Bachelor)",
+                "url": "https://www.tu.berlin/en/studierendensekretariat/bachelors-application-enrollment/"
+                "prospective-students-with-an-international-higher-education-entrance-qualification/"
+                "admission-requirements/language-skills",
+                "excerpt": "German language requirement for all TU Berlin Bachelor programmes: C1 level. "
+                "Accepted certificates: TestDaF with TDN 4 or higher in all modules (4-4-4-4); DSH-2 or "
+                "DSH-3 (recognised by German HRK); Goethe C2; telc Deutsch C1 Hochschule. NOTE: Kombiniertes "
+                "Zertifikat für den digitalen TestDaF is specifically NOT recognised by TU Berlin. "
+                "International students must submit a VPD (Vorprüfungsdokumentation) from uni-assist. "
+                "BSc Computer Science is being redesigned from WS 2026/27 but remains in German."},
+            "fee": {"suffix": "src-fee",
+                "title": "TU Berlin — Semester Fees",
+                "url": "https://www.tu.berlin/en/studierendensekretariat/topics-a-z/semester-fees",
+                "excerpt": "Winter Semester 2026/27 semester fee: €379.06. Includes the Berlin semester ticket "
+                "(public transport). No tuition fees for any Bachelor programme at TU Berlin. Berlin state "
+                "policy: no non-EU tuition fee; all students (German, EU, non-EU) pay identical semester "
+                "contribution. Annual cost (2 semesters): €758.12."},
+            "schol": {"suffix": "src-schol",
+                "title": "TU Berlin — Financing Your Studies",
+                "url": "https://www.tu.berlin/en/studying/organizing-your-studies/financing-your-studies",
+                "excerpt": "TU Berlin participates in the national Deutschlandstipendium programme. Awards "
+                "€300/month for at least 2 semesters, renewable. Open to all enrolled students of any "
+                "nationality. Applications typically in summer for Winter Semester start. Competitive selection "
+                "based on academic merit and engagement."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed via uni-assist VPD."),
+        ],
+        "residencies": [
+            ("international", "International (non-EU/non-German) students",
+             "TU Berlin charges NO non-EU tuition — all students pay identical semester fee (€379.06/semester, "
+             "WS 2026/27). Fees are purely administrative/transport-based. No differentiation by nationality."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "German",
+            "req_name": "German language proficiency (C1)",
+            "test_name": "TestDaF or DSH (German C1 proficiency)",
+            "min_score": "TestDaF: TDN 4 in all 4 modules (4-4-4-4). DSH-2 or DSH-3. Also accepted: Goethe "
+                         "Zertifikat C2, telc Deutsch C1 Hochschule. NOTE: Kombiniertes Zertifikat digitaler "
+                         "TestDaF is NOT accepted by TU Berlin.",
+            "notes": "ALL TU Berlin Bachelor programmes are taught in German (98%+ German-medium). German C1 "
+                     "is the primary language requirement. English proficiency not separately required "
+                     "(A-levels/IB demonstrate this). UAE students need 1–2 years of German preparation to "
+                     "reach C1. TestDaF is available at test centres in UAE and globally. "
+                     "Apply via uni-assist for VPD before applying to TU Berlin directly.",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply via uni-assist.de for VPD (allow several weeks processing time). "
+            "TU Berlin application deadline for Winter Semester 2027/28: June 1 – July 15, 2027 "
+            "(restricted programmes like CS may close June 1). Apply via TU Berlin's online application "
+            "portal after receiving VPD. German language certificate required at enrolment.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science",
+             "degree": "BSc", "lang_instruction": ["de"],
+             "degree_local": "Bachelor of Science in Informatik (Computer Science), School of Electrical "
+             "Engineering and Computer Science (EECS), TU Berlin. Standard period: 6 semesters (3 years). "
+             "TAUGHT IN GERMAN. Admission restricted (NC). Programme redesigned from WS 2026/27 — remains "
+             "German-medium. Applications via uni-assist VPD + TU Berlin portal.",
+             "faculty": "School of Electrical Engineering and Computer Science (EECS)", "duration": 3,
+             "url": "https://www.tu.berlin/en/studying/study-programs/all-programs-offered/study-course/"
+                    "computer-science-b-sc",
+             "subjects_note": "Mathematics at A-level required. Grade threshold assessed holistically via "
+                              "uni-assist VPD. German C1 (TestDaF/DSH) mandatory. All teaching in German.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 758, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "€758/year (€379.06/semester × 2). Semester fee includes Berlin public transport "
+                 "ticket. No tuition fee — same for all students regardless of nationality."}},
+            {"suffix": "bsc-electrical-eng", "program_name": "Electrical Engineering",
+             "field": "Engineering", "degree": "BSc", "lang_instruction": ["de"],
+             "degree_local": "Bachelor of Science in Elektrotechnik (Electrical Engineering), School of "
+             "Electrical Engineering and Computer Science (EECS), TU Berlin. Standard period: 6 semesters "
+             "(3 years). TAUGHT IN GERMAN. TU Berlin EECS is one of Germany's strongest EE schools.",
+             "faculty": "School of Electrical Engineering and Computer Science (EECS)", "duration": 3,
+             "url": "https://www.tu.berlin/en/eecs/academics-teaching/study-offer/bachelors-programs",
+             "subjects_note": "Mathematics and Physics at A-level required. Grade threshold assessed via "
+                              "uni-assist VPD holistically. German C1 mandatory. Programme in German.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 758, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "€758/year. Same semester fee as all TU Berlin programmes. No tuition fee."}},
+        ],
+        "scholarships": [
+            {"suffix": "deutschlandstipendium", "name": "Deutschlandstipendium (Germany Scholarship)",
+             "provider": "TU Berlin / Federal Ministry of Education and Research",
+             "provider_type": "institutional",
+             "award_type": "monthly_stipend", "renewable": True,
+             "award_amount": "€300/month for at least 2 semesters, renewable.",
+             "academic_criteria": "Academic excellence, talent, and engagement. Open to all nationalities.",
+             "other_eligibility_criteria": "COMPETITIVE — application required. Enrolled TU Berlin students. "
+             "Application timing: typically summer each year for Winter Semester start.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "de-kit": {
+        "canonical_name": "Karlsruhe Institute of Technology",
+        "aliases": ["KIT", "Karlsruher Institut für Technologie", "Universität Karlsruhe"],
+        "country_cc": "de",
+        "city": {"slug": "de-karlsruhe", "name": "Karlsruhe"},
+        "website": "https://www.kit.edu/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "EUR",
+        "verification_note": "fact-checks/de-kit-2026-10-25.md",
+        "application_platform_name": "uni-assist + KIT Portal (German programmes); KIT Online Application Portal (Carl Benz School)",
+        "decision_context_year": "2026-2027 (Winter Semester 2027/28 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "KIT — Official Website",
+                "url": "https://www.kit.edu/",
+                "excerpt": "Karlsruhe Institute of Technology (KIT), Karlsruhe, Baden-Württemberg, Germany; "
+                "major public technical university. Faculties include Informatics, Mechanical Engineering, "
+                "and Economics and Management. Baden-Württemberg state law: non-EU students pay €1,500/semester "
+                "tuition. Carl Benz School of Engineering offers ONE English-medium Bachelor: BSc Mechanical "
+                "Engineering International — all other KIT Bachelor programmes are in German."},
+            "adm": {"suffix": "src-adm",
+                "title": "KIT — International Students: Tuition Fees and Admission",
+                "url": "https://www.intl.kit.edu/istudies/3363.php",
+                "excerpt": "Non-EU international students pay €1,500/semester tuition under BW state law plus "
+                "semester contributions (~€184/semester: admin €80 + Studierendenwerk €92 + students union €12). "
+                "Total: €1,684/semester. German programmes: TestDaF TDN 4 or DSH-2 required. Apply via "
+                "uni-assist for VPD; deadline July 15 for Winter Semester. "
+                "Carl Benz School (English programme): IELTS 6.5 overall (no section below 5.5); A-level "
+                "Mathematics and Physics (grade C minimum); deadline April 30. Apply via KIT online portal "
+                "(not uni-assist). A-level English grade B or higher waives IELTS requirement."},
+            "fee": {"suffix": "src-fee",
+                "title": "KIT — Charges and Fees for Students",
+                "url": "https://www.sle.kit.edu/english/imstudium/703.php",
+                "excerpt": "Non-EU student fees per semester: tuition €1,500 + admin €80 + Studierendenwerk "
+                "€92 + students union €12 = €1,684 total. EU/EEA students: semester contribution only (~€184). "
+                "Annual cost (non-EU, 2 semesters): €3,368 (tuition €3,000 + fees €368)."},
+            "schol": {"suffix": "src-schol",
+                "title": "KIT — Deutschlandstipendium and Scholarships",
+                "url": "https://www.intl.kit.edu/istudies/12591.php",
+                "excerpt": "KIT offers the Deutschlandstipendium (€300/month, competitive, all nationalities) "
+                "and other scholarships for international students. Some international students may be exempt "
+                "from the non-EU tuition fee — details on KIT's dedicated tuition fees page. "
+                "Carl Benz School has a separate scholarship programme."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications (CBSE, national diplomas, etc.)."),
+        ],
+        "residencies": [
+            ("international", "International (non-EU/non-German) students",
+             "Non-EU students pay €1,500/semester tuition (BW state law) + ~€184/semester admin fees. "
+             "Total: €1,684/semester, €3,368/year. EU/EEA pay only ~€184/semester admin fees."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "German",
+            "req_name": "Language proficiency (German or English depending on programme)",
+            "test_name": "TestDaF/DSH (German programmes) OR IELTS Academic (Carl Benz School English programme)",
+            "min_score": "German programmes (BSc CS): TestDaF TDN 4 in all 4 sections or DSH-2. "
+                         "Carl Benz School BSc Mechanical Engineering International (English-medium): "
+                         "IELTS Academic 6.5 overall, no individual section below 5.5.",
+            "notes": "KIT OFFERS BOTH: (1) German-medium programmes (BSc CS, most engineering) requiring "
+                     "German C1 (TestDaF/DSH). (2) ONE English-medium Bachelor at Carl Benz School: BSc "
+                     "Mechanical Engineering International — requires IELTS 6.5, NOT German. "
+                     "UAE A-level students with English medium education and A-level English grade B or higher "
+                     "may be EXEMPT from IELTS for the Carl Benz School programme. "
+                     "Deadline for Carl Benz School: April 30 (not July 15). Apply via KIT's own portal "
+                     "(not uni-assist) for Carl Benz.",
+        },
+        "std_tests": [],
+        "deadline_note": "Two distinct application routes depending on programme: "
+            "(1) German-medium programmes (BSc CS): apply via uni-assist.de for VPD, then KIT portal. "
+            "Deadline: July 15, 2027 for Winter Semester 2027/28. German TestDaF/DSH required. "
+            "(2) Carl Benz School (BSc Mechanical Engineering International, English): apply via KIT Online "
+            "Application Portal — deadline April 30, 2027. IELTS 6.5 required (waived if A-level English ≥ B). "
+            "A-level Mathematics and Physics required with grade C minimum.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science",
+             "degree": "BSc", "lang_instruction": ["de"],
+             "degree_local": "Bachelor of Science in Informatik (Computer Science), Faculty of Informatics, "
+             "KIT. Standard period: 6 semesters (3 years). TAUGHT IN GERMAN. Apply via uni-assist VPD + KIT "
+             "portal by July 15. Non-EU tuition €1,500/semester (BW law).",
+             "faculty": "Faculty of Informatics", "duration": 3,
+             "url": "https://www.sle.kit.edu/english/vorstudium/bachelor-computer-science.php",
+             "subjects_note": "Mathematics at A-level required. Grade threshold assessed via uni-assist. "
+                              "German C1 (TestDaF/DSH) mandatory. Programme in German.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 3000, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": 368,
+                 "note": "Non-EU: €1,500/semester tuition (BW state law) + €184/semester admin fees. "
+                 "Annual: €3,000 tuition + €368 admin = €3,368. EU/EEA pay €368/year admin only."}},
+            {"suffix": "bsc-mech-eng-intl", "program_name": "Mechanical Engineering (International)",
+             "field": "Engineering", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Science in Mechanical Engineering (International), Carl Benz School "
+             "of Engineering, KIT. Standard period: 7 semesters (3.5 years; shown as 4 years here). "
+             "TAUGHT ENTIRELY IN ENGLISH — German language NOT required. Unique among KIT Bachelor programmes. "
+             "Apply via KIT Online Application Portal (not uni-assist); deadline April 30, 2027.",
+             "faculty": "Carl Benz School of Engineering, KIT", "duration": 4,
+             "url": "https://www.sle.kit.edu/english/vorstudium/bachelor-mechanical-engineering-international.php",
+             "subjects_note": "A-level Mathematics and Physics required (grade C minimum for enrollment). "
+                              "IELTS 6.5 overall, no section below 5.5 (WAIVED if A-level English grade B or "
+                              "higher — UAE students on English-medium A-levels typically qualify for waiver). "
+                              "English-medium programme — no German language required.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 3000, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": 368,
+                 "note": "Non-EU: same fee structure as all KIT programmes — €1,500/semester non-EU tuition "
+                 "(BW law) + €184/semester admin. Annual: €3,368. Carl Benz English programme has same fee "
+                 "as German-medium KIT programmes (no premium for English delivery)."}},
+        ],
+        "scholarships": [
+            {"suffix": "deutschlandstipendium", "name": "Deutschlandstipendium (Germany Scholarship)",
+             "provider": "KIT / Federal Ministry of Education and Research",
+             "provider_type": "institutional",
+             "award_type": "monthly_stipend", "renewable": True,
+             "award_amount": "€300/month for at least 2 semesters, renewable.",
+             "academic_criteria": "Academic excellence, talent, social engagement. Open to all nationalities.",
+             "other_eligibility_criteria": "COMPETITIVE — application required. Enrolled KIT students. "
+             "Application timing typically summer for Winter Semester start.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "de-lmu": {
+        "canonical_name": "LMU Munich",
+        "aliases": ["LMU", "Ludwig-Maximilians-Universität München", "Ludwig Maximilian University of Munich"],
+        "country_cc": "de",
+        "city": {"slug": "de-munich", "name": "Munich"},
+        "website": "https://www.lmu.de/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "EUR",
+        "verification_note": "fact-checks/de-lmu-2026-10-25.md",
+        "application_platform_name": "LMU Online Application Portal",
+        "decision_context_year": "2026-2027 (Winter Semester 2027/28 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "LMU Munich — Official Website",
+                "url": "https://www.lmu.de/",
+                "excerpt": "Ludwig-Maximilians-Universität München (LMU Munich), Munich, Bavaria, Germany; "
+                "one of Germany's elite research universities. Offers programmes in natural sciences, "
+                "social sciences, humanities, law, and medicine. Strong Computer Science (Faculty of "
+                "Mathematics, Computer Science and Statistics) and Economics (Faculty of Economics). "
+                "Bavaria introduced non-EU tuition from WS 2024/25 for TUM; LMU has NOT adopted this fee — "
+                "confirmed: no non-EU tuition at LMU. Semester service fee: €97/semester (as of 2026)."},
+            "adm": {"suffix": "src-adm",
+                "title": "LMU Munich — Prerequisites for International Applicants",
+                "url": "https://www.lmu.de/en/study/degree-students/prerequisites/",
+                "excerpt": "International applicants need a recognised university entrance qualification and "
+                "German language proficiency. For application: minimum B2 level in German. For registration "
+                "(enrolment): TestDaF with TDN 4 in all sections (4-4-4-4) or DSH-2 required. "
+                "Computer Science: NC (admission-restricted), A-level applicants assessed via Anabin. "
+                "BSc Economics: predominantly English-language curriculum with selected modules in German; "
+                "German proficiency still required for registration."},
+            "fee": {"suffix": "src-fee",
+                "title": "LMU Munich — Semester Fees",
+                "url": "https://www.lmu.de/en/workspace-for-students/abc-study-guide/semester-fees-for-the-munich-student-union/",
+                "excerpt": "LMU semester service fee: €97/semester (Summer Semester 2026; same for all "
+                "students). LMU does NOT charge tuition fees for regular degree programmes, including for "
+                "students from non-EU countries. Annual cost (2 semesters): €194. "
+                "Note: Bavaria introduced non-EU fees for TUM (Technical University of Munich) from "
+                "WS 2024/25 but LMU has not adopted this policy as of 2026."},
+            "schol": {"suffix": "src-schol",
+                "title": "LMU Munich — Deutschlandstipendium",
+                "url": "https://www.lmu.de/en/workspace-for-students/student-support-services/finance-your-studies/scholarships/deutschlandstipendium/application/",
+                "excerpt": "LMU Deutschlandstipendium: €300/month for up to the standard programme duration. "
+                "Half funded by Federal Ministry of Education and Research, half by private sponsors. "
+                "Application period 2026: March 16 – April 5. Open to all nationalities. First-year "
+                "applicants assessed on university entrance qualification grades in relevant subjects. "
+                "Competitive — not automatic. Over 6,000 scholarships awarded in 15 years at LMU."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed via LMU admissions."),
+        ],
+        "residencies": [
+            ("international", "International (non-EU/non-German) students",
+             "LMU charges NO non-EU tuition (confirmed 2026). All students pay only the €97/semester service "
+             "fee regardless of nationality. Exceptional value versus other German and European universities."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "German",
+            "req_name": "German language proficiency (B2 for application; C1/TestDaF for registration)",
+            "test_name": "German proficiency: B2 (application) → TestDaF TDN 4-4-4-4 or DSH-2 (enrolment)",
+            "min_score": "Application: minimum B2 German proficiency proof required. "
+                         "Enrolment/registration: TestDaF TDN 4 in all 4 sections (4-4-4-4) or DSH-2. "
+                         "BSc Economics: same German requirement, though teaching is predominantly English.",
+            "notes": "Two-stage German language requirement at LMU: B2 to apply, C1 (TestDaF/DSH) to enrol. "
+                     "BSc Economics has a predominantly English-language curriculum with some German modules — "
+                     "German proficiency is still required at registration. BSc CS is taught primarily in "
+                     "German. LMU offers intensive 8-week German courses with DSH preparation. "
+                     "UAE students: plan for B2 at application time (12–18 months preparation from A2).",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply via LMU's online application portal. "
+            "Restricted programmes (BSc CS): apply by July 15, 2027 for Winter Semester 2027/28. "
+            "Unrestricted programmes: may have later deadlines — check current LMU portal. "
+            "German B2 certificate required at application stage; TestDaF/DSH (C1) required at enrolment. "
+            "Note: LMU does not use uni-assist — apply directly via LMU portal.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science",
+             "degree": "BSc", "lang_instruction": ["de"],
+             "degree_local": "Bachelor of Science in Informatik (Computer Science), Faculty of Mathematics, "
+             "Computer Science and Statistics, LMU Munich. Standard period: 6 semesters (3 years). "
+             "TAUGHT IN GERMAN. NC admission-restricted. Apply directly via LMU portal by July 15.",
+             "faculty": "Faculty of Mathematics, Computer Science and Statistics", "duration": 3,
+             "url": "https://www.lmu.de/en/study/degree-students/applications-for-admission/",
+             "subjects_note": "Mathematics at A-level required. Grade assessed via Anabin. German B2 at "
+                              "application; TestDaF TDN 4-4-4-4 or DSH-2 at enrolment. Taught in German.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 194, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "€194/year (€97/semester × 2). No tuition fee — semester service fee only. "
+                 "LMU has NOT adopted Bavaria's non-EU tuition policy (unlike TUM). Exceptional value."}},
+            {"suffix": "bsc-economics", "program_name": "Economics", "field": "Economics",
+             "degree": "BSc", "lang_instruction": ["de", "en"],
+             "degree_local": "Bachelor of Science in Volkswirtschaftslehre (Economics), Faculty of Economics "
+             "(Volkswirtschaftliche Fakultät), LMU Munich. Standard period: 6 semesters (3 years). "
+             "PREDOMINANTLY ENGLISH curriculum (selected modules in German). Unique among German university "
+             "Economics programmes. German C1 still required for registration despite English-medium teaching.",
+             "faculty": "Faculty of Economics", "duration": 3,
+             "url": "https://www.econ.lmu.de/en/study/bachelor-economics/",
+             "subjects_note": "Mathematics at A-level recommended; assessed holistically. German B2 at "
+                              "application; TestDaF/DSH at enrolment. Programme predominantly in English "
+                              "with some German modules.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 194, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "€194/year. Same minimal fee as all LMU programmes. No non-EU tuition."}},
+        ],
+        "scholarships": [
+            {"suffix": "deutschlandstipendium", "name": "Deutschlandstipendium (Germany Scholarship)",
+             "provider": "LMU Munich / Federal Ministry of Education and Research",
+             "provider_type": "institutional",
+             "award_type": "monthly_stipend", "renewable": True,
+             "award_amount": "€300/month up to the standard programme duration.",
+             "academic_criteria": "Outstanding academic grades in university entrance qualification (relevant "
+             "subject grades weighted). Social engagement, talent, personal circumstances also considered.",
+             "other_eligibility_criteria": "COMPETITIVE — application required March–April each year. Open to "
+             "all nationalities enrolled at LMU Munich. First-year applicants use entrance qualification grades.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
 }
 
 
@@ -3508,7 +4149,7 @@ def build_docs(slug, s):
         docs.append({"_id": D + prog_id, "_type": "program", "id": f"{slug}-{ps}",
             "program_name": p["program_name"], "field_of_study": p["field"], "degree_type": p["degree"],
             "degree_type_local": p["degree_local"], "duration_value": p["duration"], "duration_unit": "years",
-            "language_of_instruction": ["en"], "faculty_school": p["faculty"], "official_program_url": p["url"],
+            "language_of_instruction": p.get("lang_instruction", ["en"]), "faculty_school": p["faculty"], "official_program_url": p["url"],
             "application_platform": s.get("application_platform_name", "AUS online application"),
             "decision_context_academic_year": s.get("decision_context_year", "2026-2027 (Fall 2027 entry)"),
             "record_status": "VERIFIED", "university_ref": wref(uni_id),
@@ -3519,7 +4160,7 @@ def build_docs(slug, s):
                 {"_key": "r2", "_type": "applicationRequirement", "name": "Subject prerequisites",
                  "necessity": "required", "requirement_type": "other",
                  "description": f"{p['subjects_note']}.", "notes": ""},
-                {"_key": "r3", "_type": "applicationRequirement", "name": "English proficiency",
+                {"_key": "r3", "_type": "applicationRequirement", "name": lang.get("req_name", "Language proficiency"),
                  "necessity": "required", "requirement_type": "standardized_test_score",
                  "description": lang["min_score"], "notes": lang["notes"]},
             ],
@@ -3534,7 +4175,7 @@ def build_docs(slug, s):
                 "program_ref": wref(prog_id),
                 "prior_curriculum_category_ref": wref(f"applicantCategory-{slug}-curriculum-{cid}"),
                 "record_status": "VERIFIED", "last_checked": s["verified_at"],
-                "language_requirements": [{"_key": "lr1", "_type": "languageRequirement", "language": "English", **lang}],
+                "language_requirements": [{"_key": "lr1", "_type": "languageRequirement", "language": lang.get("language", "English"), **{k: v for k, v in lang.items() if k not in ("language", "req_name")}}],
                 "source_refs": [wref(src_id("adm"), "s1")]}
             prog_tests = p.get("std_tests", s.get("std_tests"))  # per-programme override, else university default
             if prog_tests:
