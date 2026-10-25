@@ -1568,6 +1568,264 @@ UNIVERSITIES = {
              "application_deadline": "December 1", "deadline_academic_year": "2026-2027"},
         ],
     },
+    "us-purdue": {
+        "canonical_name": "Purdue University", "aliases": ["Purdue"], "country_cc": "us",
+        "city": {"slug": "us-west-lafayette-in", "name": "West Lafayette"},
+        "website": "https://www.purdue.edu/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "USD",
+        "verification_note": "fact-checks/us-purdue-2026-10-25.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Purdue University — Undergraduate Programs",
+                "url": "https://www.purdue.edu/academics/",
+                "excerpt": "Purdue University is a public land-grant research university in West Lafayette, Indiana; "
+                "English medium. Colleges/schools offering the four target pillars: College of Science (Computer "
+                "Science, AI, Data Science B.S.), College of Engineering (18+ B.S. engineering majors), and Mitch "
+                "Daniels School of Business (B.S. in Management/Finance/Marketing/BAIM/SCM/Economics and others)."},
+            "adm": {"suffix": "src-adm",
+                "title": "International Admissions & English Proficiency — Purdue University",
+                "url": "https://admissions.purdue.edu/become-student/international/",
+                "excerpt": "Purdue recognizes A-level examinations and awards college credits; no specific A-level "
+                "subject requirements (most applicants complete 3–4 A-levels). IB accepted; no overall IB minimum. "
+                "SAT/ACT test-optional (scores evaluated if submitted). English proficiency: IELTS Academic 6.5 "
+                "overall (min 6.0 each section); TOEFL iBT 88 overall min 20 per section (pre-Jan 21 2026 tests) / "
+                "4.5 overall min 4.0 per section (new format, Jan 21 2026 onwards); Duolingo generally 115+ "
+                "(min 110 subscores). Deadlines: Early Action Nov 1 (scholarship consideration, domestic only); "
+                "Regular Decision Jan 15. Apply via Common App."},
+            "fee": {"suffix": "src-fee",
+                "title": "Undergraduate Tuition and Fees 2026-2027 — Purdue Finance / Bursar",
+                "url": "https://www.purdue.edu/treasurer/finance/bursar-office/tuition/fee-rates-2026-2027/undergraduate-tuition-and-fees-2026-2027/",
+                "excerpt": "2026-27 international undergraduate flat rate (8+ cr/semester): Nonresident Tuition "
+                "$9,401 + International Student Tuition $1,655 + General Service $4,859 + Fitness/Wellness $117 + "
+                "Activity Fee $20 = $16,052/semester ($32,104/yr). DIFFERENTIAL surcharges for international "
+                "students: CS / Data Science / Engineering UG / Biological Engineering +$2,025/semester (+$4,050/yr) "
+                "→ $36,154/yr total; Daniels School of Business UG + B.S./B.A. in Economics +$1,718/semester "
+                "(+$3,436/yr) → $35,540/yr total. Estimated housing + food $8,367/semester ($16,734/yr). "
+                "Indiana residents pay $9,992/yr (no nonresident or international surcharge)."},
+            "schol": {"suffix": "src-schol",
+                "title": "First-Year Scholarships — Purdue Admissions",
+                "url": "https://admissions.purdue.edu/cost-financial-aid/scholarships/",
+                "excerpt": "Purdue institutional merit scholarships (Trustees $10,000–$16,000/yr, Presidential "
+                "$4,000–$10,000/yr, Lilly full-tuition, etc.) are DOMESTIC STUDENTS ONLY. Page explicitly states: "
+                "'Only domestic students are eligible for the scholarships described above. International students "
+                "who hold F, J and some other visa types are not eligible.' No institutional scholarship "
+                "alternatives for international undergraduates are listed."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "US High School Diploma", "US high school diploma / American curriculum applicants."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("international", "International students (nonresident rate)",
+             "International (non-US) undergraduate students pay nonresident + international student tuition. "
+             "Purdue offers NO institutional scholarships for international undergraduates — this is explicitly "
+             "stated on the admissions scholarships page."),
+        ],
+        # University-level cost = base international rate (no program differential). All programs override below.
+        "cost": {"residency": "international", "tuition": 32104, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": 0,
+            "note": "Base 2026-27 international rate: $32,104/yr (all fees bundled: General Service $9,718 + "
+            "Nonresident Tuition $18,802 + International Student Tuition $3,310 + Fitness $234 + Activity $40). "
+            "Program differentials APPLY on top (see per-program cost). Estimated housing+food $16,734/yr. "
+            "Indiana residents pay $9,992/yr. NOTE: Purdue offers NO institutional scholarships for "
+            "international undergraduates (explicitly verified)."},
+        "lang_req": {"test_name": "IELTS Academic / TOEFL iBT / Duolingo (or accepted equivalent)",
+            "min_score": "IELTS Academic 6.5 overall (min 6.0 in each section); TOEFL iBT 88 overall (min 20 per "
+            "section) for tests before Jan 21 2026, OR 4.5 overall (min 4.0 per section) under new TOEFL format "
+            "(tests on/after Jan 21 2026); Duolingo generally 115+ (min 110 in all subscores). Meeting the "
+            "minimum does not guarantee admission.",
+            "notes": "English is the medium of instruction at Purdue."},
+        "std_tests": [
+            {"test_name": "SAT or ACT", "required": "recommended",
+             "notes": "Test-optional: scores evaluated as one factor if submitted; not required. No test preference; "
+             "highest section scores across test dates accepted. SAT/ACT do not substitute for English proficiency."},
+        ],
+        "deadline_note": "Early Action: November 1 (scholarship consideration — domestic students only). Regular Decision: January 15. Apply via Common App.",
+        "living": {"min": 1395, "max": 1860, "currency": "USD", "admin_body": "Purdue University",
+            "desc": "Purdue estimated housing+food $8,367/semester = $16,734/yr (~$1,395–1,860/mo over 12 vs 9 "
+            "months). Source: Purdue Bursar 2026-27 undergraduate rate schedule."},
+        "programs": [
+            {"suffix": "bscs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "Bachelor of Science in Computer Science, College of Science, Department of Computer "
+             "Science. Related options: B.S. in Artificial Intelligence; B.S. in Data Science (same dept, same "
+             "tuition differential).",
+             "faculty": "College of Science, Department of Computer Science", "duration": 4,
+             "url": "https://www.cs.purdue.edu/undergraduate/",
+             "subjects_note": "Holistic review; strong preparation in mathematics and science expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []},
+             "cost": {"residency": "international", "tuition": 36154, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "CS 2026-27 international: base $32,104 + CS/Data Science/Engineering differential "
+                 "$4,050 = $36,154/yr. Source: Purdue Bursar 2026-27 differential fee schedule."}},
+            {"suffix": "bs-engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "Bachelor of Science in Engineering, College of Engineering; 18+ majors including "
+             "Electrical & Computer Engineering, Mechanical Engineering, Civil Engineering, Aerospace Engineering, "
+             "Chemical Engineering, Computer Engineering, and others.",
+             "faculty": "College of Engineering", "duration": 4,
+             "url": "https://www.purdue.edu/futureengineers/engineeringmajors/",
+             "subjects_note": "Holistic review; strong preparation in mathematics and physics expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []},
+             "cost": {"residency": "international", "tuition": 36154, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "Engineering 2026-27 international: base $32,104 + Engineering UG differential $4,050 = "
+                 "$36,154/yr. Source: Purdue Bursar 2026-27 differential fee schedule (same category as CS/Data Science)."}},
+            {"suffix": "bs-management", "program_name": "Management", "field": "Business", "degree": "BSc",
+             "degree_local": "Bachelor of Science in [Major], Mitch Daniels School of Business; majors include "
+             "General Management, Accounting, Finance, Marketing, Business Analytics & Information Management, "
+             "Supply Chain & Operations Management, Organizational Behavior & HRM, and others.",
+             "faculty": "Mitch Daniels School of Business", "duration": 4,
+             "url": "https://business.purdue.edu/undergraduate/",
+             "subjects_note": "Holistic review; quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []},
+             "cost": {"residency": "international", "tuition": 35540, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "Daniels Business UG 2026-27 international: base $32,104 + Daniels Business/Economics "
+                 "differential $3,436 = $35,540/yr. Source: Purdue Bursar 2026-27 differential fee schedule."}},
+            {"suffix": "bs-economics", "program_name": "Economics", "field": "Economics", "degree": "BSc",
+             "degree_local": "Bachelor of Science in Economics, Mitch Daniels School of Business. Also available: "
+             "B.S. in Quantitative Business Economics (same school, same differential).",
+             "faculty": "Mitch Daniels School of Business", "duration": 4,
+             "url": "https://business.purdue.edu/undergraduate/academics/economics.php",
+             "subjects_note": "Holistic review; strong quantitative preparation expected",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []},
+             "cost": {"residency": "international", "tuition": 35540, "basis": "institutional", "year": "2026-2027",
+                 "mandatory_fees_annual": 0,
+                 "note": "Daniels Economics 2026-27 international: base $32,104 + Daniels Business/Economics "
+                 "differential $3,436 = $35,540/yr. Source: Purdue Bursar 2026-27 differential fee schedule "
+                 "(B.S. in Economics is grouped with Daniels Business UG for differential purposes)."}},
+        ],
+        # Purdue institutional scholarships are DOMESTIC-ONLY (F/J visa holders explicitly excluded).
+        # No institutional aid alternatives for international undergraduates listed on Purdue's site.
+        # Recording as empty — this is an honest, verified fact, not an omission.
+        "scholarships": [],
+    },
+    "us-asu": {
+        "canonical_name": "Arizona State University", "aliases": ["ASU"], "country_cc": "us",
+        "city": {"slug": "us-tempe-az", "name": "Tempe"},
+        "website": "https://www.asu.edu/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "USD",
+        "verification_note": "fact-checks/us-asu-2026-10-25.md",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Arizona State University — Undergraduate Programs",
+                "url": "https://www.asu.edu/academics/",
+                "excerpt": "Arizona State University is a public research university with main campus in Tempe, "
+                "Arizona; English medium. Key schools for the four target pillars: Ira A. Fulton Schools of "
+                "Engineering (Computer Science, Engineering B.S. degrees); W. P. Carey School of Business (30+ B.S. "
+                "business degrees including Management, Finance, Marketing, BAIM, SCM; also B.S. in Economics, "
+                "STEM-designated). Direct admission to colleges available for first-year students meeting requirements."},
+            "adm": {"suffix": "src-adm",
+                "title": "International First-Year Admissions — Arizona State University",
+                "url": "https://admission.asu.edu/apply/international/first-year",
+                "excerpt": "International first-year admission: minimum 3.0 GPA (B or better, A=4.00); three years "
+                "of secondary coursework; high school diploma required. Math: 4 years (Algebra I, Geometry, Algebra "
+                "II + one advanced). Science: 3 lab years. SAT/ACT not required but may support higher merit award. "
+                "English proficiency (if not native English): most majors IELTS 6.0/TOEFL iBT 61/Duolingo 95; "
+                "Fulton Engineering IELTS 6.5/TOEFL iBT 79/Duolingo 105. Fall priority deadline January 15; "
+                "Spring priority November 1. $90 application fee. Rolling admissions."},
+            "fee": {"suffix": "src-fee",
+                "title": "International Student Cost of College 2026-27 — ASU Admission",
+                "url": "https://admission.asu.edu/cost-aid/international",
+                "excerpt": "2026-27 international undergraduate COA (Tempe/Downtown Phoenix/Polytechnic/West Valley "
+                "campus): base tuition $39,062; tuition surcharge $350; advanced technology fee $200; undergraduate "
+                "college fees up to $2,190 (varies by program — $2,190 shown is the highest possible); "
+                "student-initiated fees $807; international student fee $400. Living: on-campus housing+meals "
+                "$18,819; books+supplies $1,320; travel $1,650; personal $2,343; health insurance $2,765 (2025-26 "
+                "rate; 2026-27 pending update). Total COA $69,906 with max college fee and on-campus housing."},
+            "schol": {"suffix": "src-schol",
+                "title": "New American University Scholarship (International) — ASU",
+                "url": "https://tuition.asu.edu/new-american-university/international",
+                "excerpt": "New American University (NAMU) Scholarship for international undergraduate (F-1) "
+                "students: automatically considered at admission — no separate application required. First-year "
+                "award tiers: $17,500/yr (GPA 4.0+) down to $10,000/yr (GPA 3.01+). Renewable for up to 8 "
+                "consecutive fall+spring semesters. Limited number of awards. Notifications on rolling basis "
+                "~10 business days after admission (for admits on/after Oct 1). Submitting SAT/ACT may support "
+                "higher award tier."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("us-hs", "US High School Diploma", "US high school diploma / American curriculum applicants."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("international", "International students",
+             "International (non-US) undergraduate students. Base tuition $39,062/yr for international students at "
+             "ASU's Tempe, Downtown Phoenix, Polytechnic, or West Valley campus. Arizona residents pay significantly less."),
+        ],
+        "cost": {"residency": "international", "tuition": 39062, "basis": "institutional", "year": "2026-2027",
+            "mandatory_fees_annual": 1757,
+            "note": "2026-27 international: base tuition $39,062 + fixed mandatory fees $1,757 (tuition surcharge "
+            "$350 + advanced technology $200 + student-initiated $807 + international student fee $400) = $40,819/yr "
+            "before variable undergraduate college fee. College fee varies by program — up to $2,190 (the 'highest "
+            "possible'; total COA figure of $69,906 uses this max). Living: on-campus housing+meals $18,819 + books "
+            "$1,320 + travel $1,650 + personal $2,343 + health insurance $2,765 = $26,897/yr extra. Arizona "
+            "residents pay ~$12,000–$13,000/yr base tuition."},
+        "lang_req": {"test_name": "IELTS Academic / TOEFL iBT / Duolingo / PTE Academic / Cambridge English",
+            "min_score": "Ira A. Fulton Schools of Engineering (CS, Engineering): IELTS 6.5 / TOEFL iBT 79 / "
+            "Duolingo 105 / Cambridge 176. Other majors (Business, Economics): IELTS 6.0 / TOEFL iBT 61 / "
+            "Duolingo 95 / Cambridge B2 (170). Minimums shown; Engineering minimum used as university default here.",
+            "notes": "Conditional admission available for academically qualified applicants needing English "
+            "improvement (up to 3 semesters). English is the medium of instruction."},
+        "std_tests": [
+            {"test_name": "SAT or ACT", "required": "recommended",
+             "notes": "Not required for admission but may be submitted for course placement or as supplemental "
+             "information. Submitting strong scores may support a higher NAMU scholarship award tier."},
+        ],
+        "deadline_note": "Fall priority deadline: January 15. Spring priority deadline: November 1. Apply via ASU application or Common App ($90 fee). Rolling admissions.",
+        "living": {"min": 1568, "max": 2091, "currency": "USD", "admin_body": "Arizona State University",
+            "desc": "ASU COA 2026-27 non-tuition/fees: on-campus housing+meals $18,819 + books+supplies $1,320 + "
+            "personal $2,343 + travel $1,650 = $24,132/yr (~$1,568–2,091/mo over 12 vs 9 months). Health insurance "
+            "$2,765 additional (2025-26 rate; 2026-27 pending)."},
+        "programs": [
+            {"suffix": "bscs", "program_name": "Computer Science", "field": "Computer Science", "degree": "BSc",
+             "degree_local": "Bachelor of Science in Computer Science, Ira A. Fulton Schools of Engineering; "
+             "STEM-designated. Related programs in the same schools: B.S. in Software Engineering, B.S. in Computer "
+             "Systems Engineering.",
+             "faculty": "Ira A. Fulton Schools of Engineering", "duration": 4,
+             "url": "https://engineering.asu.edu/undergraduate-programs/",
+             "subjects_note": "Min 3.0 GPA; strong mathematics preparation; English IELTS 6.5/TOEFL 79 (Engineering minimum)",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "bs-engineering", "program_name": "Engineering", "field": "Engineering", "degree": "BSc",
+             "degree_local": "Bachelor of Science in Engineering (various majors), Ira A. Fulton Schools of "
+             "Engineering; disciplines include Electrical Engineering, Mechanical Engineering, Civil Engineering, "
+             "Aerospace Engineering, Chemical Engineering, Biomedical Engineering, Industrial Engineering, and others.",
+             "faculty": "Ira A. Fulton Schools of Engineering", "duration": 4,
+             "url": "https://engineering.asu.edu/undergraduate-programs/",
+             "subjects_note": "Min 3.0 GPA; strong mathematics and physics preparation; English IELTS 6.5/TOEFL 79 (Engineering minimum)",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "bs-business", "program_name": "Business", "field": "Business", "degree": "BSc",
+             "degree_local": "Bachelor of Science in [Major], W. P. Carey School of Business; 30+ degree programs "
+             "including Management, Finance, Marketing, Business Data Analytics, Supply Chain Management, Financial "
+             "Technology, and others. Direct admission to W. P. Carey from first year for qualifying students.",
+             "faculty": "W. P. Carey School of Business", "duration": 4,
+             "url": "https://wpcarey.asu.edu/undergraduate/",
+             "subjects_note": "Min 3.0 GPA; W. P. Carey requires meeting both university and school admission requirements; English IELTS 6.0/TOEFL 61 (non-Engineering minimum)",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+            {"suffix": "bs-economics", "program_name": "Economics", "field": "Economics", "degree": "BSc",
+             "degree_local": "Bachelor of Science in Economics, W. P. Carey School of Business; STEM-designated. "
+             "Also available: B.S. in Economics via College of Liberal Arts and Sciences (CLAS).",
+             "faculty": "W. P. Carey School of Business", "duration": 4,
+             "url": "https://wpcarey.asu.edu/economics-degrees/undergraduate",
+             "subjects_note": "Min 3.0 GPA; strong quantitative preparation expected; English IELTS 6.0/TOEFL 61 (non-Engineering minimum)",
+             "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []}},
+        ],
+        "scholarships": [
+            {"suffix": "namu", "name": "New American University Scholarship",
+             "provider": "Arizona State University", "provider_type": "institutional",
+             "award_type": "partial_tuition", "renewable": True,
+             "award_amount": "$10,000–$17,500 per year (first-year students); award tier based on GPA: "
+             "4.0+ → $17,500/yr; tiers down to 3.01+ for the minimum $10,000/yr award.",
+             "academic_criteria": "High academic achievement; GPA-tiered award (4.0+ receives maximum $17,500; "
+             "minimum award requires 3.01+ GPA). Submitting SAT/ACT may support a higher award tier.",
+             "other_eligibility_criteria": "AUTOMATIC consideration at admission — no separate application needed. "
+             "Limited number of awards for international (F-1) undergraduate students. Renewable for up to 8 "
+             "consecutive fall+spring semesters (first-year admits).",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
 }
 
 
