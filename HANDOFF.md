@@ -16,19 +16,20 @@ Key constraint: **never publish hallucinated facts**. Every data field that isn'
 
 **Goal:** Import 50 universities into Sanity as DRAFTS (not published). Suhail's requirement doc lists all 50 with required fields.
 
-### Status — 25/50 done as drafts
+### Status — 35/50 done as drafts
 
 | Done | Schools |
 |------|---------|
 | UAE (8/8) | AUS, UAEU, Khalifa, UOS, Birmingham Dubai, Heriot-Watt Dubai, RIT Dubai, Canadian U Dubai |
 | US (10/10) | Princeton, MIT, Harvard, Stanford, UPenn, Cornell, NYU, USC, Purdue, ASU |
 | UK (7/7) | Cambridge, Imperial, UCL, Warwick, Manchester, Birmingham, Nottingham |
+| Canada (5/5) | Waterloo, UBC, McGill, McMaster, Alberta |
 
-### Remaining (25 schools)
+### Remaining (15 schools)
 
 - ~~**US (2):** Purdue, ASU~~ ✓
 - ~~**UK (7):** Cambridge, Imperial, UCL, Warwick, Manchester, Birmingham, Nottingham~~ ✓
-- **Canada (5):** Waterloo, UBC, McGill, McMaster, Alberta
+- ~~**Canada (5):** Waterloo, UBC, McGill, McMaster, Alberta~~ ✓
 - **Germany (5):** RWTH Aachen, Heidelberg, TU Berlin, KIT, LMU Munich
 - **Netherlands (3):** Eindhoven (TU/e), Amsterdam (UvA), Twente (UT)
 - **Malaysia (4):** Malaya, Monash Malaysia, Nottingham Malaysia, Taylor's — **needs `country-my` created first**
@@ -144,11 +145,15 @@ Actually run them before acting, not just when reminded. When one changes the pl
 
 ## Next step
 
-Continue Batch-2 with **Canada batch** (5 schools, `country-ca` already published):
-Waterloo, UBC, McGill, McMaster, Alberta.
+Continue Batch-2 with **Germany batch** (5 schools, `country-de` already published):
+RWTH Aachen, Heidelberg, TU Berlin, KIT, LMU Munich.
 
-Then Germany (5), Netherlands (3), Malaysia (4 — needs `country-my`), Australia (4 — needs `country-au`).
+Then Netherlands (3, `country-nl` already published), Malaysia (4 — needs `country-my`), Australia (4 — needs `country-au`).
+
+**Canada batch DONE (35/50).** Before publishing Canada schools, verify McGill and McMaster fees from primary sources (both had PDF/SharePoint access issues this pass).
 
 Each uni: 6–8 primary-source lookups. Do in batches of 3–4. Draft-only, verify before moving on.
 
 **UK batch notes (25/50):** build_docs updated with `application_platform_name` + `decision_context_year` + per-programme `std_tests` — all UK schools use these. `country-gb` already published. Cambridge UCAS deadline is 15 Oct (NOT January). Birmingham fees not publicly disclosed (null stored — honest). Nottingham fees are 2027/28 proxies.
+
+**Canada batch notes (35/50):** `country-ca` already published. OUAC for Ontario (Waterloo, McMaster); direct portals for UBC, McGill, Alberta. No SAT/ACT required for A-level/IB applicants. Key data notes: Waterloo fees from primary source (official 2026 fee schedule — CS/Eng $69,884, AFM $55,346, Economics $54,020). UBC fees from secondary sources (fees page 403; Board-approved rates confirmed in multiple sources). McGill fees MEDIUM confidence (PDF binary-compressed — BEng $65,168, BCom $71,687, BSc CS ~$64,786, BA Econ ~$54,000). McMaster fees LOW-MEDIUM confidence (cost estimator only — CS $56,233, Eng $69,354, Business $50,003, Social Sci $45,158). Alberta Engineering $49,952 + Business $46,547 + CS $39,792 confirmed; Economics/Arts fee nulled (not found). McMaster and McGill fees must be verified from primary sources before go-live. Alberta tuition guarantee (locked at admission rate for program duration + 1 yr). McGill requires Quebec CAQ in addition to study permit.

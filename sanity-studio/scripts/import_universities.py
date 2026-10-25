@@ -2626,6 +2626,830 @@ UNIVERSITIES = {
              "application_deadline": None, "deadline_academic_year": "2026-2027"},
         ],
     },
+
+    # ── CANADA BATCH (5 universities, Batch-2 slots 26–30) ──────────────────────────────────────
+    # country-ca is already published in Sanity staging.
+    # Application platforms: OUAC for Ontario schools (Waterloo, McMaster); direct portals for UBC, McGill, Alberta.
+    # All Canadian schools: no SAT/ACT required for A-level or IB applicants.
+    # decision_context_year: "2026-2027 (Fall 2027 entry)" — applications in 2026-27 for September 2027 start.
+    "ca-waterloo": {
+        "canonical_name": "University of Waterloo",
+        "aliases": ["Waterloo", "UWaterloo", "UW"],
+        "country_cc": "ca",
+        "city": {"slug": "ca-waterloo-on", "name": "Waterloo"},
+        "website": "https://uwaterloo.ca/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "CAD",
+        "verification_note": "fact-checks/ca-waterloo-2026-10-25.md",
+        "application_platform_name": "OUAC Application",
+        "decision_context_year": "2026-2027 (Fall 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Waterloo — Future Students",
+                "url": "https://uwaterloo.ca/future-students/",
+                "excerpt": "University of Waterloo, Waterloo, Ontario, Canada; public research university. Globally "
+                "recognised co-op (cooperative education) programme with mandatory paid work terms integrated into "
+                "CS, Engineering, and AFM degrees. Faculty of Mathematics (incl. CS), Faculty of Engineering, "
+                "School of Accounting and Finance (AFM), and Faculty of Arts (Economics)."},
+            "adm": {"suffix": "src-adm",
+                "title": "Computer Science A-Level Admission Requirements — University of Waterloo",
+                "url": "https://uwaterloo.ca/future-students/admissions/admission-requirements/computer-science/"
+                "high-school/international-system/british-system",
+                "excerpt": "A-Level requirements for CS: A Level Mathematics (minimum final grade A); two other "
+                "academic A Level courses (minimum final grade A each); English at GCSE, AS, or A Level. "
+                "Admission Information Form (AIF) is mandatory for all CS applicants. "
+                "Computer Engineering additionally requires A Level Physics (min A) and Chemistry at GCSE (min B/5). "
+                "IELTS Academic 6.5 overall (min 6.5 writing and speaking; min 6.0 reading and listening) required "
+                "if four most recent years of full-time education were not in English. Application deadline: OUAC "
+                "January 31, 2027 for Fall 2027 entry."},
+            "fee": {"suffix": "src-fee",
+                "title": "Fee Schedule — International Undergraduate Students Fall 2026 — University of Waterloo",
+                "url": "https://uwaterloo.ca/finance/fee-schedule-international-undergraduate-students-fall-2026",
+                "excerpt": "International UG maximum per-term tuition Fall 2026: Computer Science (Mathematics "
+                "faculty) $34,942.00/term; Engineering $34,942.00/term; Accounting and Financial Management "
+                "(co-op terms 2A–3B) $27,673.00/term, (terms 4A–4B) $27,029.00/term; Arts (regular) $27,010.00/term. "
+                "Figures are maximum tuition per academic term (Fall or Winter). Co-op work terms have a "
+                "separate co-op fee of $836 per work term. Student incidental fees ~$665–$1,400/term additional."},
+            "schol": {"suffix": "src-schol",
+                "title": "International Student Entrance Scholarship — University of Waterloo",
+                "url": "https://uwaterloo.ca/future-students/financing/entrance-scholarships",
+                "excerpt": "International Student Entrance Scholarship: CAD $10,000 one-time automatic award "
+                "for all new international fee-paying students admitted to full-time, first-year degree programs "
+                "at Waterloo starting September 2026. No application required — automatically applied in April "
+                "via the Waterloo Applicant Portal. Stackable with faculty-specific scholarships."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications (CBSE, Canadian equivalent, etc.)."),
+        ],
+        "residencies": [
+            ("international", "International (non-Canadian) students",
+             "Students classified as international (non-Canadian citizens/PRs) for fee purposes. "
+             "Canadian citizens and permanent residents pay significantly lower domestic tuition (~$10,000–$18,000/yr)."),
+        ],
+        "cost": None,  # All programmes have per-programme costs below (fees differ by faculty)
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS 6.5 overall; minimum 6.5 in writing and speaking; minimum 6.0 in reading and listening.",
+            "notes": "Required if four most recent years of full-time education were not in English. Also accepts "
+            "TOEFL iBT 90 (25 writing and speaking), PTE Academic 63, Duolingo 120. Waterloo A-Level students "
+            "with English as a subject may be exempt — confirm with Waterloo admissions."},
+        "std_tests": [],  # No SAT/ACT or subject tests required for A-Level/IB applicants at Waterloo
+        "deadline_note": "OUAC application deadline: January 31, 2027 for Fall 2027 entry. "
+            "CS AND Engineering require completion of the Admission Information Form (AIF) — a mandatory online "
+            "questionnaire about academic background, interests, and activities; must be submitted as part of the "
+            "OUAC application. No standardised admission tests (SAT/ACT) required for A-Level or IB applicants.",
+        "living": None,  # Official Waterloo program living-cost estimate not captured this pass; not fabricated.
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science",
+             "degree": "BSc",
+             "degree_local": "BSc (Honours) Computer Science, University of Waterloo, Faculty of Mathematics. "
+             "5-year co-op programme (alternating academic and 6 paid work terms of 4 months each). "
+             "Non-co-op 4-year option also available. Strong focus on algorithms, systems, AI, and theory. "
+             "Consistently ranked among top CS programmes globally. AIF and OUAC required.",
+             "faculty": "Faculty of Mathematics", "duration": 5,
+             "url": "https://uwaterloo.ca/future-students/programs/computer-science",
+             "subjects_note": "A Level Mathematics (min A); two other academic A Levels (min A each). "
+             "AIF (Admission Information Form) mandatory.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics HL"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 69884, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $69,884/yr (2 academic terms × $34,942/term maximum) for international students "
+                 "in the Mathematics faculty (CS category), UWaterloo Fall 2026 fee schedule (primary source). "
+                 "Co-op work-term fee ~$836/work term additional. Student incidental fees ~$665–$1,400/term "
+                 "additional. Non-co-op stream has same academic-term fee."}},
+            {"suffix": "basc-engineering", "program_name": "Engineering", "field": "Engineering",
+             "degree": "BASc",
+             "degree_local": "BASc (Bachelor of Applied Science) in Engineering, University of Waterloo, "
+             "Faculty of Engineering. 5-year co-op programme (mandatory for most Engineering disciplines). "
+             "Disciplines: Electrical, Computer, Mechanical, Software, Civil, Chemical, Environmental, "
+             "Mechatronics Engineering, Systems Design Engineering. AIF and online interview for some programs.",
+             "faculty": "Faculty of Engineering", "duration": 5,
+             "url": "https://uwaterloo.ca/future-students/programs?faculty=Engineering",
+             "subjects_note": "A Level Mathematics (min A) and A Level Physics (min A); one additional A Level "
+             "(min B); Chemistry at GCSE-level (min B/5). AIF mandatory; online interview for selected programs.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics HL", "Physics HL"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 69884, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $69,884/yr (2 academic terms × $34,942/term maximum) for international students "
+                 "in the Engineering faculty, UWaterloo Fall 2026 fee schedule (primary source). "
+                 "Co-op fee ~$836/work term additional."}},
+            {"suffix": "bafm", "program_name": "Accounting and Financial Management", "field": "Business",
+             "degree": "BAcc",
+             "degree_local": "BAcc (Honours) Accounting and Financial Management (AFM), University of Waterloo, "
+             "School of Accounting and Finance. 5-year co-op programme. Highly selective — direct route to "
+             "CPA (Chartered Professional Accountant) and CFA (Chartered Financial Analyst) designations. "
+             "Note: Waterloo does NOT offer a traditional undergraduate BBA/Business Administration degree on the "
+             "main campus; AFM is the primary business-adjacent programme. Separate double-degree with Wilfrid "
+             "Laurier (BBA+BMath) exists but requires separate application to Laurier.",
+             "faculty": "School of Accounting and Finance (Faculty of Arts)", "duration": 5,
+             "url": "https://uwaterloo.ca/future-students/programs/accounting-and-financial-management",
+             "subjects_note": "A-level specific requirements not separately published for AFM; strong Mathematics "
+             "expected (AFM is quantitative). Competitive academic average comparable to CS/Engineering required.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 55346, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $55,346/yr (2 academic terms × $27,673/term for AFM co-op terms 2A–3B) "
+                 "for international students in AFM, UWaterloo Fall 2026 fee schedule (primary source). "
+                 "Slightly higher than general Arts ($54,020/yr) due to AFM-specific fee category. "
+                 "Co-op fee ~$836/work term additional."}},
+            {"suffix": "ba-economics", "program_name": "Economics", "field": "Economics",
+             "degree": "BA",
+             "degree_local": "BA (Honours) Economics, University of Waterloo, Faculty of Arts. "
+             "4-year Honours programme (5-year co-op stream available). Covers micro, macro, econometrics, "
+             "and mathematical economics. Mathematics-heavy relative to most Arts programmes.",
+             "faculty": "Faculty of Arts", "duration": 4,
+             "url": "https://uwaterloo.ca/future-students/programs/economics",
+             "subjects_note": "A-level specific requirements not separately published for Economics; "
+             "Mathematics strongly recommended. Competitive academic average required.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 54020, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $54,020/yr (2 academic terms × $27,010/term) for international students "
+                 "in the Arts faculty, UWaterloo Fall 2026 fee schedule (primary source). "
+                 "Economics falls under the general Arts fee category (no Economics-specific surcharge)."}},
+        ],
+        "scholarships": [
+            {"suffix": "ises", "name": "International Student Entrance Scholarship",
+             "provider": "University of Waterloo", "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": False,
+             "award_amount": "CAD $10,000 one-time, credited in first year.",
+             "academic_criteria": "Admission as a full-time international fee-paying first-year student starting "
+             "September 2026 or later. No separate application required.",
+             "other_eligibility_criteria": "AUTOMATIC — every eligible international student receives this award. "
+             "Applied automatically from mid-April via the Waterloo Applicant Portal. "
+             "Stackable with faculty-specific Waterloo scholarships.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "ca-ubc": {
+        "canonical_name": "University of British Columbia",
+        "aliases": ["UBC"],
+        "country_cc": "ca",
+        "city": {"slug": "ca-vancouver-bc", "name": "Vancouver"},
+        "website": "https://www.ubc.ca/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "CAD",
+        "verification_note": "fact-checks/ca-ubc-2026-10-25.md",
+        "application_platform_name": "UBC Online Application",
+        "decision_context_year": "2026-2027 (Fall 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of British Columbia — Undergraduate Admissions",
+                "url": "https://you.ubc.ca/",
+                "excerpt": "University of British Columbia (Vancouver campus), British Columbia, Canada; "
+                "public research university. Programmes: BSc Computer Science (Faculty of Science), "
+                "BASc Applied Science/Engineering (Faculty of Applied Science), BCom (Sauder School of Business), "
+                "BA Economics (Faculty of Arts). All fees are per credit; international undergraduate rates approved "
+                "by the UBC Board of Governors for 2026/27."},
+            "adm": {"suffix": "src-adm", "title": "Admission Requirements — University of British Columbia",
+                "url": "https://you.ubc.ca/applying-ubc/requirements/",
+                "excerpt": "A-Level: standing in at least five academic subject areas incl. English, with at least "
+                "three UBC-approved academic A Levels (or six AS Levels). Minimum grades AAA–A*AA for competitive "
+                "programmes; English required. Engineering (BASc): A-Level Maths and Physics required; competitive "
+                "averages 92–95%. Commerce (BCom Sauder): A-Level Maths required; competitive 93–96%. "
+                "IB: minimum 24 points (diploma), at least 3 HL courses; IB Math AA or AI HL required for "
+                "Engineering and Commerce. English: IELTS 6.5 overall, no band below 6.0. "
+                "UBC requires a Personal Profile (personal statement equivalent) for all applicants — submit "
+                "online by January 15, 2027."},
+            "fee": {"suffix": "src-fee",
+                "title": "Undergraduate Tuition Fees 2026/27 — University of British Columbia",
+                "url": "https://students.ubc.ca/finances/tuition-fees/undergraduate-tuition-fees/",
+                "excerpt": "2026/27 international undergraduate tuition rates (per credit, Board-approved Dec 2025): "
+                "BSc Computer Science (Faculty of Science) $1,769.40/credit (~$53,082/yr for 30 credits); "
+                "BASc Applied Science (Engineering) $1,789.18/credit (~$53,675/yr for 30 credits); "
+                "BCom Sauder School of Business $2,222.61/credit ($66,678/yr for 30 credits); "
+                "BA Economics (Faculty of Arts) $1,717.68/credit (~$51,530/yr for 30 credits). "
+                "Tuition guaranteed to increase by no more than 3%/yr for 4 years from start of degree. "
+                "Note: actual annual cost may vary with credit load; Engineering typically 30–36 credits/yr."},
+            "schol": {"suffix": "src-schol",
+                "title": "Scholarships and Awards — International Students — UBC",
+                "url": "https://you.ubc.ca/financial-planning/scholarships-awards-international-students/",
+                "excerpt": "International Major Entrance Scholarship (IMES): $10,000–$25,000/yr, renewable up to "
+                "3 additional years; competitive merit-based; automatic consideration for all applicants who apply "
+                "by January 15, 2027 — no separate application required; assessed on academic achievement AND "
+                "extracurricular/community involvement. Outstanding International Student Award (OIS): "
+                "$10,000–$25,000 one-time; awarded on admission for strong academics and extracurricular record. "
+                "UBC devotes over $35 million annually to international undergraduate awards."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("international", "International students (studying on Canadian study permit)",
+             "Non-Canadian students on a study permit. Canadian citizens/PRs pay lower domestic tuition rates."),
+        ],
+        "cost": None,  # All programmes have per-programme costs (fees differ significantly by faculty at UBC)
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS 6.5 overall; no band below 6.0.",
+            "notes": "Only IELTS Academic accepted (not IELTS General, IELTS Indicator, or IELTS One Skill Retake). "
+            "Also accepts TOEFL iBT 90, Duolingo 120, or IB Group 1 English grade 5+. UBC A-Level English "
+            "may satisfy the requirement — confirm with UBC admissions."},
+        "std_tests": [],  # No SAT/ACT required for A-Level/IB applicants
+        "deadline_note": "UBC application deadline: January 15, 2027 for Fall 2027 entry (Vancouver campus). "
+            "UBC Personal Profile (online personal statement) must be submitted with the application — this is "
+            "a key component of the admissions process, not optional. No SAT/ACT required for A-Level/IB applicants.",
+        "living": None,  # Official UBC program living-cost estimate not captured this pass; not fabricated.
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science",
+             "degree": "BSc",
+             "degree_local": "BSc Computer Science, University of British Columbia, Faculty of Science. "
+             "4-year programme. Strong research environment; specialisations in AI, machine learning, software "
+             "engineering, algorithms, and vision. Top-ranked CS programme in Canada.",
+             "faculty": "Faculty of Science", "duration": 4,
+             "url": "https://www.cs.ubc.ca/undergraduate/programs/bachelor-of-science-computer-science",
+             "subjects_note": "A-Level: three academic A Levels incl. Mathematics; competitive grades AAA–A*AA. "
+             "IB: Math AA SL/HL or Math AI HL required; typically 33+ points competitive.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 53082, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $53,082/yr ($1,769.40/credit × 30 credits) for international students in BSc CS, "
+                 "UBC Vancouver, 2026/27 (secondary sources summarising Board-approved rates; UBC fees page "
+                 "returned 403 during this verification pass). Actual annual cost varies with credit load. "
+                 "3%/yr increase cap guaranteed for 4 years from degree start."}},
+            {"suffix": "basc-engineering", "program_name": "Engineering", "field": "Engineering",
+             "degree": "BASc",
+             "degree_local": "BASc (Bachelor of Applied Science) in Engineering, University of British Columbia, "
+             "Faculty of Applied Science. 4-year programme. Disciplines: Electrical, Mechanical, Civil, "
+             "Chemical, Computer, Materials, and others. Highly competitive admission.",
+             "faculty": "Faculty of Applied Science", "duration": 4,
+             "url": "https://apsc.ubc.ca/",
+             "subjects_note": "A-Level: Maths and Physics required; typically A*AA competitive. "
+             "IB: Math AA or AI HL, Chemistry HL, and Physics HL required; 35+ competitive. "
+             "UBC Personal Profile required.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics HL", "Physics HL"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 53675, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $53,675/yr ($1,789.18/credit × 30 credits) for international students in BASc "
+                 "Engineering, UBC Vancouver, 2026/27 (secondary sources summarising Board-approved rates; "
+                 "UBC fees page returned 403 during this verification pass). Engineering typically requires "
+                 "30–36+ credits/yr in later years — annual cost may be higher. 3%/yr cap guaranteed."}},
+            {"suffix": "bcom", "program_name": "Commerce (Sauder)", "field": "Business",
+             "degree": "BCom",
+             "degree_local": "BCom (Bachelor of Commerce), Sauder School of Business, University of British Columbia. "
+             "4-year programme. One of Canada's top business schools. Specialisations: accounting, finance, "
+             "marketing, operations, OBHR, and more. Requires UBC Personal Profile.",
+             "faculty": "Sauder School of Business", "duration": 4,
+             "url": "https://www.sauder.ubc.ca/programs/bcom",
+             "subjects_note": "A-Level: Maths required; typically AAA–A*AA competitive. "
+             "IB: Math AA SL/HL or Math AI HL required; 35–38+ competitive. "
+             "UBC Personal Profile a key admission component.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 66678, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $66,678/yr ($2,222.61/credit × 30 credits) for international students in BCom, "
+                 "Sauder School of Business, UBC Vancouver, 2026/27 (secondary sources summarising Board-approved "
+                 "rates). Sauder BCom is priced significantly higher than Science/Arts at UBC. 3%/yr cap guaranteed."}},
+            {"suffix": "ba-economics", "program_name": "Economics", "field": "Economics",
+             "degree": "BA",
+             "degree_local": "BA Economics, University of British Columbia, Faculty of Arts. "
+             "4-year programme. Covers micro, macro, econometrics, and economic theory. "
+             "Also available: BSc Economics (higher fee, under Science faculty) and "
+             "Bachelor of International Economics (separate, higher fee ~$62,338/yr).",
+             "faculty": "Faculty of Arts", "duration": 4,
+             "url": "https://economics.ubc.ca/programs/undergraduate-programs/",
+             "subjects_note": "A-Level: Maths typically required/expected; competitive AAA grades. "
+             "IB: Math AA SL/HL or Math AI HL recommended.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 51530, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $51,530/yr ($1,717.68/credit × 30 credits) for international students in BA "
+                 "Economics (Arts faculty), UBC Vancouver, 2026/27 (secondary sources summarising Board-approved "
+                 "rates). BA Economics (Arts) is the most affordable of UBC's economics routes. 3%/yr cap guaranteed."}},
+        ],
+        "scholarships": [
+            {"suffix": "imes", "name": "International Major Entrance Scholarship (IMES)",
+             "provider": "University of British Columbia", "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": True,
+             "award_amount": "CAD $10,000–$25,000/yr, renewable for up to 3 additional years (4 years total). "
+             "Amount within range determined by selection committee.",
+             "academic_criteria": "Exceptional academic achievement and intellectual promise. Automatic "
+             "consideration for all applicants who submit UBC application by January 15, 2027 — no separate "
+             "scholarship application required. Extracurricular and community involvement also assessed.",
+             "other_eligibility_criteria": "COMPETITIVE — not guaranteed. Must be new to UBC, entering directly "
+             "from secondary school, as an international student on a Canadian study permit. "
+             "Renewable if enrolled full-time and maintaining good academic standing.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "ca-mcgill": {
+        "canonical_name": "McGill University",
+        "aliases": ["McGill"],
+        "country_cc": "ca",
+        "city": {"slug": "ca-montreal-qc", "name": "Montreal"},
+        "website": "https://www.mcgill.ca/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "CAD",
+        "verification_note": "fact-checks/ca-mcgill-2026-10-25.md",
+        "application_platform_name": "McGill Online Application",
+        "decision_context_year": "2026-2027 (Fall 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "McGill University — Undergraduate Admissions",
+                "url": "https://www.mcgill.ca/undergraduate-admissions/",
+                "excerpt": "McGill University, Montreal, Quebec, Canada; public English-language research university. "
+                "Undergraduate programmes: BSc Computer Science (Faculty of Science), BEng (Faculty of Engineering), "
+                "BCom (Desautels Faculty of Management), BA Economics (Faculty of Arts). "
+                "IMPORTANT: Students studying in Quebec require a Certificat d'acceptation du Québec (CAQ) "
+                "in addition to the federal Canadian Study Permit. McGill's international tuition is deregulated "
+                "under Quebec provincial policy — fees are significantly higher than domestic/Quebec rates. "
+                "Rolling admissions — earlier applications receive earlier decisions."},
+            "adm": {"suffix": "src-adm", "title": "A-Level Requirements — McGill University",
+                "url": "https://www.mcgill.ca/undergraduate-admissions/apply/requirements/international/advanced-levels",
+                "excerpt": "A-Level requirements: minimum three A-Levels in three different subjects (or two A-level "
+                "and two AS subjects in three subjects). Admission is competitive; meeting minimum does NOT guarantee "
+                "admission. Engineering: A-Level Maths and Sciences expected; competitive A*A*A–A*AA. "
+                "Management (BCom): A-Level Maths expected; competitive A*AA–AAA. "
+                "IB: 34–38+ points; no subject grade below 5; HL Maths required for Engineering and Management. "
+                "English: IELTS 6.5 overall (min 6.0 each band) for most programmes; "
+                "Management requires IELTS 7.0 (min 6.5 each band). "
+                "McGill processes applications on a rolling basis — apply early for best consideration."},
+            "fee": {"suffix": "src-fee",
+                "title": "International Tuition and Fees 2026-27 — McGill University",
+                "url": "https://www.mcgill.ca/student-accounts/files/student-accounts/"
+                "new_intl_ugrad_degree_students_admitted_2026-27_0.pdf",
+                "excerpt": "McGill 2026-27 international undergraduate annual tuition (PDF; figures from secondary "
+                "sources summarising official McGill 2026-27 fee schedule — PDF was binary-compressed and could "
+                "not be directly read during this verification pass; cross-checked across multiple independent "
+                "sources citing the McGill fee tables): BSc (Science, incl. CS) ~CAD $64,786/yr; "
+                "BEng (Engineering) CAD $65,167.50/yr; BCom (Management/Desautels) CAD $71,687.40/yr; "
+                "BA (Arts, incl. Economics) ~CAD $54,000/yr. McGill offers GUARANTEED tuition rates — the "
+                "rate set at admission applies for the full degree (no increases while enrolled). "
+                "Note: CONFIDENCE IS MEDIUM — primary source PDF not directly readable; figures from "
+                "secondary sources summarising official McGill document. Verify from mcgill.ca before go-live."},
+            "schol": {"suffix": "src-schol",
+                "title": "Entrance Scholarships for Future Undergraduates — McGill",
+                "url": "https://www.mcgill.ca/studentaid/scholarships-aid/future-undergrads/entrance-scholarships",
+                "excerpt": "McGill entrance scholarships for international undergraduate students: "
+                "(1) Basic Entrance Award: $3,000 one-time, automatic based on top-percentile high school "
+                "transcripts — no separate application required. "
+                "(2) Major Entrance Scholarship: $3,000–$12,000/yr renewable up to 4 years (total $12,000–$48,000); "
+                "competitive merit-based; requires separate scholarship application; rolling consideration."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("international", "International (non-Canadian) students",
+             "Students classified as international (non-Quebec residents) under Quebec's deregulated tuition model. "
+             "Quebec-resident and Canadian out-of-province rates are significantly lower. "
+             "All international students studying in Quebec must also obtain a CAQ "
+             "(Certificat d'acceptation du Québec) in addition to the federal Canadian Study Permit."),
+        ],
+        "cost": None,  # Per-programme costs below (significant fee variation by faculty at McGill)
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS 6.5 overall; minimum 6.0 in each band. Management (BCom Desautels): "
+            "IELTS 7.0 overall; minimum 6.5 in each band.",
+            "notes": "Also accepts TOEFL iBT 90, Cambridge C1 Advanced, and other tests. "
+            "Tests submitted electronically only (paper TRFs not accepted). "
+            "IELTS One Skill Retake not accepted. IB Group 1 English grade 5 may satisfy requirement."},
+        "std_tests": [],  # No SAT/ACT required for A-Level/IB applicants at McGill
+        "deadline_note": "McGill application deadline: approximately January 15, 2027 for Fall 2027 entry. "
+            "Rolling admissions — earlier applications receive earlier decisions and better scholarship consideration. "
+            "IMPORTANT: International students in Quebec require a CAQ (Certificat d'acceptation du Québec) "
+            "in addition to the Canadian Study Permit. CAQ application must be submitted to the Quebec government "
+            "after receiving a McGill conditional offer. No SAT/ACT required for A-Level/IB applicants.",
+        "living": None,  # Official McGill program living-cost estimate not captured this pass; not fabricated.
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science",
+             "degree": "BSc",
+             "degree_local": "BSc Computer Science, McGill University, Faculty of Science. "
+             "3-year Major or 3/4-year Honours programme. Joint Honours with Mathematics and Statistics available. "
+             "Top-ranked CS programme; strong research output in AI and machine learning.",
+             "faculty": "School of Computer Science (Faculty of Science)", "duration": 3,
+             "url": "https://www.cs.mcgill.ca/academic/undergraduate/",
+             "subjects_note": "A-Level: three A-Levels with competitive grades; Mathematics and Science subjects "
+             "expected. IB: 34–38+ points with HL Maths; no subject below 5.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics HL"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 64786, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD ~$64,786/yr for international students in BSc (Science faculty), McGill, 2026-27. "
+                 "SOURCE CONFIDENCE: MEDIUM — figures from secondary sources summarising official McGill 2026-27 "
+                 "fees PDF (PDF was binary-compressed and could not be directly read this pass). Cross-checked "
+                 "across multiple independent sources. Verify from mcgill.ca/student-accounts before go-live. "
+                 "McGill guarantees this rate for the full degree duration (no annual increases)."}},
+            {"suffix": "beng", "program_name": "Engineering", "field": "Engineering",
+             "degree": "BEng",
+             "degree_local": "BEng (Bachelor of Engineering), McGill University, Faculty of Engineering. "
+             "4-year programme. Disciplines: Electrical, Mechanical, Civil, Chemical, Computer, Software, "
+             "Biomedical, and Mining Engineering. Research-intensive with strong industry connections.",
+             "faculty": "Faculty of Engineering", "duration": 4,
+             "url": "https://www.mcgill.ca/engineering/future-students/undergraduate/",
+             "subjects_note": "A-Level: Maths and Physics/Chemistry expected; competitive A*A*A–A*AA. "
+             "IB: 34–40+ points with HL Maths and Sciences; no subject below 5.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics HL", "Physics HL"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 65168, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $65,167.50/yr for international students in BEng, McGill, 2026-27. "
+                 "SOURCE CONFIDENCE: MEDIUM — consistent across multiple secondary sources summarising McGill's "
+                 "official 2026-27 fees PDF. Verify from mcgill.ca/student-accounts before go-live. "
+                 "McGill guarantees this rate for the full degree."}},
+            {"suffix": "bcom", "program_name": "Commerce (Desautels)", "field": "Business",
+             "degree": "BCom",
+             "degree_local": "BCom (Bachelor of Commerce), Desautels Faculty of Management, McGill University. "
+             "3-year programme (full-time). One of Canada's top business schools. Concentrations: accounting, "
+             "finance, international business, marketing, information systems, and more.",
+             "faculty": "Desautels Faculty of Management", "duration": 3,
+             "url": "https://www.mcgill.ca/desautels/undergraduate",
+             "subjects_note": "A-Level: Maths expected; competitive A*AA–AAA. "
+             "IB: HL Maths required; 35–38+ points competitive.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics HL"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 71687, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $71,687.40/yr for international students in BCom, Desautels Faculty of Management, "
+                 "McGill, 2026-27. SOURCE CONFIDENCE: MEDIUM — consistent across multiple secondary sources "
+                 "summarising McGill's official fees PDF. Highest faculty rate at McGill for UG. "
+                 "IELTS 7.0/6.5 required for Management (higher than general McGill threshold). "
+                 "Verify from mcgill.ca/student-accounts before go-live."}},
+            {"suffix": "ba-economics", "program_name": "Economics", "field": "Economics",
+             "degree": "BA",
+             "degree_local": "BA Economics, McGill University, Faculty of Arts. "
+             "3-year programme (Major) or 4-year Honours. Covers micro, macro, econometrics, and policy. "
+             "Joint Honours with Mathematics and Political Science available.",
+             "faculty": "Faculty of Arts", "duration": 3,
+             "url": "https://www.mcgill.ca/economics/undergraduate",
+             "subjects_note": "A-Level: three A-Levels; Mathematics expected for Economics. Competitive grades.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 54000, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD ~$54,000/yr for international students in BA (Arts faculty), McGill, 2026-27. "
+                 "SOURCE CONFIDENCE: MEDIUM — figures from secondary sources summarising official McGill 2026-27 "
+                 "fees PDF. Arts faculty fee is significantly lower than Science/Engineering/Management at McGill. "
+                 "Verify from mcgill.ca/student-accounts before go-live."}},
+        ],
+        "scholarships": [
+            {"suffix": "basic-entrance", "name": "McGill Basic Entrance Award",
+             "provider": "McGill University", "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": False,
+             "award_amount": "CAD $3,000 one-time (non-renewable).",
+             "academic_criteria": "Top-percentile high school academic record at admission. "
+             "No separate application required — automatic consideration at admission.",
+             "other_eligibility_criteria": "AUTOMATIC — awarded to qualifying new undergraduates at admission "
+             "based on academic transcript. International students eligible.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+            {"suffix": "major-entrance", "name": "McGill Major Entrance Scholarship",
+             "provider": "McGill University", "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": True,
+             "award_amount": "CAD $3,000–$12,000/yr, renewable for up to 4 years (total $12,000–$48,000).",
+             "academic_criteria": "Exceptional academic merit and achievement. Requires a separate scholarship "
+             "application — not automatically awarded at admission.",
+             "other_eligibility_criteria": "COMPETITIVE — requires separate application. Available to international "
+             "students. Rolling consideration — apply as early as possible alongside admissions application. "
+             "Renewal requires maintaining satisfactory academic standing.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "ca-mcmaster": {
+        "canonical_name": "McMaster University",
+        "aliases": ["McMaster"],
+        "country_cc": "ca",
+        "city": {"slug": "ca-hamilton-on", "name": "Hamilton"},
+        "website": "https://www.mcmaster.ca/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "CAD",
+        "verification_note": "fact-checks/ca-mcmaster-2026-10-25.md",
+        "application_platform_name": "OUAC Application",
+        "decision_context_year": "2026-2027 (Fall 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "McMaster University — Future Students",
+                "url": "https://future.mcmaster.ca/",
+                "excerpt": "McMaster University, Hamilton, Ontario, Canada; public research university. "
+                "Programmes: BSc/BASc Computer Science (Faculty of Science), BEng Engineering (Faculty of "
+                "Engineering), BCom (DeGroote School of Business), BA Social Sciences (Economics). "
+                "Known for problem-based learning and health sciences. OUAC application for Ontario universities."},
+            "adm": {"suffix": "src-adm", "title": "International Admission Requirements — McMaster University",
+                "url": "https://future.mcmaster.ca/apply/curriculum-requirements/",
+                "excerpt": "A-Level requirements: minimum three A-Levels; competitive grades typically A*AA–AAA "
+                "depending on programme. Engineering and CS require A-Level Mathematics; Engineering also "
+                "requires Physics. IB: 30–38+ points; HL Mathematics required for Engineering and CS. "
+                "English: IELTS 6.5 overall (no band below 6.0). TOEFL iBT 80 also accepted. "
+                "Application deadline: OUAC January 31, 2027 for Fall 2027 entry."},
+            "fee": {"suffix": "src-fee", "title": "Undergraduate Fees — McMaster University",
+                "url": "https://registrar.mcmaster.ca/fees/undergraduate/",
+                "excerpt": "McMaster 2026-27 international undergraduate full-year tuition estimates "
+                "(from McMaster's official cost estimator for Level I students; exact published fee schedule "
+                "requires SharePoint access — figures are from the McMaster cost estimator tool and should be "
+                "treated as approximate/unofficial until confirmed from the published schedule): "
+                "Engineering I CAD $69,353.54; Computer Science CAD $56,232.60; "
+                "Business (DeGroote) CAD $50,003.40; Social Sciences (incl. Economics) CAD $45,158.40. "
+                "SOURCE CONFIDENCE: LOW-MEDIUM — cost estimator figures, not from the published fee schedule PDF. "
+                "Verify from registrar.mcmaster.ca before go-live."},
+            "schol": {"suffix": "src-schol",
+                "title": "International Undergraduate Entrance Awards — McMaster University",
+                "url": "https://future.mcmaster.ca/internationalawards/",
+                "excerpt": "McMaster international undergraduate entrance awards by faculty (all AUTOMATIC, "
+                "no separate application required): Engineering and CS: $10,000 CAD one-time (Level 1). "
+                "DeGroote Business: tiered automatic awards — Scholars ($15,000 + $5,000/yr × 3 for <90% avg), "
+                "Distinction ($20,000 + $10,000/yr × 3 for 90–95% avg), Dean's Global Excellence "
+                "($25,000 + $20,000/yr × 3 for ≥95% avg). Social Sciences/Humanities: $10,000 (Level 1) + "
+                "$5,000/yr × 3 renewal for ≥85% avg. Award of Excellence: up to $200,000 over 4 years, "
+                "competitive with application required; deadline February 2027."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications."),
+        ],
+        "residencies": [
+            ("international", "International (non-Canadian) students",
+             "Students classified as international for fee purposes. Canadian citizens/PRs pay domestic rates."),
+        ],
+        "cost": None,  # All programmes have per-programme costs below
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS 6.5 overall; no band below 6.0.",
+            "notes": "Also accepts TOEFL iBT 80–90. McMaster may waive the language requirement for applicants "
+            "educated entirely in English for four years at secondary level."},
+        "std_tests": [],  # No SAT/ACT required for A-Level/IB applicants at McMaster
+        "deadline_note": "OUAC application deadline: January 31, 2027 for Fall 2027 entry. "
+            "No standardised admission tests (SAT/ACT) required for A-Level or IB applicants. "
+            "DeGroote Business (BCom) is directly competitive and may require supplemental materials.",
+        "living": None,  # Official McMaster program living-cost estimate not captured this pass; not fabricated.
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science", "field": "Computer Science",
+             "degree": "BSc",
+             "degree_local": "BSc Computer Science, McMaster University, Faculty of Science. "
+             "4-year programme. Covers algorithms, systems, AI, data science, and software engineering. "
+             "Problem-based learning pedagogy distinctive to McMaster.",
+             "faculty": "Faculty of Science", "duration": 4,
+             "url": "https://www.eng.mcmaster.ca/cas/",
+             "subjects_note": "A-Level: Mathematics required; typically AAA–A*AA competitive. "
+             "IB: HL Mathematics; 35+ competitive.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics HL"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 56233, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD ~$56,233/yr for international students in BSc CS, McMaster, 2026-27. "
+                 "SOURCE CONFIDENCE: LOW-MEDIUM — from McMaster's cost estimator tool (unofficial). "
+                 "Published fee schedule requires SharePoint access. Verify from registrar.mcmaster.ca before go-live."}},
+            {"suffix": "beng", "program_name": "Engineering", "field": "Engineering",
+             "degree": "BEng",
+             "degree_local": "BEng (Bachelor of Engineering), McMaster University, Faculty of Engineering. "
+             "4-year programme. Disciplines: Electrical, Mechanical, Civil, Chemical, Materials, "
+             "iBioMed Engineering. Co-op streams available.",
+             "faculty": "Faculty of Engineering", "duration": 4,
+             "url": "https://www.eng.mcmaster.ca/future-students/future-undergraduate-students/",
+             "subjects_note": "A-Level: Mathematics and Physics required; typically A*AA–AAA. "
+             "IB: HL Mathematics and Physics; 35–38 competitive.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics HL", "Physics HL"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 69354, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD ~$69,354/yr for international students in BEng, McMaster, 2026-27. "
+                 "SOURCE CONFIDENCE: LOW-MEDIUM — from McMaster's cost estimator tool (unofficial). "
+                 "Engineering I is the highest-cost programme at McMaster. Verify before go-live."}},
+            {"suffix": "bcom", "program_name": "Commerce (DeGroote)", "field": "Business",
+             "degree": "BCom",
+             "degree_local": "BCom (Bachelor of Commerce), DeGroote School of Business, McMaster University. "
+             "4-year programme. One of Canada's prominent business schools. Streams: accounting, finance, "
+             "marketing, human resources, information systems, and entrepreneurship.",
+             "faculty": "DeGroote School of Business", "duration": 4,
+             "url": "https://business.mcmaster.ca/undergraduate/",
+             "subjects_note": "A-Level: competitive grades; Mathematics expected. "
+             "IB: 30–35 competitive. Strong extracurriculars recommended.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 50003, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD ~$50,003/yr for international students in BCom (DeGroote), McMaster, 2026-27. "
+                 "SOURCE CONFIDENCE: LOW-MEDIUM — from McMaster's cost estimator tool (unofficial). "
+                 "Verify from registrar.mcmaster.ca before go-live. Note DeGroote has generous automatic tiered "
+                 "scholarships for high-achieving international students."}},
+            {"suffix": "ba-economics", "program_name": "Economics", "field": "Economics",
+             "degree": "BA",
+             "degree_local": "BA Economics, McMaster University, Faculty of Social Sciences. "
+             "4-year Honours programme. Covers micro, macro, econometrics, and economic policy. "
+             "McMaster's Economics department is research-active with health economics specialisation.",
+             "faculty": "Faculty of Social Sciences", "duration": 4,
+             "url": "https://socialsciences.mcmaster.ca/economics/",
+             "subjects_note": "A-Level: competitive grades; Mathematics expected. IB: 30–35 competitive.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 45158, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD ~$45,158/yr for international students in BA Economics (Social Sciences), "
+                 "McMaster, 2026-27. SOURCE CONFIDENCE: LOW-MEDIUM — from McMaster's cost estimator tool "
+                 "(unofficial). Verify from registrar.mcmaster.ca before go-live."}},
+        ],
+        "scholarships": [
+            {"suffix": "cs-entrance", "name": "Computer Science International Entrance Award",
+             "provider": "McMaster University (Faculty of Science)", "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": False,
+             "award_amount": "CAD $10,000 one-time (Level 1).",
+             "academic_criteria": "Admission as a Level 1 international student in Computer Science.",
+             "other_eligibility_criteria": "AUTOMATIC — no separate application. Awarded at admission.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+            {"suffix": "eng-entrance", "name": "Engineering International Entrance Award",
+             "provider": "McMaster University (Faculty of Engineering)", "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": False,
+             "award_amount": "CAD $10,000 one-time (Level 1).",
+             "academic_criteria": "Admission as a Level 1 international student in Engineering.",
+             "other_eligibility_criteria": "AUTOMATIC — no separate application. Awarded at admission.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+            {"suffix": "degroote-auto", "name": "DeGroote International Merit Award (tiered)",
+             "provider": "DeGroote School of Business, McMaster University", "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": True,
+             "award_amount": "Tiered by admission average: < 90% avg → $15,000 (Year 1) + $5,000/yr × 3; "
+             "90–94.99% → $20,000 (Year 1) + $10,000/yr × 3; ≥ 95% → $25,000 (Year 1) + $20,000/yr × 3. "
+             "(Amounts in CAD; renewal each year in good standing.)",
+             "academic_criteria": "Assessed at admission based on admission average. Enrolled in DeGroote BCom.",
+             "other_eligibility_criteria": "AUTOMATIC — no separate application. Tiered by admission average. "
+             "Renewal requires continued full-time BCom enrolment in good standing.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+            {"suffix": "social-sci-auto", "name": "Social Sciences International Scholars Award",
+             "provider": "McMaster University (Faculty of Social Sciences)", "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": True,
+             "award_amount": "CAD $10,000 (Level 1) + $5,000/yr renewable for Levels 2–4 (≥ 85% avg required). "
+             "Total up to CAD $25,000 over four years.",
+             "academic_criteria": "Admission average ≥ 85% in Social Sciences Honours programme.",
+             "other_eligibility_criteria": "AUTOMATIC — no separate application. Renewal requires ≥ 85% average "
+             "and full-time Honours enrolment. Applies to Economics (Social Sciences faculty).",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "ca-alberta": {
+        "canonical_name": "University of Alberta",
+        "aliases": ["UAlberta", "U of A"],
+        "country_cc": "ca",
+        "city": {"slug": "ca-edmonton-ab", "name": "Edmonton"},
+        "website": "https://www.ualberta.ca/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "CAD",
+        "verification_note": "fact-checks/ca-alberta-2026-10-25.md",
+        "application_platform_name": "UAlberta Online Application",
+        "decision_context_year": "2026-2027 (Fall 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Alberta — International Admissions",
+                "url": "https://www.ualberta.ca/en/admissions/",
+                "excerpt": "University of Alberta, Edmonton, Alberta, Canada; public research university and "
+                "member of the U15 Group of Canadian Research Universities. Programmes: BSc Computing Science "
+                "(Faculty of Science), BASc Engineering (Faculty of Engineering), BCom (Alberta School of Business), "
+                "BA Economics (Faculty of Arts). DISTINCTIVE FEATURE: international undergraduate students receive "
+                "a guaranteed tuition rate in their offer letter valid for the full degree duration plus one year — "
+                "fees do not increase after admission. Edmonton provides affordable cost of living relative to "
+                "Toronto/Vancouver."},
+            "adm": {"suffix": "src-adm",
+                "title": "Admission Requirements — University of Alberta",
+                "url": "https://www.ualberta.ca/en/admissions/how-to-apply/ib-students/index.html",
+                "excerpt": "A-Level requirements: competitive grades typically AAB–AAA depending on programme; "
+                "minimum BBC for most faculties. Engineering and Computing Science require Mathematics. "
+                "IB: minimum 30–37 points; competitive scores 34–37 for STEM; no individual subject grade below 4. "
+                "English: IELTS 6.5 overall (no band below 6.0). IB English A grade 5 satisfies the requirement. "
+                "Application deadline: March 1, 2027 for Fall 2027 entry (later than Ontario schools). "
+                "Scholarship application deadline: January 10, 2027."},
+            "fee": {"suffix": "src-fee",
+                "title": "International Undergraduate Tuition — University of Alberta",
+                "url": "https://www.ualberta.ca/en/registrar/costs-tuition-fees/undergraduate-tuition/"
+                "spring-summer-tuition-for-international-students-fall.html",
+                "excerpt": "Fall 2026 annual international undergraduate tuition rates cited from UAlberta search "
+                "results (secondary sources summarising ualberta.ca data; direct fee page redirects to cost "
+                "calculator — primary source confirmation recommended): Faculty of Engineering $49,952.40/yr; "
+                "Alberta School of Business (Commerce) $46,546.80/yr; Faculty of Science (Computing Science) "
+                "$39,792.00/yr. Faculty of Arts (Economics) annual rate not separately confirmed — estimated "
+                "similar to or slightly below Science; stored as null pending primary-source verification. "
+                "TUITION GUARANTEE: rate fixed in offer letter for full degree duration + 1 year. "
+                "PROPOSED CHANGE (Fall 2027 entry): BSc Computing Science fee proposed to harmonise with "
+                "Engineering (~26% increase) — Fall 2026 students locked at $39,792."},
+            "schol": {"suffix": "src-schol",
+                "title": "International Undergraduate Scholarships — University of Alberta",
+                "url": "https://www.ualberta.ca/en/admissions/tuition-and-scholarships/scholarships.html",
+                "excerpt": "Automatic entrance scholarships (no application required, assessed at admission): "
+                "International Admission Scholarship up to CAD $10,000. Application-based awards (deadline "
+                "January 10, 2027): President's International Distinction Scholarship CAD $120,000 over 4 years "
+                "(top 5–10 students annually); International Leader Scholarship CAD $15,000 (community service "
+                "required). Over CAD $52 million awarded annually; 1 in 5 first-year students receives a scholarship."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma Programme."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications (CBSE, etc.)."),
+        ],
+        "residencies": [
+            ("international", "International (non-Canadian) students",
+             "Students classified as international for fee purposes. TUITION GUARANTEE: rate fixed in offer "
+             "letter for full degree duration + 1 year — no annual increases after admission."),
+        ],
+        "cost": None,  # Per-programme costs below; Economics/Arts fee stored as null (not confirmed)
+        "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS 6.5 overall; no band below 6.0.",
+            "notes": "Also accepts TOEFL iBT 90. IB English A grade 5 satisfies the requirement. "
+            "Some programmes may have higher requirements — confirm with UAlberta admissions."},
+        "std_tests": [],  # No SAT/ACT required for A-Level/IB applicants at Alberta
+        "deadline_note": "UAlberta application deadline: March 1, 2027 for Fall 2027 entry "
+            "(later than Ontario schools; OUAC not used). Application-based scholarship deadline: January 10, 2027 "
+            "(earlier than general admission deadline). No SAT/ACT required for A-Level or IB applicants. "
+            "Tuition guarantee valid for program duration + 1 year from admission offer.",
+        "living": None,  # Official UAlberta program living-cost estimate not captured this pass; not fabricated.
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computing Science", "field": "Computer Science",
+             "degree": "BSc",
+             "degree_local": "BSc Computing Science, University of Alberta, Faculty of Science. "
+             "4-year programme. Strong research in AI, machine learning, and game theory. "
+             "Note: For Fall 2027 entry, a proposed 26% fee increase is under review to harmonise CS with "
+             "Engineering tuition — students admitted Fall 2026 are locked at the lower $39,792 rate.",
+             "faculty": "Faculty of Science (Computing Science)", "duration": 4,
+             "url": "https://www.ualberta.ca/en/computing-science/undergraduate/",
+             "subjects_note": "A-Level: Mathematics required; competitive AAB–AAA. "
+             "IB: HL Mathematics; 32–37 competitive.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics HL"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 39792, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $39,792/yr for international students in BSc Computing Science, UAlberta, "
+                 "Fall 2026 (cited from secondary sources summarising ualberta.ca search results; direct fee "
+                 "page redirects to cost calculator). Tuition GUARANTEED at this rate for program duration + 1 yr. "
+                 "For Fall 2027 entry, ~$50,000 rate proposed (26% harmonisation increase). Verify from ualberta.ca."}},
+            {"suffix": "basc-engineering", "program_name": "Engineering", "field": "Engineering",
+             "degree": "BASc",
+             "degree_local": "BASc (Bachelor of Applied Science) in Engineering, University of Alberta, "
+             "Faculty of Engineering. 4-year programme. Disciplines: Civil, Mechanical, Electrical, Chemical, "
+             "Computing, Petroleum, Materials, Mining, and Geotechnical Engineering.",
+             "faculty": "Faculty of Engineering", "duration": 4,
+             "url": "https://www.ualberta.ca/en/engineering/undergraduate/",
+             "subjects_note": "A-Level: Mathematics required; Physics strongly recommended; competitive AAB–AAA. "
+             "IB: HL Mathematics and Physics; 34–37 competitive.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics HL", "Physics HL"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 49952, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $49,952.40/yr for international students in Engineering, UAlberta, Fall 2026 "
+                 "(from secondary sources summarising ualberta.ca data; consistent across sources). "
+                 "Tuition GUARANTEED at this rate for program duration + 1 year. Verify from ualberta.ca."}},
+            {"suffix": "bcom", "program_name": "Commerce (Alberta School of Business)", "field": "Business",
+             "degree": "BCom",
+             "degree_local": "BCom (Bachelor of Commerce), Alberta School of Business, University of Alberta. "
+             "4-year programme. One of Canada's largest and most well-established business schools. "
+             "Majors: accounting, finance, marketing, operations, strategy, and MIS.",
+             "faculty": "Alberta School of Business", "duration": 4,
+             "url": "https://www.ualberta.ca/en/business/programs/undergraduate/",
+             "subjects_note": "A-Level: competitive grades; Mathematics expected. IB: 30–34 competitive.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 46547, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "CAD $46,546.80/yr for international students in BCom (Alberta School of Business), "
+                 "UAlberta, Fall 2026 (from secondary sources summarising ualberta.ca data). "
+                 "Tuition GUARANTEED at this rate for program duration + 1 year. Verify from ualberta.ca."}},
+            {"suffix": "ba-economics", "program_name": "Economics", "field": "Economics",
+             "degree": "BA",
+             "degree_local": "BA Economics, University of Alberta, Faculty of Arts. "
+             "4-year programme. Covers micro, macro, econometrics, and applied policy. "
+             "Also available as BSc Economics with quantitative/science focus.",
+             "faculty": "Faculty of Arts", "duration": 4,
+             "url": "https://www.ualberta.ca/en/economics/undergraduate/",
+             "subjects_note": "A-Level: Mathematics expected; competitive AAB–AAA. IB: 30–34 competitive.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": None, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "Economics annual fee (Arts faculty) NOT CONFIRMED from primary source — UAlberta direct "
+                 "fee page redirects to cost calculator and no Arts-specific annual figure was confirmed in this "
+                 "pass. Likely similar to or slightly below Science (~$39,000–$40,000/yr based on faculty "
+                 "structure). DO NOT display to students; verify from ualberta.ca before go-live."}},
+        ],
+        "scholarships": [
+            {"suffix": "intl-admission", "name": "International Admission Scholarship",
+             "provider": "University of Alberta", "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": False,
+             "award_amount": "Up to CAD $10,000 (one-time).",
+             "academic_criteria": "Assessed at admission based on high school admission average. "
+             "No separate scholarship application required.",
+             "other_eligibility_criteria": "AUTOMATIC — assessed at admission. International fee-paying students. "
+             "Amount within the 'up to $10,000' range depends on admission average.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+            {"suffix": "presidents-distinction", "name": "President's International Distinction Scholarship",
+             "provider": "University of Alberta", "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": True,
+             "award_amount": "CAD $120,000 over 4 years ($30,000/yr), renewable annually in good standing.",
+             "academic_criteria": "Top-performing new international undergraduate students (typically top 5–10 "
+             "students per year). Competitive application required.",
+             "other_eligibility_criteria": "COMPETITIVE — application required by January 10, 2027. "
+             "Outstanding academic record and demonstrated leadership/community service. "
+             "Very limited number of awards.",
+             "application_deadline": "2027-01-10", "deadline_academic_year": "2026-2027"},
+        ],
+    },
 }
 
 
