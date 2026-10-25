@@ -4490,6 +4490,619 @@ UNIVERSITIES = {
              "application_deadline": None, "deadline_academic_year": "2026-2027"},
         ],
     },
+
+    # ── MALAYSIA BATCH (4 universities, Batch-2 slots 44–47) ────────────────────────────────────
+    # country-my was published 2026-10-25 (created alongside country-au for Australia batch).
+    # Currency: MYR (Malaysian Ringgit). All 4 universities teach listed programmes in English.
+    # CRITICAL for private Malaysian universities (Monash, UNM, Taylor's): 6% Sales and Service
+    # Tax (SST) has applied to international students at private universities from July 1, 2025,
+    # per Malaysian Revenue Authority rules. Fees quoted by universities are typically pre-SST;
+    # actual cost is ~6% higher. UM (public university) is EXEMPT from this SST.
+    # IELTS levels vary significantly (5.0–6.5 across four schools) — do not average or normalise.
+    # Scholarship landscape: UM has none confirmed; Monash has automatic High Achiever Award;
+    # UNM has automatic first-year HAS (not renewable); Taylor's scholarship is Malaysian/TEG only.
+    # Application platforms: each university has its own portal (no centralised MY portal).
+    # Malaysia main intake: October (UM), September (UNM), October/Feb (Monash+Taylor's).
+    # decision_context_year: per-university (October 2027 or September 2027 entry).
+
+    "my-um": {
+        "canonical_name": "University of Malaya",
+        "aliases": ["UM", "Universiti Malaya", "UM Kuala Lumpur"],
+        "country_cc": "my",
+        "city": {"slug": "my-kuala-lumpur", "name": "Kuala Lumpur"},
+        "website": "https://www.um.edu.my/", "institution_type": "public",
+        "verified_at": "2026-10-25", "currency": "MYR",
+        "verification_note": "fact-checks/my-um-2026-10-25.md",
+        "application_platform_name": "MAYA Application Portal (apply.um.edu.my)",
+        "decision_context_year": "2026-2027 (October 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Malaya — Official Website",
+                "url": "https://www.um.edu.my/",
+                "excerpt": "University of Malaya (Universiti Malaya, UM), Kuala Lumpur, Malaysia; oldest "
+                "and highest-ranked university in Malaysia (QS top-100 regional). Public research university "
+                "established 1949. English-medium programmes. Faculties: FSKTM (Computer Science & IT), "
+                "Faculty of Engineering, Faculty of Economics & Business (FEB). Main intake: October; "
+                "secondary intake: March. International students apply via MAYA portal (apply.um.edu.my)."},
+            "adm": {"suffix": "src-adm",
+                "title": "UM — International Undergraduate Admission and Programme Requirements",
+                "url": "https://study.um.edu.my/",
+                "excerpt": "study.um.edu.my (UM Study portal): international students apply via MAYA portal. "
+                "English medium. Minimum IELTS 5.5 Academic required (from official programme listings). "
+                "GCE A-Levels accepted; minimum Grade B in relevant subjects (Mathematics + one science/IT "
+                "subject for CS and Engineering programmes). Application fee: MYR 500 for international "
+                "channel. October 2027 intake application expected to open ~February 2027; deadline "
+                "approximately June–August 2027 (exact date TBC — no 2027 deadline published as of "
+                "2026-10-25)."},
+            "fee": {"suffix": "src-fee",
+                "title": "UM — International Student Fee Structure (Updated 22 Oct 2025)",
+                "url": "https://study.um.edu.my/",
+                "excerpt": "UM international student fee structure (primary source, updated 22 October 2025): "
+                "Fees are quoted as TOTAL PROGRAMME FEES (not annual). Subject to change. Applies from "
+                "2025/2026 intake onwards. BSc Computer Science (FSKTM): MYR 89,200 total for 3.5-year "
+                "standard programme. BEng Electrical Engineering (Faculty of Engineering): MYR 132,100 "
+                "total for 4-year programme. BA Economics (Faculty of Economics & Business): MYR 77,100 "
+                "total for 3-year programme. Application fee: MYR 500 (international channel). "
+                "UM is a public university and is EXEMPT from Malaysia's 6% SST on private institution fees."},
+            "schol": {"suffix": "src-schol",
+                "title": "UM — Scholarships and Financial Aid for International Students",
+                "url": "https://www.um.edu.my/",
+                "excerpt": "No confirmed institutional scholarships for international undergraduate students "
+                "at University of Malaya as of 2026-10-25. Government-linked scholarship options "
+                "(Malaysian government schemes, bilateral agreements) exist externally but are not "
+                "UM-administered. UAE students should explore external sources (home-country scholarships, "
+                "Malaysian International Scholarship where applicable). Source: UM official website; "
+                "no undergraduate scholarship page found for international students. Confidence: HIGH "
+                "(confirmed absence, not a gap in research)."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications from international schools."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants completing the IB Diploma."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed by UM's International Recruitment Office."),
+        ],
+        "residencies": [
+            ("international", "International (non-Malaysian) students",
+             "International students pay UM's international student fee schedule. Malaysian students pay "
+             "domestic fees (significantly lower). UM is a public university — fees are regulated and lower "
+             "than private alternatives in Malaysia. Exempt from 6% SST."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "English",
+            "req_name": "English language proficiency",
+            "test_name": "IELTS Academic",
+            "min_score": "IELTS Academic: overall 5.5. No confirmed per-section minimum published — verify "
+                         "with UM admissions at time of application.",
+            "notes": "All three programmes below are taught in English. IELTS 5.5 is lower than typical "
+                     "UK/Australian thresholds — this is a genuine UM requirement confirmed from official "
+                     "programme pages. TOEFL and other English tests may be accepted — verify with UM "
+                     "International Recruitment Office. UAE A-level holders from English-medium schools may "
+                     "qualify for an exemption — confirm directly with UM.",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply via MAYA portal (apply.um.edu.my). October 2027 intake (main intake — "
+            "programmes start October). Application window expected February–August 2027; exact deadline "
+            "not published for 2027 cohort as of 2026-10-25 — monitor study.um.edu.my for updates. "
+            "Application fee: MYR 500 (international channel, non-refundable). Supporting documents "
+            "include: A-level transcripts, IELTS certificate, passport, personal statement.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science",
+             "field": "Computer Science", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Computer Science (Hons), Faculty of Computer Science and "
+             "Information Technology (FSKTM), University of Malaya. Standard period: 3.5 years (7 "
+             "semesters). TAUGHT IN ENGLISH. Oldest CS faculty in Malaysia; strong research output. "
+             "October main intake.",
+             "faculty": "Faculty of Computer Science and Information Technology (FSKTM)", "duration": 4,
+             "url": "https://fsktm.um.edu.my/",
+             "subjects_note": "A-level Mathematics required (Grade B minimum). One additional A-level in "
+                              "Physics, Chemistry, Biology, or Computing at Grade B minimum. IELTS 5.5 "
+                              "required. Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 25486, "basis": "institutional",
+                 "year": "2025-2026",
+                 "mandatory_fees_annual": None,
+                 "note": "UM fee structure: TOTAL PROGRAMME FEE MYR 89,200 for 3.5-year standard period "
+                 "(primary source, updated 22 Oct 2025). Annual equivalent: MYR 89,200 ÷ 3.5 ≈ "
+                 "MYR 25,486/year. Note: actual cost per year may vary by semester; total programme fee "
+                 "is fixed. UM is a public university (SST-exempt). Fees subject to change from 2026/27 "
+                 "intake — verify at time of application. Application fee: MYR 500 separate."}},
+            {"suffix": "beng-ee", "program_name": "Electrical Engineering",
+             "field": "Engineering", "degree": "BEng", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Engineering (Electrical) (Hons), Faculty of Engineering, "
+             "University of Malaya. 4 years. TAUGHT IN ENGLISH. Well-established EE department at "
+             "Malaysia's leading public university.",
+             "faculty": "Faculty of Engineering", "duration": 4,
+             "url": "https://engineering.um.edu.my/",
+             "subjects_note": "A-level Mathematics and Physics at Grade B minimum. IELTS 5.5 required. "
+                              "Programme in English.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 33025, "basis": "institutional",
+                 "year": "2025-2026",
+                 "mandatory_fees_annual": None,
+                 "note": "TOTAL PROGRAMME FEE MYR 132,100 for 4-year programme (primary source). "
+                 "Annual equivalent: MYR 132,100 ÷ 4 = MYR 33,025/year. Public university, SST-exempt."}},
+            {"suffix": "ba-economics", "program_name": "Economics",
+             "field": "Economics", "degree": "BA", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Economics (Hons), Faculty of Economics and Business (FEB), "
+             "University of Malaya. 3 years. TAUGHT IN ENGLISH. FEB is highly ranked in Malaysia for "
+             "economics and business education.",
+             "faculty": "Faculty of Economics and Business (FEB)", "duration": 3,
+             "url": "https://feb.um.edu.my/",
+             "subjects_note": "A-level Mathematics at Grade B minimum. IELTS 5.5 required. Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 25700, "basis": "institutional",
+                 "year": "2025-2026",
+                 "mandatory_fees_annual": None,
+                 "note": "TOTAL PROGRAMME FEE MYR 77,100 for 3-year programme (primary source). "
+                 "Annual equivalent: MYR 77,100 ÷ 3 = MYR 25,700/year. Public university, SST-exempt."}},
+        ],
+        "scholarships": [],  # No confirmed institutional scholarships for international undergrads at UM
+    },
+
+    "my-monash": {
+        "canonical_name": "Monash University Malaysia",
+        "aliases": ["Monash Malaysia", "Monash Sunway", "Monash University Malaysia Campus"],
+        "country_cc": "my",
+        "city": {"slug": "my-subang-jaya", "name": "Subang Jaya"},
+        "website": "https://www.monash.edu.my/", "institution_type": "private",
+        "verified_at": "2026-10-25", "currency": "MYR",
+        "verification_note": "fact-checks/my-monash-2026-10-25.md",
+        "application_platform_name": "Monash University Malaysia Application Portal (monash.edu.my/apply)",
+        "decision_context_year": "2026-2027 (October 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Monash University Malaysia — Official Website",
+                "url": "https://www.monash.edu.my/",
+                "excerpt": "Monash University Malaysia, Bandar Sunway, Subang Jaya, Selangor. Branch campus "
+                "of Monash University (Australia). Established 1998. Awards Australian Monash University "
+                "degrees — same qualification as main Monash campuses. Private university. All programmes "
+                "taught in English following Monash Australia curriculum. Strengths: Engineering (4TU "
+                "joint programmes), IT, Business and Commerce, Medicine. Multiple intakes: February, July, "
+                "October. QS ranked ~300-350 globally for Monash as an institution."},
+            "adm": {"suffix": "src-adm",
+                "title": "Monash Malaysia — Undergraduate Admission Requirements",
+                "url": "https://www.monash.edu.my/study/undergraduate/how-to-apply",
+                "excerpt": "English proficiency: IELTS 6.5 overall, minimum 6.0 per band (all Bachelor "
+                "programmes). A-levels accepted; programme-specific subject requirements apply. CS: "
+                "Mathematics at A-level required. Engineering: Mathematics + Physics at A-level required. "
+                "Minimum D grade at A-Level by MQA regulation; programme-specific competitive entry higher. "
+                "Intakes: February (recommended for UAE students completing A-levels in November), July, "
+                "October 2027. December 18, 2026 is the international student deadline for February 2027 "
+                "intake. October 2027 intake deadline approximately July 2027 (TBC). Application via "
+                "Monash Malaysia online portal."},
+            "fee": {"suffix": "src-fee",
+                "title": "Monash Malaysia — Undergraduate Tuition Fees (2025-2026)",
+                "url": "https://www.monash.edu.my/study/undergraduate/fees",
+                "excerpt": "Monash University Malaysia annual tuition fees for international students "
+                "(2025-26, MEDIUM confidence — official fee page returned 403 during verification; figures "
+                "from secondary sources cross-referencing Monash official schedule): BSc Computer Science "
+                "3-year: MYR 57,600/year. BEng Mechanical Engineering (Hons) 4-year: MYR 57,120/year. "
+                "BEng Electrical & Computer Systems Engineering (Hons) 4-year: MYR 57,120/year. "
+                "BBusComm Business and Commerce 3-year: MYR 53,280/year. CRITICAL: Monash Malaysia is a "
+                "private university. Malaysia's 6% SST applies to international students from July 1, 2025. "
+                "It is uncertain whether the quoted fees include or exclude SST — verify at application. "
+                "If SST is excluded: add 6% to above figures (CS effective ~MYR 61,056/year). "
+                "Additional fees: MYR 100 application + MYR 200 registration; MYR 100/semester amenity."},
+            "schol": {"suffix": "src-schol",
+                "title": "Monash Malaysia — Monash High Achiever Award",
+                "url": "https://www.monash.edu.my/study/undergraduate/scholarships",
+                "excerpt": "Monash High Achiever Award: MYR 10,000/year (MYR 5,000/semester) tuition fee "
+                "waiver. AUTOMATIC at admission — no separate scholarship application required. Eligibility: "
+                "3 As at GCE A-Level (or IB 38+ points, ATAR 98+). Available to both Malaysian and "
+                "international students (including UAE applicants). Not available for Medicine or Pharmacy. "
+                "Renewal requirement (per semester): GPA average ≥80%, rank in top 1% of cohort, completed "
+                "48 credit points. Renewable for the standard programme duration if maintained. "
+                "Source: confirmed structure from multiple sources referencing Monash Malaysia policy."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "Applicants with IB Diploma."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed by Monash Malaysia admissions."),
+        ],
+        "residencies": [
+            ("international", "International (non-Malaysian) students",
+             "International students pay Monash Malaysia's standard tuition fee. Malaysian students pay "
+             "a different domestic rate. Note: 6% SST applies to private Malaysian university fees for "
+             "international students from July 2025 — verify whether quoted fees include or exclude SST."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "English",
+            "req_name": "English language proficiency",
+            "test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS Academic: overall 6.5, minimum 6.0 per band. Also accepted: TOEFL iBT 79 "
+                         "(minimum 17/section); Pearson PTE Academic 58; CAE 176.",
+            "notes": "All Monash Malaysia Bachelor programmes are taught in English following the Monash "
+                     "Australia curriculum (Australian Monash degrees awarded). IELTS 6.5/6.0 is standard "
+                     "for Monash globally. UAE A-level students from English-medium schools should check "
+                     "whether they qualify for a language test waiver — Monash Australia sometimes waives "
+                     "for English-medium secondary. Verify with Monash Malaysia admissions.",
+        },
+        "std_tests": [],
+        "deadline_note": "Multiple intakes: February (international deadline December 18, 2026), July, "
+            "October 2027. For UAE A-level students completing exams in May/June 2027: July 2027 or "
+            "October 2027 intake is most practical. Apply via Monash Malaysia online application portal "
+            "(monash.edu.my/apply). MYR 100 application fee + MYR 200 registration fee. Monash High "
+            "Achiever Award assessed automatically at admission — no separate application for 3As students.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science",
+             "field": "Computer Science", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Computer Science (Hons), School of IT, Monash University Malaysia. "
+             "3 years. TAUGHT IN ENGLISH. Australian Monash University degree awarded. Same curriculum and "
+             "qualification as Monash Clayton (Australia) campus CS programme.",
+             "faculty": "School of Information Technology", "duration": 3,
+             "url": "https://www.monash.edu.my/study/undergraduate/courses/bachelor-of-computer-science",
+             "subjects_note": "A-level Mathematics required. IELTS 6.5 overall (6.0 per band). "
+                              "3 As for Monash High Achiever Award. Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 57600, "basis": "institutional",
+                 "year": "2025-2026",
+                 "mandatory_fees_annual": None,
+                 "note": "MYR 57,600/year (2025-26, MEDIUM confidence — official fee page returned 403; "
+                 "from secondary sources cross-referencing Monash schedule). 6% SST may apply on top "
+                 "(private university, from July 2025): effective ~MYR 61,056/year if SST excluded. "
+                 "Verify SST inclusion at application. Application fee MYR 100 + registration MYR 200 "
+                 "+ amenity MYR 100/semester are additional."}},
+            {"suffix": "beng-me", "program_name": "Mechanical Engineering",
+             "field": "Engineering", "degree": "BEng", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Engineering (Mechanical) (Hons), School of Engineering, Monash "
+             "University Malaysia. 4 years. TAUGHT IN ENGLISH. Australian Monash University degree awarded. "
+             "Strong connections to Malaysian manufacturing sector (automotive, aerospace supply chain).",
+             "faculty": "School of Engineering", "duration": 4,
+             "url": "https://www.monash.edu.my/study/undergraduate/courses",
+             "subjects_note": "A-level Mathematics and Physics required. IELTS 6.5/6.0. 3 As for High "
+                              "Achiever Award. Programme in English.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 57120, "basis": "institutional",
+                 "year": "2025-2026",
+                 "mandatory_fees_annual": None,
+                 "note": "MYR 57,120/year (2025-26, MEDIUM confidence). 6% SST may apply (private "
+                 "university): effective ~MYR 60,547/year if SST excluded. Verify at application."}},
+            {"suffix": "bbuscomm", "program_name": "Business and Commerce",
+             "field": "Business", "degree": "BBusComm", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Business and Commerce (Hons), Monash Business School Malaysia, "
+             "Monash University Malaysia. 3 years. TAUGHT IN ENGLISH. Australian Monash University degree. "
+             "Flexible major structure — includes accounting, finance, marketing, management, economics.",
+             "faculty": "Monash Business School Malaysia", "duration": 3,
+             "url": "https://www.monash.edu.my/study/undergraduate/courses",
+             "subjects_note": "A-level Mathematics required. IELTS 6.5/6.0. Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 53280, "basis": "institutional",
+                 "year": "2025-2026",
+                 "mandatory_fees_annual": None,
+                 "note": "MYR 53,280/year (2025-26, MEDIUM confidence). 6% SST may apply: effective "
+                 "~MYR 56,477/year if SST excluded. Verify at application."}},
+        ],
+        "scholarships": [
+            {"suffix": "high-achiever", "name": "Monash High Achiever Award",
+             "provider": "Monash University Malaysia",
+             "provider_type": "institutional",
+             "award_type": "tuition_waiver", "renewable": True,
+             "award_amount": "MYR 10,000/year (MYR 5,000 per semester) tuition fee waiver for the "
+             "standard programme duration.",
+             "academic_criteria": "3 As at GCE A-Level (equivalent to IB 38+ points or ATAR 98+). "
+             "Automatic at admission — no separate application required. Renewal: GPA ≥80% average, "
+             "top 1% of cohort, 48+ credit points completed per renewal cycle.",
+             "other_eligibility_criteria": "Available to both Malaysian and international (including UAE) "
+             "students. Not available for Medicine or Pharmacy programmes. AUTOMATIC — assessed by Monash "
+             "Malaysia at offer stage. If maintained each semester, applies for the full degree.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "my-nottingham": {
+        "canonical_name": "University of Nottingham Malaysia",
+        "aliases": ["UNM", "Nottingham Malaysia", "University of Nottingham Malaysia Campus",
+                    "UNMC", "University of Nottingham Malaysia (UNM)"],
+        "country_cc": "my",
+        "city": {"slug": "my-semenyih", "name": "Semenyih, Selangor"},
+        "website": "https://www.nottingham.edu.my/", "institution_type": "private",
+        "verified_at": "2026-10-25", "currency": "MYR",
+        "verification_note": "fact-checks/my-nottingham-2026-10-25.md",
+        "application_platform_name": "UNM Online Application Portal (nottingham.edu.my/apply)",
+        "decision_context_year": "2026-2027 (September 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Nottingham Malaysia — Official Website",
+                "url": "https://www.nottingham.edu.my/",
+                "excerpt": "University of Nottingham Malaysia (UNM), Semenyih, Selangor, Malaysia. Branch "
+                "campus of the University of Nottingham (UK). Established 1999; first UK branch campus in "
+                "Asia. Awards the same University of Nottingham (UK) degrees as the UK campus — same "
+                "curriculum, shared curriculum committees, same assessment standards. Private university. "
+                "All programmes taught in English. September main intake. QS rank: ~100-120 globally for "
+                "Nottingham as an institution."},
+            "adm": {"suffix": "src-adm",
+                "title": "UNM — Undergraduate Admissions and Entry Requirements",
+                "url": "https://www.nottingham.edu.my/study/undergraduate-courses/admissions.aspx",
+                "excerpt": "A-levels accepted for all programmes. Minimum entry for High Achievers' "
+                "Scholarship (HAS): ABB (15% waiver), AAB (20%), AAA (25%). Direct entry below ABB also "
+                "considered. IELTS: 6.0 overall, minimum 5.5 per section for most undergraduate programmes "
+                "(MEDIUM confidence — per-section figure from secondary sources; verify with UNM directly). "
+                "Some programmes require higher (e.g., Communication Studies 6.5/6.0). "
+                "September 2027 intake deadline: approximately July 31, 2027 (confirmed for 2026 cohort; "
+                "same pattern expected for 2027). Apply via UNM online application portal."},
+            "fee": {"suffix": "src-fee",
+                "title": "UNM — Undergraduate Tuition Fees (2026-27) + SST Note",
+                "url": "https://www.nottingham.edu.my/study/undergraduate-courses/tuition-fees.aspx",
+                "excerpt": "UNM undergraduate annual tuition fees for international students (PRIMARY SOURCE, "
+                "tuition-fees.aspx page): BSc Computer Science / CS with AI: MYR 59,000/year. "
+                "MEng Engineering programmes (Mech/EE/Chemical/Civil/Mechatronics): MYR 69,000/year (4yr). "
+                "BSc Economics / Economics & International Economics: MYR 57,000/year. "
+                "BSc Business Economics and Finance / Finance & Management: MYR 59,000/year. "
+                "CRITICAL — 6% SST: Malaysia's SST applies to private university fees for non-Malaysian "
+                "students from July 1, 2025. UNM fees above are base (pre-SST). Actual annual cost is "
+                "approximately 6% higher: CS ~MYR 62,540; MEng ~MYR 73,140; Economics ~MYR 60,420. "
+                "SST is listed separately on invoices and is NOT included in the published fee schedule."},
+            "schol": {"suffix": "src-schol",
+                "title": "UNM — High Achievers' Scholarship (HAS)",
+                "url": "https://www.nottingham.edu.my/study/undergraduate-courses/scholarships.aspx",
+                "excerpt": "High Achievers' Scholarship (HAS): AUTOMATIC based on A-level results. "
+                "Applied to FIRST YEAR TUITION ONLY (not renewable for subsequent years). "
+                "Tiers: AAA (3As) → 25% waiver; AAB (2As 1B) → 20% waiver; ABB (1A 2Bs) → 15% waiver. "
+                "Example (CS pre-SST): AAA → pays MYR 44,250 yr1; AAB → MYR 47,200 yr1; ABB → MYR 50,150 yr1. "
+                "After year 1, full fee applies. Available to international students including UAE. "
+                "ASEAN International Student Bursary (15% per year) is for ASEAN nationalities only "
+                "(not UAE). Dean's Excellence Scholarship: competitive, assessed after enrolment."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "IB Diploma holders."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international qualifications assessed by UNM admissions."),
+        ],
+        "residencies": [
+            ("international", "International (non-Malaysian) students",
+             "International students pay UNM's published fee schedule. PLUS 6% SST from July 2025 "
+             "(Malaysia's SST on private university fees for non-Malaysians). Effective annual costs are "
+             "~6% above listed fees. Malaysian students pay a different domestic rate."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "English",
+            "req_name": "English language proficiency",
+            "test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS Academic: overall 6.0, minimum 5.5 per section (MEDIUM confidence on "
+                         "per-section; verify with UNM for your specific programme). Some programmes "
+                         "(Communication Studies) require 6.5 overall.",
+            "notes": "UNM is a UK Nottingham branch campus — all programmes taught in English with UK "
+                     "Nottingham curriculum. Degrees awarded by University of Nottingham UK. "
+                     "UAE A-level students from English-medium schools: check UNM exemption policy — "
+                     "as a UK-affiliated institution, English A-level grade may qualify for IELTS waiver. "
+                     "Verify with UNM admissions before assuming exemption.",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply via UNM online application portal (nottingham.edu.my/apply). September 2027 "
+            "intake deadline: approximately July 31, 2027 (based on 2026 pattern — verify on UNM website). "
+            "High Achievers' Scholarship (HAS) is automatic — no separate scholarship application; "
+            "A-level results assessed at offer stage. Note: UNM is a UK Nottingham branch campus "
+            "(same degree as UK Nottingham, fraction of the UK cost). 6% SST applies on top of listed fees.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science",
+             "field": "Computer Science", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Science (Hons) Computer Science, School of Computer Science, "
+             "University of Nottingham Malaysia. 3 years. TAUGHT IN ENGLISH. Same UK Nottingham degree "
+             "as UK campus. Modules, assessment standards, and degree classification identical to UK. "
+             "Strong research groups in AI and data science at UNM.",
+             "faculty": "School of Computer Science", "duration": 3,
+             "url": "https://www.nottingham.edu.my/study/undergraduate-courses/computer-science.aspx",
+             "subjects_note": "A-level Mathematics required (typically AAB–ABB for scholarship; lower "
+                              "entry considered). IELTS 6.0 overall (5.5/section — MEDIUM confidence). "
+                              "Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 59000, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "Base fee: MYR 59,000/year (PRIMARY SOURCE: UNM tuition-fees.aspx). "
+                 "PLUS 6% SST for non-Malaysian students from July 2025: effective ~MYR 62,540/year. "
+                 "HAS scholarship (first year only): AAA → MYR 44,250 yr1; AAB → MYR 47,200 yr1; "
+                 "ABB → MYR 50,150 yr1 (all pre-SST, add ~6% for actual cost)."}},
+            {"suffix": "meng-me", "program_name": "Mechanical Engineering",
+             "field": "Engineering", "degree": "MEng", "lang_instruction": ["en"],
+             "degree_local": "Master of Engineering (Hons) Mechanical Engineering, Faculty of Engineering, "
+             "University of Nottingham Malaysia. 4 years (MEng — integrated Master's). TAUGHT IN ENGLISH. "
+             "Same UK Nottingham MEng degree. Note: UNM offers MEng (4yr) not BEng (3yr) for Engineering "
+             "— this is the standard UK Nottingham Engineering structure replicated in Malaysia.",
+             "faculty": "Faculty of Engineering", "duration": 4,
+             "url": "https://www.nottingham.edu.my/study/undergraduate-courses/engineering.aspx",
+             "subjects_note": "A-level Mathematics and Physics required. IELTS 6.0/5.5 (MEDIUM confidence). "
+                              "Programme in English. 4-year integrated MEng (not a 3-year BEng).",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 69000, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "Base fee: MYR 69,000/year (PRIMARY SOURCE: UNM tuition-fees.aspx). "
+                 "PLUS 6% SST: effective ~MYR 73,140/year. Note: 4yr total at ~MYR 73,140/yr = "
+                 "~MYR 292,560 (incl. SST). HAS: AAA → pays MYR 51,750 yr1 (pre-SST); AAB → "
+                 "MYR 55,200; ABB → MYR 58,650 (add 6% for actual). First year only."}},
+            {"suffix": "bsc-economics", "program_name": "Economics",
+             "field": "Economics", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Science (Hons) Economics, School of Economics, University of "
+             "Nottingham Malaysia. 3 years. TAUGHT IN ENGLISH. UK Nottingham degree. UNM Economics "
+             "programme shares curriculum with UK Nottingham Economics, one of the UK's leading economics "
+             "departments.",
+             "faculty": "School of Economics", "duration": 3,
+             "url": "https://www.nottingham.edu.my/study/undergraduate-courses/economics.aspx",
+             "subjects_note": "A-level Mathematics required. IELTS 6.0/5.5 (MEDIUM confidence). "
+                              "Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 57000, "basis": "institutional",
+                 "year": "2026-2027",
+                 "mandatory_fees_annual": None,
+                 "note": "Base fee: MYR 57,000/year (PRIMARY SOURCE: UNM tuition-fees.aspx). "
+                 "PLUS 6% SST: effective ~MYR 60,420/year. HAS: AAA → MYR 42,750 yr1; AAB → "
+                 "MYR 45,600 yr1; ABB → MYR 48,450 yr1 (all pre-SST). First year only."}},
+        ],
+        "scholarships": [
+            {"suffix": "has", "name": "High Achievers' Scholarship (HAS)",
+             "provider": "University of Nottingham Malaysia",
+             "provider_type": "institutional",
+             "award_type": "tuition_waiver", "renewable": False,
+             "award_amount": "15–25% tuition fee waiver applied to YEAR 1 ONLY (not renewable). "
+             "Tiers (pre-SST, for CS MYR 59,000 base): "
+             "AAA → 25% = MYR 14,750 saving yr1; AAB → 20% = MYR 11,800 saving yr1; "
+             "ABB → 15% = MYR 8,850 saving yr1. Full fee applies from year 2 onward.",
+             "academic_criteria": "GCE A-Level grades: ABB or better. Automatic at admission — no "
+             "separate application. Tiers: ABB→15%, AAB→20%, AAA→25%. Applies to A-level final results. "
+             "IB/international equivalents may also qualify — verify with UNM.",
+             "other_eligibility_criteria": "Available to all international students including UAE. "
+             "AUTOMATIC — no separate scholarship application form required. Applied to first-year "
+             "tuition only. NOT renewable for years 2–3 (or 2–4 for MEng). Note: ASEAN Bursary (15% "
+             "per year) is ASEAN nationalities only — UAE applicants are NOT eligible for ASEAN Bursary.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "my-taylors": {
+        "canonical_name": "Taylor's University",
+        "aliases": ["Taylor's", "Taylor's University Lakeside Campus", "TU Malaysia"],
+        "country_cc": "my",
+        "city": {"slug": "my-subang-jaya", "name": "Subang Jaya"},
+        "website": "https://university.taylors.edu.my/", "institution_type": "private",
+        "verified_at": "2026-10-25", "currency": "MYR",
+        "verification_note": "fact-checks/my-taylors-2026-10-25.md",
+        "application_platform_name": "TOPAS — Taylor's Online Programme Application System",
+        "decision_context_year": "2026-2027 (September 2027 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Taylor's University — Official Website",
+                "url": "https://university.taylors.edu.my/",
+                "excerpt": "Taylor's University, Subang Jaya, Selangor, Malaysia. Independent Malaysian "
+                "private university — NOT a branch campus of any foreign university; awards Taylor's "
+                "University's own degrees (accredited by Malaysian Qualifications Agency, MQA). "
+                "Established 1969. QS ranked ~600-700 globally. Strengths: Hospitality, Media, Business, "
+                "Engineering, Computing. Multiple intakes: February and September annually (plus October "
+                "for some programmes). Strong A-level progression track (Taylor's College feeder)."},
+            "adm": {"suffix": "src-adm",
+                "title": "Taylor's University — Undergraduate Admissions and Requirements",
+                "url": "https://university.taylors.edu.my/en/admissions.html",
+                "excerpt": "A-levels accepted; minimum entry: DD across relevant subjects (MQA minimum). "
+                "Programme-specific requirements: CS requires D in Mathematics at A-level. Engineering "
+                "requires D in Mathematics + Physics. English proficiency: IELTS 5.5 for CS (confirmed "
+                "from programme page). Engineering: 5.0 (LOW-MEDIUM confidence from secondary sources). "
+                "Business: 5.5 (estimated — no separate primary-source confirmation found). "
+                "Multiple intakes: September 2027 (international deadline ~April 1, 2027) and February "
+                "2027 (international deadline ~October 2026). Apply via TOPAS. "
+                "Important: Taylor's is an independent Malaysian university — degree is a Taylor's MQA "
+                "degree, NOT a UK/Australian branch campus degree."},
+            "fee": {"suffix": "src-fee",
+                "title": "Taylor's University — Undergraduate Fee Schedule (2025)",
+                "url": "https://university.taylors.edu.my/en/admissions/undergraduate.html",
+                "excerpt": "Taylor's University programme fees for international students (MEDIUM confidence "
+                "— official fee PDFs are binary-compressed; figures from secondary source referencing "
+                "Taylor's fee PDF last updated May 2025): "
+                "BSc Computer Science (Hons) 3 years: total MYR 152,187 → ~MYR 50,729/year. "
+                "BEng Engineering (Hons) [Mech/EE/Chemical] 4 years: total MYR 204,934 → ~MYR 51,234/year. "
+                "Bachelor of Business (Hons) 3 years: total MYR 160,773 → ~MYR 53,591/year. "
+                "6% SST likely already included in above totals (private university). Verify at application. "
+                "Note: fee confidence is MEDIUM — verify from official Taylor's fee schedule PDF at time "
+                "of application."},
+            "schol": {"suffix": "src-schol",
+                "title": "Taylor's University — Scholarships and Awards",
+                "url": "https://university.taylors.edu.my/en/admissions/scholarships.html",
+                "excerpt": "Taylor's Excellence Award: up to MYR 15,000/year — RESTRICTED to Malaysian "
+                "citizens and TEG (Taylor's Education Group) progression students (students completing "
+                "Taylor's A-Level or Foundation at a Taylor's-affiliated college and progressing to "
+                "Taylor's University). UAE students applying directly are almost certainly NOT eligible. "
+                "No confirmed automatic merit scholarship available to direct international applicants "
+                "from outside Malaysia. Source: multiple secondary sources referencing Taylor's "
+                "scholarship eligibility; primary scholarship page not directly confirmed. "
+                "Confidence: MEDIUM. Verify directly with Taylor's International Admissions."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "IB Diploma holders."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed by Taylor's admissions."),
+        ],
+        "residencies": [
+            ("international", "International (non-Malaysian) students",
+             "International students pay Taylor's University's published programme fees. 6% SST likely "
+             "already included in quoted total fees (verify at application). Taylor's awards its own MQA-"
+             "accredited degrees — not affiliated with any UK or Australian institution."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "English",
+            "req_name": "English language proficiency",
+            "test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS Academic: 5.5 overall for CS and Business (5.0 for Engineering — "
+                         "LOW-MEDIUM confidence). No confirmed per-section minimums. MUET Band 3 accepted "
+                         "for Malaysia-based students (not applicable to UAE students). Verify with "
+                         "Taylor's International Admissions for current requirements.",
+            "notes": "Taylor's University is an independent Malaysian private university (NOT a branch "
+                     "campus). Degrees are Taylor's University MQA-accredited Malaysian degrees. IELTS "
+                     "threshold (5.5) is lower than most UK/Australian equivalents. UAE students from "
+                     "English-medium A-level programmes should confirm exemption eligibility. "
+                     "Multiple intakes (Sep and Feb) — September 2027 intake is standard for post-A-level "
+                     "UAE students. Taylor's Excellence Award scholarship is NOT available for direct "
+                     "UAE applicants.",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply via TOPAS (Taylor's Online Programme Application System). September 2027 "
+            "intake: deadline approximately April 1, 2027 for international students (exact date TBC — "
+            "verify on university.taylors.edu.my). February 2027 intake also available with earlier "
+            "deadline (~October 2026). Multiple intakes give flexibility. "
+            "Note: Taylor's Excellence Award scholarship is restricted to Malaysian citizens and TEG "
+            "progression students — NOT available for direct UAE applicants applying from outside Malaysia.",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-cs", "program_name": "Computer Science",
+             "field": "Computer Science", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Computer Science (Hons), School of Computing and Technology, "
+             "Taylor's University. 3 years. TAUGHT IN ENGLISH. Taylor's University MQA-accredited degree "
+             "(NOT a UK/Australian branch campus degree). Independent Malaysian private university.",
+             "faculty": "School of Computing and Technology", "duration": 3,
+             "url": "https://university.taylors.edu.my/en/faculties-schools/school-computing-technology.html",
+             "subjects_note": "A-level Mathematics at minimum grade D (low entry bar). IELTS 5.5 overall "
+                              "(confirmed from programme page). Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 50729, "basis": "institutional",
+                 "year": "2025-2026",
+                 "mandatory_fees_annual": None,
+                 "note": "Annual equivalent MYR 50,729 (total MYR 152,187 ÷ 3yr, MEDIUM confidence — "
+                 "from secondary source referencing Taylor's fee PDF last updated May 2025; official PDF "
+                 "binary-compressed). 6% SST likely already included in total. Verify from official fee "
+                 "schedule at time of application."}},
+            {"suffix": "beng-me", "program_name": "Mechanical Engineering",
+             "field": "Engineering", "degree": "BEng", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Engineering (Mechanical) (Hons), School of Engineering and "
+             "Physical Sciences, Taylor's University. 4 years. TAUGHT IN ENGLISH. Taylor's University "
+             "MQA-accredited degree (independent Malaysian university).",
+             "faculty": "School of Engineering and Physical Sciences", "duration": 4,
+             "url": "https://university.taylors.edu.my/en/faculties-schools/school-engineering-physical-sciences.html",
+             "subjects_note": "A-level Mathematics and Physics at minimum grade D. IELTS 5.0 (LOW-MEDIUM "
+                              "confidence — verify with Taylor's admissions). Programme in English.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 51234, "basis": "institutional",
+                 "year": "2025-2026",
+                 "mandatory_fees_annual": None,
+                 "note": "Annual equivalent MYR 51,234 (total MYR 204,934 ÷ 4yr, MEDIUM confidence — "
+                 "secondary source only; SST likely included). Verify from official Taylor's fee schedule."}},
+            {"suffix": "bba", "program_name": "Business",
+             "field": "Business", "degree": "Bachelor", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Business (Hons), Taylor's Business School, Taylor's University. "
+             "3 years. TAUGHT IN ENGLISH. Taylor's MQA-accredited degree. Flexible business programme "
+             "with majors in Entrepreneurship, Finance, Marketing, Human Resource Management.",
+             "faculty": "Taylor's Business School", "duration": 3,
+             "url": "https://university.taylors.edu.my/en/faculties-schools/taylors-business-school.html",
+             "subjects_note": "A-level minimum grade D. IELTS 5.5 (estimated — verify with Taylor's). "
+                              "Programme in English.",
+             "subjects": {"a-level": [], "ib": [], "international-other": []},
+             "cost": {"residency": "international", "tuition": 53591, "basis": "institutional",
+                 "year": "2025-2026",
+                 "mandatory_fees_annual": None,
+                 "note": "Annual equivalent MYR 53,591 (total MYR 160,773 ÷ 3yr, MEDIUM confidence — "
+                 "secondary source only). 6% SST likely included. Verify official fee schedule. "
+                 "No scholarship available for direct UAE applicants (Taylor's Excellence Award: "
+                 "Malaysian/TEG students only)."}},
+        ],
+        "scholarships": [],  # Taylor's Excellence Award restricted to Malaysian/TEG students — not available to direct UAE applicants
+    },
 }
 
 

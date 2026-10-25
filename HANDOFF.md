@@ -16,7 +16,7 @@ Key constraint: **never publish hallucinated facts**. Every data field that isn'
 
 **Goal:** Import 50 universities into Sanity as DRAFTS (not published). Suhail's requirement doc lists all 50 with required fields.
 
-### Status — 43/50 done as drafts
+### Status — 47/50 done as drafts
 
 | Done | Schools |
 |------|---------|
@@ -26,12 +26,12 @@ Key constraint: **never publish hallucinated facts**. Every data field that isn'
 | Canada (5/5) | Waterloo, UBC, McGill, McMaster, Alberta |
 | Germany (5/5) | RWTH Aachen, Heidelberg, TU Berlin, KIT, LMU Munich |
 | Netherlands (3/3) | TU/e Eindhoven, UvA Amsterdam, University of Twente |
+| Malaysia (4/4) | University of Malaya, Monash Malaysia, Nottingham Malaysia, Taylor's |
 
-### Remaining (7 schools)
+### Remaining (3 schools)
 
-- ~~**Netherlands (3):** TU/e Eindhoven, UvA Amsterdam, University of Twente~~ ✓
-- **Malaysia (4):** Malaya, Monash Malaysia, Nottingham Malaysia, Taylor's — **needs `country-my` created first**
-- **Australia (4):** Melbourne, Sydney, Monash, UNSW — **needs `country-au` created first**
+- ~~**Malaysia (4):** UM, Monash Malaysia, Nottingham Malaysia, Taylor's~~ ✓
+- **Australia (4):** Melbourne, Sydney, Monash, UNSW — **`country-au` already published (created 2026-10-25)**
 
 ### Skip these (already in DB from Batch-1):
 Oxford, Toronto, TU Munich, TU Delft, NYUAD
@@ -143,16 +143,16 @@ Actually run them before acting, not just when reminded. When one changes the pl
 
 ## Next step
 
-Continue Batch-2 with **Malaysia batch** (4 schools — needs `country-my` created first):
-Malaya, Monash Malaysia, Nottingham Malaysia, Taylor's.
+Continue Batch-2 with **Australia batch** (4 schools — `country-au` already published):
+Melbourne, Sydney, Monash, UNSW. This is the **final batch** — 47/50 done; 3 remaining.
 
-Then Australia (4 — needs `country-au`).
-
-**Netherlands batch DONE (43/50).** Before publishing Canada schools, verify McGill and McMaster fees from primary sources (both had PDF/SharePoint access issues this pass).
+**Malaysia batch DONE (47/50).** Before publishing Canada schools, verify McGill and McMaster fees from primary sources (both had PDF/SharePoint access issues this pass).
 
 Each uni: 6–8 primary-source lookups. Do in batches of 3–4. Draft-only, verify before moving on.
 
 **UK batch notes (25/50):** build_docs updated with `application_platform_name` + `decision_context_year` + per-programme `std_tests` — all UK schools use these. `country-gb` already published. Cambridge UCAS deadline is 15 Oct (NOT January). Birmingham fees not publicly disclosed (null stored — honest). Nottingham fees are 2027/28 proxies.
+
+**Malaysia batch notes (47/50):** `country-my` published 2026-10-25 (alongside `country-au`). Currency: MYR. All 4 universities teach listed programmes in English. CRITICAL: 6% SST applies to private Malaysian university fees for non-Malaysians from July 1, 2025 (Monash, UNM, Taylor's — NOT public UM). For UNM, fees quoted are pre-SST (confirmed from primary source); effective cost ~6% higher. For Monash, SST inclusion uncertain — verify at application. For Taylor's, SST likely included in total programme figures. UM (public) is SST-exempt. Fee structures: UM uses total programme fees (not annual); others are annual. Scholarship notes: UM — none confirmed for international undergrads; Monash — Monash High Achiever Award MYR 10k/yr automatic (3As A-level); UNM — High Achievers' Scholarship 15-25% first year ONLY (AAA/AAB/ABB tiers, not renewable); Taylor's — Excellence Award is Malaysian/TEG students only (UAE direct applicants NOT eligible). IELTS range: UM 5.5; Monash 6.5/6.0; UNM 6.0/5.5 (MEDIUM confidence); Taylor's 5.5 CS/5.0 Eng (LOW-MEDIUM). Taylor's is independent Malaysian university (own MQA degree), not a branch campus. UNM awards UK Nottingham degree; Monash awards Australian Monash degree. 102 docs written (transactionId 2D42OFpIbrkQoZrdHXds6I).
 
 **Netherlands batch notes (43/50):** `country-nl` already published. KEY difference from Germany: ALL 3 NL universities teach listed programmes in English — no Dutch language required. Application platform: Studielink.nl for all three. UAE A-level students need IELTS (UAE school location does not qualify for UK-study English exemption). €100 application fee at all three. EU/EEA pay Dutch statutory fee (~€2,694/yr); non-EU pay institutional rates. Scholarships: TU/e and UT Twente have NO institutional Bachelor scholarships (confirmed); UvA has Amsterdam Merit Scholarship (€6,000/yr, very limited — ~1 per programme per year, non-EU only). IELTS thresholds: TU/e and UvA require 6.5 overall / 6.0 per section; UT Twente requires only 6.0 overall / 5.5 per section. Deadlines: TU/e Jan 15; UvA Jan 15 for numerus fixus; UT Twente May 1 for non-EU/visa (earlier than most NL universities). Fees: TU/e €18,600/yr all programmes; UvA CS €21,900/yr (2027-28), UvA Economics €15,730/yr (2027-28); UT TCS/ME €16,400/yr, IBA €12,300/yr (all 2026-27). UvA fees are 2027-28 figures (only year confirmed from primary source). de-lmu spec appears after NL block in the file due to insertion order — functionally correct.
 
