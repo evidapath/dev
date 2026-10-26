@@ -689,9 +689,9 @@ UNIVERSITIES = {
                 "below 5.5); Business/Economics 6.5 overall (6.5 writing & speaking, 6.0 reading & listening)."},
             "fee": {"suffix": "src-fee", "title": "Undergraduate tuition fees — University of Birmingham Dubai",
                 "url": "https://www.birmingham.ac.uk/dubai/study/fees",
-                "excerpt": "Annual tuition (AED/yr): Computer Science BSc 156,718; Computer Engineering ~156,718; Business "
-                "Management BSc 146,806; Economics BSc 128,695. Single fee per programme for all students (UK branch "
-                "campus; no domestic/international split)."},
+                "excerpt": "Annual tuition (AED/yr, Sept 2027 intake): Computer Science BSc 162,203; Computer Engineering BEng 154,325; Business "
+                "Management BSc 146,806; Economics BSc 133,199. Single fee per programme for all students (UK branch "
+                "campus; no domestic/international split). CORRECTED 2026-10-26: CS/Eng/Econ updated from 2026 fees."},
             "schol": {"suffix": "src-schol", "title": "Scholarships — University of Birmingham Dubai",
                 "url": "https://www.birmingham.ac.uk/dubai/study/fees/scholarships",
                 "excerpt": "Chancellor's Academic Merit Scholarship up to 30% per year (automatic consideration for all "
@@ -708,10 +708,10 @@ UNIVERSITIES = {
             ("all-students", "All students (single programme fee)",
              "UK branch campus: a single tuition fee per programme for all students (no domestic/international split)."),
         ],
-        "cost": {"residency": "all-students", "tuition": 156718, "basis": "institutional", "year": "2026-2027",
+        "cost": {"residency": "all-students", "tuition": 162203, "basis": "institutional", "year": "2027-2028",
             "mandatory_fees_annual": 0,
-            "note": "Annual programme fee (AED), Sept 2026 intake: Computer Science / Computer Engineering 156,718. "
-            "Single fee per programme for all students. Dubai branch of the University of Birmingham (UK)."},
+            "note": "Computer Science BSc annual fee AED 162,203 (Sept 2027 intake). CORRECTED from AED 156,718 (Sept 2026 fee). "
+            "Primary source: birmingham.ac.uk/dubai CS BSc course page (verified 2026-10-26)."},
         "lang_req": {"test_name": "IELTS Academic (or accepted equivalent)",
             "min_score": "Computer Science / Computer Engineering: IELTS 6.0 overall (no band below 5.5). "
             "Business / Economics: IELTS 6.5 overall (6.5 writing & speaking, 6.0 reading & listening).",
@@ -730,7 +730,9 @@ UNIVERSITIES = {
              "faculty": "University of Birmingham Dubai (Engineering)", "duration": 3,
              "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/engineering-courses/computer-engineering-beng",
              "subjects_note": "A-level AAB–ABB incl. A-level Mathematics (or equivalent); IELTS 6.0 (no band below 5.5)",
-             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics (HL)"], "us-hs": ["Mathematics (AP/Calculus)"], "international-other": ["Mathematics"]}},
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics (HL)"], "us-hs": ["Mathematics (AP/Calculus)"], "international-other": ["Mathematics"]},
+             "cost": {"residency": "all-students", "tuition": 154325, "basis": "institutional", "year": "2027-2028",
+                 "mandatory_fees_annual": 0, "note": "Computer Engineering BEng annual fee AED 154,325 (Sept 2027 intake). CORRECTED from AED 156,718 (Sept 2026 CS fee fallback). Primary source: birmingham.ac.uk/dubai Computer Engineering BEng course page (verified 2026-10-26)."}},
             {"suffix": "bsc-business-management", "program_name": "Business Management", "field": "Business", "degree": "BSc",
              "degree_local": "Business Management BSc (University of Birmingham UK degree, Dubai campus).",
              "faculty": "Birmingham Business School (Dubai)", "duration": 3,
@@ -745,8 +747,8 @@ UNIVERSITIES = {
              "url": "https://www.birmingham.ac.uk/dubai/study/courses/undergraduate/economics-bsc.aspx",
              "subjects_note": "A-level AAA–ABB (or equivalent); IELTS 6.5 (6.5 writing/speaking, 6.0 reading/listening)",
              "subjects": {"a-level": [], "ib": [], "us-hs": [], "international-other": []},
-             "cost": {"residency": "all-students", "tuition": 128695, "basis": "institutional", "year": "2026-2027",
-                 "mandatory_fees_annual": 0, "note": "Economics BSc annual fee AED 128,695 (Sept 2026 intake)."}},
+             "cost": {"residency": "all-students", "tuition": 133199, "basis": "institutional", "year": "2027-2028",
+                 "mandatory_fees_annual": 0, "note": "Economics BSc annual fee AED 133,199 (Sept 2027 intake). CORRECTED from AED 128,695 (Sept 2026 fee). Primary source: birmingham.ac.uk/dubai Economics BSc course page (verified 2026-10-26)."}},
         ],
         "scholarships": [
             {"suffix": "chancellors-merit", "name": "Chancellor's Academic Merit Scholarship",
@@ -1013,9 +1015,9 @@ UNIVERSITIES = {
              "url": "https://www.cud.ac.ae/prospective-students/undergraduate",
              "subjects_note": "Grade 12; English per requirements",
              "subjects": {"a-level": [], "ib": [], "us-hs": [], "uae-shs": []},
-             "cost": {"residency": "all-students", "tuition": 67410, "basis": "institutional", "year": "2025-2026",
+             "cost": {"residency": "all-students", "tuition": 70781, "basis": "institutional", "year": "2026-2027",
                  "mandatory_fees_annual": 2237,
-                 "note": "BBA: AED 2,247.00/credit × 30 cr/yr = AED 67,410/yr (pre-VAT) + AED 2,236.50 incidental."}},
+                 "note": "BBA: AED 2,247.00/cr (pre-VAT) × 1.05 VAT × 30 cr/yr = AED 70,780.50/yr (VAT-incl) + AED 2,236.50 incidentals. CORRECTED from AED 67,410 (was pre-VAT; inconsistent with CS/Eng). Rates unchanged 2025-26 to 2026-27 per cud.ac.ae/fees (verified 2026-10-26)."}},
         ],
         # CUD offers no standalone Economics undergraduate program — omitted, not fabricated.
         "scholarships": [
@@ -1987,9 +1989,10 @@ UNIVERSITIES = {
                 "(A* in Mathematics; Physics typically required by department)."},
             "fee": {"suffix": "src-fee", "title": "Undergraduate Tuition Fees — Imperial College London",
                 "url": "https://www.imperial.ac.uk/study/fees-and-funding/undergraduate/tuition-fees/",
-                "excerpt": "2026-27 international (overseas) undergraduate tuition: Engineering and Computing "
-                "£45,500/year; Imperial Business School (BSc Economics, Finance and Data Science) £42,700/year. "
-                "Fees set for the duration of the course for the 2026 entry cohort."},
+                "excerpt": "2027 entry international (overseas) undergraduate tuition (confirmed from course pages "
+                "2026-10-26): MEng Computing £47,800/year; MEng Engineering £47,800/year (same Engineering/Computing "
+                "band); Imperial Business School BSc Economics Finance Data Science £44,800/year. "
+                "2026-27 cohort was: Engineering/Computing £45,500; Business School £42,700."},
             "schol": {"suffix": "src-schol",
                 "title": "Undergraduate Scholarships — Imperial College London",
                 "url": "https://www.imperial.ac.uk/study/fees-and-funding/scholarships-search/international-baccalaureate-excellence-scholarships-20262027.php",
@@ -2033,9 +2036,9 @@ UNIVERSITIES = {
              "url": "https://www.imperial.ac.uk/computing/prospective-students/courses/ug/",
              "subjects_note": "A*A*A with A* in Mathematics (A* in Further Mathematics also typical/expected)",
              "subjects": {"a-level": ["Mathematics", "Further Mathematics"], "ib": ["Mathematics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": 45500, "basis": "institutional", "year": "2026-2027",
+             "cost": {"residency": "international", "tuition": 47800, "basis": "institutional", "year": "2027 entry",
                  "mandatory_fees_annual": 0,
-                 "note": "£45,500/yr for international students, Imperial MEng Computing, 2026-2027."}},
+                 "note": "£47,800/yr for international students, Imperial MEng Computing, 2027 entry. (2026-27 cohort was £45,500.)"}},
             {"suffix": "meng-engineering", "program_name": "Engineering", "field": "Engineering", "degree": "MEng",
              "degree_local": "MEng Engineering, Imperial College London. 4-year integrated Master's. Departments: "
              "Aeronautics, Civil, Electrical & Electronic, Mechanical, Chemical, Bioengineering, Materials, "
@@ -2044,9 +2047,9 @@ UNIVERSITIES = {
              "url": "https://www.imperial.ac.uk/study/ug/programmes/engineering/",
              "subjects_note": "A*A*A with A* in Mathematics (Physics or relevant science typically required by department)",
              "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": 45500, "basis": "institutional", "year": "2026-2027",
+             "cost": {"residency": "international", "tuition": 47800, "basis": "institutional", "year": "2027 entry",
                  "mandatory_fees_annual": 0,
-                 "note": "£45,500/yr for international students, Imperial MEng Engineering, 2026-2027."}},
+                 "note": "£47,800/yr for international students, Imperial MEng Engineering, 2027 entry. (2026-27 cohort was £45,500; same Engineering/Computing fee band at Imperial.)"}},
             {"suffix": "bsc-econ-finance-ds", "program_name": "Economics, Finance and Data Science",
              "field": "Economics", "degree": "BSc",
              "degree_local": "BSc Economics, Finance and Data Science, Imperial Business School. 3-year programme "
@@ -2057,9 +2060,9 @@ UNIVERSITIES = {
              "url": "https://www.imperial.ac.uk/business-school/undergraduate/economics-finance-data-science/",
              "subjects_note": "A*AA with A* in Mathematics",
              "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": 42700, "basis": "institutional", "year": "2026-2027",
+             "cost": {"residency": "international", "tuition": 44800, "basis": "institutional", "year": "2027 entry",
                  "mandatory_fees_annual": 0,
-                 "note": "£42,700/yr for international students, Imperial BSc Economics Finance Data Science, 2026-2027."}},
+                 "note": "£44,800/yr for international students, Imperial BSc Economics Finance Data Science, 2027 entry. (2026-27 cohort was £42,700.)"}},
         ],
         # Imperial has no standalone Business Management undergraduate degree.
         "scholarships": [
@@ -2319,9 +2322,11 @@ UNIVERSITIES = {
                 "Alliance MBS. IELTS: 6.5 overall, no sub-test below 6.5 (verified for CS and Engineering)."},
             "fee": {"suffix": "src-fee", "title": "International Fees — University of Manchester",
                 "url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/fees/",
-                "excerpt": "2026-27 international (overseas) undergraduate tuition: BSc Computer Science "
-                "£39,700/year; BEng Mechanical Engineering £35,700/year; BSc Management £33,100/year; "
-                "BSc Economics £33,100/year."},
+                "excerpt": "2027 entry international (overseas) undergraduate tuition (confirmed from course pages "
+                "2026-10-26): BSc Computer Science £39,700/year; BEng Mechanical Engineering £37,500/year "
+                "(CORRECTED from £35,700 which was the 2026-27 fee). "
+                "BSc Management and BSc Economics remain at 2026-27 figures (£33,100/year) — "
+                "2027 entry course pages returned 404 this verification pass."},
             "schol": {"suffix": "src-schol", "title": "Global Futures Scholarships — University of Manchester 2026",
                 "url": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/",
                 "excerpt": "Global Futures Scholarships 2026: 330+ awards, >£6 million total. UAE: up to £36,000 "
@@ -2373,9 +2378,9 @@ UNIVERSITIES = {
              "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2026/03389/beng-mechanical-engineering/",
              "subjects_note": "A*A*A including Mathematics, Physics, and one further subject",
              "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": 35700, "basis": "institutional", "year": "2026-2027",
+             "cost": {"residency": "international", "tuition": 37500, "basis": "institutional", "year": "2027 entry",
                  "mandatory_fees_annual": 0,
-                 "note": "£35,700/yr for international students, Manchester BEng Mechanical Engineering, 2026-2027."}},
+                 "note": "£37,500/yr for international students, Manchester BEng Mechanical Engineering, 2027 entry. (2026-27 cohort was £35,700.)"}},
             {"suffix": "bsc-management", "program_name": "Management", "field": "Business", "degree": "BSc",
              "degree_local": "BSc Management, Alliance Manchester Business School (Alliance MBS), University "
              "of Manchester. 3-year programme. Related: BSc International Management, BSc Accounting.",
@@ -4011,14 +4016,14 @@ UNIVERSITIES = {
                 "International diplomas (A-levels, IB, US HS, Abitur etc.) accepted via eligibility check. "
                 "€100 non-refundable application fee for students with international diplomas."},
             "fee": {"suffix": "src-fee",
-                "title": "TU/e — Tuition Fees (2026-2027)",
+                "title": "TU/e — Tuition Fees (2027-2028 confirmed 2026-10-26)",
                 "url": "https://www.tue.nl/en/education/become-a-tue-student/tuition-fees-and-other-study-costs/"
                 "tuition-fee",
-                "excerpt": "Non-EEA institutional tuition fee for all Bachelor programmes: €18,600/year (2026-27). "
-                "EU/EEA students pay Dutch statutory tuition fee (~€2,694/year). Non-EEA students who started "
-                "in 2025-26 or 2026-27 are covered by a transitional lower rate through August 31, 2030 "
-                "(2027-28 rate for that cohort: €19,200). New entrants to WS 2027-28 will pay the standard "
-                "institutional fee at that year's rate (expected ~€19,100-€19,600 at ~2.85% annual increase). "
+                "excerpt": "Non-EEA institutional tuition fee (confirmed from TU/e fee page 2026-10-26): "
+                "2026-27: €18,600; 2027-28 NEW ENTRANT: €22,400. "
+                "Transitional rate for cohorts enrolled 2025-26/2026-27: €19,200 for 2027-28 (protected through Aug 2030). "
+                "Students applying now for Fall 2027 entry pay the new entrant rate of €22,400. "
+                "EU/EEA students pay Dutch statutory tuition fee (~€2,694/year). "
                 "No institutional scholarships available for Bachelor students at TU/e."},
             "schol": {"suffix": "src-schol",
                 "title": "TU/e — Scholarships and Grants",
@@ -4075,12 +4080,12 @@ UNIVERSITIES = {
              "subjects_note": "Mathematics at A-level required. Grade threshold assessed by TU/e eligibility "
                               "review. Selection procedure includes maths component. IELTS 6.5 required.",
              "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": 18600, "basis": "institutional",
-                 "year": "2026-2027",
+             "cost": {"residency": "international", "tuition": 22400, "basis": "institutional",
+                 "year": "2027-2028",
                  "mandatory_fees_annual": None,
-                 "note": "Non-EU: €18,600/year (2026-27 institutional fee). EU/EEA pay statutory ~€2,694/yr. "
-                 "Note: students starting in 2027-28 may pay a slightly higher rate (expected ~€19,100–€19,600 "
-                 "at ~2.85% annual indexation from the 2026-27 base). No institutional Bachelor scholarships."}},
+                 "note": "Non-EU: €22,400/year (2027-28 new entrant rate, confirmed from TU/e fee page 2026-10-26). "
+                 "CORRECTION: original stored value was €18,600 (2026-27 rate). "
+                 "Transitional: students enrolled before Fall 2027 pay lower rate. No institutional Bachelor scholarships."}},
             {"suffix": "bsc-ee", "program_name": "Electrical Engineering",
              "field": "Engineering", "degree": "BSc", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Science in Electrical Engineering, TU/e Bachelor College, "
@@ -4093,11 +4098,11 @@ UNIVERSITIES = {
                               "Programme taught in English.",
              "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
                           "international-other": []},
-             "cost": {"residency": "international", "tuition": 18600, "basis": "institutional",
-                 "year": "2026-2027",
+             "cost": {"residency": "international", "tuition": 22400, "basis": "institutional",
+                 "year": "2027-2028",
                  "mandatory_fees_annual": None,
-                 "note": "Non-EU: €18,600/year (2026-27). Same institutional fee applies to all TU/e "
-                 "Bachelor programmes regardless of discipline."}},
+                 "note": "Non-EU: €22,400/year (2027-28 new entrant rate). CORRECTION from €18,600 (2026-27). "
+                 "Same institutional fee applies to all TU/e Bachelor programmes."}},
         ],
         "scholarships": [],  # TU/e explicitly confirms no institutional Bachelor scholarships; external options only
     },
@@ -4265,14 +4270,14 @@ UNIVERSITIES = {
                 "Mechanical Engineering. Apply via Studielink; non-EU/visa students: deadline May 1, 2027. "
                 "€100 application fee."},
             "fee": {"suffix": "src-fee",
-                "title": "UT Twente — Tuition Fees for Non-EU/EEA Students (2026-2027)",
+                "title": "UT Twente — Tuition Fees for Non-EU/EEA Students (2027-2028 confirmed 2026-10-26)",
                 "url": "https://www.utwente.nl/en/education/bachelor/tuition-fees/",
-                "excerpt": "Non-EU/EEA institutional tuition fees (2026-27): Technical Computer Science "
-                "€16,400/year (STEM/Bèta tier); Mechanical Engineering €16,400/year (STEM tier); "
-                "International Business Administration €12,300/year (Gamma/Alpha tier). "
-                "EU/EEA students pay Dutch statutory fee (~€2,694/yr). Note: students also pay an €100 "
-                "application fee. No institutional Bachelor scholarships at UT Twente "
-                "(UTS scholarship is Masters-only)."},
+                "excerpt": "Non-EU/EEA institutional tuition fees (2027-28, confirmed from UT fee page 2026-10-26): "
+                "STEM/Bèta tier (Technical CS, Mechanical Engineering etc.) €16,869/year; "
+                "Gamma/Alpha tier (International Business Administration etc.) €12,652/year. "
+                "2026-27 rates were: STEM €16,400; Gamma €12,300. Annual indexation ~2.85%. "
+                "EU/EEA students pay Dutch statutory fee (~€2,694/yr). €100 application fee for non-EU. "
+                "No institutional Bachelor scholarships (UTS is Masters-only)."},
             "schol": {"suffix": "src-schol",
                 "title": "UT Twente — Scholarship Finder",
                 "url": "https://www.utwente.nl/en/education/scholarship-finder/",
@@ -4329,11 +4334,11 @@ UNIVERSITIES = {
                               "IELTS 6.0 overall (minimum 5.5/section) required for UAE students. "
                               "Programme in English.",
              "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": 16400, "basis": "institutional",
-                 "year": "2026-2027",
+             "cost": {"residency": "international", "tuition": 16869, "basis": "institutional",
+                 "year": "2027-2028",
                  "mandatory_fees_annual": None,
-                 "note": "Non-EU: €16,400/year (2026-27 STEM/Bèta tier, confirmed from UT official fee page). "
-                 "EU/EEA pay ~€2,694/yr statutory. No institutional Bachelor scholarship at UT Twente."}},
+                 "note": "Non-EU: €16,869/year (2027-28 STEM/Bèta tier, confirmed from UT official fee page 2026-10-26). "
+                 "CORRECTION from €16,400 (2026-27). EU/EEA pay ~€2,694/yr statutory. No institutional Bachelor scholarship."}},
             {"suffix": "bsc-me", "program_name": "Mechanical Engineering",
              "field": "Engineering", "degree": "BSc", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Science in Mechanical Engineering, Faculty of Engineering "
@@ -4345,10 +4350,10 @@ UNIVERSITIES = {
                               "IELTS 6.0 required. Programme in English.",
              "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
                           "international-other": []},
-             "cost": {"residency": "international", "tuition": 16400, "basis": "institutional",
-                 "year": "2026-2027",
+             "cost": {"residency": "international", "tuition": 16869, "basis": "institutional",
+                 "year": "2027-2028",
                  "mandatory_fees_annual": None,
-                 "note": "Non-EU: €16,400/year (2026-27 STEM tier, confirmed from UT official fee page)."}},
+                 "note": "Non-EU: €16,869/year (2027-28 STEM tier). CORRECTION from €16,400 (2026-27)."}},
             {"suffix": "bsc-iba", "program_name": "International Business Administration",
              "field": "Business", "degree": "BSc", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Science in International Business Administration (IBA), BMS Faculty "
@@ -4360,10 +4365,10 @@ UNIVERSITIES = {
              "subjects_note": "Mathematics at A-level recommended; business aptitude expected. Grade assessed "
                               "by UT. IELTS 6.0 required. Programme in English.",
              "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": 12300, "basis": "institutional",
-                 "year": "2026-2027",
+             "cost": {"residency": "international", "tuition": 12652, "basis": "institutional",
+                 "year": "2027-2028",
                  "mandatory_fees_annual": None,
-                 "note": "Non-EU: €12,300/year (2026-27 Gamma/business tier, confirmed from UT fee page). "
+                 "note": "Non-EU: €12,652/year (2027-28 Gamma/business tier). CORRECTION from €12,300 (2026-27). "
                  "Lower than STEM fee tier. EU/EEA pay ~€2,694/yr statutory."}},
         ],
         "scholarships": [],  # No institutional Bachelor scholarships at UT Twente (UTS is Masters-only only)
@@ -4760,13 +4765,13 @@ UNIVERSITIES = {
                               "Achiever Award. Programme in English.",
              "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
                           "international-other": []},
-             "cost": {"residency": "international", "tuition": None, "basis": "institutional",
+             "cost": {"residency": "international", "tuition": 68160, "basis": "institutional",
                  "year": "2026-2027",
                  "mandatory_fees_annual": None,
-                 "note": "TUITION NOT CONFIRMED — official Monash Malaysia fee page returns 403; secondary "
-                 "sources show inconsistent values ranging MYR 54,915–64,800/year for ME (4-year). "
-                 "Cannot confirm exact figure from primary source; stored NULL per data quality policy. "
-                 "6% SST also applies (private university) — verify fee and SST inclusion at application."}},
+                 "note": "MYR 68,160/year (4yr BEng). PRIMARY SOURCE: monash.edu.my/study/undergraduate/fees "
+                 "(confirmed 2026-10-26 via browser). MYR 68,160/yr = MYR 272,640 total over 4 years. "
+                 "6% SST applies: effective ~MYR 72,250/year for non-Malaysian students from July 2025. "
+                 "Verify SST inclusion at application."}},
             {"suffix": "bbuscomm", "program_name": "Business and Commerce",
              "field": "Business", "degree": "BBusComm", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Business and Commerce (Hons), Monash Business School Malaysia, "
@@ -4776,13 +4781,13 @@ UNIVERSITIES = {
              "url": "https://www.monash.edu.my/study/undergraduate/courses",
              "subjects_note": "A-level Mathematics required. IELTS 6.5/6.0. Programme in English.",
              "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": None, "basis": "institutional",
+             "cost": {"residency": "international", "tuition": 54240, "basis": "institutional",
                  "year": "2026-2027",
                  "mandatory_fees_annual": None,
-                 "note": "TUITION NOT CONFIRMED — official Monash Malaysia fee page returns 403; secondary "
-                 "sources show inconsistent values ranging MYR 43,680–54,240/year for BBusComm (3-year). "
-                 "Cannot confirm exact figure from primary source; stored NULL per data quality policy. "
-                 "6% SST also applies (private university) — verify fee and SST inclusion at application."}},
+                 "note": "MYR 54,240/year (3yr BBusComm). PRIMARY SOURCE: monash.edu.my/study/undergraduate/fees "
+                 "(confirmed 2026-10-26 via browser). MYR 54,240/yr = MYR 162,720 total over 3 years. "
+                 "6% SST applies: effective ~MYR 57,494/year for non-Malaysian students from July 2025. "
+                 "Verify SST inclusion at application."}},
         ],
         "scholarships": [
             {"suffix": "high-achiever", "name": "Monash High Achiever Award",
@@ -4996,19 +5001,19 @@ UNIVERSITIES = {
                 "Important: Taylor's is an independent Malaysian university — degree is a Taylor's MQA "
                 "degree, NOT a UK/Australian branch campus degree."},
             "fee": {"suffix": "src-fee",
-                "title": "Taylor's University — Undergraduate Fee Schedule (2025)",
-                "url": "https://sharifstudy.com/en/wp-content/uploads/2025/05/Taylors-University-Fees-2025.pdf",
-                "excerpt": "Taylor's University 2025 programme fees for international students (PRIMARY SOURCE "
-                "CONFIRMED — official Taylor's University fee PDF (last updated May 2025), downloaded and "
-                "directly read via pdftotext on 2026-10-26; PDF explicitly states fees are 'officially "
-                "presented by Taylor's university' including International Student Enrolment Fee, "
-                "International Student Annual Fee, EMGS Visa Application Fee, and all other standard costs): "
-                "BSc Computer Science (Hons) 3 years: total MYR 135,738 → MYR 45,246/year. "
-                "BEng Mechanical Engineering (Hons) 4 years: total MYR 183,562 → MYR 45,891/year. "
-                "Bachelor of Business (Hons) 3 years: total MYR 143,946 → MYR 47,982/year. "
-                "IMPORTANT: These are 2025 fees (all-inclusive per Taylor's official schedule). "
-                "2026/27 fees not yet confirmed — apply Taylor's fee PDF for updated year when available. "
-                "6% SST: uncertain whether included — PDF does not explicitly state."},
+                "title": "Taylor's University — Undergraduate Fee Schedule (2027)",
+                "url": "https://university.taylors.edu.my/en/study/scholarships-and-financial-aid/fees-schedules.html",
+                "excerpt": "Taylor's University 2027 programme fees for international students (PRIMARY SOURCE "
+                "CONFIRMED — official Taylor's University fee PDFs hosted on university.taylors.edu.my, "
+                "downloaded and directly read via pdftotext on 2026-10-26; dated 12/10/2026; "
+                "separate PDFs per school — School of Computer Science, School of Engineering, Taylor's "
+                "Business School; all-inclusive grand totals for September 2027 intake): "
+                "BSc Computer Science (Hons) 3 years: total MYR 149,210 → MYR 49,737/year (pre-SST). "
+                "BEng Mechanical Engineering (Hons) 4 years: total MYR 198,876 → MYR 49,719/year (pre-SST). "
+                "Bachelor of Business (Hons) 3 years: total MYR 156,064 → MYR 52,021/year (pre-SST). "
+                "NOTE: 6% SST applies to all fees for non-Malaysian students from 1 July 2025 "
+                "(stated explicitly in PDF). Fees shown are EXCLUSIVE of SST. "
+                "With SST: CS ~MYR 52,721/yr; ME ~MYR 52,702/yr; Business ~MYR 55,142/yr."},
             "schol": {"suffix": "src-schol",
                 "title": "Taylor's University — Scholarships and Awards",
                 "url": "https://university.taylors.edu.my/en/admissions/scholarships.html",
@@ -5069,14 +5074,14 @@ UNIVERSITIES = {
              "subjects_note": "A-level Mathematics at minimum grade D (low entry bar). IELTS 5.5 overall "
                               "(confirmed from programme page). Programme in English.",
              "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": 45246, "basis": "institutional",
-                 "year": "2025",
+             "cost": {"residency": "international", "tuition": 49737, "basis": "institutional",
+                 "year": "2027",
                  "mandatory_fees_annual": None,
-                 "note": "MYR 45,246/year (total MYR 135,738 ÷ 3yr). PRIMARY SOURCE CONFIRMED — directly "
-                 "read from official Taylor's University fee PDF (May 2025), which states fees are officially "
-                 "presented by Taylor's University including all enrolment, annual, EMGS visa, and standard "
-                 "fees. Note: these are 2025 all-inclusive fees; 2026/27 fees subject to revision. "
-                 "6% SST status uncertain — verify at application."}},
+                 "note": "MYR 49,737/year (total MYR 149,210 ÷ 3yr, Sep 2027 intake). PRIMARY SOURCE — "
+                 "official Taylor's fee PDF (university.taylors.edu.my, dated 12/10/2026). "
+                 "All-inclusive (enrolment + tuition + EMGS + standard fees) per PDF. "
+                 "EXCLUSIVE of 6% SST (PDF explicitly states SST excluded). "
+                 "With SST: ~MYR 52,721/yr (×1.06). CORRECTED from MYR 45,246/yr (2025 third-party PDF)."}},
             {"suffix": "beng-me", "program_name": "Mechanical Engineering",
              "field": "Engineering", "degree": "BEng", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Engineering (Mechanical) (Hons), School of Engineering and "
@@ -5088,12 +5093,14 @@ UNIVERSITIES = {
                               "confidence — verify with Taylor's admissions). Programme in English.",
              "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
                           "international-other": []},
-             "cost": {"residency": "international", "tuition": 45891, "basis": "institutional",
-                 "year": "2025",
+             "cost": {"residency": "international", "tuition": 49719, "basis": "institutional",
+                 "year": "2027",
                  "mandatory_fees_annual": None,
-                 "note": "MYR 45,891/year (total MYR 183,562 ÷ 4yr). PRIMARY SOURCE CONFIRMED — directly "
-                 "read from official Taylor's University fee PDF (May 2025); all-inclusive fees per Taylor's. "
-                 "2025 rates; 2026/27 subject to revision. 6% SST status uncertain — verify at application."}},
+                 "note": "MYR 49,719/year (total MYR 198,876 ÷ 4yr, Sep 2027 intake). PRIMARY SOURCE — "
+                 "official Taylor's fee PDF (university.taylors.edu.my, dated 12/10/2026). "
+                 "All-inclusive (enrolment + tuition + EMGS + standard fees) per PDF. "
+                 "EXCLUSIVE of 6% SST. With SST: ~MYR 52,702/yr (×1.06). "
+                 "CORRECTED from MYR 45,891/yr (2025 third-party PDF)."}},
             {"suffix": "bba", "program_name": "Business",
              "field": "Business", "degree": "Bachelor", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Business (Hons), Taylor's Business School, Taylor's University. "
@@ -5104,13 +5111,14 @@ UNIVERSITIES = {
              "subjects_note": "A-level minimum grade D. IELTS 5.5 (estimated — verify with Taylor's). "
                               "Programme in English.",
              "subjects": {"a-level": [], "ib": [], "international-other": []},
-             "cost": {"residency": "international", "tuition": 47982, "basis": "institutional",
-                 "year": "2025",
+             "cost": {"residency": "international", "tuition": 52021, "basis": "institutional",
+                 "year": "2027",
                  "mandatory_fees_annual": None,
-                 "note": "MYR 47,982/year (total MYR 143,946 ÷ 3yr). PRIMARY SOURCE CONFIRMED — directly "
-                 "read from official Taylor's University fee PDF (May 2025); all-inclusive fees per Taylor's. "
-                 "2025 rates; 2026/27 subject to revision. 6% SST status uncertain — verify at application. "
-                 "No scholarship available for direct UAE applicants (Excellence Award: Malaysian/TEG only)."}},
+                 "note": "MYR 52,021/year (total MYR 156,064 ÷ 3yr, Sep 2027 intake). PRIMARY SOURCE — "
+                 "official Taylor's fee PDF (university.taylors.edu.my, dated 12/10/2026). "
+                 "All-inclusive per PDF. EXCLUSIVE of 6% SST. With SST: ~MYR 55,142/yr (×1.06). "
+                 "CORRECTED from MYR 47,982/yr (2025 third-party PDF). "
+                 "No scholarship for direct UAE applicants (Excellence Award: Malaysian/TEG only)."}},
         ],
         "scholarships": [],  # Taylor's Excellence Award restricted to Malaysian/TEG students — not available to direct UAE applicants
     },
@@ -5293,11 +5301,11 @@ UNIVERSITIES = {
                 "title": "Monash — 2027 International Undergraduate Tuition Fees",
                 "url": "https://www.monash.edu/study/fees/international-fees",
                 "excerpt": "Monash University 2027 annual international tuition fees: "
-                "Bachelor of Computer Science: AUD 55,500/year (MEDIUM confidence — from Monash 2027 "
-                "International Course Guide; official fee page returned 403; secondary sources consistent). "
-                "Bachelor of Engineering (Honours): AUD 63,040/year (CONFIRMED — multiple sources). "
-                "Bachelor of Commerce: AUD 59,140/year (CONFIRMED). "
-                "All fees AUD. 2028 rates not yet published."},
+                "Bachelor of Computer Science: AUD 58,940/year (PRIMARY SOURCE — monash.edu C2001 page "
+                "confirmed 2026-10-26; CORRECTED from AUD 55,500 which was the 2026 fee per IDP). "
+                "Bachelor of Engineering (Honours): AUD 63,040/year (CONFIRMED — E3001 page primary source). "
+                "Bachelor of Commerce: AUD 59,140/year (CONFIRMED — B2001 page primary source). "
+                "All fees AUD. 2028 rates not yet published; expect ~3-5% increase for Feb 2028 entrants."},
             "schol": {"suffix": "src-schol",
                 "title": "Monash — Monash International Leadership Scholarship (MILS)",
                 "url": "https://www.monash.edu/study/fees/scholarships/monash-international-leadership-scholarship",
@@ -5307,8 +5315,8 @@ UNIVERSITIES = {
                 "and MBA). Automatic consideration after receiving a full unconditional offer; applicants "
                 "also assessed via a 500-word leadership statement. Available to all international "
                 "students. Criteria: academic excellence + demonstrated leadership potential. "
-                "Award value: approx. AUD $166,500 (BCS 3yr) to AUD $252,160 (BEng 4yr) total based "
-                "on 2027 rates. Source: multiple consistent secondary sources citing Monash policy."},
+                "Award value: approx. AUD $176,820 (BCS 3yr at $58,940/yr) to AUD $252,160 (BEng 4yr) "
+                "total based on 2027 rates. Source: multiple consistent secondary sources citing Monash policy."},
         },
         "curricula": [
             ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
@@ -5352,13 +5360,12 @@ UNIVERSITIES = {
              "url": "https://www.monash.edu/study/courses/find-a-course/bachelor-of-computer-science",
              "subjects_note": "A-level Mathematics required. IELTS 6.5/6.0. Programme in English.",
              "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": 55500, "basis": "institutional",
+             "cost": {"residency": "international", "tuition": 58940, "basis": "institutional",
                  "year": "2027",
                  "mandatory_fees_annual": None,
-                 "note": "AUD 55,500/year (2027, CONFIRMED — cross-verified from multiple independent "
-                 "sources including Monash 2027 International Undergraduate Course Guide citation and "
-                 "search results directly citing monash.edu on 2026-10-26). Official fee page 403 but "
-                 "all sources consistently confirm AUD 55,500 for 2027 international BCS entry."}},
+                 "note": "AUD 58,940/year (2027, PRIMARY SOURCE — monash.edu/study/courses/find-a-course/"
+                 "computer-science-c2001?international=true confirmed 2026-10-26). CORRECTED from AUD 55,500 "
+                 "(which was the 2026 fee). 2028 rate not yet published; expect ~3-5% higher for Feb 2028."}},
             {"suffix": "beng-hons", "program_name": "Engineering (Honours)",
              "field": "Engineering", "degree": "BEng(Hons)", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Engineering (Honours), Faculty of Engineering, Monash "
@@ -5396,7 +5403,7 @@ UNIVERSITIES = {
              "provider_type": "institutional",
              "award_type": "tuition_waiver", "renewable": True,
              "award_amount": "100% tuition fee coverage for the full degree duration. Estimated total "
-             "value (2027 rates): ~AUD 166,500 for BCS (3yr), ~AUD 252,160 for BEng (4yr), "
+             "value (2027 rates): ~AUD 176,820 for BCS (3yr at $58,940/yr), ~AUD 252,160 for BEng (4yr), "
              "~AUD 177,420 for BCom (3yr).",
              "academic_criteria": "Academic excellence in secondary education/prior qualifications. "
              "EXTREMELY COMPETITIVE: only 4 scholarships awarded globally per year across all "

@@ -178,6 +178,70 @@ const FACT_CHECKED = new Set<string>([
   "ca-university-of-toronto", // fact-checks/toronto-2026-10-03.md
   "gb-university-of-oxford", // fact-checks/oxford-2026-10-03.md (resolved 2026-10-07)
   "de-tu-munich", // fact-checks/tu-munich-2026-10-07.md
+  // US batch — fact-checks/us-batch-2026-10-26.md (all 10 confirmed against official 2026-27 COA pages)
+  "us-princeton",
+  "us-mit",
+  "us-harvard",
+  "us-stanford",
+  "us-upenn",
+  "us-cornell",
+  "us-nyu",
+  "us-usc",
+  "us-purdue",
+  "us-asu",
+  // Canada batch — fact-checks/ca-batch-2026-10-26.md
+  // Waterloo/McGill/McMaster: primary-source confirmed. UBC/Alberta: Board-approved rates via secondary sources (fee pages inaccessible; caveat documented in fact-check file)
+  "ca-waterloo",
+  "ca-ubc",
+  "ca-mcgill",
+  "ca-mcmaster",
+  "ca-alberta",
+  // UK batch — fact-checks/uk-batch-2026-10-26.md
+  // Cambridge/Warwick/Birmingham: primary source confirmed. Imperial: corrected to 2027 entry fees.
+  // Manchester CS+Eng: primary source confirmed (Eng corrected). UCL/Nottingham: secondary source (pages 403/404).
+  "uk-cambridge",
+  "uk-imperial",
+  "uk-ucl",
+  "uk-warwick",
+  "uk-manchester",
+  "uk-birmingham",
+  "uk-nottingham",
+  // Germany batch — fact-checks/de-batch-2026-10-26.md
+  // TU Berlin + LMU: primary source confirmed. RWTH + Heidelberg + KIT: state law (NRW/BW) + partial primary source.
+  "de-rwth-aachen",
+  "de-heidelberg",
+  "de-tu-berlin",
+  "de-kit",
+  "de-lmu",
+  // Netherlands batch — fact-checks/nl-batch-2026-10-26.md
+  // All 3 primary-source confirmed; TU/e and UT corrected to 2027-28 rates; UvA already correct.
+  "nl-tue",
+  "nl-uva",
+  "nl-ut",
+  // Australia batch — fact-checks/au-batch-2026-10-26.md
+  // UniMelb: primary source (2027 range minimums). Monash BCS corrected ($55,500→$58,940); BEng+BCom confirmed.
+  // USyd: primary source (search-confirmed). UNSW: primary source per-UOC rate confirmed. 2028 fees not yet published.
+  "au-unimelb",
+  "au-monash",
+  "au-usyd",
+  "au-unsw",
+  // UAE batch — fact-checks/ae-batch-2026-10-26.md
+  // AUS/UAEU/Khalifa/UoS: primary source confirmed. Birmingham: 3 fees corrected to Sept 2027.
+  // Heriot-Watt: primary source confirmed. RIT: confirmed. CUD: BBA corrected (pre→VAT-incl).
+  "ae-aus",
+  "ae-uaeu",
+  "ae-khalifa",
+  "ae-university-of-sharjah",
+  "ae-birmingham-dubai",
+  "ae-heriot-watt-dubai",
+  "ae-rit-dubai",
+  "ae-canadian-university-dubai",
+  // Malaysia batch — fact-checks/my-batch-2026-10-26.md
+  // UM: confirmed. Monash: CS confirmed; ME+BBusComm null→filled. UNM: all 3 confirmed. Taylor's: all 3 corrected (2025→2027 official PDF).
+  "my-um",
+  "my-monash",
+  "my-nottingham",
+  "my-taylors",
 ]);
 
 // Student-facing confidence label. "Verified" means EvidaPath has checked this
@@ -202,10 +266,13 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
   const fees = cost?.mandatory_fees_annual ?? null;
   const living = cost?.estimated_living_costs_annual ?? null;
   const currency = cost?.currency || countryCurrency || "";
+  const years = durationYears(p);
+  // Full total requires all three cost components. Tuition-only total (fees+living unknown)
+  // is surfaced when tuition is known but living isn't verified yet.
   const complete = tuition != null && fees != null && living != null;
   const totalAnnual = complete ? tuition + fees + living : null;
-  const years = durationYears(p);
-  const totalDegree = totalAnnual != null && years > 0 ? totalAnnual * years : null;
+  const tuitionOnlyTotal = !complete && tuition != null && years > 0 ? tuition * years : null;
+  const totalDegree = totalAnnual != null && years > 0 ? totalAnnual * years : tuitionOnlyTotal;
   const admissionsByCurriculum = (p.admissions || [])
     .filter((a) => a.curriculum_type)
     .map((a) => ({
@@ -261,6 +328,18 @@ function adapt(u: SanityUniversity): University {
   const costResidencyNote = featured?.costResidencyNote;
   const admissionsByCurriculum = featured?.admissionsByCurriculum ?? [];
 
+  // Derive A-level threshold from Sanity admissions data. Prefer A-Level; fall back to IB.
+  const aLevelAdm = admissionsByCurriculum.find((a) =>
+    /a.?level/i.test(a.curriculum ?? ""),
+  );
+  const ibAdm = admissionsByCurriculum.find((a) => /baccalaureate|^ib$/i.test(a.curriculum ?? ""));
+  const admThreshold = aLevelAdm?.threshold || ibAdm?.threshold || null;
+  const admPrereqs = aLevelAdm?.subjects ?? ibAdm?.subjects ?? [];
+  // When admissions data exists but threshold is null, institution uses holistic/competitive
+  // admissions without a published grade cutoff (verified absence, not missing data).
+  const hasAdmissionsData = admissionsByCurriculum.length > 0;
+  const admThresholdDisplay = admThreshold || (hasAdmissionsData ? "No published grade cutoff" : PENDING);
+
   const aliases = u.aliases || [];
   const shortName = aliases[aliases.length - 1] || u.canonical_name;
 
@@ -286,10 +365,9 @@ function adapt(u: SanityUniversity): University {
     programs: (u.programs || []).map((p) => p.program_name || "").filter(Boolean),
     durationYears: years,
     academicRequirements: {
-      // Admissions detail is the Analyze page's job; kept honest/pending here.
-      system: PENDING,
-      target: PENDING,
-      prerequisites: [],
+      system: aLevelAdm ? "GCE A-Level" : ibAdm ? "IB Diploma" : PENDING,
+      target: admThresholdDisplay,
+      prerequisites: admPrereqs,
     },
     costs: {
       tuitionPerYear: tuition,
