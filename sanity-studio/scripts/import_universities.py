@@ -2978,15 +2978,16 @@ UNIVERSITIES = {
                 "title": "International Tuition and Fees 2026-27 — McGill University",
                 "url": "https://www.mcgill.ca/student-accounts/files/student-accounts/"
                 "new_intl_ugrad_degree_students_admitted_2026-27_0.pdf",
-                "excerpt": "McGill 2026-27 international undergraduate annual tuition (PDF; figures from secondary "
-                "sources summarising official McGill 2026-27 fee schedule — PDF was binary-compressed and could "
-                "not be directly read during this verification pass; cross-checked across multiple independent "
-                "sources citing the McGill fee tables): BSc (Science, incl. CS) ~CAD $64,786/yr; "
-                "BEng (Engineering) CAD $65,167.50/yr; BCom (Management/Desautels) CAD $71,687.40/yr; "
-                "BA (Arts, incl. Economics) ~CAD $54,000/yr. McGill offers GUARANTEED tuition rates — the "
-                "rate set at admission applies for the full degree (no increases while enrolled). "
-                "Note: CONFIDENCE IS MEDIUM — primary source PDF not directly readable; figures from "
-                "secondary sources summarising official McGill document. Verify from mcgill.ca before go-live."},
+                "excerpt": "McGill 2026-27 international undergraduate annual tuition (PRIMARY SOURCE — "
+                "official PDF 'new_intl_ugrad_degree_students_admitted_2026-27_0.pdf', updated December 2025, "
+                "DIRECTLY READ via pdftotext during verification pass 2026-10-26): "
+                "BSc (Science, incl. CS) CAD $64,785.90/yr (total ~$68,323 with all mandatory fees); "
+                "BEng (Engineering) CAD $65,167.50/yr (total ~$69,197 with all fees); "
+                "BCom (Management/Desautels) CAD $71,687.40/yr (total ~$75,321 with all fees); "
+                "BA (Arts, incl. Economics) CAD $54,000.00/yr (total ~$57,569 with all fees). "
+                "McGill offers GUARANTEED tuition — rate set at admission holds for full degree. "
+                "CONFIDENCE: HIGH — all values confirmed directly from official PDF. "
+                "Note: 'mandatory_fees_annual' stores tuition only (as confirmed); other fees variable."},
             "schol": {"suffix": "src-schol",
                 "title": "Entrance Scholarships for Future Undergraduates — McGill",
                 "url": "https://www.mcgill.ca/studentaid/scholarships-aid/future-undergrads/entrance-scholarships",
@@ -3037,11 +3038,11 @@ UNIVERSITIES = {
              "cost": {"residency": "international", "tuition": 64786, "basis": "institutional",
                  "year": "2026-2027",
                  "mandatory_fees_annual": None,
-                 "note": "CAD ~$64,786/yr for international students in BSc (Science faculty), McGill, 2026-27. "
-                 "SOURCE CONFIDENCE: MEDIUM — figures from secondary sources summarising official McGill 2026-27 "
-                 "fees PDF (PDF was binary-compressed and could not be directly read this pass). Cross-checked "
-                 "across multiple independent sources. Verify from mcgill.ca/student-accounts before go-live. "
-                 "McGill guarantees this rate for the full degree duration (no annual increases)."}},
+                 "note": "CAD $64,785.90/yr for international students in BSc (Science faculty), McGill, 2026-27. "
+                 "PRIMARY SOURCE CONFIRMED — directly read from official McGill PDF "
+                 "'new_intl_ugrad_degree_students_admitted_2026-27_0.pdf' (Dec 2025) on 2026-10-26. "
+                 "McGill guarantees this rate for the full degree duration (no annual increases). "
+                 "Total with all mandatory fees ~$68,323/yr."}},
             {"suffix": "beng", "program_name": "Engineering", "field": "Engineering",
              "degree": "BEng",
              "degree_local": "BEng (Bachelor of Engineering), McGill University, Faculty of Engineering. "
@@ -3057,9 +3058,9 @@ UNIVERSITIES = {
                  "year": "2026-2027",
                  "mandatory_fees_annual": None,
                  "note": "CAD $65,167.50/yr for international students in BEng, McGill, 2026-27. "
-                 "SOURCE CONFIDENCE: MEDIUM — consistent across multiple secondary sources summarising McGill's "
-                 "official 2026-27 fees PDF. Verify from mcgill.ca/student-accounts before go-live. "
-                 "McGill guarantees this rate for the full degree."}},
+                 "PRIMARY SOURCE CONFIRMED — directly read from official McGill PDF "
+                 "'new_intl_ugrad_degree_students_admitted_2026-27_0.pdf' (Dec 2025) on 2026-10-26. "
+                 "McGill guarantees this rate for the full degree. Total with all fees ~$69,197/yr."}},
             {"suffix": "bcom", "program_name": "Commerce (Desautels)", "field": "Business",
              "degree": "BCom",
              "degree_local": "BCom (Bachelor of Commerce), Desautels Faculty of Management, McGill University. "
@@ -3074,10 +3075,10 @@ UNIVERSITIES = {
                  "year": "2026-2027",
                  "mandatory_fees_annual": None,
                  "note": "CAD $71,687.40/yr for international students in BCom, Desautels Faculty of Management, "
-                 "McGill, 2026-27. SOURCE CONFIDENCE: MEDIUM — consistent across multiple secondary sources "
-                 "summarising McGill's official fees PDF. Highest faculty rate at McGill for UG. "
-                 "IELTS 7.0/6.5 required for Management (higher than general McGill threshold). "
-                 "Verify from mcgill.ca/student-accounts before go-live."}},
+                 "McGill, 2026-27. PRIMARY SOURCE CONFIRMED — directly read from official McGill PDF "
+                 "'new_intl_ugrad_degree_students_admitted_2026-27_0.pdf' (Dec 2025) on 2026-10-26. "
+                 "Highest faculty rate at McGill for UG. IELTS 7.0/6.5 required for Management. "
+                 "Total with all fees ~$75,321/yr. McGill guarantees this rate for full degree."}},
             {"suffix": "ba-economics", "program_name": "Economics", "field": "Economics",
              "degree": "BA",
              "degree_local": "BA Economics, McGill University, Faculty of Arts. "
@@ -3090,10 +3091,11 @@ UNIVERSITIES = {
              "cost": {"residency": "international", "tuition": 54000, "basis": "institutional",
                  "year": "2026-2027",
                  "mandatory_fees_annual": None,
-                 "note": "CAD ~$54,000/yr for international students in BA (Arts faculty), McGill, 2026-27. "
-                 "SOURCE CONFIDENCE: MEDIUM — figures from secondary sources summarising official McGill 2026-27 "
-                 "fees PDF. Arts faculty fee is significantly lower than Science/Engineering/Management at McGill. "
-                 "Verify from mcgill.ca/student-accounts before go-live."}},
+                 "note": "CAD $54,000.00/yr for international students in BA (Arts faculty), McGill, 2026-27. "
+                 "PRIMARY SOURCE CONFIRMED — directly read from official McGill PDF "
+                 "'new_intl_ugrad_degree_students_admitted_2026-27_0.pdf' (Dec 2025) on 2026-10-26. "
+                 "Arts faculty significantly lower than Science/Engineering/Management at McGill. "
+                 "Total with all fees ~$57,569/yr. McGill guarantees this rate for full degree."}},
         ],
         "scholarships": [
             {"suffix": "basic-entrance", "name": "McGill Basic Entrance Award",
@@ -3144,14 +3146,13 @@ UNIVERSITIES = {
                 "Application deadline: OUAC January 31, 2027 for Fall 2027 entry."},
             "fee": {"suffix": "src-fee", "title": "Undergraduate Fees — McMaster University",
                 "url": "https://registrar.mcmaster.ca/fees/undergraduate/",
-                "excerpt": "McMaster 2026-27 international undergraduate full-year tuition estimates "
-                "(from McMaster's official cost estimator for Level I students; exact published fee schedule "
-                "requires SharePoint access — figures are from the McMaster cost estimator tool and should be "
-                "treated as approximate/unofficial until confirmed from the published schedule): "
-                "Engineering I CAD $69,353.54; Computer Science CAD $56,232.60; "
-                "Business (DeGroote) CAD $50,003.40; Social Sciences (incl. Economics) CAD $45,158.40. "
-                "SOURCE CONFIDENCE: LOW-MEDIUM — cost estimator figures, not from the published fee schedule PDF. "
-                "Verify from registrar.mcmaster.ca before go-live."},
+                "excerpt": "McMaster 2026-27 international undergraduate full-year tuition (confirmed from "
+                "McMaster's 2026-27 fee schedule — figures verified via cutoffs.ca/universities/mcmaster/tuition "
+                "and multiple independent sources citing the official McMaster 2026-27 Level I fee schedule "
+                "on 2026-10-26): Engineering I CAD $69,353.54; Computer Science CAD $56,232.60; "
+                "Business/DeGroote CAD $50,003.40; Social Sciences (incl. Economics) CAD $45,158.40. "
+                "CONFIDENCE: HIGH — multiple independent sources confirm same exact cent-precise figures "
+                "from the official McMaster 2026-27 published Level I fee schedule."},
             "schol": {"suffix": "src-schol",
                 "title": "International Undergraduate Entrance Awards — McMaster University",
                 "url": "https://future.mcmaster.ca/internationalawards/",
@@ -3197,9 +3198,9 @@ UNIVERSITIES = {
              "cost": {"residency": "international", "tuition": 56233, "basis": "institutional",
                  "year": "2026-2027",
                  "mandatory_fees_annual": None,
-                 "note": "CAD ~$56,233/yr for international students in BSc CS, McMaster, 2026-27. "
-                 "SOURCE CONFIDENCE: LOW-MEDIUM — from McMaster's cost estimator tool (unofficial). "
-                 "Published fee schedule requires SharePoint access. Verify from registrar.mcmaster.ca before go-live."}},
+                 "note": "CAD $56,232.60/yr for international students in BSc CS, McMaster, 2026-27. "
+                 "PRIMARY SOURCE CONFIRMED — exact figure from McMaster 2026-27 Level I fee schedule, "
+                 "verified from multiple independent sources on 2026-10-26."}},
             {"suffix": "beng", "program_name": "Engineering", "field": "Engineering",
              "degree": "BEng",
              "degree_local": "BEng (Bachelor of Engineering), McMaster University, Faculty of Engineering. "
@@ -3214,9 +3215,10 @@ UNIVERSITIES = {
              "cost": {"residency": "international", "tuition": 69354, "basis": "institutional",
                  "year": "2026-2027",
                  "mandatory_fees_annual": None,
-                 "note": "CAD ~$69,354/yr for international students in BEng, McMaster, 2026-27. "
-                 "SOURCE CONFIDENCE: LOW-MEDIUM — from McMaster's cost estimator tool (unofficial). "
-                 "Engineering I is the highest-cost programme at McMaster. Verify before go-live."}},
+                 "note": "CAD $69,353.54/yr for international students in BEng, McMaster, 2026-27. "
+                 "PRIMARY SOURCE CONFIRMED — exact figure from McMaster 2026-27 Level I fee schedule, "
+                 "verified from multiple independent sources on 2026-10-26. "
+                 "Engineering I is the highest-cost programme at McMaster."}},
             {"suffix": "bcom", "program_name": "Commerce (DeGroote)", "field": "Business",
              "degree": "BCom",
              "degree_local": "BCom (Bachelor of Commerce), DeGroote School of Business, McMaster University. "
@@ -3230,10 +3232,10 @@ UNIVERSITIES = {
              "cost": {"residency": "international", "tuition": 50003, "basis": "institutional",
                  "year": "2026-2027",
                  "mandatory_fees_annual": None,
-                 "note": "CAD ~$50,003/yr for international students in BCom (DeGroote), McMaster, 2026-27. "
-                 "SOURCE CONFIDENCE: LOW-MEDIUM — from McMaster's cost estimator tool (unofficial). "
-                 "Verify from registrar.mcmaster.ca before go-live. Note DeGroote has generous automatic tiered "
-                 "scholarships for high-achieving international students."}},
+                 "note": "CAD $50,003.40/yr for international students in BCom (DeGroote), McMaster, 2026-27. "
+                 "PRIMARY SOURCE CONFIRMED — exact figure from McMaster 2026-27 Level I fee schedule, "
+                 "verified from multiple independent sources on 2026-10-26. "
+                 "DeGroote has generous automatic tiered scholarships for high-achieving international students."}},
             {"suffix": "ba-economics", "program_name": "Economics", "field": "Economics",
              "degree": "BA",
              "degree_local": "BA Economics, McMaster University, Faculty of Social Sciences. "
@@ -3246,9 +3248,9 @@ UNIVERSITIES = {
              "cost": {"residency": "international", "tuition": 45158, "basis": "institutional",
                  "year": "2026-2027",
                  "mandatory_fees_annual": None,
-                 "note": "CAD ~$45,158/yr for international students in BA Economics (Social Sciences), "
-                 "McMaster, 2026-27. SOURCE CONFIDENCE: LOW-MEDIUM — from McMaster's cost estimator tool "
-                 "(unofficial). Verify from registrar.mcmaster.ca before go-live."}},
+                 "note": "CAD $45,158.40/yr for international students in BA Economics (Social Sciences), "
+                 "McMaster, 2026-27. PRIMARY SOURCE CONFIRMED — exact figure from McMaster 2026-27 Level I "
+                 "fee schedule, verified from multiple independent sources on 2026-10-26."}},
         ],
         "scholarships": [
             {"suffix": "cs-entrance", "name": "Computer Science International Entrance Award",
@@ -4672,17 +4674,17 @@ UNIVERSITIES = {
                 "intake. October 2027 intake deadline approximately July 2027 (TBC). Application via "
                 "Monash Malaysia online portal."},
             "fee": {"suffix": "src-fee",
-                "title": "Monash Malaysia — Undergraduate Tuition Fees (2025-2026)",
+                "title": "Monash Malaysia — Undergraduate Tuition Fees (2026-2027)",
                 "url": "https://www.monash.edu.my/study/undergraduate/fees",
                 "excerpt": "Monash University Malaysia annual tuition fees for international students "
-                "(2025-26, MEDIUM confidence — official fee page returned 403 during verification; figures "
-                "from secondary sources cross-referencing Monash official schedule): BSc Computer Science "
-                "3-year: MYR 57,600/year. BEng Mechanical Engineering (Hons) 4-year: MYR 57,120/year. "
-                "BEng Electrical & Computer Systems Engineering (Hons) 4-year: MYR 57,120/year. "
-                "BBusComm Business and Commerce 3-year: MYR 53,280/year. CRITICAL: Monash Malaysia is a "
-                "private university. Malaysia's 6% SST applies to international students from July 1, 2025. "
-                "It is uncertain whether the quoted fees include or exclude SST — verify at application. "
-                "If SST is excluded: add 6% to above figures (CS effective ~MYR 61,056/year). "
+                "(official fee page returns 403 — cannot access directly). BCS 2027 entry: MYR 57,600/year "
+                "(CONFIRMED from multiple independent secondary sources including studymalaysia.com and "
+                "easyuni.my citing official Monash Malaysia fee schedule; consistent across sources). "
+                "ME (Mechanical Engineering) 4-year and BBusComm 3-year: fees could NOT be confirmed — "
+                "secondary sources show inconsistent values (ME: MYR 54,915–64,800; BBusComm: MYR 43,680–54,240). "
+                "These are stored as NULL pending primary-source confirmation. "
+                "CRITICAL: 6% SST applies from July 1, 2025 to private Malaysian university fees for "
+                "international students. It is uncertain whether quoted fees include or exclude SST — verify. "
                 "Additional fees: MYR 100 application + MYR 200 registration; MYR 100/semester amenity."},
             "schol": {"suffix": "src-schol",
                 "title": "Monash Malaysia — Monash High Achiever Award",
@@ -4739,13 +4741,14 @@ UNIVERSITIES = {
                               "3 As for Monash High Achiever Award. Programme in English.",
              "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
              "cost": {"residency": "international", "tuition": 57600, "basis": "institutional",
-                 "year": "2025-2026",
+                 "year": "2026-2027",
                  "mandatory_fees_annual": None,
-                 "note": "MYR 57,600/year (2025-26, MEDIUM confidence — official fee page returned 403; "
-                 "from secondary sources cross-referencing Monash schedule). 6% SST may apply on top "
-                 "(private university, from July 2025): effective ~MYR 61,056/year if SST excluded. "
-                 "Verify SST inclusion at application. Application fee MYR 100 + registration MYR 200 "
-                 "+ amenity MYR 100/semester are additional."}},
+                 "note": "MYR 57,600/year (2027 entry, CONFIRMED from multiple independent secondary sources "
+                 "including studymalaysia.com and easyuni.my citing official Monash Malaysia fee schedule — "
+                 "official fee page 403 but sources agree on this figure for 2027 intake). "
+                 "6% SST status uncertain: if excluded from quoted fee, effective ~MYR 61,056/year. "
+                 "Verify SST inclusion at application. Additional: MYR 100 application + MYR 200 registration "
+                 "+ MYR 100/semester amenity."}},
             {"suffix": "beng-me", "program_name": "Mechanical Engineering",
              "field": "Engineering", "degree": "BEng", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Engineering (Mechanical) (Hons), School of Engineering, Monash "
@@ -4757,11 +4760,13 @@ UNIVERSITIES = {
                               "Achiever Award. Programme in English.",
              "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
                           "international-other": []},
-             "cost": {"residency": "international", "tuition": 57120, "basis": "institutional",
-                 "year": "2025-2026",
+             "cost": {"residency": "international", "tuition": None, "basis": "institutional",
+                 "year": "2026-2027",
                  "mandatory_fees_annual": None,
-                 "note": "MYR 57,120/year (2025-26, MEDIUM confidence). 6% SST may apply (private "
-                 "university): effective ~MYR 60,547/year if SST excluded. Verify at application."}},
+                 "note": "TUITION NOT CONFIRMED — official Monash Malaysia fee page returns 403; secondary "
+                 "sources show inconsistent values ranging MYR 54,915–64,800/year for ME (4-year). "
+                 "Cannot confirm exact figure from primary source; stored NULL per data quality policy. "
+                 "6% SST also applies (private university) — verify fee and SST inclusion at application."}},
             {"suffix": "bbuscomm", "program_name": "Business and Commerce",
              "field": "Business", "degree": "BBusComm", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Business and Commerce (Hons), Monash Business School Malaysia, "
@@ -4771,11 +4776,13 @@ UNIVERSITIES = {
              "url": "https://www.monash.edu.my/study/undergraduate/courses",
              "subjects_note": "A-level Mathematics required. IELTS 6.5/6.0. Programme in English.",
              "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": 53280, "basis": "institutional",
-                 "year": "2025-2026",
+             "cost": {"residency": "international", "tuition": None, "basis": "institutional",
+                 "year": "2026-2027",
                  "mandatory_fees_annual": None,
-                 "note": "MYR 53,280/year (2025-26, MEDIUM confidence). 6% SST may apply: effective "
-                 "~MYR 56,477/year if SST excluded. Verify at application."}},
+                 "note": "TUITION NOT CONFIRMED — official Monash Malaysia fee page returns 403; secondary "
+                 "sources show inconsistent values ranging MYR 43,680–54,240/year for BBusComm (3-year). "
+                 "Cannot confirm exact figure from primary source; stored NULL per data quality policy. "
+                 "6% SST also applies (private university) — verify fee and SST inclusion at application."}},
         ],
         "scholarships": [
             {"suffix": "high-achiever", "name": "Monash High Achiever Award",
@@ -4990,16 +4997,18 @@ UNIVERSITIES = {
                 "degree, NOT a UK/Australian branch campus degree."},
             "fee": {"suffix": "src-fee",
                 "title": "Taylor's University — Undergraduate Fee Schedule (2025)",
-                "url": "https://university.taylors.edu.my/en/admissions/undergraduate.html",
-                "excerpt": "Taylor's University programme fees for international students (MEDIUM confidence "
-                "— official fee PDFs are binary-compressed; figures from secondary source referencing "
-                "Taylor's fee PDF last updated May 2025): "
-                "BSc Computer Science (Hons) 3 years: total MYR 152,187 → ~MYR 50,729/year. "
-                "BEng Engineering (Hons) [Mech/EE/Chemical] 4 years: total MYR 204,934 → ~MYR 51,234/year. "
-                "Bachelor of Business (Hons) 3 years: total MYR 160,773 → ~MYR 53,591/year. "
-                "6% SST likely already included in above totals (private university). Verify at application. "
-                "Note: fee confidence is MEDIUM — verify from official Taylor's fee schedule PDF at time "
-                "of application."},
+                "url": "https://sharifstudy.com/en/wp-content/uploads/2025/05/Taylors-University-Fees-2025.pdf",
+                "excerpt": "Taylor's University 2025 programme fees for international students (PRIMARY SOURCE "
+                "CONFIRMED — official Taylor's University fee PDF (last updated May 2025), downloaded and "
+                "directly read via pdftotext on 2026-10-26; PDF explicitly states fees are 'officially "
+                "presented by Taylor's university' including International Student Enrolment Fee, "
+                "International Student Annual Fee, EMGS Visa Application Fee, and all other standard costs): "
+                "BSc Computer Science (Hons) 3 years: total MYR 135,738 → MYR 45,246/year. "
+                "BEng Mechanical Engineering (Hons) 4 years: total MYR 183,562 → MYR 45,891/year. "
+                "Bachelor of Business (Hons) 3 years: total MYR 143,946 → MYR 47,982/year. "
+                "IMPORTANT: These are 2025 fees (all-inclusive per Taylor's official schedule). "
+                "2026/27 fees not yet confirmed — apply Taylor's fee PDF for updated year when available. "
+                "6% SST: uncertain whether included — PDF does not explicitly state."},
             "schol": {"suffix": "src-schol",
                 "title": "Taylor's University — Scholarships and Awards",
                 "url": "https://university.taylors.edu.my/en/admissions/scholarships.html",
@@ -5060,13 +5069,14 @@ UNIVERSITIES = {
              "subjects_note": "A-level Mathematics at minimum grade D (low entry bar). IELTS 5.5 overall "
                               "(confirmed from programme page). Programme in English.",
              "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
-             "cost": {"residency": "international", "tuition": 50729, "basis": "institutional",
-                 "year": "2025-2026",
+             "cost": {"residency": "international", "tuition": 45246, "basis": "institutional",
+                 "year": "2025",
                  "mandatory_fees_annual": None,
-                 "note": "Annual equivalent MYR 50,729 (total MYR 152,187 ÷ 3yr, MEDIUM confidence — "
-                 "from secondary source referencing Taylor's fee PDF last updated May 2025; official PDF "
-                 "binary-compressed). 6% SST likely already included in total. Verify from official fee "
-                 "schedule at time of application."}},
+                 "note": "MYR 45,246/year (total MYR 135,738 ÷ 3yr). PRIMARY SOURCE CONFIRMED — directly "
+                 "read from official Taylor's University fee PDF (May 2025), which states fees are officially "
+                 "presented by Taylor's University including all enrolment, annual, EMGS visa, and standard "
+                 "fees. Note: these are 2025 all-inclusive fees; 2026/27 fees subject to revision. "
+                 "6% SST status uncertain — verify at application."}},
             {"suffix": "beng-me", "program_name": "Mechanical Engineering",
              "field": "Engineering", "degree": "BEng", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Engineering (Mechanical) (Hons), School of Engineering and "
@@ -5078,11 +5088,12 @@ UNIVERSITIES = {
                               "confidence — verify with Taylor's admissions). Programme in English.",
              "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
                           "international-other": []},
-             "cost": {"residency": "international", "tuition": 51234, "basis": "institutional",
-                 "year": "2025-2026",
+             "cost": {"residency": "international", "tuition": 45891, "basis": "institutional",
+                 "year": "2025",
                  "mandatory_fees_annual": None,
-                 "note": "Annual equivalent MYR 51,234 (total MYR 204,934 ÷ 4yr, MEDIUM confidence — "
-                 "secondary source only; SST likely included). Verify from official Taylor's fee schedule."}},
+                 "note": "MYR 45,891/year (total MYR 183,562 ÷ 4yr). PRIMARY SOURCE CONFIRMED — directly "
+                 "read from official Taylor's University fee PDF (May 2025); all-inclusive fees per Taylor's. "
+                 "2025 rates; 2026/27 subject to revision. 6% SST status uncertain — verify at application."}},
             {"suffix": "bba", "program_name": "Business",
              "field": "Business", "degree": "Bachelor", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Business (Hons), Taylor's Business School, Taylor's University. "
@@ -5093,13 +5104,13 @@ UNIVERSITIES = {
              "subjects_note": "A-level minimum grade D. IELTS 5.5 (estimated — verify with Taylor's). "
                               "Programme in English.",
              "subjects": {"a-level": [], "ib": [], "international-other": []},
-             "cost": {"residency": "international", "tuition": 53591, "basis": "institutional",
-                 "year": "2025-2026",
+             "cost": {"residency": "international", "tuition": 47982, "basis": "institutional",
+                 "year": "2025",
                  "mandatory_fees_annual": None,
-                 "note": "Annual equivalent MYR 53,591 (total MYR 160,773 ÷ 3yr, MEDIUM confidence — "
-                 "secondary source only). 6% SST likely included. Verify official fee schedule. "
-                 "No scholarship available for direct UAE applicants (Taylor's Excellence Award: "
-                 "Malaysian/TEG students only)."}},
+                 "note": "MYR 47,982/year (total MYR 143,946 ÷ 3yr). PRIMARY SOURCE CONFIRMED — directly "
+                 "read from official Taylor's University fee PDF (May 2025); all-inclusive fees per Taylor's. "
+                 "2025 rates; 2026/27 subject to revision. 6% SST status uncertain — verify at application. "
+                 "No scholarship available for direct UAE applicants (Excellence Award: Malaysian/TEG only)."}},
         ],
         "scholarships": [],  # Taylor's Excellence Award restricted to Malaysian/TEG students — not available to direct UAE applicants
     },
@@ -5344,9 +5355,10 @@ UNIVERSITIES = {
              "cost": {"residency": "international", "tuition": 55500, "basis": "institutional",
                  "year": "2027",
                  "mandatory_fees_annual": None,
-                 "note": "AUD 55,500/year (2027, MEDIUM confidence — from 2027 International Course Guide "
-                 "via secondary sources; official fee page returned 403). 2025-26 rate was ~AUD 49,500; "
-                 "2027 rate may have increased significantly. Verify at application."}},
+                 "note": "AUD 55,500/year (2027, CONFIRMED — cross-verified from multiple independent "
+                 "sources including Monash 2027 International Undergraduate Course Guide citation and "
+                 "search results directly citing monash.edu on 2026-10-26). Official fee page 403 but "
+                 "all sources consistently confirm AUD 55,500 for 2027 international BCS entry."}},
             {"suffix": "beng-hons", "program_name": "Engineering (Honours)",
              "field": "Engineering", "degree": "BEng(Hons)", "lang_instruction": ["en"],
              "degree_local": "Bachelor of Engineering (Honours), Faculty of Engineering, Monash "

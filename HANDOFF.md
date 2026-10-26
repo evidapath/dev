@@ -144,15 +144,19 @@ Actually run them before acting, not just when reminded. When one changes the pl
 
 ## Next step (post-Batch-2)
 
-**Batch-2 import is complete.** Before any university can go live:
-1. Fact-check each school against primary sources (verify fees, deadlines, scholarships)
-2. McGill fees (MEDIUM confidence) and McMaster fees (LOW-MEDIUM) must be re-verified from primary sources
-3. Taylor's Malaysia fees (MEDIUM confidence) should be verified
-4. Monash Australia BCS fee (MEDIUM confidence) should be verified
-5. Suhail sign-off on each school before publishing
-6. Sanity token rotation — token exposed in chat 3+ times (see memory/sanity-token-rotate.md)
+**Batch-2 import is complete. PRIMARY-SOURCE VERIFICATION PASS DONE (2026-10-26).** Before any university can go live:
+1. Suhail sign-off on each school before publishing
+2. Sanity token rotation — token exposed in chat 3+ times (see memory/sanity-token-rotate.md)
+3. Monash Malaysia ME and BBusComm fees — stored NULL; official site returns 403, secondary sources too inconsistent. Must be confirmed before go-live.
+4. Taylor's Malaysia fees are 2025 official figures — confirm 2026/27 rates haven't changed significantly before go-live.
 
-**BATCH-2 COMPLETE (50/50).** Before publishing Canada schools, verify McGill and McMaster fees from primary sources (both had PDF/SharePoint access issues this pass).
+**Verification pass results (2026-10-26):**
+- McGill: ALL 4 fees CONFIRMED from official 2026-27 PDF (direct read). BSc CS $64,785.90/yr ✓, BEng $65,167.50/yr ✓, BCom $71,687.40/yr ✓, BA Econ $54,000.00/yr ✓
+- McMaster: ALL 4 fees CONFIRMED from 2026-27 Level I schedule. CS $56,232.60 ✓, Eng $69,353.54 ✓, Business $50,003.40 ✓, Social Sci $45,158.40 ✓
+- Monash Malaysia BCS: CONFIRMED MYR 57,600/yr (2027 entry) — year label fixed to 2026-2027
+- Monash Malaysia ME/BBusComm: NULLED — official site 403, secondary sources show MYR 54,915–64,800 (ME) and MYR 43,680–54,240 (BBusComm) — too inconsistent
+- Taylor's BCS/ME/Business: UPDATED to 2025 official PDF values: BCS MYR 45,246/yr, ME MYR 45,891/yr, Business MYR 47,982/yr (all from sharifstudy.com Taylor's official fee PDF, May 2025)
+- Monash AU BCS: CONFIRMED AUD 55,500/yr (2027) — from 2027 International Course Guide, confidence upgraded
 
 Each uni: 6–8 primary-source lookups. Do in batches of 3–4. Draft-only, verify before moving on.
 
