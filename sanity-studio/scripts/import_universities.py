@@ -5103,6 +5103,622 @@ UNIVERSITIES = {
         ],
         "scholarships": [],  # Taylor's Excellence Award restricted to Malaysian/TEG students — not available to direct UAE applicants
     },
+
+    # ── AUSTRALIA BATCH (4 universities, Batch-2 slots 47–50 — FINAL BATCH) ─────────────────────
+    # country-au was published 2026-10-25 (created alongside country-my).
+    # Currency: AUD (Australian Dollar). All 4 are Group of Eight (Go8) public research universities.
+    # PRACTICAL INTAKE for UAE A-level students (finishing May/June 2027): Semester 1 February 2028.
+    # Application deadlines for Feb 2028 entry: UniMelb ~Nov 2027, Monash ~Nov 2027, USyd ~Dec 2027,
+    #   UNSW ~September 2027 (UNSW deadline is significantly earlier than peers — note prominently).
+    # Fees quoted are 2027 rates (confirmed); 2028 rates expected ~2-4% higher.
+    # Direct application to each university (international students do NOT use VTAC/UAC).
+    # CRITICAL — Melbourne Model: University of Melbourne does NOT offer a standalone undergraduate
+    #   Bachelor of Engineering (new entrants). Engineering professional qualification requires a
+    #   graduate Master of Engineering after an undergraduate degree. Do NOT fabricate an UG Eng program.
+    # IELTS note: Commerce/Business School programmes at USyd and UNSW require 7.0 overall (vs 6.5 for
+    #   CS/Engineering). This is per-program — critical for student planning.
+    # Melbourne Scholarship (MIUS): explicitly excludes UAE students (GDP per capita cap US$10,000;
+    #   UAE GDP per capita ~$45,000). Must be stated clearly — do not include as UAE-eligible.
+    # decision_context_year: "2026-2027 (Semester 1 February 2028 entry)".
+
+    "au-unimelb": {
+        "canonical_name": "University of Melbourne",
+        "aliases": ["UniMelb", "Melbourne University", "The University of Melbourne"],
+        "country_cc": "au",
+        "city": {"slug": "au-melbourne", "name": "Melbourne"},
+        "website": "https://www.unimelb.edu.au/", "institution_type": "public",
+        "verified_at": "2026-10-26", "currency": "AUD",
+        "verification_note": "fact-checks/au-unimelb-2026-10-26.md",
+        "application_platform_name": "University of Melbourne Direct Application (study.unimelb.edu.au)",
+        "decision_context_year": "2026-2027 (Semester 1 February 2028 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Melbourne — Official Website",
+                "url": "https://www.unimelb.edu.au/",
+                "excerpt": "University of Melbourne, Parkville, Victoria, Australia. Australia's leading "
+                "research university (#1 in Australia, ~33 globally in QS 2025). Public Go8 university. "
+                "Uses the 'Melbourne Model' (New Degree): broad undergraduate degrees + graduate "
+                "professional degrees. CRITICAL STRUCTURAL NOTE: there is NO standalone undergraduate "
+                "Bachelor of Engineering for new international entrants. Engineering is accessed via a "
+                "graduate Master of Engineering (2-3yr) after completing an undergraduate degree. "
+                "CS/computing is offered as a major within the Bachelor of Science (Computing & Software "
+                "Systems). Semester 1 starts late February; Semester 2 July."},
+            "adm": {"suffix": "src-adm",
+                "title": "UniMelb — International Undergraduate Admissions",
+                "url": "https://study.unimelb.edu.au/how-to-apply/international-students",
+                "excerpt": "International students with overseas qualifications apply DIRECTLY to UniMelb "
+                "(not via VTAC — VTAC is for Australian Year 12/IB students only). IELTS: 6.5 overall, "
+                "minimum 6.0 per band (Academic version; no single band below 6.0). A-levels accepted; "
+                "UniMelb converts A-level grades to an ATAR equivalent for entry scoring (Mathematics "
+                "required for BSc Computing; specific published A-level thresholds not available). "
+                "Semester 1 2027 (February) deadline: November 30, 2026. For UAE students completing "
+                "A-levels in May/June 2027: practical entry is Semester 1 February 2028; deadline "
+                "approximately November 2027. No application fee."},
+            "fee": {"suffix": "src-fee",
+                "title": "UniMelb — 2027 International Undergraduate Tuition Fees",
+                "url": "https://study.unimelb.edu.au/find/courses/undergraduate/",
+                "excerpt": "University of Melbourne 2027 annual international tuition fees (HIGH confidence, "
+                "confirmed from 2027 International Fee Tables): "
+                "BSc (Computing and Software Systems major): AUD 55,556/year (3-year degree). "
+                "BCom (Bachelor of Commerce): AUD 56,451/year (3-year degree). "
+                "All fees in AUD. 2028 rates not yet published; expected ~2-4% higher. "
+                "Note: no standalone Bachelor of Engineering — Engineering is graduate only at UniMelb."},
+            "schol": {"suffix": "src-schol",
+                "title": "UniMelb — Melbourne International Undergraduate Scholarship (MIUS) — UAE Ineligible",
+                "url": "https://study.unimelb.edu.au/study-with-us/international-students/scholarships",
+                "excerpt": "Melbourne International Undergraduate Scholarship (MIUS): 20% fee sponsorship "
+                "for full degree duration (225 scholarships from 2027). Automatic consideration at admission. "
+                "HOWEVER: MIUS is RESTRICTED to citizens of countries with GDP per capita ≤ US$10,000 "
+                "(World Bank data). UAE GDP per capita is approximately US$45,000. UAE students are "
+                "therefore NOT eligible for MIUS and should not apply expecting this scholarship. "
+                "No other confirmed institutional merit scholarships for UAE international undergrads "
+                "at UniMelb have been identified. Source: confirmed via official scholarship pages. "
+                "UAE students should explore external scholarships (Australian government, Endeavour Awards)."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "IB Diploma holders."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed by UniMelb admissions."),
+        ],
+        "residencies": [
+            ("international", "International (non-Australian/non-NZ) students",
+             "International students pay the full annual tuition fee. Australian/NZ citizens and "
+             "permanent residents may access Commonwealth Supported Places (CSP) at significantly lower "
+             "rates. UAE students are classified as international."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "English",
+            "req_name": "English language proficiency",
+            "test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS Academic: overall 6.5, minimum 6.0 in each band. "
+                         "Also accepted: TOEFL iBT 79 (21 Writing, 18 Speaking, 13 Reading, 13 Listening); "
+                         "PTE Academic 58 (50 per communicative skill); CAE 176.",
+            "notes": "Both programmes below are taught in English. IELTS 6.5/6.0 applies to BSc "
+                     "(Computing) and BCom at UniMelb. Academic IELTS only; IELTS Online not accepted. "
+                     "UAE A-level students from English-medium schools: check UniMelb exemption criteria — "
+                     "as a UK A-level holder, an English-language waiver may be available; verify directly.",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply directly at study.unimelb.edu.au (NOT via VTAC for overseas qualifications). "
+            "For UAE students completing A-levels in May/June 2027: target Semester 1 February 2028 entry; "
+            "application deadline approximately November 2027 (based on Nov 30 2026 pattern for Feb 2027 "
+            "entry — confirm on UniMelb website from mid-2027). "
+            "IMPORTANT: No Bachelor of Engineering at UniMelb for international students (Melbourne Model). "
+            "Engineering professional accreditation requires completing an undergraduate degree first, then a "
+            "graduate Master of Engineering. "
+            "SCHOLARSHIP NOTE: Melbourne International Undergraduate Scholarship (MIUS) is NOT available to "
+            "UAE students (GDP per capita cap US$10,000 — UAE exceeds this threshold).",
+        "living": None,
+        "programs": [
+            {"suffix": "bsc-computing", "program_name": "Computing and Software Systems (BSc major)",
+             "field": "Computer Science", "degree": "BSc", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Science (Computing and Software Systems major), Faculty of "
+             "Engineering and Information Technology, University of Melbourne. 3 years. TAUGHT IN ENGLISH. "
+             "Note: CS is offered as a major within the broad Bachelor of Science (Melbourne Model) — "
+             "NOT a standalone Bachelor of Computer Science. Students may also use this degree as a "
+             "pathway to the graduate Master of Engineering or Master of Computer Science.",
+             "faculty": "Faculty of Engineering and Information Technology", "duration": 3,
+             "url": "https://study.unimelb.edu.au/find/courses/undergraduate/bachelor-of-science/",
+             "subjects_note": "A-level Mathematics required. UniMelb converts A-level grades to ATAR "
+                              "equivalent — specific published A-level grade threshold not available; "
+                              "estimate ABB or higher for competitive entry. IELTS 6.5/6.0.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 55556, "basis": "institutional",
+                 "year": "2027",
+                 "mandatory_fees_annual": None,
+                 "note": "AUD 55,556/year (2027, HIGH confidence from UniMelb 2027 International Fee "
+                 "Tables). 2028 rate not yet published; expected ~2-4% higher. No MIUS scholarship "
+                 "available for UAE students (GDP per capita cap)."}},
+            {"suffix": "bcom", "program_name": "Commerce",
+             "field": "Business", "degree": "BCom", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Commerce, Faculty of Business and Economics, University of "
+             "Melbourne. 3 years. TAUGHT IN ENGLISH. Flexible structure with majors including Economics, "
+             "Finance, Accounting, Management, Marketing. Economics major available within BCom.",
+             "faculty": "Faculty of Business and Economics", "duration": 3,
+             "url": "https://study.unimelb.edu.au/find/courses/undergraduate/bachelor-of-commerce/",
+             "subjects_note": "A-level Mathematics recommended. IELTS 6.5/6.0. Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 56451, "basis": "institutional",
+                 "year": "2027",
+                 "mandatory_fees_annual": None,
+                 "note": "AUD 56,451/year (2027, HIGH confidence from UniMelb 2027 Fee Tables). "
+                 "No MIUS scholarship for UAE students."}},
+        ],
+        "scholarships": [],  # MIUS not available to UAE students (GDP per capita cap). No other confirmed institutional scholarships for UAE.
+    },
+
+    "au-monash": {
+        "canonical_name": "Monash University",
+        "aliases": ["Monash", "Monash Clayton", "Monash University Clayton"],
+        "country_cc": "au",
+        "city": {"slug": "au-melbourne", "name": "Melbourne"},
+        "website": "https://www.monash.edu/", "institution_type": "public",
+        "verified_at": "2026-10-26", "currency": "AUD",
+        "verification_note": "fact-checks/au-monash-2026-10-26.md",
+        "application_platform_name": "Monash University Direct Application (study.monash.edu)",
+        "decision_context_year": "2026-2027 (Semester 1 February 2028 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "Monash University — Official Website (Clayton Campus)",
+                "url": "https://www.monash.edu/",
+                "excerpt": "Monash University, Clayton, Victoria, Australia. Public Go8 research university. "
+                "Note: this entry covers the main Clayton campus — distinct from Monash University Malaysia "
+                "(which is a separate branch campus). Strengths: Engineering, Business, Pharmacy, IT. "
+                "ATAR entry; three direct-entry undergraduate programmes relevant here: Bachelor of Computer "
+                "Science (BCS), Bachelor of Engineering (Honours), Bachelor of Commerce. "
+                "Semester 1 starts late February; Semester 2 July. Multiple intakes available."},
+            "adm": {"suffix": "src-adm",
+                "title": "Monash — International Undergraduate Admissions",
+                "url": "https://www.monash.edu/study/how-to-apply/international-students",
+                "excerpt": "International students apply directly to Monash (not via VTAC). IELTS: 6.5 "
+                "overall, minimum 6.0 per band (Monash English requirement Level A for most undergraduate "
+                "programmes). A-levels accepted; Mathematics required for BCS and BEng. Specific A-level "
+                "grade threshold not published — estimate BBC/ABB range for competitive entry. "
+                "Semester 1 2027 deadline: approximately November 2026. For UAE A-level students "
+                "finishing May/June 2027: target Semester 1 February 2028; deadline ~November 2027. "
+                "Monash International Leadership Scholarship (MILS): automatic consideration after "
+                "unconditional offer + 500-word leadership statement."},
+            "fee": {"suffix": "src-fee",
+                "title": "Monash — 2027 International Undergraduate Tuition Fees",
+                "url": "https://www.monash.edu/study/fees/international-fees",
+                "excerpt": "Monash University 2027 annual international tuition fees: "
+                "Bachelor of Computer Science: AUD 55,500/year (MEDIUM confidence — from Monash 2027 "
+                "International Course Guide; official fee page returned 403; secondary sources consistent). "
+                "Bachelor of Engineering (Honours): AUD 63,040/year (CONFIRMED — multiple sources). "
+                "Bachelor of Commerce: AUD 59,140/year (CONFIRMED). "
+                "All fees AUD. 2028 rates not yet published."},
+            "schol": {"suffix": "src-schol",
+                "title": "Monash — Monash International Leadership Scholarship (MILS)",
+                "url": "https://www.monash.edu/study/fees/scholarships/monash-international-leadership-scholarship",
+                "excerpt": "Monash International Leadership Scholarship (MILS): 100% tuition fee coverage "
+                "for the full degree duration. EXTREMELY COMPETITIVE: only 4 scholarships awarded per "
+                "year globally across all programmes (undergraduate and postgraduate, excluding Medicine "
+                "and MBA). Automatic consideration after receiving a full unconditional offer; applicants "
+                "also assessed via a 500-word leadership statement. Available to all international "
+                "students. Criteria: academic excellence + demonstrated leadership potential. "
+                "Award value: approx. AUD $166,500 (BCS 3yr) to AUD $252,160 (BEng 4yr) total based "
+                "on 2027 rates. Source: multiple consistent secondary sources citing Monash policy."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "IB Diploma holders."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed by Monash admissions."),
+        ],
+        "residencies": [
+            ("international", "International (non-Australian/non-NZ) students",
+             "International students pay the full annual tuition fee. Australian/NZ citizens may access "
+             "Commonwealth Supported Places at substantially lower rates. UAE students are international."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "English",
+            "req_name": "English language proficiency",
+            "test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "IELTS Academic: overall 6.5, minimum 6.0 per band (Monash Level A). "
+                         "Also accepted: TOEFL iBT 79 (minimum 21 Writing, 18 Speaking); "
+                         "PTE Academic 58 (50 per communicative skill).",
+            "notes": "All three Monash programmes below are taught in English. Standard 6.5/6.0 IELTS "
+                     "requirement applies to BCS, BEng, and BCom. UAE A-level students from English-medium "
+                     "schools: check Monash exemption criteria — verify directly with Monash admissions. "
+                     "Monash Malaysia (a different campus) has the same IELTS level but is a separate institution.",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply directly at study.monash.edu. For UAE students finishing A-levels in "
+            "May/June 2027: Semester 1 February 2028 entry; deadline approximately November 2027 (based "
+            "on Nov 2026 pattern for Feb 2027 — confirm on Monash website). Multiple intakes also "
+            "available (July, October). Monash International Leadership Scholarship (MILS): assessed "
+            "automatically after unconditional offer + 500-word leadership statement; only 4 globally "
+            "per year — apply with high academic results but treat as bonus, not expected funding.",
+        "living": None,
+        "programs": [
+            {"suffix": "bcs", "program_name": "Computer Science",
+             "field": "Computer Science", "degree": "BCS", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Computer Science, Faculty of Information Technology, Monash "
+             "University. 3 years. TAUGHT IN ENGLISH. Standalone BCS degree (distinct from Monash "
+             "Malaysia's equivalent programme). Strong research in AI and distributed systems.",
+             "faculty": "Faculty of Information Technology", "duration": 3,
+             "url": "https://www.monash.edu/study/courses/find-a-course/bachelor-of-computer-science",
+             "subjects_note": "A-level Mathematics required. IELTS 6.5/6.0. Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 55500, "basis": "institutional",
+                 "year": "2027",
+                 "mandatory_fees_annual": None,
+                 "note": "AUD 55,500/year (2027, MEDIUM confidence — from 2027 International Course Guide "
+                 "via secondary sources; official fee page returned 403). 2025-26 rate was ~AUD 49,500; "
+                 "2027 rate may have increased significantly. Verify at application."}},
+            {"suffix": "beng-hons", "program_name": "Engineering (Honours)",
+             "field": "Engineering", "degree": "BEng(Hons)", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Engineering (Honours), Faculty of Engineering, Monash "
+             "University. 4 years (Honours). TAUGHT IN ENGLISH. Multiple specialisations: Civil, "
+             "Electrical and Computer Systems, Mechanical, Mechatronics, Chemical. Direct-entry "
+             "undergraduate degree (Monash, unlike Melbourne, offers this as a standalone UG degree).",
+             "faculty": "Faculty of Engineering", "duration": 4,
+             "url": "https://www.monash.edu/study/courses/find-a-course/bachelor-of-engineering-honours",
+             "subjects_note": "A-level Mathematics and Physics required (for most specialisations). "
+                              "IELTS 6.5/6.0. Programme in English.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 63040, "basis": "institutional",
+                 "year": "2027",
+                 "mandatory_fees_annual": None,
+                 "note": "AUD 63,040/year (2027, CONFIRMED from multiple sources). "
+                 "4-year total at 2027 rate: ~AUD 252,160."}},
+            {"suffix": "bcom", "program_name": "Commerce",
+             "field": "Business", "degree": "BCom", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Commerce, Monash Business School, Monash University. 3 years. "
+             "TAUGHT IN ENGLISH. Flexible structure: majors include Accounting, Econometrics, Economics, "
+             "Finance, Management, Marketing. Economics major available within BCom.",
+             "faculty": "Monash Business School", "duration": 3,
+             "url": "https://www.monash.edu/study/courses/find-a-course/bachelor-of-commerce",
+             "subjects_note": "A-level Mathematics recommended. IELTS 6.5/6.0. Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 59140, "basis": "institutional",
+                 "year": "2027",
+                 "mandatory_fees_annual": None,
+                 "note": "AUD 59,140/year (2027, CONFIRMED)."}},
+        ],
+        "scholarships": [
+            {"suffix": "mils", "name": "Monash International Leadership Scholarship (MILS)",
+             "provider": "Monash University",
+             "provider_type": "institutional",
+             "award_type": "tuition_waiver", "renewable": True,
+             "award_amount": "100% tuition fee coverage for the full degree duration. Estimated total "
+             "value (2027 rates): ~AUD 166,500 for BCS (3yr), ~AUD 252,160 for BEng (4yr), "
+             "~AUD 177,420 for BCom (3yr).",
+             "academic_criteria": "Academic excellence in secondary education/prior qualifications. "
+             "EXTREMELY COMPETITIVE: only 4 scholarships awarded globally per year across all "
+             "programmes. Automatic consideration after a full unconditional offer; candidates also "
+             "submit a 500-word personal statement on leadership potential.",
+             "other_eligibility_criteria": "Available to international students from all countries "
+             "including UAE. Excludes Medicine and MBA. Treat as a highly competitive long-shot — "
+             "not a planning assumption for financial aid. Must maintain academic standing for renewal.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "au-usyd": {
+        "canonical_name": "University of Sydney",
+        "aliases": ["USyd", "Sydney University", "The University of Sydney"],
+        "country_cc": "au",
+        "city": {"slug": "au-sydney", "name": "Sydney"},
+        "website": "https://www.sydney.edu.au/", "institution_type": "public",
+        "verified_at": "2026-10-26", "currency": "AUD",
+        "verification_note": "fact-checks/au-usyd-2026-10-26.md",
+        "application_platform_name": "University of Sydney International Application (sydney.edu.au/apply)",
+        "decision_context_year": "2026-2027 (Semester 1 February 2028 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "University of Sydney — Official Website",
+                "url": "https://www.sydney.edu.au/",
+                "excerpt": "University of Sydney, Camperdown, NSW, Australia. Australia's first university "
+                "(est. 1850), Go8 member. QS ranked ~19 globally. Strengths: Law, Medicine, Engineering, "
+                "Business, Arts. Undergraduate programmes: Bachelor of Advanced Computing (4yr, Faculty "
+                "of Engineering & IT), Bachelor of Engineering Honours (4yr), Bachelor of Economics (3yr, "
+                "Faculty of Arts & Social Sciences). Note: Bachelor of Commerce (Business School, 3yr) "
+                "requires IELTS 7.0 (vs 6.5 for Engineering/Economics). International students apply "
+                "directly to USyd (not via UAC for overseas qualifications)."},
+            "adm": {"suffix": "src-adm",
+                "title": "USyd — International Undergraduate Admissions",
+                "url": "https://www.sydney.edu.au/study/how-to-apply/international-students.html",
+                "excerpt": "International students with overseas qualifications apply directly (not UAC). "
+                "IELTS Academic requirements: Engineering / Advanced Computing: 6.5 overall, 6.0 per "
+                "section (PRIMARY SOURCE). Economics (Faculty of Arts & Social Sciences): 6.5 overall, "
+                "6.0 per section. Commerce (Business School): 7.0 overall, 6.0 per section — HIGHER "
+                "than standard. A-levels accepted; grades converted to USyd entry score (A=7, A-=6, B+=5, "
+                "B=4, B-=3, C+=2, C=1; best 3-4 subjects). Semester 1 2027 (Feb) deadline: ~December 1, "
+                "2026. For UAE A-levels students finishing May/June 2027: Semester 1 February 2028 entry; "
+                "deadline ~December 2027. IELTS Online not accepted; max 2 years old."},
+            "fee": {"suffix": "src-fee",
+                "title": "USyd — 2027 International Undergraduate Tuition Fees",
+                "url": "https://www.sydney.edu.au/study/fees.html",
+                "excerpt": "University of Sydney 2027 annual international tuition fees (PRIMARY SOURCE): "
+                "Bachelor of Advanced Computing: AUD 63,600/year. "
+                "Bachelor of Engineering Honours: AUD 63,600/year (same Engineering/IT fee tier). "
+                "Bachelor of Economics: AUD 59,100/year. "
+                "Bachelor of Commerce (Business School): AUD 59,100–63,600/year. "
+                "2026 comparison: Engineering/CS AUD 60,600; Economics AUD 56,300. "
+                "Annual indexation ~2-4% expected for 2028."},
+            "schol": {"suffix": "src-schol",
+                "title": "USyd — Sydney International Undergraduate Academic Excellence Scholarship",
+                "url": "https://www.sydney.edu.au/study/fees/scholarships-for-international-students.html",
+                "excerpt": "Sydney International Undergraduate Academic Excellence Scholarship: "
+                "100% of tuition fees + SSAF (Student Services and Amenities Fee) for the full published "
+                "programme duration (maximum 4 years). COMPETITIVE: approximately 20 scholarships awarded "
+                "globally per year across two intakes. SEPARATE APPLICATION required (not automatic); "
+                "assessed on academic merit by a selection committee. Renewal: maintain semester average "
+                "≥65%; no outstanding fees. Award value (2027): approx. AUD 254,400 total for BAdvComp "
+                "or BEng (4yr × AUD 63,600); AUD 177,300 for BEcon (3yr × AUD 59,100). Source: PRIMARY."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "IB Diploma holders."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed by USyd admissions."),
+        ],
+        "residencies": [
+            ("international", "International (non-Australian/non-NZ) students",
+             "International students pay full annual tuition. Australian/NZ citizens may access "
+             "Commonwealth Supported Places. UAE students are classified as international."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "English",
+            "req_name": "English language proficiency",
+            "test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "Standard programmes (Engineering, Computing, Economics): IELTS Academic 6.5 "
+                         "overall, minimum 6.0 per section. "
+                         "Business School / Commerce: 7.0 overall, minimum 6.0 per section (higher bar). "
+                         "Also accepted: TOEFL iBT 85 (Engineering/CS); PTE Academic 58. "
+                         "IELTS Online not accepted. Test must not exceed 2 years old.",
+            "notes": "USyd has different IELTS thresholds by faculty. Advanced Computing and Engineering "
+                     "require 6.5; Bachelor of Economics (Arts & Social Sciences) also 6.5. The Bachelor "
+                     "of Commerce (Business School) requires 7.0 — this distinction is important for UAE "
+                     "students choosing between Economics and Commerce. All programmes taught in English.",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply directly at sydney.edu.au (not via UAC for overseas qualifications). "
+            "For UAE students finishing A-levels May/June 2027: target Semester 1 February 2028; "
+            "deadline approximately December 2027 (based on Dec 1 2026 pattern for Feb 2027 — confirm). "
+            "Sydney International Undergraduate Academic Excellence Scholarship: requires a SEPARATE "
+            "APPLICATION (not automatic) — check USyd scholarship portal for deadlines when applying. "
+            "IELTS Note: Commerce requires 7.0 overall (vs 6.5 for Engineering/Economics/Computing).",
+        "living": None,
+        "programs": [
+            {"suffix": "badvcomp", "program_name": "Advanced Computing",
+             "field": "Computer Science", "degree": "BAdvComp", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Advanced Computing, Faculty of Engineering and Information "
+             "Technology, University of Sydney. 4 years. TAUGHT IN ENGLISH. 'Advanced' designation "
+             "includes a research component and Honours classification. Covers software engineering, "
+             "data science, cyber security, and computing theory.",
+             "faculty": "Faculty of Engineering and Information Technology", "duration": 4,
+             "url": "https://www.sydney.edu.au/courses/courses/uc/bachelor-of-advanced-computing.html",
+             "subjects_note": "A-level Mathematics required (typically high grades expected for "
+                              "competitive entry). IELTS 6.5/6.0. Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 63600, "basis": "institutional",
+                 "year": "2027",
+                 "mandatory_fees_annual": None,
+                 "note": "AUD 63,600/year (2027, PRIMARY SOURCE from USyd fees page). 4-year total "
+                 "at 2027 rates: ~AUD 254,400."}},
+            {"suffix": "beng-hons", "program_name": "Engineering Honours",
+             "field": "Engineering", "degree": "BEng(Hons)", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Engineering Honours, Faculty of Engineering and Information "
+             "Technology, University of Sydney. 4 years. TAUGHT IN ENGLISH. Specialisations: Mechanical, "
+             "Electrical, Civil, Software, Biomedical, Aerospace (select major in Year 1 or 2). "
+             "Honours classification awarded for high performance.",
+             "faculty": "Faculty of Engineering and Information Technology", "duration": 4,
+             "url": "https://www.sydney.edu.au/courses/courses/uc/bachelor-of-engineering-honours.html",
+             "subjects_note": "A-level Mathematics and Physics required for most specialisations. "
+                              "IELTS 6.5/6.0. Programme in English.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 63600, "basis": "institutional",
+                 "year": "2027",
+                 "mandatory_fees_annual": None,
+                 "note": "AUD 63,600/year (2027, PRIMARY SOURCE). Same fee tier as Advanced Computing."}},
+            {"suffix": "becon", "program_name": "Economics",
+             "field": "Economics", "degree": "BEcon", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Economics, Faculty of Arts and Social Sciences, University of "
+             "Sydney. 3 years. TAUGHT IN ENGLISH. IMPORTANT: this is the Faculty of Arts & Social "
+             "Sciences Economics degree (IELTS 6.5 standard). The Business School's Bachelor of Commerce "
+             "(also available at USyd) requires IELTS 7.0 and has a different faculty — see note. "
+             "BEcon covers micro/macroeconomics, econometrics, economic history, political economy.",
+             "faculty": "Faculty of Arts and Social Sciences", "duration": 3,
+             "url": "https://www.sydney.edu.au/courses/courses/uc/bachelor-of-economics.html",
+             "subjects_note": "A-level Mathematics required. IELTS 6.5/6.0 (Faculty of Arts & Social "
+                              "Sciences standard — NOT the 7.0 required for Business School BCom). "
+                              "Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 59100, "basis": "institutional",
+                 "year": "2027",
+                 "mandatory_fees_annual": None,
+                 "note": "AUD 59,100/year (2027, PRIMARY SOURCE). Note: if student prefers Bachelor of "
+                 "Commerce (Business School) instead, the same AUD 59,100 fee applies but IELTS 7.0 "
+                 "is required."}},
+        ],
+        "scholarships": [
+            {"suffix": "iuaes", "name": "Sydney International Undergraduate Academic Excellence Scholarship",
+             "provider": "University of Sydney",
+             "provider_type": "institutional",
+             "award_type": "tuition_waiver", "renewable": True,
+             "award_amount": "100% of tuition fees + SSAF for the full published programme duration "
+             "(maximum 4 years). Estimated total value (2027 rates): ~AUD 254,400 for BAdvComp/BEng "
+             "(4yr); ~AUD 177,300 for BEcon (3yr).",
+             "academic_criteria": "Outstanding academic merit assessed by USyd selection committee. "
+             "COMPETITIVE: approximately 20 scholarships awarded globally per year across two intakes. "
+             "Renewal: maintain semester average ≥65%; no outstanding fees. Separate application required "
+             "— not automatic at admission.",
+             "other_eligibility_criteria": "Open to international students worldwide including UAE. "
+             "Separate scholarship application form required; check USyd scholarship portal for deadlines "
+             "(typically aligned with course application). ~20 places globally — very competitive.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
+
+    "au-unsw": {
+        "canonical_name": "UNSW Sydney",
+        "aliases": ["UNSW", "University of New South Wales", "UNSW Australia"],
+        "country_cc": "au",
+        "city": {"slug": "au-sydney", "name": "Sydney"},
+        "website": "https://www.unsw.edu.au/", "institution_type": "public",
+        "verified_at": "2026-10-26", "currency": "AUD",
+        "verification_note": "fact-checks/au-unsw-2026-10-26.md",
+        "application_platform_name": "UNSW Sydney Direct Application (unsw.edu.au/study/apply)",
+        "decision_context_year": "2026-2027 (Semester 1 February 2028 entry)",
+        "sources": {
+            "main": {"suffix": "src-01", "title": "UNSW Sydney — Official Website",
+                "url": "https://www.unsw.edu.au/",
+                "excerpt": "UNSW Sydney (University of New South Wales), Kensington, NSW, Australia. "
+                "Public Go8 research university. QS ranked ~19-20 globally. Strengths: Engineering, "
+                "Business (AGSM), Law, Computer Science, Medicine. Undergraduate programmes relevant "
+                "here: Bachelor of Engineering (Honours) [4yr], Bachelor of Advanced Computer Science "
+                "(Honours) [4yr], Bachelor of Commerce [3yr]. UNSW has the EARLIEST application deadline "
+                "of the four Australian universities in this batch — final round closes ~September for "
+                "the following February intake. Apply directly to UNSW."},
+            "adm": {"suffix": "src-adm",
+                "title": "UNSW — International Undergraduate Admissions",
+                "url": "https://www.unsw.edu.au/study/undergraduate/apply",
+                "excerpt": "UNSW international application rounds for February 2027 intake: "
+                "Round 1: May 14, 2026 → offers Aug 13. Round 2: July 16 → offers Sept 10. "
+                "Round 3: Aug 20 → offers Oct 15. Final Round: September 24, 2026 → offers Nov 19. "
+                "For February 2028 intake, rounds expected ~April–September 2027. "
+                "CRITICAL: UNSW's final round deadline is September (vs November/December for UniMelb, "
+                "Monash, USyd) — UAE students must apply earlier than they would for other Australian unis. "
+                "IELTS: Engineering/CS: 6.5/6.0; Commerce: 7.0/6.0 (PRIMARY SOURCE). A-levels accepted: "
+                "A*=6, A=5, B=4, C=3, D=2, E=1 (minimum 2 A2 subjects required)."},
+            "fee": {"suffix": "src-fee",
+                "title": "UNSW — 2027 International Undergraduate Tuition Fees",
+                "url": "https://www.unsw.edu.au/study/undergraduate/international-fees",
+                "excerpt": "UNSW 2027 annual international tuition fees (PRIMARY SOURCE — per UOC rate): "
+                "Engineering / Advanced Computer Science (Honours): AUD 1,330/UOC × 48 UOC/yr = "
+                "AUD 63,840/year. Commerce / Economics: AUD 1,240/UOC × 48 UOC/yr = AUD 59,520/year. "
+                "2026 comparison: Engineering/CS AUD 60,960; Commerce AUD 56,640. "
+                "Indexation ~4.7% from 2026→2027. 2028 rates not yet published."},
+            "schol": {"suffix": "src-schol",
+                "title": "UNSW — Australia's Global University Award + UNSW Scholarship Program",
+                "url": "https://www.unsw.edu.au/study/undergraduate/scholarships",
+                "excerpt": "Australia's Global University Award: AUD 10,000 one-off payment. "
+                "AUTOMATICALLY considered at admission for all international applicants — no separate "
+                "application required. Available to all international undergraduate entrants. "
+                "UNSW Scholarship Program (PUCA1029): pool of awards ranging AUD 5,000 to full tuition. "
+                "COMPETITIVE with SEPARATE APPLICATION required; deadline October 30, 2026 for Feb 2027 "
+                "entry (application by ~October 2027 for Feb 2028 entry expected). Assessed on merit + "
+                "leadership + extracurricular record. Source: PRIMARY SOURCE confirmed."},
+        },
+        "curricula": [
+            ("a-level", "GCE A-Level / IGCSE", "Applicants with GCE A-Level qualifications."),
+            ("ib", "International Baccalaureate (IB) Diploma", "IB Diploma holders."),
+            ("international-other", "General International Secondary Qualification",
+             "Other international secondary qualifications assessed by UNSW admissions."),
+        ],
+        "residencies": [
+            ("international", "International (non-Australian/non-NZ) students",
+             "International students pay full annual tuition. Australian/NZ citizens may access "
+             "Commonwealth Supported Places. UAE students are classified as international."),
+        ],
+        "cost": None,
+        "lang_req": {
+            "language": "English",
+            "req_name": "English language proficiency",
+            "test_name": "IELTS Academic (or accepted equivalent)",
+            "min_score": "Engineering / Computer Science: IELTS Academic 6.5 overall, 6.0 per section. "
+                         "Commerce (Business School): 7.0 overall, 6.0 per section (higher requirement). "
+                         "Also accepted: TOEFL iBT 90; PTE Academic 62/54. Academic version only; "
+                         "IELTS Online not accepted.",
+            "notes": "UNSW has different IELTS requirements by programme: Engineering and CS require "
+                     "6.5/6.0; BCom (Business School) requires 7.0/6.0. This distinction is important "
+                     "for UAE students planning which IELTS target to prepare for. All programmes taught "
+                     "in English. UNSW application deadline is September (earlier than other AU universities) "
+                     "— plan accordingly.",
+        },
+        "std_tests": [],
+        "deadline_note": "Apply directly at unsw.edu.au. IMPORTANT: UNSW has multiple application rounds "
+            "and the final round for February intake typically closes in SEPTEMBER (vs November/December "
+            "at UniMelb, Monash, USyd). For February 2028 entry: final application round expected to "
+            "close ~September 2027 — significantly earlier than peers. Apply in Round 1 (expected ~May "
+            "2027) for best scholarship consideration. "
+            "Australia's Global University Award (AUD $10,000): automatic — no separate application. "
+            "UNSW Scholarship Program: separate application required by ~October 2027 (confirm on UNSW "
+            "website). Commerce IELTS: 7.0 overall required (vs 6.5 for Engineering/CS).",
+        "living": None,
+        "programs": [
+            {"suffix": "badvcs-hons", "program_name": "Advanced Computer Science (Honours)",
+             "field": "Computer Science", "degree": "BAdvCS(Hons)", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Advanced Computer Science (Honours), School of Computer Science "
+             "and Engineering, UNSW Sydney. 4 years (Honours). TAUGHT IN ENGLISH. 'Advanced' + Honours "
+             "designation indicates research component and higher academic standard. Covers AI, data "
+             "science, programming languages, distributed systems. Alternative: standard BCS(Hons) also "
+             "available at the same fee.",
+             "faculty": "School of Computer Science and Engineering", "duration": 4,
+             "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-advanced-computer-science-honours",
+             "subjects_note": "A-level Mathematics required. IELTS 6.5/6.0 (Science faculty standard). "
+                              "Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 63840, "basis": "institutional",
+                 "year": "2027",
+                 "mandatory_fees_annual": None,
+                 "note": "AUD 63,840/year (2027, PRIMARY SOURCE: AUD 1,330/UOC × 48 UOC/yr). "
+                 "4-year total at 2027 rates: ~AUD 255,360."}},
+            {"suffix": "beng-hons", "program_name": "Engineering (Honours)",
+             "field": "Engineering", "degree": "BEng(Hons)", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Engineering (Honours), Faculty of Engineering, UNSW Sydney. "
+             "4 years (Honours). TAUGHT IN ENGLISH. Specialisations: Computer Engineering, Electrical, "
+             "Mechanical, Civil, Mechatronic, Software, Chemical, Photovoltaics. UNSW Engineering is "
+             "consistently ranked top-10 in Australia.",
+             "faculty": "Faculty of Engineering", "duration": 4,
+             "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-engineering-honours",
+             "subjects_note": "A-level Mathematics and Physics required. IELTS 6.5/6.0. Programme in English.",
+             "subjects": {"a-level": ["Mathematics", "Physics"], "ib": ["Mathematics", "Physics"],
+                          "international-other": []},
+             "cost": {"residency": "international", "tuition": 63840, "basis": "institutional",
+                 "year": "2027",
+                 "mandatory_fees_annual": None,
+                 "note": "AUD 63,840/year (2027, PRIMARY SOURCE). Same fee tier as Advanced CS."}},
+            {"suffix": "bcom", "program_name": "Commerce",
+             "field": "Business", "degree": "BCom", "lang_instruction": ["en"],
+             "degree_local": "Bachelor of Commerce, UNSW Business School, UNSW Sydney. 3 years. "
+             "TAUGHT IN ENGLISH. IELTS NOTE: 7.0 overall required (higher than Engineering/CS 6.5). "
+             "Flexible: majors include Accounting, Actuarial Studies, Economics, Finance, Marketing, "
+             "Information Systems. Economics major available within BCom.",
+             "faculty": "UNSW Business School", "duration": 3,
+             "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-commerce",
+             "subjects_note": "A-level Mathematics required. IELTS 7.0 overall (6.0 per section) — "
+                              "HIGHER than Engineering/CS. Programme in English.",
+             "subjects": {"a-level": ["Mathematics"], "ib": ["Mathematics"], "international-other": []},
+             "cost": {"residency": "international", "tuition": 59520, "basis": "institutional",
+                 "year": "2027",
+                 "mandatory_fees_annual": None,
+                 "note": "AUD 59,520/year (2027, PRIMARY SOURCE: AUD 1,240/UOC × 48 UOC/yr). "
+                 "Note: 7.0 IELTS required for this Business School programme."}},
+        ],
+        "scholarships": [
+            {"suffix": "global-univ-award", "name": "Australia's Global University Award",
+             "provider": "UNSW Sydney",
+             "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": False,
+             "award_amount": "AUD 10,000 one-off payment (non-renewable).",
+             "academic_criteria": "Automatic consideration for all international undergraduate "
+             "applicants at admission — no separate application required. Available to UAE students.",
+             "other_eligibility_criteria": "AUTOMATIC — assessed at the offer stage for all "
+             "international undergraduate applicants. One-off payment (not renewable). Helps offset "
+             "first-year costs. Applies to all faculties.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+            {"suffix": "unsw-scholarship", "name": "UNSW Scholarship Program",
+             "provider": "UNSW Sydney",
+             "provider_type": "institutional",
+             "award_type": "fixed_amount", "renewable": True,
+             "award_amount": "Variable: AUD 5,000 to full tuition coverage depending on award level "
+             "and programme. Specific amounts set annually.",
+             "academic_criteria": "Academic merit (results in secondary education/prior study). "
+             "COMPETITIVE: assessed holistically with leadership record and extracurricular activities. "
+             "Separate scholarship application required (PUCA1029). Deadline: ~October 2027 for "
+             "February 2028 entry (based on Oct 30 2026 deadline for Feb 2027).",
+             "other_eligibility_criteria": "Open to international students including UAE. Separate "
+             "application required. Apply as early as possible — earlier rounds may have more places. "
+             "Check unsw.edu.au/study/undergraduate/scholarships for current deadlines.",
+             "application_deadline": None, "deadline_academic_year": "2026-2027"},
+        ],
+    },
 }
 
 

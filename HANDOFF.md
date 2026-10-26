@@ -16,7 +16,7 @@ Key constraint: **never publish hallucinated facts**. Every data field that isn'
 
 **Goal:** Import 50 universities into Sanity as DRAFTS (not published). Suhail's requirement doc lists all 50 with required fields.
 
-### Status — 47/50 done as drafts
+### Status — 50/50 COMPLETE ✓
 
 | Done | Schools |
 |------|---------|
@@ -27,11 +27,12 @@ Key constraint: **never publish hallucinated facts**. Every data field that isn'
 | Germany (5/5) | RWTH Aachen, Heidelberg, TU Berlin, KIT, LMU Munich |
 | Netherlands (3/3) | TU/e Eindhoven, UvA Amsterdam, University of Twente |
 | Malaysia (4/4) | University of Malaya, Monash Malaysia, Nottingham Malaysia, Taylor's |
+| Australia (4/4) | University of Melbourne, Monash University, University of Sydney, UNSW Sydney |
 
-### Remaining (3 schools)
+### Remaining
 
-- ~~**Malaysia (4):** UM, Monash Malaysia, Nottingham Malaysia, Taylor's~~ ✓
-- **Australia (4):** Melbourne, Sydney, Monash, UNSW — **`country-au` already published (created 2026-10-25)**
+None — Batch-2 import is COMPLETE. All schools are Sanity staging DRAFTS (never published).
+Verification/fact-check + publish sign-off from Suhail required before any school goes live.
 
 ### Skip these (already in DB from Batch-1):
 Oxford, Toronto, TU Munich, TU Delft, NYUAD
@@ -141,16 +142,23 @@ Actually run them before acting, not just when reminded. When one changes the pl
 
 ---
 
-## Next step
+## Next step (post-Batch-2)
 
-Continue Batch-2 with **Australia batch** (4 schools — `country-au` already published):
-Melbourne, Sydney, Monash, UNSW. This is the **final batch** — 47/50 done; 3 remaining.
+**Batch-2 import is complete.** Before any university can go live:
+1. Fact-check each school against primary sources (verify fees, deadlines, scholarships)
+2. McGill fees (MEDIUM confidence) and McMaster fees (LOW-MEDIUM) must be re-verified from primary sources
+3. Taylor's Malaysia fees (MEDIUM confidence) should be verified
+4. Monash Australia BCS fee (MEDIUM confidence) should be verified
+5. Suhail sign-off on each school before publishing
+6. Sanity token rotation — token exposed in chat 3+ times (see memory/sanity-token-rotate.md)
 
-**Malaysia batch DONE (47/50).** Before publishing Canada schools, verify McGill and McMaster fees from primary sources (both had PDF/SharePoint access issues this pass).
+**BATCH-2 COMPLETE (50/50).** Before publishing Canada schools, verify McGill and McMaster fees from primary sources (both had PDF/SharePoint access issues this pass).
 
 Each uni: 6–8 primary-source lookups. Do in batches of 3–4. Draft-only, verify before moving on.
 
 **UK batch notes (25/50):** build_docs updated with `application_platform_name` + `decision_context_year` + per-programme `std_tests` — all UK schools use these. `country-gb` already published. Cambridge UCAS deadline is 15 Oct (NOT January). Birmingham fees not publicly disclosed (null stored — honest). Nottingham fees are 2027/28 proxies.
+
+**Australia batch notes (50/50 — FINAL):** `country-au` published 2026-10-25. Currency: AUD. All 4 are public Go8 research universities. Apply directly to each university (not via VTAC/UAC for overseas qualifications). PRACTICAL INTAKE for UAE A-level students finishing May/June 2027 is Semester 1 February 2028. CRITICAL — Melbourne Model: University of Melbourne has NO standalone undergraduate Bachelor of Engineering — Engineering is graduate only (Master of Engineering); only 2 programs stored for UniMelb (BSc Computing + BCom). IELTS note: Commerce/Business programmes at USyd and UNSW require 7.0 overall (vs 6.5 for CS/Engineering). UNSW deadline is September (earlier than Nov-Dec at other AU unis). Melbourne International Undergraduate Scholarship (MIUS) is explicitly NOT available to UAE students (GDP per capita cap US$10,000 — UAE ~$45,000). Scholarships: UniMelb — none for UAE; Monash — MILS 100% tuition (4 awards/year globally, very competitive); USyd — IUAES 100% tuition ~20 places, separate application; UNSW — AUD $10k automatic + larger competitive awards. All fees are 2027 rates (AUD $55,500–$63,840/yr). 99 docs written (transactionId 2D42OFpIbrkQoZrdHZLKkQ).
 
 **Malaysia batch notes (47/50):** `country-my` published 2026-10-25 (alongside `country-au`). Currency: MYR. All 4 universities teach listed programmes in English. CRITICAL: 6% SST applies to private Malaysian university fees for non-Malaysians from July 1, 2025 (Monash, UNM, Taylor's — NOT public UM). For UNM, fees quoted are pre-SST (confirmed from primary source); effective cost ~6% higher. For Monash, SST inclusion uncertain — verify at application. For Taylor's, SST likely included in total programme figures. UM (public) is SST-exempt. Fee structures: UM uses total programme fees (not annual); others are annual. Scholarship notes: UM — none confirmed for international undergrads; Monash — Monash High Achiever Award MYR 10k/yr automatic (3As A-level); UNM — High Achievers' Scholarship 15-25% first year ONLY (AAA/AAB/ABB tiers, not renewable); Taylor's — Excellence Award is Malaysian/TEG students only (UAE direct applicants NOT eligible). IELTS range: UM 5.5; Monash 6.5/6.0; UNM 6.0/5.5 (MEDIUM confidence); Taylor's 5.5 CS/5.0 Eng (LOW-MEDIUM). Taylor's is independent Malaysian university (own MQA degree), not a branch campus. UNM awards UK Nottingham degree; Monash awards Australian Monash degree. 102 docs written (transactionId 2D42OFpIbrkQoZrdHXds6I).
 
