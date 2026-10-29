@@ -138,7 +138,14 @@ sign in → save Delft + Imperial from Discover → rows confirmed in `student_s
 (redirect to sign-in confirmed) → sign in → `/dashboard` ("My Path") lists both. DB side: RLS on, owner-only
 policy, `authenticated` has SELECT/INSERT/UPDATE/DELETE. Also fixed: Discover now shows a persistent "Saved"
 state for already-saved universities (previously always "Add to My Path", which made saves look lost).
-Open hardening item: `anon` + `authenticated` hold TRUNCATE/TRIGGER/REFERENCES on student tables — revoke pending Subhan's OK.
+Open hardening item: `anon` + `authenticated` hold TRUNCATE/TRIGGER/REFERENCES on all 8 student tables. Fix is written
+(`evidapath-navigator/supabase/migrations/2026_revoke_excess_table_privileges.sql`) but NOT yet applied — Claude's
+auto-apply was blocked by the safety classifier as a production change. Subhan to run it in the Supabase SQL Editor.
+
+**P1 — Build application journey: DONE (acceptance test passed 2026-10-29).** Save (Discover → My Path), add notes
+(new per-university private notes on My Path cards, stored in the existing `student_saved_universities.note`
+column — no schema change), track status (/applications: created Imperial, changed planning → submitted).
+All three verified to survive sign-out/sign-in, in both UI and DB.
 
 **P0 — Confirm hosting architecture: DECIDED (2026-10-29, Subhan).**
 - Interim: wait for GHL to ship a "pull from GitHub" option → push the updated app into GHL → publish via Squarespace (domain lives there).

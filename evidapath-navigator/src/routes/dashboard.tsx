@@ -22,7 +22,11 @@ import { Button } from "../components/ui/button";
 import { useAuth } from "../components/AuthContext";
 import { requireAuth } from "../lib/route-guard";
 import { DataStatus } from "../components/DataStatus";
-import { listSavedUniversities, removeSavedUniversity } from "../lib/profile.functions";
+import {
+  listSavedUniversities,
+  removeSavedUniversity,
+  saveUniversity,
+} from "../lib/profile.functions";
 import type { SavedUniversity } from "../lib/profile.types";
 
 export const Route = createFileRoute("/dashboard")({
@@ -276,6 +280,39 @@ function SavedUniversitiesSection() {
       .catch(() => toast.error("Could not remove."));
   };
 
+  // Private per-university notes (student_saved_universities.note, RLS-scoped).
+  const saveFn = useServerFn(saveUniversity);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [draft, setDraft] = useState("");
+  const [savingNote, setSavingNote] = useState(false);
+  const startEdit = (u: SavedUniversity) => {
+    setEditingId(u.sanity_university_id);
+    setDraft(u.note ?? "");
+  };
+  const saveNote = (u: SavedUniversity) => {
+    const note = draft.trim() === "" ? null : draft.trim();
+    setSavingNote(true);
+    saveFn({
+      data: {
+        sanity_university_id: u.sanity_university_id,
+        university_name: u.university_name,
+        note,
+      },
+    })
+      .then(() => {
+        setSaved((s) =>
+          s.map((x) => (x.sanity_university_id === u.sanity_university_id ? { ...x, note } : x)),
+        );
+        setEditingId(null);
+        toast.success("Note saved.");
+      })
+      .catch((err: Error) => {
+        console.error("[dashboard] save note failed:", err);
+        toast.error("Could not save note — please try again.");
+      })
+      .finally(() => setSavingNote(false));
+  };
+
   if (loading) return null;
 
   return (
@@ -299,22 +336,71 @@ function SavedUniversitiesSection() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {saved.map((u) => (
-            <div
-              key={u.id}
-              className="rounded-2xl border border-border bg-card p-4 flex items-center justify-between gap-3"
-            >
-              <div className="min-w-0">
-                <p className="font-semibold text-sm text-foreground truncate">
-                  {u.university_name ?? u.sanity_university_id}
-                </p>
-                <p className="text-[11px] text-muted-foreground">Saved to your path</p>
+            <div key={u.id} className="rounded-2xl border border-border bg-card p-4 space-y-2">
+              <div className="flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="font-semibold text-sm text-foreground truncate">
+                    {u.university_name ?? u.sanity_university_id}
+                  </p>
+                  <p className="text-[11px] text-muted-foreground">Saved to your path</p>
+                </div>
+                <button
+                  onClick={() => remove(u.sanity_university_id)}
+                  className="text-[11px] text-muted-foreground hover:text-destructive shrink-0"
+                >
+                  Remove
+                </button>
               </div>
-              <button
-                onClick={() => remove(u.sanity_university_id)}
-                className="text-[11px] text-muted-foreground hover:text-destructive shrink-0"
-              >
-                Remove
-              </button>
+              {editingId === u.sanity_university_id ? (
+                <div className="space-y-2">
+                  <textarea
+                    value={draft}
+                    onChange={(e) => setDraft(e.target.value)}
+                    maxLength={2000}
+                    rows={3}
+                    aria-label={`Note for ${u.university_name ?? "this university"}`}
+                    placeholder="e.g. Need IB HL Maths 6. Ask about scholarship deadline."
+                    className="w-full rounded-lg border border-border bg-background px-3 py-2 text-xs text-foreground"
+                  />
+                  <div className="flex gap-2">
+                    <Button
+                      size="sm"
+                      onClick={() => saveNote(u)}
+                      disabled={savingNote}
+                      className="text-xs"
+                    >
+                      {savingNote ? "Saving…" : "Save note"}
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => setEditingId(null)}
+                      className="text-xs"
+                    >
+                      Cancel
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {u.note && (
+                    <p className="text-xs text-foreground whitespace-pre-wrap break-words">
+                      {u.note}
+                    </p>
+                  )}
+                  <div className="flex items-center justify-between">
+                    <button
+                      onClick={() => startEdit(u)}
+                      className="text-[11px] text-primary font-semibold"
+                    >
+                      {u.note ? "Edit note" : "Add note"}
+                    </button>
+                    <Link to="/applications" className="text-[11px] text-primary font-semibold">
+                      Track application →
+                    </Link>
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </div>

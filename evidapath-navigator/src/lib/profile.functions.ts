@@ -44,7 +44,7 @@ export const listSavedUniversities = createServerFn({ method: "GET" }).handler(a
 const SaveUniversitySchema = z.object({
   sanity_university_id: z.string().min(1),
   university_name: z.string().nullable().optional(),
-  note: z.string().nullable().optional(),
+  note: z.string().max(2000).nullable().optional(),
 });
 
 export const saveUniversity = createServerFn({ method: "POST" })
