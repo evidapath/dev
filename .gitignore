@@ -43,3 +43,7 @@ lerna-debug.log*
 .idea/
 *.suo
 *.sw?
+
+# Local tool output (Playwright CLI snapshots/logs, Python bytecode)
+.playwright-cli/
+__pycache__/

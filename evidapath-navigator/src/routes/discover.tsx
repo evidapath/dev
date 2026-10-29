@@ -15,7 +15,7 @@ import {
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { getUniversities } from "../lib/universities.functions";
-import { saveUniversity } from "../lib/profile.functions";
+import { listSavedUniversities, saveUniversity } from "../lib/profile.functions";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
@@ -73,9 +73,27 @@ function DiscoverPage() {
   // Save a university to the student's persisted "My Path" (Supabase, RLS-scoped).
   // Signed-out students are prompted to sign in rather than silently failing.
   const saveUniFn = useServerFn(saveUniversity);
+  // Already-saved universities show "Saved" so a returning student can see their
+  // path persisted. Signed-out: the list call fails and every card stays "Add".
+  const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
+  const listSavedFn = useServerFn(listSavedUniversities);
+  useEffect(() => {
+    let active = true;
+    listSavedFn()
+      .then((rows) => {
+        if (active) setSavedIds(new Set(rows.map((r) => r.sanity_university_id)));
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, [listSavedFn]);
   const addToMyPath = (u: University) => {
     saveUniFn({ data: { sanity_university_id: u.id, university_name: u.name } })
-      .then(() => toast.success(`${u.shortName} saved to your path.`))
+      .then(() => {
+        setSavedIds((s) => new Set(s).add(u.id));
+        toast.success(`${u.shortName} saved to your path.`);
+      })
       .catch((err: Error) => {
         // Surface the real reason rather than always blaming sign-in. A silent/
         // misleading catch here hid a table-GRANT bug for weeks.
@@ -289,10 +307,17 @@ function DiscoverPage() {
                 </Link>
                 <Button
                   onClick={() => addToMyPath(univ)}
+                  disabled={savedIds.has(univ.id)}
                   size="sm"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
                 >
-                  Add to My Path
+                  {savedIds.has(univ.id) ? (
+                    <>
+                      <Check className="w-3 h-3" /> Saved
+                    </>
+                  ) : (
+                    "Add to My Path"
+                  )}
                 </Button>
               </div>
             </div>

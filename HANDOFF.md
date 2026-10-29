@@ -1,5 +1,5 @@
 # EvidaPath — Handoff Document
-**Last updated:** 2026-10-28  
+**Last updated:** 2026-10-29  
 **For:** Any new Claude Code session (including Suhail's account). Read this entire file before touching anything.
 
 ---
@@ -127,6 +127,20 @@ Before this work, 200+ fields showed "Pending verified data." After fixing:
 | Birmingham UK fee | 2 | 2 | BY DESIGN — Birmingham does not disclose per-programme fees publicly |
 
 **Remaining "PENDING" labels are correct** — they reflect genuinely unavailable data, not missed patches.
+
+---
+
+## P0 Status (2026-10-29)
+
+**P0 — Fix My Path persistence: DONE (acceptance test passed).**
+Tested end-to-end with Playwright against the real Supabase (test account `evidapathtesting@gmail.com`):
+sign in → save Delft + Imperial from Discover → rows confirmed in `student_saved_universities` → sign out
+(redirect to sign-in confirmed) → sign in → `/dashboard` ("My Path") lists both. DB side: RLS on, owner-only
+policy, `authenticated` has SELECT/INSERT/UPDATE/DELETE. Also fixed: Discover now shows a persistent "Saved"
+state for already-saved universities (previously always "Add to My Path", which made saves look lost).
+Open hardening item: `anon` + `authenticated` hold TRUNCATE/TRIGGER/REFERENCES on student tables — revoke pending Subhan's OK.
+
+**P0 — Confirm hosting architecture: OPEN** (see item 3 below).
 
 ---
 
