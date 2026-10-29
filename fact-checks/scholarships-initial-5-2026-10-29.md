@@ -23,3 +23,11 @@ NYUAD's pages differ ("children of Emirati mothers" vs "children of an Emirati m
 official page's exact sentence is now stored. Whether the two wordings cover the same students depends on UAE
 nationality law, which was **not** checked against a primary source here — left for a human to confirm, record
 stays `HUMAN_REVIEW`.
+
+### Attempt to resolve (2026-10-29)
+Tried to confirm via official UAE sources whether a child of an Emirati father is an Emirati national by law
+(which would make both NYUAD wordings equivalent). u.ae "Emirati nationality" page rendered no content to the
+fetcher; a guessed uaelegislation.gov.ae URL was the wrong law. **Not resolved — record stays HUMAN_REVIEW.**
+Next step for a human: open Federal Law No. 17 of 1972 (Nationality and Passports) on uaelegislation.gov.ae, or
+email NYUAD Admissions to confirm which wording is current. The student-facing card already shows NYUAD's exact
+sentence plus the caveat, so no false certainty is shown in the meantime.
