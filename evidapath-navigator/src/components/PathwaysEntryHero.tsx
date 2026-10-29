@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -12,12 +13,29 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Button } from "./ui/button";
-import { UNIVERSITIES_DATA } from "../lib/mock-data";
+import { getUniversities } from "../lib/universities.functions";
+import type { University } from "../lib/mock-data";
 
 export function PathwaysEntryHero() {
   const [activeTab, setActiveTab] = useState<"explore" | "analyze">("explore");
   const [selectedInterest, setSelectedInterest] = useState<string>("Computer Science");
-  const [selectedTargetUniv, setSelectedTargetUniv] = useState<string>("uoft-canada");
+  const [selectedTargetUniv, setSelectedTargetUniv] = useState<string>("");
+  const [universities, setUniversities] = useState<University[]>([]);
+  const fetchUniversities = useServerFn(getUniversities);
+  useEffect(() => {
+    let active = true;
+    fetchUniversities()
+      .then((res) => {
+        if (!active) return;
+        const sorted = [...res.universities].sort((a, b) => a.name.localeCompare(b.name));
+        setUniversities(sorted);
+        setSelectedTargetUniv((v) => v || sorted[0]?.id || "");
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, [fetchUniversities]);
 
   return (
     <div className="w-full max-w-5xl mx-auto mt-8">
@@ -142,7 +160,7 @@ export function PathwaysEntryHero() {
                   onChange={(e) => setSelectedTargetUniv(e.target.value)}
                   className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
                 >
-                  {UNIVERSITIES_DATA.map((u) => (
+                  {universities.map((u) => (
                     <option key={u.id} value={u.id}>
                       {u.flag} {u.name} ({u.city}, {u.country})
                     </option>

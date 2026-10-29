@@ -279,7 +279,7 @@ function FindMyPathPage() {
   const FIT_HEADINGS: Record<BudgetFit, { title: string; note: string }> = {
     within: {
       title: noBudgetLimit ? "Verified annual cost" : "Within your budget",
-      note: "Full annual cost (tuition, fees and living) converted to USD.",
+      note: "Tuition, fees and living costs converted to USD. Open a university to see where its living cost comes from.",
     },
     unknown: {
       title: "Cost not fully verified yet",
@@ -305,9 +305,8 @@ function FindMyPathPage() {
             Here's what looks realistic for you.
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Based on what you told us, these pathways are worth exploring. Costs and admissions
-            evidence are illustrative until verified data is connected — tap any option to go
-            deeper.
+            Based on what you told us, these pathways are worth exploring. Costs and entry
+            requirements come from official sources — tap any option to go deeper.
           </p>
           <DataStatus level={source === "sanity" ? "live" : "illustrative"}>
             {source === "sanity"
@@ -455,6 +454,11 @@ function FindMyPathPage() {
                           <p className="text-muted-foreground">
                             Living/yr: {formatCost(u.costs.livingPerYear, u.costs.currency)}
                           </p>
+                          {u.costs.livingSource && (
+                            <p className="text-[10px] text-muted-foreground">
+                              {u.costs.livingSource}
+                            </p>
+                          )}
                           <p className="text-muted-foreground">
                             Total degree: {formatCost(u.costs.totalDegree, u.costs.currency)}
                           </p>
@@ -466,8 +470,8 @@ function FindMyPathPage() {
                       <div className="rounded-lg border border-border bg-secondary/30 p-3 text-xs space-y-1">
                         <p className="font-semibold text-foreground">Why this made your list</p>
                         <p className="text-muted-foreground">
-                          Matches your subject interest and region preference. Full evidence-based
-                          fit analysis will appear here once verified data is connected.
+                          Matches your subject interest and country preference. A personal fit
+                          analysis against your grades isn't available yet.
                         </p>
                       </div>
                       <div className="flex flex-wrap gap-2">

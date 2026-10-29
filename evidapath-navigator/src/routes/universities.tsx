@@ -264,6 +264,17 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
               {formatCost(costs.livingPerYear, costs.currency)}
             </span>
           </div>
+          {costs.livingSource && (
+            <p
+              className={`text-[10px] leading-snug text-right ${
+                costs.livingSource.startsWith("Unofficial")
+                  ? "text-bronze"
+                  : "text-muted-foreground"
+              }`}
+            >
+              Living cost: {costs.livingSource}
+            </p>
+          )}
           <div className="flex justify-between pt-1 border-t border-border/60">
             <span className="text-muted-foreground font-semibold">Total Degree Outlay:</span>
             <span className="font-mono font-bold text-muted-foreground">
@@ -316,6 +327,9 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
                       </span>
                       <span className="font-mono text-right">
                         {(d.deadline ?? "").slice(0, 10)}
+                        {isPast(d.deadline) && (
+                          <span className="text-bronze font-sans font-semibold"> · passed</span>
+                        )}
                         {d.decisionDate ? ` · decision ${d.decisionDate.slice(0, 10)}` : ""}
                       </span>
                     </div>
@@ -336,6 +350,11 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
                     <div key={i} className="rounded bg-secondary/40 p-2 space-y-0.5">
                       <p className="font-semibold text-foreground">{a.curriculum}</p>
                       {a.threshold && <p className="text-muted-foreground">{a.threshold}</p>}
+                      {a.threshold && otherTermsNote(a.curriculum, a.threshold) && (
+                        <p className="text-[10px] text-bronze">
+                          {otherTermsNote(a.curriculum, a.threshold)}
+                        </p>
+                      )}
                       {a.subjects.length > 0 && (
                         <p className="text-muted-foreground">Subjects: {a.subjects.join("; ")}</p>
                       )}
@@ -372,4 +391,29 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
       </div>
     </div>
   );
+}
+
+// Some universities publish entry grades only in A-level terms ("AAB or equivalent").
+// When that text is shown under another qualification, say so plainly rather than
+// leaving an IB or American-diploma student to guess what "AAB" means for them.
+const OWN_TERMS: { match: RegExp; own: RegExp; name: string }[] = [
+  { match: /baccalaureate|\bIB\b/i, own: /\bIB\b|baccalaureate|points/i, name: "IB" },
+  {
+    match: /american|high school|\bAP\b/i,
+    own: /\bGPA\b|\bSAT\b|\bACT\b|\bAP\b|high school|diploma/i,
+    name: "American high school",
+  },
+];
+function otherTermsNote(curriculum: string, threshold: string): string | null {
+  const kind = OWN_TERMS.find((k) => k.match.test(curriculum));
+  if (!kind || kind.own.test(threshold) || !/a[- ]?level|A\*/i.test(threshold)) return null;
+  return `Published in A-level terms only. Ask the university for its ${kind.name} equivalent.`;
+}
+
+// True when an ISO date (YYYY-MM-DD…) is before today, so a closed deadline is never
+// shown as if it were still open.
+function isPast(date: string | null | undefined): boolean {
+  const day = date?.slice(0, 10);
+  if (!day || !/^\d{4}-\d{2}-\d{2}$/.test(day)) return false;
+  return day < new Date().toISOString().slice(0, 10);
 }

@@ -33,6 +33,8 @@ export interface University {
     currency: string;
     totalAnnual: number | null;
     totalDegree: number | null;
+    /** Where the living-cost figure comes from (official / university / unofficial). */
+    livingSource?: string;
   };
   affordabilityIndex: {
     score: number | null;
@@ -88,6 +90,8 @@ export interface ProgramView {
     currency: string;
     totalAnnual: number | null;
     totalDegree: number | null;
+    /** Where the living-cost figure comes from (official / university / unofficial). */
+    livingSource?: string;
   };
   costResidencyNote?: string;
   admissionsByCurriculum: {

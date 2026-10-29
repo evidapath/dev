@@ -56,7 +56,7 @@ function CompareOffersPage() {
           Compare your offers before you commit. See net family cost, awards, deadlines, renewal
           requirements, and funding gaps side by side — not reduced to a single opaque score.
         </p>
-        <IllustrativePreviewLabel text="Comparison uses your stored offers and awards plus public university cost data. Cost figures are illustrative until verified data is connected." />
+        <IllustrativePreviewLabel text="Comparison uses your stored offers and awards plus public university cost data. University costs are live EvidaPath data traced to official sources; where a cost isn't verified yet it shows as pending." />
       </div>
 
       {composites.length < 2 ? (

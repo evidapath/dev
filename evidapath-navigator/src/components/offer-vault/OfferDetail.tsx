@@ -116,8 +116,8 @@ export function OfferDetail({
         {analysis.costDataStatus === "pending" && (
           <div className="text-[11px] text-muted-foreground bg-secondary/40 rounded-lg px-3 py-2 flex items-center gap-2">
             <TrendingDown className="w-3.5 h-3.5 text-bronze shrink-0" />
-            Gap analysis available once verified cost data is connected. Your awards are still
-            stored and will reduce the gap automatically.
+            Gap analysis appears once this university has a verified full annual cost. Your awards
+            are still stored and will reduce the gap automatically.
           </div>
         )}
         {analysis.hasDocumentVerifiedAwards && (

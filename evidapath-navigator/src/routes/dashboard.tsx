@@ -246,9 +246,8 @@ function DashboardPage() {
 
       {/* Trust footer — single status treatment */}
       <DataStatus level="illustrative">
-        Illustrative product preview. Personalized data populates here as verified datasets are
-        connected to your account. Your data is accessed only through your authenticated session and
-        is subject to Row Level Security.
+        Your saved universities, notes and applications are private to your account: they're
+        accessed only through your signed-in session and protected by Row Level Security.
       </DataStatus>
     </div>
   );

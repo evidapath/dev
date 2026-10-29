@@ -299,7 +299,7 @@ export function StatusMap() {
     {
       area: "Find My Path guided intake",
       status: "BETA",
-      note: "Operational intake; pathway results illustrative.",
+      note: "Live university data; budget, country and subject filters; profile remembered when signed in. No grade-fit scoring yet.",
     },
     {
       area: "Dashboard (Next Step)",
@@ -330,14 +330,18 @@ export function StatusMap() {
     {
       area: "Family Education Capital Plan",
       status: "BETA",
-      note: "Interactive sliders; cost basis illustrative.",
+      note: "Live university costs converted to USD; family and scholarship figures are user assumptions.",
     },
     {
       area: "University Cost Database",
-      status: "MOCK DATA",
-      note: "Illustrative records, not verified.",
+      status: "LIVE",
+      note: "51 universities from Sanity, traced to official sources; unverified costs show as pending.",
     },
-    { area: "Scholarship Graph", status: "MOCK DATA", note: "Illustrative records, not verified." },
+    {
+      area: "Scholarship Graph",
+      status: "LIVE",
+      note: "Records from Sanity with guaranteed/competitive basis where confirmed.",
+    },
     {
       area: "Intelligence articles",
       status: "MOCK DATA",
@@ -384,12 +388,12 @@ export function StatusMap() {
 export function Limitations() {
   const items: { label: string; text: string }[] = [
     {
-      label: "University cost data is illustrative",
-      text: "The University Cost Database and university cards use demo/illustrative records. No tuition, living-cost, or total-degree figures are verified yet.",
+      label: "Some university costs are incomplete",
+      text: "Costs come from official sources, but where living costs or fees aren't verified the full annual total shows as pending, and budget filters can't confirm a fit.",
     },
     {
-      label: "Scholarship records are illustrative",
-      text: "The Scholarship Graph shows example records. Award values, eligibility, and verification labels are not sourced from verified data.",
+      label: "Currency conversions are approximate",
+      text: "Budgets are compared in USD using European Central Bank reference rates (AED at its 3.6725 peg). Actual costs depend on exchange rates when you pay.",
     },
     {
       label: "Academic Readiness analysis is illustrative",

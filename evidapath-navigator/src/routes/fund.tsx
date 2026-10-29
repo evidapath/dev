@@ -1,24 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { requireAuth } from "../lib/route-guard";
-import { useState } from "react";
-import {
-  PiggyBank,
-  DollarSign,
-  ArrowRight,
-  ShieldCheck,
-  TrendingDown,
-  Scale,
-  CheckCircle2,
-} from "lucide-react";
+import { useEffect, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { PiggyBank, Scale } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { UNIVERSITIES_DATA } from "../lib/mock-data";
+import { getUniversities } from "../lib/universities.functions";
+import { getFxRates, toUsd, type FxRates } from "../lib/fx.functions";
+import type { University } from "../lib/mock-data";
 import { isPending } from "../lib/format";
 import { VerifiedAwardsPanel } from "../components/offer-vault/VerifiedAwardsPanel";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
 function money(value: number | null): string {
   if (isPending(value)) return "Pending verified data";
-  return `$${value!.toLocaleString()}`;
+  return `$${Math.round(value!).toLocaleString()}`;
 }
 
 export const Route = createFileRoute("/fund")({
@@ -44,33 +39,95 @@ export const Route = createFileRoute("/fund")({
   component: FundPage,
 });
 
+// One pathway's plan, entirely in USD so it can be compared with the (USD) family
+// capacity and scholarship sliders. Null figures mean the cost isn't verified yet.
+interface PathwayPlan {
+  u: University;
+  tuitionFees: number | null;
+  living: number | null;
+  degreeTotal: number | null;
+  scholarship: number;
+  family: number;
+  gap: number | null;
+}
+
+function buildPlan(
+  u: University,
+  fx: FxRates | null,
+  familyPerYear: number,
+  scholarshipPerYear: number,
+): PathwayPlan {
+  const usd = (v: number | null) => (v == null ? null : toUsd(v, u.costs.currency || "", fx));
+  const tuition = usd(u.costs.tuitionPerYear);
+  const fees = usd(u.costs.mandatoryFees);
+  const annualTotal = usd(u.costs.totalAnnual);
+  const years = u.durationYears || 0;
+  const degreeTotal = annualTotal != null && years > 0 ? annualTotal * years : null;
+  // A scholarship can't cover more than the annual cost.
+  const perYear =
+    annualTotal != null ? Math.min(scholarshipPerYear, annualTotal) : scholarshipPerYear;
+  const scholarship = perYear * years;
+  const family = familyPerYear * years;
+  return {
+    u,
+    tuitionFees: tuition == null ? null : tuition + (fees ?? 0),
+    living: usd(u.costs.livingPerYear),
+    degreeTotal,
+    scholarship,
+    family,
+    gap: degreeTotal != null ? Math.max(0, degreeTotal - scholarship - family) : null,
+  };
+}
+
 function FundPage() {
-  const [selectedUniv1, setSelectedUniv1] = useState("oxford-univ");
-  const [selectedUniv2, setSelectedUniv2] = useState("tum-germany");
+  const [universities, setUniversities] = useState<University[]>([]);
+  const [fx, setFx] = useState<FxRates | null>(null);
+  const [selectedUniv1, setSelectedUniv1] = useState("");
+  const [selectedUniv2, setSelectedUniv2] = useState("");
   const [expectedFamilyContribution, setExpectedFamilyContribution] = useState(35000); // per year
   const [appliedScholarship, setAppliedScholarship] = useState(15000); // per year
 
-  const u1 = (UNIVERSITIES_DATA.find((u) => u.id === selectedUniv1) ?? UNIVERSITIES_DATA[0])!;
-  const u2 = (UNIVERSITIES_DATA.find((u) => u.id === selectedUniv2) ?? UNIVERSITIES_DATA[2])!;
+  const fetchUniversities = useServerFn(getUniversities);
+  const fetchFx = useServerFn(getFxRates);
+  useEffect(() => {
+    let active = true;
+    fetchUniversities().then((res) => {
+      if (!active) return;
+      const sorted = [...res.universities].sort((a, b) => a.name.localeCompare(b.name));
+      setUniversities(sorted);
+      // Default to the first two universities with a verified full annual cost.
+      const priced = sorted.filter((u) => u.costs.totalAnnual != null);
+      setSelectedUniv1((v) => v || priced[0]?.id || sorted[0]?.id || "");
+      setSelectedUniv2((v) => v || priced[1]?.id || sorted[1]?.id || "");
+    });
+    fetchFx()
+      .then((r) => active && setFx(r))
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, [fetchUniversities, fetchFx]);
 
-  const u1HasData = !isPending(u1.costs.totalAnnual);
-  const u2HasData = !isPending(u2.costs.totalAnnual);
+  const u1 = universities.find((u) => u.id === selectedUniv1);
+  const u2 = universities.find((u) => u.id === selectedUniv2);
+  const plan1 = u1 ? buildPlan(u1, fx, expectedFamilyContribution, appliedScholarship) : null;
+  const plan2 = u2 ? buildPlan(u2, fx, expectedFamilyContribution, appliedScholarship) : null;
+  const t1 = plan1?.degreeTotal ?? null;
+  const t2 = plan2?.degreeTotal ?? null;
+  const cheaper =
+    plan1 && plan2 && t1 != null && t2 != null && t1 !== t2
+      ? t1 < t2
+        ? { pick: plan1, other: plan2, saves: t2 - t1 }
+        : { pick: plan2, other: plan1, saves: t1 - t2 }
+      : null;
 
-  // Calculations for Option 1 (only when verified cost data exists)
-  const u1AnnualTotal = u1.costs.totalAnnual ?? 0;
-  const u1DegreeTotal = u1AnnualTotal * u1.durationYears;
-  const u1DegreeFunding = appliedScholarship * u1.durationYears;
-  const u1FamilyCapacity = expectedFamilyContribution * u1.durationYears;
-  const u1NetGap = Math.max(0, u1DegreeTotal - u1DegreeFunding - u1FamilyCapacity);
-
-  // Calculations for Option 2
-  const u2AnnualTotal = u2.costs.totalAnnual ?? 0;
-  const u2DegreeTotal = u2AnnualTotal * u2.durationYears;
-  const u2DegreeFunding = Math.min(appliedScholarship, u2AnnualTotal) * u2.durationYears;
-  const u2FamilyCapacity = expectedFamilyContribution * u2.durationYears;
-  const u2NetGap = Math.max(0, u2DegreeTotal - u2DegreeFunding - u2FamilyCapacity);
-
-  const deltaAvailable = u1HasData && u2HasData;
+  const selectCls =
+    "w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary";
+  const uniOptions = universities.map((u) => (
+    <option key={u.id} value={u.id}>
+      {u.flag} {u.name} ({u.durationYears} yrs)
+    </option>
+  ));
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
@@ -84,15 +141,16 @@ function FundPage() {
           Family Education Capital Plan
         </h1>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Turn an acceptance goal into a four-year financial roadmap. Closer to private wealth
-          planning than an arbitrary college-cost calculator. Verified cost figures will populate
-          the plan as data is added.
+          Turn an acceptance goal into a multi-year financial roadmap. Compare two universities side
+          by side against what your family can contribute and the funding you expect.
         </p>
         <div className="flex items-center gap-2 text-[11px] text-muted-foreground bg-secondary/50 border border-border rounded-lg px-3 py-2">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
           <span>
-            Illustrative product preview. Live analysis will use verified EvidaPath data. Cost
-            figures currently being verified.
+            University costs are live EvidaPath data traced to official sources, converted to USD
+            {fx ? ` at European Central Bank reference rates from ${fx.date}` : ""}. Family capacity
+            and scholarship amounts are your own assumptions. Universities without a verified full
+            annual cost show "Pending verified data".
           </span>
         </div>
       </div>
@@ -116,13 +174,9 @@ function FundPage() {
             <select
               value={selectedUniv1}
               onChange={(e) => setSelectedUniv1(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
+              className={selectCls}
             >
-              {UNIVERSITIES_DATA.map((u) => (
-                <option key={u.id} value={u.id}>
-                  {u.flag} {u.name} ({u.durationYears} yrs)
-                </option>
-              ))}
+              {uniOptions}
             </select>
           </div>
 
@@ -133,13 +187,9 @@ function FundPage() {
             <select
               value={selectedUniv2}
               onChange={(e) => setSelectedUniv2(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
+              className={selectCls}
             >
-              {UNIVERSITIES_DATA.map((u) => (
-                <option key={u.id} value={u.id}>
-                  {u.flag} {u.name} ({u.durationYears} yrs)
-                </option>
-              ))}
+              {uniOptions}
             </select>
           </div>
 
@@ -160,6 +210,7 @@ function FundPage() {
               value={expectedFamilyContribution}
               onChange={(e) => setExpectedFamilyContribution(Number(e.target.value))}
               className="w-full accent-primary mt-2"
+              aria-label="Family annual capacity in US dollars"
             />
           </div>
 
@@ -180,6 +231,7 @@ function FundPage() {
               value={appliedScholarship}
               onChange={(e) => setAppliedScholarship(Number(e.target.value))}
               className="w-full accent-primary mt-2"
+              aria-label="Target scholarship per year in US dollars"
             />
           </div>
         </div>
@@ -193,151 +245,8 @@ function FundPage() {
 
       {/* Side-by-side Capital Plan Comparison */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Pathway A */}
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-6">
-          <div className="flex items-center justify-between border-b border-border pb-4">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Pathway A
-              </span>
-              <h3 className="font-display font-bold text-xl text-foreground mt-0.5">
-                {u1.flag} {u1.name}
-              </h3>
-              <p className="text-xs text-muted-foreground">
-                {u1.durationYears}-Year Degree • {u1.city}, {u1.country}
-              </p>
-            </div>
-            <span className="font-mono text-xs bg-secondary px-2.5 py-1 rounded font-semibold text-foreground">
-              {u1.costs.currency} Base
-            </span>
-          </div>
-
-          {/* Breakdown numbers */}
-          <div className="space-y-3 text-xs">
-            <div className="flex justify-between py-1 border-b border-border/60">
-              <span className="text-muted-foreground">Annual Tuition & Mandatory Fees:</span>
-              <span className="font-mono font-medium text-muted-foreground">
-                {u1HasData
-                  ? money(u1.costs.tuitionPerYear! + (u1.costs.mandatoryFees ?? 0))
-                  : "Pending verified data"}
-              </span>
-            </div>
-            <div className="flex justify-between py-1 border-b border-border/60">
-              <span className="text-muted-foreground">Estimated Living & Accommodation / yr:</span>
-              <span className="font-mono font-medium text-muted-foreground">
-                {money(u1.costs.livingPerYear)}
-              </span>
-            </div>
-            <div className="flex justify-between py-1 border-b border-border/60">
-              <span className="text-muted-foreground font-semibold">
-                Total Cumulative Degree Cost:
-              </span>
-              <span className="font-mono font-bold text-sm text-muted-foreground">
-                {u1HasData ? money(u1DegreeTotal) : "Pending verified data"}
-              </span>
-            </div>
-            <div className="flex justify-between py-1 border-b border-border/60 text-primary">
-              <span>Less: Modeled Scholarships ({u1.durationYears} yrs):</span>
-              <span className="font-mono font-bold">-${u1DegreeFunding.toLocaleString()}</span>
-            </div>
-            <div className="flex justify-between py-1 border-b border-border/60">
-              <span className="text-muted-foreground">
-                Less: Expected Family Commitment ({u1.durationYears} yrs):
-              </span>
-              <span className="font-mono font-medium">-${u1FamilyCapacity.toLocaleString()}</span>
-            </div>
-          </div>
-
-          {/* Net Funding Gap Box */}
-          <div className="bg-secondary/50 rounded-xl p-4 border border-border text-center space-y-1">
-            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Remaining Family Capital Gap
-            </span>
-            <div className="text-2xl sm:text-3xl font-mono font-extrabold text-bronze">
-              {u1HasData ? `${money(u1NetGap)} USD` : "Pending verified data"}
-            </div>
-            <p className="text-[11px] text-muted-foreground">
-              {u1HasData
-                ? u1NetGap > 0
-                  ? "Funding gap requires targeted external scholarships, student loans, or campus employment."
-                  : "Fully funded within current family capacity and target scholarship range."
-                : "Gap analysis available once verified cost data is connected."}
-            </p>
-          </div>
-        </div>
-
-        {/* Pathway B */}
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-6">
-          <div className="flex items-center justify-between border-b border-border pb-4">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-                Pathway B (Strategic Comparison)
-              </span>
-              <h3 className="font-display font-bold text-xl text-foreground mt-0.5">
-                {u2.flag} {u2.name}
-              </h3>
-              <p className="text-xs text-muted-foreground">
-                {u2.durationYears}-Year Degree • {u2.city}, {u2.country}
-              </p>
-            </div>
-            <span className="font-mono text-xs bg-secondary px-2.5 py-1 rounded font-semibold text-foreground">
-              {u2.costs.currency} Base
-            </span>
-          </div>
-
-          {/* Breakdown numbers */}
-          <div className="space-y-3 text-xs">
-            <div className="flex justify-between py-1 border-b border-border/60">
-              <span className="text-muted-foreground">Annual Tuition & Mandatory Fees:</span>
-              <span className="font-mono font-medium text-muted-foreground">
-                {u2HasData
-                  ? money(u2.costs.tuitionPerYear! + (u2.costs.mandatoryFees ?? 0))
-                  : "Pending verified data"}
-              </span>
-            </div>
-            <div className="flex justify-between py-1 border-b border-border/60">
-              <span className="text-muted-foreground">Estimated Living & Accommodation / yr:</span>
-              <span className="font-mono font-medium text-muted-foreground">
-                {money(u2.costs.livingPerYear)}
-              </span>
-            </div>
-            <div className="flex justify-between py-1 border-b border-border/60">
-              <span className="text-muted-foreground font-semibold">
-                Total Cumulative Degree Cost:
-              </span>
-              <span className="font-mono font-bold text-sm text-muted-foreground">
-                {u2HasData ? money(u2DegreeTotal) : "Pending verified data"}
-              </span>
-            </div>
-            <div className="flex justify-between py-1 border-b border-border/60 text-primary">
-              <span>Less: Modeled Scholarships ({u2.durationYears} yrs):</span>
-              <span className="font-mono font-bold">-${u2DegreeFunding.toLocaleString()}</span>
-            </div>
-            <div className="flex justify-between py-1 border-b border-border/60">
-              <span className="text-muted-foreground">
-                Less: Expected Family Commitment ({u2.durationYears} yrs):
-              </span>
-              <span className="font-mono font-medium">-${u2FamilyCapacity.toLocaleString()}</span>
-            </div>
-          </div>
-
-          {/* Net Funding Gap Box */}
-          <div className="bg-secondary/50 rounded-xl p-4 border border-border text-center space-y-1">
-            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Remaining Family Capital Gap
-            </span>
-            <div className="text-2xl sm:text-3xl font-mono font-extrabold text-primary">
-              {u2HasData ? `${money(u2NetGap)} USD` : "Pending verified data"}
-            </div>
-            <p className="text-[11px] text-muted-foreground">
-              {u2HasData
-                ? u2NetGap === 0
-                  ? "Zero capital shortfall. Leaves family surplus capital for postgraduate study."
-                  : "Manageable low-capital gap."
-                : "Gap analysis available once verified cost data is connected."}
-            </p>
-          </div>
-        </div>
+        {plan1 && <PathwayColumn label="Pathway A" plan={plan1} />}
+        {plan2 && <PathwayColumn label="Pathway B (Strategic Comparison)" plan={plan2} accent />}
       </div>
 
       {/* Strategic Capital Delta Takeaway */}
@@ -350,17 +259,16 @@ function FundPage() {
             </h4>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground">
-            {deltaAvailable ? (
+            {cheaper ? (
               <>
-                Selecting Pathway B ({u2.shortName}) over Pathway A ({u1.shortName}) preserves
-                approximately{" "}
-                <strong className="text-foreground font-mono">
-                  ${Math.abs(u1DegreeTotal - u2DegreeTotal).toLocaleString()} USD
-                </strong>{" "}
-                in total family educational capital over the course of the degree.
+                Choosing {cheaper.pick.u.shortName} over {cheaper.other.u.shortName} costs about{" "}
+                <strong className="text-foreground font-mono">{money(cheaper.saves)} USD</strong>{" "}
+                less over the full degree, before scholarships.
               </>
+            ) : t1 != null && t2 != null ? (
+              "Both pathways cost about the same over the full degree."
             ) : (
-              "Capital delta analysis available once verified cost data is connected for both pathways."
+              "A comparison needs a verified full annual cost for both universities."
             )}
           </p>
         </div>
@@ -370,6 +278,92 @@ function FundPage() {
             Save to My Capital Plan
           </Button>
         </Link>
+      </div>
+    </div>
+  );
+}
+
+function PathwayColumn({
+  label,
+  plan,
+  accent = false,
+}: {
+  label: string;
+  plan: PathwayPlan;
+  accent?: boolean;
+}) {
+  const { u } = plan;
+  const years = u.durationYears;
+  return (
+    <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-6">
+      <div className="flex items-center justify-between border-b border-border pb-4">
+        <div>
+          <span
+            className={`text-xs font-semibold uppercase tracking-wider ${
+              accent ? "text-primary" : "text-muted-foreground"
+            }`}
+          >
+            {label}
+          </span>
+          <h3 className="font-display font-bold text-xl text-foreground mt-0.5">
+            {u.flag} {u.name}
+          </h3>
+          <p className="text-xs text-muted-foreground">
+            {years}-Year Degree • {u.city}, {u.country}
+          </p>
+        </div>
+        <span className="font-mono text-xs bg-secondary px-2.5 py-1 rounded font-semibold text-foreground">
+          USD{u.costs.currency && u.costs.currency !== "USD" ? ` (from ${u.costs.currency})` : ""}
+        </span>
+      </div>
+
+      <div className="space-y-3 text-xs">
+        <div className="flex justify-between py-1 border-b border-border/60">
+          <span className="text-muted-foreground">Annual Tuition & Mandatory Fees:</span>
+          <span className="font-mono font-medium text-muted-foreground">
+            {money(plan.tuitionFees)}
+          </span>
+        </div>
+        <div className="flex justify-between py-1 border-b border-border/60">
+          <span className="text-muted-foreground">Estimated Living & Accommodation / yr:</span>
+          <span className="font-mono font-medium text-muted-foreground">{money(plan.living)}</span>
+        </div>
+        <div className="flex justify-between py-1 border-b border-border/60">
+          <span className="text-muted-foreground font-semibold">Total Cumulative Degree Cost:</span>
+          <span className="font-mono font-bold text-sm text-muted-foreground">
+            {money(plan.degreeTotal)}
+          </span>
+        </div>
+        <div className="flex justify-between py-1 border-b border-border/60 text-primary">
+          <span>Less: Modeled Scholarships ({years} yrs):</span>
+          <span className="font-mono font-bold">-{money(plan.scholarship)}</span>
+        </div>
+        <div className="flex justify-between py-1 border-b border-border/60">
+          <span className="text-muted-foreground">
+            Less: Expected Family Commitment ({years} yrs):
+          </span>
+          <span className="font-mono font-medium">-{money(plan.family)}</span>
+        </div>
+      </div>
+
+      <div className="bg-secondary/50 rounded-xl p-4 border border-border text-center space-y-1">
+        <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          Remaining Family Capital Gap
+        </span>
+        <div
+          className={`text-2xl sm:text-3xl font-mono font-extrabold ${
+            plan.gap ? "text-bronze" : "text-primary"
+          }`}
+        >
+          {plan.gap != null ? `${money(plan.gap)} USD` : "Pending verified data"}
+        </div>
+        <p className="text-[11px] text-muted-foreground">
+          {plan.gap == null
+            ? "The gap appears once this university has a verified full annual cost."
+            : plan.gap > 0
+              ? "This gap would need external scholarships, loans, or other funding."
+              : "Covered by your family capacity and target scholarship."}
+        </p>
       </div>
     </div>
   );

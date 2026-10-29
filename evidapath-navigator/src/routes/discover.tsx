@@ -240,7 +240,9 @@ function DiscoverPage() {
         </span>
         <div className="flex items-center gap-1.5">
           <ShieldCheck className="w-3.5 h-3.5 text-muted-foreground" />
-          <span>Cost figures will reflect tuition + estimated living + fees once verified</span>
+          <span>
+            Annual cost = tuition + fees + living, from official sources; budget compared in USD
+          </span>
         </div>
       </div>
 

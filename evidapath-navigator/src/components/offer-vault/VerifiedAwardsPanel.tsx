@@ -102,7 +102,7 @@ export function VerifiedAwardsPanel({
           <div className="text-[11px] text-muted-foreground bg-secondary/40 rounded-lg px-3 py-2 flex items-center gap-2">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
             Updated projected funding gap uses your stored awards instead of the modeled target.
-            Cost figures remain illustrative until verified data is connected.
+            University costs come from official sources; unverified costs show as pending.
             {hasDocVerified ? (
               <span className="text-primary"> • Some awards document-verified.</span>
             ) : (

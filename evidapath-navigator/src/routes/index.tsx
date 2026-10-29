@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import {
   ArrowRight,
   Compass,
@@ -16,7 +18,10 @@ import {
 import { Button } from "../components/ui/button";
 import { PathwaysEntryHero } from "../components/PathwaysEntryHero";
 import { DecisionModelDemo } from "../components/DecisionModelDemo";
-import { UNIVERSITIES_DATA, SCHOLARSHIPS_DATA, INTELLIGENCE_ARTICLES } from "../lib/mock-data";
+import { INTELLIGENCE_ARTICLES } from "../lib/mock-data";
+import type { University, Scholarship } from "../lib/mock-data";
+import { getUniversities } from "../lib/universities.functions";
+import { getScholarships } from "../lib/scholarships.functions";
 import { formatCost } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
@@ -44,6 +49,33 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  // Featured cards come from live data: universities with a verified full annual
+  // cost, and scholarships whose guaranteed/competitive basis is confirmed.
+  const [featuredUnis, setFeaturedUnis] = useState<University[]>([]);
+  const [featuredScholarships, setFeaturedScholarships] = useState<Scholarship[]>([]);
+  const fetchUniversities = useServerFn(getUniversities);
+  const fetchScholarships = useServerFn(getScholarships);
+  useEffect(() => {
+    let active = true;
+    fetchUniversities()
+      .then((res) => {
+        if (!active) return;
+        const priced = res.universities.filter((u) => u.costs.totalAnnual != null);
+        setFeaturedUnis((priced.length >= 3 ? priced : res.universities).slice(0, 3));
+      })
+      .catch(() => {});
+    fetchScholarships()
+      .then((res) => {
+        if (!active) return;
+        const confirmed = res.scholarships.filter((s) => s.selectionBasis);
+        setFeaturedScholarships((confirmed.length >= 3 ? confirmed : res.scholarships).slice(0, 3));
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, [fetchUniversities, fetchScholarships]);
+
   return (
     <div className="space-y-20 sm:space-y-28 pb-20">
       {/* 1. HERO SECTION */}
@@ -326,7 +358,7 @@ function Index() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {UNIVERSITIES_DATA.slice(0, 3).map((univ) => (
+          {featuredUnis.map((univ) => (
             <div
               key={univ.id}
               className="rounded-2xl border border-border bg-card p-6 shadow-xs hover:border-primary/40 transition-all flex flex-col justify-between"
@@ -398,7 +430,7 @@ function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {SCHOLARSHIPS_DATA.slice(0, 3).map((scholarship) => (
+            {featuredScholarships.map((scholarship) => (
               <div
                 key={scholarship.id}
                 className="bg-card rounded-xl border border-border p-5 shadow-xs flex flex-col justify-between"
@@ -422,11 +454,12 @@ function Index() {
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-border flex items-center justify-between text-xs">
-                  <span className="font-mono font-medium text-muted-foreground">
-                    {scholarship.awardValue === null
-                      ? "Pending verified data"
-                      : `$${scholarship.awardValue.toLocaleString()}`}{" "}
-                    / {scholarship.awardFrequency}
+                  <span className="font-mono font-medium text-muted-foreground line-clamp-2 pr-3">
+                    {scholarship.awardSummary
+                      ? scholarship.awardSummary
+                      : scholarship.awardValue === null
+                        ? "Pending verified data"
+                        : `$${scholarship.awardValue.toLocaleString()} / ${scholarship.awardFrequency}`}
                   </span>
                   <Link to="/scholarships" className="text-primary font-semibold hover:underline">
                     View Criteria →

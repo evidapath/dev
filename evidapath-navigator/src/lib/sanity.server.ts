@@ -38,6 +38,7 @@ const UNIVERSITIES_QUERY = `*[_type=="university"] | order(canonical_name){
     language_of_instruction, record_status,
     "costs": *[_type=="costProfile" && references(^._id)]{
       tuition_annual, tuition_basis, mandatory_fees_annual, estimated_living_costs_annual,
+      living_cost_source_note, "livingBasis": living_cost_source_basis.kind,
       currency, duration_years, "residencyDesc": residency_category_ref->description
     },
     "admissions": *[_type=="admissionsRequirement" && references(^._id)]{
@@ -54,6 +55,8 @@ interface SanityCost {
   tuition_basis: string | null;
   mandatory_fees_annual: number | null;
   estimated_living_costs_annual: number | null;
+  living_cost_source_note: string | null;
+  livingBasis: string | null;
   currency: string | null;
   duration_years: number | null;
   residencyDesc: string | null;
@@ -130,6 +133,26 @@ async function sanityQuery<T>(query: string): Promise<T> {
 function flagEmoji(cc: string | null): string {
   if (!cc || cc.length !== 2) return "";
   return String.fromCodePoint(...[...cc.toUpperCase()].map((c) => 0x1f1e6 - 65 + c.charCodeAt(0)));
+}
+
+// Where a living-cost figure comes from, for display next to it. Most are official
+// government figures (visa living-cost requirements, Nuffic); some are unofficial
+// estimates, which must be labelled as such.
+function describeLivingSource(cost: SanityCost | null): string | undefined {
+  const note = cost?.living_cost_source_note?.trim();
+  if (!note) return undefined;
+  // Keep only the source's name or site: drop research notes ("verified …",
+  // "previous value …") and reduce URLs to their domain.
+  const rawSource = note.match(/SOURCE:\s*(.+)$/i)?.[1]?.trim();
+  const source = rawSource
+    ?.split(/\s+\(|\.\s/)[0]
+    ?.replace(/^(?:https?:\/\/)?([a-z0-9.-]+\.[a-z]{2,})\/\S*$/i, "$1")
+    .trim();
+  const unofficial = /aggregate|advisory|unofficial/i.test(note);
+  if (unofficial) return `Unofficial estimate${source ? ` (${source})` : ""}`;
+  if (cost?.livingBasis === "genuine_cost_of_living_estimate")
+    return "University's published cost-of-attendance estimate";
+  return `Official figure${source ? ` (${source})` : ""}`;
 }
 
 function durationYears(p: SanityProgram | undefined): number {
@@ -265,6 +288,7 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
   const tuition = cost?.tuition_annual ?? null;
   const fees = cost?.mandatory_fees_annual ?? null;
   const living = cost?.estimated_living_costs_annual ?? null;
+  const livingSource = living != null ? describeLivingSource(cost) : undefined;
   const currency = cost?.currency || countryCurrency || "";
   const years = durationYears(p);
   // Full total requires all three cost components. Tuition-only total (fees+living unknown)
@@ -295,6 +319,7 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
       currency,
       totalAnnual,
       totalDegree,
+      ...(livingSource ? { livingSource } : {}),
     },
     ...(note ? { costResidencyNote: note } : {}),
     admissionsByCurriculum,
@@ -320,6 +345,7 @@ function adapt(u: SanityUniversity): University {
 
   const tuition = featured?.costs.tuitionPerYear ?? null;
   const fees = featured?.costs.mandatoryFees ?? null;
+  const livingSource = featured?.costs.livingSource;
   const living = featured?.costs.livingPerYear ?? null;
   const currency = featured?.costs.currency || u.countryCurrency || "";
   const totalAnnual = featured?.costs.totalAnnual ?? null;
@@ -329,16 +355,15 @@ function adapt(u: SanityUniversity): University {
   const admissionsByCurriculum = featured?.admissionsByCurriculum ?? [];
 
   // Derive A-level threshold from Sanity admissions data. Prefer A-Level; fall back to IB.
-  const aLevelAdm = admissionsByCurriculum.find((a) =>
-    /a.?level/i.test(a.curriculum ?? ""),
-  );
+  const aLevelAdm = admissionsByCurriculum.find((a) => /a.?level/i.test(a.curriculum ?? ""));
   const ibAdm = admissionsByCurriculum.find((a) => /baccalaureate|^ib$/i.test(a.curriculum ?? ""));
   const admThreshold = aLevelAdm?.threshold || ibAdm?.threshold || null;
   const admPrereqs = aLevelAdm?.subjects ?? ibAdm?.subjects ?? [];
   // When admissions data exists but threshold is null, institution uses holistic/competitive
   // admissions without a published grade cutoff (verified absence, not missing data).
   const hasAdmissionsData = admissionsByCurriculum.length > 0;
-  const admThresholdDisplay = admThreshold || (hasAdmissionsData ? "No published grade cutoff" : PENDING);
+  const admThresholdDisplay =
+    admThreshold || (hasAdmissionsData ? "No published grade cutoff" : PENDING);
 
   const aliases = u.aliases || [];
   const shortName = aliases[aliases.length - 1] || u.canonical_name;
@@ -376,6 +401,7 @@ function adapt(u: SanityUniversity): University {
       currency,
       totalAnnual,
       totalDegree,
+      ...(livingSource ? { livingSource } : {}),
     },
     affordabilityIndex: {
       score: null,
