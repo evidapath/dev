@@ -96,6 +96,7 @@ function DashboardPage() {
   // MVP: no persisted progress yet, so we surface the first step as the
   // active "Next Step". When profile state is connected, this becomes dynamic.
   const currentStep = 0;
+  const current = JOURNEY[currentStep]!;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
@@ -122,11 +123,11 @@ function DashboardPage() {
             Your next step
           </p>
           <h2 className="text-xl sm:text-2xl font-display font-bold text-foreground">
-            {JOURNEY[currentStep].label}
+            {current.label}
           </h2>
-          <p className="text-sm text-muted-foreground">{JOURNEY[currentStep].desc}</p>
+          <p className="text-sm text-muted-foreground">{current.desc}</p>
         </div>
-        <Link to={JOURNEY[currentStep].href} className="shrink-0">
+        <Link to={current.href} className="shrink-0">
           <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 h-11 flex items-center gap-2">
             Continue <ArrowRight className="w-4 h-4" />
           </Button>

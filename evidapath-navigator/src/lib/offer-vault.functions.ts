@@ -42,7 +42,7 @@ const ApplicationInputSchema = z.object({
 export const upsertApplication = createServerFn({ method: "POST" })
   .validator((data) => ApplicationInputSchema.parse(data))
   .handler(async ({ data }) => {
-    return upsertApplicationSvc(data);
+    return upsertApplicationSvc(data as Parameters<typeof upsertApplicationSvc>[0]);
   });
 
 export const deleteApplication = createServerFn({ method: "POST" })
@@ -75,7 +75,7 @@ const OfferInputSchema = z.object({
 export const upsertOffer = createServerFn({ method: "POST" })
   .validator((data) => OfferInputSchema.parse(data))
   .handler(async ({ data }) => {
-    return upsertOfferSvc(data);
+    return upsertOfferSvc(data as Parameters<typeof upsertOfferSvc>[0]);
   });
 
 export const deleteOffer = createServerFn({ method: "POST" })

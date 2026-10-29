@@ -52,7 +52,7 @@ function IntelligencePage() {
     (a) => selectedCategory === "All" || a.category === selectedCategory,
   );
 
-  const featured = INTELLIGENCE_ARTICLES.find((a) => a.featured) || INTELLIGENCE_ARTICLES[0];
+  const featured = (INTELLIGENCE_ARTICLES.find((a) => a.featured) ?? INTELLIGENCE_ARTICLES[0])!;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">

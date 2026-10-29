@@ -437,7 +437,7 @@ function FindMyPathPage() {
     );
   }
 
-  const Step = STEPS[step];
+  const Step = STEPS[step]!;
   const Icon = Step.icon;
 
   return (

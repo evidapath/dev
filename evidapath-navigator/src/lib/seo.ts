@@ -2,7 +2,7 @@
 // VITE_SITE_URL is a publishable value (the public canonical origin) and is
 // safe to ship to the client bundle. It carries no secrets.
 
-const SITE_URL = (import.meta.env.VITE_SITE_URL ?? "").replace(/\/+$/, "");
+const SITE_URL = (import.meta.env["VITE_SITE_URL"] ?? "").replace(/\/+$/, "");
 
 /**
  * Return the absolute canonical URL for a given site path.

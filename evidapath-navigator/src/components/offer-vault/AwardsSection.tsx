@@ -189,9 +189,7 @@ function AwardEditor({
       toast.error("Award name is required.");
       return;
     }
-    onSave({
-      id: initial.id,
-      offer_id: initial.offer_id,
+    const payload: Partial<StudentAward> = {
       award_name: name,
       award_type: type,
       amount: amount ? Number(amount) : null,
@@ -202,7 +200,10 @@ function AwardEditor({
       min_gpa: minGpa ? Number(minGpa) : null,
       need_vs_merit: needMerit as StudentAward["need_vs_merit"],
       verification_level: initial.verification_level ?? "self_reported",
-    });
+    };
+    if (initial.id) payload.id = initial.id;
+    if (initial.offer_id) payload.offer_id = initial.offer_id;
+    onSave(payload);
   };
 
   return (
@@ -249,7 +250,7 @@ function AwardEditor({
             <label className={labelCls}>Need vs merit</label>
             <select
               value={needMerit}
-              onChange={(e) => setNeedMerit(e.target.value)}
+              onChange={(e) => setNeedMerit(e.target.value as typeof needMerit)}
               className={inputCls}
             >
               <option value="unspecified">Unspecified</option>

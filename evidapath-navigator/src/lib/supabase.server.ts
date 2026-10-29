@@ -36,9 +36,9 @@ import { getRequestHeader } from "@tanstack/start-server-core";
 //    future backend operations.
 // ────────────────────────────────────────────────────────────────────────────
 
-const supabaseUrl = process.env.VITE_SUPABASE_URL || import.meta.env.VITE_SUPABASE_URL;
+const supabaseUrl = process.env["VITE_SUPABASE_URL"] || import.meta.env["VITE_SUPABASE_URL"];
 const supabaseAnonKey =
-  process.env.VITE_SUPABASE_ANON_KEY || import.meta.env.VITE_SUPABASE_ANON_KEY;
+  process.env["VITE_SUPABASE_ANON_KEY"] || import.meta.env["VITE_SUPABASE_ANON_KEY"];
 
 /**
  * Build a request-scoped Supabase SSR client that reads the auth session from
@@ -79,7 +79,7 @@ export function getSupabaseServerClient(): SupabaseClient {
  * stored securely for future backend operations.
  */
 export function getSupabaseAdminClient(): SupabaseClient {
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const serviceRoleKey = process.env["SUPABASE_SERVICE_ROLE_KEY"];
   if (!serviceRoleKey) {
     throw new Error(
       "SUPABASE_SERVICE_ROLE_KEY is not configured. The admin client is reserved for future privileged backend operations and is not required for ordinary authentication.",

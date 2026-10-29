@@ -23,9 +23,9 @@ function money(value: number | null, currency = "USD"): string {
 
 export function DecisionModelDemo() {
   const [selectedUnivId, setSelectedUnivId] = useState<string>("oxford-univ");
-  const univ = UNIVERSITIES_DATA.find((u) => u.id === selectedUnivId) || UNIVERSITIES_DATA[0];
-  const analysis =
-    SAMPLE_DECISION_ANALYSIS[selectedUnivId] || SAMPLE_DECISION_ANALYSIS["oxford-univ"];
+  const univ = (UNIVERSITIES_DATA.find((u) => u.id === selectedUnivId) ?? UNIVERSITIES_DATA[0])!;
+  const analysis = (SAMPLE_DECISION_ANALYSIS[selectedUnivId] ??
+    SAMPLE_DECISION_ANALYSIS["oxford-univ"])!;
 
   return (
     <div className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm">

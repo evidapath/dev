@@ -50,8 +50,8 @@ function FundPage() {
   const [expectedFamilyContribution, setExpectedFamilyContribution] = useState(35000); // per year
   const [appliedScholarship, setAppliedScholarship] = useState(15000); // per year
 
-  const u1 = UNIVERSITIES_DATA.find((u) => u.id === selectedUniv1) || UNIVERSITIES_DATA[0];
-  const u2 = UNIVERSITIES_DATA.find((u) => u.id === selectedUniv2) || UNIVERSITIES_DATA[2];
+  const u1 = (UNIVERSITIES_DATA.find((u) => u.id === selectedUniv1) ?? UNIVERSITIES_DATA[0])!;
+  const u2 = (UNIVERSITIES_DATA.find((u) => u.id === selectedUniv2) ?? UNIVERSITIES_DATA[2])!;
 
   const u1HasData = !isPending(u1.costs.totalAnnual);
   const u2HasData = !isPending(u2.costs.totalAnnual);
