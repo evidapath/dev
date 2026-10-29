@@ -22,6 +22,7 @@ import { Button } from "../components/ui/button";
 import { useAuth } from "../components/AuthContext";
 import { requireAuth } from "../lib/route-guard";
 import { DataStatus } from "../components/DataStatus";
+import { CounselingWaitlist } from "../components/CounselingWaitlist";
 import {
   listSavedUniversities,
   removeSavedUniversity,
@@ -313,6 +314,8 @@ function SavedUniversitiesSection() {
       .finally(() => setSavingNote(false));
   };
 
+  const { user } = useAuth();
+
   if (loading) return null;
 
   return (
@@ -405,6 +408,11 @@ function SavedUniversitiesSection() {
           ))}
         </div>
       )}
+      <CounselingWaitlist
+        defaultEmail={user?.email}
+        shortlist={saved.map((u) => u.university_name ?? u.sanity_university_id)}
+        source="My Path dashboard"
+      />
     </div>
   );
 }

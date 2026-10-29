@@ -12,7 +12,9 @@ import {
   BookOpen,
   DollarSign,
 } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "../components/ui/button";
+import { submitGhlForm } from "../lib/ghl";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
 export const Route = createFileRoute("/academic-readiness")({
@@ -50,51 +52,29 @@ function AcademicReadinessPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
+  // Only confirm once GHL acknowledges receipt; previously the fetch error was
+  // swallowed and "has been recorded" showed even when nothing was recorded.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Standard Form Tracking payload
-    const trackingPayload = {
-      type: "external_form_submission",
-      timestamp: Date.now(),
-      formId: "academic-readiness-profile",
-      formData: {
-        first_name: formData.firstName,
-        last_name: formData.lastName,
-        email: formData.email,
-      },
-      formLabels: {
-        first_name: "First Name",
-        last_name: "Last Name",
-        email: "Email Address",
-      },
-      url: window.location.href,
-      title: document.title,
-      path: window.location.pathname,
-      userAgent: navigator.userAgent,
-      trackingId: "tk_bcfd78bbcbbb4908bb2735dcd5436265",
-      locationId: "N1tn8tW6XdSkuGUNa8Z6",
-      projectId: "1790101091506917993",
-      sessionId: crypto.randomUUID(),
-      properties: {
-        deviceType: /Mobile|Android|iPhone/i.test(navigator.userAgent) ? "mobile" : "desktop",
-        source: "ai_studio",
-        projectId: "1790101091506917993",
-        formName: "Academic Readiness Profile",
-      },
-    };
-
-    const body = new FormData();
-    body.append("event", JSON.stringify(trackingPayload));
-
-    fetch("https://backend.leadconnectorhq.com/external-tracking/events", {
-      method: "POST",
-      headers: { version: "2021-07-28" },
-      body,
-    }).catch(() => {});
-
-    setSubmitted(true);
+    setSending(true);
+    submitGhlForm("academic-readiness-profile", "Academic Readiness Profile", {
+      first_name: { label: "First Name", value: formData.firstName },
+      last_name: { label: "Last Name", value: formData.lastName },
+      email: { label: "Email Address", value: formData.email },
+      curriculum: { label: "Curriculum", value: formData.curriculum },
+      predicted_grade: { label: "Predicted Grade", value: formData.predictedGrade },
+      target_subject: { label: "Target Subject", value: formData.targetSubject },
+      preferred_region: { label: "Preferred Region", value: formData.preferredRegion },
+      annual_budget: { label: "Annual Budget (USD)", value: formData.annualBudget },
+    })
+      .then(() => setSubmitted(true))
+      .catch((err: Error) => {
+        console.error("[academic-readiness] GHL submit failed:", err);
+        toast.error("Could not submit — please check your connection and try again.");
+      })
+      .finally(() => setSending(false));
   };
 
   return (
@@ -314,9 +294,10 @@ function AcademicReadinessPage() {
 
               <Button
                 type="submit"
+                disabled={sending}
                 className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-11 rounded-xl text-sm"
               >
-                Create My Readiness Profile
+                {sending ? "Submitting…" : "Create My Readiness Profile"}
               </Button>
             </div>
           </form>

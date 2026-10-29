@@ -25,6 +25,7 @@ import {
   listSavedUniversities,
 } from "../lib/profile.functions";
 import { useAuth } from "../components/AuthContext";
+import { CounselingWaitlist } from "../components/CounselingWaitlist";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { DataStatus, StatusChip, PendingValue } from "../components/DataStatus";
@@ -426,6 +427,12 @@ function FindMyPathPage() {
             </Button>
           </div>
         </div>
+
+        <CounselingWaitlist
+          defaultEmail={user?.email}
+          shortlist={universities.filter((u) => savedIds.has(u.id)).map((u) => u.name)}
+          source="Find My Path results"
+        />
       </div>
     );
   }
