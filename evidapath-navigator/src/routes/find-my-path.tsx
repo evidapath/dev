@@ -18,6 +18,15 @@ import {
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { getUniversities } from "../lib/universities.functions";
+import { getFxRates, type FxRates } from "../lib/fx.functions";
+import {
+  BUDGET_MAX,
+  BUDGET_MIN,
+  annualCostUsd,
+  budgetFit,
+  matchesSubject,
+  type BudgetFit,
+} from "../lib/budget";
 import {
   getProfile,
   upsertProfile,
@@ -83,6 +92,8 @@ const DEFAULTS: IntakeAnswers = {
   preferences: "",
 };
 
+const FIT_ORDER: Record<BudgetFit, number> = { within: 0, unknown: 1, over: 2 };
+
 function FindMyPathPage() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<IntakeAnswers>(DEFAULTS);
@@ -91,9 +102,13 @@ function FindMyPathPage() {
   const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
   const [universities, setUniversities] = useState<University[]>([]);
   const [source, setSource] = useState<"sanity" | "mock" | null>(null);
+  const [fx, setFx] = useState<FxRates | null>(null);
+  // True when the results were opened straight from the student's saved profile.
+  const [fromProfile, setFromProfile] = useState(false);
   const navigate = useNavigate();
 
   const fetchUniversities = useServerFn(getUniversities);
+  const fetchFx = useServerFn(getFxRates);
   useEffect(() => {
     let active = true;
     fetchUniversities().then((res) => {
@@ -101,10 +116,13 @@ function FindMyPathPage() {
       setUniversities(res.universities);
       setSource(res.source);
     });
+    fetchFx()
+      .then((r) => active && setFx(r))
+      .catch(() => {});
     return () => {
       active = false;
     };
-  }, [fetchUniversities]);
+  }, [fetchUniversities, fetchFx]);
 
   // Prefill from a saved profile so a returning (signed-in) student sees their
   // answers persist. Silently ignored when signed out (intake still works locally).
@@ -132,6 +150,12 @@ function FindMyPathPage() {
           citizenship: p.citizenship ?? a.citizenship,
           preferences: p.preferences ?? a.preferences,
         }));
+        // A student who already answered once goes straight to their results;
+        // they can change any answer there instead of repeating every question.
+        if (p.curriculum || p.intended_subject || p.annual_budget != null) {
+          setShowResults(true);
+          setFromProfile(true);
+        }
       })
       .catch(() => {});
     return () => {
@@ -212,23 +236,62 @@ function FindMyPathPage() {
   };
   const back = () => (step > 0 ? setStep(step - 1) : null);
 
-  // Simple, transparent pathway selection from the illustrative dataset.
-  // No admissions probabilities. Filters by region + subject match where
-  // possible; otherwise shows the full illustrative set.
-  const pathways = universities
+  // Changing a filter on the results page updates the saved profile too, so the
+  // student never has to answer the questions again. Debounced; signed-in only.
+  useEffect(() => {
+    if (!showResults || !user) return;
+    const t = setTimeout(saveProfile, 1000);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [answers, showResults, user]);
+
+  const countries = Array.from(new Set(universities.map((u) => u.country))).sort();
+
+  // Transparent pathway selection. No admissions probabilities. Region and subject
+  // filter the list; budget groups it into within / cost not fully verified / over,
+  // so an over-budget university is never presented as a realistic match.
+  const budgetUsd = Number(answers.budget);
+  const noBudgetLimit = !Number.isFinite(budgetUsd) || budgetUsd >= BUDGET_MAX;
+  const matched = universities
     .filter((u) => {
       const regionOk =
         answers.region === "Open to anywhere" ||
         answers.region === "All" ||
         u.country === answers.region;
-      const subjectOk =
-        answers.subject.trim() === "" ||
-        u.programs.some((p) => p.toLowerCase().includes(answers.subject.toLowerCase())) ||
-        answers.subject.toLowerCase().includes("computer") ||
-        answers.subject.toLowerCase().includes("any");
-      return regionOk && subjectOk;
+      return regionOk && matchesSubject(u, answers.subject);
     })
-    .slice(0, 8);
+    .map((u) => {
+      const cost = annualCostUsd(u, fx);
+      return { u, cost, fit: budgetFit(cost, budgetUsd) };
+    })
+    .sort(
+      (a, b) =>
+        FIT_ORDER[a.fit] - FIT_ORDER[b.fit] ||
+        (a.cost?.usd ?? Infinity) - (b.cost?.usd ?? Infinity),
+    );
+  // "Save my path" saves only the realistic ones (within budget, or cost unconfirmed).
+  const pathways = matched.filter((m) => m.fit !== "over").map((m) => m.u);
+  const fitCounts = {
+    within: matched.filter((m) => m.fit === "within").length,
+    unknown: matched.filter((m) => m.fit === "unknown").length,
+    over: matched.filter((m) => m.fit === "over").length,
+  };
+  const FIT_HEADINGS: Record<BudgetFit, { title: string; note: string }> = {
+    within: {
+      title: noBudgetLimit ? "Verified annual cost" : "Within your budget",
+      note: "Full annual cost (tuition, fees and living) converted to USD.",
+    },
+    unknown: {
+      title: "Cost not fully verified yet",
+      note: noBudgetLimit
+        ? "We don't have a verified full annual cost for these yet."
+        : "We can't confirm these fit your budget yet: part of the cost is still unverified.",
+    },
+    over: {
+      title: "Above your budget",
+      note: "Only realistic with significant funding. Check the scholarships before ruling them out.",
+    },
+  };
 
   if (showResults) {
     return (
@@ -251,155 +314,206 @@ function FindMyPathPage() {
               ? "Live data connected. Figures trace to official sources and each university shows its verification status. These are pathways to explore, not admissions predictions — no probabilities are invented."
               : "Illustrative product preview. Live analysis will use verified EvidaPath data as datasets are built and verified."}
           </DataStatus>
+          {fromProfile && (
+            <p className="text-xs text-muted-foreground">
+              Showing results from your saved answers. Change anything below and we'll remember it.
+            </p>
+          )}
         </div>
 
+        <ResultsFilters
+          answers={answers}
+          set={set}
+          countries={countries}
+          onEditAll={() => {
+            setShowResults(false);
+            setStep(0);
+          }}
+        />
+        {!noBudgetLimit && !fx && (
+          <p className="text-xs text-bronze">
+            Exchange rates are unavailable right now, so costs in other currencies can't be compared
+            with your budget yet.
+          </p>
+        )}
+
         <div className="space-y-4">
-          {pathways.length === 0 && (
+          {matched.length === 0 && (
             <div className="rounded-2xl border border-border bg-card p-8 text-center text-sm text-muted-foreground">
-              No illustrative pathways matched your filters yet. Try broadening your region or
-              subject, or{" "}
+              No universities match that country and subject yet. Try another subject or "Open to
+              anywhere", or{" "}
               <Link to="/universities" className="text-primary font-semibold">
                 browse all universities
               </Link>
               .
             </div>
           )}
-          {pathways.map((u) => {
+          {matched.map(({ u, cost, fit }, i) => {
             const isOpen = expanded === u.id;
+            const firstOfGroup = i === 0 || matched[i - 1]!.fit !== fit;
             return (
-              <div
-                key={u.id}
-                className="rounded-2xl border border-border bg-card shadow-xs overflow-hidden"
-              >
-                {/* Summary row — progressive disclosure */}
-                <button
-                  onClick={() => setExpanded(isOpen ? null : u.id)}
-                  className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-secondary/30 transition-colors"
-                >
-                  <div className="flex items-center gap-4 min-w-0">
-                    <span className="text-2xl shrink-0">{u.flag}</span>
-                    <div className="min-w-0">
-                      <h3 className="font-display font-bold text-base text-foreground truncate">
-                        {u.name}
-                      </h3>
-                      <p className="text-xs text-muted-foreground flex items-center gap-1">
-                        <MapPin className="w-3 h-3" />
-                        {u.city}, {u.country} · {u.durationYears}-year
-                      </p>
-                    </div>
-                  </div>
-                  <div className="hidden sm:flex items-center gap-4 shrink-0">
-                    <StatusChip
-                      level={u.evidenceConfidence.startsWith("Verified") ? "live" : "pending"}
-                    />
-                    <ChevronDown
-                      className={`w-4 h-4 text-muted-foreground transition-transform ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </div>
-                </button>
-
-                {/* Quick facts */}
-                <div className="px-5 pb-5 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs border-t border-border pt-4">
-                  <div>
-                    <p className="text-muted-foreground">Academic fit</p>
-                    <PendingValue />
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground">Est. annual cost</p>
-                    <p className="font-mono text-foreground">
-                      {formatCost(u.costs.totalAnnual, u.costs.currency)}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground">Funding potential</p>
-                    <PendingValue />
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground">Main gap / risk</p>
-                    <PendingValue />
-                  </div>
-                </div>
-
-                {/* Progressive disclosure — deeper analysis only when opened */}
-                {isOpen && (
-                  <div className="px-5 pb-5 space-y-4 border-t border-border pt-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                      <div className="rounded-lg border border-border bg-secondary/30 p-3 space-y-1.5">
-                        <p className="font-semibold text-foreground">Admissions</p>
-                        <p className="text-muted-foreground">
-                          System: {u.academicRequirements.system}
-                        </p>
-                        <p className="text-muted-foreground">
-                          Target: <PendingValue />
-                        </p>
-                        <ul className="text-muted-foreground list-disc list-inside">
-                          {u.academicRequirements.prerequisites.map((p) => (
-                            <li key={p}>{p}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="rounded-lg border border-border bg-secondary/30 p-3 space-y-1.5">
-                        <p className="font-semibold text-foreground">Cost & funding</p>
-                        <p className="text-muted-foreground">
-                          Tuition/yr: {formatCost(u.costs.tuitionPerYear, u.costs.currency)}
-                        </p>
-                        <p className="text-muted-foreground">
-                          Living/yr: {formatCost(u.costs.livingPerYear, u.costs.currency)}
-                        </p>
-                        <p className="text-muted-foreground">
-                          Total degree: {formatCost(u.costs.totalDegree, u.costs.currency)}
-                        </p>
-                        <p className="text-muted-foreground">
-                          Affordability: {u.affordabilityIndex.category}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="rounded-lg border border-border bg-secondary/30 p-3 text-xs space-y-1">
-                      <p className="font-semibold text-foreground">Why this made your list</p>
-                      <p className="text-muted-foreground">
-                        Matches your subject interest and region preference. Full evidence-based fit
-                        analysis will appear here once verified data is connected.
-                      </p>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      <Link to="/analyze">
-                        <Button
-                          size="sm"
-                          className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
-                        >
-                          Explore this option <ArrowRight className="w-3 h-3" />
-                        </Button>
-                      </Link>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="border-border text-xs"
-                        onClick={() => saveUni(u)}
-                        disabled={savedIds.has(u.id)}
-                      >
-                        {savedIds.has(u.id) ? (
-                          <>
-                            <Check className="w-3 h-3" /> Saved
-                          </>
-                        ) : (
-                          <>
-                            <Save className="w-3 h-3" /> Save
-                          </>
-                        )}
-                      </Button>
-                      <Link to="/compare-offers">
-                        <Button size="sm" variant="outline" className="border-border text-xs">
-                          <Scale className="w-3 h-3" /> Compare
-                        </Button>
-                      </Link>
-                    </div>
+              <div key={u.id} className="space-y-4">
+                {firstOfGroup && (
+                  <div className="pt-2">
+                    <h2 className="font-display font-bold text-lg text-foreground">
+                      {FIT_HEADINGS[fit].title}{" "}
+                      <span className="text-muted-foreground font-normal">({fitCounts[fit]})</span>
+                    </h2>
+                    <p className="text-xs text-muted-foreground">{FIT_HEADINGS[fit].note}</p>
                   </div>
                 )}
+                <div
+                  className={`rounded-2xl border bg-card shadow-xs overflow-hidden ${
+                    fit === "over" ? "border-bronze/40" : "border-border"
+                  }`}
+                >
+                  {/* Summary row — progressive disclosure */}
+                  <button
+                    onClick={() => setExpanded(isOpen ? null : u.id)}
+                    className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-secondary/30 transition-colors"
+                  >
+                    <div className="flex items-center gap-4 min-w-0">
+                      <span className="text-2xl shrink-0">{u.flag}</span>
+                      <div className="min-w-0">
+                        <h3 className="font-display font-bold text-base text-foreground truncate">
+                          {u.name}
+                        </h3>
+                        <p className="text-xs text-muted-foreground flex items-center gap-1">
+                          <MapPin className="w-3 h-3" />
+                          {u.city}, {u.country} · {u.durationYears}-year
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden sm:flex items-center gap-4 shrink-0">
+                      <StatusChip
+                        level={u.evidenceConfidence.startsWith("Verified") ? "live" : "pending"}
+                      />
+                      <ChevronDown
+                        className={`w-4 h-4 text-muted-foreground transition-transform ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </div>
+                  </button>
+
+                  {/* Quick facts */}
+                  <div className="px-5 pb-5 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs border-t border-border pt-4">
+                    <div>
+                      <p className="text-muted-foreground">Academic fit</p>
+                      <PendingValue />
+                    </div>
+                    <div>
+                      <p className="text-muted-foreground">Est. annual cost</p>
+                      <p className="font-mono text-foreground">
+                        {formatCost(u.costs.totalAnnual, u.costs.currency)}
+                      </p>
+                      {cost && u.costs.currency !== "USD" && (
+                        <p className="font-mono text-[11px] text-muted-foreground">
+                          ≈ ${Math.round(cost.usd).toLocaleString()} USD
+                          {cost.complete ? "" : " tuition only"}
+                        </p>
+                      )}
+                      {fit === "over" && cost && (
+                        <p className="text-[11px] font-semibold text-bronze">
+                          ≈ ${Math.round(cost.usd - budgetUsd).toLocaleString()} over budget
+                        </p>
+                      )}
+                    </div>
+                    <div>
+                      <p className="text-muted-foreground">Funding potential</p>
+                      <PendingValue />
+                    </div>
+                    <div>
+                      <p className="text-muted-foreground">Main gap / risk</p>
+                      <PendingValue />
+                    </div>
+                  </div>
+
+                  {/* Progressive disclosure — deeper analysis only when opened */}
+                  {isOpen && (
+                    <div className="px-5 pb-5 space-y-4 border-t border-border pt-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                        <div className="rounded-lg border border-border bg-secondary/30 p-3 space-y-1.5">
+                          <p className="font-semibold text-foreground">Admissions</p>
+                          <p className="text-muted-foreground">
+                            System: {u.academicRequirements.system}
+                          </p>
+                          <p className="text-muted-foreground">
+                            Target: <PendingValue />
+                          </p>
+                          <ul className="text-muted-foreground list-disc list-inside">
+                            {u.academicRequirements.prerequisites.map((p) => (
+                              <li key={p}>{p}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="rounded-lg border border-border bg-secondary/30 p-3 space-y-1.5">
+                          <p className="font-semibold text-foreground">Cost & funding</p>
+                          <p className="text-muted-foreground">
+                            Tuition/yr: {formatCost(u.costs.tuitionPerYear, u.costs.currency)}
+                          </p>
+                          <p className="text-muted-foreground">
+                            Living/yr: {formatCost(u.costs.livingPerYear, u.costs.currency)}
+                          </p>
+                          <p className="text-muted-foreground">
+                            Total degree: {formatCost(u.costs.totalDegree, u.costs.currency)}
+                          </p>
+                          <p className="text-muted-foreground">
+                            Affordability: {u.affordabilityIndex.category}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="rounded-lg border border-border bg-secondary/30 p-3 text-xs space-y-1">
+                        <p className="font-semibold text-foreground">Why this made your list</p>
+                        <p className="text-muted-foreground">
+                          Matches your subject interest and region preference. Full evidence-based
+                          fit analysis will appear here once verified data is connected.
+                        </p>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        <Link to="/analyze">
+                          <Button
+                            size="sm"
+                            className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
+                          >
+                            Explore this option <ArrowRight className="w-3 h-3" />
+                          </Button>
+                        </Link>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="border-border text-xs"
+                          onClick={() => saveUni(u)}
+                          disabled={savedIds.has(u.id)}
+                        >
+                          {savedIds.has(u.id) ? (
+                            <>
+                              <Check className="w-3 h-3" /> Saved
+                            </>
+                          ) : (
+                            <>
+                              <Save className="w-3 h-3" /> Save
+                            </>
+                          )}
+                        </Button>
+                        <Link to="/compare-offers">
+                          <Button size="sm" variant="outline" className="border-border text-xs">
+                            <Scale className="w-3 h-3" /> Compare
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             );
           })}
+          {fx && matched.some((m) => m.cost && m.u.costs.currency !== "USD") && (
+            <p className="text-[11px] text-muted-foreground">
+              USD conversions use European Central Bank reference rates from {fx.date} (AED at its
+              fixed peg of 3.6725). They're approximate and for comparison only.
+            </p>
+          )}
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-border">
@@ -411,7 +525,7 @@ function FindMyPathPage() {
               setStep(0);
             }}
           >
-            <ArrowLeft className="w-4 h-4" /> Start over
+            <ArrowLeft className="w-4 h-4" /> Edit all answers
           </Button>
           <div className="flex gap-2">
             <Link to="/universities">
@@ -482,7 +596,7 @@ function FindMyPathPage() {
           </div>
         </div>
 
-        <StepField stepKey={Step.key} answers={answers} set={set} />
+        <StepField stepKey={Step.key} answers={answers} set={set} countries={countries} />
 
         <div className="flex items-center justify-between pt-2 border-t border-border">
           <Button
@@ -517,18 +631,111 @@ function FindMyPathPage() {
   );
 }
 
+type SetAnswer = (k: keyof IntakeAnswers, v: string) => void;
+
+const inputCls =
+  "w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary";
+
+// Countries come from the live university data, so every country we cover is offered.
+function RegionSelect({
+  value,
+  set,
+  countries,
+}: {
+  value: string;
+  set: SetAnswer;
+  countries: string[];
+}) {
+  const options =
+    value === "Open to anywhere" || countries.includes(value) ? countries : [...countries, value];
+  return (
+    <select value={value} onChange={(e) => set("region", e.target.value)} className={inputCls}>
+      <option>Open to anywhere</option>
+      {options.map((c) => (
+        <option key={c}>{c}</option>
+      ))}
+    </select>
+  );
+}
+
+function BudgetSlider({ value, set }: { value: string; set: SetAnswer }) {
+  const n = Number(value);
+  return (
+    <div className="space-y-2">
+      <div className="flex justify-between items-center">
+        <label className="text-xs font-semibold uppercase text-muted-foreground">
+          Annual budget (USD)
+        </label>
+        <span className="font-mono text-sm font-bold text-foreground">
+          {n >= BUDGET_MAX ? "No limit" : `$${n.toLocaleString()}/yr`}
+        </span>
+      </div>
+      <input
+        type="range"
+        min={BUDGET_MIN}
+        max={BUDGET_MAX}
+        step="5000"
+        value={value}
+        onChange={(e) => set("budget", e.target.value)}
+        className="w-full accent-primary"
+        aria-label="Annual budget in US dollars"
+      />
+      <div className="flex justify-between text-[10px] text-muted-foreground">
+        <span>$20k</span>
+        <span>$90k+ (no limit)</span>
+      </div>
+    </div>
+  );
+}
+
+function ResultsFilters({
+  answers,
+  set,
+  countries,
+  onEditAll,
+}: {
+  answers: IntakeAnswers;
+  set: SetAnswer;
+  countries: string[];
+  onEditAll: () => void;
+}) {
+  return (
+    <div className="bg-card border border-border rounded-2xl p-5 shadow-xs space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="space-y-2">
+          <label className="text-xs font-semibold uppercase text-muted-foreground">Country</label>
+          <RegionSelect value={answers.region} set={set} countries={countries} />
+        </div>
+        <div className="space-y-2">
+          <label className="text-xs font-semibold uppercase text-muted-foreground">Subject</label>
+          <input
+            type="text"
+            placeholder="e.g. Economics (leave empty for any)"
+            value={answers.subject}
+            onChange={(e) => set("subject", e.target.value)}
+            className={inputCls}
+          />
+        </div>
+        <BudgetSlider value={answers.budget} set={set} />
+      </div>
+      <button onClick={onEditAll} className="text-xs font-semibold text-primary hover:underline">
+        Edit all my answers (curriculum, grades, citizenship…)
+      </button>
+    </div>
+  );
+}
+
 function StepField({
   stepKey,
   answers,
   set,
+  countries,
 }: {
   stepKey: string;
   answers: IntakeAnswers;
-  set: (k: keyof IntakeAnswers, v: string) => void;
+  set: SetAnswer;
+  countries: string[];
 }) {
-  const inputCls =
-    "w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary";
-
   switch (stepKey) {
     case "curriculum":
       return (
@@ -568,47 +775,9 @@ function StepField({
         />
       );
     case "region":
-      return (
-        <select
-          value={answers.region}
-          onChange={(e) => set("region", e.target.value)}
-          className={inputCls}
-        >
-          <option>Open to anywhere</option>
-          <option>United Kingdom</option>
-          <option>Canada</option>
-          <option>Germany</option>
-          <option>Netherlands</option>
-          <option>Singapore</option>
-          <option>United Arab Emirates</option>
-        </select>
-      );
+      return <RegionSelect value={answers.region} set={set} countries={countries} />;
     case "budget":
-      return (
-        <div className="space-y-3">
-          <div className="flex justify-between items-center">
-            <label className="text-xs font-semibold uppercase text-muted-foreground">
-              Annual education budget (USD)
-            </label>
-            <span className="font-mono text-sm font-bold text-foreground">
-              ${Number(answers.budget).toLocaleString()}/yr
-            </span>
-          </div>
-          <input
-            type="range"
-            min="20000"
-            max="90000"
-            step="5000"
-            value={answers.budget}
-            onChange={(e) => set("budget", e.target.value)}
-            className="w-full accent-primary"
-          />
-          <div className="flex justify-between text-[10px] text-muted-foreground">
-            <span>$20k</span>
-            <span>$90k+</span>
-          </div>
-        </div>
-      );
+      return <BudgetSlider value={answers.budget} set={set} />;
     case "citizenship":
       return (
         <input

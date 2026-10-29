@@ -15,6 +15,8 @@ import {
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { getUniversities } from "../lib/universities.functions";
+import { getFxRates, type FxRates } from "../lib/fx.functions";
+import { BUDGET_MAX, annualCostUsd, budgetFit } from "../lib/budget";
 import { listSavedUniversities, saveUniversity } from "../lib/profile.functions";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
@@ -52,8 +54,13 @@ function DiscoverPage() {
   const [loading, setLoading] = useState(true);
 
   const fetchUniversities = useServerFn(getUniversities);
+  const fetchFx = useServerFn(getFxRates);
+  const [fx, setFx] = useState<FxRates | null>(null);
   useEffect(() => {
     let active = true;
+    fetchFx()
+      .then((r) => active && setFx(r))
+      .catch(() => {});
     fetchUniversities()
       .then((res) => {
         if (!active) return;
@@ -66,7 +73,7 @@ function DiscoverPage() {
     return () => {
       active = false;
     };
-  }, [fetchUniversities]);
+  }, [fetchUniversities, fetchFx]);
 
   const countries = Array.from(new Set(universities.map((u) => u.country).filter(Boolean))).sort();
 
@@ -112,8 +119,9 @@ function DiscoverPage() {
       u.programs.some((p) => p.toLowerCase().includes(searchQuery.toLowerCase()));
 
     const matchesCountry = selectedCountry === "All" || u.country === selectedCountry;
-    // Budget filtering applies only when verified cost data exists.
-    const matchesBudget = u.costs.totalAnnual === null || u.costs.totalAnnual <= maxBudget;
+    // Costs are converted to USD before comparing with the (USD) budget. Only a
+    // university whose known cost exceeds the budget is hidden; unknown costs stay.
+    const matchesBudget = budgetFit(annualCostUsd(u, fx), maxBudget) !== "over";
     const matchesDuration =
       selectedDuration === "All" || u.durationYears.toString() === selectedDuration;
 
@@ -208,7 +216,7 @@ function DiscoverPage() {
                 Max Annual Cost
               </label>
               <span className="font-mono text-xs font-bold text-foreground">
-                ${maxBudget.toLocaleString()}
+                {maxBudget >= BUDGET_MAX ? "No limit" : `$${maxBudget.toLocaleString()} USD`}
               </span>
             </div>
             <input
