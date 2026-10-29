@@ -84,6 +84,14 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'selection_basis',
+      title: 'Selection Basis',
+      description:
+        'guaranteed = every eligible admitted student receives it; competitive = limited awards, selected. Leave empty if the official source does not make it clear.',
+      type: 'string',
+      options: { list: ['guaranteed', 'competitive'] },
+    }),
+    defineField({
       name: 'award_amount',
       title: 'Award Amount',
       type: 'string',

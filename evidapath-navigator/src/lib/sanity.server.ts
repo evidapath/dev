@@ -418,7 +418,7 @@ export async function getUniversitiesFromSanity(): Promise<University[]> {
 const SCHOLARSHIPS_QUERY = `*[_type=="scholarship" && ("undergraduate" in degree_levels || "BSc" in degree_levels)] | order(name){
   id, name, provider, eligible_citizenships, residency_restrictions, academic_criteria,
   other_eligibility_criteria, award_amount, award_amount_currency, deadline_academic_year,
-  renewable, renewal_conditions, duration, record_status, verification_status,
+  application_deadline, selection_basis, renewable, renewal_conditions, duration, record_status, verification_status,
   official_source_url, last_checked, institutions_covered,
   "coveredUniversities": *[_type=="university" && id in ^.institutions_covered]{
     id, canonical_name, "country": country_ref->name
@@ -436,6 +436,8 @@ interface SanityScholarship {
   award_amount: string | number | null;
   award_amount_currency: string | null;
   deadline_academic_year: string | null;
+  application_deadline: string | null;
+  selection_basis: string | null;
   renewable: boolean | null;
   renewal_conditions: string | null;
   duration: string | null;
@@ -481,12 +483,22 @@ function adaptScholarship(s: SanityScholarship): Scholarship {
   // Award is heterogeneous (percent, income-banded, text, or a number). Show it
   // as sourced text; keep the numeric field null unless it is a clean number.
   const awardValue = typeof s.award_amount === "number" ? s.award_amount : null;
+  // Currency prefixes numeric amounts ("EUR 300 per month"); descriptive awards
+  // ("Tuition, books…") are shown as sourced, without a dangling currency code.
+  const rawAward = s.award_amount != null ? String(s.award_amount).trim() : "";
   const awardText =
-    s.award_amount != null && String(s.award_amount).trim() !== ""
-      ? `${s.award_amount}${s.award_amount_currency ? ` ${s.award_amount_currency}` : ""}`
-      : undefined;
+    rawAward === ""
+      ? undefined
+      : /^\d/.test(rawAward) && !rawAward.includes("%") && s.award_amount_currency
+        ? `${s.award_amount_currency} ${rawAward}`
+        : rawAward;
 
-  const eligibilityParts = [s.residency_restrictions, s.other_eligibility_criteria].filter(Boolean);
+  // Residency is already shown as "Eligible Citizenship"; don't repeat it here.
+  const eligibilityParts = (
+    s.residency_restrictions
+      ? [s.other_eligibility_criteria]
+      : [s.residency_restrictions, s.other_eligibility_criteria]
+  ).filter(Boolean);
 
   return {
     id: s.id,
@@ -500,10 +512,14 @@ function adaptScholarship(s: SanityScholarship): Scholarship {
     ...(awardText ? { awardSummary: awardText } : {}),
     awardFrequency: s.renewable ? "renewable" : s.duration || "",
     deadline: s.deadline_academic_year || PENDING,
+    ...(s.application_deadline ? { applicationDeadline: s.application_deadline } : {}),
+    ...(s.selection_basis === "guaranteed" || s.selection_basis === "competitive"
+      ? { selectionBasis: s.selection_basis }
+      : {}),
     verificationStatus: scholarshipConfidence(s),
     lastChecked: s.last_checked || "Not yet verified",
     officialSource: s.official_source_url || "",
-    eligibilitySummary: eligibilityParts.join(" ") || PENDING,
+    eligibilitySummary: eligibilityParts.join(" ") || (s.residency_restrictions ? "" : PENDING),
     renewalCriteria: s.renewal_conditions || "",
   };
 }

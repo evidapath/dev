@@ -194,6 +194,24 @@ function ScholarshipsGraphPage() {
                   <p className="text-xs text-muted-foreground mt-0.5">
                     Provider: <strong>{s.provider}</strong>
                   </p>
+                  {s.selectionBasis && (
+                    <span
+                      className={`inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide ${
+                        s.selectionBasis === "guaranteed"
+                          ? "bg-primary/10 text-primary"
+                          : "bg-bronze/10 text-bronze"
+                      }`}
+                      title={
+                        s.selectionBasis === "guaranteed"
+                          ? "Every eligible admitted student receives this award."
+                          : "Limited awards — applicants are selected; not guaranteed."
+                      }
+                    >
+                      {s.selectionBasis === "guaranteed"
+                        ? "Guaranteed if eligible"
+                        : "Competitive — not guaranteed"}
+                    </span>
+                  )}
                 </div>
 
                 <div className="bg-secondary/40 rounded-xl p-3 border border-border/80 space-y-2 text-xs">
@@ -215,6 +233,14 @@ function ScholarshipsGraphPage() {
                     </span>
                     <span className="font-medium text-foreground">{s.academicThreshold}</span>
                   </div>
+                  {s.applicationDeadline && (
+                    <div>
+                      <span className="text-muted-foreground block text-[10px] uppercase font-semibold">
+                        Application Deadline
+                      </span>
+                      <span className="font-medium text-foreground">{s.applicationDeadline}</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="text-xs text-muted-foreground leading-relaxed">

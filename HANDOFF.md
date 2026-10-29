@@ -147,6 +147,15 @@ auto-apply was blocked by the safety classifier as a production change. Subhan t
 column — no schema change), track status (/applications: created Imperial, changed planning → submitted).
 All three verified to survive sign-out/sign-in, in both UI and DB.
 
+**P2 — Scholarships (initial 5): DONE in staging drafts, 2026-10-29.** All 7 undergraduate-relevant records for
+NYUAD/Delft/Toronto/Oxford/TUM re-checked live against official pages — see `fact-checks/scholarships-initial-5-2026-10-29.md`.
+Corrections saved as Sanity DRAFTS (not published): Pearson award filled (was null) + academic criteria; TUM "300" → "300 per
+month"; Reach Oxford eligibility made explicit for UAE context (UAE not on DAC list; India/Pakistan/Egypt/Jordan/Syria are) +
+mislabelled academic criteria fixed; Oxford Bursary internal pipeline note removed from student-facing text; NYUAD MBZ wording
+stored verbatim from the cited page. New schema field `selection_basis` (guaranteed/competitive) set on all 7 and shown as a badge;
+cards now show the real dated application deadline. **Open:** NYUAD MBZ stays HUMAN_REVIEW (mother vs mother-or-father wording) —
+needs a human to confirm. Sanity schema change is in `sanity-studio/` but the Studio has not been redeployed.
+
 **P0 — Confirm hosting architecture: DECIDED (2026-10-29, Subhan).**
 - Interim: wait for GHL to ship a "pull from GitHub" option → push the updated app into GHL → publish via Squarespace (domain lives there).
 - Squarespace account/domain is locked for 60 days (until ~2026-12-28). After that, hosting moves to **Cloudflare**.

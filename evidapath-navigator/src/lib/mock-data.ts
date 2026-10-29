@@ -112,6 +112,10 @@ export interface Scholarship {
   awardSummary?: string;
   awardFrequency: string;
   deadline: string;
+  // Actual dated application deadline(s) as published, when sourced.
+  applicationDeadline?: string;
+  // Only set when the official source makes it clear.
+  selectionBasis?: "guaranteed" | "competitive";
   verificationStatus: string;
   lastChecked: string;
   officialSource: string;
