@@ -36,7 +36,7 @@ of all 275 source URLs; dead links re-checked in a real browser; affected facts 
 | TU Delft IB "Maths AA HL only" | ✅ page moved | tudelft.nl/…/specific-diploma-requirements |
 | **Taylor's tuition** | ❌ **wrong source + outdated**: 2025 MYR figures from a third-party agent PDF (sharifstudy.com). Official 2026: CS USD 40,049 / 3 yrs, Business USD 42,309 / 3 yrs, Mech Eng USD 53,930 / 4 yrs (+6% service tax for non-Malaysians). Old figures ~9–10% too low. | Taylor's programme pages ("Programme Information for 2026") |
 
-**Pending:** the corrections above are in `fact-checks/pending/2026-10-29-dead-link-fixes.ndjson` (26 patches).
+**Applied 2026-10-29** (by Subhan, verified after): `fact-checks/applied-2026-10-29-dead-link-fixes.ndjson` (26 patches).
 Writing them to Sanity was blocked by the session's safety check; apply with
 `scripts/apply-sanity-mutations.sh fact-checks/pending/2026-10-29-dead-link-fixes.ndjson`.
 Backup taken first: `~/Desktop/evidapath-sanity-backups/staging-backup-2026-10-29-before-link-fixes.ndjson`.
