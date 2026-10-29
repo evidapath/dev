@@ -140,7 +140,11 @@ policy, `authenticated` has SELECT/INSERT/UPDATE/DELETE. Also fixed: Discover no
 state for already-saved universities (previously always "Add to My Path", which made saves look lost).
 Open hardening item: `anon` + `authenticated` hold TRUNCATE/TRIGGER/REFERENCES on student tables — revoke pending Subhan's OK.
 
-**P0 — Confirm hosting architecture: OPEN** (see item 3 below).
+**P0 — Confirm hosting architecture: DECIDED (2026-10-29, Subhan).**
+- Interim: wait for GHL to ship a "pull from GitHub" option → push the updated app into GHL → publish via Squarespace (domain lives there).
+- Squarespace account/domain is locked for 60 days (until ~2026-12-28). After that, hosting moves to **Cloudflare**.
+- Before relying on GHL for the live app: confirm it can hold the server-side `SANITY_READ_TOKEN`; without it the site silently falls back to mock data.
+- A Cloudflare *staging* deploy on a `workers.dev` URL does not need the domain and can be done any time (meets the P0 "staging app works" test).
 
 ---
 
