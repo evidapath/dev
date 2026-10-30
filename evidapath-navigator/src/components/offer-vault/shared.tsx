@@ -115,3 +115,46 @@ export function SectionCard({
 export const inputCls =
   "w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary";
 export const labelCls = "block text-xs font-semibold uppercase text-muted-foreground mb-1.5";
+
+// The database only accepts 3-letter ISO codes, so currency is always picked
+// from a list (typing "euro" used to make saving fail).
+export const CURRENCIES: [string, string][] = [
+  ["USD", "US dollar"],
+  ["EUR", "Euro"],
+  ["GBP", "British pound"],
+  ["AED", "UAE dirham"],
+  ["CAD", "Canadian dollar"],
+  ["AUD", "Australian dollar"],
+  ["MYR", "Malaysian ringgit"],
+  ["SGD", "Singapore dollar"],
+  ["CHF", "Swiss franc"],
+  ["HKD", "Hong Kong dollar"],
+  ["INR", "Indian rupee"],
+  ["SAR", "Saudi riyal"],
+  ["QAR", "Qatari riyal"],
+  ["NZD", "New Zealand dollar"],
+  ["JPY", "Japanese yen"],
+  ["CNY", "Chinese yuan"],
+];
+
+export function CurrencySelect({
+  value,
+  onChange,
+  id,
+}: {
+  value: string;
+  onChange: (code: string) => void;
+  id?: string;
+}) {
+  const known = CURRENCIES.some(([c]) => c === value);
+  return (
+    <select id={id} value={value} onChange={(e) => onChange(e.target.value)} className={inputCls}>
+      {!known && value && <option value={value}>{value}</option>}
+      {CURRENCIES.map(([code, name]) => (
+        <option key={code} value={code}>
+          {code} — {name}
+        </option>
+      ))}
+    </select>
+  );
+}

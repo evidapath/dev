@@ -13,7 +13,10 @@ export function formatCurrency(value: number | null, currency = "USD"): string {
   if (value === null || value === undefined) {
     return "Pending verified data";
   }
-  return `$${value.toLocaleString()} ${currency}`;
+  // "$" only for US dollars; other currencies read "15,000 EUR", never "$15,000 EUR".
+  return currency === "USD"
+    ? `$${value.toLocaleString()} USD`
+    : `${value.toLocaleString()} ${currency}`;
 }
 
 export function isPending(value: number | null | undefined): boolean {

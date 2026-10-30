@@ -66,7 +66,12 @@ const OfferInputSchema = z.object({
   response_deadline: z.string().nullable().optional(),
   enrollment_deposit_amount: z.number().nullable().optional(),
   deposit_deadline: z.string().nullable().optional(),
-  currency: z.string().optional(),
+  currency: z
+    .string()
+    .trim()
+    .toUpperCase()
+    .regex(/^[A-Z]{3}$/, "Currency must be a 3-letter code such as EUR, GBP or USD.")
+    .optional(),
   conditions_of_admission: z.string().nullable().optional(),
   notes: z.string().nullable().optional(),
   verification_level: z.string().optional(),
@@ -94,7 +99,12 @@ const AwardInputSchema = z.object({
   award_name: z.string().min(1),
   award_type: z.string(),
   amount: z.number().nullable().optional(),
-  currency: z.string().optional(),
+  currency: z
+    .string()
+    .trim()
+    .toUpperCase()
+    .regex(/^[A-Z]{3}$/, "Currency must be a 3-letter code such as EUR, GBP or USD.")
+    .optional(),
   frequency: z.string().optional(),
   duration_years: z.number().nullable().optional(),
   renewal_criteria: z.string().nullable().optional(),

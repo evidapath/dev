@@ -117,6 +117,10 @@ export interface StudentEnrollmentDecision {
 }
 
 export interface OfferAnalysis {
+  /** Currency every figure below is expressed in (the university's own). */
+  currency: string;
+  /** Awards in another currency that couldn't be converted (left out of totals). */
+  unconvertedAwards: number;
   /** Published/estimated annual cost from public (Sanity) data, null when pending. */
   annualCost: number | null;
   /** Sum of annual-equivalent verified + self-reported awards. */

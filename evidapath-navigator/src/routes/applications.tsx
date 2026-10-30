@@ -1,4 +1,6 @@
 import { useUniversitiesFn } from "../lib/use-live-data";
+import { PageGuide } from "../components/PageGuide";
+import { ConfirmDelete } from "../components/ConfirmDelete";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
@@ -7,7 +9,6 @@ import { toast } from "sonner";
 import {
   ClipboardList,
   Plus,
-  Trash2,
   Pencil,
   X,
   ArrowRight,
@@ -124,6 +125,31 @@ function ApplicationsPage() {
         <IllustrativePreviewLabel text="Private to your account. Application records are stored under Row Level Security and visible only to you." />
       </div>
 
+      <PageGuide
+        id="applications"
+        title="Track every university you apply to"
+        intro="This is your application list. It's private to you and feeds the rest of EvidaPath."
+        steps={[
+          {
+            title: "Add an application",
+            text: "Click “Add Application”, pick the university and course, and set the status to “planning” or “submitted”.",
+          },
+          {
+            title: "Keep the status current",
+            text: "When you hear back, click the pencil icon and change the status — e.g. to “admitted”, “waitlisted” or “rejected”.",
+          },
+          {
+            title: "Admitted? Record the offer",
+            text: "Once an application is “admitted”, go to Offers → “Add Offer” to store the offer letter details and deadlines.",
+          },
+          {
+            title: "Then compare and fund",
+            text: "With two or more offers you can compare them side by side and see what each really costs your family.",
+          },
+        ]}
+        tip="You can only create an offer for an application marked “admitted” — that's the step people most often miss."
+      />
+
       <div className="flex items-center justify-between">
         <h2 className="font-display font-bold text-lg text-foreground">Your applications</h2>
         <Button
@@ -190,13 +216,10 @@ function ApplicationsPage() {
                 >
                   <Pencil className="w-4 h-4" />
                 </button>
-                <button
-                  onClick={() => deleteMut.mutate(app.id)}
-                  className="p-2 rounded-lg text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
-                  aria-label="Delete application"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
+                <ConfirmDelete
+                  label="Delete application"
+                  onConfirm={() => deleteMut.mutate(app.id)}
+                />
               </div>
             </div>
           </SectionCard>

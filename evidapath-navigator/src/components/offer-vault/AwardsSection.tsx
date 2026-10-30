@@ -12,7 +12,8 @@ import type {
   AwardFrequency,
 } from "../../lib/offer-vault.types";
 import { AWARD_TYPES, AWARD_FREQUENCIES } from "../../lib/offer-vault.types";
-import { VerificationBadge, SectionCard, inputCls, labelCls } from "./shared";
+import { formatCurrency } from "../../lib/format";
+import { VerificationBadge, SectionCard, CurrencySelect, inputCls, labelCls } from "./shared";
 
 export function AwardsSection({
   offerId,
@@ -104,7 +105,7 @@ export function AwardsSection({
                   <div>
                     Amount:{" "}
                     <span className="font-mono text-foreground">
-                      {a.amount != null ? `$${a.amount.toLocaleString()} ${a.currency}` : "—"}
+                      {a.amount != null ? formatCurrency(a.amount, a.currency) : "—"}
                     </span>{" "}
                     • {a.frequency.replace(/_/g, " ")}
                     {a.duration_years ? ` • ${a.duration_years} yrs` : ""}
@@ -274,7 +275,7 @@ function AwardEditor({
           </div>
           <div>
             <label className={labelCls}>Currency</label>
-            <input value={cur} onChange={(e) => setCur(e.target.value)} className={inputCls} />
+            <CurrencySelect value={cur} onChange={setCur} />
           </div>
           <div>
             <label className={labelCls}>Frequency</label>

@@ -3,11 +3,22 @@ import { useServerFn } from "@tanstack/react-start";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { toast } from "sonner";
-import { Trash2, ArrowRight, X, CalendarClock, FileCheck2, TrendingDown } from "lucide-react";
+import { ArrowRight, X, CalendarClock, FileCheck2, TrendingDown } from "lucide-react";
 import { Button } from "../ui/button";
 import { listApplications, upsertOffer } from "../../lib/offer-vault.functions";
 import type { OfferComposite } from "../../lib/offer-vault.types";
-import { VerificationBadge, Money, PendingData, SectionCard, inputCls, labelCls } from "./shared";
+import {
+  VerificationBadge,
+  Money,
+  PendingData,
+  SectionCard,
+  CurrencySelect,
+  inputCls,
+  labelCls,
+} from "./shared";
+import { formatCurrency } from "../../lib/format";
+import { ConfirmDelete } from "../ConfirmDelete";
+import { useUniversitiesFn } from "../../lib/use-live-data";
 import { AwardsSection } from "./AwardsSection";
 import { DocumentsSection } from "./DocumentsSection";
 import { EnrollmentSection } from "./EnrollmentSection";
@@ -42,13 +53,7 @@ export function OfferDetail({
               {application.application_cycle ? ` • ${application.application_cycle}` : ""}
             </p>
           </div>
-          <button
-            onClick={onDelete}
-            className="p-2 rounded-lg text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
-            aria-label="Delete offer"
-          >
-            <Trash2 className="w-4 h-4" />
-          </button>
+          <ConfirmDelete label="Delete offer" onConfirm={onDelete} />
         </div>
       </SectionCard>
 
@@ -58,33 +63,35 @@ export function OfferDetail({
         subtitle="Published/estimated cost minus verified awards = estimated net family cost."
         action={
           <span className="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded bg-secondary text-muted-foreground">
-            {analysis.costDataStatus === "pending"
-              ? "Cost data pending"
-              : "Illustrative cost basis"}
+            {analysis.costDataStatus === "pending" ? "Cost data pending" : "Official cost data"}
           </span>
         }
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <AnalysisRow
             label="Published / estimated annual cost"
-            value={<Money value={analysis.annualCost} currency={offer.currency} />}
+            value={<Money value={analysis.annualCost} currency={analysis.currency} />}
             note="University-published / EvidaPath estimate (public data)"
           />
           <AnalysisRow
             label="Verified + reported awards (annual equiv.)"
             value={
               <span className="font-mono text-primary">
-                −${analysis.totalAwardAnnual.toLocaleString()}
+                −{formatCurrency(analysis.totalAwardAnnual, analysis.currency)}
               </span>
             }
-            note="From your stored awards"
+            note={
+              analysis.unconvertedAwards > 0
+                ? `${analysis.unconvertedAwards} award(s) left out — exchange rate unavailable`
+                : `From your stored awards, in ${analysis.currency} (other currencies converted at ECB rates)`
+            }
           />
           <AnalysisRow
             label="Estimated net annual family cost"
             value={
               analysis.netAnnualFamilyCost != null ? (
                 <span className="font-mono font-bold text-foreground">
-                  ${analysis.netAnnualFamilyCost.toLocaleString()}
+                  {formatCurrency(analysis.netAnnualFamilyCost, analysis.currency)}
                 </span>
               ) : (
                 <PendingData label="Pending verified cost data" />
@@ -98,7 +105,7 @@ export function OfferDetail({
             value={
               analysis.totalDegreeFamilyCost != null ? (
                 <span className="font-mono font-bold text-bronze">
-                  ${analysis.totalDegreeFamilyCost.toLocaleString()}
+                  {formatCurrency(analysis.totalDegreeFamilyCost, analysis.currency)}
                 </span>
               ) : (
                 <PendingData label="Pending verified cost + duration" />
@@ -142,12 +149,12 @@ export function OfferDetail({
             label="Enrollment deposit"
             value={
               offer.enrollment_deposit_amount != null
-                ? `$${offer.enrollment_deposit_amount.toLocaleString()} ${offer.currency}`
+                ? formatCurrency(offer.enrollment_deposit_amount, offer.currency)
                 : "—"
             }
           />
           <DetailField label="Deposit deadline" value={offer.deposit_deadline ?? "—"} />
-          <DetailField label="Currency" value={offer.currency} />
+          <DetailField label="Deposit currency" value={offer.currency} />
         </div>
         {offer.conditions_of_admission && (
           <div className="text-xs text-muted-foreground pt-2 border-t border-border/60">
@@ -257,6 +264,19 @@ export function AddOfferDialog({
   const [currency, setCurrency] = useState("USD");
   const [conditions, setConditions] = useState("");
   const [saving, setSaving] = useState(false);
+  const fetchUnis = useUniversitiesFn();
+  const { data: uniData } = useQuery({
+    queryKey: ["universities-cached"],
+    queryFn: () => fetchUnis(),
+  });
+
+  // Default the currency to the chosen university's own currency.
+  const pickApp = (id: string) => {
+    setAppId(id);
+    const app = admittedApps.find((a) => a.id === id);
+    const uni = uniData?.universities.find((u) => u.id === app?.sanity_university_id);
+    if (uni?.costs.currency) setCurrency(uni.costs.currency);
+  };
 
   const submit = async () => {
     if (!appId) {
@@ -316,7 +336,7 @@ export function AddOfferDialog({
           <>
             <div>
               <label className={labelCls}>Admitted application</label>
-              <select value={appId} onChange={(e) => setAppId(e.target.value)} className={inputCls}>
+              <select value={appId} onChange={(e) => pickApp(e.target.value)} className={inputCls}>
                 <option value="">Select an application…</option>
                 {admittedApps.map((a) => (
                   <option key={a.id} value={a.id}>
@@ -364,12 +384,8 @@ export function AddOfferDialog({
               </div>
             </div>
             <div>
-              <label className={labelCls}>Currency</label>
-              <input
-                value={currency}
-                onChange={(e) => setCurrency(e.target.value)}
-                className={inputCls}
-              />
+              <label className={labelCls}>Deposit currency</label>
+              <CurrencySelect value={currency} onChange={setCurrency} />
             </div>
             <div>
               <label className={labelCls}>Conditions of admission</label>

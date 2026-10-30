@@ -1,3 +1,4 @@
+import { PageGuide } from "../components/PageGuide";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useQuery } from "@tanstack/react-query";
@@ -6,6 +7,7 @@ import { requireAuth } from "../lib/route-guard";
 import { Button } from "../components/ui/button";
 import { listOfferComposites } from "../lib/offer-vault.functions";
 import type { OfferComposite } from "../lib/offer-vault.types";
+import { formatCurrency } from "../lib/format";
 import {
   EmptyState,
   IllustrativePreviewLabel,
@@ -58,6 +60,29 @@ function CompareOffersPage() {
         </p>
         <IllustrativePreviewLabel text="Comparison uses your stored offers and awards plus public university cost data. University costs are live EvidaPath data traced to official sources; where a cost isn't verified yet it shows as pending." />
       </div>
+
+      <PageGuide
+        id="compare-offers"
+        title="Compare your offers side by side"
+        steps={[
+          {
+            title: "Record at least two offers",
+            text: "Comparison needs two offers in your Offer Vault. Add them from Offers → “Add Offer”.",
+          },
+          {
+            title: "Read the net cost row",
+            text: "Net family cost = the university's published cost minus the awards you added to that offer.",
+          },
+          {
+            title: "Check deadlines and conditions",
+            text: "Response and deposit deadlines are listed for each offer so nothing lapses by accident.",
+          },
+          {
+            title: "Decide, then record it",
+            text: "When you choose, open that offer and record your enrollment decision.",
+          },
+        ]}
+      />
 
       {composites.length < 2 ? (
         <EmptyState
@@ -113,18 +138,15 @@ function ComparisonTable({ composites }: { composites: OfferComposite[] }) {
         ),
     },
     {
-      label: "Published tuition / yr",
-      render: (c) => {
-        const uni = c.analysis;
-        return <Money value={uni.annualCost} currency={c.offer.currency} />;
-      },
-      note: "Illustrative until verified",
+      label: "Published cost / yr (all-in)",
+      render: (c) => <Money value={c.analysis.annualCost} currency={c.analysis.currency} />,
+      note: "Tuition + fees + living, official sources",
     },
     {
       label: "Scholarship awarded (annual)",
       render: (c) => (
         <span className="font-mono text-primary">
-          ${c.analysis.totalAwardAnnual.toLocaleString()}
+          {formatCurrency(c.analysis.totalAwardAnnual, c.analysis.currency)}
         </span>
       ),
     },
@@ -133,7 +155,7 @@ function ComparisonTable({ composites }: { composites: OfferComposite[] }) {
       render: (c) =>
         c.analysis.netAnnualFamilyCost != null ? (
           <span className="font-mono font-bold text-foreground">
-            ${c.analysis.netAnnualFamilyCost.toLocaleString()}
+            {formatCurrency(c.analysis.netAnnualFamilyCost, c.analysis.currency)}
           </span>
         ) : (
           <PendingData label="Pending verified cost" />
@@ -145,7 +167,7 @@ function ComparisonTable({ composites }: { composites: OfferComposite[] }) {
       render: (c) =>
         c.analysis.totalDegreeFamilyCost != null ? (
           <span className="font-mono font-bold text-bronze">
-            ${c.analysis.totalDegreeFamilyCost.toLocaleString()}
+            {formatCurrency(c.analysis.totalDegreeFamilyCost, c.analysis.currency)}
           </span>
         ) : (
           <PendingData label="Pending" />
@@ -156,7 +178,7 @@ function ComparisonTable({ composites }: { composites: OfferComposite[] }) {
       render: (c) =>
         c.analysis.netAnnualFamilyCost != null ? (
           <span className="font-mono text-bronze">
-            ${c.analysis.netAnnualFamilyCost.toLocaleString()}/yr
+            {formatCurrency(c.analysis.netAnnualFamilyCost, c.analysis.currency)}/yr
           </span>
         ) : (
           <PendingData label="Pending" />
@@ -168,7 +190,7 @@ function ComparisonTable({ composites }: { composites: OfferComposite[] }) {
       render: (c) =>
         c.offer.enrollment_deposit_amount != null ? (
           <span className="font-mono text-xs">
-            ${c.offer.enrollment_deposit_amount.toLocaleString()} {c.offer.currency}
+            {formatCurrency(c.offer.enrollment_deposit_amount, c.offer.currency)}
           </span>
         ) : (
           "—"

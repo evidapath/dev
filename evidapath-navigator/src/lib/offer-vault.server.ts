@@ -6,6 +6,25 @@ import { getSupabaseServerClient } from "./supabase.server";
 import { getUniversitiesFromSanity } from "./sanity.server";
 import { UNIVERSITIES_DATA } from "./mock-data";
 import type { University } from "./mock-data";
+import { convert, loadFxRates, type FxRates } from "./fx.functions";
+
+// Turn raw Postgres errors into messages a student can act on.
+function dbError(error: { message: string; code?: string }): Error {
+  const m = error.message;
+  if (/currency/i.test(m))
+    return new Error("Currency must be a 3-letter code such as EUR, GBP or USD.");
+  if (/deadline|_date/i.test(m) && /check/i.test(m))
+    return new Error("One of the dates isn't valid — check the order of your dates.");
+  if (/amount|>= 0|non.?negative/i.test(m) && /check/i.test(m))
+    return new Error("Amounts can't be negative.");
+  if (error.code === "23505")
+    return new Error("That already exists — edit the existing entry instead.");
+  if (/row-level security|permission/i.test(m))
+    return new Error("You don't have permission to change this. Try signing in again.");
+  if (/check constraint/i.test(m))
+    return new Error("Some of the values aren't valid. Please check the form and try again.");
+  return new Error(m);
+}
 import type {
   StudentApplication,
   StudentOffer,
@@ -40,17 +59,35 @@ export function buildAnalysis(
   application: StudentApplication,
   awards: StudentAward[],
   universities: University[],
+  fx: FxRates | null,
 ): OfferAnalysis {
   const uni = universities.find((u) => u.id === application.sanity_university_id);
   const annualCost = uni?.costs.totalAnnual ?? null;
+  const currency = uni?.costs.currency || awards[0]?.currency || "USD";
   const duration = uni?.durationYears ?? null;
-  const totalAwardAnnual = awards.reduce((sum, a) => sum + annualAwardAmount(a), 0);
+  // Awards can be in a different currency from the university's published cost
+  // (e.g. a EUR scholarship at a GBP university): convert before subtracting.
+  let unconvertedAwards = 0;
+  const totalAwardAnnual = Math.round(
+    awards.reduce((sum, a) => {
+      const amount = annualAwardAmount(a);
+      if (!amount) return sum;
+      const v = convert(amount, a.currency || currency, currency, fx);
+      if (v == null) {
+        unconvertedAwards++;
+        return sum;
+      }
+      return sum + v;
+    }, 0),
+  );
   const netAnnualFamilyCost =
     annualCost != null ? Math.max(0, annualCost - totalAwardAnnual) : null;
   const totalDegreeFamilyCost =
     netAnnualFamilyCost != null && duration ? netAnnualFamilyCost * duration : null;
   const hasDocumentVerifiedAwards = awards.some((a) => a.verification_level !== "self_reported");
   return {
+    currency,
+    unconvertedAwards,
     annualCost,
     totalAwardAnnual,
     netAnnualFamilyCost,
@@ -71,7 +108,7 @@ export async function listApplicationsSvc(): Promise<StudentApplication[]> {
     .select("*")
     .eq("user_id", uid)
     .order("created_at", { ascending: false });
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
   return (data ?? []) as StudentApplication[];
 }
 
@@ -86,7 +123,7 @@ export async function upsertApplicationSvc(
     .upsert(payload, { onConflict: "id" })
     .select()
     .single();
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
   return data as StudentApplication;
 }
 
@@ -94,7 +131,7 @@ export async function deleteApplicationSvc(id: string): Promise<void> {
   const sb = getSupabaseServerClient();
   const uid = await currentUserId();
   const { error } = await sb.from("student_applications").delete().eq("id", id).eq("user_id", uid);
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
 }
 
 // ── Offer composites (offers + applications + awards + documents + enrollment) ─
@@ -111,7 +148,7 @@ export async function listOfferCompositesSvc(): Promise<OfferComposite[]> {
     sb.from("student_enrollment_decisions").select("*").eq("user_id", uid),
   ]);
 
-  if (offersRes.error) throw new Error(offersRes.error.message);
+  if (offersRes.error) throw dbError(offersRes.error);
 
   const offers = (offersRes.data ?? []) as StudentOffer[];
   const awards = (awardsRes.data ?? []) as StudentAward[];
@@ -129,6 +166,7 @@ export async function listOfferCompositesSvc(): Promise<OfferComposite[]> {
   } catch {
     universities = UNIVERSITIES_DATA;
   }
+  const fx = await loadFxRates();
 
   return offers
     .map((offer) => {
@@ -146,7 +184,7 @@ export async function listOfferCompositesSvc(): Promise<OfferComposite[]> {
         awards: offerAwards,
         documents: offerDocs,
         enrollment,
-        analysis: buildAnalysis(application, offerAwards, universities),
+        analysis: buildAnalysis(application, offerAwards, universities, fx),
       } satisfies OfferComposite;
     })
     .filter((c): c is OfferComposite => c !== null);
@@ -163,7 +201,7 @@ export async function upsertOfferSvc(
     .upsert(payload, { onConflict: "id" })
     .select()
     .single();
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
   return data as StudentOffer;
 }
 
@@ -171,7 +209,7 @@ export async function deleteOfferSvc(id: string): Promise<void> {
   const sb = getSupabaseServerClient();
   const uid = await currentUserId();
   const { error } = await sb.from("student_offers").delete().eq("id", id).eq("user_id", uid);
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
 }
 
 // ── Awards ────────────────────────────────────────────────────────────────
@@ -191,7 +229,7 @@ export async function upsertAwardSvc(
     .upsert(payload, { onConflict: "id" })
     .select()
     .single();
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
   return data as StudentAward;
 }
 
@@ -199,7 +237,7 @@ export async function deleteAwardSvc(id: string): Promise<void> {
   const sb = getSupabaseServerClient();
   const uid = await currentUserId();
   const { error } = await sb.from("student_awards").delete().eq("id", id).eq("user_id", uid);
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
 }
 
 /** Promote an award's verification level (e.g. after a supporting document is linked). */
@@ -211,7 +249,7 @@ export async function setAwardVerificationSvc(id: string, level: VerificationLev
     .update({ verification_level: level })
     .eq("id", id)
     .eq("user_id", uid);
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
 }
 
 // ── Documents (metadata only; file bytes uploaded via browser Storage client) ─
@@ -225,7 +263,7 @@ export async function listDocumentsSvc(offerId: string): Promise<StudentOfferDoc
     .eq("offer_id", offerId)
     .eq("user_id", uid)
     .order("uploaded_at", { ascending: false });
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
   return (data ?? []) as StudentOfferDocument[];
 }
 
@@ -244,7 +282,7 @@ export async function createDocumentRecordSvc(input: {
     .insert({ ...input, user_id: uid })
     .select()
     .single();
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
   return data as StudentOfferDocument;
 }
 
@@ -257,7 +295,7 @@ export async function deleteDocumentSvc(id: string): Promise<void> {
     .eq("id", id)
     .eq("user_id", uid)
     .select("storage_path");
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
   // Best-effort removal of the object from private storage via the user-scoped client.
   if (data && data.length > 0) {
     const path = (data[0] as { storage_path?: string }).storage_path;
@@ -298,7 +336,7 @@ export async function recordEnrollmentDecisionSvc(input: {
     .upsert(payload, { onConflict: "id" })
     .select()
     .single();
-  if (error) throw new Error(error.message);
+  if (error) throw dbError(error);
   return data as StudentEnrollmentDecision;
 }
 

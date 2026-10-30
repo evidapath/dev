@@ -1,3 +1,4 @@
+import { PageGuide } from "../components/PageGuide";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useMemo, useState } from "react";
@@ -188,6 +189,29 @@ function PlanPage() {
           deadlines, requirements and scholarships. Tick things off as you go.
         </p>
       </header>
+
+      <PageGuide
+        id="plan"
+        title="Your to-do list, with dates"
+        steps={[
+          {
+            title: "Save universities",
+            text: "The plan is built from universities on your path. Save them from Find My Path or the university list.",
+          },
+          {
+            title: "Work through “Coming up”",
+            text: "These have official deadlines — application rounds and scholarships — soonest first.",
+          },
+          {
+            title: "Then “Prepare now”",
+            text: "Subjects to check, English tests to book, questions to ask universities, and funding steps.",
+          },
+          {
+            title: "Tick things off",
+            text: "Click the circle when something's done. Your ticks are remembered on this device.",
+          },
+        ]}
+      />
 
       {!ready ? (
         <div className="space-y-3" aria-busy="true">

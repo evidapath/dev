@@ -24,11 +24,13 @@ import { requireAuth } from "../lib/route-guard";
 import { DataStatus } from "../components/DataStatus";
 import { CounselingWaitlist } from "../components/CounselingWaitlist";
 import {
+  getProfile,
   listSavedUniversities,
   removeSavedUniversity,
   saveUniversity,
 } from "../lib/profile.functions";
 import type { SavedUniversity } from "../lib/profile.types";
+import { listApplications, listOfferComposites } from "../lib/offer-vault.functions";
 
 export const Route = createFileRoute("/dashboard")({
   beforeLoad: ({ context, location }) => requireAuth(context, location.pathname),
@@ -50,42 +52,42 @@ export const Route = createFileRoute("/dashboard")({
   component: DashboardPage,
 });
 
-// Next-step logic — answers "What should I do next?"
-// Ordered journey: Profile → Explore → Applications → Offers → Funding
+// Next-step logic — answers "What should I do next?" from the student's real
+// progress: profile → shortlist → applications → offers → compare & fund.
 const JOURNEY = [
   {
     step: 1,
-    label: "Academic Readiness",
-    desc: "Complete your profile so EvidaPath can map your evidence.",
-    href: "/academic-readiness",
+    label: "Tell us about you",
+    desc: "Answer a few questions (grades, subject, budget) so every page can tailor results to you.",
+    href: "/find-my-path",
     icon: Sparkles,
   },
   {
     step: 2,
-    label: "Explore universities",
-    desc: "Choose 3–5 universities to explore in depth.",
-    href: "/universities",
+    label: "Shortlist universities",
+    desc: "Save 3–5 universities to your path. Use “Analyze my fit” to check each one.",
+    href: "/find-my-path",
     icon: Compass,
   },
   {
     step: 3,
-    label: "Add your applications",
-    desc: "Track the universities you're applying to.",
+    label: "Track your applications",
+    desc: "Add each university you apply to, and update the status when you hear back.",
     href: "/applications",
     icon: ClipboardList,
   },
   {
     step: 4,
     label: "Record your offers",
-    desc: "Add admission offers and scholarship awards to your Offer Vault.",
+    desc: "When an application is admitted, add the offer and any scholarship in it.",
     href: "/offer-vault",
     icon: Vault,
   },
   {
     step: 5,
     label: "Compare & fund",
-    desc: "Compare offers and model your family's funding gap.",
-    href: "/fund",
+    desc: "Compare offers side by side and check what your family can afford.",
+    href: "/compare-offers",
     icon: PiggyBank,
   },
 ];
@@ -93,9 +95,29 @@ const JOURNEY = [
 function DashboardPage() {
   const { user } = useAuth();
 
-  // MVP: no persisted progress yet, so we surface the first step as the
-  // active "Next Step". When profile state is connected, this becomes dynamic.
-  const currentStep = 0;
+  // Real progress: each step is done when its data exists in the account.
+  const fetchProfile = useServerFn(getProfile);
+  const fetchSaved = useServerFn(listSavedUniversities);
+  const fetchApps = useServerFn(listApplications);
+  const fetchOffers = useServerFn(listOfferComposites);
+  const [doneFlags, setDoneFlags] = useState<boolean[] | null>(null);
+  useEffect(() => {
+    let live = true;
+    Promise.all([
+      fetchProfile().catch(() => null),
+      fetchSaved().catch(() => []),
+      fetchApps().catch(() => []),
+      fetchOffers().catch(() => []),
+    ]).then(([p, saved, apps, offers]) => {
+      if (!live) return;
+      setDoneFlags([!!p, saved.length > 0, apps.length > 0, offers.length > 0, false]);
+    });
+    return () => {
+      live = false;
+    };
+  }, [fetchProfile, fetchSaved, fetchApps, fetchOffers]);
+  const firstOpen = doneFlags ? doneFlags.findIndex((d) => !d) : 0;
+  const currentStep = firstOpen === -1 ? JOURNEY.length - 1 : firstOpen;
   const current = JOURNEY[currentStep]!;
 
   return (
@@ -143,7 +165,7 @@ function DashboardPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
           {JOURNEY.map((j, i) => {
             const Icon = j.icon;
-            const done = i < currentStep;
+            const done = !!doneFlags?.[i];
             const active = i === currentStep;
             return (
               <Link

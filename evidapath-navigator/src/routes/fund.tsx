@@ -1,4 +1,5 @@
 import { useUniversitiesFn, useFxRatesFn } from "../lib/use-live-data";
+import { PageGuide } from "../components/PageGuide";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { requireAuth } from "../lib/route-guard";
 import { useEffect, useState } from "react";
@@ -153,6 +154,30 @@ function FundPage() {
           </span>
         </div>
       </div>
+
+      <PageGuide
+        id="fund"
+        title="See whether your family can afford a university"
+        steps={[
+          {
+            title: "Pick two universities",
+            text: "Choose the two options you're weighing. Their yearly costs come from official sources, converted to US dollars.",
+          },
+          {
+            title: "Enter what your family can pay",
+            text: "Move the family contribution slider to what you can realistically spend each year.",
+          },
+          {
+            title: "Add expected scholarships",
+            text: "Only include money you're confident about. Awards you've recorded in your Offer Vault are shown in their own panel below, so you can check your estimate against them.",
+          },
+          {
+            title: "Read the gap",
+            text: "The gap is what's left to find over the whole degree. The cheaper option is named for you.",
+          },
+        ]}
+        tip="Planning guesses are fine here — nothing on this page is saved or shared."
+      />
 
       {/* Assumptions & Controller Box */}
       <div className="bg-card border border-border rounded-2xl p-6 shadow-xs space-y-6">

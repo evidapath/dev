@@ -1,3 +1,4 @@
+import { PageGuide } from "../components/PageGuide";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
@@ -13,6 +14,7 @@ import {
   PendingData,
   VerificationBadge,
 } from "../components/offer-vault/shared";
+import { formatCurrency } from "../lib/format";
 import { OfferDetail, AddOfferDialog } from "../components/offer-vault/OfferDetail";
 
 export const Route = createFileRoute("/offer-vault")({
@@ -89,6 +91,31 @@ function OfferVaultPage() {
         <IllustrativePreviewLabel text="Private to your account. Offer, award, and document records are stored under Row Level Security. Uploaded documents are private — no public URLs." />
       </div>
 
+      <PageGuide
+        id="offer-vault"
+        title="Turn an offer letter into a real cost"
+        intro="An offer is an admission you've received. Storing it here lets EvidaPath show what that university would actually cost you."
+        steps={[
+          {
+            title: "Mark the application admitted",
+            text: "Offers attach to an application. In Applications, set its status to “admitted” first.",
+          },
+          {
+            title: "Add the offer",
+            text: "Click “Add Offer”, choose the admitted application, and copy in the dates and deposit from your offer letter. Currency is picked from a list (e.g. EUR, GBP).",
+          },
+          {
+            title: "Add scholarships and aid",
+            text: "Open the offer and add any scholarship or aid award in it. Each award lowers the net cost shown.",
+          },
+          {
+            title: "Upload documents (optional)",
+            text: "Attach the offer letter or award letter. Files stay private to your account.",
+          },
+        ]}
+        tip="Everything you enter is marked “Self-reported” — that's normal. It just means EvidaPath hasn't checked the document itself."
+      />
+
       <div className="flex items-center justify-between flex-wrap gap-3">
         <h2 className="font-display font-bold text-lg text-foreground">Your offers</h2>
         <div className="flex items-center gap-2">
@@ -156,7 +183,7 @@ function OfferVaultPage() {
                     </span>
                     <span className="font-mono text-xs font-bold text-foreground">
                       {c.analysis.netAnnualFamilyCost != null ? (
-                        `$${c.analysis.netAnnualFamilyCost.toLocaleString()}`
+                        formatCurrency(c.analysis.netAnnualFamilyCost, c.analysis.currency)
                       ) : (
                         <PendingData label="Pending" />
                       )}

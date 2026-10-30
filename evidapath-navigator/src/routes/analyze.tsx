@@ -1,4 +1,5 @@
 import { useUniversitiesFn, useScholarshipsFn, useFxRatesFn } from "../lib/use-live-data";
+import { PageGuide } from "../components/PageGuide";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useMemo, useState } from "react";
@@ -141,6 +142,30 @@ function AnalyzePage() {
           what you can still change.
         </p>
       </header>
+
+      <PageGuide
+        id="analyze"
+        title="Check how one university fits you"
+        steps={[
+          {
+            title: "Choose a university",
+            text: "Your saved universities are listed first. Any university in EvidaPath can be picked.",
+          },
+          {
+            title: "Check your inputs",
+            text: "They're filled from your profile. Change any of them to try “what if” — it won't change your profile.",
+          },
+          {
+            title: "Read the six panels",
+            text: "Grades vs the published requirement, deadlines, real cost vs budget, scholarships you qualify for, other options, and next steps.",
+          },
+          {
+            title: "Act on the next steps",
+            text: "The last panel turns gaps into actions. Your Plan page collects them for every saved university.",
+          },
+        ]}
+        tip="EvidaPath never shows an admission “chance” — only what universities publish and what you can still change."
+      />
 
       <section className="bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-xs space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-2">
