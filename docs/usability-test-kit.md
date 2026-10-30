@@ -14,7 +14,7 @@ Mix curricula and nationalities (at least one Emirati, one expat). Nobody who ha
 - **Accounts:** each student creates their own account during the test (that is part of the journey). Use a fresh
   browser profile so no one else is signed in. Afterwards, delete the test accounts or keep them only with consent.
 - **Device:** whatever they normally use. Test at least two of the five on a phone.
-- **URL:** the staging site once it exists; until then a laptop running the local app.
+- **URL:** https://evidapath-staging.evidapath.workers.dev (staging, live data). Not evidapath.com.
 
 ## What to say (read it word for word)
 
