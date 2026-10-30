@@ -312,6 +312,7 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
   return {
     name: p.program_name || "Program",
     fieldOfStudy: p.field_of_study || "",
+    languages: (p.language_of_instruction || []).filter(Boolean),
     degree: p.degree_type || "",
     durationYears: years,
     costs: {
@@ -544,6 +545,8 @@ function adaptScholarship(s: SanityScholarship): Scholarship {
     ...(s.selection_basis === "guaranteed" || s.selection_basis === "competitive"
       ? { selectionBasis: s.selection_basis }
       : {}),
+    universityIds: s.institutions_covered || [],
+    eligibleCitizenships: s.eligible_citizenships || [],
     verificationStatus: scholarshipConfidence(s),
     lastChecked: s.last_checked || "Not yet verified",
     officialSource: s.official_source_url || "",

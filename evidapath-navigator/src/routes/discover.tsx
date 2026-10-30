@@ -306,7 +306,7 @@ function DiscoverPage() {
               </div>
 
               <div className="pt-4 border-t border-border flex items-center justify-between">
-                <Link to="/analyze">
+                <Link to="/analyze" search={{ uni: univ.id }}>
                   <Button
                     variant="outline"
                     size="sm"

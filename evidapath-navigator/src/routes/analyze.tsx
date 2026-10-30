@@ -1,393 +1,297 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { requireAuth } from "../lib/route-guard";
-import { useEffect, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
-import {
-  BarChart3,
-  AlertCircle,
-  CheckCircle2,
-  ArrowRight,
-  ShieldCheck,
-  TrendingUp,
-  AlertTriangle,
-  Layers,
-  DollarSign,
-} from "lucide-react";
-import { Button } from "../components/ui/button";
+import { useEffect, useMemo, useState } from "react";
+import { BarChart3, Pencil } from "lucide-react";
+import { requireAuth } from "../lib/route-guard";
 import { getUniversities } from "../lib/universities.functions";
-import type { University } from "../lib/mock-data";
-import { SAMPLE_DECISION_ANALYSIS } from "../lib/decision-model";
-import { isPending } from "../lib/format";
+import { getScholarships } from "../lib/scholarships.functions";
+import { getFxRates, type FxRates } from "../lib/fx.functions";
+import { getProfile, listSavedUniversities } from "../lib/profile.functions";
+import type { Scholarship, University } from "../lib/mock-data";
+import { analyze, type StudentInput } from "../lib/decision-engine";
+import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
+import { AnalysisFootnote, DecisionAnalysisView } from "../components/DecisionAnalysisView";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
-
-function money(value: number | null, currency = "USD"): string {
-  if (isPending(value)) return "Pending verified data";
-  return `$${value!.toLocaleString()} ${currency}`;
-}
 
 export const Route = createFileRoute("/analyze")({
   head: () => ({
     meta: [
-      { title: "Academic & Admissions Evidence Analysis — EvidaPath" },
+      { title: "Analyze Your Fit — EvidaPath" },
       {
         name: "description",
         content:
-          "Analyze where you currently stand relative to institutional evidence, historical admissions benchmarks, and actionable levers.",
+          "Compare your grades, budget and citizenship with a university's verified requirements, costs and scholarships.",
       },
-      { property: "og:title", content: "Academic Gap Analysis & Controllable Levers — EvidaPath" },
+      { property: "og:title", content: "Analyze Your Fit — EvidaPath" },
       {
         property: "og:description",
         content:
-          "Evaluate evidence, identify gaps you can still change, and model alternative pathways.",
+          "Verified requirements, real costs, scholarships you qualify for and your next steps.",
       },
       ogUrlMeta("/analyze"),
     ],
     links: [canonicalLink("/analyze")],
   }),
+  validateSearch: (s: Record<string, unknown>): { uni?: string } =>
+    typeof s["uni"] === "string" && s["uni"] ? { uni: s["uni"] } : {},
   beforeLoad: ({ context, location }) => requireAuth(context, location.pathname),
   component: AnalyzePage,
 });
 
+const CURRICULA = [
+  "IB Diploma",
+  "Cambridge A-Levels",
+  "US High School Diploma + APs",
+  "German Abitur",
+  "National Curriculum / Other",
+];
+const BANDS = [
+  "Top Tier: IB 40+ / A*A*A / GPA 4.0",
+  "Strong: IB 37-39 / A*AA / GPA 3.8-3.9",
+  "Competitive: IB 34-36 / AAA-AAB / GPA 3.6-3.7",
+  "Foundation: IB 30-33 / ABB-BBB / GPA 3.3-3.5",
+];
+const DEFAULT_INPUT: StudentInput = {
+  curriculum: "IB Diploma",
+  gradeBand: BANDS[1]!,
+  subject: "Computer Science",
+  budgetUsd: 40000,
+  citizenship: "",
+};
+
+const field =
+  "w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary";
+const label =
+  "block text-[11px] font-semibold uppercase tracking-wide text-muted-foreground mb-1.5";
+
 function AnalyzePage() {
-  const [selectedUnivId, setSelectedUnivId] = useState("");
-  const [studentGrades, setStudentGrades] = useState("A*AA");
-  const [targetSubject, setTargetSubject] = useState("Computer Science");
-  const [universities, setUniversities] = useState<University[]>([]);
-  const [source, setSource] = useState<"sanity" | "mock" | null>(null);
+  const { uni } = Route.useSearch();
+  const [unis, setUnis] = useState<University[]>([]);
+  const [schols, setSchols] = useState<Scholarship[]>([]);
+  const [fx, setFx] = useState<FxRates | null>(null);
+  const [savedIds, setSavedIds] = useState<string[]>([]);
+  const [input, setInput] = useState<StudentInput>(DEFAULT_INPUT);
+  const [fromProfile, setFromProfile] = useState(false);
+  const [uniId, setUniId] = useState(uni ?? "");
   const [loading, setLoading] = useState(true);
 
-  const fetchUniversities = useServerFn(getUniversities);
+  const fetchUnis = useServerFn(getUniversities);
+  const fetchSchols = useServerFn(getScholarships);
+  const fetchFx = useServerFn(getFxRates);
+  const fetchProfile = useServerFn(getProfile);
+  const fetchSaved = useServerFn(listSavedUniversities);
+
   useEffect(() => {
-    let active = true;
-    fetchUniversities()
-      .then((res) => {
-        if (!active) return;
-        setUniversities(res.universities);
-        setSource(res.source);
-        const first = res.universities[0];
-        if (first) setSelectedUnivId((cur) => cur || first.id);
+    let live = true;
+    Promise.all([
+      fetchUnis(),
+      fetchSchols(),
+      fetchFx().catch(() => null),
+      fetchProfile().catch(() => null),
+      fetchSaved().catch(() => []),
+    ])
+      .then(([u, s, r, p, saved]) => {
+        if (!live) return;
+        setUnis(u.universities);
+        setSchols(s.scholarships);
+        setFx(r);
+        const ids = saved.map((x) => x.sanity_university_id);
+        setSavedIds(ids);
+        if (p) {
+          setFromProfile(true);
+          setInput({
+            curriculum: p.curriculum || DEFAULT_INPUT.curriculum,
+            gradeBand: p.grade_band || DEFAULT_INPUT.gradeBand,
+            subject: p.intended_subject || DEFAULT_INPUT.subject,
+            budgetUsd: p.annual_budget ?? DEFAULT_INPUT.budgetUsd,
+            citizenship: p.citizenship || "",
+          });
+        }
+        setUniId((cur) => cur || ids[0] || u.universities[0]?.id || "");
       })
-      .finally(() => {
-        if (active) setLoading(false);
-      });
+      .finally(() => live && setLoading(false));
     return () => {
-      active = false;
+      live = false;
     };
-  }, [fetchUniversities]);
+  }, [fetchUnis, fetchSchols, fetchFx, fetchProfile, fetchSaved]);
 
-  const univ = universities.find((u) => u.id === selectedUnivId) || universities[0];
-  // SAMPLE_DECISION_ANALYSIS is an ILLUSTRATIVE analytical framework, NOT computed
-  // from verified inputs. Real Sanity ids don't key into it, so it always resolves
-  // to the sample — shown clearly labeled as illustrative, never as real analysis.
-  const analysis = SAMPLE_DECISION_ANALYSIS["oxford-univ"]!;
+  const univ = unis.find((u) => u.id === uniId) ?? unis[0];
+  const result = useMemo(
+    () => (univ ? analyze(univ, input, schols, unis, fx) : null),
+    [univ, input, schols, unis, fx],
+  );
+  const set = <K extends keyof StudentInput>(k: K, v: StudentInput[K]) =>
+    setInput((cur) => ({ ...cur, [k]: v }));
 
-  if (loading || !univ) {
-    return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <p className="text-sm text-muted-foreground">Loading verified university data…</p>
-      </div>
-    );
-  }
+  const saved = unis.filter((u) => savedIds.includes(u.id));
+  const others = unis.filter((u) => !savedIds.includes(u.id));
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-      {/* Header */}
-      <div className="max-w-3xl space-y-3">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+      <header className="max-w-3xl space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
           <BarChart3 className="w-3.5 h-3.5" />
           <span>Decision Suite • Analyze</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
-          Analyze Where You Stand Relative to Evidence
+          Analyze your fit
         </h1>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          EvidaPath avoids arbitrary admissions chances. We analyze your academic prerequisites,
-          available evidence, and financial reality, highlighting the exact levers you can still
-          control. Where evidence is incomplete, uncertainty is communicated explicitly.
+          Your grades, budget and citizenship compared with one university's verified requirements,
+          costs and scholarships. We never show an admission "chance" — only what is published, and
+          what you can still change.
         </p>
-        <div className="flex items-center gap-2 text-[11px] text-muted-foreground bg-secondary/50 border border-border rounded-lg px-3 py-2">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
-          <span>
-            {source === "sanity"
-              ? "University identity and cost data below are live from EvidaPath and traced to official sources. The fit scoring, readiness metrics and improvement levers are an ILLUSTRATIVE framework — not yet computed from your verified inputs — and are labeled as such."
-              : "Illustrative product preview. Live analysis will use verified EvidaPath data with source attribution and confidence indicators."}
+      </header>
+
+      <section className="bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-xs space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 className="font-display font-bold text-base text-foreground">Your inputs</h2>
+          <span className="text-[11px] text-muted-foreground inline-flex items-center gap-1">
+            <Pencil className="w-3 h-3" />
+            {fromProfile
+              ? "Filled from your profile — changes here are for this analysis only."
+              : "Using example inputs — "}
+            {!fromProfile && (
+              <Link to="/find-my-path" className="text-primary hover:underline">
+                set up your profile
+              </Link>
+            )}
           </span>
         </div>
-      </div>
-
-      {/* Target Selector Bar */}
-      <div className="bg-card border border-border rounded-2xl p-6 shadow-xs">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div>
-            <label className="block text-xs font-semibold uppercase text-muted-foreground mb-1.5">
-              Target University
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <label className={label} htmlFor="an-uni">
+              University
             </label>
             <select
-              value={selectedUnivId}
-              onChange={(e) => setSelectedUnivId(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
+              id="an-uni"
+              value={univ?.id ?? ""}
+              onChange={(e) => setUniId(e.target.value)}
+              className={field}
             >
-              {universities.map((u) => (
-                <option key={u.id} value={u.id}>
-                  {u.flag} {u.name} ({u.country})
-                </option>
+              {saved.length > 0 && (
+                <optgroup label="Saved to your path">
+                  {saved.map((u) => (
+                    <option key={u.id} value={u.id}>
+                      {u.flag} {u.name}
+                    </option>
+                  ))}
+                </optgroup>
+              )}
+              <optgroup label={saved.length ? "All universities" : "Universities"}>
+                {others.map((u) => (
+                  <option key={u.id} value={u.id}>
+                    {u.flag} {u.name}
+                  </option>
+                ))}
+              </optgroup>
+            </select>
+          </div>
+          <div>
+            <label className={label} htmlFor="an-subject">
+              Subject
+            </label>
+            <input
+              id="an-subject"
+              value={input.subject}
+              onChange={(e) => set("subject", e.target.value)}
+              className={field}
+            />
+          </div>
+          <div>
+            <label className={label} htmlFor="an-cit">
+              Citizenship
+            </label>
+            <input
+              id="an-cit"
+              value={input.citizenship}
+              placeholder="e.g. UAE, India"
+              onChange={(e) => set("citizenship", e.target.value)}
+              className={field}
+            />
+          </div>
+          <div>
+            <label className={label} htmlFor="an-cur">
+              Curriculum
+            </label>
+            <select
+              id="an-cur"
+              value={input.curriculum}
+              onChange={(e) => set("curriculum", e.target.value)}
+              className={field}
+            >
+              {(CURRICULA.includes(input.curriculum)
+                ? CURRICULA
+                : [input.curriculum, ...CURRICULA]
+              ).map((c) => (
+                <option key={c}>{c}</option>
               ))}
             </select>
           </div>
-
           <div>
-            <label className="block text-xs font-semibold uppercase text-muted-foreground mb-1.5">
-              Your Current Academic Baseline
+            <label className={label} htmlFor="an-band">
+              Predicted grades
             </label>
             <select
-              value={studentGrades}
-              onChange={(e) => setStudentGrades(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
+              id="an-band"
+              value={input.gradeBand}
+              onChange={(e) => set("gradeBand", e.target.value)}
+              className={field}
             >
-              <option value="A*A*A">A*A*A (or IB 40+ / GPA 4.0)</option>
-              <option value="A*AA">A*AA (or IB 38-39 / GPA 3.9)</option>
-              <option value="AAA">AAA (or IB 36-37 / GPA 3.8)</option>
-              <option value="AAB">AAB (or IB 34-35 / GPA 3.7)</option>
+              {(BANDS.includes(input.gradeBand) ? BANDS : [input.gradeBand, ...BANDS]).map((b) => (
+                <option key={b}>{b}</option>
+              ))}
             </select>
           </div>
-
           <div>
-            <label className="block text-xs font-semibold uppercase text-muted-foreground mb-1.5">
-              Intended Degree Subject
+            <label className={label} htmlFor="an-budget">
+              Budget per year:{" "}
+              {input.budgetUsd >= BUDGET_MAX ? "No limit" : `$${input.budgetUsd.toLocaleString()}`}
             </label>
-            <select
-              value={targetSubject}
-              onChange={(e) => setTargetSubject(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
+            <input
+              id="an-budget"
+              type="range"
+              min={BUDGET_MIN}
+              max={BUDGET_MAX}
+              step={5000}
+              value={Math.min(Math.max(input.budgetUsd, BUDGET_MIN), BUDGET_MAX)}
+              onChange={(e) => set("budgetUsd", Number(e.target.value))}
+              className="w-full accent-primary mt-3"
+            />
+          </div>
+        </div>
+      </section>
+
+      {loading ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" aria-busy="true">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="h-44 rounded-xl bg-secondary/60 animate-pulse" />
+          ))}
+        </div>
+      ) : univ && result ? (
+        <section className="space-y-4" aria-live="polite">
+          <DecisionAnalysisView u={univ} a={result} />
+          <AnalysisFootnote />
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Link
+              to="/fund"
+              className="inline-flex items-center h-10 px-4 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
             >
-              <option value="Computer Science">Computer Science / Software</option>
-              <option value="Economics">Economics & Management</option>
-              <option value="Engineering">Mechanical / Aerospace Engineering</option>
-              <option value="Law">Law & Jurisprudence</option>
-            </select>
+              Build a funding plan
+            </Link>
+            <Link
+              to="/universities"
+              className="inline-flex items-center h-10 px-4 rounded-lg border border-border text-sm font-semibold text-foreground hover:bg-secondary transition-colors"
+            >
+              See full university details
+            </Link>
           </div>
-        </div>
-      </div>
-
-      {/* Analysis Output Container */}
-      <div className="space-y-8">
-        {/* Status banner */}
-        <div className="bg-secondary/40 border border-border rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">{univ.flag}</span>
-            <div>
-              <h2 className="font-display font-bold text-xl text-foreground">
-                Analysis for {univ.name}
-              </h2>
-              <p className="text-xs text-muted-foreground">
-                Benchmark: {univ.admissionsEvidence.historicalBenchmark}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3 text-xs">
-            <span className="font-semibold text-foreground">Fit scoring:</span>
-            <span className="px-2.5 py-1 rounded-full bg-secondary text-muted-foreground font-mono font-medium border border-border">
-              Illustrative framework
-            </span>
-          </div>
-        </div>
-
-        {/* 2-Column: Left Academic & Gaps | Right Financials & Pathways */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Column: Academic Standing & Controllable Levers */}
-          <div className="space-y-6">
-            {/* Academic Standing */}
-            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-border pb-3">
-                <h3 className="font-display font-bold text-base text-foreground">
-                  Current Position & Prerequisites
-                </h3>
-                <span className="text-xs font-semibold px-2 py-0.5 rounded bg-secondary text-muted-foreground">
-                  Illustrative example
-                </span>
-              </div>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                {analysis.academicReadiness.details}
-              </p>
-
-              <div className="space-y-2 pt-2">
-                {analysis.academicReadiness.metrics.map((m, idx) => (
-                  <div
-                    key={idx}
-                    className="flex justify-between items-center text-xs p-2.5 rounded-lg bg-secondary/50 border border-border/60"
-                  >
-                    <span className="text-muted-foreground font-medium">{m.label}</span>
-                    <div className="text-right">
-                      <span className="font-mono font-bold text-muted-foreground block">
-                        {m.value}
-                      </span>
-                      <span className="text-[10px] text-muted-foreground">
-                        Benchmark: {m.benchmark}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Controllable Improvement Levers */}
-            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-border pb-3">
-                <h3 className="font-display font-bold text-base text-foreground flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-primary" />
-                  <span>Controllable Levers ({analysis.improvementLevers.length})</span>
-                </h3>
-                <span className="text-[11px] text-muted-foreground font-semibold">
-                  Illustrative framework
-                </span>
-              </div>
-
-              <div className="space-y-3">
-                {analysis.improvementLevers.map((lever) => (
-                  <div
-                    key={lever.id}
-                    className="p-3.5 rounded-xl border border-border bg-background space-y-2"
-                  >
-                    <div className="flex items-center justify-between text-[11px]">
-                      <span className="font-semibold text-primary uppercase tracking-wider">
-                        {lever.category}
-                      </span>
-                      <span className="font-mono text-muted-foreground">{lever.timeline}</span>
-                    </div>
-                    <p className="text-xs font-medium text-foreground leading-snug">
-                      {lever.action}
-                    </p>
-                    <div className="flex items-center justify-between text-[10px] text-muted-foreground pt-1">
-                      <span>
-                        Impact: <strong>{lever.impact}</strong>
-                      </span>
-                      <span className="text-primary font-medium">{lever.controllability}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Financial Commitment & Strategic Alternatives */}
-          <div className="space-y-6">
-            {/* Financial Reality Breakdown */}
-            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-border pb-3">
-                <h3 className="font-display font-bold text-base text-foreground flex items-center gap-2">
-                  <DollarSign className="w-4 h-4 text-bronze" />
-                  <span>Financial Fit & Real Capital Outlay</span>
-                </h3>
-                <span className="text-xs font-mono font-semibold text-muted-foreground">
-                  {univ.durationYears}-Year Total
-                </span>
-              </div>
-
-              {/* The pivotal 3-number visual */}
-              <div className="bg-secondary/40 rounded-xl p-4 border border-border space-y-3">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-muted-foreground">
-                    Cost of Attendance ({univ.durationYears}-yr):
-                  </span>
-                  <span className="font-mono font-bold text-sm text-muted-foreground">
-                    {money(univ.costs.totalDegree, univ.costs.currency)}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-primary font-medium">Expected / Identified Funding:</span>
-                  <span className="font-mono font-bold text-sm text-primary">
-                    Pending verified data
-                  </span>
-                </div>
-                <div className="pt-2 border-t border-border flex justify-between items-center text-xs">
-                  <span className="text-bronze font-bold uppercase tracking-wider">
-                    Remaining Family Gap:
-                  </span>
-                  <span className="font-mono font-extrabold text-base text-bronze">
-                    Pending verified data
-                  </span>
-                </div>
-              </div>
-
-              <div className="text-xs text-muted-foreground space-y-1">
-                <p>• Tuition per year: {formatTuition(univ)}</p>
-                <p>• Estimated living/housing: {formatLiving(univ)}/yr</p>
-                <p>• Affordability index: {univ.affordabilityIndex.category}</p>
-              </div>
-
-              <div className="pt-2">
-                <Link to="/fund">
-                  <Button
-                    variant="outline"
-                    className="w-full text-xs border-border hover:bg-secondary"
-                  >
-                    Open in Family Education Capital Plan →
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Strategic Pathway Pivots */}
-            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-border pb-3">
-                <h3 className="font-display font-bold text-base text-foreground flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-primary" />
-                  <span>Strategic Alternative Pathways</span>
-                </h3>
-                <span className="text-xs text-muted-foreground">Illustrative options</span>
-              </div>
-
-              <p className="text-xs text-muted-foreground">
-                Institutions and programs that may offer comparable academic objectives, often with
-                different tuition structures or admission predictability:
-              </p>
-
-              {source === "sanity" ? (
-                <p className="text-xs text-muted-foreground italic">
-                  EvidaPath will surface verified alternative pathways once they are sourced for
-                  this university. We do not suggest specific alternatives until they are verified
-                  against real data.
-                </p>
-              ) : (
-                <div className="space-y-2.5">
-                  {analysis.pathwayFlexibility.options.map((opt, idx) => (
-                    <div
-                      key={idx}
-                      className="p-3 rounded-lg border border-border bg-secondary/30 flex items-center justify-between text-xs"
-                    >
-                      <div>
-                        <span className="font-semibold text-foreground block">{opt.name}</span>
-                        <span className="text-[10px] text-muted-foreground">{opt.type}</span>
-                      </div>
-                      <span className="font-mono font-bold text-muted-foreground">
-                        {opt.costDelta}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              <div className="pt-2 border-t border-border flex justify-between items-center text-xs">
-                <span className="text-muted-foreground">
-                  Official source: {univ.officialSourceUrl}
-                </span>
-                <span className="text-muted-foreground">{univ.lastVerified}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </section>
+      ) : (
+        <p className="text-sm text-muted-foreground">
+          University data is unavailable right now — please try again shortly.
+        </p>
+      )}
     </div>
   );
-}
-
-function formatTuition(univ: University): string {
-  if (isPending(univ.costs.tuitionPerYear)) return "Pending verified data";
-  return `$${univ.costs.tuitionPerYear!.toLocaleString()} ${univ.costs.currency}`;
-}
-
-function formatLiving(univ: University): string {
-  if (isPending(univ.costs.livingPerYear)) return "Pending verified data";
-  return `$${univ.costs.livingPerYear!.toLocaleString()} ${univ.costs.currency}`;
 }

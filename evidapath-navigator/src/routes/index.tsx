@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
+import { useMemo } from "react";
 import {
   ArrowRight,
   Compass,
@@ -19,9 +18,8 @@ import { Button } from "../components/ui/button";
 import { PathwaysEntryHero } from "../components/PathwaysEntryHero";
 import { DecisionModelDemo } from "../components/DecisionModelDemo";
 import { INTELLIGENCE_ARTICLES } from "../lib/mock-data";
-import type { University, Scholarship } from "../lib/mock-data";
-import { getUniversities } from "../lib/universities.functions";
-import { getScholarships } from "../lib/scholarships.functions";
+import { useLiveData } from "../lib/use-live-data";
+import { ReadinessMap } from "../components/ReadinessMap";
 import { formatCost } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
@@ -51,30 +49,17 @@ export const Route = createFileRoute("/")({
 function Index() {
   // Featured cards come from live data: universities with a verified full annual
   // cost, and scholarships whose guaranteed/competitive basis is confirmed.
-  const [featuredUnis, setFeaturedUnis] = useState<University[]>([]);
-  const [featuredScholarships, setFeaturedScholarships] = useState<Scholarship[]>([]);
-  const fetchUniversities = useServerFn(getUniversities);
-  const fetchScholarships = useServerFn(getScholarships);
-  useEffect(() => {
-    let active = true;
-    fetchUniversities()
-      .then((res) => {
-        if (!active) return;
-        const priced = res.universities.filter((u) => u.costs.totalAnnual != null);
-        setFeaturedUnis((priced.length >= 3 ? priced : res.universities).slice(0, 3));
-      })
-      .catch(() => {});
-    fetchScholarships()
-      .then((res) => {
-        if (!active) return;
-        const confirmed = res.scholarships.filter((s) => s.selectionBasis);
-        setFeaturedScholarships((confirmed.length >= 3 ? confirmed : res.scholarships).slice(0, 3));
-      })
-      .catch(() => {});
-    return () => {
-      active = false;
-    };
-  }, [fetchUniversities, fetchScholarships]);
+  const { data } = useLiveData();
+  const featuredUnis = useMemo(() => {
+    const all = data?.universities ?? [];
+    const priced = all.filter((u) => u.costs.totalAnnual != null);
+    return (priced.length >= 3 ? priced : all).slice(0, 3);
+  }, [data]);
+  const featuredScholarships = useMemo(() => {
+    const all = data?.scholarships ?? [];
+    const confirmed = all.filter((s) => s.selectionBasis);
+    return (confirmed.length >= 3 ? confirmed : all).slice(0, 3);
+  }, [data]);
 
   return (
     <div className="space-y-20 sm:space-y-28 pb-20">
@@ -271,7 +256,7 @@ function Index() {
           </p>
         </div>
 
-        <DecisionModelDemo />
+        <DecisionModelDemo data={data} />
       </section>
 
       {/* 5. ACADEMIC READINESS PROFILE CALLOUT */}
@@ -300,33 +285,7 @@ function Index() {
             </div>
           </div>
 
-          {/* Visual Mini Diagnostic Preview Card */}
-          <div className="w-full lg:w-96 bg-card rounded-2xl border border-border p-5 shadow-sm space-y-3.5">
-            <div className="flex items-center justify-between border-b border-border pb-3">
-              <span className="text-xs font-semibold text-foreground">Sample Readiness Map</span>
-              <span className="text-[10px] bg-secondary text-muted-foreground px-2 py-0.5 rounded font-mono">
-                Illustrative preview
-              </span>
-            </div>
-            <div className="space-y-2 text-xs">
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">High Readiness Programs:</span>
-                <span className="font-mono font-medium text-muted-foreground">Pending data</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Prerequisite Action Needed:</span>
-                <span className="font-mono font-medium text-muted-foreground">Pending data</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Average Net Degree Cost:</span>
-                <span className="font-mono font-medium text-muted-foreground">Pending data</span>
-              </div>
-            </div>
-            <div className="pt-2 border-t border-border flex items-center justify-between text-[11px] text-muted-foreground">
-              <span>Confidence: Pending verified data</span>
-              <span className="text-muted-foreground font-medium">Illustrative preview</span>
-            </div>
-          </div>
+          <ReadinessMap data={data} />
         </div>
       </section>
 

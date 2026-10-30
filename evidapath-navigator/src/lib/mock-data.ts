@@ -81,6 +81,8 @@ export interface University {
 export interface ProgramView {
   name: string;
   fieldOfStudy: string;
+  /** ISO language codes of instruction, e.g. ["en"] or ["de"]. */
+  languages?: string[];
   degree: string;
   durationYears: number;
   costs: {
@@ -120,6 +122,10 @@ export interface Scholarship {
   applicationDeadline?: string;
   // Only set when the official source makes it clear.
   selectionBasis?: "guaranteed" | "competitive";
+  /** Sanity university ids this scholarship applies to (for per-university matching). */
+  universityIds?: string[];
+  /** Raw eligible_citizenships ("all", ISO codes, or descriptive text). */
+  eligibleCitizenships?: string[];
   verificationStatus: string;
   lastChecked: string;
   officialSource: string;

@@ -38,6 +38,7 @@ import { CounselingWaitlist } from "../components/CounselingWaitlist";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { DataStatus, StatusChip, PendingValue } from "../components/DataStatus";
+import { analyze } from "../lib/decision-engine";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
 export const Route = createFileRoute("/find-my-path")({
@@ -470,17 +471,34 @@ function FindMyPathPage() {
                       <div className="rounded-lg border border-border bg-secondary/30 p-3 text-xs space-y-1">
                         <p className="font-semibold text-foreground">Why this made your list</p>
                         <p className="text-muted-foreground">
-                          Matches your subject interest and country preference. A personal fit
-                          analysis against your grades isn't available yet.
+                          Matches your subject interest and country preference.
+                        </p>
+                        <p className="text-foreground">
+                          <span className="font-semibold">Your grades: </span>
+                          {
+                            analyze(
+                              u,
+                              {
+                                curriculum: answers.curriculum,
+                                gradeBand: answers.gradeBand,
+                                subject: answers.subject,
+                                budgetUsd: Number(answers.budget) || BUDGET_MAX,
+                                citizenship: answers.citizenship,
+                              },
+                              [],
+                              [],
+                              fx,
+                            ).academic.headline
+                          }
                         </p>
                       </div>
                       <div className="flex flex-wrap gap-2">
-                        <Link to="/analyze">
+                        <Link to="/analyze" search={{ uni: u.id }}>
                           <Button
                             size="sm"
                             className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
                           >
-                            Explore this option <ArrowRight className="w-3 h-3" />
+                            Analyze my fit <ArrowRight className="w-3 h-3" />
                           </Button>
                         </Link>
                         <Button
