@@ -1,6 +1,8 @@
+import { useUniversitiesFn } from "../lib/use-live-data";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
+import { usePaged } from "../lib/use-paged";
+import { ShowMore } from "../components/ShowMore";
 import {
   GraduationCap,
   Search,
@@ -11,7 +13,6 @@ import {
   Filter,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { getUniversities } from "../lib/universities.functions";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
@@ -45,7 +46,7 @@ function UniversitiesDirectoryPage() {
   const [source, setSource] = useState<"sanity" | "mock" | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchUniversities = useServerFn(getUniversities);
+  const fetchUniversities = useUniversitiesFn();
   useEffect(() => {
     let active = true;
     fetchUniversities()
@@ -76,6 +77,7 @@ function UniversitiesDirectoryPage() {
     const matchesCountry = selectedCountry === "All" || u.country === selectedCountry;
     return matchesQuery && matchesCountry;
   });
+  const paged = usePaged(filtered, `${query}|${selectedCountry}`);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
@@ -145,10 +147,13 @@ function UniversitiesDirectoryPage() {
         </p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((univ, i) => (
+          {paged.visible.map((univ, i) => (
             <UniversityCard key={univ.id} univ={univ} index={i} />
           ))}
         </div>
+      )}
+      {!loading && (
+        <ShowMore remaining={paged.remaining} onClick={paged.showMore} noun="universities" />
       )}
     </div>
   );

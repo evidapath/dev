@@ -1,11 +1,10 @@
+import { useUniversitiesFn, useScholarshipsFn, useFxRatesFn } from "../lib/use-live-data";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useMemo, useState } from "react";
 import { BarChart3, Pencil } from "lucide-react";
 import { requireAuth } from "../lib/route-guard";
-import { getUniversities } from "../lib/universities.functions";
-import { getScholarships } from "../lib/scholarships.functions";
-import { getFxRates, type FxRates } from "../lib/fx.functions";
+import { type FxRates } from "../lib/fx.functions";
 import { getProfile, listSavedUniversities } from "../lib/profile.functions";
 import type { Scholarship, University } from "../lib/mock-data";
 import { analyze, type StudentInput } from "../lib/decision-engine";
@@ -75,9 +74,9 @@ function AnalyzePage() {
   const [uniId, setUniId] = useState(uni ?? "");
   const [loading, setLoading] = useState(true);
 
-  const fetchUnis = useServerFn(getUniversities);
-  const fetchSchols = useServerFn(getScholarships);
-  const fetchFx = useServerFn(getFxRates);
+  const fetchUnis = useUniversitiesFn();
+  const fetchSchols = useScholarshipsFn();
+  const fetchFx = useFxRatesFn();
   const fetchProfile = useServerFn(getProfile);
   const fetchSaved = useServerFn(listSavedUniversities);
 

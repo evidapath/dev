@@ -1,5 +1,5 @@
+import { useUniversitiesFn } from "../lib/use-live-data";
 import { useEffect, useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -13,7 +13,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Button } from "./ui/button";
-import { getUniversities } from "../lib/universities.functions";
 import type { University } from "../lib/mock-data";
 
 export function PathwaysEntryHero() {
@@ -21,7 +20,7 @@ export function PathwaysEntryHero() {
   const [selectedInterest, setSelectedInterest] = useState<string>("Computer Science");
   const [selectedTargetUniv, setSelectedTargetUniv] = useState<string>("");
   const [universities, setUniversities] = useState<University[]>([]);
-  const fetchUniversities = useServerFn(getUniversities);
+  const fetchUniversities = useUniversitiesFn();
   useEffect(() => {
     let active = true;
     fetchUniversities()

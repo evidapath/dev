@@ -1,11 +1,10 @@
+import { useUniversitiesFn, useFxRatesFn } from "../lib/use-live-data";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { requireAuth } from "../lib/route-guard";
 import { useEffect, useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
 import { PiggyBank, Scale } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { getUniversities } from "../lib/universities.functions";
-import { getFxRates, toUsd, type FxRates } from "../lib/fx.functions";
+import { toUsd, type FxRates } from "../lib/fx.functions";
 import type { University } from "../lib/mock-data";
 import { isPending } from "../lib/format";
 import { VerifiedAwardsPanel } from "../components/offer-vault/VerifiedAwardsPanel";
@@ -87,8 +86,8 @@ function FundPage() {
   const [expectedFamilyContribution, setExpectedFamilyContribution] = useState(35000); // per year
   const [appliedScholarship, setAppliedScholarship] = useState(15000); // per year
 
-  const fetchUniversities = useServerFn(getUniversities);
-  const fetchFx = useServerFn(getFxRates);
+  const fetchUniversities = useUniversitiesFn();
+  const fetchFx = useFxRatesFn();
   useEffect(() => {
     let active = true;
     fetchUniversities().then((res) => {

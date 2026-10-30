@@ -1,3 +1,4 @@
+import { useUniversitiesFn } from "../lib/use-live-data";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
@@ -21,7 +22,6 @@ import {
   deleteApplication,
 } from "../lib/offer-vault.functions";
 import type { University } from "../lib/mock-data";
-import { getUniversities } from "../lib/universities.functions";
 import type { ApplicationStatus, StudentApplication } from "../lib/offer-vault.types";
 import { APPLICATION_STATUSES } from "../lib/offer-vault.types";
 import {
@@ -69,7 +69,7 @@ function ApplicationsPage() {
   const upsertFn = useServerFn(upsertApplication);
   const deleteFn = useServerFn(deleteApplication);
 
-  const getUnivFn = useServerFn(getUniversities);
+  const getUnivFn = useUniversitiesFn();
 
   const { data: applications = [] } = useQuery({
     queryKey: ["applications"],

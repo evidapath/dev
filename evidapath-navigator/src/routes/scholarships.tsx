@@ -1,6 +1,8 @@
+import { useScholarshipsFn } from "../lib/use-live-data";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
+import { usePaged } from "../lib/use-paged";
+import { ShowMore } from "../components/ShowMore";
 import {
   BookOpen,
   ShieldCheck,
@@ -12,7 +14,6 @@ import {
   Clock,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { getScholarships } from "../lib/scholarships.functions";
 import type { Scholarship } from "../lib/mock-data";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
@@ -48,7 +49,7 @@ function ScholarshipsGraphPage() {
   const [source, setSource] = useState<"sanity" | "mock" | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchScholarships = useServerFn(getScholarships);
+  const fetchScholarships = useScholarshipsFn();
   useEffect(() => {
     let active = true;
     fetchScholarships()
@@ -81,6 +82,7 @@ function ScholarshipsGraphPage() {
 
     return matchesSearch && matchesCountry;
   });
+  const paged = usePaged(filtered, `${search}|${selectedCountry}`);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
@@ -174,7 +176,7 @@ function ScholarshipsGraphPage() {
         </p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((s, i) => (
+          {paged.visible.map((s, i) => (
             <div
               key={s.id}
               className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between space-y-5 transition-all duration-200 ease-out hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-3 fill-mode-both"
@@ -275,6 +277,9 @@ function ScholarshipsGraphPage() {
             </div>
           ))}
         </div>
+      )}
+      {!loading && (
+        <ShowMore remaining={paged.remaining} onClick={paged.showMore} noun="scholarships" />
       )}
     </div>
   );

@@ -1,3 +1,4 @@
+import { useUniversitiesFn, useFxRatesFn } from "../lib/use-live-data";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
@@ -17,8 +18,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
-import { getUniversities } from "../lib/universities.functions";
-import { getFxRates, type FxRates } from "../lib/fx.functions";
+import { type FxRates } from "../lib/fx.functions";
 import {
   BUDGET_MAX,
   BUDGET_MIN,
@@ -108,8 +108,8 @@ function FindMyPathPage() {
   const [fromProfile, setFromProfile] = useState(false);
   const navigate = useNavigate();
 
-  const fetchUniversities = useServerFn(getUniversities);
-  const fetchFx = useServerFn(getFxRates);
+  const fetchUniversities = useUniversitiesFn();
+  const fetchFx = useFxRatesFn();
   useEffect(() => {
     let active = true;
     fetchUniversities().then((res) => {

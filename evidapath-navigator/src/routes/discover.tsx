@@ -1,3 +1,4 @@
+import { useUniversitiesFn, useFxRatesFn } from "../lib/use-live-data";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
@@ -14,8 +15,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
-import { getUniversities } from "../lib/universities.functions";
-import { getFxRates, type FxRates } from "../lib/fx.functions";
+import { type FxRates } from "../lib/fx.functions";
 import { BUDGET_MAX, annualCostUsd, budgetFit } from "../lib/budget";
 import { listSavedUniversities, saveUniversity } from "../lib/profile.functions";
 import type { University } from "../lib/mock-data";
@@ -53,8 +53,8 @@ function DiscoverPage() {
   const [source, setSource] = useState<"sanity" | "mock" | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchUniversities = useServerFn(getUniversities);
-  const fetchFx = useServerFn(getFxRates);
+  const fetchUniversities = useUniversitiesFn();
+  const fetchFx = useFxRatesFn();
   const [fx, setFx] = useState<FxRates | null>(null);
   useEffect(() => {
     let active = true;
