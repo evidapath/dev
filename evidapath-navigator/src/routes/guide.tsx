@@ -141,9 +141,9 @@ function GuidePage() {
             intro="The first-run experience. A visitor does not need to understand the whole platform first — they answer a few questions and see realistic options."
           >
             <div className="flex items-center gap-2">
-              <StatusBadge status="BETA" />
+              <StatusBadge status="LIVE" />
               <span className="text-xs text-muted-foreground">
-                Intake is operational; pathway results use illustrative data.
+                Intake is operational; results use live, verified university data.
               </span>
             </div>
             <FeatureBlock
@@ -160,7 +160,7 @@ function GuidePage() {
                 "Step 7 — Optional preferences (city, language, degree length)",
                 "Click Show My Options.",
               ]}
-              expected="The intake completes and shows 5–8 illustrative pathway cards. Answers stay on-device for the session; sign in to save permanently."
+              expected="The intake completes and shows universities grouped by budget fit (within, not fully verified, above), each with how your grades compare. Signed-in answers are saved to your profile."
             />
             <ScreenshotPlaceholder label="Find My Path guided intake + step indicator" />
           </Section>
@@ -179,7 +179,7 @@ function GuidePage() {
                 "Use Explore this option, Save, or Compare from the expanded view.",
                 "Start over, browse all universities, or sign in to save your path.",
               ]}
-              expected="Cards expand inline. All figures are clearly labeled illustrative until verified data is connected. No admissions probability or opaque score is produced."
+              expected="Cards expand inline with verified costs and requirements; 'Analyze my fit' opens the full analysis. No admissions probability or opaque score is produced."
             />
             <ScreenshotPlaceholder label="Pathway results cards with progressive disclosure" />
           </Section>
@@ -252,9 +252,10 @@ function GuidePage() {
             intro="The diagnostic starting point for your path. Protected route."
           >
             <div className="flex items-center gap-2">
-              <StatusBadge status="BETA" />
+              <StatusBadge status="LIVE" />
               <span className="text-xs text-muted-foreground">
-                Form is operational and records a lead; live readiness analysis is illustrative.
+                Form records a lead and shows a live readiness map against every university's
+                published requirement.
               </span>
             </div>
             <FeatureBlock
@@ -297,9 +298,9 @@ function GuidePage() {
             intro="Public route. University discovery and the University Cost Database."
           >
             <div className="flex items-center gap-2">
-              <StatusBadge status="MOCK DATA" />
+              <StatusBadge status="LIVE" />
               <span className="text-xs text-muted-foreground">
-                University records are illustrative/demo, not verified.
+                51 universities from verified Sanity data, traced to official sources.
               </span>
             </div>
             <FeatureBlock
@@ -311,7 +312,7 @@ function GuidePage() {
                 "Review each card: degree duration, academic threshold, tuition, living cost, total degree outlay, affordability category.",
                 "Use Analyze Fit or Model in Plan actions.",
               ]}
-              expected="Filtered university cards appear. All figures are clearly labeled illustrative — 'University data currently being verified.'"
+              expected="Filtered university cards appear with official costs, requirements per curriculum, deadlines and sources. Figures that aren't published show as pending, never invented."
             />
             <ScreenshotPlaceholder
               label="EvidaPath University Cost Database"
@@ -485,7 +486,8 @@ function GuidePage() {
             <div className="flex items-center gap-2">
               <StatusBadge status="BETA" />
               <span className="text-xs text-muted-foreground">
-                Interactive; cost basis is illustrative until verified data is connected.
+                Interactive; university costs are live and verified, family and scholarship figures
+                are your assumptions.
               </span>
             </div>
             <FeatureBlock

@@ -1,16 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
-import {
-  ShieldCheck,
-  ArrowRight,
-  BookOpen,
-  TrendingUp,
-  Sparkles,
-  Filter,
-  FileText,
-} from "lucide-react";
-import { Button } from "../components/ui/button";
-import { INTELLIGENCE_ARTICLES } from "../lib/mock-data";
+import { useMemo, useState } from "react";
+import { ArrowRight, Database, ExternalLink, ShieldCheck } from "lucide-react";
+import { useLiveData } from "../lib/use-live-data";
+import { buildBriefs, type Brief, type BriefCategory } from "../lib/data-briefs";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
 export const Route = createFileRoute("/intelligence")({
@@ -28,7 +20,8 @@ export const Route = createFileRoute("/intelligence")({
       },
       {
         property: "og:description",
-        content: "Analytical briefs and admissions analyses for ambitious families.",
+        content:
+          "Live data briefs on costs, admissions, scholarships and deadlines, computed from verified university records.",
       },
       ogUrlMeta("/intelligence"),
     ],
@@ -38,175 +31,147 @@ export const Route = createFileRoute("/intelligence")({
 });
 
 function IntelligencePage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const categories = [
+  const { data, loading } = useLiveData();
+  const briefs = useMemo(() => (data ? buildBriefs(data) : []), [data]);
+  const [category, setCategory] = useState<"All" | BriefCategory>("All");
+  const categories: ("All" | BriefCategory)[] = [
     "All",
-    "Admissions Intelligence",
     "Affordability",
-    "Scholarships & Funding",
-    "Global University Markets",
+    "Admissions",
+    "Scholarships",
+    "Deadlines",
   ];
-
-  const filtered = INTELLIGENCE_ARTICLES.filter(
-    (a) => selectedCategory === "All" || a.category === selectedCategory,
-  );
-
-  const featured = (INTELLIGENCE_ARTICLES.find((a) => a.featured) ?? INTELLIGENCE_ARTICLES[0])!;
+  const shown = briefs.filter((b) => category === "All" || b.category === category);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
-      {/* Header */}
-      <div className="max-w-3xl space-y-3">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+      <header className="max-w-3xl space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
           <ShieldCheck className="w-3.5 h-3.5" />
-          <span>EvidaPath Research Publications</span>
+          <span>EvidaPath Intelligence</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
           Evidence for better education decisions.
         </h1>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Not a generic admissions blog. EvidaPath Intelligence will publish analytical briefs using
-          EvidaPath data to explain how academics, affordability, scholarships, and pathways
-          interact. The publications below are in development.
+          Live data briefs, computed directly from EvidaPath's verified university and scholarship
+          records. When the data is corrected or extended, these findings update with it.
         </p>
-        <div className="flex items-center gap-2 text-[11px] text-muted-foreground bg-secondary/50 border border-border rounded-lg px-3 py-2">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
-          <span>
-            Illustrative product preview. Research findings will appear here once produced from
-            verified EvidaPath data.
-          </span>
-        </div>
-      </div>
+      </header>
 
-      {/* Featured Research Story */}
-      <div className="rounded-3xl border border-border bg-gradient-to-br from-card via-card to-secondary/30 p-8 sm:p-12 shadow-xs space-y-6">
-        <div className="flex flex-wrap items-center gap-3 text-xs">
-          <span className="font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
-            Planned Research Brief • {featured.category}
-          </span>
-          <span className="text-muted-foreground font-mono">{featured.date}</span>
-          <span className="text-muted-foreground">{featured.readTime}</span>
-        </div>
-
-        <h2 className="text-2xl sm:text-4xl font-display font-extrabold text-foreground leading-tight max-w-4xl">
-          {featured.title}
-        </h2>
-
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl">
-          {featured.lead}
-        </p>
-
-        {/* Key Takeaway box */}
-        <div className="bg-secondary/60 rounded-2xl p-5 border border-border/80 max-w-3xl space-y-1.5">
-          <span className="text-xs font-bold uppercase tracking-wider text-foreground block">
-            Intended Analysis
-          </span>
-          <p className="text-xs sm:text-sm text-foreground/90 font-medium leading-relaxed">
-            {featured.keyTakeaway}
-          </p>
-          <div className="pt-2 text-[11px] text-muted-foreground font-mono">
-            {featured.dataSummary}
-          </div>
-        </div>
-
-        <div className="pt-2 flex flex-wrap gap-4 items-center">
-          <Link to="/fund">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 text-xs h-10">
-              Model Your Budget in Capital Plan →
-            </Button>
-          </Link>
-          <Link to="/universities">
-            <Button
-              variant="outline"
-              className="border-border text-foreground hover:bg-secondary text-xs h-10"
-            >
-              Explore Underlying University Costs
-            </Button>
-          </Link>
-        </div>
-      </div>
-
-      {/* Categories Filter */}
-      <div className="flex flex-wrap gap-2 border-b border-border pb-4">
-        {categories.map((cat) => (
+      <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Brief category">
+        {categories.map((c) => (
           <button
-            key={cat}
-            onClick={() => setSelectedCategory(cat)}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
-              selectedCategory === cat
-                ? "bg-foreground text-background font-semibold"
-                : "bg-secondary/60 text-muted-foreground hover:text-foreground"
+            key={c}
+            role="tab"
+            aria-selected={category === c}
+            onClick={() => setCategory(c)}
+            className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+              category === c
+                ? "bg-primary text-primary-foreground border-primary"
+                : "bg-card text-muted-foreground border-border hover:text-foreground"
             }`}
           >
-            {cat}
+            {c}
           </button>
         ))}
       </div>
 
-      {/* Articles Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.map((article) => (
-          <div
-            key={article.slug}
-            className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between space-y-6 hover:border-primary/40 transition-all"
-          >
-            <div className="space-y-3">
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded">
-                  {article.category}
-                </span>
-                <span className="text-muted-foreground font-mono">{article.readTime}</span>
-              </div>
+      {loading && !data ? (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" aria-busy="true">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div key={i} className="h-72 rounded-2xl bg-secondary/60 animate-pulse" />
+          ))}
+        </div>
+      ) : !data ? (
+        <p className="text-sm text-muted-foreground">
+          Live data is unavailable right now — please try again shortly.
+        </p>
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {shown.map((b) => (
+            <BriefCard key={b.slug} b={b} />
+          ))}
+        </div>
+      )}
 
-              <h3 className="font-display font-bold text-lg text-foreground leading-snug">
-                {article.title}
-              </h3>
-
-              <p className="text-xs text-muted-foreground leading-relaxed">{article.lead}</p>
-
-              <div className="bg-secondary/30 rounded-lg p-3 text-[11px] text-muted-foreground border border-border/60">
-                <strong className="text-foreground block mb-0.5">Intended analysis:</strong>
-                {article.keyTakeaway}
-              </div>
-            </div>
-
-            <div className="pt-4 border-t border-border flex items-center justify-between">
-              <Link
-                to="/analyze"
-                className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
-              >
-                <span>Explore in Model</span>
-                <ArrowRight className="w-3 h-3" />
-              </Link>
-              <span className="text-[11px] text-muted-foreground">{article.date}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Annual Flagship Report Teaser: State of University Affordability */}
-      <div className="rounded-3xl border border-border bg-secondary/50 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="space-y-2 max-w-xl">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-primary">
-            EvidaPath Research • Annual Report
-          </span>
-          <h3 className="font-display font-bold text-xl sm:text-2xl text-foreground">
-            State of University Affordability
-          </h3>
-          <p className="text-xs sm:text-sm text-muted-foreground">
-            What university really costs, and where the opportunities are changing. A planned
-            EvidaPath research publication benchmarking net multi-year outlays across major global
-            university markets. Report in development.
+      <div className="rounded-2xl border border-border bg-secondary/40 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <p className="font-display font-bold text-foreground">
+            See how these findings apply to you
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Run the same data against your own grades, budget and citizenship.
           </p>
         </div>
-
-        <Link to="/academic-readiness">
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 text-xs h-10">
-            Request Report & Synthesis →
-          </Button>
+        <Link
+          to="/find-my-path"
+          className="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors shrink-0"
+        >
+          Find My Path <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
     </div>
+  );
+}
+
+function BriefCard({ b }: { b: Brief }) {
+  return (
+    <article
+      id={b.slug}
+      className="rounded-2xl border border-border bg-card p-6 space-y-4 shadow-xs flex flex-col"
+    >
+      <div className="flex items-center justify-between gap-2 text-xs">
+        <span className="font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">
+          {b.category}
+        </span>
+        <span className="inline-flex items-center gap-1 text-muted-foreground">
+          <Database className="w-3 h-3" /> Live data
+        </span>
+      </div>
+      <h2 className="font-display font-bold text-xl text-foreground leading-snug">{b.title}</h2>
+      <p className="text-sm text-muted-foreground leading-relaxed">{b.lead}</p>
+      {b.rows.length > 0 && (
+        <div className="rounded-xl border border-border overflow-hidden">
+          <table className="w-full text-xs">
+            <thead className="bg-secondary/60 text-muted-foreground">
+              <tr>
+                <th className="text-left font-semibold px-3 py-2">{b.columns[0]}</th>
+                <th className="text-right font-semibold px-3 py-2">{b.columns[1]}</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {b.rows.map((r) => (
+                <tr key={r.label}>
+                  <td className="px-3 py-2 text-foreground">
+                    {r.href ? (
+                      <a
+                        href={r.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary inline-flex items-center gap-1"
+                      >
+                        {r.label} <ExternalLink className="w-3 h-3 opacity-60" />
+                      </a>
+                    ) : (
+                      r.label
+                    )}
+                  </td>
+                  <td className="px-3 py-2 text-right font-mono text-foreground whitespace-nowrap">
+                    {r.value}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      <div className="mt-auto space-y-1.5 pt-1">
+        <p className="text-sm text-foreground font-medium">{b.takeaway}</p>
+        <p className="text-[11px] text-muted-foreground">
+          Computed from {b.basis}.{b.money ? " USD at ECB reference rates." : ""}
+        </p>
+      </div>
+    </article>
   );
 }

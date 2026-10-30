@@ -17,7 +17,7 @@ import {
 import { Button } from "../components/ui/button";
 import { PathwaysEntryHero } from "../components/PathwaysEntryHero";
 import { DecisionModelDemo } from "../components/DecisionModelDemo";
-import { INTELLIGENCE_ARTICLES } from "../lib/mock-data";
+import { buildBriefs } from "../lib/data-briefs";
 import { useLiveData } from "../lib/use-live-data";
 import { ReadinessMap } from "../components/ReadinessMap";
 import { formatCost } from "../lib/format";
@@ -55,6 +55,7 @@ function Index() {
     const priced = all.filter((u) => u.costs.totalAnnual != null);
     return (priced.length >= 3 ? priced : all).slice(0, 3);
   }, [data]);
+  const briefs = useMemo(() => (data ? buildBriefs(data) : []), [data]);
   const featuredScholarships = useMemo(() => {
     const all = data?.scholarships ?? [];
     const confirmed = all.filter((s) => s.selectionBasis);
@@ -449,20 +450,20 @@ function Index() {
               Evidence for better education decisions.
             </h2>
             <p className="text-sm text-muted-foreground mt-2 max-w-2xl">
-              Research publications examining how academics, affordability, scholarships, geography,
-              and pathways interact.
+              Live data briefs on costs, admissions, scholarships and deadlines — computed straight
+              from EvidaPath's verified records.
             </p>
           </div>
 
           <Link to="/intelligence">
             <Button variant="outline" className="border-border text-foreground hover:bg-secondary">
-              All Research Articles
+              All data briefs
             </Button>
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {INTELLIGENCE_ARTICLES.slice(0, 3).map((article) => (
+          {briefs.slice(0, 3).map((article) => (
             <div
               key={article.slug}
               className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between"
@@ -472,7 +473,7 @@ function Index() {
                   <span className="font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded">
                     {article.category}
                   </span>
-                  <span className="text-muted-foreground">{article.readTime}</span>
+                  <span className="text-muted-foreground">Live data</span>
                 </div>
                 <h3 className="font-display font-bold text-base text-foreground leading-snug">
                   {article.title}
@@ -483,9 +484,10 @@ function Index() {
               <div className="mt-6 pt-4 border-t border-border">
                 <Link
                   to="/intelligence"
+                  hash={article.slug}
                   className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
                 >
-                  <span>Read Brief & Data Model</span>
+                  <span>Read the brief</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>

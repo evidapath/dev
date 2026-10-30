@@ -292,14 +292,14 @@ export function StatusMap() {
       note: "beforeLoad guards; redirect param preserved.",
     },
     {
-      area: "Academic Readiness Profile form",
-      status: "BETA",
-      note: "Form submits to lead tracking; analysis is illustrative.",
+      area: "Academic Readiness map",
+      status: "LIVE",
+      note: "Form sends a lead to GHL and shows a live readiness map: grades vs every university's published requirement.",
     },
     {
       area: "Find My Path guided intake",
-      status: "BETA",
-      note: "Live university data; budget, country and subject filters; profile remembered when signed in. No grade-fit scoring yet.",
+      status: "LIVE",
+      note: "Live university data; budget, country and subject filters; profile remembered when signed in; grades compared with each published requirement.",
     },
     {
       area: "Dashboard (Next Step)",
@@ -328,6 +328,16 @@ export function StatusMap() {
     },
     { area: "Compare Offers", status: "LIVE", note: "Side-by-side table; needs ≥2 offers." },
     {
+      area: "Analyze (decision engine)",
+      status: "LIVE",
+      note: "Academic fit, admissions evidence, cost vs budget, eligible scholarships, alternatives and next steps — from verified data; no admission chances.",
+    },
+    {
+      area: "Plan",
+      status: "LIVE",
+      note: "Dated action plan from saved universities: deadlines, scholarships, subjects, tests. Ticks are remembered on this device.",
+    },
+    {
       area: "Family Education Capital Plan",
       status: "BETA",
       note: "Live university costs converted to USD; family and scholarship figures are user assumptions.",
@@ -343,9 +353,9 @@ export function StatusMap() {
       note: "Records from Sanity with guaranteed/competitive basis where confirmed.",
     },
     {
-      area: "Intelligence articles",
-      status: "MOCK DATA",
-      note: "Example headlines, not published research.",
+      area: "Intelligence data briefs",
+      status: "LIVE",
+      note: "Five briefs computed live from the verified university and scholarship data.",
     },
     {
       area: "Outcomes Dataset",
@@ -396,12 +406,12 @@ export function Limitations() {
       text: "Budgets are compared in USD using European Central Bank reference rates (AED at its 3.6725 peg). Actual costs depend on exchange rates when you pay.",
     },
     {
-      label: "Academic Readiness analysis is illustrative",
-      text: "The form records a lead but does not yet persist a re-editable profile to your account or produce verified readiness analysis.",
+      label: "Grade comparison needs a published number",
+      text: "Grades are compared only where a university publishes a requirement for your curriculum (IB points, A-level grades, GPA). Holistic or A-level-only requirements are shown as text, not compared.",
     },
     {
-      label: "Intelligence articles are example headlines",
-      text: "Article content is placeholder; no published EvidaPath research findings exist yet.",
+      label: "Plan ticks are stored on this device",
+      text: "Completed steps in Plan are remembered in this browser only, not in your account.",
     },
     {
       label: "Outcomes Dataset is not yet available",

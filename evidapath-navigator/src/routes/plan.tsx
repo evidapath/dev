@@ -1,32 +1,36 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { requireAuth } from "../lib/route-guard";
-import { useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { useEffect, useMemo, useState } from "react";
 import {
+  ArrowRight,
+  BookOpen,
   CalendarCheck,
   CheckCircle2,
-  Clock,
-  ShieldCheck,
-  ArrowRight,
-  Target,
+  Circle,
+  CircleHelp,
+  DollarSign,
+  GraduationCap,
   Sparkles,
-  Filter,
 } from "lucide-react";
-import { Button } from "../components/ui/button";
+import { requireAuth } from "../lib/route-guard";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
+import { getProfile, listSavedUniversities } from "../lib/profile.functions";
+import { useLiveData } from "../lib/use-live-data";
+import { analyze, fmtDate, type StudentInput } from "../lib/decision-engine";
 
 export const Route = createFileRoute("/plan")({
   head: () => ({
     meta: [
-      { title: "EvidaPath Plan — Controllable Action Roadmap" },
+      { title: "Your Plan — EvidaPath" },
       {
         name: "description",
         content:
-          "Know what to do next. Organize academic interventions, test prep, prerequisites, and scholarship milestones by timing and controllability.",
+          "A dated action plan built from your saved universities: application and scholarship deadlines, subjects, tests and funding steps.",
       },
-      { property: "og:title", content: "EvidaPath Plan — Know What To Do Next" },
+      { property: "og:title", content: "Your Plan — EvidaPath" },
       {
         property: "og:description",
-        content: "Structured decision milestones prioritized by student controllability.",
+        content: "Know what to do next, and by when, for every university on your path.",
       },
       ogUrlMeta("/plan"),
     ],
@@ -36,235 +40,313 @@ export const Route = createFileRoute("/plan")({
   component: PlanPage,
 });
 
-interface ActionItem {
+type Kind = "deadline" | "scholarship" | "academic" | "language" | "funding" | "evidence";
+
+interface PlanItem {
   id: string;
+  kind: Kind;
   title: string;
-  category: "Academic Rigor" | "Testing" | "Financial / Scholarship" | "Strategic Pathway";
-  timeline: string;
-  gapAddressed: string;
-  controllability: "High Control" | "Moderate Control";
-  impact: "High" | "Structural";
-  whyItMatters: string;
-  completed: boolean;
+  uni: string;
+  uniId: string;
+  date?: string; // ISO yyyy-mm-dd when the official source gives one
+  source?: string;
+}
+
+const KIND_META: Record<Kind, { label: string; icon: typeof CalendarCheck }> = {
+  deadline: { label: "Application", icon: CalendarCheck },
+  scholarship: { label: "Scholarship", icon: Sparkles },
+  academic: { label: "Academic", icon: GraduationCap },
+  language: { label: "Language test", icon: BookOpen },
+  funding: { label: "Funding", icon: DollarSign },
+  evidence: { label: "Ask the university", icon: CircleHelp },
+};
+
+const DONE_KEY = "evidapath.plan.done";
+
+function readDone(): Set<string> {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(DONE_KEY) ?? "[]") as string[]);
+  } catch {
+    return new Set();
+  }
+}
+
+function isoDate(text: string | undefined): string | undefined {
+  const m = text?.match(/\b(20\d{2}-\d{2}-\d{2})\b/);
+  return m?.[1];
 }
 
 function PlanPage() {
-  const [filterCategory, setFilterCategory] = useState("All");
+  const { data, loading } = useLiveData();
+  const [savedIds, setSavedIds] = useState<string[] | null>(null);
+  const [input, setInput] = useState<StudentInput | null>(null);
+  const [done, setDone] = useState<Set<string>>(new Set());
+  const [filter, setFilter] = useState("all");
 
-  const [actions, setActions] = useState<ActionItem[]>([
-    {
-      id: "a1",
-      title: "Target predicted grade elevation in the most relevant advanced subject",
-      category: "Academic Rigor",
-      timeline: "Current term",
-      gapAddressed:
-        "Closes the gap between the student's current evidence and target program requirements",
-      controllability: "High Control",
-      impact: "High",
-      whyItMatters:
-        "Directly strengthens the academic evidence used to evaluate fit against target program prerequisites.",
-      completed: false,
-    },
-    {
-      id: "a2",
-      title: "Complete timed practice for subject-specific admissions tests",
-      category: "Testing",
-      timeline: "Pre-test window",
-      gapAddressed: "Addresses testing components used in shortlisting for selective programs",
-      controllability: "High Control",
-      impact: "High",
-      whyItMatters:
-        "Admissions tests are a controllable lever where preparation can materially affect outcomes for programs that use them.",
-      completed: false,
-    },
-    {
-      id: "a3",
-      title: "Identify and prepare scholarship applications matched to eligibility",
-      category: "Financial / Scholarship",
-      timeline: "Ahead of deadlines",
-      gapAddressed:
-        "Reduces the family capital gap by pursuing funding the student is eligible for",
-      controllability: "Moderate Control",
-      impact: "Structural",
-      whyItMatters:
-        "Scholarships can change the financial picture meaningfully; applying to the right ones is a controllable action.",
-      completed: false,
-    },
-    {
-      id: "a4",
-      title: "Verify diploma equivalency and documentation for alternative-pathway countries",
-      category: "Strategic Pathway",
-      timeline: "Ahead of application windows",
-      gapAddressed: "Removes bureaucratic delays for credible alternative pathways",
-      controllability: "High Control",
-      impact: "Structural",
-      whyItMatters:
-        "Securing documentation early keeps alternative pathways viable as credible backups.",
-      completed: true,
-    },
-    {
-      id: "a5",
-      title: "Draft and review an academic statement evidencing independent intellectual curiosity",
-      category: "Academic Rigor",
-      timeline: "Application window",
-      gapAddressed: "Evidences qualities valued by holistic review committees",
-      controllability: "High Control",
-      impact: "High",
-      whyItMatters:
-        "Differentiates applicants with similar academic profiles during holistic review.",
-      completed: false,
-    },
-  ]);
+  const fetchProfile = useServerFn(getProfile);
+  const fetchSaved = useServerFn(listSavedUniversities);
+  useEffect(() => {
+    setDone(readDone());
+    let live = true;
+    Promise.all([fetchProfile().catch(() => null), fetchSaved().catch(() => [])]).then(
+      ([p, saved]) => {
+        if (!live) return;
+        setSavedIds(saved.map((s) => s.sanity_university_id));
+        setInput({
+          curriculum: p?.curriculum || "IB Diploma",
+          gradeBand: p?.grade_band || "Strong: IB 37-39 / A*AA / GPA 3.8-3.9",
+          subject: p?.intended_subject || "Computer Science",
+          budgetUsd: p?.annual_budget ?? 40000,
+          citizenship: p?.citizenship || "",
+        });
+      },
+    );
+    return () => {
+      live = false;
+    };
+  }, [fetchProfile, fetchSaved]);
 
-  const toggleAction = (id: string) => {
-    setActions(actions.map((a) => (a.id === id ? { ...a, completed: !a.completed } : a)));
-  };
+  const items = useMemo<PlanItem[]>(() => {
+    if (!data || !savedIds || !input) return [];
+    const out: PlanItem[] = [];
+    const today = new Date().toISOString().slice(0, 10);
+    for (const id of savedIds) {
+      const u = data.universities.find((x) => x.id === id);
+      if (!u) continue;
+      const a = analyze(u, input, data.scholarships, data.universities, data.fx);
+      const base = { uni: u.name, uniId: u.id };
+      for (const d of u.deadlines ?? []) {
+        if (!d.deadline || d.deadline.slice(0, 10) < today) continue;
+        out.push({
+          ...base,
+          id: `${u.id}:dl:${d.label}`,
+          kind: "deadline",
+          title: `Submit your application — ${d.label}${d.platform ? ` (via ${d.platform})` : ""}`,
+          date: d.deadline.slice(0, 10),
+          source: u.officialSourceUrl,
+        });
+      }
+      for (const f of a.financial.funding) {
+        if (f.basis === "guaranteed") continue;
+        const date = isoDate(f.deadline);
+        if (date && date < today) continue;
+        out.push({
+          ...base,
+          id: `${u.id}:sch:${f.name}`,
+          kind: "scholarship",
+          title: `Check eligibility and apply: ${f.name}`,
+          ...(date ? { date } : {}),
+          source: f.source,
+        });
+      }
+      for (const l of a.levers) {
+        if (l.kind === "deadline") continue; // already listed with its date
+        if (l.kind === "funding" && /scholarship/i.test(l.text)) continue; // listed above
+        out.push({
+          ...base,
+          id: `${u.id}:lv:${l.text}`,
+          kind: l.kind === "budget" ? "funding" : l.kind,
+          title: l.text,
+        });
+      }
+    }
+    return out;
+  }, [data, savedIds, input]);
 
-  const filtered = actions.filter((a) => filterCategory === "All" || a.category === filterCategory);
+  const toggle = (id: string) =>
+    setDone((cur) => {
+      const next = new Set(cur);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      try {
+        localStorage.setItem(DONE_KEY, JSON.stringify([...next]));
+      } catch {
+        /* storage unavailable — progress just isn't remembered */
+      }
+      return next;
+    });
 
-  const completedCount = actions.filter((a) => a.completed).length;
+  const shown = items.filter((i) => filter === "all" || i.uniId === filter);
+  const dated = shown.filter((i) => i.date).sort((a, b) => a.date!.localeCompare(b.date!));
+  const anytime = shown.filter((i) => !i.date);
+  const unis = Array.from(new Map(items.map((i) => [i.uniId, i.uni])).entries());
+  const completed = items.filter((i) => done.has(i.id)).length;
+  const ready = !loading && savedIds !== null && input !== null;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-      {/* Header */}
-      <div className="max-w-3xl space-y-3">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+      <header className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
           <CalendarCheck className="w-3.5 h-3.5" />
           <span>Decision Suite • Plan</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
-          Know What to Do Next
+          Your plan
         </h1>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Rather than an overwhelming, generic checklist, EvidaPath organizes recommendations by
-          importance, timing, and direct student controllability.
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl">
+          Every step below comes from the universities saved to your path and their official
+          deadlines, requirements and scholarships. Tick things off as you go.
         </p>
-        <div className="flex items-center gap-2 text-[11px] text-muted-foreground bg-secondary/50 border border-border rounded-lg px-3 py-2">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
-          <span>
-            Illustrative product preview. Live plans will be generated from your verified profile
-            and target universities.
-          </span>
-        </div>
-      </div>
+      </header>
 
-      {/* Progress & Category Filter Bar */}
-      <div className="bg-card border border-border rounded-2xl p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="font-display font-bold text-lg text-foreground">Roadmap Progress</span>
-            <span className="text-xs font-mono bg-primary/10 text-primary px-2 py-0.5 rounded font-semibold">
-              {completedCount} of {actions.length} Completed
-            </span>
-          </div>
-          <p className="text-xs text-muted-foreground mt-0.5">
-            Focusing on levers with high student agency and structural impact.
+      {!ready ? (
+        <div className="space-y-3" aria-busy="true">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div key={i} className="h-16 rounded-xl bg-secondary/60 animate-pulse" />
+          ))}
+        </div>
+      ) : savedIds.length === 0 ? (
+        <div className="rounded-2xl border border-dashed border-border bg-card p-8 text-center space-y-3">
+          <p className="font-display font-bold text-lg text-foreground">
+            Save a university to start your plan
           </p>
-        </div>
-
-        {/* Filter buttons */}
-        <div className="flex flex-wrap gap-1.5">
-          {["All", "Academic Rigor", "Testing", "Financial / Scholarship", "Strategic Pathway"].map(
-            (cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilterCategory(cat)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  filterCategory === cat
-                    ? "bg-primary text-primary-foreground font-semibold"
-                    : "bg-secondary text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {cat}
-              </button>
-            ),
-          )}
-        </div>
-      </div>
-
-      {/* Action Item Cards */}
-      <div className="space-y-4">
-        {filtered.map((item) => (
-          <div
-            key={item.id}
-            onClick={() => toggleAction(item.id)}
-            className={`cursor-pointer rounded-2xl border transition-all p-5 sm:p-6 ${
-              item.completed
-                ? "bg-secondary/40 border-border/60 opacity-80"
-                : "bg-card border-border hover:border-primary/50 shadow-xs"
-            }`}
+          <p className="text-sm text-muted-foreground">
+            Your plan is built from the universities on your path — their deadlines, requirements
+            and scholarships.
+          </p>
+          <Link
+            to="/find-my-path"
+            className="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
           >
-            <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
-              <div className="flex items-start gap-3.5">
-                <div
-                  className={`mt-0.5 w-6 h-6 rounded-md border flex items-center justify-center transition-colors ${
-                    item.completed
-                      ? "bg-primary border-primary text-primary-foreground"
-                      : "border-input bg-background"
+            Find universities <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      ) : (
+        <>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div
+              className="flex flex-wrap gap-1.5"
+              role="tablist"
+              aria-label="Filter by university"
+            >
+              {[["all", "All universities"] as const, ...unis].map(([id, name]) => (
+                <button
+                  key={id}
+                  role="tab"
+                  aria-selected={filter === id}
+                  onClick={() => setFilter(id)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+                    filter === id
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-card text-muted-foreground border-border hover:text-foreground"
                   }`}
                 >
-                  {item.completed && <CheckCircle2 className="w-4 h-4" />}
-                </div>
-
-                <div className="space-y-1.5 max-w-3xl">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-secondary text-foreground">
-                      {item.category}
-                    </span>
-                    <span className="text-[11px] font-mono text-muted-foreground flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {item.timeline}
-                    </span>
-                    <span className="text-[10px] font-medium text-primary bg-primary/10 px-2 py-0.5 rounded">
-                      {item.controllability}
-                    </span>
-                  </div>
-
-                  <h3
-                    className={`font-display font-bold text-base text-foreground ${
-                      item.completed ? "line-through text-muted-foreground" : ""
-                    }`}
-                  >
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    <strong className="text-foreground">Why this matters:</strong>{" "}
-                    {item.whyItMatters}
-                  </p>
-
-                  <div className="text-[11px] text-bronze font-medium pt-1">
-                    Addresses gap: {item.gapAddressed}
-                  </div>
-                </div>
-              </div>
-
-              <div className="shrink-0 flex items-center gap-2">
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-secondary border border-border text-foreground">
-                  Impact: {item.impact}
-                </span>
-              </div>
+                  {name}
+                </button>
+              ))}
             </div>
+            <span className="text-xs text-muted-foreground">
+              {completed} of {items.length} done
+            </span>
           </div>
-        ))}
-      </div>
+          <div className="h-1.5 rounded-full bg-secondary overflow-hidden" aria-hidden>
+            <div
+              className="h-full bg-primary transition-all duration-500"
+              style={{ width: `${items.length ? (completed / items.length) * 100 : 0}%` }}
+            />
+          </div>
 
-      {/* Integration to Academic Readiness */}
-      <div className="p-6 rounded-2xl bg-secondary/40 border border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
-          <h4 className="font-display font-bold text-foreground text-sm">
-            Need customized levers for your specific curriculum?
-          </h4>
-          <p className="text-xs text-muted-foreground">
-            Generate an action roadmap based on your predicted grades and target universities.
-          </p>
-        </div>
-        <Link to="/academic-readiness">
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-xs">
-            Generate Custom Plan →
-          </Button>
-        </Link>
-      </div>
+          <PlanSection
+            title="Coming up"
+            empty="No upcoming dated deadlines for this cycle."
+            items={dated}
+            done={done}
+            toggle={toggle}
+          />
+          <PlanSection
+            title="Prepare now"
+            empty="Nothing else to prepare — nice."
+            items={anytime}
+            done={done}
+            toggle={toggle}
+          />
+        </>
+      )}
     </div>
+  );
+}
+
+function PlanSection({
+  title,
+  empty,
+  items,
+  done,
+  toggle,
+}: {
+  title: string;
+  empty: string;
+  items: PlanItem[];
+  done: Set<string>;
+  toggle: (id: string) => void;
+}) {
+  return (
+    <section className="space-y-3">
+      <h2 className="font-display font-bold text-lg text-foreground">{title}</h2>
+      {items.length === 0 ? (
+        <p className="text-sm text-muted-foreground">{empty}</p>
+      ) : (
+        <ul className="space-y-2">
+          {items.map((i) => {
+            const meta = KIND_META[i.kind];
+            const Icon = meta.icon;
+            const isDone = done.has(i.id);
+            return (
+              <li
+                key={i.id}
+                className={`flex items-start gap-3 rounded-xl border bg-card p-4 transition-colors ${
+                  isDone ? "border-border/60 opacity-60" : "border-border hover:border-primary/40"
+                }`}
+              >
+                <button
+                  onClick={() => toggle(i.id)}
+                  aria-pressed={isDone}
+                  aria-label={isDone ? "Mark as not done" : "Mark as done"}
+                  className="mt-0.5 text-primary shrink-0"
+                >
+                  {isDone ? (
+                    <CheckCircle2 className="w-5 h-5" />
+                  ) : (
+                    <Circle className="w-5 h-5 text-muted-foreground" />
+                  )}
+                </button>
+                <div className="min-w-0 flex-1 space-y-1">
+                  <p
+                    className={`text-sm font-medium text-foreground ${isDone ? "line-through" : ""}`}
+                  >
+                    {i.title}
+                  </p>
+                  <p className="text-xs text-muted-foreground flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <span className="inline-flex items-center gap-1">
+                      <Icon className="w-3 h-3" />
+                      {meta.label}
+                    </span>
+                    <span>·</span>
+                    <span>{i.uni}</span>
+                    {i.source && (
+                      <>
+                        <span>·</span>
+                        <a
+                          href={i.source}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          Official source
+                        </a>
+                      </>
+                    )}
+                  </p>
+                </div>
+                {i.date && (
+                  <span className="shrink-0 text-xs font-mono font-semibold text-foreground bg-secondary rounded-md px-2 py-1">
+                    {fmtDate(i.date)}
+                  </span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </section>
   );
 }

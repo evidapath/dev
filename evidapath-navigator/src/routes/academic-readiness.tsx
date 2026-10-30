@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { requireAuth } from "../lib/route-guard";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
   Sparkles,
   ArrowRight,
@@ -15,6 +15,10 @@ import {
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { submitGhlForm } from "../lib/ghl";
+import { useLiveData } from "../lib/use-live-data";
+import { analyze, type DecisionAnalysis, type StudentInput } from "../lib/decision-engine";
+import { BUDGET_MAX } from "../lib/budget";
+import type { University } from "../lib/mock-data";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
 export const Route = createFileRoute("/academic-readiness")({
@@ -45,7 +49,7 @@ function AcademicReadinessPage() {
     lastName: "",
     email: "",
     curriculum: "IB Diploma",
-    predictedGrade: "38-40 points",
+    predictedGrade: "Strong: IB 37-39 / A*AA / GPA 3.8-3.9",
     targetSubject: "Computer Science",
     preferredRegion: "Global / Flexible",
     annualBudget: "40000",
@@ -69,11 +73,13 @@ function AcademicReadinessPage() {
       preferred_region: { label: "Preferred Region", value: formData.preferredRegion },
       annual_budget: { label: "Annual Budget (USD)", value: formData.annualBudget },
     })
-      .then(() => setSubmitted(true))
       .catch((err: Error) => {
+        // The readiness map is computed locally, so show it even if the copy
+        // sent to the EvidaPath team didn't go through.
         console.error("[academic-readiness] GHL submit failed:", err);
-        toast.error("Could not submit — please check your connection and try again.");
+        toast.error("Your map is below, but we couldn't send a copy to the EvidaPath team.");
       })
+      .then(() => setSubmitted(true))
       .finally(() => setSending(false));
   };
 
@@ -93,56 +99,37 @@ function AcademicReadinessPage() {
           diagnostic engine maps where your evidence creates opportunity and which levers you can
           still change.
         </p>
-        <div className="flex items-center gap-2 text-[11px] text-muted-foreground bg-secondary/50 border border-border rounded-lg px-3 py-2 max-w-xl mx-auto">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
-          <span>
-            Illustrative product preview. Live analysis will use verified EvidaPath data as datasets
-            are built and verified.
-          </span>
-        </div>
       </div>
 
       {submitted ? (
-        <div className="bg-card border border-border rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-sm">
-          <div className="w-14 h-14 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto">
-            <CheckCircle2 className="w-7 h-7" />
-          </div>
-          <div className="space-y-2">
-            <h2 className="text-2xl font-display font-bold text-foreground">
-              Readiness Profile Diagnostic Initialized
-            </h2>
-            <p className="text-sm text-muted-foreground max-w-md mx-auto">
-              Your profile ({formData.curriculum}, {formData.predictedGrade},{" "}
-              {formData.targetSubject}) has been recorded. Live readiness analysis will map your
-              evidence against verified institutional data as datasets are added.
+        <div className="bg-card border border-border rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm">
+          <div className="text-center space-y-2">
+            <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto">
+              <CheckCircle2 className="w-6 h-6" />
+            </div>
+            <h2 className="text-2xl font-display font-bold text-foreground">Your readiness map</h2>
+            <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+              {formData.curriculum} · {formData.predictedGrade.replace(/^[^:]+:\s*/, "")} ·{" "}
+              {formData.targetSubject} · up to ${Number(formData.annualBudget).toLocaleString()}/yr,
+              compared with every university's published requirements and costs.
             </p>
           </div>
-
-          <div className="bg-secondary/50 rounded-2xl p-6 border border-border max-w-lg mx-auto text-left space-y-3 text-xs">
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">High-Alignment Institutions:</span>
-              <span className="font-mono font-medium text-muted-foreground">
-                Pending verified data
-              </span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">Actionable Prerequisite Gaps:</span>
-              <span className="font-mono font-medium text-muted-foreground">
-                Pending verified data
-              </span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">Budget Envelope:</span>
-              <span className="font-mono font-bold text-foreground">
-                ${Number(formData.annualBudget).toLocaleString()}/yr
-              </span>
-            </div>
-          </div>
-
+          <ReadinessResults
+            input={{
+              curriculum: formData.curriculum,
+              gradeBand: formData.predictedGrade,
+              subject: formData.targetSubject,
+              budgetUsd:
+                Number(formData.annualBudget) >= 80000
+                  ? BUDGET_MAX
+                  : Number(formData.annualBudget) + 5000,
+              citizenship: "",
+            }}
+          />
           <div className="pt-4 flex flex-col sm:flex-row justify-center gap-3">
-            <Link to="/discover">
+            <Link to="/find-my-path">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6">
-                Explore Matching Pathways →
+                Save universities to your path →
               </Button>
             </Link>
             <Link to="/plan">
@@ -150,7 +137,7 @@ function AcademicReadinessPage() {
                 variant="outline"
                 className="border-border text-foreground hover:bg-secondary"
               >
-                View My Action Roadmap
+                View my plan
               </Button>
             </Link>
           </div>
@@ -303,6 +290,114 @@ function AcademicReadinessPage() {
           </form>
         </div>
       )}
+    </div>
+  );
+}
+
+function ReadinessResults({ input }: { input: StudentInput }) {
+  const { data } = useLiveData();
+  const groups = useMemo(() => {
+    if (!data) return null;
+    const runs = data.universities
+      .map((u) => ({ u, a: analyze(u, input, data.scholarships, [], data.fx) }))
+      .filter((r) => r.a.offersSubject);
+    const by = (pred: (r: (typeof runs)[number]) => boolean) => runs.filter(pred);
+    return {
+      total: runs.length,
+      meets: by((r) => r.a.academic.level === "strong"),
+      edge: by((r) => r.a.academic.level === "edge" || r.a.academic.level === "gap"),
+      other: by((r) => r.a.academic.level === "unknown"),
+      subjects: by((r) => r.a.academic.subjects.length > 0),
+    };
+  }, [data, input]);
+
+  if (!groups)
+    return (
+      <div className="space-y-2" aria-busy="true">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <div key={i} className="h-14 rounded-xl bg-secondary/60 animate-pulse" />
+        ))}
+      </div>
+    );
+
+  const List = ({
+    title,
+    tone,
+    rows,
+    note,
+  }: {
+    title: string;
+    tone: string;
+    rows: { u: University; a: DecisionAnalysis }[];
+    note: string;
+  }) => (
+    <details
+      className="rounded-xl border border-border bg-background group"
+      open={rows.length > 0 && rows.length <= 8}
+    >
+      <summary className="flex items-center justify-between gap-3 cursor-pointer list-none p-4">
+        <span className="font-semibold text-sm text-foreground">{title}</span>
+        <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded-full ${tone}`}>
+          {rows.length}
+        </span>
+      </summary>
+      <div className="px-4 pb-4 space-y-2">
+        <p className="text-xs text-muted-foreground">{note}</p>
+        <ul className="divide-y divide-border">
+          {rows.map(({ u, a }) => (
+            <li key={u.id} className="py-2 flex items-start justify-between gap-3 text-xs">
+              <div className="min-w-0">
+                <p className="font-medium text-foreground">
+                  {u.flag} {u.name}
+                </p>
+                <p className="text-muted-foreground">
+                  {a.programName} — {a.academic.headline}
+                </p>
+              </div>
+              <Link
+                to="/analyze"
+                search={{ uni: u.id }}
+                className="shrink-0 text-primary font-semibold hover:underline"
+              >
+                Analyze
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </details>
+  );
+
+  return (
+    <div className="space-y-3 text-left">
+      <p className="text-xs text-muted-foreground">
+        {groups.total} universities in EvidaPath offer {input.subject || "your subject"} or a close
+        match.
+      </p>
+      <List
+        title="Your grades meet the published requirement"
+        tone="bg-primary/10 text-primary"
+        rows={groups.meets}
+        note="Meeting a published minimum doesn't guarantee an offer — competitive courses often admit above it."
+      />
+      <List
+        title="Borderline or below the published requirement"
+        tone="bg-bronze/10 text-bronze"
+        rows={groups.edge}
+        note="Your predicted grades are the main lever here, or keep these as reach options."
+      />
+      <List
+        title="Holistic or no grade we can compare"
+        tone="bg-secondary text-muted-foreground"
+        rows={groups.other}
+        note="These review applications as a whole, or publish requirements only in another curriculum's terms."
+      />
+      <List
+        title="Prerequisite subjects to check"
+        tone="bg-secondary text-muted-foreground"
+        rows={groups.subjects}
+        note="These name specific subjects you must take — open Analyze to see which."
+      />
     </div>
   );
 }
