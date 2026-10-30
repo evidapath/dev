@@ -1,0 +1,16 @@
+// Cloudflare Workers config for the EvidaPath app (staging on *.workers.dev now;
+// evidapath.com after the Squarespace domain lock ends ~2026-12-28).
+// Kept outside evidapath-navigator/ so the GHL sync never ships it.
+// Build first: (cd evidapath-navigator && bun run build). See docs/cloudflare-deploy.md.
+{
+  "$schema": "../../evidapath-navigator/node_modules/wrangler/config-schema.json",
+  "name": "evidapath-staging",
+  "main": "../../evidapath-navigator/dist/server/server.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "directory": "../../evidapath-navigator/dist/client", "binding": "ASSETS" },
+  "workers_dev": true,
+  "vars": { "SANITY_DATASET": "staging" }
+  // Secret (set with `wrangler secret put SANITY_READ_TOKEN`): a Sanity *Viewer* token.
+  // Do NOT set SANITY_PERSPECTIVE — drafts must stay hidden.
+}

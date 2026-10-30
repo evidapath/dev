@@ -47,3 +47,7 @@ lerna-debug.log*
 # Local tool output (Playwright CLI snapshots/logs, Python bytecode)
 .playwright-cli/
 __pycache__/
+
+# Token-rotation backups (scripts/rotate-sanity-token.sh)
+.dev.vars*
+*.bak-*
