@@ -150,6 +150,8 @@ function describeLivingSource(cost: SanityCost | null): string | undefined {
     .trim();
   const unofficial = /aggregate|advisory|unofficial/i.test(note);
   if (unofficial) return `Unofficial estimate${source ? ` (${source})` : ""}`;
+  // Borrowed from another institution's official figure for the same city.
+  if (source && /published by/i.test(source)) return source;
   if (cost?.livingBasis === "genuine_cost_of_living_estimate")
     return "University's published cost-of-attendance estimate";
   return `Official figure${source ? ` (${source})` : ""}`;

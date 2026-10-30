@@ -405,8 +405,13 @@ const OWN_TERMS: { match: RegExp; own: RegExp; name: string }[] = [
   },
 ];
 function otherTermsNote(curriculum: string, threshold: string): string | null {
+  if (!/a[- ]?level|A\*/i.test(threshold)) return null;
+  // "Other qualification" rows were often imported with the A-level text; say so
+  // rather than imply those grades apply to every other curriculum.
+  if (/general international|other/i.test(curriculum))
+    return "Shown in A-level terms. The university converts other qualifications using its own equivalence tables — check its international entry requirements for your country.";
   const kind = OWN_TERMS.find((k) => k.match.test(curriculum));
-  if (!kind || kind.own.test(threshold) || !/a[- ]?level|A\*/i.test(threshold)) return null;
+  if (!kind || kind.own.test(threshold)) return null;
   return `Published in A-level terms only. Ask the university for its ${kind.name} equivalent.`;
 }
 

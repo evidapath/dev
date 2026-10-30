@@ -42,6 +42,7 @@ Writing them to Sanity was blocked by the session's safety check; apply with
 Backup taken first: `~/Desktop/evidapath-sanity-backups/staging-backup-2026-10-29-before-link-fixes.ndjson`.
 
 ## Not resolved here (needs a human or a bigger pass)
+**Update 2026-10-30:** all four items below were worked through — see `open-items-2026-10-30.md`.
 - 36 source URLs blocked automated checks (Oxford, UCL, Monash, Melbourne, NYU, RWTH…) — likely fine in a
   browser, not individually confirmed.
 - 84 "General International Secondary Qualification" entries largely restate A-level/IB terms (e.g. TU Berlin);
