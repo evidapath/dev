@@ -2,9 +2,8 @@
 
 **Authority:** Subhan (full authority to decide, 2026-10-30) — replaces the earlier "needs Suhail sign-off" holds.
 **Method:** official pages read in a real (headed) Chrome via playwright-cli; quotes copied from the page.
-**Data changes:** `fact-checks/pending/2026-10-30-open-items.ndjson` (81 mutations).
+**Data changes:** `fact-checks/applied-2026-10-30-open-items.ndjson` (81 mutations) — **applied 2026-10-30 by Subhan; verified after: 81/81 match, 0 drafts; site shows the new labels and values.**
 Backup first: `~/Desktop/evidapath-sanity-backups/staging-backup-2026-10-30-before-open-items.ndjson`.
-Apply: `scripts/apply-sanity-mutations.sh fact-checks/pending/2026-10-30-open-items.ndjson`
 
 ## 1. NYUAD Sheikh Mohamed bin Zayed Scholarship — APPROVED (HUMAN_REVIEW → VERIFIED)
 - Scholarships page: "offered to all admitted UAE nationals and children of an Emirati mother or father."
