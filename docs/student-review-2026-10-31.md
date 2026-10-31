@@ -192,7 +192,7 @@ Items 1, 5, 6, 7 and 8 are code-only and quick. Items 2–4 need small data-mode
 
 | # | Student | Top picks now | Was |
 |---|---|---|---|
-| 1 | Aisha | Sharjah ("best match for your grades"). Still no affordable UAE option — **needs Emirati pricing data** | Malaysia ×2 |
+| 1 | Aisha | UAEU CS (no tuition for Emiratis, meets 90%), HCT Software Engineering, Zayed IT — all within $20k; Khalifa/Sharjah as stretch. Fixed by Emirati data (2026-10-31) | UAE ×3 |
 | 2 | Rohan | Monash Malaysia (fits) · Khalifa (meets CBSE 75%, $5.7k short) · Sharjah ("just within reach — $144/yr short") | 2 picks |
 | 3 | Sara | TU Munich (English-taught, outside UK) · Nottingham ($10k short, meets grades) | LMU (needs German) |
 | 4 | Omar | Monash Malaysia · McMaster · TU Munich | ok |
@@ -201,7 +201,7 @@ Items 1, 5, 6, 7 and 8 are code-only and quick. Items 2–4 need small data-mode
 | 7 | Priya | "We don't cover Medicine yet" + what we cover + "Tell us you want Medicine" | dead end |
 | 8 | James | Nottingham · UCL ("closest option above budget") · Birmingham | Warwick "best grade match" |
 | 9 | Fatima | Alberta · UBC (closest above budget) · McMaster | ok |
-| 10 | Yusuf | Still nothing — **needs Emirati pricing data / Zayed University / HCT** | same |
+| 10 | Yusuf | HCT Finance (meets grades) and Zayed Finance — no tuition, "$3.7k/yr short on living costs (less if you live at home)"; UAEU Business shown as grades below (85%) | UAE ×3 |
 | 11 | Mei | Local Monash Malaysia fee applies once the tier data is in (RM48,480 vs RM57,600) | foreigner prices |
 | 12 | Noor | **Twente ("just within reach — $604/yr short")** · Delft | KIT (needs German) |
 | 13 | Arjun | Monash Malaysia · Sydney ("closest option above budget") | Sydney "best grade match" |

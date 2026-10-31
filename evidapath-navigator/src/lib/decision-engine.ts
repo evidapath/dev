@@ -58,6 +58,8 @@ export interface FinancialFit {
   currency: string;
   localAnnual: number | null;
   livingSource?: string;
+  /** Tuition is published as zero for this student (e.g. a national tier). */
+  tuitionFree?: boolean;
 }
 
 export interface Alternative {
@@ -505,6 +507,7 @@ export function analyze(
     currency: view.costs.currency,
     localAnnual: view.costs.totalAnnual ?? view.costs.tuitionPerYear,
     ...(view.costs.livingSource ? { livingSource: view.costs.livingSource } : {}),
+    ...(view.costs.tuitionPerYear === 0 ? { tuitionFree: true } : {}),
   };
 
   // Alternatives: same subject, fits budget (or cheapest known), never this university.

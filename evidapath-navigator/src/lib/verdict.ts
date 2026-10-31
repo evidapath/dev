@@ -55,6 +55,8 @@ export function verdictFor(a: DecisionAnalysis, budgetUsd: number, noLimit: bool
       tone: "good",
     });
   else if (nearMiss) tags.push({ text: `Just ${money(gapYr)}/yr short`, tone: "warn" });
+  else if (f.tuitionFree && f.fit === "over" && gapYr != null)
+    tags.push({ text: `No tuition · ${money(gapYr)}/yr living short`, tone: "warn" });
   else if (f.fit === "over" && gapYr != null)
     tags.push({
       text: `${f.annualComplete ? "" : "≥ "}${money(gapYr)}/yr short`,
@@ -97,6 +99,8 @@ export function verdictFor(a: DecisionAnalysis, budgetUsd: number, noLimit: bool
         : "Fits your budget";
   else if (f.fit === "within") headline = "Fits your budget — grades borderline";
   else if (nearMiss) headline = `Just within reach — ${money(gapYr)}/yr short`;
+  else if (f.tuitionFree && f.fit === "over" && gapYr != null)
+    headline = `No tuition for you — ${money(gapYr)}/yr short on living costs (less if you live at home)`;
   else if (f.fit === "over" && gapYr != null)
     headline = fullNeed
       ? `${money(gapYr)}/yr short on paper — but they meet full financial need`
