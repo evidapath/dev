@@ -594,6 +594,12 @@ export function analyze(
       text: `${competitive.length} scholarship${competitive.length > 1 ? "s" : ""} to check — start with ${competitive[0]!.name}.`,
     });
   }
+  // Emiratis studying abroad can apply for federal study-abroad scholarships.
+  if (code === "ae" && !/united arab emirates/i.test(u.country))
+    levers.push({
+      kind: "funding",
+      text: "As an Emirati, apply for government study-abroad scholarships — the Ministry of Higher Education external scholarship (u.ae) and the MoFA Scholarship Program (mofa.gov.ae). Both are competitive; check this university and major are on their approved lists.",
+    });
   if (!cost?.complete)
     levers.push({
       kind: "evidence",

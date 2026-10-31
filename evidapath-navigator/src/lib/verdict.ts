@@ -72,6 +72,8 @@ export function verdictFor(a: DecisionAnalysis, budgetUsd: number, noLimit: bool
   if (a.taughtIn) tags.push({ text: `Needs ${a.taughtIn}`, tone: "bad" });
   if (!a.admissions.nextDeadline && a.admissions.pastDeadlines > 0)
     tags.push({ text: "Deadline passed", tone: "warn" });
+  if (a.levers.some((l) => /government study-abroad scholarships/.test(l.text)))
+    tags.push({ text: "UAE government scholarships", tone: "neutral" });
   if (fullNeed && f.fit === "over") tags.push({ text: "Meets full financial need", tone: "good" });
   else if (toApply > 0 && f.fit === "over")
     tags.push({ text: `${toApply} scholarship${toApply > 1 ? "s" : ""} to try`, tone: "neutral" });
