@@ -57,6 +57,8 @@ export default defineType({
     defineField({
       name: 'eligible_citizenships',
       title: 'Eligible Citizenships',
+      description:
+        'ISO codes (e.g. "ae"), or "all". Add "not:xx" to exclude one citizenship, e.g. ["all", "not:ae"] for international students only.',
       type: 'array',
       of: [{ type: 'string' }],
       validation: (Rule) => Rule.required(),

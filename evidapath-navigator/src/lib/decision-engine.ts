@@ -391,6 +391,8 @@ function eligibility(s: Scholarship, code: string | null, country: string): "yes
   )
     return "no";
   const list = (s.eligibleCitizenships ?? []).map((c) => c.toLowerCase());
+  // ["all", "not:ae"]: open to everyone except UAE citizens.
+  if (code && list.includes(`not:${code}`)) return "no";
   if (list.includes("all")) return "yes";
   if (list.length === 1 && /^[a-z]{2}$/.test(list[0]!)) {
     if (!code) return "check";

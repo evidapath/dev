@@ -94,7 +94,11 @@ export function buildBriefs(data: LiveData): Brief[] {
   // 3. Guaranteed vs competitive scholarships
   const guaranteed = scholarships.filter((s) => s.selectionBasis === "guaranteed");
   const competitive = scholarships.filter((s) => s.selectionBasis === "competitive");
-  const openToAll = scholarships.filter((s) => (s.eligibleCitizenships ?? []).includes("all"));
+  // "not:xx" entries exclude one citizenship (e.g. awards for international students only).
+  const openToAll = scholarships.filter((s) => {
+    const list = s.eligibleCitizenships ?? [];
+    return list.includes("all") && !list.some((c) => c.startsWith("not:"));
+  });
   briefs.push({
     slug: "guaranteed-vs-competitive",
     category: "Scholarships",
