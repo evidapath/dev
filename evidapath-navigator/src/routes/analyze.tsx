@@ -3,7 +3,8 @@ import { PageGuide } from "../components/PageGuide";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useMemo, useState } from "react";
-import { BarChart3, Pencil } from "lucide-react";
+import { BarChart3, ChevronDown, Pencil } from "lucide-react";
+import { VerdictHero } from "../components/VerdictHero";
 import { requireAuth } from "../lib/route-guard";
 import { type FxRates } from "../lib/fx.functions";
 import { getProfile, listSavedUniversities } from "../lib/profile.functions";
@@ -74,6 +75,8 @@ function AnalyzePage() {
   const [fromProfile, setFromProfile] = useState(false);
   const [uniId, setUniId] = useState(uni ?? "");
   const [loading, setLoading] = useState(true);
+  const [editing, setEditing] = useState(false);
+  const [full, setFull] = useState(false);
 
   const fetchUnis = useUniversitiesFn();
   const fetchSchols = useScholarshipsFn();
@@ -137,9 +140,8 @@ function AnalyzePage() {
           Analyze your fit
         </h1>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Your grades, budget and citizenship compared with one university's verified requirements,
-          costs and scholarships. We never show an admission "chance" — only what is published, and
-          what you can still change.
+          The deal for one university, in plain numbers. No admission “chances” — only published
+          data.
         </p>
       </header>
 
@@ -167,124 +169,177 @@ function AnalyzePage() {
         tip="EvidaPath never shows an admission “chance” — only what universities publish and what you can still change."
       />
 
-      <section className="bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-xs space-y-4">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <h2 className="font-display font-bold text-base text-foreground">Your inputs</h2>
-          <span className="text-[11px] text-muted-foreground inline-flex items-center gap-1">
-            <Pencil className="w-3 h-3" />
-            {fromProfile
-              ? "Filled from your profile — changes here are for this analysis only."
-              : "Using example inputs — "}
-            {!fromProfile && (
-              <Link to="/find-my-path" className="text-primary hover:underline">
-                set up your profile
-              </Link>
-            )}
-          </span>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div className="sm:col-span-2 lg:col-span-1">
-            <label className={label} htmlFor="an-uni">
-              University
-            </label>
-            <select
-              id="an-uni"
-              value={univ?.id ?? ""}
-              onChange={(e) => setUniId(e.target.value)}
-              className={field}
-            >
-              {saved.length > 0 && (
-                <optgroup label="Saved to your path">
-                  {saved.map((u) => (
-                    <option key={u.id} value={u.id}>
-                      {u.flag} {u.name}
-                    </option>
-                  ))}
-                </optgroup>
-              )}
-              <optgroup label={saved.length ? "All universities" : "Universities"}>
-                {others.map((u) => (
+      {!editing && (
+        <section className="bg-card border border-border rounded-2xl p-4 shadow-xs flex flex-col md:flex-row md:items-center gap-3">
+          <select
+            aria-label="University"
+            value={univ?.id ?? ""}
+            onChange={(e) => setUniId(e.target.value)}
+            className={`${field} md:max-w-sm font-semibold`}
+          >
+            {saved.length > 0 && (
+              <optgroup label="Saved to your path">
+                {saved.map((u) => (
                   <option key={u.id} value={u.id}>
                     {u.flag} {u.name}
                   </option>
                 ))}
               </optgroup>
-            </select>
-          </div>
-          <div>
-            <label className={label} htmlFor="an-subject">
-              Subject
-            </label>
-            <input
-              id="an-subject"
-              value={input.subject}
-              onChange={(e) => set("subject", e.target.value)}
-              className={field}
-            />
-          </div>
-          <div>
-            <label className={label} htmlFor="an-cit">
-              Citizenship
-            </label>
-            <input
-              id="an-cit"
-              value={input.citizenship}
-              placeholder="e.g. UAE, India"
-              onChange={(e) => set("citizenship", e.target.value)}
-              className={field}
-            />
-          </div>
-          <div>
-            <label className={label} htmlFor="an-cur">
-              Curriculum
-            </label>
-            <select
-              id="an-cur"
-              value={input.curriculum}
-              onChange={(e) => set("curriculum", e.target.value)}
-              className={field}
-            >
-              {(CURRICULA.includes(input.curriculum)
-                ? CURRICULA
-                : [input.curriculum, ...CURRICULA]
-              ).map((c) => (
-                <option key={c}>{c}</option>
+            )}
+            <optgroup label={saved.length ? "All universities" : "Universities"}>
+              {others.map((u) => (
+                <option key={u.id} value={u.id}>
+                  {u.flag} {u.name}
+                </option>
               ))}
-            </select>
-          </div>
-          <div>
-            <label className={label} htmlFor="an-band">
-              Predicted grades
-            </label>
-            <select
-              id="an-band"
-              value={input.gradeBand}
-              onChange={(e) => set("gradeBand", e.target.value)}
-              className={field}
+            </optgroup>
+          </select>
+          <p className="text-xs text-muted-foreground flex-1">
+            {input.gradeBand.replace(/^[^:]+:\s*/, "").split(" / ")[0]} · {input.subject} ·{" "}
+            {input.budgetUsd >= BUDGET_MAX
+              ? "no budget limit"
+              : `$${(input.budgetUsd / 1000).toFixed(0)}k/yr`}
+            {input.citizenship ? ` · ${input.citizenship}` : ""}
+          </p>
+          <button
+            onClick={() => setEditing(true)}
+            className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline shrink-0"
+          >
+            <Pencil className="w-3 h-3" /> Edit my details
+          </button>
+        </section>
+      )}
+
+      {editing && (
+        <section className="bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-xs space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h2 className="font-display font-bold text-base text-foreground">Your details</h2>
+            <button
+              onClick={() => setEditing(false)}
+              className="text-xs font-semibold text-primary hover:underline"
             >
-              {(BANDS.includes(input.gradeBand) ? BANDS : [input.gradeBand, ...BANDS]).map((b) => (
-                <option key={b}>{b}</option>
-              ))}
-            </select>
+              Done
+            </button>
+            <span className="text-[11px] text-muted-foreground inline-flex items-center gap-1">
+              <Pencil className="w-3 h-3" />
+              {fromProfile
+                ? "Filled from your profile — changes here are for this analysis only."
+                : "Using example inputs — "}
+              {!fromProfile && (
+                <Link to="/find-my-path" className="text-primary hover:underline">
+                  set up your profile
+                </Link>
+              )}
+            </span>
           </div>
-          <div>
-            <label className={label} htmlFor="an-budget">
-              Budget per year:{" "}
-              {input.budgetUsd >= BUDGET_MAX ? "No limit" : `$${input.budgetUsd.toLocaleString()}`}
-            </label>
-            <input
-              id="an-budget"
-              type="range"
-              min={BUDGET_MIN}
-              max={BUDGET_MAX}
-              step={5000}
-              value={Math.min(Math.max(input.budgetUsd, BUDGET_MIN), BUDGET_MAX)}
-              onChange={(e) => set("budgetUsd", Number(e.target.value))}
-              className="w-full accent-primary mt-3"
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="sm:col-span-2 lg:col-span-1">
+              <label className={label} htmlFor="an-uni">
+                University
+              </label>
+              <select
+                id="an-uni"
+                value={univ?.id ?? ""}
+                onChange={(e) => setUniId(e.target.value)}
+                className={field}
+              >
+                {saved.length > 0 && (
+                  <optgroup label="Saved to your path">
+                    {saved.map((u) => (
+                      <option key={u.id} value={u.id}>
+                        {u.flag} {u.name}
+                      </option>
+                    ))}
+                  </optgroup>
+                )}
+                <optgroup label={saved.length ? "All universities" : "Universities"}>
+                  {others.map((u) => (
+                    <option key={u.id} value={u.id}>
+                      {u.flag} {u.name}
+                    </option>
+                  ))}
+                </optgroup>
+              </select>
+            </div>
+            <div>
+              <label className={label} htmlFor="an-subject">
+                Subject
+              </label>
+              <input
+                id="an-subject"
+                value={input.subject}
+                onChange={(e) => set("subject", e.target.value)}
+                className={field}
+              />
+            </div>
+            <div>
+              <label className={label} htmlFor="an-cit">
+                Citizenship
+              </label>
+              <input
+                id="an-cit"
+                value={input.citizenship}
+                placeholder="e.g. UAE, India"
+                onChange={(e) => set("citizenship", e.target.value)}
+                className={field}
+              />
+            </div>
+            <div>
+              <label className={label} htmlFor="an-cur">
+                Curriculum
+              </label>
+              <select
+                id="an-cur"
+                value={input.curriculum}
+                onChange={(e) => set("curriculum", e.target.value)}
+                className={field}
+              >
+                {(CURRICULA.includes(input.curriculum)
+                  ? CURRICULA
+                  : [input.curriculum, ...CURRICULA]
+                ).map((c) => (
+                  <option key={c}>{c}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className={label} htmlFor="an-band">
+                Predicted grades
+              </label>
+              <select
+                id="an-band"
+                value={input.gradeBand}
+                onChange={(e) => set("gradeBand", e.target.value)}
+                className={field}
+              >
+                {(BANDS.includes(input.gradeBand) ? BANDS : [input.gradeBand, ...BANDS]).map(
+                  (b) => (
+                    <option key={b}>{b}</option>
+                  ),
+                )}
+              </select>
+            </div>
+            <div>
+              <label className={label} htmlFor="an-budget">
+                Budget per year:{" "}
+                {input.budgetUsd >= BUDGET_MAX
+                  ? "No limit"
+                  : `$${input.budgetUsd.toLocaleString()}`}
+              </label>
+              <input
+                id="an-budget"
+                type="range"
+                min={BUDGET_MIN}
+                max={BUDGET_MAX}
+                step={5000}
+                value={Math.min(Math.max(input.budgetUsd, BUDGET_MIN), BUDGET_MAX)}
+                onChange={(e) => set("budgetUsd", Number(e.target.value))}
+                className="w-full accent-primary mt-3"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" aria-busy="true">
@@ -294,8 +349,23 @@ function AnalyzePage() {
         </div>
       ) : univ && result ? (
         <section className="space-y-4" aria-live="polite">
-          <DecisionAnalysisView u={univ} a={result} />
-          <AnalysisFootnote />
+          <VerdictHero u={univ} a={result} budgetUsd={input.budgetUsd} />
+          <button
+            onClick={() => setFull(!full)}
+            aria-expanded={full}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-primary"
+          >
+            <ChevronDown className={`w-4 h-4 transition-transform ${full ? "rotate-180" : ""}`} />
+            {full
+              ? "Hide full breakdown"
+              : "See full breakdown (grades, deadlines, scholarships, options)"}
+          </button>
+          {full && (
+            <div className="motion-safe:animate-in motion-safe:fade-in duration-200 space-y-4">
+              <DecisionAnalysisView u={univ} a={result} />
+              <AnalysisFootnote />
+            </div>
+          )}
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
               to="/fund"

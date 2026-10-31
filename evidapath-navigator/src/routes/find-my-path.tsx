@@ -87,6 +87,7 @@ function FindMyPathPage() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<IntakeAnswers>(DEFAULTS);
   const [showResults, setShowResults] = useState(false);
+  const [quick, setQuick] = useState(true);
   const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
   const [universities, setUniversities] = useState<University[]>([]);
   const [source, setSource] = useState<"sanity" | "mock" | null>(null);
@@ -269,21 +270,17 @@ function FindMyPathPage() {
             <span>Your pathways</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold text-foreground">
-            Here's what looks realistic for you.
+            Your options
           </h1>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            Based on what you told us, these pathways are worth exploring. Costs and entry
-            requirements come from official sources — tap any option to go deeper.
+          <p className="text-sm text-muted-foreground">
+            Real costs and requirements from official sources. Change a filter and results update
+            instantly
+            {fromProfile ? " — we'll remember it." : "."}
           </p>
-          <DataStatus level={source === "sanity" ? "live" : "illustrative"}>
-            {source === "sanity"
-              ? "Live data connected. Figures trace to official sources and each university shows its verification status. These are pathways to explore, not admissions predictions — no probabilities are invented."
-              : "Illustrative product preview. Live analysis will use verified EvidaPath data as datasets are built and verified."}
-          </DataStatus>
-          {fromProfile && (
-            <p className="text-xs text-muted-foreground">
-              Showing results from your saved answers. Change anything below and we'll remember it.
-            </p>
+          {source === "mock" && (
+            <DataStatus level="illustrative">
+              Live data is unavailable right now — these are sample figures, not real costs.
+            </DataStatus>
           )}
         </div>
 
@@ -293,6 +290,7 @@ function FindMyPathPage() {
           countries={countries}
           onEditAll={() => {
             setShowResults(false);
+            setQuick(false);
             setStep(0);
           }}
         />
@@ -327,6 +325,7 @@ function FindMyPathPage() {
             className="border-border text-foreground"
             onClick={() => {
               setShowResults(false);
+              setQuick(false);
               setStep(0);
             }}
           >
@@ -352,6 +351,61 @@ function FindMyPathPage() {
           shortlist={universities.filter((u) => savedIds.has(u.id)).map((u) => u.name)}
           source="Find My Path results"
         />
+      </div>
+    );
+  }
+
+  // Quick mode (default): the four answers that matter most, on one screen.
+  // Country, citizenship and preferences can be added from the results page.
+  if (quick) {
+    const QUICK = ["curriculum", "gradeBand", "subject", "budget"] as const;
+    return (
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
+        <div className="text-center space-y-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+            <Compass className="w-3.5 h-3.5" />
+            <span>Find My Path</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold text-foreground">
+            4 questions. Your options.
+          </h1>
+          <p className="text-sm text-muted-foreground">About 30 seconds.</p>
+        </div>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            saveProfile();
+            setShowResults(true);
+          }}
+          className="bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-5"
+        >
+          {QUICK.map((k) => {
+            const meta = STEPS.find((x) => x.key === k)!;
+            const QIcon = meta.icon;
+            return (
+              <div key={k} className="space-y-1.5">
+                <p className="text-sm font-semibold text-foreground flex items-center gap-2">
+                  <QIcon className="w-4 h-4 text-primary" />
+                  {meta.title}
+                </p>
+                <StepField stepKey={k} answers={answers} set={set} countries={countries} />
+              </div>
+            );
+          })}
+          <Button
+            type="submit"
+            className="w-full h-11 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+          >
+            Show my options <ArrowRight className="w-4 h-4" />
+          </Button>
+          <button
+            type="button"
+            onClick={() => setQuick(false)}
+            className="block mx-auto text-xs font-semibold text-muted-foreground hover:text-primary"
+          >
+            Add country and citizenship too (better scholarship matches)
+          </button>
+        </form>
       </div>
     );
   }

@@ -7,6 +7,7 @@ import {
   BookOpen,
   CalendarCheck,
   CheckCircle2,
+  ChevronDown,
   Circle,
   CircleHelp,
   DollarSign,
@@ -83,6 +84,7 @@ function PlanPage() {
   const [input, setInput] = useState<StudentInput | null>(null);
   const [done, setDone] = useState<Set<string>>(new Set());
   const [filter, setFilter] = useState("all");
+  const [showAll, setShowAll] = useState(false);
 
   const fetchProfile = useServerFn(getProfile);
   const fetchSaved = useServerFn(listSavedUniversities);
@@ -170,6 +172,8 @@ function PlanPage() {
   const shown = items.filter((i) => filter === "all" || i.uniId === filter);
   const dated = shown.filter((i) => i.date).sort((a, b) => a.date!.localeCompare(b.date!));
   const anytime = shown.filter((i) => !i.date);
+  // Soonest dated deadline first, then preparation, skipping what's done.
+  const nextUp = [...dated, ...anytime].filter((i) => !done.has(i.id)).slice(0, 3);
   const unis = Array.from(new Map(items.map((i) => [i.uniId, i.uni])).entries());
   const completed = items.filter((i) => done.has(i.id)).length;
   const ready = !loading && savedIds !== null && input !== null;
@@ -185,8 +189,7 @@ function PlanPage() {
           Your plan
         </h1>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl">
-          Every step below comes from the universities saved to your path and their official
-          deadlines, requirements and scholarships. Tick things off as you go.
+          Your next steps for every university on your path, soonest first.
         </p>
       </header>
 
@@ -271,19 +274,40 @@ function PlanPage() {
           </div>
 
           <PlanSection
-            title="Coming up"
-            empty="No upcoming dated deadlines for this cycle."
-            items={dated}
+            title="Your next 3"
+            empty="All done — nice work."
+            items={nextUp}
             done={done}
             toggle={toggle}
           />
-          <PlanSection
-            title="Prepare now"
-            empty="Nothing else to prepare — nice."
-            items={anytime}
-            done={done}
-            toggle={toggle}
-          />
+          <button
+            onClick={() => setShowAll(!showAll)}
+            aria-expanded={showAll}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-primary"
+          >
+            <ChevronDown
+              className={`w-4 h-4 transition-transform ${showAll ? "rotate-180" : ""}`}
+            />
+            {showAll ? "Hide full plan" : `See full plan (${shown.length} steps)`}
+          </button>
+          {showAll && (
+            <>
+              <PlanSection
+                title="Coming up"
+                empty="No upcoming dated deadlines for this cycle."
+                items={dated}
+                done={done}
+                toggle={toggle}
+              />
+              <PlanSection
+                title="Prepare now"
+                empty="Nothing else to prepare — nice."
+                items={anytime}
+                done={done}
+                toggle={toggle}
+              />
+            </>
+          )}
         </>
       )}
     </div>
