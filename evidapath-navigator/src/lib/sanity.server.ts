@@ -14,7 +14,7 @@
 //     otherwise it stays null ("pending") rather than showing a partial total.
 //   - any field with no verified value stays null / "Pending verified data".
 
-import type { University, Scholarship, ProgramView } from "./mock-data";
+import type { CostTier, CostView, University, Scholarship, ProgramView } from "./mock-data";
 
 const PROJECT =
   process.env["SANITY_PROJECT_ID"] || import.meta.env["SANITY_PROJECT_ID"] || "jxwrtsiz";
@@ -39,7 +39,8 @@ const UNIVERSITIES_QUERY = `*[_type=="university"] | order(canonical_name){
     "costs": *[_type=="costProfile" && references(^._id)]{
       tuition_annual, tuition_basis, mandatory_fees_annual, estimated_living_costs_annual,
       living_cost_source_note, "livingBasis": living_cost_source_basis.kind,
-      currency, duration_years, "residencyDesc": residency_category_ref->description
+      currency, duration_years, "residencyDesc": residency_category_ref->description,
+      "residencyLabel": residency_category_ref->label
     },
     "admissions": *[_type=="admissionsRequirement" && references(^._id)]{
       curriculum_type, academic_threshold, required_subjects,
@@ -60,6 +61,7 @@ interface SanityCost {
   currency: string | null;
   duration_years: number | null;
   residencyDesc: string | null;
+  residencyLabel?: string | null;
 }
 interface SanityAdmissionReq {
   curriculum_type: string | null;
@@ -285,8 +287,53 @@ function confidenceLabel(universityId: string, sanityVerified: boolean | null): 
 
 // Build the self-contained view (cost + duration + admissions) for ONE program.
 // Used both for each entry of programDetails[] and for the featured flat fields.
+// Classify a residency tier from its label, so the app can pick the fee that
+// applies to a given student (e.g. Malaysians at a Malaysian university).
+function tierKind(label: string): CostTier["kind"] {
+  if (/^home\b/i.test(label)) return "home";
+  if (/domestic/i.test(label)) return "domestic";
+  if (/EU\/EFTA|EU\/EEA \(|^EU\b/i.test(label) && !/non-EU/i.test(label)) return "eu";
+  if (/Malaysian students|UAE national|Emirati|citizens? of/i.test(label) && !/non-/i.test(label))
+    return "national";
+  if (/^all (students|applicants)/i.test(label)) return "uniform";
+  return "international";
+}
+
+function tierCosts(cost: SanityCost, countryCurrency: string | null, years: number): CostView {
+  const tuition = cost.tuition_annual ?? null;
+  const fees = cost.mandatory_fees_annual ?? null;
+  const living = cost.estimated_living_costs_annual ?? null;
+  const complete = tuition != null && fees != null && living != null;
+  const totalAnnual = complete ? tuition + fees + living : null;
+  const livingSource = living != null ? describeLivingSource(cost) : undefined;
+  return {
+    tuitionPerYear: tuition,
+    livingPerYear: living,
+    mandatoryFees: fees,
+    currency: cost.currency || countryCurrency || "",
+    totalAnnual,
+    totalDegree:
+      totalAnnual != null && years > 0
+        ? totalAnnual * years
+        : tuition != null && years > 0
+          ? tuition * years
+          : null,
+    ...(livingSource ? { livingSource } : {}),
+  };
+}
+
 function buildProgramView(p: SanityProgram, countryCurrency: string | null): ProgramView {
   const { chosen: cost, note } = selectCost(p.costs ?? null);
+  const tiers: CostTier[] = (p.costs || [])
+    .filter((c) => c.tuition_annual != null)
+    .map((c) => {
+      const label = c.residencyLabel || "International students";
+      return {
+        kind: tierKind(label),
+        label,
+        costs: tierCosts(c, countryCurrency, durationYears(p)),
+      };
+    });
   const tuition = cost?.tuition_annual ?? null;
   const fees = cost?.mandatory_fees_annual ?? null;
   const living = cost?.estimated_living_costs_annual ?? null;
@@ -325,6 +372,7 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
       ...(livingSource ? { livingSource } : {}),
     },
     ...(note ? { costResidencyNote: note } : {}),
+    ...(tiers.length > 1 ? { costTiers: tiers } : {}),
     admissionsByCurriculum,
   };
 }

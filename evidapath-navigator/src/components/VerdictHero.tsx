@@ -41,6 +41,7 @@ export function VerdictHero({
         <p className="text-sm text-muted-foreground">
           {u.flag} {u.name} · {a.programName.split(" (")[0]}
           {f.years ? ` · ${f.years} years` : ""}
+          {a.feeTier ? ` · fee for ${a.feeTier.split(" (")[0]}` : ""}
         </p>
         <h2
           className={`text-2xl sm:text-3xl font-display font-extrabold leading-tight ${

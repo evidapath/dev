@@ -453,6 +453,12 @@ function CompactCard({ row, ctx }: { row: PathwayRow; ctx: Ctx }) {
       {why && (
         <div className="rounded-lg bg-secondary/40 p-3 space-y-2 text-xs text-foreground motion-safe:animate-in motion-safe:fade-in duration-200">
           {bar(false)}
+          {a.feeTier && (
+            <p className="text-primary">
+              <span className="font-semibold">Your fee: </span>
+              {a.feeTier}
+            </p>
+          )}
           <p>
             <span className="font-semibold">Grades: </span>
             {a.academic.headline}

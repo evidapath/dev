@@ -1,7 +1,7 @@
 import { annualCostUsd, budgetFit, matchesSubject, BUDGET_MAX, type BudgetFit } from "./budget";
 import type { FxRates } from "./fx.functions";
 import { toUsd } from "./fx.functions";
-import type { ProgramView, Scholarship, University } from "./mock-data";
+import type { CostTier, ProgramView, Scholarship, University } from "./mock-data";
 import { bandPercent } from "./curricula";
 
 // EvidaPath decision engine: compares ONE student's stated profile with ONE
@@ -117,6 +117,8 @@ export interface DecisionAnalysis {
   programName: string;
   /** Set when the programme isn't taught in English. */
   taughtIn?: string;
+  /** The residency fee tier applied for this student, when not the default. */
+  feeTier?: string;
   offersSubject: boolean;
   matchingPrograms: string[];
   academic: AcademicFit;
@@ -346,6 +348,11 @@ const COUNTRY_CODES: [RegExp, string][] = [
   [/\bjordan/i, "jo"],
   [/\bsaudi/i, "sa"],
   [/\bnigeria/i, "ng"],
+  [/\bmalaysia/i, "my"],
+  [/\bgerman/i, "de"],
+  [/\b(netherlands|dutch)/i, "nl"],
+  [/\bfrance|french/i, "fr"],
+  [/\blebanon|lebanese/i, "lb"],
 ];
 
 export function citizenshipCode(text: string): string | null {
@@ -416,7 +423,8 @@ export function analyze(
 ): DecisionAnalysis {
   const { program, matches } = pickProgram(u, student.subject);
   const langs = student.languages?.length ? student.languages : ["en"];
-  const view: University = program ? { ...u, costs: program.costs } : u;
+  const tier = program ? tierFor(program, u.country, citizenshipCode(student.citizenship)) : null;
+  const view: University = program ? { ...u, costs: tier?.costs ?? program.costs } : u;
   const rows = program?.admissionsByCurriculum ?? u.admissionsByCurriculum ?? [];
 
   // Academic + admissions evidence
@@ -596,6 +604,7 @@ export function analyze(
     program,
     programName: program?.name ?? u.programs[0] ?? "",
     ...(taughtIn ? { taughtIn } : {}),
+    ...(tier ? { feeTier: tier.label } : {}),
     offersSubject: matches.length > 0,
     matchingPrograms: matches,
     academic,
@@ -625,4 +634,66 @@ export function usd(n: number | null): string {
 /** True when the university offers the subject or a closely related programme. */
 export function offersSubject(u: University, subject: string): boolean {
   return pickProgram(u, subject).matches.length > 0;
+}
+
+const EU = new Set([
+  "at",
+  "be",
+  "bg",
+  "hr",
+  "cy",
+  "cz",
+  "dk",
+  "ee",
+  "fi",
+  "fr",
+  "de",
+  "gr",
+  "hu",
+  "ie",
+  "it",
+  "lv",
+  "lt",
+  "lu",
+  "mt",
+  "nl",
+  "pl",
+  "pt",
+  "ro",
+  "sk",
+  "si",
+  "es",
+  "se",
+  "is",
+  "li",
+  "no",
+  "ch",
+]);
+const COUNTRY_OF: Record<string, string> = {
+  my: "Malaysia",
+  ae: "United Arab Emirates",
+  ca: "Canada",
+  gb: "United Kingdom",
+};
+
+/**
+ * The residency price tier that applies to a student, if the programme has one
+ * that fits better than the international rate: citizens at home (Malaysians in
+ * Malaysia, Emiratis in the UAE, Canadians in Canada) and EU citizens in the EU.
+ * UK "Home" fees need UK residence, so they are not applied from citizenship.
+ */
+export function tierFor(p: ProgramView, country: string, code: string | null): CostTier | null {
+  const tiers = p.costTiers ?? [];
+  if (!code || tiers.length < 2) return null;
+  const pick = (k: CostTier["kind"]) => tiers.find((t) => t.kind === k) ?? null;
+  if (COUNTRY_OF[code] === country && code !== "gb")
+    return (
+      pick("national") ??
+      (code === "ca"
+        ? (tiers.find((t) => /non-Ontario|another province/i.test(t.label)) ?? pick("domestic"))
+        : pick("domestic"))
+    );
+  if (EU.has(code) && /netherlands|germany|france|ireland|italy|spain/i.test(country))
+    return pick("eu");
+  return null;
 }

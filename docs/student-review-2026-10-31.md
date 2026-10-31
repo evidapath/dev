@@ -185,3 +185,32 @@ US-only student.
     Taylor's.
 
 Items 1, 5, 6, 7 and 8 are code-only and quick. Items 2–4 need small data-model work. Items 9–10 are research.
+
+---
+
+## After the fixes (same 15 students, re-run 2026-10-31)
+
+| # | Student | Top picks now | Was |
+|---|---|---|---|
+| 1 | Aisha | Sharjah ("best match for your grades"). Still no affordable UAE option — **needs Emirati pricing data** | Malaysia ×2 |
+| 2 | Rohan | Monash Malaysia (fits) · Khalifa (meets CBSE 75%, $5.7k short) · Sharjah ("just within reach — $144/yr short") | 2 picks |
+| 3 | Sara | TU Munich (English-taught, outside UK) · Nottingham ($10k short, meets grades) | LMU (needs German) |
+| 4 | Omar | Monash Malaysia · McMaster · TU Munich | ok |
+| 5 | Lena | **RWTH Aachen · TU Berlin** (German allowed, Abitur = direct entry) | University of Malaya |
+| 6 | Mohammed | **MIT · Princeton · Purdue** (holistic, full-need aid first) | Purdue + Malaya |
+| 7 | Priya | "We don't cover Medicine yet" + what we cover + "Tell us you want Medicine" | dead end |
+| 8 | James | Nottingham · UCL ("closest option above budget") · Birmingham | Warwick "best grade match" |
+| 9 | Fatima | Alberta · UBC (closest above budget) · McMaster | ok |
+| 10 | Yusuf | Still nothing — **needs Emirati pricing data / Zayed University / HCT** | same |
+| 11 | Mei | Local Monash Malaysia fee applies once the tier data is in (RM48,480 vs RM57,600) | foreigner prices |
+| 12 | Noor | **Twente ("just within reach — $604/yr short")** · Delft | KIT (needs German) |
+| 13 | Arjun | Monash Malaysia · Sydney ("closest option above budget") | Sydney "best grade match" |
+| 14 | Hana | **Oxford · McGill · Monash Malaysia** (ranked by grade match) | Malaysia ×2 |
+| 15 | Daniel | ASU · **MIT ("short on paper — but they meet full financial need")** · Purdue | ASU + Malaya |
+
+Also fixed: phone filters fold into one line; German B2/C1 requirements flagged even on bilingual programmes;
+"short even after your guaranteed scholarship".
+
+**Still open (data research):** what Emiratis pay at UAEU / Khalifa (official confirmation needed), Zayed University
+and HCT, UAE government scholarships for study abroad, UAE MoE minimum averages for UAEU/AUS/CUD/RIT, US-diploma
+requirements for Canadian universities, compulsory fees for McMaster / Nottingham Malaysia / UM / Taylor's.

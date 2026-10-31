@@ -78,6 +78,23 @@ export interface University {
   };
 }
 
+export interface CostView {
+  tuitionPerYear: number | null;
+  livingPerYear: number | null;
+  mandatoryFees: number | null;
+  currency: string;
+  totalAnnual: number | null;
+  totalDegree: number | null;
+  livingSource?: string;
+}
+
+/** One residency price tier of a programme (e.g. Home vs Overseas). */
+export interface CostTier {
+  kind: "international" | "domestic" | "home" | "eu" | "national" | "uniform";
+  label: string;
+  costs: CostView;
+}
+
 export interface ProgramView {
   name: string;
   fieldOfStudy: string;
@@ -96,6 +113,8 @@ export interface ProgramView {
     livingSource?: string;
   };
   costResidencyNote?: string;
+  /** All residency tiers when a programme prices by residency. */
+  costTiers?: CostTier[];
   admissionsByCurriculum: {
     curriculum: string;
     threshold: string | null;
