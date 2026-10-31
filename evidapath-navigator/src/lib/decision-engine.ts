@@ -284,10 +284,10 @@ function academicFit(
     };
   }
   // Percentage-graded curricula (UAE MoE, Indian CBSE/ISC): "80%", "minimum 85%".
-  const pctReq = plain.match(/(\d{2}(?:\.\d)?)\s*%/);
+  const pctReq = overallPercent(plain);
   const pct = bandPercent(student.gradeBand);
   if ((sys === "uae" || sys === "cbse") && pctReq && pct) {
-    const req = Number(pctReq[1]);
+    const req = pctReq;
     const level = compare(pct.lo, pct.hi, req);
     return {
       ...base,
@@ -701,5 +701,31 @@ export function tierFor(p: ProgramView, country: string, code: string | null): C
     );
   if (EU.has(code) && /netherlands|germany|france|ireland|italy|spain/i.test(country))
     return pick("eu");
+  return null;
+}
+
+const SUBJECT = /English|Math|Physics|Chemistry|Biology|Science|Arabic/i;
+
+/**
+ * The overall-average percentage in a requirement ("85% average", "minimum 80%
+ * (Advanced stream)", "CBSE 75%"), skipping subject-specific ones ("80% in
+ * Grade 12 English", "Math score of 70%"). Null when none, or when the text
+ * says there is no minimum overall average.
+ */
+export function overallPercent(text: string): number | null {
+  if (/no minimum (?:high school )?overall average/i.test(text)) return null;
+  for (const m of text.matchAll(/(\d{2}(?:\.\d)?)\s*%/g)) {
+    const i = m.index ?? 0;
+    const after = text.slice(i + m[0].length, i + m[0].length + 30);
+    const before = text.slice(Math.max(0, i - 30), i);
+    if (
+      /^\s*(?:or (?:its )?equivalent\s*)?(?:in|for)\s+(?:the\s+)?(?:Grade 12\s+|high school\s+)?(?:English|Math|Physics|Chemistry|Biology|Science|Arabic)/i.test(
+        after,
+      )
+    )
+      continue;
+    if (SUBJECT.test(before.split(/[;.]/).pop() ?? "")) continue;
+    return Number(m[1]);
+  }
   return null;
 }

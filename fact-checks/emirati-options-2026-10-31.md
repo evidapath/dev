@@ -13,3 +13,12 @@ Data: `fact-checks/pending/2026-10-31-emirati.ndjson` (51 changes).
 
 Living costs for ZU/HCT use the unofficial Abu Dhabi estimate (labelled "Unofficial estimate"), as for Khalifa.
 Not done: ZU per-programme credit totals (30 credits/yr assumed, as HCT's published full-time load).
+
+## UAE minimum averages (fact-checks/pending/2026-10-31-uae-averages.ndjson, 33 patches)
+| University | Official source | Requirement |
+|---|---|---|
+| UAEU | uaeu.ac.ae admissions — International Students and Children of UAEU Employees (tables by college) | Computing & AI and Engineering 90% average (+ English/Maths/science 90%); Business & Economics 85% (Maths 80%, English 90%). Nationals apply via the national portal. |
+| AUS | aus.edu/admissions/bachelors-degrees/application-requirements | 85% average in each of the last three years (guideline; may be higher); STEM: B in Maths and Physics; IB Diploma 24 points, 3 HL |
+| CUD | cud.ac.ae/prospective-students/undergraduate | Pass in all subjects (no overall average); English 80% or IELTS 5.0; Engineering: Maths/Physics/Bio-or-Chem 80% |
+| RIT Dubai | rit.edu/dubai Admission Requirements Computing / Engineering PDFs | Computing 70% (Elite/Advanced) / 75% (General/Applied), American 70%; Engineering 75/80/85%, American 80% |
+Engine: overall-average % now ignores subject percentages ("80% in English") and "no minimum overall average".
