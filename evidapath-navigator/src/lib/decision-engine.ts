@@ -288,7 +288,8 @@ function academicFit(
   // Percentage-graded curricula (UAE MoE, Indian CBSE/ISC): "80%", "minimum 85%".
   const pctReq = overallPercent(plain);
   const pct = bandPercent(student.gradeBand);
-  if ((sys === "uae" || sys === "cbse") && pctReq && pct) {
+  // US rows published as a percentage average (e.g. Waterloo "90%") compare the same way.
+  if ((sys === "uae" || sys === "cbse" || (sys === "us" && !gpaReq)) && pctReq && pct) {
     const req = pctReq;
     const level = compare(pct.lo, pct.hi, req);
     return {
