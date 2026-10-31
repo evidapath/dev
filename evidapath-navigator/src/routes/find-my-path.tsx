@@ -1,5 +1,6 @@
 import { useUniversitiesFn, useFxRatesFn, useScholarshipsFn } from "../lib/use-live-data";
 import { buildPathways } from "../lib/pathways";
+import { CURRICULA, GRADE_BANDS, withCurrent } from "../lib/curricula";
 import { PathwayResults } from "../components/PathwayResults";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
@@ -75,7 +76,7 @@ const STEPS = [
 
 const DEFAULTS: IntakeAnswers = {
   curriculum: "IB Diploma",
-  gradeBand: "Strong: IB 37-39 / A*AA / GPA 3.8-3.9",
+  gradeBand: GRADE_BANDS[1],
   subject: "Computer Science",
   region: "Open to anywhere",
   budget: "40000",
@@ -603,11 +604,9 @@ function StepField({
           onChange={(e) => set("curriculum", e.target.value)}
           className={inputCls}
         >
-          <option>IB Diploma</option>
-          <option>Cambridge A-Levels</option>
-          <option>US High School Diploma + APs</option>
-          <option>German Abitur</option>
-          <option>National Curriculum / Other</option>
+          {withCurrent(CURRICULA, answers.curriculum).map((c) => (
+            <option key={c}>{c}</option>
+          ))}
         </select>
       );
     case "gradeBand":
@@ -617,10 +616,9 @@ function StepField({
           onChange={(e) => set("gradeBand", e.target.value)}
           className={inputCls}
         >
-          <option>Top Tier: IB 40+ / A*A*A / GPA 4.0</option>
-          <option>Strong: IB 37-39 / A*AA / GPA 3.8-3.9</option>
-          <option>Competitive: IB 34-36 / AAA-AAB / GPA 3.6-3.7</option>
-          <option>Foundation: IB 30-33 / ABB-BBB / GPA 3.3-3.5</option>
+          {withCurrent(GRADE_BANDS, answers.gradeBand).map((g) => (
+            <option key={g}>{g}</option>
+          ))}
         </select>
       );
     case "subject":

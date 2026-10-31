@@ -15,6 +15,7 @@ import {
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { submitGhlForm } from "../lib/ghl";
+import { CURRICULA, GRADE_BANDS } from "../lib/curricula";
 import { useLiveData } from "../lib/use-live-data";
 import { analyze, type DecisionAnalysis, type StudentInput } from "../lib/decision-engine";
 import { BUDGET_MAX } from "../lib/budget";
@@ -49,7 +50,7 @@ function AcademicReadinessPage() {
     lastName: "",
     email: "",
     curriculum: "IB Diploma",
-    predictedGrade: "Strong: IB 37-39 / A*AA / GPA 3.8-3.9",
+    predictedGrade: GRADE_BANDS[1] as string,
     targetSubject: "Computer Science",
     preferredRegion: "Global / Flexible",
     annualBudget: "40000",
@@ -217,11 +218,9 @@ function AcademicReadinessPage() {
                   onChange={(e) => setFormData({ ...formData, curriculum: e.target.value })}
                   className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
                 >
-                  <option>IB Diploma</option>
-                  <option>Cambridge A-Levels</option>
-                  <option>US High School Diploma + APs</option>
-                  <option>German Abitur</option>
-                  <option>National Curriculum / Other</option>
+                  {CURRICULA.map((c) => (
+                    <option key={c}>{c}</option>
+                  ))}
                 </select>
               </div>
 
@@ -234,10 +233,9 @@ function AcademicReadinessPage() {
                   onChange={(e) => setFormData({ ...formData, predictedGrade: e.target.value })}
                   className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
                 >
-                  <option>Top Tier: IB 40+ / A*A*A / GPA 4.0</option>
-                  <option>Strong: IB 37-39 / A*AA / GPA 3.8-3.9</option>
-                  <option>Competitive: IB 34-36 / AAA-AAB / GPA 3.6-3.7</option>
-                  <option>Foundation: IB 30-33 / ABB-BBB / GPA 3.3-3.5</option>
+                  {GRADE_BANDS.map((g) => (
+                    <option key={g}>{g}</option>
+                  ))}
                 </select>
               </div>
 

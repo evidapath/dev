@@ -11,6 +11,7 @@ import { getProfile, listSavedUniversities } from "../lib/profile.functions";
 import type { Scholarship, University } from "../lib/mock-data";
 import { analyze, type StudentInput } from "../lib/decision-engine";
 import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
+import { CURRICULA, GRADE_BANDS, withCurrent } from "../lib/curricula";
 import { AnalysisFootnote, DecisionAnalysisView } from "../components/DecisionAnalysisView";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
@@ -39,19 +40,7 @@ export const Route = createFileRoute("/analyze")({
   component: AnalyzePage,
 });
 
-const CURRICULA = [
-  "IB Diploma",
-  "Cambridge A-Levels",
-  "US High School Diploma + APs",
-  "German Abitur",
-  "National Curriculum / Other",
-];
-const BANDS = [
-  "Top Tier: IB 40+ / A*A*A / GPA 4.0",
-  "Strong: IB 37-39 / A*AA / GPA 3.8-3.9",
-  "Competitive: IB 34-36 / AAA-AAB / GPA 3.6-3.7",
-  "Foundation: IB 30-33 / ABB-BBB / GPA 3.3-3.5",
-];
+const BANDS: readonly string[] = GRADE_BANDS;
 const DEFAULT_INPUT: StudentInput = {
   curriculum: "IB Diploma",
   gradeBand: BANDS[1]!,
@@ -294,10 +283,7 @@ function AnalyzePage() {
                 onChange={(e) => set("curriculum", e.target.value)}
                 className={field}
               >
-                {(CURRICULA.includes(input.curriculum)
-                  ? CURRICULA
-                  : [input.curriculum, ...CURRICULA]
-                ).map((c) => (
+                {withCurrent(CURRICULA, input.curriculum).map((c) => (
                   <option key={c}>{c}</option>
                 ))}
               </select>

@@ -2,6 +2,7 @@ import { annualCostUsd, budgetFit, matchesSubject, BUDGET_MAX, type BudgetFit } 
 import type { FxRates } from "./fx.functions";
 import { toUsd } from "./fx.functions";
 import type { ProgramView, Scholarship, University } from "./mock-data";
+import { bandPercent } from "./curricula";
 
 // EvidaPath decision engine: compares ONE student's stated profile with ONE
 // university's verified data. Every output is traceable to a published figure;
@@ -133,11 +134,13 @@ function studentRanges(band: string) {
   };
 }
 
-type System = "ib" | "alevel" | "us" | "abitur" | "other";
+type System = "ib" | "alevel" | "us" | "uae" | "cbse" | "abitur" | "other";
 
 function systemOf(curriculum: string): System {
   if (/\bIB\b|baccalaureate/i.test(curriculum)) return "ib";
   if (/a[- ]?level/i.test(curriculum)) return "alevel";
+  if (/UAE|Emirati|Ministry of Education/i.test(curriculum)) return "uae";
+  if (/CBSE|ISC|Indian|Class XII/i.test(curriculum)) return "cbse";
   if (/US|american|high school|\bAP\b/i.test(curriculum)) return "us";
   if (/abitur/i.test(curriculum)) return "abitur";
   return "other";
@@ -147,8 +150,10 @@ const ROW_MATCH: Record<System, RegExp> = {
   ib: /baccalaureate|\bIB\b/i,
   alevel: /a[- ]?level/i,
   us: /american|U\.?S\.?|high school/i,
+  uae: /UAE Secondary|Emirati|Ministry of Education/i,
+  cbse: /CBSE|ISC|Indian|India|Class XII/i,
   abitur: /abitur/i,
-  other: /general international|other|national/i,
+  other: /general international|\bother\b|\bnational\b/i,
 };
 
 function compare(lo: number, hi: number, req: number): Level {
@@ -162,7 +167,14 @@ function academicFit(
   student: StudentInput,
 ): AcademicFit {
   const sys = systemOf(student.curriculum);
-  const row = rows.find((r) => ROW_MATCH[sys].test(r.curriculum)) ?? null;
+  // Curricula without their own row fall back to the university's "other
+  // qualifications" row (its general guidance for every other system).
+  const row =
+    rows.find((r) => ROW_MATCH[sys].test(r.curriculum)) ??
+    (sys === "uae" || sys === "cbse" || sys === "abitur"
+      ? rows.find((r) => ROW_MATCH.other.test(r.curriculum))
+      : undefined) ??
+    null;
   const text = row?.threshold?.trim() || null;
   const base = {
     requirement: text,
@@ -229,13 +241,26 @@ function academicFit(
     const level = compare(s.alevel.lo, s.alevel.hi, req);
     return { ...base, level, headline: headlineFor(level, alReq[1]!, "your A-level band") };
   }
+  // Percentage-graded curricula (UAE MoE, Indian CBSE/ISC): "80%", "minimum 85%".
+  const pctReq = plain.match(/(\d{2}(?:\.\d)?)\s*%/);
+  const pct = bandPercent(student.gradeBand);
+  if ((sys === "uae" || sys === "cbse") && pctReq && pct) {
+    const req = Number(pctReq[1]);
+    const level = compare(pct.lo, pct.hi, req);
+    return { ...base, level, headline: headlineFor(level, `${req}%`, `${pct.lo}–${pct.hi}%`) };
+  }
   if (sys === "us" && gpaReq && s.gpa) {
     const req = Number(gpaReq[1] ?? gpaReq[2]);
     const level = compare(s.gpa.lo, s.gpa.hi, req);
     return { ...base, level, headline: headlineFor(level, `GPA ${req}`, "your GPA band") };
   }
   // IB/US rows that only restate A-level grades: flag instead of comparing.
-  if ((sys === "ib" || sys === "us" || sys === "other") && alReq && !ibReq && !gpaReq) {
+  if (
+    (sys === "ib" || sys === "us" || sys === "uae" || sys === "cbse" || sys === "other") &&
+    alReq &&
+    !ibReq &&
+    !gpaReq
+  ) {
     return {
       ...base,
       level: "unknown",
