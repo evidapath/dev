@@ -36,34 +36,84 @@ interface Ctx {
   onSave: (u: University) => void;
 }
 
-function pickTop3(r: PathwayResult): { label: string; icon: typeof Trophy; row: PathwayRow }[] {
+// Top picks, the way a student would choose: stay in their country and in a
+// language they can study in; only call something a "grade match" when the
+// grades really meet the published requirement; with no budget limit, rank by
+// academic fit instead of price.
+function pickTop3(
+  r: PathwayResult,
+  noLimit: boolean,
+): { label: string; icon: typeof Trophy; row: PathwayRow }[] {
   const { within, stretch, unpriced } = r.groups;
-  const english = (x: PathwayRow) => !x.a.taughtIn;
+  const all = [...within, ...stretch, ...unpriced];
+  const ok = (x: PathwayRow) => !x.a.taughtIn;
+  const home = (x: PathwayRow) => x.inRegion && ok(x);
   const used = new Set<string>();
   const take = (label: string, icon: typeof Trophy, row: PathwayRow | undefined) => {
     if (!row || used.has(row.u.id)) return null;
     used.add(row.u.id);
     return { label, icon, row };
   };
-  const affordable = within.find(english) ?? unpriced.find(english) ?? within[0];
-  const gradeMatch =
-    [...within, ...stretch, ...unpriced]
-      .filter((x) => x.inRegion && english(x) && x.a.academic.level === "strong")
-      .sort((a, b) => (a.gapPerYear ?? 0) - (b.gapPerYear ?? 0))[0] ?? stretch.find(english);
-  const value = [...within, ...unpriced]
-    .filter(
-      (x) =>
-        english(x) &&
-        x.netAnnualUsd != null &&
-        x.u.id !== affordable?.u.id &&
-        x.u.id !== gradeMatch?.u.id,
-    )
-    .sort((a, b) => a.netAnnualUsd! - b.netAnnualUsd!)[0];
-  return [
-    take("Best you can afford", Wallet, affordable),
-    take("Best match for your grades", Trophy, gradeMatch),
-    take("Lowest cost", Gem, value),
-  ].filter((x): x is NonNullable<typeof x> => !!x);
+  const free = (x: PathwayRow) => !used.has(x.u.id);
+  const strong = (x: PathwayRow) => x.a.academic.level === "strong";
+  const byDemand = (x: PathwayRow, y: PathwayRow) =>
+    (y.a.academic.reqLevel ?? 0) - (x.a.academic.reqLevel ?? 0);
+  const byNet = (x: PathwayRow, y: PathwayRow) =>
+    (x.netAnnualUsd ?? Infinity) - (y.netAnnualUsd ?? Infinity);
+
+  if (noLimit) {
+    const matches = all.filter((x) => home(x) && strong(x)).sort(byDemand);
+    // Holistic universities (no grade cut-off): those that meet full financial
+    // need first, then fully priced, then cheapest.
+    const fullNeed = (x: PathwayRow) =>
+      x.a.financial.funding.some((f) =>
+        /100% of demonstrated|full(?:y)? (?:demonstrated )?need/i.test(`${f.name} ${f.award}`),
+      );
+    const holistic = all
+      .filter((x) => home(x) && x.a.academic.level === "unknown")
+      .sort(
+        (x, y) =>
+          Number(fullNeed(y)) - Number(fullNeed(x)) ||
+          Number(!x.a.financial.annualComplete) - Number(!y.a.financial.annualComplete) ||
+          byNet(x, y),
+      );
+    if (matches.length) {
+      const out = [take("Strongest match for your grades", Trophy, matches[0])];
+      out.push(
+        take("Also a strong match", Trophy, matches.filter(free)[0] ?? holistic.filter(free)[0]),
+      );
+      out.push(take("Best value among your matches", Gem, matches.filter(free).sort(byNet)[0]));
+      return out.filter((x): x is NonNullable<typeof x> => !!x);
+    }
+    const out = [take("Top pick — holistic admissions", Trophy, holistic[0])];
+    out.push(take("Also worth a look", Trophy, holistic.filter(free)[0]));
+    out.push(take("Best value", Gem, holistic.filter(free).sort(byNet)[0]));
+    return out.filter((x): x is NonNullable<typeof x> => !!x);
+  }
+
+  const affordable =
+    within.filter(home).find((x) => !x.nearMiss) ??
+    within.filter(home)[0] ??
+    within.filter((x) => ok(x) && !x.inRegion)[0] ??
+    unpriced.filter(home)[0];
+  const out = [take("Best you can afford", Wallet, affordable)];
+  const gradeMatch = all
+    .filter((x) => home(x) && strong(x) && free(x))
+    .sort((x, y) => (x.gapPerYear ?? 0) - (y.gapPerYear ?? 0) || byDemand(x, y))[0];
+  out.push(
+    gradeMatch
+      ? take("Best match for your grades", Trophy, gradeMatch)
+      : take("Closest option above budget", Trophy, stretch.filter((x) => home(x) && free(x))[0]),
+  );
+  const cheapest = [...within, ...unpriced]
+    .filter((x) => home(x) && free(x) && x.netAnnualUsd != null)
+    .sort(
+      (x, y) =>
+        Number(!x.a.financial.annualComplete) - Number(!y.a.financial.annualComplete) ||
+        byNet(x, y),
+    )[0];
+  out.push(take("Lowest cost", Gem, cheapest));
+  return out.filter((x): x is NonNullable<typeof x> => !!x);
 }
 
 export function PathwayResults({
@@ -74,6 +124,7 @@ export function PathwayResults({
   subject,
   savedIds,
   onSave,
+  subjectCovered = true,
 }: {
   result: PathwayResult;
   budgetUsd: number;
@@ -82,6 +133,8 @@ export function PathwayResults({
   subject: string;
   savedIds: Set<string>;
   onSave: (u: University) => void;
+  /** False when no university in EvidaPath offers this subject at all. */
+  subjectCovered?: boolean;
 }) {
   const { groups } = result;
   const total =
@@ -93,21 +146,48 @@ export function PathwayResults({
     savedIds,
     onSave,
   };
-  const top = pickTop3(result);
+  const top = pickTop3(result, noBudgetLimit);
   const where = result.regionLimited ? ` in ${region}` : "";
 
   if (total === 0)
     return (
       <div className="rounded-2xl border border-border bg-card p-8 text-center text-sm text-muted-foreground flex flex-col items-center gap-2">
         <Illustration name="search" />
-        <p>
-          Nothing for {subject || "that subject"}
-          {where} yet. Try “Open to anywhere”, or{" "}
-          <Link to="/universities" className="text-primary font-semibold">
-            browse all universities
-          </Link>
-          .
-        </p>
+        {subjectCovered ? (
+          <p>
+            Nothing for {subject || "that subject"}
+            {where} yet. Try “Open to anywhere”, or{" "}
+            <Link to="/universities" className="text-primary font-semibold">
+              browse all universities
+            </Link>
+            .
+          </p>
+        ) : (
+          <div className="space-y-3 max-w-md">
+            <p className="text-base font-semibold text-foreground">
+              We don't cover {subject || "that subject"} yet.
+            </p>
+            <p>
+              EvidaPath currently covers{" "}
+              <strong>Computer Science, Engineering, Business and Economics</strong> at 51
+              universities. More subjects are coming.
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              <a
+                href="#counseling"
+                className="inline-flex items-center h-9 px-4 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90"
+              >
+                Tell us you want {subject || "it"}
+              </a>
+              <Link
+                to="/universities"
+                className="inline-flex items-center h-9 px-4 rounded-lg border border-border text-sm font-semibold text-foreground hover:bg-secondary"
+              >
+                Browse what we cover
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     );
 
@@ -115,9 +195,11 @@ export function PathwayResults({
     <div className="space-y-8">
       {/* The deal, in one line */}
       <p className="text-base font-semibold text-foreground">
-        {result.withinInRegion > 0
-          ? `${result.withinInRegion} fit${result.withinInRegion === 1 ? "s" : ""} your budget${where}.`
-          : `Nothing${where} fits ${noBudgetLimit ? "" : `${money(budgetUsd)}/yr `}on published costs.`}{" "}
+        {noBudgetLimit
+          ? `${total} options${where} — ranked by how well your grades match.`
+          : result.withinInRegion > 0
+            ? `${result.withinInRegion} fit${result.withinInRegion === 1 ? "s" : ""} your budget${where}.`
+            : `Nothing${where} fits ${money(budgetUsd)}/yr on published costs.`}{" "}
         <span className="font-normal text-muted-foreground">
           {groups.stretch.length > 0 && `${groups.stretch.length} more cost a bit more. `}
           {result.withinElsewhere > 0 && `${result.withinElsewhere} cheaper options elsewhere.`}

@@ -1,6 +1,7 @@
 import { useUniversitiesFn, useFxRatesFn, useScholarshipsFn } from "../lib/use-live-data";
 import { buildPathways } from "../lib/pathways";
-import { CURRICULA, GRADE_BANDS, withCurrent } from "../lib/curricula";
+import { CURRICULA, GRADE_BANDS, STUDY_LANGUAGES, parseLangs, withCurrent } from "../lib/curricula";
+import { offersSubject } from "../lib/decision-engine";
 import { PathwayResults } from "../components/PathwayResults";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
@@ -62,6 +63,8 @@ interface IntakeAnswers {
   budget: string;
   citizenship: string;
   preferences: string;
+  /** Languages the student can study in, e.g. "en,de". */
+  languages: string;
 }
 
 const STEPS = [
@@ -82,6 +85,7 @@ const DEFAULTS: IntakeAnswers = {
   budget: "40000",
   citizenship: "",
   preferences: "",
+  languages: "en",
 };
 
 function FindMyPathPage() {
@@ -201,7 +205,31 @@ function FindMyPathPage() {
       .catch(() => toast.error("Could not save your path — please try again."));
   };
 
-  const set = (k: keyof IntakeAnswers, v: string) => setAnswers((a) => ({ ...a, [k]: v }));
+  const set = (k: keyof IntakeAnswers, v: string) =>
+    setAnswers((a) => {
+      const next = { ...a, [k]: v };
+      // Abitur students can study in German: tick it for them (they can untick).
+      if (k === "curriculum" && /abitur/i.test(v) && !parseLangs(a.languages).includes("de"))
+        next.languages = [...parseLangs(a.languages), "de"].join(",");
+      return next;
+    });
+
+  // Languages aren't part of the saved profile; remember them on this device.
+  useEffect(() => {
+    try {
+      const v = localStorage.getItem("evidapath.languages");
+      if (v) setAnswers((a) => ({ ...a, languages: v }));
+    } catch {
+      /* storage unavailable */
+    }
+  }, []);
+  useEffect(() => {
+    try {
+      localStorage.setItem("evidapath.languages", answers.languages);
+    } catch {
+      /* storage unavailable */
+    }
+  }, [answers.languages]);
 
   // Persist the profile when the student finishes the intake. Best-effort:
   // signed-out users just don't persist (the results still render from session).
@@ -257,8 +285,10 @@ function FindMyPathPage() {
       subject: answers.subject,
       budgetUsd: noBudgetLimit ? BUDGET_MAX : budgetUsd,
       citizenship: answers.citizenship,
+      languages: parseLangs(answers.languages),
     },
   });
+  const coveredAnywhere = universities.some((u) => offersSubject(u, answers.subject));
   // "Save my path" saves what's realistic: within budget, plus probably-affordable.
   const pathways = [...result.groups.within, ...result.groups.unpriced].map((r) => r.u);
 
@@ -317,6 +347,7 @@ function FindMyPathPage() {
             subject={answers.subject}
             savedIds={savedIds}
             onSave={saveUni}
+            subjectCovered={coveredAnywhere}
           />
         )}
 
@@ -347,6 +378,7 @@ function FindMyPathPage() {
           </div>
         </div>
 
+        <div id="counseling" className="scroll-mt-24" />
         <CounselingWaitlist
           defaultEmail={user?.email}
           shortlist={universities.filter((u) => savedIds.has(u.id)).map((u) => u.name)}
@@ -393,6 +425,7 @@ function FindMyPathPage() {
               </div>
             );
           })}
+          <LanguageChips value={answers.languages} set={set} />
           <Button
             type="submit"
             className="w-full h-11 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
@@ -559,28 +592,87 @@ function ResultsFilters({
   countries: string[];
   onEditAll: () => void;
 }) {
+  // On phones the filters fold into one line so the results start on screen one.
+  const [open, setOpen] = useState(false);
+  const budget = Number(answers.budget);
+  const summary = [
+    answers.region === "Open to anywhere" ? "Anywhere" : answers.region,
+    answers.subject || "Any subject",
+    budget >= BUDGET_MAX ? "No limit" : `$${Math.round(budget / 1000)}k/yr`,
+  ].join(" · ");
   return (
-    <div className="bg-card border border-border rounded-2xl p-5 shadow-xs space-y-4">
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="space-y-2">
-          <label className="text-xs font-semibold uppercase text-muted-foreground">Country</label>
-          <RegionSelect value={answers.region} set={set} countries={countries} />
-        </div>
-        <div className="space-y-2">
-          <label className="text-xs font-semibold uppercase text-muted-foreground">Subject</label>
-          <input
-            type="text"
-            placeholder="e.g. Economics (leave empty for any)"
-            value={answers.subject}
-            onChange={(e) => set("subject", e.target.value)}
-            className={inputCls}
-          />
-        </div>
-        <BudgetSlider value={answers.budget} set={set} />
-      </div>
-      <button onClick={onEditAll} className="text-xs font-semibold text-primary hover:underline">
-        Edit all my answers (curriculum, grades, citizenship…)
+    <div className="bg-card border border-border rounded-2xl shadow-xs">
+      <button
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        className="sm:hidden w-full flex items-center justify-between gap-3 px-4 py-3 text-left"
+      >
+        <span className="text-sm font-semibold text-foreground truncate">{summary}</span>
+        <span className="text-xs font-semibold text-primary shrink-0">
+          {open ? "Done" : "Change"}
+        </span>
       </button>
+      <div
+        className={`${open ? "block" : "hidden"} sm:block p-5 space-y-4 border-t border-border sm:border-0`}
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="space-y-2">
+            <label className="text-xs font-semibold uppercase text-muted-foreground">Country</label>
+            <RegionSelect value={answers.region} set={set} countries={countries} />
+          </div>
+          <div className="space-y-2">
+            <label className="text-xs font-semibold uppercase text-muted-foreground">Subject</label>
+            <input
+              type="text"
+              placeholder="e.g. Economics (leave empty for any)"
+              value={answers.subject}
+              onChange={(e) => set("subject", e.target.value)}
+              className={inputCls}
+            />
+          </div>
+          <BudgetSlider value={answers.budget} set={set} />
+        </div>
+        <LanguageChips value={answers.languages} set={set} />
+        <button onClick={onEditAll} className="text-xs font-semibold text-primary hover:underline">
+          Edit all my answers (curriculum, grades, citizenship…)
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function LanguageChips({ value, set }: { value: string; set: SetAnswer }) {
+  const chosen = parseLangs(value);
+  const toggle = (code: string) => {
+    if (code === "en") return; // English is always assumed
+    const next = chosen.includes(code) ? chosen.filter((c) => c !== code) : [...chosen, code];
+    set("languages", next.join(","));
+  };
+  return (
+    <div className="space-y-1.5">
+      <p className="text-xs font-semibold uppercase text-muted-foreground">I can study in</p>
+      <div className="flex flex-wrap gap-1.5">
+        {STUDY_LANGUAGES.map(([code, label]) => {
+          const on = code === "en" || chosen.includes(code);
+          return (
+            <button
+              key={code}
+              type="button"
+              onClick={() => toggle(code)}
+              aria-pressed={on}
+              disabled={code === "en"}
+              className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
+                on
+                  ? "bg-primary/10 text-primary border-primary/40"
+                  : "bg-card text-muted-foreground border-border hover:text-foreground"
+              } disabled:opacity-100`}
+            >
+              {on ? "✓ " : ""}
+              {label}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

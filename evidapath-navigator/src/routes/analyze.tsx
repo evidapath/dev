@@ -11,7 +11,25 @@ import { getProfile, listSavedUniversities } from "../lib/profile.functions";
 import type { Scholarship, University } from "../lib/mock-data";
 import { analyze, type StudentInput } from "../lib/decision-engine";
 import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
-import { CURRICULA, GRADE_BANDS, withCurrent } from "../lib/curricula";
+import {
+  CURRICULA,
+  GRADE_BANDS,
+  STUDY_LANGUAGES,
+  defaultLanguages,
+  parseLangs,
+  withCurrent,
+} from "../lib/curricula";
+
+// Languages are remembered on this device (set in Find My Path).
+function storedLanguages(curriculum: string): string[] {
+  try {
+    const v = parseLangs(localStorage.getItem("evidapath.languages"));
+    if (v.length) return v;
+  } catch {
+    /* storage unavailable */
+  }
+  return defaultLanguages(curriculum);
+}
 import { AnalysisFootnote, DecisionAnalysisView } from "../components/DecisionAnalysisView";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
@@ -97,6 +115,7 @@ function AnalyzePage() {
             subject: p.intended_subject || DEFAULT_INPUT.subject,
             budgetUsd: p.annual_budget ?? DEFAULT_INPUT.budgetUsd,
             citizenship: p.citizenship || "",
+            languages: storedLanguages(p.curriculum || DEFAULT_INPUT.curriculum),
           });
         }
         setUniId((cur) => cur || ids[0] || u.universities[0]?.id || "");
@@ -304,6 +323,34 @@ function AnalyzePage() {
                   ),
                 )}
               </select>
+            </div>
+            <div className="sm:col-span-2 lg:col-span-3">
+              <p className={label}>I can study in</p>
+              <div className="flex flex-wrap gap-1.5">
+                {STUDY_LANGUAGES.map(([code, name]) => {
+                  const langs = input.languages ?? ["en"];
+                  const on = code === "en" || langs.includes(code);
+                  return (
+                    <button
+                      key={code}
+                      type="button"
+                      disabled={code === "en"}
+                      aria-pressed={on}
+                      onClick={() =>
+                        set("languages", on ? langs.filter((c) => c !== code) : [...langs, code])
+                      }
+                      className={`px-3 py-1 rounded-full text-xs font-medium border ${
+                        on
+                          ? "bg-primary/10 text-primary border-primary/40"
+                          : "bg-card text-muted-foreground border-border"
+                      } disabled:opacity-100`}
+                    >
+                      {on ? "✓ " : ""}
+                      {name}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
             <div>
               <label className={label} htmlFor="an-budget">

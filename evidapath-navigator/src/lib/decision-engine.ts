@@ -15,6 +15,8 @@ export interface StudentInput {
   subject: string;
   budgetUsd: number; // annual; BUDGET_MAX or more = no limit
   citizenship: string; // free text ("UAE", "India", …)
+  /** ISO codes of languages the student can study in; English assumed when empty. */
+  languages?: string[];
 }
 
 export type Level = "strong" | "edge" | "gap" | "unknown";
@@ -27,6 +29,8 @@ export interface AcademicFit {
   studentBand: string;
   subjects: string[];
   aLevelTermsOnly: boolean;
+  /** How demanding the published requirement is, 0–1 (null when not comparable). */
+  reqLevel: number | null;
 }
 
 export interface FundingItem {
@@ -77,11 +81,30 @@ const LANGUAGE_NAMES: Record<string, string> = {
   ms: "Malay",
 };
 
-/** Name of the teaching language when the programme is NOT available in English. */
-export function teachingLanguage(p: ProgramView): string | undefined {
+const GERMAN_REQUIRED = /German (?:B2|C1)|TestDaF|DSH/i;
+
+/** Language a programme requires (ISO code), or undefined when English is enough. */
+export function requiredLanguage(p: ProgramView): string | undefined {
   const langs = (p.languages ?? []).map((l) => l.toLowerCase());
-  if (!langs.length || langs.includes("en")) return undefined;
-  return LANGUAGE_NAMES[langs[0]!] ?? langs[0]!.toUpperCase();
+  if (langs.length && !langs.includes("en")) return langs[0]!;
+  // Some "English and German" programmes still ask for German at B2/C1.
+  const text = p.admissionsByCurriculum.map((r) => r.threshold ?? "").join(" ");
+  if (GERMAN_REQUIRED.test(text) && !/no German language required|English-medium/i.test(text))
+    return "de";
+  return undefined;
+}
+
+/**
+ * Name of the language a student would still need, or undefined when they can
+ * study the programme in a language they have (English assumed by default).
+ */
+export function teachingLanguage(
+  p: ProgramView,
+  studentLangs: string[] = ["en"],
+): string | undefined {
+  const need = requiredLanguage(p);
+  if (!need || studentLangs.includes(need)) return undefined;
+  return LANGUAGE_NAMES[need] ?? need.toUpperCase();
 }
 
 export interface Lever {
@@ -165,6 +188,7 @@ function compare(lo: number, hi: number, req: number): Level {
 function academicFit(
   rows: ProgramView["admissionsByCurriculum"],
   student: StudentInput,
+  country = "",
 ): AcademicFit {
   const sys = systemOf(student.curriculum);
   // Curricula without their own row fall back to the university's "other
@@ -182,7 +206,16 @@ function academicFit(
     studentBand: student.gradeBand,
     subjects: row?.subjects ?? [],
     aLevelTermsOnly: false,
+    reqLevel: null as number | null,
   };
+  // A German Abitur is itself the university entrance qualification in Germany.
+  if (sys === "abitur" && /germany/i.test(country)) {
+    return {
+      ...base,
+      level: "strong",
+      headline: "Your Abitur gives direct university entrance in Germany",
+    };
+  }
   if (!text) {
     return {
       ...base,
@@ -212,6 +245,7 @@ function academicFit(
       return {
         ...base,
         level,
+        reqLevel: req / 15,
         headline: headlineFor(level, `A Level score ${req}`, "your A-level band"),
       };
     }
@@ -233,13 +267,19 @@ function academicFit(
     return {
       ...base,
       level,
+      reqLevel: req / 45,
       headline: headlineFor(level, `IB ${req}`, `IB ${s.ib.lo}–${s.ib.hi}`),
     };
   }
   if (sys === "alevel" && alReq && s.alevel) {
     const req = aLevelScore(alReq[1]!)!;
     const level = compare(s.alevel.lo, s.alevel.hi, req);
-    return { ...base, level, headline: headlineFor(level, alReq[1]!, "your A-level band") };
+    return {
+      ...base,
+      level,
+      reqLevel: req / 18,
+      headline: headlineFor(level, alReq[1]!, "your A-level band"),
+    };
   }
   // Percentage-graded curricula (UAE MoE, Indian CBSE/ISC): "80%", "minimum 85%".
   const pctReq = plain.match(/(\d{2}(?:\.\d)?)\s*%/);
@@ -247,12 +287,22 @@ function academicFit(
   if ((sys === "uae" || sys === "cbse") && pctReq && pct) {
     const req = Number(pctReq[1]);
     const level = compare(pct.lo, pct.hi, req);
-    return { ...base, level, headline: headlineFor(level, `${req}%`, `${pct.lo}–${pct.hi}%`) };
+    return {
+      ...base,
+      level,
+      reqLevel: req / 100,
+      headline: headlineFor(level, `${req}%`, `${pct.lo}–${pct.hi}%`),
+    };
   }
   if (sys === "us" && gpaReq && s.gpa) {
     const req = Number(gpaReq[1] ?? gpaReq[2]);
     const level = compare(s.gpa.lo, s.gpa.hi, req);
-    return { ...base, level, headline: headlineFor(level, `GPA ${req}`, "your GPA band") };
+    return {
+      ...base,
+      level,
+      reqLevel: req / 4,
+      headline: headlineFor(level, `GPA ${req}`, "your GPA band"),
+    };
   }
   // IB/US rows that only restate A-level grades: flag instead of comparing.
   if (
@@ -365,11 +415,12 @@ export function analyze(
   fx: FxRates | null,
 ): DecisionAnalysis {
   const { program, matches } = pickProgram(u, student.subject);
+  const langs = student.languages?.length ? student.languages : ["en"];
   const view: University = program ? { ...u, costs: program.costs } : u;
   const rows = program?.admissionsByCurriculum ?? u.admissionsByCurriculum ?? [];
 
   // Academic + admissions evidence
-  const academic = academicFit(rows, student);
+  const academic = academicFit(rows, student, u.country);
   const now = today();
   const dated = (u.deadlines ?? []).filter((d) => d.deadline);
   const upcoming = dated
@@ -456,7 +507,7 @@ export function analyze(
       if (!p.matches.length || !p.program) return null;
       const c = annualCostUsd({ ...o, costs: p.program.costs }, fx);
       if (!c) return null;
-      const language = teachingLanguage(p.program);
+      const language = teachingLanguage(p.program, langs);
       return {
         id: o.id,
         name: o.name,
@@ -490,7 +541,7 @@ export function analyze(
       kind: "deadline",
       text: "All published deadlines for this cycle have passed — plan for the next intake.",
     });
-  const taughtIn = program ? teachingLanguage(program) : undefined;
+  const taughtIn = program ? teachingLanguage(program, langs) : undefined;
   if (taughtIn)
     levers.push({
       kind: "language",
@@ -569,4 +620,9 @@ export function fmtDate(iso: string): string {
 
 export function usd(n: number | null): string {
   return n == null ? "Not published" : `$${Math.round(n).toLocaleString()}`;
+}
+
+/** True when the university offers the subject or a closely related programme. */
+export function offersSubject(u: University, subject: string): boolean {
+  return pickProgram(u, subject).matches.length > 0;
 }

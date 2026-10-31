@@ -1,3 +1,4 @@
+import { BUDGET_MAX } from "./budget";
 import { analyze, type DecisionAnalysis, type StudentInput } from "./decision-engine";
 import type { FxRates } from "./fx.functions";
 import type { Scholarship, University } from "./mock-data";
@@ -21,6 +22,8 @@ export interface PathwayRow {
   /** Net yearly cost after guaranteed aid. */
   netAnnualUsd: number | null;
   issue: { text: string; tone: "ok" | "warn" | "bad" };
+  /** Over budget by only a little (≤ 5% of budget or $1,000) — shown as within reach. */
+  nearMiss: boolean;
 }
 
 export interface PathwayResult {
@@ -40,6 +43,8 @@ function issueFor(
 ): PathwayRow["issue"] {
   if (a.academic.level === "gap")
     return { text: "Grades below the published requirement", tone: "bad" };
+  if (gapPerYear != null && gapPerYear > 0 && group === "within")
+    return { text: `Just ≈ $${Math.round(gapPerYear).toLocaleString()}/yr short`, tone: "warn" };
   if (gapPerYear != null && gapPerYear > 0)
     return {
       text: `${a.financial.annualComplete ? "" : "At least "}≈ $${Math.round(gapPerYear).toLocaleString()}/yr over your budget`,
@@ -71,6 +76,7 @@ export function buildPathways({
   region: string;
 }): PathwayResult {
   const anywhere = region === "Open to anywhere" || region === "All" || !region;
+  const noLimit = input.budgetUsd >= BUDGET_MAX;
   const rows: PathwayRow[] = [];
 
   for (const u of universities) {
@@ -82,15 +88,21 @@ export function buildPathways({
       f.annualUsd != null ? Math.max(0, f.annualUsd - f.guaranteedAnnualUsd) : null;
     const gapPerYear = f.gapDegreeUsd != null && f.years ? f.gapDegreeUsd / f.years : null;
 
+    const nearMiss =
+      !noLimit &&
+      f.fit === "over" &&
+      gapPerYear != null &&
+      gapPerYear <= Math.max(1000, input.budgetUsd * 0.05);
     let group: PathwayGroup;
-    if (f.fit === "within") group = "within";
+    if (f.fit === "within" || nearMiss) group = "within";
     else if (f.fit === "unknown") group = "unpriced";
     else
       group =
         a.academic.level === "gap" || (gapPerYear ?? 0) > input.budgetUsd ? "reach" : "stretch";
 
-    // Outside the chosen country, only show what the student can (probably) afford.
-    if (!inRegion && group !== "within" && group !== "unpriced") continue;
+    // Outside the chosen country, only suggest what the student can (probably)
+    // afford and can study in a language they have.
+    if (!inRegion && ((group !== "within" && group !== "unpriced") || a.taughtIn)) continue;
     rows.push({
       u,
       a,
@@ -99,21 +111,31 @@ export function buildPathways({
       gapPerYear,
       netAnnualUsd,
       issue: issueFor(a, gapPerYear, group),
+      nearMiss,
     });
   }
 
   // English-taught first (most international students need it), then the best
   // academic fit, then the lowest net cost.
+  // With no budget limit, the most demanding requirement the student still meets
+  // ranks first (cost no longer decides).
   const byFitThenCost = (x: PathwayRow, y: PathwayRow) =>
     Number(!!x.a.taughtIn) - Number(!!y.a.taughtIn) ||
     FIT_RANK[x.a.academic.level] - FIT_RANK[y.a.academic.level] ||
+    (noLimit ? (y.a.academic.reqLevel ?? 0) - (x.a.academic.reqLevel ?? 0) : 0) ||
+    Number(x.nearMiss) - Number(y.nearMiss) ||
     (x.netAnnualUsd ?? Infinity) - (y.netAnnualUsd ?? Infinity);
 
   const withinIn = rows.filter((r) => r.group === "within" && r.inRegion).sort(byFitThenCost);
-  const withinOut = rows
-    .filter((r) => r.group === "within" && !r.inRegion)
-    .sort(byFitThenCost)
-    .slice(0, OUTSIDE_REGION_LIMIT);
+  // Only look abroad when the chosen country has little that fits.
+  const unpricedIn = rows.filter((r) => r.group === "unpriced" && r.inRegion);
+  const fewAtHome = withinIn.length + unpricedIn.length < 3;
+  const withinOut = fewAtHome
+    ? rows
+        .filter((r) => r.group === "within" && !r.inRegion)
+        .sort(byFitThenCost)
+        .slice(0, OUTSIDE_REGION_LIMIT)
+    : [];
 
   return {
     groups: {
@@ -122,11 +144,13 @@ export function buildPathways({
         .filter((r) => r.group === "stretch")
         .sort((x, y) => (x.gapPerYear ?? 0) - (y.gapPerYear ?? 0) || byFitThenCost(x, y)),
       unpriced: [
-        ...rows.filter((r) => r.group === "unpriced" && r.inRegion).sort(byFitThenCost),
-        ...rows
-          .filter((r) => r.group === "unpriced" && !r.inRegion && r.netAnnualUsd != null)
-          .sort(byFitThenCost)
-          .slice(0, 4),
+        ...unpricedIn.sort(byFitThenCost),
+        ...(fewAtHome && withinOut.length < 3
+          ? rows
+              .filter((r) => r.group === "unpriced" && !r.inRegion && r.netAnnualUsd != null)
+              .sort(byFitThenCost)
+              .slice(0, 3)
+          : []),
       ],
       reach: rows
         .filter((r) => r.group === "reach")

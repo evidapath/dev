@@ -14,11 +14,32 @@ export const CURRICULA = [
 // Each band is described in every scale we compare against. Percentages are for
 // percentage-graded curricula (UAE MoE, Indian CBSE/ISC).
 export const GRADE_BANDS = [
-  "Top Tier: IB 40+ / A*A*A / GPA 4.0 / 95%+",
-  "Strong: IB 37-39 / A*AA / GPA 3.8-3.9 / 90-94%",
-  "Competitive: IB 34-36 / AAA-AAB / GPA 3.6-3.7 / 85-89%",
-  "Foundation: IB 30-33 / ABB-BBB / GPA 3.3-3.5 / 75-84%",
+  "Top Tier: IB 40+ / A*A*A / GPA 4.0 / 95%+ / Abitur 1.0-1.3",
+  "Strong: IB 37-39 / A*AA / GPA 3.8-3.9 / 90-94% / Abitur 1.4-1.9",
+  "Competitive: IB 34-36 / AAA-AAB / GPA 3.6-3.7 / 85-89% / Abitur 2.0-2.4",
+  "Foundation: IB 30-33 / ABB-BBB / GPA 3.3-3.5 / 75-84% / Abitur 2.5-3.0",
 ] as const;
+
+/** Languages a student can say they're able to study in (ISO code, label). */
+export const STUDY_LANGUAGES: [string, string][] = [
+  ["en", "English"],
+  ["de", "German"],
+  ["nl", "Dutch"],
+  ["fr", "French"],
+  ["ar", "Arabic"],
+];
+
+/** Sensible default: English, plus German for Abitur students. */
+export function defaultLanguages(curriculum: string): string[] {
+  return /abitur/i.test(curriculum) ? ["en", "de"] : ["en"];
+}
+
+/** "en,de" ⇄ ["en","de"] (stored as a short string in answers). */
+export const parseLangs = (v: string | undefined | null): string[] =>
+  (v ?? "")
+    .split(",")
+    .map((x) => x.trim())
+    .filter(Boolean);
 
 /** Percentage range for a band, also for bands saved before % was added. */
 export function bandPercent(band: string): { lo: number; hi: number } | null {
