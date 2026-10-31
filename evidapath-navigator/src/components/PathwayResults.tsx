@@ -16,6 +16,7 @@ import { fmtDate } from "../lib/decision-engine";
 import { money, TONE_CLASS, verdictFor, type Tone } from "../lib/verdict";
 import type { University } from "../lib/mock-data";
 import { CostBar } from "./CostBar";
+import { Illustration } from "./Illustration";
 
 // Find My Path results, built for a quick read: a top-3 strip, then compact
 // cards (verdict + tags + cost bar). Everything else is behind "Why?".
@@ -97,13 +98,16 @@ export function PathwayResults({
 
   if (total === 0)
     return (
-      <div className="rounded-2xl border border-border bg-card p-8 text-center text-sm text-muted-foreground">
-        Nothing for {subject || "that subject"}
-        {where} yet. Try “Open to anywhere”, or{" "}
-        <Link to="/universities" className="text-primary font-semibold">
-          browse all universities
-        </Link>
-        .
+      <div className="rounded-2xl border border-border bg-card p-8 text-center text-sm text-muted-foreground flex flex-col items-center gap-2">
+        <Illustration name="search" />
+        <p>
+          Nothing for {subject || "that subject"}
+          {where} yet. Try “Open to anywhere”, or{" "}
+          <Link to="/universities" className="text-primary font-semibold">
+            browse all universities
+          </Link>
+          .
+        </p>
       </div>
     );
 

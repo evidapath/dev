@@ -6,15 +6,7 @@ import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-import {
-  ClipboardList,
-  Plus,
-  Pencil,
-  X,
-  ArrowRight,
-  ShieldCheck,
-  Inbox,
-} from "lucide-react";
+import { ClipboardList, Plus, Pencil, X, ArrowRight, ShieldCheck, Inbox } from "lucide-react";
 import { requireAuth } from "../lib/route-guard";
 import { Button } from "../components/ui/button";
 import {
@@ -163,6 +155,7 @@ function ApplicationsPage() {
       {applications.length === 0 && !editing && (
         <EmptyState
           icon={Inbox}
+          illustration="applications"
           title="No applications yet"
           description="Track the universities you're applying to and update the status as decisions arrive. Add your first application to begin."
           action={

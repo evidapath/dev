@@ -35,10 +35,21 @@ export function verdictFor(a: DecisionAnalysis, budgetUsd: number, noLimit: bool
   const tags: Tag[] = [];
   // Money
   if (noLimit) {
-    if (f.annualUsd != null) tags.push({ text: `${money(f.annualUsd)}/yr${f.annualComplete ? "" : " tuition"}`, tone: "neutral" });
-  } else if (f.fit === "within") tags.push({ text: guaranteed ? "Fits budget with guaranteed aid" : "Fits your budget", tone: "good" });
+    if (f.annualUsd != null)
+      tags.push({
+        text: `${money(f.annualUsd)}/yr${f.annualComplete ? "" : " tuition"}`,
+        tone: "neutral",
+      });
+  } else if (f.fit === "within")
+    tags.push({
+      text: guaranteed ? "Fits budget with guaranteed aid" : "Fits your budget",
+      tone: "good",
+    });
   else if (f.fit === "over" && gapYr != null)
-    tags.push({ text: `${f.annualComplete ? "" : "≥ "}${money(gapYr)}/yr short`, tone: gapYr > budgetUsd ? "bad" : "warn" });
+    tags.push({
+      text: `${f.annualComplete ? "" : "≥ "}${money(gapYr)}/yr short`,
+      tone: gapYr > budgetUsd ? "bad" : "warn",
+    });
   else tags.push({ text: "Living cost unknown", tone: "warn" });
   // Grades
   const g = a.academic;
@@ -49,8 +60,10 @@ export function verdictFor(a: DecisionAnalysis, budgetUsd: number, noLimit: bool
   else tags.push({ text: "Holistic review", tone: "neutral" });
   // Blockers
   if (a.taughtIn) tags.push({ text: `Taught in ${a.taughtIn}`, tone: "bad" });
-  if (!a.admissions.nextDeadline && a.admissions.pastDeadlines > 0) tags.push({ text: "Deadline passed", tone: "warn" });
-  if (toApply > 0 && f.fit === "over") tags.push({ text: `${toApply} scholarship${toApply > 1 ? "s" : ""} to try`, tone: "neutral" });
+  if (!a.admissions.nextDeadline && a.admissions.pastDeadlines > 0)
+    tags.push({ text: "Deadline passed", tone: "warn" });
+  if (toApply > 0 && f.fit === "over")
+    tags.push({ text: `${toApply} scholarship${toApply > 1 ? "s" : ""} to try`, tone: "neutral" });
 
   const bad = tags.some((t) => t.tone === "bad");
   const warn = tags.some((t) => t.tone === "warn");

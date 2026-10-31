@@ -87,6 +87,7 @@ function CompareOffersPage() {
       {composites.length < 2 ? (
         <EmptyState
           icon={Inbox}
+          illustration="compare"
           title="Add at least two offers to compare"
           description="Add at least two offers to compare net cost, awards, deadlines and funding gaps. Once you have offers in your Offer Vault, they'll appear here side by side."
           action={

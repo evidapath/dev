@@ -15,6 +15,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import { requireAuth } from "../lib/route-guard";
+import { DeadlineTimeline } from "../components/DeadlineTimeline";
+import { Illustration } from "../components/Illustration";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { getProfile, listSavedUniversities } from "../lib/profile.functions";
 import { useLiveData } from "../lib/use-live-data";
@@ -223,7 +225,8 @@ function PlanPage() {
           ))}
         </div>
       ) : savedIds.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-border bg-card p-8 text-center space-y-3">
+        <div className="rounded-2xl border border-dashed border-border bg-card p-8 text-center space-y-3 flex flex-col items-center">
+          <Illustration name="plan" />
           <p className="font-display font-bold text-lg text-foreground">
             Save a university to start your plan
           </p>
@@ -273,6 +276,15 @@ function PlanPage() {
             />
           </div>
 
+          <DeadlineTimeline
+            items={dated.map((i) => ({
+              id: i.id,
+              date: i.date!,
+              label: `${i.uni} — ${KIND_META[i.kind].label.toLowerCase()}`,
+              kind: i.kind === "scholarship" ? "scholarship" : "deadline",
+              done: done.has(i.id),
+            }))}
+          />
           <PlanSection
             title="Your next 3"
             empty="All done — nice work."

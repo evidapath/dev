@@ -1,25 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo } from "react";
-import {
-  ArrowRight,
-  Compass,
-  BarChart3,
-  ShieldCheck,
-  DollarSign,
-  BookOpen,
-  Layers,
-  CheckCircle2,
-  TrendingUp,
-  Sparkles,
-  Scale,
-  GraduationCap,
-} from "lucide-react";
+import { ArrowRight, ShieldCheck, CheckCircle2, Sparkles } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { PathwaysEntryHero } from "../components/PathwaysEntryHero";
 import { DecisionModelDemo } from "../components/DecisionModelDemo";
 import { buildBriefs } from "../lib/data-briefs";
 import { useLiveData } from "../lib/use-live-data";
 import { ReadinessMap } from "../components/ReadinessMap";
+import { HowItWorks } from "../components/HowItWorks";
 import { formatCost } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
@@ -129,117 +117,9 @@ function Index() {
         <PathwaysEntryHero />
       </section>
 
-      {/* 3. THE 4 INTERCONNECTED QUESTIONS */}
+      {/* 3. HOW IT WORKS — 4-step flow diagram */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary">
-            Continuous Decision Intelligence
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mt-2">
-            Four Interconnected Questions for Every Family
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground mt-2">
-            Higher education is not a linear application checklist. It is a multi-dimensional
-            capital and academic allocation strategy.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Card 1: Discover */}
-          <div className="p-6 rounded-2xl border border-border bg-card shadow-xs hover:border-primary/50 transition-all flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-foreground">
-                <Compass className="w-5 h-5 text-primary" />
-              </div>
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Question 01
-              </span>
-              <h3 className="font-display font-bold text-lg text-foreground">DISCOVER</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                What universities and global pathways fit my academic profile, ambitions, geography,
-                and financial reality?
-              </p>
-            </div>
-            <Link
-              to="/discover"
-              className="mt-6 pt-4 border-t border-border flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
-            >
-              <span>Explore Pathways</span>
-              <ArrowRight className="w-3 h-3" />
-            </Link>
-          </div>
-
-          {/* Card 2: Analyze */}
-          <div className="p-6 rounded-2xl border border-border bg-card shadow-xs hover:border-primary/50 transition-all flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-foreground">
-                <BarChart3 className="w-5 h-5 text-primary" />
-              </div>
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Question 02
-              </span>
-              <h3 className="font-display font-bold text-lg text-foreground">ANALYZE</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Where do I currently stand relative to the available evidence for a particular
-                university or program?
-              </p>
-            </div>
-            <Link
-              to="/analyze"
-              className="mt-6 pt-4 border-t border-border flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
-            >
-              <span>Run Profile Analysis</span>
-              <ArrowRight className="w-3 h-3" />
-            </Link>
-          </div>
-
-          {/* Card 3: Plan */}
-          <div className="p-6 rounded-2xl border border-border bg-card shadow-xs hover:border-primary/50 transition-all flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-foreground">
-                <Layers className="w-5 h-5 text-primary" />
-              </div>
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Question 03
-              </span>
-              <h3 className="font-display font-bold text-lg text-foreground">PLAN</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                What gaps exist, which ones can realistically be changed, and what should I do next?
-              </p>
-            </div>
-            <Link
-              to="/plan"
-              className="mt-6 pt-4 border-t border-border flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
-            >
-              <span>View Controllable Levers</span>
-              <ArrowRight className="w-3 h-3" />
-            </Link>
-          </div>
-
-          {/* Card 4: Fund */}
-          <div className="p-6 rounded-2xl border border-border bg-card shadow-xs hover:border-primary/50 transition-all flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-foreground">
-                <DollarSign className="w-5 h-5 text-bronze" />
-              </div>
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Question 04
-              </span>
-              <h3 className="font-display font-bold text-lg text-foreground">FUND</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                What will this education actually cost, what funding could apply, and what is the
-                financial gap the family needs to solve?
-              </p>
-            </div>
-            <Link
-              to="/fund"
-              className="mt-6 pt-4 border-t border-border flex items-center gap-1.5 text-xs font-semibold text-bronze hover:underline"
-            >
-              <span>Model Capital Plan</span>
-              <ArrowRight className="w-3 h-3" />
-            </Link>
-          </div>
-        </div>
+        <HowItWorks />
       </section>
 
       {/* 4. THE EVIDAPATH DECISION MODEL (INTERACTIVE) */}

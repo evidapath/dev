@@ -3,6 +3,7 @@ import type { LucideIcon } from "lucide-react";
 import { ShieldAlert, FileCheck, BadgeCheck } from "lucide-react";
 import type { VerificationLevel } from "../../lib/offer-vault.types";
 import { formatCurrency } from "../../lib/format";
+import { Illustration, type IllustrationName } from "../Illustration";
 
 export function VerificationBadge({ level }: { level: VerificationLevel }) {
   const map = {
@@ -36,20 +37,26 @@ export function VerificationBadge({ level }: { level: VerificationLevel }) {
 
 export function EmptyState({
   icon: Icon,
+  illustration,
   title,
   description,
   action,
 }: {
   icon: LucideIcon;
+  illustration?: IllustrationName;
   title: string;
   description: string;
   action?: ReactNode;
 }) {
   return (
     <div className="rounded-2xl border border-dashed border-border bg-card/50 p-10 text-center flex flex-col items-center gap-3 max-w-xl mx-auto">
-      <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
-        <Icon className="w-6 h-6 text-muted-foreground" />
-      </div>
+      {illustration ? (
+        <Illustration name={illustration} />
+      ) : (
+        <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
+          <Icon className="w-6 h-6 text-muted-foreground" />
+        </div>
+      )}
       <h3 className="font-display font-bold text-base text-foreground">{title}</h3>
       <p className="text-sm text-muted-foreground leading-relaxed max-w-md">{description}</p>
       {action}

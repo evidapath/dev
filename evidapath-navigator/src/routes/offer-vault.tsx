@@ -142,6 +142,7 @@ function OfferVaultPage() {
       ) : composites.length === 0 && !addingOffer ? (
         <EmptyState
           icon={Inbox}
+          illustration="offers"
           title="No offers yet"
           description="Once you receive an admission or scholarship letter, add it here and EvidaPath will calculate what the offer means for your family."
           action={
