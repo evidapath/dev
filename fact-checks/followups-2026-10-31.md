@@ -53,3 +53,26 @@ excludes one citizenship.
 
 Toronto's Pearson record already said non-Canadian and is unchanged. Permanent-resident status isn't modelled, so
 the lines say "not open to Canadian citizens" only.
+
+## 4. Taylor's — Malaysian-student fee tier (separate file, 8 mutations)
+
+Pending file: `fact-checks/pending/2026-10-31-taylors-local.ndjson`.
+
+Taylor's fees page (https://university.taylors.edu.my/en/study/scholarships-and-financial-aid/fees-schedules.html)
+links each programme's schedule as "Local Students (MYR)" and "International Students (USD)". The local 2027 PDFs
+list only an enrolment fee and tuition (September 2027 intake):
+
+| Programme | Enrolment (one-off) | Tuition total | Grand total | Per year: tuition / fees |
+|---|---|---|---|---|
+| Computer Science (3 yrs) | RM650 | RM124,764 | RM125,414 | RM41,588 / RM216.67 |
+| Business (Hons) (3 yrs) | RM650 | RM133,188 | RM133,838 | RM44,396 / RM216.67 |
+| Mechanical Engineering (4 yrs) | RM650 | RM173,152 | RM173,802 | RM43,288 / RM162.50 |
+
+Semester tuition lines were summed and match each grand total minus RM650.
+
+- New `applicantCategory-my-taylors-residency-malaysian` ("Malaysian students", so the app treats it as the
+  national tier), three source records and three cost profiles. Living cost copied from the international profiles
+  (RM28,000).
+- The international category's description said "6% SST likely already included in quoted total fees"; the
+  schedules say fees are exclusive of it. Corrected.
+- Non-Malaysians still see the international profile (the higher-tuition tier is the default).
