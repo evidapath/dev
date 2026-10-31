@@ -14,7 +14,7 @@ Data: `fact-checks/pending/2026-10-31-emirati.ndjson` (51 changes).
 Living costs for ZU/HCT use the unofficial Abu Dhabi estimate (labelled "Unofficial estimate"), as for Khalifa.
 Not done: ZU per-programme credit totals (30 credits/yr assumed, as HCT's published full-time load).
 
-## UAE minimum averages (fact-checks/pending/2026-10-31-uae-averages.ndjson, 33 patches)
+## UAE minimum averages (fact-checks/pending/2026-10-31-uae-averages.ndjson, 37 patches)
 | University | Official source | Requirement |
 |---|---|---|
 | UAEU | uaeu.ac.ae admissions — International Students and Children of UAEU Employees (tables by college) | Computing & AI and Engineering 90% average (+ English/Maths/science 90%); Business & Economics 85% (Maths 80%, English 90%). Nationals apply via the national portal. |
