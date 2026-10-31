@@ -363,7 +363,29 @@ export function citizenshipCode(text: string): string | null {
   return null;
 }
 
-function eligibility(s: Scholarship, code: string | null): "yes" | "no" | "check" {
+// Citizens studying at home don't qualify for awards aimed at international
+// students. UK is left out: a British citizen living abroad can still pay
+// overseas fees, so those stay "check".
+const HOME_COUNTRY: Record<string, string> = {
+  ae: "United Arab Emirates",
+  my: "Malaysia",
+  ca: "Canada",
+  us: "United States",
+  de: "Germany",
+  nl: "Netherlands",
+  fr: "France",
+};
+const INTL_NAME = /\binternational\b(?! baccalaureate)/i;
+const INTL_ONLY =
+  /\bfor international (?:students|undergraduates)\b|as an international student|international fee-paying/i;
+
+function eligibility(s: Scholarship, code: string | null, country: string): "yes" | "no" | "check" {
+  if (
+    code &&
+    HOME_COUNTRY[code] === country &&
+    (INTL_NAME.test(s.name) || INTL_ONLY.test(s.eligibilitySummary ?? ""))
+  )
+    return "no";
   const list = (s.eligibleCitizenships ?? []).map((c) => c.toLowerCase());
   if (list.includes("all")) return "yes";
   if (list.length === 1 && /^[a-z]{2}$/.test(list[0]!)) {
@@ -461,7 +483,7 @@ export function analyze(
       : null;
   const funding: FundingItem[] = scholarships
     .filter((s) => (s.universityIds ?? []).includes(u.id))
-    .map((s) => ({ s, el: eligibility(s, code) }))
+    .map((s) => ({ s, el: eligibility(s, code, u.country) }))
     .filter(({ el }) => el !== "no")
     .map(({ s, el }) => {
       const award = s.awardSummary ?? "See official source";

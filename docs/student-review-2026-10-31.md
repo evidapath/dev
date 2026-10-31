@@ -194,23 +194,31 @@ Items 1, 5, 6, 7 and 8 are code-only and quick. Items 2–4 need small data-mode
 |---|---|---|---|
 | 1 | Aisha | UAEU CS (no tuition for Emiratis, meets 90%), HCT Software Engineering, Zayed IT — all within $20k; Khalifa/Sharjah as stretch. Fixed by Emirati data (2026-10-31) | UAE ×3 |
 | 2 | Rohan | Monash Malaysia (fits) · Khalifa (meets CBSE 75%, $5.7k short) · Sharjah ("just within reach — $144/yr short") | 2 picks |
-| 3 | Sara | TU Munich (English-taught, outside UK) · Nottingham ($10k short, meets grades) | LMU (needs German) |
+| 3 | Sara | University of Malaya (fits, outside UK) · Nottingham ($10k short, meets grades) · Birmingham ($12.5k short) | LMU (needs German) |
 | 4 | Omar | Monash Malaysia · McMaster · TU Munich | ok |
 | 5 | Lena | **RWTH Aachen · TU Berlin** (German allowed, Abitur = direct entry) | University of Malaya |
 | 6 | Mohammed | **MIT · Princeton · Purdue** (holistic, full-need aid first) | Purdue + Malaya |
 | 7 | Priya | "We don't cover Medicine yet" + what we cover + "Tell us you want Medicine" | dead end |
 | 8 | James | Nottingham · UCL ("closest option above budget") · Birmingham | Warwick "best grade match" |
-| 9 | Fatima | Alberta · UBC (closest above budget) · McMaster | ok |
-| 10 | Yusuf | HCT Finance (meets grades) and Zayed Finance — no tuition, "$3.7k/yr short on living costs (less if you live at home)"; UAEU Business shown as grades below (85%) | UAE ×3 |
-| 11 | Mei | Local Monash Malaysia fee applies once the tier data is in (RM48,480 vs RM57,600) | foreigner prices |
-| 12 | Noor | **Twente ("just within reach — $604/yr short")** · Delft | KIT (needs German) |
-| 13 | Arjun | Monash Malaysia · Sydney ("closest option above budget") | Sydney "best grade match" |
+| 9 | Fatima | Alberta (fits, meets 70%) · McMaster (meets 80%, $8.6k short) · UBC ($5.3k short, holistic) | ok |
+| 10 | Yusuf | HCT Finance (meets grades) and Zayed Finance — no tuition, "$3.7k/yr short on living costs (less if you live at home)". UAEU Business (85%, grades below) is listed but no longer a top pick, and UAEU's international-student waivers are no longer offered to him | UAE ×3 |
+| 11 | Mei | Monash Malaysia at the Malaysian fee ($18.9k, fits) · Nottingham Malaysia ($1.8k short) · Universiti Malaya ($13.2k) | foreigner prices |
+| 12 | Noor | **Twente ("just within reach — $604/yr short")** · Delft · Eindhoven | KIT (needs German) |
+| 13 | Arjun | Monash Malaysia · Sydney ("closest option above budget") · Monash (Australia) | Sydney "best grade match" |
 | 14 | Hana | **Oxford · McGill · Monash Malaysia** (ranked by grade match) | Malaysia ×2 |
 | 15 | Daniel | ASU · **MIT ("short on paper — but they meet full financial need")** · Purdue | ASU + Malaya |
 
 Also fixed: phone filters fold into one line; German B2/C1 requirements flagged even on bilingual programmes;
 "short even after your guaranteed scholarship".
 
-**Still open (data research):** what Emiratis pay at UAEU / Khalifa (official confirmation needed), Zayed University
-and HCT, UAE government scholarships for study abroad, UAE MoE minimum averages for UAEU/AUS/CUD/RIT, US-diploma
-requirements for Canadian universities, compulsory fees for McMaster / Nottingham Malaysia / UM / Taylor's.
+**Data research done (2026-10-31):** what Emiratis pay at UAEU / Khalifa / Zayed / HCT, UAE government
+study-abroad scholarships, UAE MoE minimum averages (UAEU, AUS, CUD, RIT), US-diploma requirements at five Canadian
+universities, and compulsory fees for McMaster, Nottingham Malaysia, UM and Taylor's.
+
+**Re-checked on staging (2026-10-31):** all 15 students re-run on the deployed site. Two more fixes followed:
+awards limited to international students are no longer offered to citizens studying at home (UK excepted, since
+British expats can pay overseas fees), and a school whose published grades the student falls below is no longer a
+top pick while other options exist. Students who had only two picks now get a third from their chosen country.
+
+**Still open:** Waterloo Economics (no official US-diploma page); Malaysian SST on Taylor's fees is noted but not
+added to costs.

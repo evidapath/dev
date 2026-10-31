@@ -91,28 +91,39 @@ function pickTop3(
     return out.filter((x): x is NonNullable<typeof x> => !!x);
   }
 
+  // Leave out schools whose published grades the student falls below, unless
+  // nothing else in their region is left.
+  const reach = (x: PathwayRow) => x.a.academic.level !== "gap";
+  const fine = all.some((x) => home(x) && reach(x)) ? reach : () => true;
   const affordable =
-    within.filter(home).find((x) => !x.nearMiss) ??
-    within.filter(home)[0] ??
-    within.filter((x) => ok(x) && !x.inRegion)[0] ??
-    unpriced.filter(home)[0];
+    within.filter(home).find((x) => !x.nearMiss && fine(x)) ??
+    within.filter(home).find(fine) ??
+    within.filter((x) => ok(x) && !x.inRegion && reach(x))[0] ??
+    unpriced.filter((x) => home(x) && fine(x))[0];
   const out = [take("Best you can afford", Wallet, affordable)];
+  const above = stretch
+    .filter((x) => home(x) && fine(x))
+    .sort((x, y) => (x.gapPerYear ?? 0) - (y.gapPerYear ?? 0));
   const gradeMatch = all
     .filter((x) => home(x) && strong(x) && free(x))
     .sort((x, y) => (x.gapPerYear ?? 0) - (y.gapPerYear ?? 0) || byDemand(x, y))[0];
   out.push(
     gradeMatch
       ? take("Best match for your grades", Trophy, gradeMatch)
-      : take("Closest option above budget", Trophy, stretch.filter((x) => home(x) && free(x))[0]),
+      : take("Closest option above budget", Trophy, above.filter(free)[0]),
   );
   const cheapest = [...within, ...unpriced]
-    .filter((x) => home(x) && free(x) && x.netAnnualUsd != null)
+    .filter((x) => home(x) && fine(x) && free(x) && x.netAnnualUsd != null)
     .sort(
       (x, y) =>
         Number(!x.a.financial.annualComplete) - Number(!y.a.financial.annualComplete) ||
         byNet(x, y),
     )[0];
-  out.push(take("Lowest cost", Gem, cheapest));
+  out.push(
+    cheapest
+      ? take("Lowest cost", Gem, cheapest)
+      : take("Also close to your budget", Gem, above.filter(free)[0]),
+  );
   return out.filter((x): x is NonNullable<typeof x> => !!x);
 }
 
