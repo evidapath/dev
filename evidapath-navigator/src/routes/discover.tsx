@@ -16,7 +16,7 @@ import {
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { type FxRates } from "../lib/fx.functions";
-import { BUDGET_MAX, annualCostUsd, budgetFit } from "../lib/budget";
+import { BUDGET_MAX, BUDGET_MIN, annualCostUsd, budgetFit } from "../lib/budget";
 import { listSavedUniversities, saveUniversity } from "../lib/profile.functions";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
@@ -221,8 +221,8 @@ function DiscoverPage() {
             </div>
             <input
               type="range"
-              min="20000"
-              max="90000"
+              min={BUDGET_MIN}
+              max={BUDGET_MAX}
               step="5000"
               value={maxBudget}
               onChange={(e) => setMaxBudget(Number(e.target.value))}

@@ -355,7 +355,7 @@ export function DecisionAnalysisView({
                     )}
                   </span>
                   <span className="font-mono text-muted-foreground shrink-0">
-                    ≈ {usd(alt.annualUsd)}/yr
+                    ≈ {usd(alt.annualUsd)}/yr{alt.complete ? "" : " tuition"}
                   </span>
                 </li>
               ))}

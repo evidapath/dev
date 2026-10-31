@@ -64,6 +64,8 @@ export interface Alternative {
   fit: BudgetFit;
   /** Set when the programme is taught in a language other than English. */
   language?: string;
+  /** True when annualUsd includes living costs; false = tuition only. */
+  complete: boolean;
 }
 
 const LANGUAGE_NAMES: Record<string, string> = {
@@ -437,6 +439,7 @@ export function analyze(
         program: p.program.name,
         annualUsd: Math.round(c.usd),
         fit: budgetFit(c, student.budgetUsd),
+        complete: c.complete,
         ...(language ? { language } : {}),
       };
     })
@@ -499,7 +502,7 @@ export function analyze(
     if (alternatives[0])
       levers.push({
         kind: "budget",
-        text: `Compare with ${alternatives[0].name} (≈ $${alternatives[0].annualUsd.toLocaleString()}/yr for ${alternatives[0].program}).`,
+        text: `Compare with ${alternatives[0].name} (≈ $${alternatives[0].annualUsd.toLocaleString()}/yr${alternatives[0].complete ? "" : " tuition only"} for ${alternatives[0].program}).`,
       });
   } else if (competitive.length) {
     levers.push({

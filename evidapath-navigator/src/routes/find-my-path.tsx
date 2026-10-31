@@ -1,4 +1,6 @@
-import { useUniversitiesFn, useFxRatesFn } from "../lib/use-live-data";
+import { useUniversitiesFn, useFxRatesFn, useScholarshipsFn } from "../lib/use-live-data";
+import { buildPathways } from "../lib/pathways";
+import { PathwayResults } from "../components/PathwayResults";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
@@ -12,21 +14,11 @@ import {
   DollarSign,
   Globe,
   Sparkles,
-  Save,
-  Scale,
-  ChevronDown,
 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { type FxRates } from "../lib/fx.functions";
-import {
-  BUDGET_MAX,
-  BUDGET_MIN,
-  annualCostUsd,
-  budgetFit,
-  matchesSubject,
-  type BudgetFit,
-} from "../lib/budget";
+import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
 import {
   getProfile,
   upsertProfile,
@@ -35,10 +27,8 @@ import {
 } from "../lib/profile.functions";
 import { useAuth } from "../components/AuthContext";
 import { CounselingWaitlist } from "../components/CounselingWaitlist";
-import type { University } from "../lib/mock-data";
-import { formatCost } from "../lib/format";
-import { DataStatus, StatusChip, PendingValue } from "../components/DataStatus";
-import { analyze } from "../lib/decision-engine";
+import type { Scholarship, University } from "../lib/mock-data";
+import { DataStatus } from "../components/DataStatus";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
 export const Route = createFileRoute("/find-my-path")({
@@ -93,25 +83,27 @@ const DEFAULTS: IntakeAnswers = {
   preferences: "",
 };
 
-const FIT_ORDER: Record<BudgetFit, number> = { within: 0, unknown: 1, over: 2 };
-
 function FindMyPathPage() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<IntakeAnswers>(DEFAULTS);
   const [showResults, setShowResults] = useState(false);
-  const [expanded, setExpanded] = useState<string | null>(null);
   const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
   const [universities, setUniversities] = useState<University[]>([]);
   const [source, setSource] = useState<"sanity" | "mock" | null>(null);
   const [fx, setFx] = useState<FxRates | null>(null);
+  const [scholarships, setScholarships] = useState<Scholarship[]>([]);
   // True when the results were opened straight from the student's saved profile.
   const [fromProfile, setFromProfile] = useState(false);
   const navigate = useNavigate();
 
   const fetchUniversities = useUniversitiesFn();
   const fetchFx = useFxRatesFn();
+  const fetchScholarships = useScholarshipsFn();
   useEffect(() => {
     let active = true;
+    fetchScholarships()
+      .then((res) => active && setScholarships(res.scholarships))
+      .catch(() => {});
     fetchUniversities().then((res) => {
       if (!active) return;
       setUniversities(res.universities);
@@ -123,7 +115,7 @@ function FindMyPathPage() {
     return () => {
       active = false;
     };
-  }, [fetchUniversities, fetchFx]);
+  }, [fetchUniversities, fetchFx, fetchScholarships]);
 
   // Prefill from a saved profile so a returning (signed-in) student sees their
   // answers persist. Silently ignored when signed out (intake still works locally).
@@ -248,51 +240,25 @@ function FindMyPathPage() {
 
   const countries = Array.from(new Set(universities.map((u) => u.country))).sort();
 
-  // Transparent pathway selection. No admissions probabilities. Region and subject
-  // filter the list; budget groups it into within / cost not fully verified / over,
-  // so an over-budget university is never presented as a realistic match.
+  // Results grouped the way a student reads them (see lib/pathways.ts): what fits
+  // the budget first, then good matches that cost more with ways to close the gap.
   const budgetUsd = Number(answers.budget);
   const noBudgetLimit = !Number.isFinite(budgetUsd) || budgetUsd >= BUDGET_MAX;
-  const matched = universities
-    .filter((u) => {
-      const regionOk =
-        answers.region === "Open to anywhere" ||
-        answers.region === "All" ||
-        u.country === answers.region;
-      return regionOk && matchesSubject(u, answers.subject);
-    })
-    .map((u) => {
-      const cost = annualCostUsd(u, fx);
-      return { u, cost, fit: budgetFit(cost, budgetUsd) };
-    })
-    .sort(
-      (a, b) =>
-        FIT_ORDER[a.fit] - FIT_ORDER[b.fit] ||
-        (a.cost?.usd ?? Infinity) - (b.cost?.usd ?? Infinity),
-    );
-  // "Save my path" saves only the realistic ones (within budget, or cost unconfirmed).
-  const pathways = matched.filter((m) => m.fit !== "over").map((m) => m.u);
-  const fitCounts = {
-    within: matched.filter((m) => m.fit === "within").length,
-    unknown: matched.filter((m) => m.fit === "unknown").length,
-    over: matched.filter((m) => m.fit === "over").length,
-  };
-  const FIT_HEADINGS: Record<BudgetFit, { title: string; note: string }> = {
-    within: {
-      title: noBudgetLimit ? "Verified annual cost" : "Within your budget",
-      note: "Tuition, fees and living costs converted to USD. Open a university to see where its living cost comes from.",
+  const result = buildPathways({
+    universities,
+    scholarships,
+    fx,
+    region: answers.region,
+    input: {
+      curriculum: answers.curriculum,
+      gradeBand: answers.gradeBand,
+      subject: answers.subject,
+      budgetUsd: noBudgetLimit ? BUDGET_MAX : budgetUsd,
+      citizenship: answers.citizenship,
     },
-    unknown: {
-      title: "Cost not fully verified yet",
-      note: noBudgetLimit
-        ? "We don't have a verified full annual cost for these yet."
-        : "We can't confirm these fit your budget yet: part of the cost is still unverified.",
-    },
-    over: {
-      title: "Above your budget",
-      note: "Only realistic with significant funding. Check the scholarships before ruling them out.",
-    },
-  };
+  });
+  // "Save my path" saves what's realistic: within budget, plus probably-affordable.
+  const pathways = [...result.groups.within, ...result.groups.unpriced].map((r) => r.u);
 
   if (showResults) {
     return (
@@ -337,206 +303,23 @@ function FindMyPathPage() {
           </p>
         )}
 
-        <div className="space-y-4">
-          {matched.length === 0 && (
-            <div className="rounded-2xl border border-border bg-card p-8 text-center text-sm text-muted-foreground">
-              No universities match that country and subject yet. Try another subject or "Open to
-              anywhere", or{" "}
-              <Link to="/universities" className="text-primary font-semibold">
-                browse all universities
-              </Link>
-              .
-            </div>
-          )}
-          {matched.map(({ u, cost, fit }, i) => {
-            const isOpen = expanded === u.id;
-            const firstOfGroup = i === 0 || matched[i - 1]!.fit !== fit;
-            return (
-              <div key={u.id} className="space-y-4">
-                {firstOfGroup && (
-                  <div className="pt-2">
-                    <h2 className="font-display font-bold text-lg text-foreground">
-                      {FIT_HEADINGS[fit].title}{" "}
-                      <span className="text-muted-foreground font-normal">({fitCounts[fit]})</span>
-                    </h2>
-                    <p className="text-xs text-muted-foreground">{FIT_HEADINGS[fit].note}</p>
-                  </div>
-                )}
-                <div
-                  className={`rounded-2xl border bg-card shadow-xs overflow-hidden ${
-                    fit === "over" ? "border-bronze/40" : "border-border"
-                  }`}
-                >
-                  {/* Summary row — progressive disclosure */}
-                  <button
-                    onClick={() => setExpanded(isOpen ? null : u.id)}
-                    className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-secondary/30 transition-colors"
-                  >
-                    <div className="flex items-center gap-4 min-w-0">
-                      <span className="text-2xl shrink-0">{u.flag}</span>
-                      <div className="min-w-0">
-                        <h3 className="font-display font-bold text-base text-foreground truncate">
-                          {u.name}
-                        </h3>
-                        <p className="text-xs text-muted-foreground flex items-center gap-1">
-                          <MapPin className="w-3 h-3" />
-                          {u.city}, {u.country} · {u.durationYears}-year
-                        </p>
-                      </div>
-                    </div>
-                    <div className="hidden sm:flex items-center gap-4 shrink-0">
-                      <StatusChip
-                        level={u.evidenceConfidence.startsWith("Verified") ? "live" : "pending"}
-                      />
-                      <ChevronDown
-                        className={`w-4 h-4 text-muted-foreground transition-transform ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </div>
-                  </button>
-
-                  {/* Quick facts */}
-                  <div className="px-5 pb-5 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs border-t border-border pt-4">
-                    <div>
-                      <p className="text-muted-foreground">Academic fit</p>
-                      <PendingValue />
-                    </div>
-                    <div>
-                      <p className="text-muted-foreground">Est. annual cost</p>
-                      <p className="font-mono text-foreground">
-                        {formatCost(u.costs.totalAnnual, u.costs.currency)}
-                      </p>
-                      {cost && u.costs.currency !== "USD" && (
-                        <p className="font-mono text-[11px] text-muted-foreground">
-                          ≈ ${Math.round(cost.usd).toLocaleString()} USD
-                          {cost.complete ? "" : " tuition only"}
-                        </p>
-                      )}
-                      {fit === "over" && cost && (
-                        <p className="text-[11px] font-semibold text-bronze">
-                          ≈ ${Math.round(cost.usd - budgetUsd).toLocaleString()} over budget
-                        </p>
-                      )}
-                    </div>
-                    <div>
-                      <p className="text-muted-foreground">Funding potential</p>
-                      <PendingValue />
-                    </div>
-                    <div>
-                      <p className="text-muted-foreground">Main gap / risk</p>
-                      <PendingValue />
-                    </div>
-                  </div>
-
-                  {/* Progressive disclosure — deeper analysis only when opened */}
-                  {isOpen && (
-                    <div className="px-5 pb-5 space-y-4 border-t border-border pt-4">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                        <div className="rounded-lg border border-border bg-secondary/30 p-3 space-y-1.5">
-                          <p className="font-semibold text-foreground">Admissions</p>
-                          <p className="text-muted-foreground">
-                            System: {u.academicRequirements.system}
-                          </p>
-                          <p className="text-muted-foreground">
-                            Target: <PendingValue />
-                          </p>
-                          <ul className="text-muted-foreground list-disc list-inside">
-                            {u.academicRequirements.prerequisites.map((p) => (
-                              <li key={p}>{p}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div className="rounded-lg border border-border bg-secondary/30 p-3 space-y-1.5">
-                          <p className="font-semibold text-foreground">Cost & funding</p>
-                          <p className="text-muted-foreground">
-                            Tuition/yr: {formatCost(u.costs.tuitionPerYear, u.costs.currency)}
-                          </p>
-                          <p className="text-muted-foreground">
-                            Living/yr: {formatCost(u.costs.livingPerYear, u.costs.currency)}
-                          </p>
-                          {u.costs.livingSource && (
-                            <p className="text-[10px] text-muted-foreground">
-                              {u.costs.livingSource}
-                            </p>
-                          )}
-                          <p className="text-muted-foreground">
-                            Total degree: {formatCost(u.costs.totalDegree, u.costs.currency)}
-                          </p>
-                          <p className="text-muted-foreground">
-                            Affordability: {u.affordabilityIndex.category}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="rounded-lg border border-border bg-secondary/30 p-3 text-xs space-y-1">
-                        <p className="font-semibold text-foreground">Why this made your list</p>
-                        <p className="text-muted-foreground">
-                          Matches your subject interest and country preference.
-                        </p>
-                        <p className="text-foreground">
-                          <span className="font-semibold">Your grades: </span>
-                          {
-                            analyze(
-                              u,
-                              {
-                                curriculum: answers.curriculum,
-                                gradeBand: answers.gradeBand,
-                                subject: answers.subject,
-                                budgetUsd: Number(answers.budget) || BUDGET_MAX,
-                                citizenship: answers.citizenship,
-                              },
-                              [],
-                              [],
-                              fx,
-                            ).academic.headline
-                          }
-                        </p>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        <Link to="/analyze" search={{ uni: u.id }}>
-                          <Button
-                            size="sm"
-                            className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
-                          >
-                            Analyze my fit <ArrowRight className="w-3 h-3" />
-                          </Button>
-                        </Link>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          className="border-border text-xs"
-                          onClick={() => saveUni(u)}
-                          disabled={savedIds.has(u.id)}
-                        >
-                          {savedIds.has(u.id) ? (
-                            <>
-                              <Check className="w-3 h-3" /> Saved
-                            </>
-                          ) : (
-                            <>
-                              <Save className="w-3 h-3" /> Save
-                            </>
-                          )}
-                        </Button>
-                        <Link to="/compare-offers">
-                          <Button size="sm" variant="outline" className="border-border text-xs">
-                            <Scale className="w-3 h-3" /> Compare
-                          </Button>
-                        </Link>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-          {fx && matched.some((m) => m.cost && m.u.costs.currency !== "USD") && (
-            <p className="text-[11px] text-muted-foreground">
-              USD conversions use European Central Bank reference rates from {fx.date} (AED at its
-              fixed peg of 3.6725). They're approximate and for comparison only.
-            </p>
-          )}
-        </div>
+        {universities.length === 0 ? (
+          <div className="space-y-3" aria-busy="true">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div key={i} className="h-36 rounded-2xl bg-secondary/60 animate-pulse" />
+            ))}
+          </div>
+        ) : (
+          <PathwayResults
+            result={result}
+            budgetUsd={budgetUsd}
+            noBudgetLimit={noBudgetLimit}
+            region={answers.region}
+            subject={answers.subject}
+            savedIds={savedIds}
+            onSave={saveUni}
+          />
+        )}
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-border">
           <Button
@@ -703,7 +486,7 @@ function BudgetSlider({ value, set }: { value: string; set: SetAnswer }) {
         aria-label="Annual budget in US dollars"
       />
       <div className="flex justify-between text-[10px] text-muted-foreground">
-        <span>$20k</span>
+        <span>${BUDGET_MIN / 1000}k</span>
         <span>$90k+ (no limit)</span>
       </div>
     </div>

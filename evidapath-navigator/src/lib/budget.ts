@@ -3,8 +3,8 @@ import type { University } from "./mock-data";
 
 // Shared budget + subject matching so Find My Path, Discover and Browse all agree.
 
-/** Budget sliders run from $20k to $90k; the top value means "no limit". */
-export const BUDGET_MIN = 20000;
+/** Budget sliders run from $10k to $90k; the top value means "no limit". */
+export const BUDGET_MIN = 10000;
 export const BUDGET_MAX = 90000;
 
 export type BudgetFit = "within" | "unknown" | "over";
