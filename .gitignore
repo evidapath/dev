@@ -51,3 +51,8 @@ __pycache__/
 # Token-rotation backups (scripts/rotate-sanity-token.sh)
 .dev.vars*
 *.bak-*
+
+# Local AI-agent skills (Higgsfield etc.) — not part of the app
+.agents/
+.claude/
+skills-lock.json
