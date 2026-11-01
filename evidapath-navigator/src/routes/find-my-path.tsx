@@ -107,6 +107,9 @@ function FindMyPathPage() {
   const [scholarships, setScholarships] = useState<Scholarship[]>([]);
   // True when the results were opened straight from the student's saved profile.
   const [fromProfile, setFromProfile] = useState(false);
+  // Signed-in students may jump straight to their results once their profile
+  // loads; until then show a placeholder instead of flashing the form.
+  const [profileChecked, setProfileChecked] = useState(false);
   const navigate = useNavigate();
 
   const fetchUniversities = useUniversitiesFn();
@@ -163,11 +166,17 @@ function FindMyPathPage() {
           setFromProfile(true);
         }
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => active && setProfileChecked(true));
     return () => {
       active = false;
     };
   }, [getProfileFn, listSavedFn]);
+
+  // Moving between the form and the results starts at the top of the page.
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [showResults, quick]);
 
   // Save a pathway's university to the student's persisted path (Supabase).
   const saveUniFn = useServerFn(saveUniversity);
@@ -299,9 +308,18 @@ function FindMyPathPage() {
   // "Save my path" saves what's realistic: within budget, plus probably-affordable.
   const pathways = [...result.groups.within, ...result.groups.unpriced].map((r) => r.u);
 
+  if (user && !profileChecked) {
+    return (
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6" aria-busy="true">
+        <div className="mx-auto h-8 w-56 rounded-lg bg-secondary/60 animate-pulse" />
+        <div className="h-80 rounded-2xl bg-secondary/60 animate-pulse" />
+      </div>
+    );
+  }
+
   if (showResults) {
     return (
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 page-enter">
         <div className="space-y-3 max-w-2xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
             <Compass className="w-3.5 h-3.5" />
@@ -400,7 +418,7 @@ function FindMyPathPage() {
   if (quick) {
     const QUICK = ["curriculum", "gradeBand", "subject", "budget"] as const;
     return (
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6 page-enter">
         <div className="text-center space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
             <Compass className="w-3.5 h-3.5" />
@@ -483,7 +501,10 @@ function FindMyPathPage() {
         ))}
       </div>
 
-      <div className="bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+      <div
+        key={step}
+        className="bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-6 page-enter"
+      >
         <div className="flex items-center gap-3 border-b border-border pb-4">
           <div className="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
             <Icon className="w-4.5 h-4.5" />

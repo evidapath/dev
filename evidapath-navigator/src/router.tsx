@@ -19,6 +19,13 @@ export const getRouter = () => {
       auth: { user: null },
     } satisfies RouterContext,
     scrollRestoration: true,
+    // The page fades in; scrolling the old page up first looked jumpy.
+    scrollRestorationBehavior: "instant",
+    // Cross-fade between pages with the browser's View Transitions API (old page
+    // snapshot → new page); browsers without it just swap instantly.
+    defaultViewTransition: true,
+    // Load a page's code when a link is hovered/touched, so the click is instant.
+    defaultPreload: "intent",
     defaultPreloadStaleTime: 0,
   });
 
