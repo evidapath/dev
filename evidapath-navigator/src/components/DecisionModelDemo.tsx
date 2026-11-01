@@ -25,7 +25,7 @@ const STUDENTS: { key: string; label: string; input: StudentInput }[] = [
     key: "expat-econ",
     label: "Indian expat in Dubai · A*AA · Economics · $35k/yr",
     input: {
-      curriculum: "Cambridge A-Levels",
+      curriculum: "A-Levels (GCE: Edexcel, Cambridge)",
       gradeBand: "Strong: IB 37-39 / A*AA / GPA 3.8-3.9",
       subject: "Economics",
       budgetUsd: 35000,

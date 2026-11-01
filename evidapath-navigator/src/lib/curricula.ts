@@ -3,7 +3,7 @@
 
 export const CURRICULA = [
   "IB Diploma",
-  "Cambridge A-Levels",
+  "A-Levels (GCE: Edexcel, Cambridge)",
   "US High School Diploma + APs",
   "UAE Ministry of Education (Emirati Secondary)",
   "Indian CBSE / ISC (Class XII)",
@@ -18,7 +18,18 @@ export const GRADE_BANDS = [
   "Strong: IB 37-39 / A*AA / GPA 3.8-3.9 / 90-94% / Abitur 1.4-1.9",
   "Competitive: IB 34-36 / AAA-AAB / GPA 3.6-3.7 / 85-89% / Abitur 2.0-2.4",
   "Foundation: IB 30-33 / ABB-BBB / GPA 3.3-3.5 / 75-84% / Abitur 2.5-3.0",
+  "Developing: IB 24-29 / BBC-CCC or below / GPA 2.5-3.2 / 60-74% / Abitur 3.1-4.0",
 ] as const;
+
+// Labels saved by earlier versions of the forms, mapped to today's.
+const LEGACY_CURRICULA: Record<string, string> = {
+  "Cambridge A-Levels": "A-Levels (GCE: Edexcel, Cambridge)",
+};
+
+/** Today's label for a saved curriculum (older profiles say "Cambridge A-Levels"). */
+export function currentCurriculum<T extends string | null | undefined>(v: T): T | string {
+  return (v && LEGACY_CURRICULA[v]) || v;
+}
 
 /** Languages a student can say they're able to study in (ISO code, label). */
 export const STUDY_LANGUAGES: [string, string][] = [
@@ -49,6 +60,7 @@ export function bandPercent(band: string): { lo: number; hi: number } | null {
   if (/^strong/i.test(band)) return { lo: 90, hi: 94 };
   if (/^competitive/i.test(band)) return { lo: 85, hi: 89 };
   if (/^foundation/i.test(band)) return { lo: 75, hi: 84 };
+  if (/^developing/i.test(band)) return { lo: 60, hi: 74 };
   return null;
 }
 

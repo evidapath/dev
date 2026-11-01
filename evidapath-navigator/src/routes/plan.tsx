@@ -21,6 +21,7 @@ import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { getProfile, listSavedUniversities } from "../lib/profile.functions";
 import { useLiveData } from "../lib/use-live-data";
 import { analyze, fmtDate, type StudentInput } from "../lib/decision-engine";
+import { currentCurriculum } from "../lib/curricula";
 
 export const Route = createFileRoute("/plan")({
   head: () => ({
@@ -98,7 +99,7 @@ function PlanPage() {
         if (!live) return;
         setSavedIds(saved.map((s) => s.sanity_university_id));
         setInput({
-          curriculum: p?.curriculum || "IB Diploma",
+          curriculum: currentCurriculum(p?.curriculum) || "IB Diploma",
           gradeBand: p?.grade_band || "Strong: IB 37-39 / A*AA / GPA 3.8-3.9",
           subject: p?.intended_subject || "Computer Science",
           budgetUsd: p?.annual_budget ?? 40000,

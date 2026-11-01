@@ -1,6 +1,13 @@
 import { useUniversitiesFn, useFxRatesFn, useScholarshipsFn } from "../lib/use-live-data";
 import { buildPathways } from "../lib/pathways";
-import { CURRICULA, GRADE_BANDS, STUDY_LANGUAGES, parseLangs, withCurrent } from "../lib/curricula";
+import {
+  CURRICULA,
+  GRADE_BANDS,
+  STUDY_LANGUAGES,
+  currentCurriculum,
+  parseLangs,
+  withCurrent,
+} from "../lib/curricula";
 import { offersSubject } from "../lib/decision-engine";
 import { PathwayResults } from "../components/PathwayResults";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
@@ -141,7 +148,7 @@ function FindMyPathPage() {
         if (!active || !p) return;
         setAnswers((a) => ({
           ...a,
-          curriculum: p.curriculum ?? a.curriculum,
+          curriculum: currentCurriculum(p.curriculum) ?? a.curriculum,
           gradeBand: p.grade_band ?? a.gradeBand,
           subject: p.intended_subject ?? a.subject,
           region: p.preferred_region ?? a.region,

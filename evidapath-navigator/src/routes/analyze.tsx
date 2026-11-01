@@ -15,6 +15,7 @@ import {
   CURRICULA,
   GRADE_BANDS,
   STUDY_LANGUAGES,
+  currentCurriculum,
   defaultLanguages,
   parseLangs,
   withCurrent,
@@ -110,7 +111,7 @@ function AnalyzePage() {
         if (p) {
           setFromProfile(true);
           setInput({
-            curriculum: p.curriculum || DEFAULT_INPUT.curriculum,
+            curriculum: currentCurriculum(p.curriculum) || DEFAULT_INPUT.curriculum,
             gradeBand: p.grade_band || DEFAULT_INPUT.gradeBand,
             subject: p.intended_subject || DEFAULT_INPUT.subject,
             budgetUsd: p.annual_budget ?? DEFAULT_INPUT.budgetUsd,

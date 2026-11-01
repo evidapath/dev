@@ -10,7 +10,7 @@ import { bandPercent } from "./curricula";
 // produces an admission "chance".
 
 export interface StudentInput {
-  curriculum: string; // as chosen in Find My Path ("IB Diploma", "Cambridge A-Levels", …)
+  curriculum: string; // as chosen in Find My Path ("IB Diploma", "A-Levels (GCE: Edexcel, Cambridge)", …)
   gradeBand: string; // e.g. "Competitive: IB 34-36 / AAA-AAB / GPA 3.6-3.7"
   subject: string;
   budgetUsd: number; // annual; BUDGET_MAX or more = no limit
