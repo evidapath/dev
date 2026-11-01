@@ -115,6 +115,7 @@ export function PathwaysEntryHero() {
                   <option>IB Diploma (38-42 points)</option>
                   <option>A-Levels (A*AA to AAA)</option>
                   <option>A-Levels (AAB to ABB)</option>
+                  <option>A-Levels (BBB to CCC or below)</option>
                   <option>US High School / AP (GPA 3.8+)</option>
                   <option>CBSE / National Board (92%+)</option>
                 </select>

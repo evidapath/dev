@@ -3,7 +3,7 @@
 
 export const CURRICULA = [
   "IB Diploma",
-  "A-Levels (GCE: Edexcel, Cambridge)",
+  "A-Levels (GCE, Edexcel, Cambridge)",
   "US High School Diploma + APs",
   "UAE Ministry of Education (Emirati Secondary)",
   "Indian CBSE / ISC (Class XII)",
@@ -23,10 +23,11 @@ export const GRADE_BANDS = [
 
 // Labels saved by earlier versions of the forms, mapped to today's.
 const LEGACY_CURRICULA: Record<string, string> = {
-  "Cambridge A-Levels": "A-Levels (GCE: Edexcel, Cambridge)",
+  "Cambridge A-Levels": "A-Levels (GCE, Edexcel, Cambridge)",
+  "A-Levels (GCE: Edexcel, Cambridge)": "A-Levels (GCE, Edexcel, Cambridge)",
 };
 
-/** Today's label for a saved curriculum (older profiles say "Cambridge A-Levels"). */
+/** Today's label for a saved curriculum (older profiles may say "Cambridge A-Levels"). */
 export function currentCurriculum<T extends string | null | undefined>(v: T): T | string {
   return (v && LEGACY_CURRICULA[v]) || v;
 }
