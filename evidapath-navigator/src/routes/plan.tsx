@@ -22,6 +22,7 @@ import { getProfile, listSavedUniversities } from "../lib/profile.functions";
 import { useLiveData } from "../lib/use-live-data";
 import { analyze, fmtDate, type StudentInput } from "../lib/decision-engine";
 import { currentCurriculum } from "../lib/curricula";
+import { storedUkHome } from "../lib/residence";
 
 export const Route = createFileRoute("/plan")({
   head: () => ({
@@ -104,6 +105,7 @@ function PlanPage() {
           subject: p?.intended_subject || "Computer Science",
           budgetUsd: p?.annual_budget ?? 40000,
           citizenship: p?.citizenship || "",
+          ukHome: storedUkHome(),
         });
       },
     );

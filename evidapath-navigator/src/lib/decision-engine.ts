@@ -17,6 +17,8 @@ export interface StudentInput {
   citizenship: string; // free text ("UAE", "India", …)
   /** ISO codes of languages the student can study in; English assumed when empty. */
   languages?: string[];
+  /** Student says they've lived in the UK for the last 3 years (UK "Home" fee status). */
+  ukHome?: boolean;
 }
 
 export type Level = "strong" | "edge" | "gap" | "unknown";
@@ -348,7 +350,7 @@ const COUNTRY_CODES: [RegExp, string][] = [
   [/\b(uae|emirat|united arab)/i, "ae"],
   [/\bindia/i, "in"],
   [/\bpakistan/i, "pk"],
-  [/\b(uk|united kingdom|brit)/i, "gb"],
+  [/\b(uk\b|united kingdom|brit|england|english\b|scot|wales|welsh)/i, "gb"],
   [/\b(us|usa|united states|americ)/i, "us"],
   [/\bcanad/i, "ca"],
   [/\begypt/i, "eg"],
@@ -360,12 +362,27 @@ const COUNTRY_CODES: [RegExp, string][] = [
   [/\b(netherlands|dutch)/i, "nl"],
   [/\bfrance|french/i, "fr"],
   [/\blebanon|lebanese/i, "lb"],
+  [/\b(ireland|irish)/i, "ie"],
+  [/\b(spain|spanish)/i, "es"],
+  [/\b(italy|italian)/i, "it"],
+  [/\b(portugal|portuguese)/i, "pt"],
+  [/\b(greece|greek)/i, "gr"],
+  [/\b(poland|polish)/i, "pl"],
+  [/\b(belgium|belgian)/i, "be"],
+  [/\b(austria)/i, "at"],
+  [/\b(sweden|swedish)/i, "se"],
+  [/\b(romania)/i, "ro"],
 ];
 
 export function citizenshipCode(text: string): string | null {
   for (const [re, code] of COUNTRY_CODES) if (re.test(text)) return code;
   return null;
 }
+
+/** We only ask British and Irish citizens whether they live in the UK. */
+export const asksUkHome = (citizenship: string) =>
+  ["gb", "ie"].includes(citizenshipCode(citizenship) ?? "");
+const ukHomeFor = (s: StudentInput) => !!s.ukHome && asksUkHome(s.citizenship);
 
 // Citizens studying at home don't qualify for awards aimed at international
 // students. UK is left out: a British citizen living abroad can still pay
@@ -383,10 +400,14 @@ const INTL_NAME = /\binternational\b(?! baccalaureate)/i;
 const INTL_ONLY =
   /\bfor international (?:students|undergraduates)\b|as an international student|international fee-paying/i;
 
-function eligibility(s: Scholarship, code: string | null, country: string): "yes" | "no" | "check" {
+function eligibility(
+  s: Scholarship,
+  code: string | null,
+  country: string,
+  ukHome = false,
+): "yes" | "no" | "check" {
   if (
-    code &&
-    HOME_COUNTRY[code] === country &&
+    ((code && HOME_COUNTRY[code] === country) || (ukHome && country === "United Kingdom")) &&
     (INTL_NAME.test(s.name) || INTL_ONLY.test(s.eligibilitySummary ?? ""))
   )
     return "no";
@@ -454,7 +475,9 @@ export function analyze(
 ): DecisionAnalysis {
   const { program, matches } = pickProgram(u, student.subject);
   const langs = student.languages?.length ? student.languages : ["en"];
-  const tier = program ? tierFor(program, u.country, citizenshipCode(student.citizenship)) : null;
+  const tier = program
+    ? tierFor(program, u.country, citizenshipCode(student.citizenship), ukHomeFor(student))
+    : null;
   const view: University = program ? { ...u, costs: tier?.costs ?? program.costs } : u;
   const rows = program?.admissionsByCurriculum ?? u.admissionsByCurriculum ?? [];
 
@@ -489,7 +512,7 @@ export function analyze(
       : null;
   const funding: FundingItem[] = scholarships
     .filter((s) => (s.universityIds ?? []).includes(u.id))
-    .map((s) => ({ s, el: eligibility(s, code, u.country) }))
+    .map((s) => ({ s, el: eligibility(s, code, u.country, ukHomeFor(student)) }))
     .filter(({ el }) => el !== "no")
     .map(({ s, el }) => {
       const award = s.awardSummary ?? "See official source";
@@ -718,12 +741,20 @@ const COUNTRY_OF: Record<string, string> = {
  * The residency price tier that applies to a student, if the programme has one
  * that fits better than the international rate: citizens at home (Malaysians in
  * Malaysia, Emiratis in the UAE, Canadians in Canada) and EU citizens in the EU.
- * UK "Home" fees need UK residence, so they are not applied from citizenship.
+ * UK "Home" fees need UK residence, so they come from the student's own answer
+ * (lived in the UK for the last 3 years), not from citizenship.
  */
-export function tierFor(p: ProgramView, country: string, code: string | null): CostTier | null {
+export function tierFor(
+  p: ProgramView,
+  country: string,
+  code: string | null,
+  ukHome = false,
+): CostTier | null {
   const tiers = p.costTiers ?? [];
-  if (!code || tiers.length < 2) return null;
+  if (tiers.length < 2) return null;
   const pick = (k: CostTier["kind"]) => tiers.find((t) => t.kind === k) ?? null;
+  if (ukHome && country === "United Kingdom") return pick("home");
+  if (!code) return null;
   if (COUNTRY_OF[code] === country && code !== "gb")
     return (
       pick("national") ??

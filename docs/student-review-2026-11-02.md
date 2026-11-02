@@ -28,9 +28,10 @@ school is.
 
 ## Open (data, not code)
 
-1. **UK Home fees.** Only Oxford has a "Home (UK fee status)" tier. British students in the UK (Tom, Ben) are priced
-   at overseas fees (~$50k), so Tom sees "Nothing in United Kingdom fits $40k". `tierFor` also skips UK on purpose
-   (Home status needs UK residence, not citizenship). Needs Home-fee rows for the UK schools plus a residence answer.
+1. **UK Home fees.** Done in a follow-up: British/Irish students get an "I've lived in the UK for the last 3 years"
+   question; Home fees (£10,050, 2027 entry) staged for all 7 UK universities — see
+   `fact-checks/uk-home-fees-2026-11-02.md`. Also found: no citizenship code for Ireland, Spain, Italy and other EU
+   countries (so no EU fees for them), and "Ukrainian" read as British. Fixed.
 2. **Data Science** (Meera, US): "Nothing for Data Science in United States yet". No programme is named that, so
    it doesn't match CS. Add as a subject only once there are verified Data Science programmes.
 3. **Germany at $10k** (Max, Elif): nothing fits because every German profile's living cost is above ~$10k. Correct

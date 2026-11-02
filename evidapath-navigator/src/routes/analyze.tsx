@@ -9,7 +9,9 @@ import { requireAuth } from "../lib/route-guard";
 import { type FxRates } from "../lib/fx.functions";
 import { getProfile, listSavedUniversities } from "../lib/profile.functions";
 import type { Scholarship, University } from "../lib/mock-data";
-import { analyze, type StudentInput } from "../lib/decision-engine";
+import { analyze, asksUkHome, type StudentInput } from "../lib/decision-engine";
+import { storedUkHome, storeUkHome } from "../lib/residence";
+import { UkHomeCheckbox } from "../components/UkHomeCheckbox";
 import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
 import {
   CURRICULA,
@@ -117,6 +119,7 @@ function AnalyzePage() {
             budgetUsd: p.annual_budget ?? DEFAULT_INPUT.budgetUsd,
             citizenship: p.citizenship || "",
             languages: storedLanguages(p.curriculum || DEFAULT_INPUT.curriculum),
+            ukHome: storedUkHome(),
           });
         }
         setUniId((cur) => cur || ids[0] || u.universities[0]?.id || "");
@@ -292,6 +295,15 @@ function AnalyzePage() {
                 onChange={(e) => set("citizenship", e.target.value)}
                 className={field}
               />
+              {asksUkHome(input.citizenship) && (
+                <UkHomeCheckbox
+                  checked={!!input.ukHome}
+                  onChange={(v) => {
+                    set("ukHome", v);
+                    storeUkHome(v);
+                  }}
+                />
+              )}
             </div>
             <div>
               <label className={label} htmlFor="an-cur">

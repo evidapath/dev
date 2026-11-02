@@ -9,7 +9,9 @@ import {
   parseLangs,
   withCurrent,
 } from "../lib/curricula";
-import { offersSubject } from "../lib/decision-engine";
+import { asksUkHome, offersSubject } from "../lib/decision-engine";
+import { storedUkHome, storeUkHome } from "../lib/residence";
+import { UkHomeCheckbox } from "../components/UkHomeCheckbox";
 import { PathwayResults } from "../components/PathwayResults";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
@@ -73,6 +75,8 @@ interface IntakeAnswers {
   preferences: string;
   /** Languages the student can study in, e.g. "en,de". */
   languages: string;
+  /** "1" when they've lived in the UK for the last 3 years (UK Home fees). */
+  ukHome: string;
 }
 
 const STEPS = [
@@ -94,6 +98,7 @@ const DEFAULTS: IntakeAnswers = {
   citizenship: "",
   preferences: "",
   languages: "en",
+  ukHome: "",
 };
 
 function FindMyPathPage() {
@@ -236,6 +241,7 @@ function FindMyPathPage() {
     try {
       const v = localStorage.getItem("evidapath.languages");
       if (v) setAnswers((a) => ({ ...a, languages: v }));
+      if (storedUkHome()) setAnswers((a) => ({ ...a, ukHome: "1" }));
     } catch {
       /* storage unavailable */
     }
@@ -303,6 +309,7 @@ function FindMyPathPage() {
       budgetUsd: noBudgetLimit ? BUDGET_MAX : budgetUsd,
       citizenship: answers.citizenship,
       languages: parseLangs(answers.languages),
+      ukHome: answers.ukHome === "1",
     },
   });
   const coveredAnywhere = universities.some((u) => offersSubject(u, answers.subject));
@@ -759,13 +766,24 @@ function StepField({
       return <BudgetSlider value={answers.budget} set={set} />;
     case "citizenship":
       return (
-        <input
-          type="text"
-          placeholder="e.g. UAE, India, UK, Canada (used for tuition/eligibility modeling)"
-          value={answers.citizenship}
-          onChange={(e) => set("citizenship", e.target.value)}
-          className={inputCls}
-        />
+        <>
+          <input
+            type="text"
+            placeholder="e.g. UAE, India, UK, Canada (used for tuition/eligibility modeling)"
+            value={answers.citizenship}
+            onChange={(e) => set("citizenship", e.target.value)}
+            className={inputCls}
+          />
+          {asksUkHome(answers.citizenship) && (
+            <UkHomeCheckbox
+              checked={answers.ukHome === "1"}
+              onChange={(v) => {
+                set("ukHome", v ? "1" : "");
+                storeUkHome(v);
+              }}
+            />
+          )}
+        </>
       );
     case "preferences":
       return (
