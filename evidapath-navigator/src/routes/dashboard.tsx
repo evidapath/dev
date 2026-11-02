@@ -139,30 +139,37 @@ function DashboardPage() {
       </div>
 
       {/* Next Step panel — dominant, action-oriented */}
-      <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div className="space-y-2 max-w-xl">
-          <p className="text-[11px] font-bold uppercase tracking-wider text-primary">
-            Your next step
-          </p>
-          <h2 className="text-xl sm:text-2xl font-display font-bold text-foreground">
-            {current.label}
-          </h2>
-          <p className="text-sm text-muted-foreground">{current.desc}</p>
+      <div className="relative overflow-hidden rounded-3xl bg-[linear-gradient(135deg,oklch(0.24_0.06_248),oklch(0.32_0.09_200)_60%,oklch(0.45_0.13_160))] text-white p-6 sm:p-8 shadow-lg">
+        <div
+          aria-hidden
+          className="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[radial-gradient(closest-side,oklch(0.7_0.17_155/0.35),transparent)]"
+        />
+        <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="space-y-2 max-w-xl">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-emerald-300">
+              Your next step · {currentStep + 1} of {JOURNEY.length}
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold">{current.label}</h2>
+            <p className="text-sm text-white/75">{current.desc}</p>
+          </div>
+          <Link to={current.href} className="shrink-0">
+            <Button className="bg-white hover:bg-white/90 text-navy font-semibold px-6 h-11 rounded-xl flex items-center gap-2 shadow-md">
+              Continue <ArrowRight className="w-4 h-4" />
+            </Button>
+          </Link>
         </div>
-        <Link to={current.href} className="shrink-0">
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 h-11 flex items-center gap-2">
-            Continue <ArrowRight className="w-4 h-4" />
-          </Button>
-        </Link>
+        <div className="relative mt-6 h-1.5 rounded-full bg-white/15 overflow-hidden">
+          <div
+            className="h-full rounded-full bg-emerald-300 transition-all duration-500"
+            style={{ width: `${(currentStep / JOURNEY.length) * 100}%` }}
+          />
+        </div>
       </div>
-
-      {/* Saved universities — the student's persisted "My Path" picks */}
-      <SavedUniversitiesSection />
 
       {/* Journey progress — what comes next */}
       <div className="space-y-4">
         <h3 className="font-display font-bold text-base text-foreground">Your path</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {JOURNEY.map((j, i) => {
             const Icon = j.icon;
             const done = !!doneFlags?.[i];
@@ -171,10 +178,12 @@ function DashboardPage() {
               <Link
                 key={j.step}
                 to={j.href}
-                className={`rounded-xl border p-4 flex flex-col gap-2 transition-all ${
+                className={`rounded-xl border p-4 flex flex-col gap-2 transition-all hover:-translate-y-0.5 hover:shadow-md ${
                   active
-                    ? "border-primary/50 bg-primary/5 shadow-xs"
-                    : "border-border bg-card hover:border-primary/30"
+                    ? "border-primary/60 bg-card shadow-md ring-2 ring-primary/15"
+                    : done
+                      ? "border-primary/20 bg-accent/60 shadow-xs"
+                      : "border-border bg-card shadow-xs"
                 }`}
               >
                 <div className="flex items-center justify-between">
@@ -189,7 +198,9 @@ function DashboardPage() {
                     <Circle className="w-4 h-4 text-border" />
                   )}
                 </div>
-                <Icon className="w-4 h-4 text-muted-foreground" />
+                <Icon
+                  className={`w-4 h-4 ${active || done ? "text-primary" : "text-muted-foreground"}`}
+                />
                 <span className="text-xs font-semibold text-foreground leading-snug">
                   {j.label}
                 </span>
@@ -198,6 +209,9 @@ function DashboardPage() {
           })}
         </div>
       </div>
+
+      {/* Saved universities — the student's persisted "My Path" picks */}
+      <SavedUniversitiesSection />
 
       {/* Quick access to product modules (secondary) */}
       <div className="space-y-4">
@@ -253,7 +267,7 @@ function DashboardPage() {
               <Link
                 key={m.href}
                 to={m.href}
-                className="rounded-xl border border-border bg-card p-4 hover:border-primary/40 transition-all flex flex-col gap-2"
+                className="rounded-xl border border-border bg-card p-4 shadow-xs hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-2"
               >
                 <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
                   <Icon className="w-4 h-4" />
@@ -361,7 +375,10 @@ function SavedUniversitiesSection() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {saved.map((u) => (
-            <div key={u.id} className="rounded-2xl border border-border bg-card p-4 space-y-2">
+            <div
+              key={u.id}
+              className="rounded-2xl border border-border bg-card p-4 space-y-2 shadow-sm"
+            >
               <div className="flex items-center justify-between gap-3">
                 <div className="min-w-0">
                   <p className="font-semibold text-sm text-foreground truncate">

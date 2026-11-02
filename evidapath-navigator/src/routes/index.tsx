@@ -54,7 +54,11 @@ function Index() {
     <div className="space-y-20 sm:space-y-28 pb-20">
       {/* 1. HERO SECTION */}
       <section className="relative pt-12 sm:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Subtle grid background pattern */}
+        {/* Warm glows behind the headline, then the subtle grid */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 -z-10 h-[640px] bg-[radial-gradient(40%_50%_at_30%_10%,oklch(0.6_0.17_155/0.12),transparent),radial-gradient(35%_45%_at_75%_5%,oklch(0.53_0.15_62/0.10),transparent)]"
+        />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
         <div className="max-w-5xl mx-auto text-center space-y-6">
@@ -66,7 +70,9 @@ function Index() {
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-foreground leading-[1.08]">
             Know where you stand. <br className="hidden sm:inline" />
-            <span className="text-primary">See where you can go.</span>
+            <span className="font-serif italic font-medium text-primary tracking-normal">
+              See where you can go.
+            </span>
           </h1>
 
           <p className="max-w-3xl mx-auto text-base sm:text-xl text-muted-foreground leading-relaxed">
@@ -123,7 +129,7 @@ function Index() {
       </section>
 
       {/* 4. THE EVIDAPATH DECISION MODEL (INTERACTIVE) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="band max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <span className="text-xs font-bold uppercase tracking-wider text-primary">
             Rigorous Analytical Framework
@@ -201,7 +207,7 @@ function Index() {
           {featuredUnis.map((univ) => (
             <div
               key={univ.id}
-              className="rounded-2xl border border-border bg-card p-6 shadow-xs hover:border-primary/40 transition-all flex flex-col justify-between"
+              className="rounded-2xl border border-border bg-card p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -254,8 +260,8 @@ function Index() {
       </section>
 
       {/* 7. SCHOLARSHIP GRAPH PREVIEW */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-secondary/40 border border-border rounded-3xl p-8 sm:p-12">
+      <section className="band max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div>
           <div className="max-w-3xl mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-primary">
               EvidaPath Scholarship Graph
@@ -346,7 +352,7 @@ function Index() {
           {briefs.slice(0, 3).map((article) => (
             <div
               key={article.slug}
-              className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between"
+              className="rounded-2xl border border-border bg-card p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between text-xs mb-3">

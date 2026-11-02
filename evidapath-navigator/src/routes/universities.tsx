@@ -193,6 +193,25 @@ function UniversityCardSkeleton({ index = 0 }: { index?: number }) {
   );
 }
 
+// Header tint per country (an oklch hue), so neighbouring cards read apart.
+const COUNTRY_HUE: Record<string, number> = {
+  "United Kingdom": 255,
+  "United States": 25,
+  Canada: 15,
+  Germany: 85,
+  Netherlands: 50,
+  "United Arab Emirates": 155,
+  Australia: 200,
+  Malaysia: 300,
+  Switzerland: 0,
+  France: 270,
+  Ireland: 140,
+  Singapore: 340,
+};
+function countryHue(country: string): number {
+  return COUNTRY_HUE[country] ?? 230;
+}
+
 // One university card. When the university has multiple programs (programDetails),
 // shows a program selector so the student sees THAT program's own cost + admissions
 // (Suhail: program-specific, not university-wide). Falls back to the flat fields for
@@ -210,31 +229,39 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
   const [admOpen, setAdmOpen] = useState(false);
   const admRef = useRef<HTMLDetailsElement>(null);
 
+  const verified = univ.evidenceConfidence.startsWith("Verified");
+  const affordability = univ.affordabilityIndex.category;
+
   return (
     <div
-      className="rounded-2xl border border-border bg-card p-6 shadow-xs flex flex-col justify-between space-y-6 transition-all duration-200 ease-out hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-3 fill-mode-both"
+      className="group rounded-2xl border border-border bg-card shadow-sm overflow-hidden flex flex-col justify-between transition-all duration-200 ease-out hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-3 fill-mode-both"
       style={{ animationDelay: `${Math.min(index, 8) * 60}ms`, animationDuration: "450ms" }}
     >
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <span className="text-3xl">{univ.flag}</span>
-          <span className="text-xs font-mono font-semibold bg-secondary px-2.5 py-0.5 rounded text-foreground">
-            {durationYears > 0 ? `${durationYears}-Year Degree` : "Duration pending"}
+      {/* Header band, tinted by country so the grid isn't one white sheet */}
+      <div
+        className="uni-band px-6 pt-5 pb-4 border-b border-border/60"
+        style={{ ["--band-h" as string]: countryHue(univ.country) }}
+      >
+        <div className="flex items-start justify-between gap-3">
+          <span className="text-4xl leading-none drop-shadow-sm">{univ.flag}</span>
+          <span className="text-[11px] font-semibold bg-card/80 backdrop-blur px-2.5 py-1 rounded-full text-foreground border border-border/60">
+            {durationYears > 0 ? `${durationYears}-year degree` : "Duration pending"}
           </span>
         </div>
+        <h3 className="font-display font-bold text-xl text-foreground mt-3 leading-tight">
+          {univ.name}
+        </h3>
+        <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
+          <MapPin className="w-3 h-3" />
+          {univ.city}, {univ.country}
+        </p>
+      </div>
 
-        <div>
-          <h3 className="font-display font-bold text-lg text-foreground">{univ.name}</h3>
-          <p className="text-xs text-muted-foreground flex items-center gap-1 mt-0.5">
-            <MapPin className="w-3 h-3 text-muted-foreground" />
-            {univ.city}, {univ.country}
-          </p>
-        </div>
-
+      <div className="px-6 pt-4 pb-5 space-y-4 flex-1">
         {/* Program selector (only when the university has more than one program) */}
         {details && details.length > 1 && (
           <div>
-            <label className="block text-[10px] uppercase font-semibold text-muted-foreground mb-1">
+            <label className="block text-[11px] font-medium text-muted-foreground mb-1">
               Program
             </label>
             <select
@@ -252,82 +279,79 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
           </div>
         )}
 
-        {/* Cost & Requirements Table */}
-        <div className="bg-secondary/40 rounded-xl p-3.5 border border-border space-y-2 text-xs">
-          <div className="flex justify-between gap-3">
-            <span className="text-muted-foreground shrink-0">Entry requirements:</span>
-            {admissions?.length ? (
-              <button
-                type="button"
-                onClick={() => {
-                  setAdmOpen(true);
-                  requestAnimationFrame(() =>
-                    admRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }),
-                  );
-                }}
-                className="font-semibold text-primary hover:underline text-right"
-              >
-                By qualification ↓
-              </button>
-            ) : (
-              <span className="font-medium text-muted-foreground text-right line-clamp-2">
-                {univ.academicRequirements.target}
-              </span>
-            )}
-          </div>
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Tuition / year:</span>
-            <span className="font-mono font-medium text-muted-foreground">
+        {/* The two numbers a family asks first, big */}
+        <div className="grid grid-cols-2 gap-2">
+          <div className="rounded-xl bg-secondary/60 px-3 py-2.5">
+            <p className="text-[11px] text-muted-foreground">Tuition / year</p>
+            <p className="font-display font-bold text-lg text-foreground tabular-nums leading-tight mt-0.5">
               {formatCost(costs.tuitionPerYear, costs.currency)}
-            </span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Living / year (Est):</span>
-            <span className="font-mono font-medium text-muted-foreground">
-              {formatCost(costs.livingPerYear, costs.currency)}
-            </span>
-          </div>
-          {costs.livingSource && (
-            <p
-              className={`text-[10px] leading-snug text-right ${
-                costs.livingSource.startsWith("Unofficial")
-                  ? "text-bronze"
-                  : "text-muted-foreground"
-              }`}
-            >
-              Living cost: {costs.livingSource}
             </p>
-          )}
-          <div className="flex justify-between pt-1 border-t border-border/60">
-            <span className="text-muted-foreground font-semibold">Total Degree Outlay:</span>
-            <span className="font-mono font-bold text-muted-foreground">
-              {formatCost(costs.totalDegree, costs.currency)}
-            </span>
           </div>
-          {residencyNote && (
-            <p className="text-[10px] text-bronze pt-1 leading-snug">{residencyNote}</p>
-          )}
+          <div className="rounded-xl bg-secondary/60 px-3 py-2.5">
+            <p className="text-[11px] text-muted-foreground">Living / year (est.)</p>
+            <p className="font-display font-bold text-lg text-foreground tabular-nums leading-tight mt-0.5">
+              {formatCost(costs.livingPerYear, costs.currency)}
+            </p>
+          </div>
         </div>
+        <div className="flex items-baseline justify-between gap-3 text-sm">
+          <span className="text-muted-foreground">Whole degree</span>
+          <span className="font-display font-bold text-foreground tabular-nums">
+            {formatCost(costs.totalDegree, costs.currency)}
+          </span>
+        </div>
+        {(costs.livingSource || residencyNote) && (
+          <div className="space-y-1 text-[11px] leading-snug">
+            {costs.livingSource && (
+              <p
+                className={
+                  costs.livingSource.startsWith("Unofficial")
+                    ? "text-bronze"
+                    : "text-muted-foreground"
+                }
+              >
+                Living cost: {costs.livingSource}
+              </p>
+            )}
+            {residencyNote && <p className="text-bronze">{residencyNote}</p>}
+          </div>
+        )}
 
-        {/* Affordability Index & Evidence */}
-        <div className="space-y-2 text-xs">
-          <div className="flex justify-between items-center">
-            <span className="text-muted-foreground">Affordability Index:</span>
-            <span className="font-semibold px-2 py-0.5 rounded text-[11px] bg-secondary text-muted-foreground">
-              {univ.affordabilityIndex.category}
+        {/* Entry requirements + evidence, as chips */}
+        <div className="flex flex-wrap items-center gap-1.5 text-[11px]">
+          {admissions?.length ? (
+            <button
+              type="button"
+              onClick={() => {
+                setAdmOpen(true);
+                requestAnimationFrame(() =>
+                  admRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }),
+                );
+              }}
+              className="inline-flex items-center gap-1 rounded-full bg-accent text-accent-foreground font-semibold px-2.5 py-1 hover:bg-primary/15"
+            >
+              <GraduationCap className="w-3 h-3" />
+              Entry grades ↓
+            </button>
+          ) : (
+            <span className="rounded-full bg-secondary text-muted-foreground px-2.5 py-1 line-clamp-1">
+              {univ.academicRequirements.target}
             </span>
-          </div>
-          <div className="flex items-center justify-between text-[11px] text-muted-foreground pt-1">
-            <span className="flex items-center gap-1">
-              <span
-                className={`inline-block w-1.5 h-1.5 rounded-full ${
-                  univ.evidenceConfidence.startsWith("Verified") ? "bg-primary" : "bg-bronze"
-                }`}
-              />
-              <strong>{univ.evidenceConfidence}</strong>
+          )}
+          <span
+            className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 font-medium ${
+              verified ? "bg-accent text-accent-foreground" : "bg-bronze/10 text-bronze"
+            }`}
+            title={`Last checked: ${univ.lastVerified}`}
+          >
+            <ShieldCheck className="w-3 h-3" />
+            {verified ? `Checked ${univ.lastVerified}` : univ.evidenceConfidence}
+          </span>
+          {!affordability.startsWith("Pending") && (
+            <span className="rounded-full bg-secondary text-foreground px-2.5 py-1 font-medium">
+              {affordability}
             </span>
-            <span>Verified: {univ.lastVerified}</span>
-          </div>
+          )}
         </div>
 
         {/* Verified admissions + deadlines (surfaced from Sanity) */}
@@ -346,22 +370,10 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
         )}
       </div>
 
-      <div className="pt-4 border-t border-border flex items-center justify-between">
-        <Link to="/find-my-path">
-          <Button
-            size="sm"
-            variant="outline"
-            className="border-border text-foreground hover:bg-secondary text-xs"
-          >
-            Would this work for you?
-          </Button>
-        </Link>
-        <Link to="/find-my-path">
-          <Button
-            size="sm"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
-          >
-            Analyze My Fit →
+      <div className="px-6 pb-5">
+        <Link to="/find-my-path" className="block">
+          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl">
+            Would this work for me? →
           </Button>
         </Link>
       </div>

@@ -66,13 +66,21 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
+  /* Soft, layered, navy-tinted shadows: cards lift off the cream page instead
+     of being outlined. Every shadow-* utility in the app picks these up. */
+  --shadow-xs: 0 1px 2px oklch(0.18 0.05 248 / 0.05);
+  --shadow-sm: 0 1px 2px oklch(0.18 0.05 248 / 0.04), 0 2px 8px -2px oklch(0.18 0.05 248 / 0.06);
+  --shadow: 0 1px 3px oklch(0.18 0.05 248 / 0.05), 0 6px 16px -6px oklch(0.18 0.05 248 / 0.08);
+  --shadow-md: 0 2px 4px oklch(0.18 0.05 248 / 0.04), 0 12px 28px -10px oklch(0.18 0.05 248 / 0.14);
+  --shadow-lg: 0 4px 8px oklch(0.18 0.05 248 / 0.04), 0 20px 40px -14px oklch(0.18 0.05 248 / 0.18);
 }
 
 :root {
   --radius: 0.75rem;
 
-  /* Pristine white and warm cream foundation */
-  --background: oklch(0.995 0.002 90);
+  /* Warm cream page; cards stay pristine white so they stand out */
+  --background: oklch(0.985 0.006 85);
   --foreground: oklch(0.18 0.05 248); /* Deep Navy #0A192F */
 
   --card: oklch(1 0 0);
@@ -108,8 +116,8 @@
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
 
-  --border: oklch(0.92 0.01 245);
-  --input: oklch(0.91 0.01 245);
+  --border: oklch(0.92 0.008 245);
+  --input: oklch(0.9 0.01 245);
   --ring: oklch(0.6 0.17 155);
 
   --chart-1: oklch(0.6 0.17 155); /* Emerald */
@@ -156,6 +164,8 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    /* Full-width bands reach 100vw, which includes the scrollbar. */
+    overflow-x: clip;
   }
 
   h1,
@@ -184,6 +194,47 @@
     transition-property: color, background-color, border-color, box-shadow, transform, opacity;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 200ms;
+  }
+
+  /* A full-width tinted band behind a centred section, so long pages alternate
+     between cream and tint instead of being one white sheet. */
+  .band {
+    position: relative;
+    isolation: isolate;
+    padding-block: 4rem;
+  }
+  .band::before {
+    content: "";
+    position: absolute;
+    inset: 0 50%;
+    margin-inline: -50vw;
+    z-index: -1;
+    background: var(--band-bg, var(--secondary));
+    border-block: 1px solid var(--color-border);
+  }
+  .band-navy {
+    --band-bg: var(--navy);
+  }
+  @media (min-width: 640px) {
+    .band {
+      padding-block: 5rem;
+    }
+  }
+
+  /* University card header: a soft wash in the country's hue (--band-h). */
+  .uni-band {
+    background: linear-gradient(
+      135deg,
+      oklch(0.95 0.035 var(--band-h, 230)),
+      oklch(0.985 0.012 var(--band-h, 230))
+    );
+  }
+  .dark .uni-band {
+    background: linear-gradient(
+      135deg,
+      oklch(0.26 0.05 var(--band-h, 230)),
+      oklch(0.2 0.03 var(--band-h, 230))
+    );
   }
 
   /* Page and step changes: a short fade with a slight rise. */
