@@ -43,6 +43,7 @@ interface Ctx {
 function pickTop3(
   r: PathwayResult,
   noLimit: boolean,
+  modestGrades = false,
 ): { label: string; icon: typeof Trophy; row: PathwayRow }[] {
   const { within, stretch, unpriced } = r.groups;
   const all = [...within, ...stretch, ...unpriced];
@@ -64,7 +65,8 @@ function pickTop3(
   if (noLimit) {
     const matches = all.filter((x) => home(x) && strong(x)).sort(byDemand);
     // Holistic universities (no grade cut-off): those that meet full financial
-    // need first, then fully priced, then cheapest.
+    // need first, then fully priced, then cheapest. Those meeting full need are
+    // mostly the most selective, so for modest grades it's cheapest first.
     const fullNeed = (x: PathwayRow) =>
       x.a.financial.funding.some((f) =>
         /100% of demonstrated|full(?:y)? (?:demonstrated )?need/i.test(`${f.name} ${f.award}`),
@@ -73,7 +75,7 @@ function pickTop3(
       .filter((x) => home(x) && x.a.academic.level === "unknown")
       .sort(
         (x, y) =>
-          Number(fullNeed(y)) - Number(fullNeed(x)) ||
+          (modestGrades ? 0 : Number(fullNeed(y)) - Number(fullNeed(x))) ||
           Number(!x.a.financial.annualComplete) - Number(!y.a.financial.annualComplete) ||
           byNet(x, y),
       );
@@ -85,7 +87,13 @@ function pickTop3(
       out.push(take("Best value among your matches", Gem, matches.filter(free).sort(byNet)[0]));
       return out.filter((x): x is NonNullable<typeof x> => !!x);
     }
-    const out = [take("Top pick — holistic admissions", Trophy, holistic[0])];
+    const out = [
+      take(
+        modestGrades ? "Lowest cost — holistic admissions" : "Top pick — holistic admissions",
+        Trophy,
+        holistic[0],
+      ),
+    ];
     out.push(take("Also worth a look", Trophy, holistic.filter(free)[0]));
     out.push(take("Best value", Gem, holistic.filter(free).sort(byNet)[0]));
     return out.filter((x): x is NonNullable<typeof x> => !!x);
@@ -100,7 +108,13 @@ function pickTop3(
     within.filter(home).find(fine) ??
     within.filter((x) => ok(x) && !x.inRegion && reach(x))[0] ??
     unpriced.filter((x) => home(x) && fine(x))[0];
-  const out = [take("Best you can afford", Wallet, affordable)];
+  const out = [
+    take(
+      affordable && !affordable.inRegion ? "Best you can afford elsewhere" : "Best you can afford",
+      Wallet,
+      affordable,
+    ),
+  ];
   const above = stretch
     .filter((x) => home(x) && fine(x))
     .sort((x, y) => (x.gapPerYear ?? 0) - (y.gapPerYear ?? 0));
@@ -136,6 +150,7 @@ export function PathwayResults({
   savedIds,
   onSave,
   subjectCovered = true,
+  modestGrades = false,
 }: {
   result: PathwayResult;
   budgetUsd: number;
@@ -146,6 +161,8 @@ export function PathwayResults({
   onSave: (u: University) => void;
   /** False when no university in EvidaPath offers this subject at all. */
   subjectCovered?: boolean;
+  /** Foundation band or below. */
+  modestGrades?: boolean;
 }) {
   const { groups } = result;
   const total =
@@ -157,7 +174,12 @@ export function PathwayResults({
     savedIds,
     onSave,
   };
-  const top = pickTop3(result, noBudgetLimit);
+  const top = pickTop3(result, noBudgetLimit, modestGrades);
+  // Fits that need a language the student hasn't said they have.
+  const fitsIn = groups.within.filter((x) => x.inRegion);
+  const fitsOk = fitsIn.filter((x) => !x.a.taughtIn).length;
+  const needLang = fitsIn.find((x) => x.a.taughtIn)?.a.taughtIn;
+  const fitsOther = fitsIn.length - fitsOk;
   const where = result.regionLimited ? ` in ${region}` : "";
 
   if (total === 0)
@@ -208,12 +230,15 @@ export function PathwayResults({
       <p className="text-base font-semibold text-foreground">
         {noBudgetLimit
           ? `${total} options${where} — ranked by how well your grades match.`
-          : result.withinInRegion > 0
-            ? `${result.withinInRegion} fit${result.withinInRegion === 1 ? "s" : ""} your budget${where}.`
-            : `Nothing${where} fits ${money(budgetUsd)}/yr on published costs.`}{" "}
+          : fitsOk > 0
+            ? `${fitsOk} fit${fitsOk === 1 ? "s" : ""} your budget${where}.${fitsOther > 0 ? ` ${fitsOther} more if you study in ${needLang}.` : ""}`
+            : fitsOther > 0
+              ? `Nothing${where} taught in your languages fits ${money(budgetUsd)}/yr. ${fitsOther} would if you study in ${needLang}.`
+              : `Nothing${where} fits ${money(budgetUsd)}/yr on published costs.`}{" "}
         <span className="font-normal text-muted-foreground">
           {groups.stretch.length > 0 && `${groups.stretch.length} more cost a bit more. `}
-          {result.withinElsewhere > 0 && `${result.withinElsewhere} cheaper options elsewhere.`}
+          {result.withinElsewhere > 0 &&
+            `${result.withinElsewhere} cheaper option${result.withinElsewhere === 1 ? "" : "s"} elsewhere.`}
         </span>
       </p>
 

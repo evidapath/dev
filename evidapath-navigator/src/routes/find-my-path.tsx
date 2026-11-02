@@ -4,6 +4,7 @@ import {
   CURRICULA,
   GRADE_BANDS,
   STUDY_LANGUAGES,
+  bandPercent,
   currentCurriculum,
   parseLangs,
   withCurrent,
@@ -373,6 +374,7 @@ function FindMyPathPage() {
             savedIds={savedIds}
             onSave={saveUni}
             subjectCovered={coveredAnywhere}
+            modestGrades={(bandPercent(answers.gradeBand)?.lo ?? 100) < 85}
           />
         )}
 
