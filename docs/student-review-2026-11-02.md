@@ -34,8 +34,11 @@ school is.
    countries (so no EU fees for them), and "Ukrainian" read as British. Fixed.
 2. **Data Science** (Meera, US): "Nothing for Data Science in United States yet". No programme is named that, so
    it doesn't match CS. Add as a subject only once there are verified Data Science programmes.
-3. **Germany at $10k** (Max, Elif): nothing fits because every German profile's living cost is above ~$10k. Correct
-   on the data; worth a second look at whether the living figures are the official ones.
-4. **Canadian at Alberta** (Noah): domestic tier shows "Cost not published".
+3. **Germany at $10k** (Max, Elif): nothing fits because every German profile's living cost is above ~$10k. Checked
+   2026-11-02: the €11,904/yr is the official visa minimum (DAAD: "992 Euro pro Monat", Stand 1.1.2025, still
+   current); DAAD puts real costs at €900–1,200/month. Correct as is.
+4. **Canadian at Alberta** (Noah): domestic tier shows "Cost not published". Staged: Canadian fees from UAlberta's
+   cost calculator, international fees confirmed — see `fact-checks/alberta-fees-2026-11-02.md`. UBC, McMaster,
+   Waterloo and McGill have the same gap.
 5. **UK Business with A-Levels** (Nadia): all "holistic" — no A-Level rows for Business at the UK schools. Staged: official 2027 offers for all five UK Business programmes, see `fact-checks/uk-business-entry-2026-11-02.md`
    (Economics has them).
