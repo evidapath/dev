@@ -42,6 +42,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'student_summary',
+      title: 'Student Summary',
+      type: 'string',
+    }),
+    defineField({
       name: 'required_subjects',
       title: 'Required Subjects',
       type: 'array',

@@ -43,7 +43,7 @@ const UNIVERSITIES_QUERY = `*[_type=="university"] | order(canonical_name){
       "residencyLabel": residency_category_ref->label
     },
     "admissions": *[_type=="admissionsRequirement" && references(^._id)]{
-      curriculum_type, academic_threshold, required_subjects,
+      curriculum_type, academic_threshold, student_summary, required_subjects,
       "tests": standardized_tests[]{test_name, required, notes},
       "languages": language_requirements[]{language, min_score}
     }
@@ -66,6 +66,7 @@ interface SanityCost {
 interface SanityAdmissionReq {
   curriculum_type: string | null;
   academic_threshold: string | null;
+  student_summary?: string | null;
   required_subjects: string[] | null;
   tests: { test_name: string | null; required: string | null; notes: string | null }[] | null;
   languages: { language: string | null; min_score: string | null }[] | null;
@@ -140,6 +141,13 @@ function flagEmoji(cc: string | null): string {
 // Where a living-cost figure comes from, for display next to it. Most are official
 // government figures (visa living-cost requirements, Nuffic); some are unofficial
 // estimates, which must be labelled as such.
+// Test requirement codes in words a student reads ("conditional" means it
+// depends on your situation).
+function testRequirement(r: string): string {
+  if (r === "conditional") return "sometimes required";
+  return r.replace(/_/g, " ");
+}
+
 function describeLivingSource(cost: SanityCost | null): string | undefined {
   const note = cost?.living_cost_source_note?.trim();
   if (!note) return undefined;
@@ -151,11 +159,11 @@ function describeLivingSource(cost: SanityCost | null): string | undefined {
     ?.replace(/^(?:https?:\/\/)?([a-z0-9.-]+\.[a-z]{2,})\/\S*$/i, "$1")
     .trim();
   const unofficial = /aggregate|advisory|unofficial/i.test(note);
-  if (unofficial) return `Unofficial estimate${source ? ` (${source})` : ""}`;
+  if (unofficial) return "Estimate, not an official figure";
   // Borrowed from another institution's official figure for the same city.
   if (source && /published by/i.test(source)) return source;
   if (cost?.livingBasis === "genuine_cost_of_living_estimate")
-    return "University's published cost-of-attendance estimate";
+    return "The university's own estimate";
   return `Official figure${source ? ` (${source})` : ""}`;
 }
 
@@ -180,8 +188,8 @@ function selectCost(costs: SanityCost[] | null): { chosen: SanityCost | null; no
   const lowest = sorted[sorted.length - 1]!;
   const cur = chosen.currency || "";
   const note =
-    `Residency-based pricing: showing the highest tier (international / non-domestic students). ` +
-    `Lower tiers pay from ${cur} ${(lowest.tuition_annual ?? 0).toLocaleString()}/yr.`;
+    `Price shown is for international students. Some students (for example EU or home ` +
+    `students) pay less, from ${cur} ${(lowest.tuition_annual ?? 0).toLocaleString()} a year.`;
   return { chosen, note };
 }
 
@@ -351,10 +359,11 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
     .map((a) => ({
       curriculum: a.curriculum_type as string,
       threshold: a.academic_threshold,
+      ...(a.student_summary ? { summary: a.student_summary } : {}),
       subjects: (a.required_subjects || []).filter((s): s is string => !!s),
       tests: (a.tests || [])
         .filter((t) => t.test_name && t.required !== "not_required")
-        .map((t) => `${t.test_name}${t.required ? ` (${t.required})` : ""}`),
+        .map((t) => `${t.test_name}${t.required ? ` (${testRequirement(t.required)})` : ""}`),
     }));
   return {
     name: p.program_name || "Program",

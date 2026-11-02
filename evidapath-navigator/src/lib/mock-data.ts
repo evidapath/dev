@@ -59,6 +59,8 @@ export interface University {
   admissionsByCurriculum?: {
     curriculum: string;
     threshold: string | null;
+    // Plain-English "what you need" for this qualification, when written.
+    summary?: string;
     subjects: string[];
     tests: string[];
   }[];
@@ -118,6 +120,7 @@ export interface ProgramView {
   admissionsByCurriculum: {
     curriculum: string;
     threshold: string | null;
+    summary?: string;
     subjects: string[];
     tests: string[];
   }[];

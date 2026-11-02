@@ -40,6 +40,8 @@ export function keyFigure(curriculum: string, threshold: string | null): KeyFigu
 
   const ib = /baccalaureate|\bIB\b/i.test(curriculum);
   const aLevel = /a[- ]?level/i.test(curriculum);
+  // A US GPA is meaningless as the headline for an A-Level or IB student.
+  const gpaFits = !ib && !aLevel;
 
   // "Typical" only when the words next to the figure say so: AUS says "minimum
   // 24 points" in a line that also says "admission is competitive".
@@ -105,7 +107,7 @@ export function keyFigure(curriculum: string, threshold: string | null): KeyFigu
           ? "Minimum average (varies by track)"
           : "Minimum average",
     });
-  if (gpa)
+  if (gpa && gpaFits)
     figures.push({
       kind: "figure",
       value: gpa[1] ?? gpa[2]!,

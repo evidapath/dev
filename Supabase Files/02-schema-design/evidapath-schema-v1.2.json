@@ -595,6 +595,13 @@
             "null"
           ]
         },
+        "student_summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Plain-English 'what you need' for this qualification, for students and parents. Restates academic_threshold; adds nothing new."
+        },
         "required_subjects": {
           "type": "array",
           "items": {

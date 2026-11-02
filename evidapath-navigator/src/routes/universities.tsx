@@ -193,6 +193,16 @@ function UniversityCardSkeleton({ index = 0 }: { index?: number }) {
   );
 }
 
+// "2026-10-21" → "Oct 2026"; anything else is shown as written.
+function monthYear(date: string): string {
+  if (!/^\d{4}-\d{2}-\d{2}/.test(date)) return date;
+  return new Date(`${date.slice(0, 10)}T00:00:00Z`).toLocaleDateString("en-GB", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 // Header tint per country (an oklch hue), so neighbouring cards read apart.
 const COUNTRY_HUE: Record<string, number> = {
   "United Kingdom": 255,
@@ -305,7 +315,7 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
             {costs.livingSource && (
               <p
                 className={
-                  costs.livingSource.startsWith("Unofficial")
+                  costs.livingSource.startsWith("Estimate")
                     ? "text-bronze"
                     : "text-muted-foreground"
                 }
@@ -345,7 +355,11 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
             title={`Last checked: ${univ.lastVerified}`}
           >
             <ShieldCheck className="w-3 h-3" />
-            {verified ? `Checked ${univ.lastVerified}` : univ.evidenceConfidence}
+            {!verified
+              ? univ.evidenceConfidence
+              : /^\d{4}-/.test(univ.lastVerified)
+                ? `Checked ${monthYear(univ.lastVerified)}`
+                : "Being checked"}
           </span>
           {!affordability.startsWith("Pending") && (
             <span className="rounded-full bg-secondary text-foreground px-2.5 py-1 font-medium">

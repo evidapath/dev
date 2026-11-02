@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BookOpen, CalendarDays, ClipboardCheck, Info, Users } from "lucide-react";
+import { BookOpen, CalendarDays, ClipboardCheck, Info, Target, Users } from "lucide-react";
 import type { University } from "../lib/mock-data";
 import {
   isCompetitive,
@@ -158,7 +158,7 @@ function Requirements({ admissions }: { admissions: Admission[] }) {
       </div>
 
       <div className="rounded-xl bg-secondary/40 p-3 space-y-3 page-enter" key={picked}>
-        <p className="font-semibold text-foreground">{a.curriculum}</p>
+        <p className="text-[11px] font-medium text-muted-foreground">{a.curriculum}</p>
 
         {fig?.kind === "figure" && (
           <div className="flex items-end gap-3">
@@ -175,7 +175,16 @@ function Requirements({ admissions }: { admissions: Admission[] }) {
             )}
           </div>
         )}
-        {fig?.kind === "holistic" && (
+        {a.summary && (
+          <div className="flex items-start gap-2.5 rounded-lg bg-background border border-border/70 p-2.5">
+            <Target className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+            <div>
+              <p className="text-[10px] uppercase font-semibold text-primary">What you need</p>
+              <p className="text-[13px] leading-relaxed text-foreground">{a.summary}</p>
+            </div>
+          </div>
+        )}
+        {!a.summary && fig?.kind === "holistic" && (
           <div className="flex items-start gap-2">
             <Users className="w-5 h-5 text-primary shrink-0" />
             <div>
@@ -184,7 +193,7 @@ function Requirements({ admissions }: { admissions: Admission[] }) {
             </div>
           </div>
         )}
-        {fig?.kind === "unverified" && (
+        {!a.summary && fig?.kind === "unverified" && (
           <p className="font-semibold text-bronze">Grade requirement not verified yet</p>
         )}
 
@@ -229,7 +238,8 @@ function Requirements({ admissions }: { admissions: Admission[] }) {
           </p>
         )}
 
-        {a.threshold && (
+        {/* The research wording, only until a plain summary is written. */}
+        {a.threshold && !a.summary && (
           <details open={!fig}>
             <summary className="cursor-pointer select-none text-[11px] font-semibold text-primary">
               {fig ? "Full wording from the university" : "What the university asks for"}
