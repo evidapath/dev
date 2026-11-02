@@ -10,6 +10,8 @@ import type { University } from "../lib/mock-data";
 import { isPending } from "../lib/format";
 import { VerifiedAwardsPanel } from "../components/offer-vault/VerifiedAwardsPanel";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
+import { SearchSelect } from "../components/SearchSelect";
+import { universityOption } from "../lib/university-options";
 
 function money(value: number | null): string {
   if (isPending(value)) return "Pending verified data";
@@ -123,11 +125,9 @@ function FundPage() {
 
   const selectCls =
     "w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary";
-  const uniOptions = universities.map((u) => (
-    <option key={u.id} value={u.id}>
-      {u.flag} {u.name} ({u.durationYears} yrs)
-    </option>
-  ));
+  const uniOptions = universities.map((u) =>
+    universityOption(u, `${u.name} (${u.durationYears} yrs)`),
+  );
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
@@ -195,26 +195,28 @@ function FundPage() {
             <label className="block text-xs font-semibold uppercase text-muted-foreground mb-1.5">
               Pathway A (Primary Target)
             </label>
-            <select
+            <SearchSelect
+              aria-label="Pathway A"
+              options={uniOptions}
               value={selectedUniv1}
-              onChange={(e) => setSelectedUniv1(e.target.value)}
+              onChange={setSelectedUniv1}
+              searchPlaceholder="Type a university or country…"
               className={selectCls}
-            >
-              {uniOptions}
-            </select>
+            />
           </div>
 
           <div>
             <label className="block text-xs font-semibold uppercase text-muted-foreground mb-1.5">
               Pathway B (Comparison / Strategic Pivot)
             </label>
-            <select
+            <SearchSelect
+              aria-label="Pathway B"
+              options={uniOptions}
               value={selectedUniv2}
-              onChange={(e) => setSelectedUniv2(e.target.value)}
+              onChange={setSelectedUniv2}
+              searchPlaceholder="Type a university or country…"
               className={selectCls}
-            >
-              {uniOptions}
-            </select>
+            />
           </div>
 
           <div>

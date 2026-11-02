@@ -12,6 +12,8 @@ import type { Scholarship, University } from "../lib/mock-data";
 import { analyze, asksUkHome, type StudentInput } from "../lib/decision-engine";
 import { storedUkHome, storeUkHome } from "../lib/residence";
 import { UkHomeCheckbox } from "../components/UkHomeCheckbox";
+import { SearchSelect } from "../components/SearchSelect";
+import { universityOption } from "../lib/university-options";
 import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
 import {
   CURRICULA,
@@ -140,6 +142,12 @@ function AnalyzePage() {
 
   const saved = unis.filter((u) => savedIds.includes(u.id));
   const others = unis.filter((u) => !savedIds.includes(u.id));
+  const uniOptions = [
+    ...saved.map((u) => universityOption(u, u.name, "Saved to your path")),
+    ...others.map((u) =>
+      universityOption(u, u.name, saved.length ? "All universities" : "Universities"),
+    ),
+  ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
@@ -183,29 +191,14 @@ function AnalyzePage() {
 
       {!editing && (
         <section className="bg-card border border-border rounded-2xl p-4 shadow-xs flex flex-col md:flex-row md:items-center gap-3">
-          <select
+          <SearchSelect
             aria-label="University"
+            options={uniOptions}
             value={univ?.id ?? ""}
-            onChange={(e) => setUniId(e.target.value)}
+            onChange={setUniId}
+            searchPlaceholder="Type a university or country…"
             className={`${field} md:max-w-sm font-semibold`}
-          >
-            {saved.length > 0 && (
-              <optgroup label="Saved to your path">
-                {saved.map((u) => (
-                  <option key={u.id} value={u.id}>
-                    {u.flag} {u.name}
-                  </option>
-                ))}
-              </optgroup>
-            )}
-            <optgroup label={saved.length ? "All universities" : "Universities"}>
-              {others.map((u) => (
-                <option key={u.id} value={u.id}>
-                  {u.flag} {u.name}
-                </option>
-              ))}
-            </optgroup>
-          </select>
+          />
           <p className="text-xs text-muted-foreground flex-1">
             {input.gradeBand.replace(/^[^:]+:\s*/, "").split(" / ")[0]} · {input.subject} ·{" "}
             {input.budgetUsd >= BUDGET_MAX
@@ -249,29 +242,14 @@ function AnalyzePage() {
               <label className={label} htmlFor="an-uni">
                 University
               </label>
-              <select
+              <SearchSelect
                 id="an-uni"
+                options={uniOptions}
                 value={univ?.id ?? ""}
-                onChange={(e) => setUniId(e.target.value)}
+                onChange={setUniId}
+                searchPlaceholder="Type a university or country…"
                 className={field}
-              >
-                {saved.length > 0 && (
-                  <optgroup label="Saved to your path">
-                    {saved.map((u) => (
-                      <option key={u.id} value={u.id}>
-                        {u.flag} {u.name}
-                      </option>
-                    ))}
-                  </optgroup>
-                )}
-                <optgroup label={saved.length ? "All universities" : "Universities"}>
-                  {others.map((u) => (
-                    <option key={u.id} value={u.id}>
-                      {u.flag} {u.name}
-                    </option>
-                  ))}
-                </optgroup>
-              </select>
+              />
             </div>
             <div>
               <label className={label} htmlFor="an-subject">

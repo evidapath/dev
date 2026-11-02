@@ -17,6 +17,8 @@ import {
 import type { University } from "../lib/mock-data";
 import type { ApplicationStatus, StudentApplication } from "../lib/offer-vault.types";
 import { APPLICATION_STATUSES } from "../lib/offer-vault.types";
+import { SearchSelect } from "../components/SearchSelect";
+import { universityOption } from "../lib/university-options";
 import {
   EmptyState,
   IllustrativePreviewLabel,
@@ -296,13 +298,14 @@ function ApplicationEditor({
 
         <div>
           <label className={labelCls}>University</label>
-          <select value={univId} onChange={(e) => setUnivId(e.target.value)} className={inputCls}>
-            {universities.map((u) => (
-              <option key={u.id} value={u.id}>
-                {u.flag} {u.name}
-              </option>
-            ))}
-          </select>
+          <SearchSelect
+            aria-label="University"
+            options={universities.map((u) => universityOption(u))}
+            value={univId}
+            onChange={setUnivId}
+            searchPlaceholder="Type a university or country…"
+            className={inputCls}
+          />
         </div>
 
         <div>
