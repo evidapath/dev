@@ -1,6 +1,6 @@
 import { useUniversitiesFn } from "../lib/use-live-data";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { usePaged } from "../lib/use-paged";
 import { ShowMore } from "../components/ShowMore";
 import {
@@ -16,6 +16,7 @@ import { Button } from "../components/ui/button";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
+import { AdmissionsPanel } from "../components/AdmissionsPanel";
 
 export const Route = createFileRoute("/universities")({
   head: () => ({
@@ -206,6 +207,8 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
   const durationYears = pv?.durationYears ?? univ.durationYears;
   const residencyNote = pv?.costResidencyNote ?? univ.costResidencyNote;
   const admissions = pv?.admissionsByCurriculum ?? univ.admissionsByCurriculum;
+  const [admOpen, setAdmOpen] = useState(false);
+  const admRef = useRef<HTMLDetailsElement>(null);
 
   return (
     <div
@@ -251,11 +254,26 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
 
         {/* Cost & Requirements Table */}
         <div className="bg-secondary/40 rounded-xl p-3.5 border border-border space-y-2 text-xs">
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Academic Threshold:</span>
-            <span className="font-medium text-muted-foreground text-right">
-              {univ.academicRequirements.target}
-            </span>
+          <div className="flex justify-between gap-3">
+            <span className="text-muted-foreground shrink-0">Entry requirements:</span>
+            {admissions?.length ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setAdmOpen(true);
+                  requestAnimationFrame(() =>
+                    admRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }),
+                  );
+                }}
+                className="font-semibold text-primary hover:underline text-right"
+              >
+                By qualification ↓
+              </button>
+            ) : (
+              <span className="font-medium text-muted-foreground text-right line-clamp-2">
+                {univ.academicRequirements.target}
+              </span>
+            )}
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Tuition / year:</span>
@@ -314,63 +332,16 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
 
         {/* Verified admissions + deadlines (surfaced from Sanity) */}
         {(univ.deadlines?.length || admissions?.length) && (
-          <details className="text-xs border-t border-border/60 pt-2">
+          <details
+            ref={admRef}
+            open={admOpen}
+            onToggle={(e) => setAdmOpen(e.currentTarget.open)}
+            className="text-xs border-t border-border/60 pt-2"
+          >
             <summary className="cursor-pointer text-primary font-semibold select-none">
               Admissions & deadlines
             </summary>
-            <div className="mt-2 space-y-3">
-              {univ.deadlines && univ.deadlines.length > 0 && (
-                <div className="space-y-1">
-                  <p className="text-[10px] uppercase font-semibold text-muted-foreground">
-                    Application deadlines
-                  </p>
-                  {univ.deadlines.map((d, i) => (
-                    <div key={i} className="flex justify-between gap-2 text-muted-foreground">
-                      <span>
-                        {d.label}
-                        {d.binding ? " (binding)" : ""}
-                      </span>
-                      <span className="font-mono text-right">
-                        {(d.deadline ?? "").slice(0, 10)}
-                        {isPast(d.deadline) && (
-                          <span className="text-bronze font-sans font-semibold"> · passed</span>
-                        )}
-                        {d.decisionDate ? ` · decision ${d.decisionDate.slice(0, 10)}` : ""}
-                      </span>
-                    </div>
-                  ))}
-                  {univ.deadlines[0]?.platform && (
-                    <p className="text-[10px] text-muted-foreground">
-                      via {univ.deadlines[0].platform}
-                    </p>
-                  )}
-                </div>
-              )}
-              {admissions && admissions.length > 0 && (
-                <div className="space-y-1.5">
-                  <p className="text-[10px] uppercase font-semibold text-muted-foreground">
-                    Entry requirements by qualification
-                  </p>
-                  {admissions.map((a, i) => (
-                    <div key={i} className="rounded bg-secondary/40 p-2 space-y-0.5">
-                      <p className="font-semibold text-foreground">{a.curriculum}</p>
-                      {a.threshold && <p className="text-muted-foreground">{a.threshold}</p>}
-                      {a.threshold && otherTermsNote(a.curriculum, a.threshold) && (
-                        <p className="text-[10px] text-bronze">
-                          {otherTermsNote(a.curriculum, a.threshold)}
-                        </p>
-                      )}
-                      {a.subjects.length > 0 && (
-                        <p className="text-muted-foreground">Subjects: {a.subjects.join("; ")}</p>
-                      )}
-                      {a.tests.length > 0 && (
-                        <p className="text-muted-foreground">Tests: {a.tests.join(", ")}</p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            <AdmissionsPanel deadlines={univ.deadlines} admissions={admissions} />
           </details>
         )}
       </div>
@@ -396,34 +367,4 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
       </div>
     </div>
   );
-}
-
-// Some universities publish entry grades only in A-level terms ("AAB or equivalent").
-// When that text is shown under another qualification, say so plainly rather than
-// leaving an IB or American-diploma student to guess what "AAB" means for them.
-const OWN_TERMS: { match: RegExp; own: RegExp; name: string }[] = [
-  { match: /baccalaureate|\bIB\b/i, own: /\bIB\b|baccalaureate|points/i, name: "IB" },
-  {
-    match: /american|high school|\bAP\b/i,
-    own: /\bGPA\b|\bSAT\b|\bACT\b|\bAP\b|high school|diploma/i,
-    name: "American high school",
-  },
-];
-function otherTermsNote(curriculum: string, threshold: string): string | null {
-  if (!/a[- ]?level|A\*/i.test(threshold)) return null;
-  // "Other qualification" rows were often imported with the A-level text; say so
-  // rather than imply those grades apply to every other curriculum.
-  if (/general international|other/i.test(curriculum))
-    return "Shown in A-level terms. The university converts other qualifications using its own equivalence tables — check its international entry requirements for your country.";
-  const kind = OWN_TERMS.find((k) => k.match.test(curriculum));
-  if (!kind || kind.own.test(threshold)) return null;
-  return `Published in A-level terms only. Ask the university for its ${kind.name} equivalent.`;
-}
-
-// True when an ISO date (YYYY-MM-DD…) is before today, so a closed deadline is never
-// shown as if it were still open.
-function isPast(date: string | null | undefined): boolean {
-  const day = date?.slice(0, 10);
-  if (!day || !/^\d{4}-\d{2}-\d{2}$/.test(day)) return false;
-  return day < new Date().toISOString().slice(0, 10);
 }
