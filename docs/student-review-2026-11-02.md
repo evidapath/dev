@@ -28,7 +28,7 @@ school is.
 
 ## Open (data, not code)
 
-1. **UK Home fees.** Done in a follow-up: British/Irish students get an "I've lived in the UK for the last 3 years"
+1. **UK Home fees.** Done and applied to staging (Tom re-run: "7 fit your budget in United Kingdom", Birmingham at $27.6k/yr Home, was "Nothing in United Kingdom fits $40k/yr"): British/Irish students get an "I've lived in the UK for the last 3 years"
    question; Home fees (£10,050, 2027 entry) staged for all 7 UK universities — see
    `fact-checks/uk-home-fees-2026-11-02.md`. Also found: no citizenship code for Ireland, Spain, Italy and other EU
    countries (so no EU fees for them), and "Ukrainian" read as British. Fixed.

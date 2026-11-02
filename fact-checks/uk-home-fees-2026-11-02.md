@@ -1,6 +1,6 @@
 # UK Home fees + Nottingham international corrections — 2026-11-02
 
-Pending file: `fact-checks/pending/2026-11-02-uk-home-fees.ndjson` (44 mutations). Backup taken before applying:
+Applied to staging 2026-11-02 (44 mutations, verified after apply): `fact-checks/applied-2026-11-02-uk-home-fees.ndjson`. Backup taken before applying:
 the staging export of 2026-11-02 (1,963 documents) in the session scratchpad (`export9.ndjson`).
 
 ## Why
