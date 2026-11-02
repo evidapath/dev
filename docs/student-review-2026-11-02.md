@@ -37,5 +37,5 @@ school is.
 3. **Germany at $10k** (Max, Elif): nothing fits because every German profile's living cost is above ~$10k. Correct
    on the data; worth a second look at whether the living figures are the official ones.
 4. **Canadian at Alberta** (Noah): domestic tier shows "Cost not published".
-5. **UK Business with A-Levels** (Nadia): all "holistic" — no A-Level rows for Business at the UK schools
+5. **UK Business with A-Levels** (Nadia): all "holistic" — no A-Level rows for Business at the UK schools. Staged: official 2027 offers for all five UK Business programmes, see `fact-checks/uk-business-entry-2026-11-02.md`
    (Economics has them).
