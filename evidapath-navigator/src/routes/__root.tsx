@@ -83,7 +83,8 @@ export const Route = createRootRouteWithContext<RouterContext>()({
     if (context.auth.user === null) {
       // context.auth is the placeholder { user: null } from router.tsx on the
       // first SSR pass; resolve the real session here.
-      const session = await getSession();
+      const session = cachedSession() ?? (await getSession());
+      rememberSession(session);
       return { auth: session };
     }
     return { auth: context.auth };
@@ -152,6 +153,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { cachedSession, rememberSession } from "../lib/session-cache";
 
 function RootComponent() {
   const { queryClient, auth } = Route.useRouteContext();

@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { AuthSession } from "../lib/auth.functions";
+import { rememberSession } from "../lib/session-cache";
 
 // The Supabase browser client is imported lazily so the large @supabase/ssr +
 // @supabase/supabase-js SDKs stay out of the shared root bundle. Only the
@@ -62,7 +63,9 @@ export function AuthContextProvider({
       const {
         data: { user },
       } = await supabase.auth.getUser();
-      setSession({ user: user ? { id: user.id, email: user.email } : null });
+      const next = { user: user ? { id: user.id, email: user.email } : null };
+      setSession(next);
+      rememberSession(next);
     } catch {
       setSession({ user: null });
     }
@@ -76,7 +79,9 @@ export function AuthContextProvider({
         if (!active) return;
         const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
           const user = session?.user;
-          setSession({ user: user ? { id: user.id, email: user.email } : null });
+          const next = { user: user ? { id: user.id, email: user.email } : null };
+          setSession(next);
+          rememberSession(next);
           setLoading(false);
         });
         unsub = () => sub.subscription.unsubscribe();
@@ -127,6 +132,7 @@ export function AuthContextProvider({
       /* ignore — clear local state regardless */
     }
     setSession({ user: null });
+    rememberSession({ user: null });
   }, []);
 
   const value = useMemo<AuthContextValue>(
