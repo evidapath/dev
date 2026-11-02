@@ -1,21 +1,25 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
+  BadgeCheck,
+  CalendarDays,
   Check,
   ChevronDown,
   Gem,
   Globe2,
+  GraduationCap,
   Save,
   Sparkles,
   Trophy,
   Wallet,
 } from "lucide-react";
 import type { PathwayGroup, PathwayResult, PathwayRow } from "../lib/pathways";
-import { fmtDate } from "../lib/decision-engine";
+import { fmtDate, type DecisionAnalysis } from "../lib/decision-engine";
 import { money, TONE_CLASS, verdictFor, type Tone } from "../lib/verdict";
 import type { University } from "../lib/mock-data";
 import { CostBar } from "./CostBar";
+import { CostSplit } from "./CostSplit";
 import { Illustration } from "./Illustration";
 
 // Find My Path results, built for a quick read: a top-3 strip, then compact
@@ -487,40 +491,76 @@ function CompactCard({ row, ctx }: { row: PathwayRow; ctx: Ctx }) {
       </div>
 
       {why && (
-        <div className="rounded-lg bg-secondary/40 p-3 space-y-2 text-xs text-foreground motion-safe:animate-in motion-safe:fade-in duration-200">
-          {bar(false)}
-          {a.feeTier && (
-            <p className="text-primary">
-              <span className="font-semibold">Your fee: </span>
-              {a.feeTier}
-            </p>
+        <div className="rounded-lg bg-secondary/40 p-3 space-y-3 text-xs text-foreground motion-safe:animate-in motion-safe:fade-in duration-200">
+          {f.breakdown ? (
+            <CostSplit
+              split={f.breakdown}
+              aid={f.guaranteedAnnualUsd}
+              budget={ctx.budgetUsd}
+              noLimit={ctx.noLimit}
+            />
+          ) : (
+            bar(false)
           )}
-          <p>
-            <span className="font-semibold">Grades: </span>
-            {a.academic.headline}
-          </p>
-          {a.academic.requirement && (
-            <p className="text-muted-foreground">“{a.academic.requirement}”</p>
-          )}
-          {guaranteed.map((g) => (
-            <p key={g.name} className="text-primary">
-              <span className="font-semibold">Guaranteed: </span>
-              {g.name}
-            </p>
-          ))}
-          {row.group === "stretch" && (
-            <div className="space-y-1">
-              <p className="font-semibold">Ways to close the gap</p>
-              {toApply.slice(0, 2).map((s) => (
-                <p key={s.name} className="flex gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
-                  <span>
-                    {s.name} — {s.award}
-                    {s.deadline && /^\d{4}-\d{2}-\d{2}/.test(s.deadline)
-                      ? ` (by ${fmtDate(s.deadline)})`
-                      : ""}
+
+          <div className="grid grid-cols-2 gap-1.5">
+            <Tile Icon={GraduationCap} label="Grades">
+              <span className={`font-semibold ${LEVEL_TONE[a.academic.level]}`}>
+                {LEVEL_WORD[a.academic.level]}
+              </span>
+              <span className="block text-muted-foreground">{a.academic.headline}</span>
+            </Tile>
+            <Tile Icon={CalendarDays} label="Next deadline">
+              {a.admissions.nextDeadline ? (
+                <>
+                  <span className="font-semibold">{fmtDate(a.admissions.nextDeadline.date)}</span>
+                  <span className="block text-muted-foreground">
+                    {a.admissions.nextDeadline.label}
                   </span>
-                </p>
+                </>
+              ) : (
+                <span className="text-muted-foreground">
+                  {a.admissions.pastDeadlines ? "Closed this cycle" : "Not published"}
+                </span>
+              )}
+            </Tile>
+            {a.feeTier && (
+              <Tile Icon={BadgeCheck} label="Your fee">
+                <span className="font-semibold text-primary">{a.feeTier}</span>
+              </Tile>
+            )}
+            {guaranteed.length > 0 && (
+              <Tile Icon={Gem} label="Guaranteed aid">
+                {guaranteed.map((g) => (
+                  <span key={g.name} className="block font-semibold text-sky-600 dark:text-sky-400">
+                    {g.name}
+                  </span>
+                ))}
+              </Tile>
+            )}
+          </div>
+
+          {row.group === "stretch" && (
+            <div className="space-y-1.5">
+              <p className="text-[10px] uppercase font-semibold text-muted-foreground">
+                Ways to close the gap
+              </p>
+              {toApply.slice(0, 2).map((s) => (
+                <div
+                  key={s.name}
+                  className="flex items-start gap-2 rounded-md bg-background border border-border px-2 py-1.5"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+                  <span className="flex-1">
+                    <span className="font-semibold">{s.name}</span>
+                    <span className="block text-muted-foreground">{s.award}</span>
+                  </span>
+                  {s.deadline && /^\d{4}-\d{2}-\d{2}/.test(s.deadline) && (
+                    <span className="shrink-0 rounded-full bg-bronze/10 px-2 py-0.5 text-[10px] font-semibold text-bronze">
+                      by {fmtDate(s.deadline)}
+                    </span>
+                  )}
+                </div>
               ))}
               {toApply.length === 0 && (
                 <p className="text-muted-foreground">
@@ -528,28 +568,66 @@ function CompactCard({ row, ctx }: { row: PathwayRow; ctx: Ctx }) {
                 </p>
               )}
               {a.alternatives[0] && (
-                <p className="flex gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
-                  <span>
-                    Cheaper: {a.alternatives[0].flag} {a.alternatives[0].name},{" "}
+                <div className="flex items-center gap-2 rounded-md bg-background border border-border px-2 py-1.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-primary shrink-0" />
+                  <span className="flex-1">
+                    Cheaper: {a.alternatives[0].flag} {a.alternatives[0].name}
+                  </span>
+                  <span className="font-mono font-semibold">
                     {money(a.alternatives[0].annualUsd)}/yr
                     {a.alternatives[0].complete ? "" : " tuition"}
                   </span>
-                </p>
+                </div>
               )}
             </div>
           )}
-          <p>
-            <span className="font-semibold">Next deadline: </span>
-            {a.admissions.nextDeadline
-              ? `${fmtDate(a.admissions.nextDeadline.date)} (${a.admissions.nextDeadline.label})`
-              : a.admissions.pastDeadlines
-                ? "closed this cycle"
-                : "not published"}
-          </p>
-          {f.livingSource && <p className="text-muted-foreground">Living cost: {f.livingSource}</p>}
+
+          {a.academic.requirement && (
+            <details>
+              <summary className="cursor-pointer select-none text-[11px] font-semibold text-primary">
+                Published entry requirement
+              </summary>
+              <p className="mt-1 text-muted-foreground">“{a.academic.requirement}”</p>
+            </details>
+          )}
+          {f.livingSource && (
+            <p className="text-[10px] text-muted-foreground">Living cost: {f.livingSource}</p>
+          )}
         </div>
       )}
     </article>
+  );
+}
+
+const LEVEL_WORD: Record<DecisionAnalysis["academic"]["level"], string> = {
+  strong: "Meets the requirement",
+  edge: "On the edge",
+  gap: "Below the requirement",
+  unknown: "Not comparable",
+};
+const LEVEL_TONE: Record<DecisionAnalysis["academic"]["level"], string> = {
+  strong: "text-primary",
+  edge: "text-bronze",
+  gap: "text-destructive",
+  unknown: "text-foreground",
+};
+
+function Tile({
+  Icon,
+  label,
+  children,
+}: {
+  Icon: typeof Trophy;
+  label: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className="rounded-md bg-background border border-border px-2 py-1.5 space-y-0.5">
+      <p className="flex items-center gap-1 text-[10px] uppercase font-semibold text-muted-foreground">
+        <Icon className="w-3 h-3 text-primary" />
+        {label}
+      </p>
+      <div className="text-[11px] leading-snug">{children}</div>
+    </div>
   );
 }

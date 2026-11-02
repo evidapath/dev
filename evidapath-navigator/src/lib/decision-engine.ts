@@ -62,6 +62,9 @@ export interface FinancialFit {
   livingSource?: string;
   /** Tuition is published as zero for this student (e.g. a national tier). */
   tuitionFree?: boolean;
+  /** Where the yearly cost goes, USD. Only when the all-in total is published;
+   *  living is the rest of the total so the parts always add up. */
+  breakdown?: { tuition: number; fees: number; living: number };
 }
 
 export interface Alternative {
@@ -535,6 +538,15 @@ export function analyze(
     );
   const guaranteedAnnualUsd = funding.reduce((sum, f) => sum + (f.annualUsd ?? 0), 0);
   const annualUsd = cost ? Math.round(cost.usd) : null;
+  const feesUsd = toUsd(view.costs.mandatoryFees ?? 0, view.costs.currency, fx) ?? 0;
+  const breakdown =
+    cost?.complete && annualUsd != null && tuitionUsd != null
+      ? {
+          tuition: Math.round(tuitionUsd),
+          fees: Math.round(feesUsd),
+          living: Math.max(0, annualUsd - Math.round(tuitionUsd) - Math.round(feesUsd)),
+        }
+      : null;
   const degreeUsd = annualUsd != null && years ? annualUsd * years : null;
   const netDegreeUsd =
     degreeUsd != null ? Math.max(0, degreeUsd - guaranteedAnnualUsd * years) : null;
@@ -549,6 +561,7 @@ export function analyze(
     fit: netFit,
     annualUsd,
     annualComplete: !!cost?.complete,
+    ...(breakdown ? { breakdown } : {}),
     years,
     degreeUsd,
     guaranteedAnnualUsd,

@@ -5,6 +5,7 @@ import { BUDGET_MAX } from "../lib/budget";
 import type { University } from "../lib/mock-data";
 import { money, TONE_CLASS, verdictFor } from "../lib/verdict";
 import { CostBar } from "./CostBar";
+import { CostSplit } from "./CostSplit";
 
 // The top of the Analyze page: the deal in one line, three numbers, one action.
 export function VerdictHero({
@@ -91,6 +92,15 @@ export function VerdictHero({
               )
             : stat("Left over / year", money(-diff), "text-primary")}
       </div>
+
+      {f.breakdown && (
+        <CostSplit
+          split={f.breakdown}
+          aid={f.guaranteedAnnualUsd}
+          budget={budgetUsd}
+          noLimit={noLimit}
+        />
+      )}
 
       {next && (
         <div className="rounded-xl border border-primary/25 bg-primary/5 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
