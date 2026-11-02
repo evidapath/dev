@@ -92,6 +92,7 @@
       "enum": [
         "genuine_cost_of_living_estimate",
         "government_minimum_income_threshold",
+        "official_housing_only",
         "not_published"
       ]
     },

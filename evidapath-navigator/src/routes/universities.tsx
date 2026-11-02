@@ -315,7 +315,7 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
             {costs.livingSource && (
               <p
                 className={
-                  costs.livingSource.startsWith("Estimate")
+                  (costs.livingSource.startsWith("Estimate") || costs.livingSource.startsWith("Housing only"))
                     ? "text-bronze"
                     : "text-muted-foreground"
                 }

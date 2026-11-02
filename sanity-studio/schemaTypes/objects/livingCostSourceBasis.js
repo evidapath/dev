@@ -13,7 +13,7 @@ export default defineType({
       name: 'kind',
       title: 'Kind',
       type: 'string',
-      options: { list: ["genuine_cost_of_living_estimate", "government_minimum_income_threshold", "not_published"] },
+      options: { list: ["genuine_cost_of_living_estimate", "government_minimum_income_threshold", "official_housing_only", "not_published"] },
       validation: (Rule) => Rule.required(),
     }),
     defineField({

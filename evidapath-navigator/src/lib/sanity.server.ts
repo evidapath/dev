@@ -158,6 +158,9 @@ function describeLivingSource(cost: SanityCost | null): string | undefined {
     ?.split(/\s+\(|\.\s/)[0]
     ?.replace(/^(?:https?:\/\/)?([a-z0-9.-]+\.[a-z]{2,})\/\S*$/i, "$1")
     .trim();
+  // The university's own housing price, without food or transport.
+  if (cost?.livingBasis === "official_housing_only")
+    return "Housing only (the university's own price). Food and transport not included";
   const unofficial = /aggregate|advisory|unofficial/i.test(note);
   if (unofficial) return "Estimate, not an official figure";
   // Borrowed from another institution's official figure for the same city.
