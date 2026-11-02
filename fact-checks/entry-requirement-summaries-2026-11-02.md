@@ -1,6 +1,12 @@
-# Entry requirements in plain English — 2026-11-02
+# Entry requirements in plain English — 2026-11-02 — WITHDRAWN, do not apply
 
-Pending file: `fact-checks/pending/2026-11-02-entry-requirement-summaries.ndjson` (610 mutations). Each one only
+Withdrawn the same day, before it was applied. A self-audit found 21 summaries stating things their source row
+does not say (mainly "no minimum grade is published", and "interview round" for TUM's Stage 2). The rows themselves
+were AI research output never checked against university pages, so polishing them would have made unverified data
+read as fact. The file is kept in `fact-checks/withdrawn/` for the record only.
+
+
+File: `fact-checks/withdrawn/2026-11-02-entry-requirement-summaries.ndjson` (610 mutations). Each one only
 **sets a new field**, `student_summary`, on an `admissionsRequirement` row. Nothing existing is changed, so no backup
 is needed. To undo, unset `student_summary` on the same ids.
 

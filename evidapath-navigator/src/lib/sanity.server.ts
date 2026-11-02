@@ -188,8 +188,8 @@ function selectCost(costs: SanityCost[] | null): { chosen: SanityCost | null; no
   const lowest = sorted[sorted.length - 1]!;
   const cur = chosen.currency || "";
   const note =
-    `Price shown is for international students. Some students (for example EU or home ` +
-    `students) pay less, from ${cur} ${(lowest.tuition_annual ?? 0).toLocaleString()} a year.`;
+    `Price shown is for international students. Some students pay less, from ` +
+    `${cur} ${(lowest.tuition_annual ?? 0).toLocaleString()} a year.`;
   return { chosen, note };
 }
 
