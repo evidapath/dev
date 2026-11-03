@@ -35,6 +35,8 @@ export interface University {
     totalDegree: number | null;
     /** Where the living-cost figure comes from (official / university / unofficial). */
     livingSource?: string;
+    /** True when this cost hasn't been re-checked against the official page. */
+    notChecked?: boolean;
   };
   affordabilityIndex: {
     score: number | null;
@@ -61,6 +63,8 @@ export interface University {
     threshold: string | null;
     // Plain-English "what you need" for this qualification, when written.
     summary?: string;
+    /** True when this row hasn't been re-checked against the university's page. */
+    notChecked?: boolean;
     subjects: string[];
     tests: string[];
   }[];
@@ -113,6 +117,8 @@ export interface ProgramView {
     totalDegree: number | null;
     /** Where the living-cost figure comes from (official / university / unofficial). */
     livingSource?: string;
+    /** True when this cost hasn't been re-checked against the official page. */
+    notChecked?: boolean;
   };
   costResidencyNote?: string;
   /** All residency tiers when a programme prices by residency. */
@@ -121,6 +127,8 @@ export interface ProgramView {
     curriculum: string;
     threshold: string | null;
     summary?: string;
+    /** True when this row hasn't been re-checked against the university's page. */
+    notChecked?: boolean;
     subjects: string[];
     tests: string[];
   }[];

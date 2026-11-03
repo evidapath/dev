@@ -159,6 +159,13 @@ function Requirements({ admissions }: { admissions: Admission[] }) {
 
       <div className="rounded-xl bg-secondary/40 p-3 space-y-3 page-enter" key={picked}>
         <p className="text-[11px] font-medium text-muted-foreground">{a.curriculum}</p>
+        {a.notChecked && (
+          <p className="flex items-start gap-1.5 rounded-md bg-bronze/10 px-2 py-1.5 text-[11px] font-medium text-bronze">
+            <Info className="w-3.5 h-3.5 shrink-0 mt-px" />
+            Not yet re-checked against the university&apos;s own page. Confirm with the university
+            before relying on it.
+          </p>
+        )}
 
         {fig?.kind === "figure" && (
           <div className="flex items-end gap-3">

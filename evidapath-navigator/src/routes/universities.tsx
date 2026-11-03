@@ -315,7 +315,8 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
             {costs.livingSource && (
               <p
                 className={
-                  (costs.livingSource.startsWith("Estimate") || costs.livingSource.startsWith("Housing only"))
+                  costs.livingSource.startsWith("Estimate") ||
+                  costs.livingSource.startsWith("Housing only")
                     ? "text-bronze"
                     : "text-muted-foreground"
                 }
@@ -361,6 +362,11 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
                 ? `Checked ${monthYear(univ.lastVerified)}`
                 : "Being checked"}
           </span>
+          {costs.notChecked && (
+            <span className="rounded-full bg-bronze/10 text-bronze px-2.5 py-1 font-medium">
+              Costs not re-checked yet
+            </span>
+          )}
           {!affordability.startsWith("Pending") && (
             <span className="rounded-full bg-secondary text-foreground px-2.5 py-1 font-medium">
               {affordability}

@@ -38,12 +38,12 @@ const UNIVERSITIES_QUERY = `*[_type=="university"] | order(canonical_name){
     language_of_instruction, record_status,
     "costs": *[_type=="costProfile" && references(^._id)]{
       tuition_annual, tuition_basis, mandatory_fees_annual, estimated_living_costs_annual,
-      living_cost_source_note, "livingBasis": living_cost_source_basis.kind,
+      living_cost_source_note, "livingBasis": living_cost_source_basis.kind, verification_status,
       currency, duration_years, "residencyDesc": residency_category_ref->description,
       "residencyLabel": residency_category_ref->label
     },
     "admissions": *[_type=="admissionsRequirement" && references(^._id)]{
-      curriculum_type, academic_threshold, student_summary, required_subjects,
+      curriculum_type, academic_threshold, student_summary, required_subjects, verification_status,
       "tests": standardized_tests[]{test_name, required, notes},
       "languages": language_requirements[]{language, min_score}
     }
@@ -58,6 +58,7 @@ interface SanityCost {
   estimated_living_costs_annual: number | null;
   living_cost_source_note: string | null;
   livingBasis: string | null;
+  verification_status?: string | null;
   currency: string | null;
   duration_years: number | null;
   residencyDesc: string | null;
@@ -67,6 +68,7 @@ interface SanityAdmissionReq {
   curriculum_type: string | null;
   academic_threshold: string | null;
   student_summary?: string | null;
+  verification_status?: string | null;
   required_subjects: string[] | null;
   tests: { test_name: string | null; required: string | null; notes: string | null }[] | null;
   languages: { language: string | null; min_score: string | null }[] | null;
@@ -146,6 +148,12 @@ function flagEmoji(cc: string | null): string {
 function testRequirement(r: string): string {
   if (r === "conditional") return "sometimes required";
   return r.replace(/_/g, " ");
+}
+
+// Rows the re-verification pass couldn't confirm are marked UNKNOWN; anything not
+// VERIFIED / SUPPORTED / VERIFIED_ABSENT is shown as "not checked yet".
+function notChecked(status: string | null | undefined): boolean {
+  return !status || !["VERIFIED", "SUPPORTED", "VERIFIED_ABSENT"].includes(status);
 }
 
 function describeLivingSource(cost: SanityCost | null): string | undefined {
@@ -363,6 +371,7 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
       curriculum: a.curriculum_type as string,
       threshold: a.academic_threshold,
       ...(a.student_summary ? { summary: a.student_summary } : {}),
+      ...(notChecked(a.verification_status) ? { notChecked: true } : {}),
       subjects: (a.required_subjects || []).filter((s): s is string => !!s),
       tests: (a.tests || [])
         .filter((t) => t.test_name && t.required !== "not_required")
@@ -382,6 +391,7 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
       totalAnnual,
       totalDegree,
       ...(livingSource ? { livingSource } : {}),
+      ...(notChecked(cost?.verification_status) ? { notChecked: true } : {}),
     },
     ...(note ? { costResidencyNote: note } : {}),
     ...(tiers.length > 1 ? { costTiers: tiers } : {}),
@@ -465,6 +475,7 @@ function adapt(u: SanityUniversity): University {
       totalAnnual,
       totalDegree,
       ...(livingSource ? { livingSource } : {}),
+      ...(featured?.costs.notChecked ? { notChecked: true } : {}),
     },
     affordabilityIndex: {
       score: null,
