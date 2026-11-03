@@ -195,12 +195,24 @@ function selectCost(costs: SanityCost[] | null): { chosen: SanityCost | null; no
   if (priced.length === 0) return { chosen: (costs || [])[0] ?? null };
   const sorted = [...priced].sort((a, b) => (b.tuition_annual ?? 0) - (a.tuition_annual ?? 0));
   const chosen = sorted[0]!;
-  if (sorted.length === 1) return { chosen };
+  // A residency tier with no published price (e.g. UAE nationals at UAEU) is named,
+  // never silently replaced by the international rate.
+  const unpriced = (costs || [])
+    .filter((c) => c.tuition_annual == null && c.residencyLabel)
+    .map((c) => c.residencyLabel as string);
+  const unpricedNote = unpriced.length
+    ? ` The price for ${unpriced.join(", ")} isn't published; ask the university.`
+    : "";
+  if (sorted.length === 1)
+    return unpricedNote
+      ? { chosen, note: `Price shown is for international students.${unpricedNote}` }
+      : { chosen };
   const lowest = sorted[sorted.length - 1]!;
   const cur = chosen.currency || "";
   const note =
     `Price shown is for international students. Some students pay less, from ` +
-    `${cur} ${(lowest.tuition_annual ?? 0).toLocaleString()} a year.`;
+    `${cur} ${(lowest.tuition_annual ?? 0).toLocaleString()} a year.` +
+    unpricedNote;
   return { chosen, note };
 }
 
