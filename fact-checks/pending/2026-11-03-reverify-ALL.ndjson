@@ -1198,3 +1198,11 @@
 {"patch": {"id": "scholarship-us-usc-merit", "set": {"verification_status": "SUPPORTED", "record_status": "HUMAN_REVIEW", "last_checked": "2026-11-02", "source_refs": [{"_key": "cda47aa44756", "_ref": "sourceRecord-ev-cda47aa44756", "_type": "reference", "_weak": true}]}}}
 {"patch": {"id": "scholarship-us-usc-need-based-aid", "set": {"verification_status": "SUPPORTED", "record_status": "HUMAN_REVIEW", "last_checked": "2026-11-02", "source_refs": [{"_key": "cda47aa44756", "_ref": "sourceRecord-ev-cda47aa44756", "_type": "reference", "_weak": true}]}}}
 {"patch": {"id": "applicantCategory-ae-uaeu-residency-uae-national", "set": {"label": "UAE nationals"}}}
+{"patch": {"id": "costProfile-uk-nottingham-cost-beng-engineering-home", "set": {"duration_years": 4}}}
+{"patch": {"id": "costProfile-uk-nottingham-cost-beng-engineering-international", "set": {"duration_years": 4}}}
+{"patch": {"id": "costProfile-uk-ucl-cost-beng-engineering-home", "set": {"duration_years": 4}}}
+{"patch": {"id": "costProfile-uk-ucl-cost-beng-engineering-international", "set": {"duration_years": 4}}}
+{"patch": {"id": "costProfile-de-tu-munich-cost-bsc-aerospace-eu-eea", "set": {"duration_years": 3}}}
+{"patch": {"id": "costProfile-de-tu-munich-cost-bsc-aerospace-non-eu", "set": {"duration_years": 3}}}
+{"patch": {"id": "costProfile-de-tu-munich-cost-bsc-management-and-technology-eu-eea", "set": {"duration_years": 3}}}
+{"patch": {"id": "costProfile-de-tu-munich-cost-bsc-management-and-technology-non-eu", "set": {"duration_years": 3}}}

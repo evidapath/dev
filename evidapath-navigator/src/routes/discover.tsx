@@ -285,7 +285,12 @@ function DiscoverPage() {
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Annual Total Cost:</span>
                     <span className="font-mono font-bold text-muted-foreground">
-                      {formatCost(univ.costs.totalAnnual, univ.costs.currency)}
+                      {formatCost(
+                        univ.costs.totalDegree != null && univ.durationYears > 0
+                          ? univ.costs.totalDegree / univ.durationYears
+                          : null,
+                        univ.costs.currency,
+                      )}
                     </span>
                   </div>
                   <div className="flex justify-between">
@@ -294,6 +299,11 @@ function DiscoverPage() {
                       {formatCost(univ.costs.totalDegree, univ.costs.currency)}
                     </span>
                   </div>
+                  {univ.costs.totalIncludes && (
+                    <p className="text-[11px] text-muted-foreground text-right">
+                      {univ.costs.totalIncludes}
+                    </p>
+                  )}
                 </div>
 
                 {/* Affordability Index Badge */}

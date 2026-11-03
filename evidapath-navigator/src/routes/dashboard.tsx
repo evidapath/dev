@@ -17,12 +17,17 @@ import {
   ClipboardList,
   CheckCircle2,
   Circle,
+  MessageCircle,
+  ChevronDown,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { useAuth } from "../components/AuthContext";
 import { requireAuth } from "../lib/route-guard";
 import { DataStatus } from "../components/DataStatus";
 import { CounselingWaitlist } from "../components/CounselingWaitlist";
+import { useUniversitiesFn } from "../lib/use-live-data";
+import { formatCost } from "../lib/format";
+import type { University } from "../lib/mock-data";
 import {
   getProfile,
   listSavedUniversities,
@@ -267,12 +272,12 @@ function DashboardPage() {
               <Link
                 key={m.href}
                 to={m.href}
-                className="rounded-xl border border-border bg-card p-4 shadow-xs hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-2"
+                className="group rounded-xl border border-border bg-card p-4 shadow-xs hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-2"
               >
-                <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                  <Icon className="w-4 h-4" />
+                <div className="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center ring-4 ring-primary/5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <Icon className="w-5 h-5" />
                 </div>
-                <span className="text-xs font-semibold text-foreground">{m.label}</span>
+                <span className="text-sm font-semibold text-foreground mt-1">{m.label}</span>
                 <span className="text-[11px] text-muted-foreground">{m.desc}</span>
               </Link>
             );
@@ -295,6 +300,21 @@ function SavedUniversitiesSection() {
   const removeFn = useServerFn(removeSavedUniversity);
   const [saved, setSaved] = useState<SavedUniversity[]>([]);
   const [loading, setLoading] = useState(true);
+  const universitiesFn = useUniversitiesFn();
+  const [unis, setUnis] = useState<Record<string, University>>({});
+  const [counselOpen, setCounselOpen] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    universitiesFn()
+      .then((list) => {
+        if (active) setUnis(Object.fromEntries(list.universities.map((u) => [u.id, u])));
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, [universitiesFn]);
 
   useEffect(() => {
     let active = true;
@@ -384,7 +404,11 @@ function SavedUniversitiesSection() {
                   <p className="font-semibold text-sm text-foreground truncate">
                     {u.university_name ?? u.sanity_university_id}
                   </p>
-                  <p className="text-[11px] text-muted-foreground">Saved to your path</p>
+                  <p className="text-[11px] text-muted-foreground">
+                    {unis[u.sanity_university_id]
+                      ? `${unis[u.sanity_university_id]!.city}, ${unis[u.sanity_university_id]!.country}`
+                      : "Saved to your path"}
+                  </p>
                 </div>
                 <button
                   onClick={() => remove(u.sanity_university_id)}
@@ -393,6 +417,7 @@ function SavedUniversitiesSection() {
                   Remove
                 </button>
               </div>
+              <SavedKeyNumbers uni={unis[u.sanity_university_id]} />
               {editingId === u.sanity_university_id ? (
                 <div className="space-y-2">
                   <textarea
@@ -447,11 +472,76 @@ function SavedUniversitiesSection() {
           ))}
         </div>
       )}
-      <CounselingWaitlist
-        defaultEmail={user?.email}
-        shortlist={saved.map((u) => u.university_name ?? u.sanity_university_id)}
-        source="My Path dashboard"
-      />
+      <div className="rounded-2xl border border-border bg-card shadow-xs">
+        <button
+          type="button"
+          onClick={() => setCounselOpen((o) => !o)}
+          aria-expanded={counselOpen}
+          className="w-full flex items-center gap-3 px-5 py-4 text-left"
+        >
+          <span className="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+            <MessageCircle className="w-4 h-4" />
+          </span>
+          <span className="flex-1 min-w-0">
+            <span className="block text-sm font-semibold text-foreground">
+              Talk to a counsellor about your options
+            </span>
+            <span className="block text-[11px] text-muted-foreground">
+              Join the waitlist for one-to-one help. Your saved universities are shared, so you
+              don't repeat yourself.
+            </span>
+          </span>
+          <ChevronDown
+            className={`w-4 h-4 text-muted-foreground transition-transform ${counselOpen ? "rotate-180" : ""}`}
+          />
+        </button>
+        {counselOpen && (
+          <div className="px-2 pb-2">
+            <CounselingWaitlist
+              defaultEmail={user?.email}
+              shortlist={saved.map((u) => u.university_name ?? u.sanity_university_id)}
+              source="My Path dashboard"
+            />
+          </div>
+        )}
+      </div>
     </div>
+  );
+}
+
+/** Tuition, living cost and the next deadline for a saved university, at a glance. */
+function SavedKeyNumbers({ uni }: { uni: University | undefined }) {
+  if (!uni) return null;
+  const c = uni.costs;
+  const today = new Date().toISOString().slice(0, 10);
+  const next = (uni.deadlines ?? [])
+    .map((d) => d.deadline)
+    .filter((d): d is string => !!d && /^\d{4}-\d{2}-\d{2}/.test(d) && d >= today)
+    .sort()[0];
+  const rows: [string, string][] = [
+    ["Tuition / year", formatCost(c.tuitionPerYear, c.currency)],
+    ["Living / year", formatCost(c.livingPerYear, c.currency)],
+    [
+      "Next deadline",
+      next
+        ? new Date(next + "T00:00:00").toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          })
+        : "Not published",
+    ],
+  ];
+  return (
+    <dl className="grid grid-cols-3 gap-2 rounded-xl bg-secondary/50 px-3 py-2">
+      {rows.map(([k, v]) => (
+        <div key={k} className="min-w-0">
+          <dt className="text-[10px] text-muted-foreground">{k}</dt>
+          <dd className="text-xs font-semibold text-foreground tabular-nums truncate" title={v}>
+            {v}
+          </dd>
+        </div>
+      ))}
+    </dl>
   );
 }

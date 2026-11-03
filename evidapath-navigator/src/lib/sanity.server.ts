@@ -209,9 +209,12 @@ function selectCost(costs: SanityCost[] | null): { chosen: SanityCost | null; no
       : { chosen };
   const lowest = sorted[sorted.length - 1]!;
   const cur = chosen.currency || "";
+  const amount = `${Math.round(lowest.tuition_annual ?? 0).toLocaleString("en-US")} ${cur} a year`;
   const note =
-    `Price shown is for international students. Some students pay less, from ` +
-    `${cur} ${(lowest.tuition_annual ?? 0).toLocaleString()} a year.` +
+    `Price shown is for international students. ` +
+    (lowest.residencyLabel
+      ? `Lower price for ${lowest.residencyLabel}: ${amount}.`
+      : `Some students pay less, from ${amount}.`) +
     unpricedNote;
   return { chosen, note };
 }
@@ -330,25 +333,48 @@ function tierKind(label: string): CostTier["kind"] {
   return "international";
 }
 
+// Whole-currency cost figures, rounded BEFORE summing so the totals a family sees
+// always equal the parts shown on the card (no hidden fees, no decimal drift).
+const whole = (v: number | null | undefined): number | null => (v == null ? null : Math.round(v));
+
+function costTotals(
+  tuition: number | null,
+  fees: number | null,
+  living: number | null,
+  years: number,
+): Pick<CostView, "totalAnnual" | "totalDegree" | "totalIncludes"> {
+  // totalAnnual stays strict (all three parts known): budgets and affordability use it.
+  const totalAnnual =
+    tuition != null && fees != null && living != null ? tuition + fees + living : null;
+  if (tuition == null || years <= 0) return { totalAnnual, totalDegree: null };
+  const parts = ["tuition"];
+  let perYear = tuition;
+  if (fees) {
+    parts.push("fees");
+    perYear += fees;
+  }
+  if (living != null) {
+    parts.push("living");
+    perYear += living;
+  }
+  return {
+    totalAnnual,
+    totalDegree: perYear * years,
+    totalIncludes: `${parts.join(" + ")} × ${years} ${years === 1 ? "year" : "years"}`,
+  };
+}
+
 function tierCosts(cost: SanityCost, countryCurrency: string | null, years: number): CostView {
-  const tuition = cost.tuition_annual ?? null;
-  const fees = cost.mandatory_fees_annual ?? null;
-  const living = cost.estimated_living_costs_annual ?? null;
-  const complete = tuition != null && fees != null && living != null;
-  const totalAnnual = complete ? tuition + fees + living : null;
+  const tuition = whole(cost.tuition_annual);
+  const fees = whole(cost.mandatory_fees_annual);
+  const living = whole(cost.estimated_living_costs_annual);
   const livingSource = living != null ? describeLivingSource(cost) : undefined;
   return {
     tuitionPerYear: tuition,
     livingPerYear: living,
     mandatoryFees: fees,
     currency: cost.currency || countryCurrency || "",
-    totalAnnual,
-    totalDegree:
-      totalAnnual != null && years > 0
-        ? totalAnnual * years
-        : tuition != null && years > 0
-          ? tuition * years
-          : null,
+    ...costTotals(tuition, fees, living, years),
     ...(livingSource ? { livingSource } : {}),
   };
 }
@@ -365,18 +391,13 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
         costs: tierCosts(c, countryCurrency, durationYears(p)),
       };
     });
-  const tuition = cost?.tuition_annual ?? null;
-  const fees = cost?.mandatory_fees_annual ?? null;
-  const living = cost?.estimated_living_costs_annual ?? null;
+  const tuition = whole(cost?.tuition_annual);
+  const fees = whole(cost?.mandatory_fees_annual);
+  const living = whole(cost?.estimated_living_costs_annual);
   const livingSource = living != null ? describeLivingSource(cost) : undefined;
   const currency = cost?.currency || countryCurrency || "";
   const years = durationYears(p);
-  // Full total requires all three cost components. Tuition-only total (fees+living unknown)
-  // is surfaced when tuition is known but living isn't verified yet.
-  const complete = tuition != null && fees != null && living != null;
-  const totalAnnual = complete ? tuition + fees + living : null;
-  const tuitionOnlyTotal = !complete && tuition != null && years > 0 ? tuition * years : null;
-  const totalDegree = totalAnnual != null && years > 0 ? totalAnnual * years : tuitionOnlyTotal;
+  const totals = costTotals(tuition, fees, living, years);
   const admissionsByCurriculum = (p.admissions || [])
     .filter((a) => a.curriculum_type)
     .map((a) => ({
@@ -400,8 +421,7 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
       livingPerYear: living,
       mandatoryFees: fees,
       currency,
-      totalAnnual,
-      totalDegree,
+      ...totals,
       ...(livingSource ? { livingSource } : {}),
       ...(notChecked(cost?.verification_status) ? { notChecked: true } : {}),
     },
@@ -486,6 +506,7 @@ function adapt(u: SanityUniversity): University {
       currency,
       totalAnnual,
       totalDegree,
+      ...(featured?.costs.totalIncludes ? { totalIncludes: featured.costs.totalIncludes } : {}),
       ...(livingSource ? { livingSource } : {}),
       ...(featured?.costs.notChecked ? { notChecked: true } : {}),
     },

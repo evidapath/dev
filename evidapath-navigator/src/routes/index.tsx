@@ -8,7 +8,7 @@ import { buildBriefs } from "../lib/data-briefs";
 import { useLiveData } from "../lib/use-live-data";
 import { ReadinessMap } from "../components/ReadinessMap";
 import { HowItWorks } from "../components/HowItWorks";
-import { formatCost } from "../lib/format";
+import { formatCost, formatCurrency } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
 export const Route = createFileRoute("/")({
@@ -304,8 +304,8 @@ function Index() {
                     {scholarship.awardSummary
                       ? scholarship.awardSummary
                       : scholarship.awardValue === null
-                        ? "Pending verified data"
-                        : `$${scholarship.awardValue.toLocaleString()} / ${scholarship.awardFrequency}`}
+                        ? "Amount not published"
+                        : `${formatCurrency(scholarship.awardValue, "USD")} / ${scholarship.awardFrequency}`}
                   </span>
                   <Link to="/scholarships" className="text-primary font-semibold hover:underline">
                     View Criteria →

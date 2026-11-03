@@ -7,15 +7,14 @@ import { PiggyBank, Scale } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { toUsd, type FxRates } from "../lib/fx.functions";
 import type { University } from "../lib/mock-data";
-import { isPending } from "../lib/format";
 import { VerifiedAwardsPanel } from "../components/offer-vault/VerifiedAwardsPanel";
+import { formatCurrency } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { SearchSelect } from "../components/SearchSelect";
 import { universityOption } from "../lib/university-options";
 
 function money(value: number | null): string {
-  if (isPending(value)) return "Pending verified data";
-  return `$${Math.round(value!).toLocaleString()}`;
+  return formatCurrency(value, "USD");
 }
 
 export const Route = createFileRoute("/fund")({

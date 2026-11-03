@@ -11,10 +11,11 @@ import {
   ArrowRight,
   ExternalLink,
   Filter,
+  Info,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import type { University } from "../lib/mock-data";
-import { formatCost } from "../lib/format";
+import { formatCost, NOT_PUBLISHED } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { AdmissionsPanel } from "../components/AdmissionsPanel";
 
@@ -162,6 +163,32 @@ function UniversitiesDirectoryPage() {
 
 // Skeleton placeholder shown while verified data loads — keeps the grid layout
 // stable (no pop-in / layout shift) and signals progress with a gentle pulse.
+/** A big cost figure; a missing one reads as a quiet "Not published", never as a number. */
+function CostTile({
+  label,
+  value,
+  currency,
+}: {
+  label: string;
+  value: number | null;
+  currency: string;
+}) {
+  return (
+    <div className="rounded-xl bg-secondary/60 px-3 py-2.5">
+      <p className="text-[11px] text-muted-foreground">{label}</p>
+      {value == null ? (
+        <p className="text-sm font-medium text-muted-foreground leading-tight mt-1">
+          {NOT_PUBLISHED}
+        </p>
+      ) : (
+        <p className="font-display font-bold text-lg text-foreground tabular-nums leading-tight mt-0.5">
+          {formatCost(value, currency)}
+        </p>
+      )}
+    </div>
+  );
+}
+
 function UniversityCardSkeleton({ index = 0 }: { index?: number }) {
   return (
     <div
@@ -291,40 +318,49 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
 
         {/* The two numbers a family asks first, big */}
         <div className="grid grid-cols-2 gap-2">
-          <div className="rounded-xl bg-secondary/60 px-3 py-2.5">
-            <p className="text-[11px] text-muted-foreground">Tuition / year</p>
-            <p className="font-display font-bold text-lg text-foreground tabular-nums leading-tight mt-0.5">
-              {formatCost(costs.tuitionPerYear, costs.currency)}
-            </p>
-          </div>
-          <div className="rounded-xl bg-secondary/60 px-3 py-2.5">
-            <p className="text-[11px] text-muted-foreground">Living / year (est.)</p>
-            <p className="font-display font-bold text-lg text-foreground tabular-nums leading-tight mt-0.5">
-              {formatCost(costs.livingPerYear, costs.currency)}
-            </p>
-          </div>
+          <CostTile label="Tuition / year" value={costs.tuitionPerYear} currency={costs.currency} />
+          <CostTile
+            label="Living / year (est.)"
+            value={costs.livingPerYear}
+            currency={costs.currency}
+          />
         </div>
-        <div className="flex items-baseline justify-between gap-3 text-sm">
-          <span className="text-muted-foreground">Whole degree</span>
-          <span className="font-display font-bold text-foreground tabular-nums">
-            {formatCost(costs.totalDegree, costs.currency)}
-          </span>
+        <div className="space-y-1 text-sm">
+          {costs.mandatoryFees ? (
+            <div className="flex items-baseline justify-between gap-3 text-xs">
+              <span className="text-muted-foreground">Compulsory fees / year</span>
+              <span className="font-medium text-foreground tabular-nums">
+                {formatCost(costs.mandatoryFees, costs.currency)}
+              </span>
+            </div>
+          ) : null}
+          <div className="flex items-baseline justify-between gap-3">
+            <span className="text-muted-foreground">Whole degree</span>
+            <span className="font-display font-bold text-foreground tabular-nums">
+              {formatCost(costs.totalDegree, costs.currency)}
+            </span>
+          </div>
+          {costs.totalIncludes && (
+            <p className="text-[11px] text-muted-foreground text-right -mt-0.5">
+              {costs.totalIncludes}
+              {costs.livingPerYear == null ? " (living cost not included)" : ""}
+            </p>
+          )}
         </div>
         {(costs.livingSource || residencyNote) && (
-          <div className="space-y-1 text-[11px] leading-snug">
+          <div className="rounded-lg bg-secondary/50 px-3 py-2 space-y-1 text-[11px] leading-snug text-muted-foreground">
             {costs.livingSource && (
-              <p
-                className={
-                  costs.livingSource.startsWith("Estimate") ||
-                  costs.livingSource.startsWith("Housing only")
-                    ? "text-bronze"
-                    : "text-muted-foreground"
-                }
-              >
-                Living cost: {costs.livingSource}
+              <p className="flex gap-1.5">
+                <Info className="w-3 h-3 mt-0.5 shrink-0" aria-hidden />
+                <span>Living cost: {costs.livingSource}</span>
               </p>
             )}
-            {residencyNote && <p className="text-bronze">{residencyNote}</p>}
+            {residencyNote && (
+              <p className="flex gap-1.5">
+                <Info className="w-3 h-3 mt-0.5 shrink-0" aria-hidden />
+                <span>{residencyNote}</span>
+              </p>
+            )}
           </div>
         )}
 
@@ -351,7 +387,9 @@ function UniversityCard({ univ, index = 0 }: { univ: University; index?: number 
           )}
           <span
             className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 font-medium ${
-              verified ? "bg-accent text-accent-foreground" : "bg-bronze/10 text-bronze"
+              verified
+                ? "bg-primary/10 text-primary border border-primary/25 font-semibold"
+                : "bg-bronze/10 text-bronze"
             }`}
             title={`Last checked: ${univ.lastVerified}`}
           >

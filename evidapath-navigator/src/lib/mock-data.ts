@@ -33,6 +33,7 @@ export interface University {
     currency: string;
     totalAnnual: number | null;
     totalDegree: number | null;
+    totalIncludes?: string;
     /** Where the living-cost figure comes from (official / university / unofficial). */
     livingSource?: string;
     /** True when this cost hasn't been re-checked against the official page. */
@@ -91,6 +92,8 @@ export interface CostView {
   currency: string;
   totalAnnual: number | null;
   totalDegree: number | null;
+  /** What totalDegree adds up, e.g. "tuition + fees + living × 4 years". */
+  totalIncludes?: string;
   livingSource?: string;
 }
 
@@ -115,6 +118,7 @@ export interface ProgramView {
     currency: string;
     totalAnnual: number | null;
     totalDegree: number | null;
+    totalIncludes?: string;
     /** Where the living-cost figure comes from (official / university / unofficial). */
     livingSource?: string;
     /** True when this cost hasn't been re-checked against the official page. */
