@@ -21,6 +21,7 @@ import { analyze, type DecisionAnalysis, type StudentInput } from "../lib/decisi
 import { BUDGET_MAX } from "../lib/budget";
 import type { University } from "../lib/mock-data";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
+import { PageHeader } from "../components/PageHeader";
 
 export const Route = createFileRoute("/academic-readiness")({
   head: () => ({
@@ -87,20 +88,15 @@ function AcademicReadinessPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
       {/* Header */}
-      <div className="text-center space-y-3 max-w-2xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Diagnostic Engine</span>
-        </div>
-        <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
-          Turn your academic record into a decision map.
-        </h1>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Enter your current academic metrics, intended subject, and financial boundary. The
-          diagnostic engine maps where your evidence creates opportunity and which levers you can
-          still change.
-        </p>
-      </div>
+      <PageHeader
+        icon={Sparkles}
+        eyebrow="Academic readiness"
+        title="Turn your grades into"
+        accent="a decision map."
+        intro={
+          "Enter your current academic metrics, intended subject, and financial boundary. The diagnostic engine maps where your evidence creates opportunity and which levers you can still change."
+        }
+      />
 
       {submitted ? (
         <div className="bg-card border border-border rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm">

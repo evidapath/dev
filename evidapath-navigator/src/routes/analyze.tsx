@@ -37,6 +37,7 @@ function storedLanguages(curriculum: string): string[] {
 }
 import { AnalysisFootnote, DecisionAnalysisView } from "../components/DecisionAnalysisView";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
+import { PageHeader } from "../components/PageHeader";
 
 export const Route = createFileRoute("/analyze")({
   head: () => ({
@@ -151,19 +152,13 @@ function AnalyzePage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      <header className="max-w-3xl space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-          <BarChart3 className="w-3.5 h-3.5" />
-          <span>Decision Suite • Analyze</span>
-        </div>
-        <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
-          Analyze your fit
-        </h1>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          The deal for one university, in plain numbers. No admission “chances” — only published
-          data.
-        </p>
-      </header>
+      <PageHeader
+        icon={BarChart3}
+        eyebrow="Analyse"
+        title="How does a university"
+        accent="fit you?"
+        intro="The deal for one university, in plain numbers. No admission “chances”, only published data."
+      />
 
       <PageGuide
         id="analyze"

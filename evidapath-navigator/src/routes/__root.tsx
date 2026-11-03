@@ -14,6 +14,7 @@ import { reportVibeError } from "../lib/vibe-error-reporting";
 import { getSession } from "../lib/auth.functions";
 import type { RouterContext } from "../router";
 import { AuthContextProvider } from "../components/AuthContext";
+import { THEME_BOOT } from "../components/ThemeToggle";
 
 function NotFoundComponent() {
   return (
@@ -139,8 +140,9 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />
         <HeadContent />
       </head>
       <body>

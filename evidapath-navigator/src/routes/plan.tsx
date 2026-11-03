@@ -23,6 +23,7 @@ import { useLiveData } from "../lib/use-live-data";
 import { analyze, fmtDate, type StudentInput } from "../lib/decision-engine";
 import { currentCurriculum } from "../lib/curricula";
 import { storedUkHome } from "../lib/residence";
+import { PageHeader } from "../components/PageHeader";
 
 export const Route = createFileRoute("/plan")({
   head: () => ({
@@ -185,18 +186,13 @@ function PlanPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      <header className="space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-          <CalendarCheck className="w-3.5 h-3.5" />
-          <span>Decision Suite • Plan</span>
-        </div>
-        <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
-          Your plan
-        </h1>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl">
-          Your next steps for every university on your path, soonest first.
-        </p>
-      </header>
+      <PageHeader
+        icon={CalendarCheck}
+        eyebrow="Plan"
+        title="Your plan,"
+        accent="soonest first."
+        intro="Your next steps for every university on your path, with dates."
+      />
 
       <PageGuide
         id="plan"

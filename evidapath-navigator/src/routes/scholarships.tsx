@@ -21,7 +21,8 @@ import { Button } from "../components/ui/button";
 import type { Scholarship } from "../lib/mock-data";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { awardHeadline } from "../lib/award-summary";
-import { fmtDate } from "../lib/decision-engine";
+import { eligibility, fmtDate } from "../lib/decision-engine";
+import { PageHeader, HeaderStats } from "../components/PageHeader";
 
 export const Route = createFileRoute("/scholarships")({
   head: () => ({
@@ -48,9 +49,38 @@ export const Route = createFileRoute("/scholarships")({
   component: ScholarshipsGraphPage,
 });
 
+const FLAG: Record<string, string> = {
+  "United Arab Emirates": "🇦🇪",
+  "United Kingdom": "🇬🇧",
+  "United States": "🇺🇸",
+  Canada: "🇨🇦",
+  Australia: "🇦🇺",
+  Germany: "🇩🇪",
+  Netherlands: "🇳🇱",
+  Malaysia: "🇲🇾",
+};
+
+type QuickFilter = "uae" | "guaranteed" | "checked";
+const QUICK: Record<QuickFilter, { label: string; test: (s: Scholarship) => boolean }> = {
+  uae: {
+    label: "🇦🇪 Open to UAE students",
+    // Same rule the decision engine uses; "check" (unclear) is left out.
+    test: (s) => s.countriesOfStudy.some((c) => eligibility(s, "ae", c) === "yes"),
+  },
+  guaranteed: {
+    label: "Guaranteed if you qualify",
+    test: (s) => s.selectionBasis === "guaranteed",
+  },
+  checked: {
+    label: "Confirmed on the official page",
+    test: (s) => s.verificationStatus.startsWith("Verified"),
+  },
+};
+
 function ScholarshipsGraphPage() {
   const [search, setSearch] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("All");
+  const [quick, setQuick] = useState<Set<QuickFilter>>(new Set());
   const [scholarships, setScholarships] = useState<Scholarship[]>([]);
   const [source, setSource] = useState<"sanity" | "mock" | null>(null);
   const [loading, setLoading] = useState(true);
@@ -86,70 +116,108 @@ function ScholarshipsGraphPage() {
     const matchesCountry =
       selectedCountry === "All" || s.countriesOfStudy.includes(selectedCountry);
 
-    return matchesSearch && matchesCountry;
+    return matchesSearch && matchesCountry && [...quick].every((q) => QUICK[q].test(s));
   });
-  const paged = usePaged(filtered, `${search}|${selectedCountry}`);
+  const paged = usePaged(filtered, `${search}|${selectedCountry}|${[...quick].join()}`);
+  const toggle = (q: QuickFilter) =>
+    setQuick((cur) => {
+      const next = new Set(cur);
+      if (next.has(q)) next.delete(q);
+      else next.add(q);
+      return next;
+    });
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-      {/* Header */}
-      <div className="max-w-3xl space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-          <BookOpen className="w-3.5 h-3.5" />
-          <span>Funding Intelligence</span>
+      <PageHeader
+        icon={BookOpen}
+        eyebrow="Scholarships"
+        title="Find the money"
+        accent="that fits you."
+        intro="Scholarships for the universities on EvidaPath, with who can apply, the grades they ask for and the amount, taken from the official pages."
+        note={
+          source === "sanity"
+            ? "Where an official page doesn't confirm a detail, the card says it's under review."
+            : "Illustrative preview. Scholarship records are still being verified."
+        }
+        aside={
+          source === "sanity" && scholarships.length > 0 ? (
+            <HeaderStats
+              items={[
+                [scholarships.length, "scholarships"],
+                [scholarships.filter((s) => QUICK.checked.test(s)).length, "confirmed"],
+                [scholarships.filter((s) => QUICK.guaranteed.test(s)).length, "guaranteed"],
+              ]}
+            />
+          ) : undefined
+        }
+      >
+        <div className="flex flex-col md:flex-row gap-3">
+          <div className="relative flex-1">
+            <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="text"
+              placeholder="Search by scholarship, provider or university"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full h-12 pl-11 pr-4 rounded-full border border-input bg-card text-sm text-foreground shadow-xs focus:outline-hidden focus:ring-2 focus:ring-primary"
+            />
+          </div>
+          <Link to="/academic-readiness" className="shrink-0">
+            <Button className="w-full h-12 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm px-6">
+              Match to my profile
+            </Button>
+          </Link>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
-          EvidaPath Scholarship Graph
-        </h1>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Don't search thousands of generic scholarships. Find the funding structures connected to
-          your citizenship, academic profile, and target universities. Scholarship eligibility will
-          be evaluated against verified program criteria as records are sourced.
-        </p>
-        <div className="flex items-center gap-2 text-[11px] text-muted-foreground bg-secondary/50 border border-border rounded-lg px-3 py-2">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
-          <span>
-            {source === "sanity"
-              ? "Live data connected. Scholarship records are sourced to official pages; where official sources conflict, EvidaPath shows the conflict rather than resolving it."
-              : "Illustrative product preview. Live analysis will use verified EvidaPath data. Scholarship records currently being verified."}
-          </span>
+        <div className="flex flex-wrap gap-2">
+          {(Object.keys(QUICK) as QuickFilter[]).map((q) => {
+            const on = quick.has(q);
+            return (
+              <button
+                key={q}
+                type="button"
+                onClick={() => toggle(q)}
+                aria-pressed={on}
+                className={`inline-flex items-center gap-1.5 h-9 px-3.5 rounded-full border text-xs font-semibold transition-colors ${
+                  on
+                    ? "bg-navy text-white border-navy"
+                    : "bg-card text-foreground border-border hover:border-primary/40"
+                }`}
+              >
+                {QUICK[q].label}
+              </button>
+            );
+          })}
         </div>
-      </div>
-
-      {/* Filter and Match Bar */}
-      <div className="bg-card border border-border rounded-2xl p-5 shadow-xs flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="relative flex-1 w-full">
-          <Search className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
-          <input
-            type="text"
-            placeholder="Search by scholarship name, provider, or university..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full h-10 pl-9 pr-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
-          />
+        <div className="flex sm:flex-wrap gap-2 overflow-x-auto sm:overflow-visible pb-1 -mx-1 px-1 [scrollbar-width:none]">
+          {["All", ...countries].map((c) => {
+            const on = selectedCountry === c;
+            const n =
+              c === "All"
+                ? scholarships.length
+                : scholarships.filter((s) => s.countriesOfStudy.includes(c)).length;
+            return (
+              <button
+                key={c}
+                type="button"
+                onClick={() => setSelectedCountry(c)}
+                aria-pressed={on}
+                className={`shrink-0 inline-flex items-center gap-1.5 h-9 px-3.5 rounded-full border text-xs font-semibold transition-colors ${
+                  on
+                    ? "bg-primary text-primary-foreground border-primary shadow-sm"
+                    : "bg-card text-foreground border-border hover:border-primary/40"
+                }`}
+              >
+                <span className="text-sm leading-none">
+                  {c === "All" ? "🌍" : (FLAG[c] ?? "🏳️")}
+                </span>
+                {c === "All" ? "All countries" : c}
+                <span className={on ? "opacity-80" : "text-muted-foreground"}>{n}</span>
+              </button>
+            );
+          })}
         </div>
-
-        <div className="w-full md:w-60">
-          <select
-            value={selectedCountry}
-            onChange={(e) => setSelectedCountry(e.target.value)}
-            className="w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
-          >
-            <option value="All">All Study Countries</option>
-            {countries.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <Link to="/academic-readiness" className="shrink-0 w-full md:w-auto">
-          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-xs h-10 px-4">
-            Match Scholarships to My Profile
-          </Button>
-        </Link>
-      </div>
+      </PageHeader>
 
       {/* Scholarship Cards Grid */}
       {loading ? (
@@ -306,9 +374,15 @@ function ScholarshipCard({ s, index }: { s: Scholarship; index: number }) {
       </div>
 
       <div className="pt-3 border-t border-border flex items-center justify-between gap-2">
-        <span className="text-[10px] text-muted-foreground flex items-center gap-1">
+        <span
+          className={`text-[10px] flex items-center gap-1 rounded-full px-2 py-0.5 ${
+            s.verificationStatus.startsWith("Verified")
+              ? "bg-primary/10 text-primary border border-primary/25 font-semibold"
+              : "bg-bronze/10 text-bronze"
+          }`}
+        >
           <ShieldCheck className="w-3.5 h-3.5" />
-          {s.verificationStatus}
+          {s.verificationStatus.startsWith("Verified") ? "Confirmed" : s.verificationStatus}
         </span>
         <Link to="/fund">
           <Button

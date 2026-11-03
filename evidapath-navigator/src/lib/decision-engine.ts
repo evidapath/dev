@@ -403,7 +403,7 @@ const INTL_NAME = /\binternational\b(?! baccalaureate)/i;
 const INTL_ONLY =
   /\bfor international (?:students|undergraduates)\b|as an international student|international fee-paying/i;
 
-function eligibility(
+export function eligibility(
   s: Scholarship,
   code: string | null,
   country: string,
@@ -426,9 +426,10 @@ function eligibility(
 }
 
 function guaranteedPct(award: string): number | null {
-  if (/up to|tier|varies|need/i.test(award)) return null;
+  if (/up to|tier|varies|need|depends|\d%? (to|or) \d/i.test(award)) return null;
   if (/full (tuition|coverage)|100%/i.test(award)) return 100;
-  const m = award.match(/(\d{1,3})\s*%/);
+  // The award percentage itself, never a grade band such as "94.99%".
+  const m = award.match(/(?<![\d.])(\d{1,3})\s*%/);
   return m ? Number(m[1]) : null;
 }
 

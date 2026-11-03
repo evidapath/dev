@@ -55,7 +55,7 @@ export function EvidaPathLogo({
         src={EVIDAPATH_HORIZONTAL_LOGO_URL}
         alt={alt}
         height={finalHeight}
-        className="h-auto object-contain max-w-[200px] sm:max-w-[240px] mix-blend-multiply dark:mix-blend-normal"
+        className="h-auto object-contain max-w-[200px] sm:max-w-[240px] mix-blend-multiply dark:invert dark:hue-rotate-180 dark:mix-blend-screen"
         style={{ height: `${finalHeight}px` }}
         loading="eager"
         {...props}

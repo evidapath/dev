@@ -4,6 +4,7 @@ import { ArrowRight, Database, ExternalLink, ShieldCheck } from "lucide-react";
 import { useLiveData } from "../lib/use-live-data";
 import { buildBriefs, type Brief, type BriefCategory } from "../lib/data-briefs";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
+import { PageHeader } from "../components/PageHeader";
 
 export const Route = createFileRoute("/intelligence")({
   head: () => ({
@@ -45,19 +46,13 @@ function IntelligencePage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-      <header className="max-w-3xl space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-          <ShieldCheck className="w-3.5 h-3.5" />
-          <span>EvidaPath Intelligence</span>
-        </div>
-        <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
-          Evidence for better education decisions.
-        </h1>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Live data briefs, computed directly from EvidaPath's verified university and scholarship
-          records. When the data is corrected or extended, these findings update with it.
-        </p>
-      </header>
+      <PageHeader
+        icon={ShieldCheck}
+        eyebrow="Data briefs"
+        title="Evidence for better"
+        accent="education decisions."
+        intro={`Live data briefs, computed directly from EvidaPath's verified university and scholarship records. When the data is corrected or extended, these findings update with it.`}
+      />
 
       <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Brief category">
         {categories.map((c) => (

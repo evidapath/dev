@@ -21,6 +21,7 @@ import { listSavedUniversities, saveUniversity } from "../lib/profile.functions"
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
+import { PageHeader } from "../components/PageHeader";
 
 export const Route = createFileRoute("/discover")({
   head: () => ({
@@ -131,28 +132,18 @@ function DiscoverPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       {/* Header */}
-      <div className="space-y-3 max-w-3xl">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-          <Compass className="w-3.5 h-3.5" />
-          <span>Decision Suite • Discover</span>
-        </div>
-        <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
-          Discover Universities Built Around Decisions
-        </h1>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Filter beyond arbitrary prestige tables. Model academic prerequisites, multi-year net cost
-          of attendance, program duration, and actionable funding opportunities. Verified figures
-          will appear as data is added.
-        </p>
-        <div className="flex items-center gap-2 text-[11px] text-muted-foreground bg-secondary/50 border border-border rounded-lg px-3 py-2">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-bronze" />
-          <span>
-            {source === "sanity"
-              ? "Live data connected. Figures trace to official sources and each university shows its verification status. Budget filtering applies only where cost is verified."
-              : "Illustrative product preview. Live analysis will use verified EvidaPath data. University data currently being verified."}
-          </span>
-        </div>
-      </div>
+      <PageHeader
+        icon={Compass}
+        eyebrow="Discover"
+        title="Find universities"
+        accent="that fit your budget."
+        intro="Filter by subject, budget and country. Costs come from official sources, and the budget filter only uses universities whose cost is published."
+        note={
+          source === "sanity"
+            ? "Live data connected. Figures trace to official sources and each university shows its verification status. Budget filtering applies only where cost is verified."
+            : "Illustrative product preview. Live analysis will use verified EvidaPath data. University data currently being verified."
+        }
+      />
 
       {/* Filter Bar */}
       <div className="p-5 rounded-2xl border border-border bg-card shadow-xs space-y-4">

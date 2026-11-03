@@ -16,6 +16,7 @@ import {
   SectionCard,
   VerificationBadge,
 } from "../components/offer-vault/shared";
+import { PageHeader } from "../components/PageHeader";
 
 export const Route = createFileRoute("/compare-offers")({
   head: () => ({
@@ -46,20 +47,14 @@ function CompareOffersPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      <div className="max-w-3xl space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-          <Scale className="w-3.5 h-3.5" />
-          <span>My EvidaPath • Compare Offers</span>
-        </div>
-        <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
-          Compare Offers
-        </h1>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Compare your offers before you commit. See net family cost, awards, deadlines, renewal
-          requirements, and funding gaps side by side — not reduced to a single opaque score.
-        </p>
-        <IllustrativePreviewLabel text="Comparison uses your stored offers and awards plus public university cost data. University costs are live EvidaPath data traced to official sources; where a cost isn't verified yet it shows as pending." />
-      </div>
+      <PageHeader
+        icon={Scale}
+        eyebrow="Compare offers"
+        title="Compare your offers"
+        accent="before you commit."
+        intro="Net family cost, awards, deadlines, renewal rules and funding gaps side by side, not squeezed into one score."
+        note="Comparison uses your stored offers and awards plus public university cost data. University costs are live EvidaPath data traced to official sources; where a cost isn't verified yet it shows as pending."
+      />
 
       <PageGuide
         id="compare-offers"

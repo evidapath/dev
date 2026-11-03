@@ -16,6 +16,7 @@ import {
 } from "../components/offer-vault/shared";
 import { formatCurrency } from "../lib/format";
 import { OfferDetail, AddOfferDialog } from "../components/offer-vault/OfferDetail";
+import { PageHeader } from "../components/PageHeader";
 
 export const Route = createFileRoute("/offer-vault")({
   head: () => ({
@@ -75,21 +76,16 @@ function OfferVaultPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      <div className="max-w-3xl space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-          <Vault className="w-3.5 h-3.5" />
-          <span>My EvidaPath • Offer Vault</span>
-        </div>
-        <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
-          Offer Vault
-        </h1>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Upload your offer and EvidaPath will tell you what it actually means financially. Store
-          admission offers, scholarship awards, and aid packages — then watch your real family cost
-          and funding gap update.
-        </p>
-        <IllustrativePreviewLabel text="Private to your account. Offer, award, and document records are stored under Row Level Security. Uploaded documents are private — no public URLs." />
-      </div>
+      <PageHeader
+        icon={Vault}
+        eyebrow="Offer Vault"
+        title="What does your offer"
+        accent="really cost?"
+        intro={
+          "Upload your offer and EvidaPath will tell you what it actually means financially. Store admission offers, scholarship awards, and aid packages — then watch your real family cost and funding gap update."
+        }
+        note="Private to your account. Offer, award, and document records are stored under Row Level Security. Uploaded documents are private — no public URLs."
+      />
 
       <PageGuide
         id="offer-vault"

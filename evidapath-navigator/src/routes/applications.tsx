@@ -26,6 +26,7 @@ import {
   inputCls,
   labelCls,
 } from "../components/offer-vault/shared";
+import { PageHeader } from "../components/PageHeader";
 
 export const Route = createFileRoute("/applications")({
   head: () => ({
@@ -103,21 +104,14 @@ function ApplicationsPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      <div className="max-w-3xl space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-          <ClipboardList className="w-3.5 h-3.5" />
-          <span>My EvidaPath • Applications</span>
-        </div>
-        <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-foreground">
-          Applications
-        </h1>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Track the universities you're applying to and update the status as decisions arrive. When
-          you're admitted, create an offer in the Offer Vault to see what it actually means
-          financially.
-        </p>
-        <IllustrativePreviewLabel text="Private to your account. Application records are stored under Row Level Security and visible only to you." />
-      </div>
+      <PageHeader
+        icon={ClipboardList}
+        eyebrow="Applications"
+        title="Track your"
+        accent="applications."
+        intro={`Track the universities you're applying to and update the status as decisions arrive. When you're admitted, create an offer in the Offer Vault to see what it actually means financially.`}
+        note="Private to your account. Application records are stored under Row Level Security and visible only to you."
+      />
 
       <PageGuide
         id="applications"
