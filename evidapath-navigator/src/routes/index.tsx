@@ -8,6 +8,7 @@ import { buildBriefs } from "../lib/data-briefs";
 import { useLiveData } from "../lib/use-live-data";
 import { ReadinessMap } from "../components/ReadinessMap";
 import { HowItWorks } from "../components/HowItWorks";
+import { UniversityCard } from "../components/UniversityCard";
 import { formatCost, formatCurrency } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
@@ -40,13 +41,34 @@ function Index() {
   const { data } = useLiveData();
   const featuredUnis = useMemo(() => {
     const all = data?.universities ?? [];
-    const priced = all.filter((u) => u.costs.totalAnnual != null);
-    return (priced.length >= 3 ? priced : all).slice(0, 3);
+    // Fully priced and checked, one per country, so the preview shows a spread.
+    const good = all.filter(
+      (u) => u.costs.totalAnnual != null && u.evidenceConfidence.startsWith("Verified"),
+    );
+    const seen = new Set<string>();
+    const spread = good.filter((u) => !seen.has(u.country) && seen.add(u.country));
+    return (spread.length >= 3 ? spread : good.length >= 3 ? good : all).slice(0, 3);
+  }, [data]);
+  const stats = useMemo(() => {
+    const unis = data?.universities ?? [];
+    if (!unis.length) return null;
+    return [
+      [unis.length, "universities"],
+      [new Set(unis.map((u) => u.country)).size, "countries"],
+      [unis.reduce((n, u) => n + (u.programDetails?.length || 1), 0), "programmes"],
+      [
+        (data?.scholarships ?? []).filter((x) => x.verificationStatus.startsWith("Verified"))
+          .length,
+        "scholarships checked",
+      ],
+    ] as const;
   }, [data]);
   const briefs = useMemo(() => (data ? buildBriefs(data) : []), [data]);
   const featuredScholarships = useMemo(() => {
     const all = data?.scholarships ?? [];
-    const confirmed = all.filter((s) => s.selectionBasis);
+    const confirmed = all.filter(
+      (s) => s.verificationStatus.startsWith("Verified") && !!s.awardSummary,
+    );
     return (confirmed.length >= 3 ? confirmed : all).slice(0, 3);
   }, [data]);
 
@@ -61,62 +83,95 @@ function Index() {
         />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-        <div className="max-w-5xl mx-auto text-center space-y-6">
-          {/* Socratic Navigator Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-secondary/70 text-xs font-semibold text-foreground tracking-wide">
-            <span className="w-2 h-2 rounded-full bg-primary" />
-            <span>The Socratic Navigator • Evidence-Based Academic Strategy</span>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
+          <div className="text-center lg:text-left space-y-6">
+            {/* Socratic Navigator Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-secondary/70 text-xs font-semibold text-foreground tracking-wide">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              <span>The Socratic Navigator • Evidence-Based Academic Strategy</span>
+            </div>
+
+            <h1 className="text-4xl sm:text-6xl xl:text-7xl font-display font-extrabold tracking-tight text-foreground leading-[1.08]">
+              Know where you stand. <br className="hidden sm:inline" />
+              <span className="font-serif italic font-medium text-primary tracking-normal">
+                See where you can go.
+              </span>
+            </h1>
+
+            <p className="max-w-2xl mx-auto lg:mx-0 text-base sm:text-xl text-muted-foreground leading-relaxed">
+              University decisions combine academics, admissions, money, geography and career
+              outcomes. EvidaPath brings the evidence together so students and families can
+              understand where they stand, what is financially realistic, and what they can do next.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
+              <Link to="/find-my-path" className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 h-12 rounded-xl text-base shadow-sm flex items-center justify-center gap-2">
+                  <span>Find My Path</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+              <Link to="/universities" className="w-full sm:w-auto">
+                <Button
+                  variant="outline"
+                  className="w-full sm:w-auto border-border bg-card hover:bg-secondary text-foreground font-semibold px-6 h-12 rounded-xl text-base"
+                >
+                  Explore Universities
+                </Button>
+              </Link>
+            </div>
+
+            <p className="text-xs text-muted-foreground pt-1">
+              Tell us a few things about yourself and see realistic options.
+            </p>
+
+            {/* Core supporting mottos */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 pt-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+                Pathways, not wishful thinking
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+                Evidence-based academic strategy
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+                Turn ambition into a plan
+              </span>
+            </div>
+            {stats && (
+              <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 max-w-2xl mx-auto lg:mx-0">
+                {stats.map(([v, k]) => (
+                  <div
+                    key={k}
+                    className="rounded-2xl border border-border bg-card/80 backdrop-blur px-4 py-3 text-left shadow-xs"
+                  >
+                    <dd className="font-display font-extrabold text-2xl text-foreground tabular-nums leading-none">
+                      {v}
+                    </dd>
+                    <dt className="text-[11px] text-muted-foreground mt-1">{k}</dt>
+                  </div>
+                ))}
+              </dl>
+            )}
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-foreground leading-[1.08]">
-            Know where you stand. <br className="hidden sm:inline" />
-            <span className="font-serif italic font-medium text-primary tracking-normal">
-              See where you can go.
-            </span>
-          </h1>
-
-          <p className="max-w-3xl mx-auto text-base sm:text-xl text-muted-foreground leading-relaxed">
-            University decisions combine academics, admissions, money, geography and career
-            outcomes. EvidaPath brings the evidence together so students and families can understand
-            where they stand, what is financially realistic, and what they can do next.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-            <Link to="/find-my-path" className="w-full sm:w-auto">
-              <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 h-12 rounded-xl text-base shadow-sm flex items-center justify-center gap-2">
-                <span>Find My Path</span>
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-            <Link to="/universities" className="w-full sm:w-auto">
-              <Button
-                variant="outline"
-                className="w-full sm:w-auto border-border bg-card hover:bg-secondary text-foreground font-semibold px-6 h-12 rounded-xl text-base"
-              >
-                Explore Universities
-              </Button>
-            </Link>
-          </div>
-
-          <p className="text-xs text-muted-foreground pt-1">
-            Tell us a few things about yourself and see realistic options.
-          </p>
-
-          {/* Core supporting mottos */}
-          <div className="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
-              Pathways, not wishful thinking
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
-              Evidence-based academic strategy
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
-              Turn ambition into a plan
-            </span>
-          </div>
+          {/* A real card from the database, so families see what they get */}
+          {featuredUnis[0] && (
+            <div className="hidden lg:block relative">
+              <div
+                aria-hidden
+                className="absolute -inset-6 rounded-[2rem] bg-[radial-gradient(60%_60%_at_50%_40%,oklch(0.6_0.17_155/0.18),transparent)]"
+              />
+              <p className="relative mb-3 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                Live example from the database
+              </p>
+              <div className="relative rounded-2xl shadow-2xl shadow-primary/10 hover:-translate-y-1 transition-transform duration-300">
+                <UniversityCard univ={featuredUnis[0]} />
+              </div>
+            </div>
+          )}
         </div>
 
         {/* 2. TWO PRIMARY ENTRY PATHWAYS */}
@@ -203,58 +258,9 @@ function Index() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {featuredUnis.map((univ) => (
-            <div
-              key={univ.id}
-              className="rounded-2xl border border-border bg-card p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-2xl">{univ.flag}</span>
-                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-secondary text-foreground font-semibold">
-                    {univ.durationYears}-Year Degree
-                  </span>
-                </div>
-                <h3 className="font-display font-bold text-lg text-foreground">{univ.name}</h3>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  {univ.city}, {univ.country}
-                </p>
-
-                <div className="mt-4 pt-4 border-t border-border space-y-2 text-xs">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Academic Target:</span>
-                    <span className="font-medium text-muted-foreground text-right">
-                      {univ.academicRequirements.target}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Annual Total Cost:</span>
-                    <span className="font-mono font-medium text-muted-foreground">
-                      {formatCost(univ.costs.totalAnnual, univ.costs.currency)}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Affordability Index:</span>
-                    <span className="font-semibold text-muted-foreground">
-                      {univ.affordabilityIndex.category}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-border flex items-center justify-between">
-                <Link to="/analyze" className="text-xs font-semibold text-primary hover:underline">
-                  Analyze Fit →
-                </Link>
-                <Link
-                  to="/universities"
-                  className="text-xs text-muted-foreground hover:text-foreground"
-                >
-                  View Full Profile
-                </Link>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredUnis.map((univ, i) => (
+            <UniversityCard key={univ.id} univ={univ} index={i} />
           ))}
         </div>
       </section>
@@ -379,87 +385,6 @@ function Index() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* 9. TRUST, METHODOLOGY & CONTINUOUS ROADMAP */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="border border-border rounded-3xl bg-card p-8 sm:p-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Trust & Verification
-              </span>
-              <h2 className="text-3xl font-display font-bold text-foreground">
-                Evidence before opinion.
-              </h2>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                EvidaPath is being built to distinguish verified facts, institutional information,
-                estimates, and analytical interpretation. Source attribution and verification dates
-                will appear as verified data is added. We do not claim that something has been
-                verified merely because it appears in the current prototype.
-              </p>
-              <div className="space-y-2 pt-2 text-xs text-foreground font-medium">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>
-                    Cost-of-attendance figures will be added with source attribution and
-                    verification dates as data is verified.
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>
-                    Uncertainty will be communicated explicitly rather than manufacturing precision.
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>Actionable levers prioritized by student control and real impact.</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-secondary/60 rounded-2xl p-6 border border-border space-y-4">
-              <h3 className="font-display font-bold text-base text-foreground">
-                The Continuous Decision Loop
-              </h3>
-              <div className="space-y-3 text-xs">
-                <div className="flex items-center gap-3 bg-card p-2.5 rounded-lg border border-border">
-                  <span className="font-mono font-bold text-primary">01</span>
-                  <span className="font-semibold text-foreground">Student Profile</span>
-                  <span className="text-muted-foreground">
-                    → Academic prerequisites & budget bounds
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 bg-card p-2.5 rounded-lg border border-border">
-                  <span className="font-mono font-bold text-primary">02</span>
-                  <span className="font-semibold text-foreground">Discover & Analyze</span>
-                  <span className="text-muted-foreground">→ Benchmark against evidence</span>
-                </div>
-                <div className="flex items-center gap-3 bg-card p-2.5 rounded-lg border border-border">
-                  <span className="font-mono font-bold text-primary">03</span>
-                  <span className="font-semibold text-foreground">Plan & Fund</span>
-                  <span className="text-muted-foreground">
-                    → Actionable levers & 4-year capital plan
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 bg-card p-2.5 rounded-lg border border-border">
-                  <span className="font-mono font-bold text-primary">04</span>
-                  <span className="font-semibold text-foreground">Outcomes</span>
-                  <span className="text-muted-foreground">→ Longitudinal value verification</span>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <Link to="/find-my-path">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
-                    Find My Path
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </div>
