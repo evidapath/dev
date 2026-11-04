@@ -197,9 +197,9 @@ function GuidePage() {
                 "Enter your email and a password (minimum 6 characters).",
                 "Click Create Account.",
                 "If email confirmation is enabled, check your inbox for a verification link and click it.",
-                "After confirming, sign in — new users are routed to /academic-readiness.",
+                "After confirming, sign in — new users are routed to /find-my-path.",
               ]}
-              expected="A verification email arrives (if enabled). After confirming, signing in lands a new user on /academic-readiness to begin their path."
+              expected="A verification email arrives (if enabled). After confirming, signing in lands a new user on /find-my-path to begin their path."
             />
             <ScreenshotPlaceholder
               label="Sign Up & Authentication Options"
@@ -223,7 +223,7 @@ function GuidePage() {
                 "Magic link: click 'Sign in with a magic link instead' and use the emailed link.",
                 "Forgot password: click 'Forgot password?' to receive a reset link.",
               ]}
-              expected="Returning users land on /dashboard. New users land on /academic-readiness. A safe redirect= query param (e.g. /sign-in?redirect=%2Fdashboard) takes priority. Already-authenticated users visiting /sign-in are bounced away."
+              expected="Returning users land on /dashboard. New users land on /find-my-path. A safe redirect= query param (e.g. /sign-in?redirect=%2Fdashboard) takes priority. Already-authenticated users visiting /sign-in are bounced away."
             />
             <div className="rounded-xl border border-border bg-card p-4 text-xs text-muted-foreground space-y-1">
               <p>
@@ -236,7 +236,7 @@ function GuidePage() {
                 • Returning user (Sign In) → <code className="font-mono">/dashboard</code>.
               </p>
               <p>
-                • New user (Sign Up) → <code className="font-mono">/academic-readiness</code>.
+                • New user (Sign Up) → <code className="font-mono">/find-my-path</code>.
               </p>
             </div>
             <ScreenshotPlaceholder
@@ -248,28 +248,26 @@ function GuidePage() {
 
           <Section
             id="academic-readiness"
-            title="Academic Readiness Profile"
-            intro="The diagnostic starting point for your path. Protected route."
+            title="Your Profile (Find My Path)"
+            intro="Where a new student starts. The old /academic-readiness link now opens Find My Path."
           >
             <div className="flex items-center gap-2">
               <StatusBadge status="LIVE" />
               <span className="text-xs text-muted-foreground">
-                Form records a lead and shows a live readiness map against every university's
-                published requirement.
+                Answers are saved to your account; the first save also sends the Academic Readiness
+                Profile lead form to the EvidaPath team.
               </span>
             </div>
             <FeatureBlock
-              purpose="Enter your grades/predicted grades, curriculum, intended subject, geographic preference, and annual family budget."
-              why="To turn your academic record into a decision map and begin your EvidaPath journey."
+              purpose="Enter your curriculum, grades, subject, budget, country and citizenship once."
+              why="Every page (results, Analyse, Plan, Funding) is tailored from these answers."
               steps={[
-                "Open /academic-readiness (requires sign-in).",
-                "Complete Candidate Profile & Contact (name, email).",
-                "Complete Academic Evidence & Focus (curriculum, grade band, subject, budget).",
-                "Click Create My Readiness Profile.",
+                "Open /find-my-path (or the old /academic-readiness link, which redirects).",
+                "Answer the steps and finish.",
+                "Your results appear; change any filter there instead of repeating the questions.",
               ]}
-              expected="A confirmation screen shows your recorded profile. High-alignment institutions and prerequisite gaps display 'Pending verified data'. Budget envelope reflects your selection. Note: the profile currently submits to lead tracking and is not yet persisted to your Supabase account for re-editing."
+              expected="Results show. Returning later opens straight on your results. A new GHL contact appears under the Academic Readiness Profile form after the first save (signed in only)."
             />
-            <ScreenshotPlaceholder label="Academic Readiness form + confirmation" />
           </Section>
 
           <Section

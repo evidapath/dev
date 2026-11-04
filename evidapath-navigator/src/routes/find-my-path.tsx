@@ -14,7 +14,7 @@ import { storedUkHome, storeUkHome } from "../lib/residence";
 import { UkHomeCheckbox } from "../components/UkHomeCheckbox";
 import { PathwayResults } from "../components/PathwayResults";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import {
   ArrowRight,
@@ -28,6 +28,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { toast } from "sonner";
+import { submitGhlForm } from "../lib/ghl";
 import { Button } from "../components/ui/button";
 import { type FxRates } from "../lib/fx.functions";
 import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
@@ -273,10 +274,29 @@ function FindMyPathPage() {
     }).catch((err: Error) => console.error("[find-my-path] profile save failed:", err));
   };
 
+  // A signed-in student finishing the questions for the first time is sent to the
+  // EvidaPath team as an "Academic Readiness Profile" lead (the form that used to
+  // live on /academic-readiness). Returning students with a saved profile aren't.
+  const leadSent = useRef(false);
+  const sendLead = () => {
+    if (!user?.email || !profileChecked || fromProfile || leadSent.current) return;
+    leadSent.current = true;
+    submitGhlForm("academic-readiness-profile", "Academic Readiness Profile", {
+      email: { label: "Email Address", value: user.email },
+      curriculum: { label: "Curriculum", value: answers.curriculum },
+      predicted_grade: { label: "Predicted Grade", value: answers.gradeBand },
+      target_subject: { label: "Target Subject", value: answers.subject },
+      preferred_region: { label: "Preferred Region", value: answers.region },
+      annual_budget: { label: "Annual Budget (USD)", value: answers.budget },
+      citizenship: { label: "Citizenship", value: answers.citizenship },
+    }).catch((err: Error) => console.error("[find-my-path] lead submit failed:", err));
+  };
+
   const next = () => {
     if (step < STEPS.length - 1) setStep(step + 1);
     else {
       saveProfile();
+      sendLead();
       setShowResults(true);
     }
   };
@@ -442,6 +462,7 @@ function FindMyPathPage() {
           onSubmit={(e) => {
             e.preventDefault();
             saveProfile();
+            sendLead();
             setShowResults(true);
           }}
           className="bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-5"

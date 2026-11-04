@@ -60,7 +60,7 @@ export function QATests() {
           "Enter a fresh email + password (≥6 chars).",
           "Click Create Account.",
         ]}
-        expected="If email confirmation is on, a verification email arrives; after confirming, sign-in works. If off, the user is routed to /academic-readiness."
+        expected="If email confirmation is on, a verification email arrives; after confirming, sign-in works. If off, the user is routed to /find-my-path."
       />
       <QATest
         title="Email verification"
@@ -80,7 +80,7 @@ export function QATests() {
           "Select a Google account.",
           "Complete authentication.",
         ]}
-        expected="Google account chooser appears (prompt: select_account). Returning user → /dashboard. New user → /academic-readiness. redirect= takes priority."
+        expected="Google account chooser appears (prompt: select_account). Returning user → /dashboard. New user → /find-my-path. redirect= takes priority."
       />
       <QATest
         title="Magic link"
@@ -132,9 +132,7 @@ export function QATests() {
       />
       <QATest
         title="Protected route blocked when logged out"
-        steps={[
-          "Sign out. Open /dashboard, /applications, /offer-vault, /compare-offers, /fund, /academic-readiness.",
-        ]}
+        steps={["Sign out. Open /dashboard, /applications, /offer-vault, /compare-offers, /fund."]}
         expected="Each redirects to /sign-in?redirect=<original path>. After sign-in, the user returns to the intended page."
       />
       <QATest

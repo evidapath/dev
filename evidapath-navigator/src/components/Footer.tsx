@@ -86,8 +86,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/academic-readiness" className="hover:text-primary transition-colors">
-                  Academic Readiness
+                <Link to="/find-my-path" className="hover:text-primary transition-colors">
+                  Find My Path
                 </Link>
               </li>
               <li>

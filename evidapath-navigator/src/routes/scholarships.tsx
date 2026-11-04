@@ -202,7 +202,7 @@ function ScholarshipsGraphPage() {
               className="w-full h-12 pl-11 pr-4 rounded-full border border-input bg-card text-sm text-foreground shadow-xs focus:outline-hidden focus:ring-2 focus:ring-primary"
             />
           </div>
-          <Link to="/academic-readiness" className="shrink-0">
+          <Link to="/find-my-path" className="shrink-0">
             <Button className="w-full h-12 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm px-6">
               Match to my profile
             </Button>

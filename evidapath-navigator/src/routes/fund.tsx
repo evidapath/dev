@@ -14,7 +14,8 @@ import { SearchSelect } from "../components/SearchSelect";
 import { universityOption } from "../lib/university-options";
 import { PageHeader } from "../components/PageHeader";
 import { useServerFn } from "@tanstack/react-start";
-import { listSavedUniversities } from "../lib/profile.functions";
+import { getProfile, listSavedUniversities } from "../lib/profile.functions";
+import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
 
 function money(value: number | null): string {
   return formatCurrency(value, "USD");
@@ -112,8 +113,19 @@ function FundPage() {
   const fetchUniversities = useUniversitiesFn();
   const fetchFx = useFxRatesFn();
   const fetchSaved = useServerFn(listSavedUniversities);
+  const fetchProfile = useServerFn(getProfile);
   useEffect(() => {
     let active = true;
+    // Start "Family can pay" from the yearly budget the student gave in Find My Path.
+    fetchProfile()
+      .then((p) => {
+        const b = p?.annual_budget;
+        if (!active || !p || b == null || !(b > 0)) return;
+        if (p.budget_currency && p.budget_currency !== "USD") return;
+        const clamped = Math.min(BUDGET_MAX, Math.max(BUDGET_MIN, b));
+        setExpectedFamilyContribution(Math.round(clamped / 5000) * 5000);
+      })
+      .catch(() => {});
     Promise.all([fetchUniversities(), fetchSaved().catch(() => [])]).then(([res, saved]) => {
       if (!active) return;
       const sorted = [...res.universities].sort((a, b) => a.name.localeCompare(b.name));
@@ -135,7 +147,7 @@ function FundPage() {
     return () => {
       active = false;
     };
-  }, [fetchUniversities, fetchFx, fetchSaved]);
+  }, [fetchUniversities, fetchFx, fetchSaved, fetchProfile]);
 
   const u1 = universities.find((u) => u.id === selectedUniv1);
   const u2 = universities.find((u) => u.id === selectedUniv2);
@@ -240,8 +252,8 @@ function FundPage() {
             </div>
             <input
               type="range"
-              min="10000"
-              max="70000"
+              min={BUDGET_MIN}
+              max={BUDGET_MAX}
               step="5000"
               value={expectedFamilyContribution}
               onChange={(e) => setExpectedFamilyContribution(Number(e.target.value))}
@@ -307,7 +319,7 @@ function FundPage() {
           </p>
         </div>
 
-        <Link to="/academic-readiness" className="shrink-0">
+        <Link to="/find-my-path" className="shrink-0">
           <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-xs px-5">
             Check my academic readiness
           </Button>

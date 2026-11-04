@@ -40,7 +40,7 @@ export const SECTIONS = [
   { id: "results", label: "Results & Pathways" },
   { id: "create-account", label: "Creating an Account" },
   { id: "sign-in", label: "Signing In" },
-  { id: "academic-readiness", label: "Academic Readiness" },
+  { id: "academic-readiness", label: "Your Profile (Find My Path)" },
   { id: "dashboard", label: "Dashboard & Next Step" },
   { id: "discover", label: "Exploring Universities" },
   { id: "applications", label: "Applications" },

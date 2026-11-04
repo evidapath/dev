@@ -65,7 +65,7 @@ function SignInPage() {
 
   function postLoginDestination(forMode: Mode): string {
     if (redirect) return redirect;
-    return forMode === "signup" ? "/academic-readiness" : "/dashboard";
+    return forMode === "signup" ? "/find-my-path" : "/dashboard";
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -91,7 +91,7 @@ function SignInPage() {
           password,
           options: {
             emailRedirectTo: `${window.location.origin}/sign-in?redirect=${encodeURIComponent(
-              redirect ?? "/academic-readiness",
+              redirect ?? "/find-my-path",
             )}`,
           },
         });
