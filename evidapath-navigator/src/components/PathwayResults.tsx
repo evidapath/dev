@@ -98,8 +98,15 @@ function pickTop3(
         holistic[0],
       ),
     ];
-    out.push(take("Also worth a look", Trophy, holistic.filter(free)[0]));
-    out.push(take("Best value", Gem, holistic.filter(free).sort(byNet)[0]));
+    if (modestGrades) {
+      // Already cheapest first, so the next picks can't be "best value": offer
+      // one that meets full need (it may end up costing less), then the next.
+      out.push(take("Meets full financial need", Gem, holistic.filter(free).find(fullNeed)));
+      out.push(take("Also worth a look", Trophy, holistic.filter(free)[0]));
+    } else {
+      out.push(take("Also worth a look", Trophy, holistic.filter(free)[0]));
+      out.push(take("Best value", Gem, holistic.filter(free).sort(byNet)[0]));
+    }
     return out.filter((x): x is NonNullable<typeof x> => !!x);
   }
 
@@ -137,9 +144,22 @@ function pickTop3(
         Number(!x.a.financial.annualComplete) - Number(!y.a.financial.annualComplete) ||
         byNet(x, y),
     )[0];
+  // Only "Lowest cost" when it is fully priced and cheaper than the picks already shown.
+  const shown = out.flatMap((x) => (x && x.row.netAnnualUsd != null ? [x.row.netAnnualUsd] : []));
+  const lowest =
+    cheapest?.a.financial.annualComplete &&
+    shown.every((n) => (cheapest.netAnnualUsd ?? Infinity) < n);
   out.push(
     cheapest
-      ? take("Lowest cost", Gem, cheapest)
+      ? take(
+          lowest
+            ? "Lowest cost"
+            : cheapest.a.financial.annualComplete
+              ? "Also fits your budget"
+              : "Tuition fits your budget",
+          Gem,
+          cheapest,
+        )
       : take("Also close to your budget", Gem, above.filter(free)[0]),
   );
   return out.filter((x): x is NonNullable<typeof x> => !!x);
