@@ -356,6 +356,7 @@ const COUNTRY_CODES: [RegExp, string][] = [
   [/\b(uk\b|united kingdom|brit|england|english\b|scot|wales|welsh)/i, "gb"],
   [/\b(us|usa|united states|americ)/i, "us"],
   [/\bcanad/i, "ca"],
+  [/\baustralia|\baussie/i, "au"],
   [/\begypt/i, "eg"],
   [/\bjordan/i, "jo"],
   [/\bsaudi/i, "sa"],
@@ -749,12 +750,15 @@ const COUNTRY_OF: Record<string, string> = {
   ae: "United Arab Emirates",
   ca: "Canada",
   gb: "United Kingdom",
+  au: "Australia",
+  us: "United States",
 };
 
 /**
  * The residency price tier that applies to a student, if the programme has one
  * that fits better than the international rate: citizens at home (Malaysians in
- * Malaysia, Emiratis in the UAE, Canadians in Canada) and EU citizens in the EU.
+ * Malaysia, Emiratis in the UAE, Canadians in Canada, Australians in Australia,
+ * Americans in the US at the out-of-state rate) and EU citizens in the EU.
  * UK "Home" fees need UK residence, so they come from the student's own answer
  * (lived in the UK for the last 3 years), not from citizenship.
  */
