@@ -13,6 +13,8 @@ import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { SearchSelect } from "../components/SearchSelect";
 import { universityOption } from "../lib/university-options";
 import { PageHeader } from "../components/PageHeader";
+import { useServerFn } from "@tanstack/react-start";
+import { listSavedUniversities } from "../lib/profile.functions";
 
 function money(value: number | null): string {
   return formatCurrency(value, "USD");
@@ -109,16 +111,23 @@ function FundPage() {
 
   const fetchUniversities = useUniversitiesFn();
   const fetchFx = useFxRatesFn();
+  const fetchSaved = useServerFn(listSavedUniversities);
   useEffect(() => {
     let active = true;
-    fetchUniversities().then((res) => {
+    Promise.all([fetchUniversities(), fetchSaved().catch(() => [])]).then(([res, saved]) => {
       if (!active) return;
       const sorted = [...res.universities].sort((a, b) => a.name.localeCompare(b.name));
       setUniversities(sorted);
-      // Default to the first two universities with a verified full annual cost.
+      // Start with the student's saved universities (fully priced ones first), then
+      // fill any empty slot with the first universities that have a full annual cost.
+      const savedIds = new Set(saved.map((r) => r.sanity_university_id));
       const priced = sorted.filter((u) => u.costs.totalAnnual != null);
-      setSelectedUniv1((v) => v || priced[0]?.id || sorted[0]?.id || "");
-      setSelectedUniv2((v) => v || priced[1]?.id || sorted[1]?.id || "");
+      const mine = sorted
+        .filter((u) => savedIds.has(u.id))
+        .sort((a, b) => Number(b.costs.totalAnnual != null) - Number(a.costs.totalAnnual != null));
+      const picks = [...mine, ...priced.filter((u) => !savedIds.has(u.id)), ...sorted];
+      setSelectedUniv1((v) => v || picks[0]?.id || "");
+      setSelectedUniv2((v) => v || picks.find((u) => u.id !== picks[0]?.id)?.id || "");
     });
     fetchFx()
       .then((r) => active && setFx(r))
@@ -126,7 +135,7 @@ function FundPage() {
     return () => {
       active = false;
     };
-  }, [fetchUniversities, fetchFx]);
+  }, [fetchUniversities, fetchFx, fetchSaved]);
 
   const u1 = universities.find((u) => u.id === selectedUniv1);
   const u2 = universities.find((u) => u.id === selectedUniv2);

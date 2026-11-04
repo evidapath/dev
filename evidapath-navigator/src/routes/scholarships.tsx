@@ -23,6 +23,9 @@ import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { awardHeadline } from "../lib/award-summary";
 import { eligibility, fmtDate } from "../lib/decision-engine";
 import { PageHeader, HeaderStats } from "../components/PageHeader";
+import { useServerFn } from "@tanstack/react-start";
+import { toast } from "sonner";
+import { listSavedUniversities, saveUniversity } from "../lib/profile.functions";
 
 export const Route = createFileRoute("/scholarships")({
   head: () => ({
@@ -101,6 +104,42 @@ function ScholarshipsGraphPage() {
       active = false;
     };
   }, [fetchScholarships]);
+
+  // "Add to plan" saves the scholarship's university to My Path; the Plan page
+  // then lists that university's scholarships (the ones you're eligible for) with dates.
+  const saveUniFn = useServerFn(saveUniversity);
+  const listSavedFn = useServerFn(listSavedUniversities);
+  const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    let active = true;
+    listSavedFn()
+      .then((rows) => active && setSavedIds(new Set(rows.map((r) => r.sanity_university_id))))
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, [listSavedFn]);
+  const addToPlan = (s: Scholarship) => {
+    const ids = (s.universityIds ?? []).filter((id) => !savedIds.has(id));
+    const uni = PENDING_RE.test(s.universitiesCovered) ? null : s.universitiesCovered;
+    Promise.all(
+      ids.map((id) => saveUniFn({ data: { sanity_university_id: id, university_name: uni } })),
+    )
+      .then(() => {
+        setSavedIds((cur) => new Set([...cur, ...ids]));
+        toast.success(`${uni ?? "University"} added to your plan.`, {
+          action: { label: "See plan", onClick: () => (window.location.href = "/plan") },
+        });
+      })
+      .catch((err: Error) => {
+        console.error("[addToPlan] save failed:", err);
+        toast.error(
+          /not authenticated/i.test(err?.message ?? "")
+            ? "Sign in to add scholarships to your plan."
+            : "Could not save — please try again.",
+        );
+      });
+  };
 
   const countries = useMemo(
     () => Array.from(new Set(scholarships.flatMap((s) => s.countriesOfStudy))).sort(),
@@ -251,7 +290,13 @@ function ScholarshipsGraphPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {paged.visible.map((s, i) => (
-            <ScholarshipCard key={s.id} s={s} index={i} />
+            <ScholarshipCard
+              key={s.id}
+              s={s}
+              index={i}
+              inPlan={!!s.universityIds?.length && s.universityIds.every((id) => savedIds.has(id))}
+              onAdd={() => addToPlan(s)}
+            />
           ))}
         </div>
       )}
@@ -264,7 +309,17 @@ function ScholarshipsGraphPage() {
 
 const PENDING_RE = /^pending|not yet/i;
 
-function ScholarshipCard({ s, index }: { s: Scholarship; index: number }) {
+function ScholarshipCard({
+  s,
+  index,
+  inPlan,
+  onAdd,
+}: {
+  s: Scholarship;
+  index: number;
+  inPlan: boolean;
+  onAdd: () => void;
+}) {
   const head = awardHeadline(
     s.awardSummary ?? (s.awardValue != null ? String(s.awardValue) : undefined),
   );
@@ -384,15 +439,26 @@ function ScholarshipCard({ s, index }: { s: Scholarship; index: number }) {
           <ShieldCheck className="w-3.5 h-3.5" />
           {s.verificationStatus.startsWith("Verified") ? "Confirmed" : s.verificationStatus}
         </span>
-        <Link to="/fund">
+        {inPlan ? (
+          <Link to="/plan">
+            <Button
+              size="sm"
+              variant="outline"
+              className="text-xs border-primary/30 text-primary hover:bg-primary/5"
+            >
+              In your plan →
+            </Button>
+          </Link>
+        ) : s.universityIds?.length ? (
           <Button
             size="sm"
             variant="outline"
+            onClick={onAdd}
             className="text-xs border-border text-foreground hover:bg-secondary"
           >
             Add to plan
           </Button>
-        </Link>
+        ) : null}
       </div>
     </div>
   );

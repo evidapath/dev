@@ -106,6 +106,8 @@ function DashboardPage() {
   const fetchApps = useServerFn(listApplications);
   const fetchOffers = useServerFn(listOfferComposites);
   const [doneFlags, setDoneFlags] = useState<boolean[] | null>(null);
+  // Applications sent but none admitted yet: step 4 is "wait", not "record an offer".
+  const [awaiting, setAwaiting] = useState(0);
   useEffect(() => {
     let live = true;
     Promise.all([
@@ -116,6 +118,12 @@ function DashboardPage() {
     ]).then(([p, saved, apps, offers]) => {
       if (!live) return;
       setDoneFlags([!!p, saved.length > 0, apps.length > 0, offers.length > 0, false]);
+      const admitted = apps.some((a) => a.status === "admitted");
+      setAwaiting(
+        admitted
+          ? 0
+          : apps.filter((a) => ["submitted", "in_review", "waitlisted"].includes(a.status)).length,
+      );
     });
     return () => {
       live = false;
@@ -123,7 +131,15 @@ function DashboardPage() {
   }, [fetchProfile, fetchSaved, fetchApps, fetchOffers]);
   const firstOpen = doneFlags ? doneFlags.findIndex((d) => !d) : 0;
   const currentStep = firstOpen === -1 ? JOURNEY.length - 1 : firstOpen;
-  const current = JOURNEY[currentStep]!;
+  const current =
+    currentStep === 3 && awaiting > 0
+      ? {
+          ...JOURNEY[3]!,
+          label: "Wait for decisions",
+          desc: `You've sent ${awaiting} application${awaiting === 1 ? "" : "s"}. When a university says yes, mark it admitted and add the offer and any scholarship.`,
+          href: "/applications",
+        }
+      : JOURNEY[currentStep]!;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
