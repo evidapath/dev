@@ -31,7 +31,8 @@ const UNIVERSITIES_QUERY = `*[_type=="university"] | order(canonical_name){
   "countryCurrency": country_ref->currency_default,
   "city": primary_city_ref->name,
   "deadlines": *[_type=="decisionPlan" && references(^._id)] | order(application_deadline){
-    plan_type, application_deadline, decision_release_date, binding, application_platform
+    plan_type, application_deadline, decision_release_date, binding, application_platform,
+    "round": extension_metadata.note, "program": program_ref->program_name
   },
   "programs": *[_type=="program" && references(^._id)] | order(program_name){
     program_name, degree_type, duration_value, duration_unit, field_of_study,
@@ -90,6 +91,9 @@ interface SanityDeadline {
   decision_release_date: string | null;
   binding: boolean | null;
   application_platform: string | null;
+  /** "Round: <official round name>" when the university names its rounds. */
+  round: string | null;
+  program: string | null;
 }
 interface SanityUniversity {
   id: string;
@@ -476,13 +480,21 @@ function adapt(u: SanityUniversity): University {
   // Verified deadlines (surfaced only when present).
   const deadlines = (u.deadlines || [])
     .filter((d) => d.application_deadline)
-    .map((d) => ({
-      label: prettyType(d.plan_type),
-      deadline: d.application_deadline,
-      decisionDate: d.decision_release_date,
-      binding: d.binding,
-      platform: d.application_platform,
-    }));
+    .map((d) => {
+      // The university's own round name ("Restrictive Early Action"), else the plan type.
+      const round = d.round?.startsWith("Round: ") ? d.round.slice(7).trim() : null;
+      // program_specific_stage deadlines apply to one programme only (e.g. McMaster CS).
+      const program = d.plan_type === "program_specific_stage" ? d.program : null;
+      const base = round || (program ? "Application deadline" : prettyType(d.plan_type));
+      return {
+        label: program ? `${base} — ${program}` : base,
+        program,
+        deadline: d.application_deadline,
+        decisionDate: d.decision_release_date,
+        binding: d.binding,
+        platform: d.application_platform,
+      };
+    });
 
   return {
     id: u.id,

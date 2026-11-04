@@ -20,7 +20,7 @@ import { Illustration } from "../components/Illustration";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { getProfile, listSavedUniversities } from "../lib/profile.functions";
 import { useLiveData } from "../lib/use-live-data";
-import { analyze, fmtDate, type StudentInput } from "../lib/decision-engine";
+import { analyze, deadlinesFor, fmtDate, type StudentInput } from "../lib/decision-engine";
 import { currentCurriculum } from "../lib/curricula";
 import { storedUkHome } from "../lib/residence";
 import { PageHeader } from "../components/PageHeader";
@@ -124,7 +124,7 @@ function PlanPage() {
       if (!u) continue;
       const a = analyze(u, input, data.scholarships, data.universities, data.fx);
       const base = { uni: u.name, uniId: u.id };
-      for (const d of u.deadlines ?? []) {
+      for (const d of deadlinesFor(u, a.programName)) {
         if (!d.deadline || d.deadline.slice(0, 10) < today) continue;
         out.push({
           ...base,

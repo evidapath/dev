@@ -383,6 +383,16 @@ export function citizenshipCode(text: string): string | null {
   return null;
 }
 
+/**
+ * A university's deadlines for one programme: the ones for every applicant plus
+ * any that apply only to that programme (McMaster CS, Waterloo Engineering…).
+ * With no programme, every deadline is returned.
+ */
+export function deadlinesFor(u: University, programName?: string | null) {
+  const all = u.deadlines ?? [];
+  return programName ? all.filter((d) => !d.program || d.program === programName) : all;
+}
+
 /** We only ask British and Irish citizens whether they live in the UK. */
 export const asksUkHome = (citizenship: string) =>
   ["gb", "ie"].includes(citizenshipCode(citizenship) ?? "");
@@ -489,7 +499,7 @@ export function analyze(
   // Academic + admissions evidence
   const academic = academicFit(rows, student, u.country);
   const now = today();
-  const dated = (u.deadlines ?? []).filter((d) => d.deadline);
+  const dated = deadlinesFor(u, program?.name).filter((d) => d.deadline);
   const upcoming = dated
     .filter((d) => d.deadline!.slice(0, 10) >= now)
     .sort((a, b) => a.deadline!.localeCompare(b.deadline!));

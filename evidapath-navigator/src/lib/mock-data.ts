@@ -54,6 +54,8 @@ export interface University {
   // requirements, surfaced from Sanity. Optional so the mock set still typechecks.
   deadlines?: {
     label: string;
+    /** Set when the deadline applies to one programme only (its programme name). */
+    program?: string | null;
     deadline: string | null;
     decisionDate: string | null;
     binding: boolean | null;
