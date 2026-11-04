@@ -397,7 +397,7 @@ function FindMyPathPage() {
           >
             <ArrowLeft className="w-4 h-4" /> Edit all answers
           </Button>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap justify-center gap-2">
             <Link to="/universities">
               <Button variant="outline" className="border-border text-foreground text-sm">
                 Browse all universities
