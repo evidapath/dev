@@ -179,10 +179,10 @@ function Index() {
       </section>
 
       {/* 3. HOW IT WORKS — 4-step flow diagram */}
-      <section className="dark relative overflow-hidden bg-background text-foreground py-16 sm:py-24">
+      <section className="relative overflow-hidden border-y border-border bg-secondary/50 py-16 sm:py-24">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(40%_60%_at_15%_0%,oklch(0.6_0.17_155/0.25),transparent),radial-gradient(35%_55%_at_90%_100%,oklch(0.53_0.15_62/0.18),transparent)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(40%_60%_at_15%_0%,oklch(0.6_0.17_155/0.14),transparent),radial-gradient(35%_55%_at_90%_100%,oklch(0.53_0.15_62/0.10),transparent)]"
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <HowItWorks />
