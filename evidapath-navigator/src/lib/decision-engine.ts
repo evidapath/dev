@@ -40,7 +40,12 @@ export interface FundingItem {
   award: string;
   basis: "guaranteed" | "competitive" | "check";
   eligible: "yes" | "check";
+  /** Application deadline as published: ISO date when dated, else its wording ("April 1"). */
   deadline?: string;
+  /** Who can apply, as sourced. */
+  who?: string;
+  /** Grades asked for, as sourced. */
+  grades?: string;
   annualUsd: number | null; // only for guaranteed % of tuition (counted in the plan)
   source: string;
 }
@@ -539,6 +544,12 @@ export function analyze(
         basis,
         eligible: el === "yes" ? "yes" : "check",
         ...(s.applicationDeadline ? { deadline: s.applicationDeadline } : {}),
+        ...(s.citizenshipEligible && !/^pending|not yet/i.test(s.citizenshipEligible)
+          ? { who: s.citizenshipEligible }
+          : {}),
+        ...(s.academicThreshold && !/^pending|not yet/i.test(s.academicThreshold)
+          ? { grades: s.academicThreshold }
+          : {}),
         annualUsd: pct != null && tuitionUsd != null ? Math.round((tuitionUsd * pct) / 100) : null,
         source: s.officialSource,
       } satisfies FundingItem;

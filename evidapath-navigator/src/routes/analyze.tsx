@@ -36,6 +36,7 @@ function storedLanguages(curriculum: string): string[] {
   return defaultLanguages(curriculum);
 }
 import { AnalysisFootnote, DecisionAnalysisView } from "../components/DecisionAnalysisView";
+import { ScholarshipsAtGlance } from "../components/ScholarshipsAtGlance";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { PageHeader } from "../components/PageHeader";
 
@@ -369,15 +370,14 @@ function AnalyzePage() {
       ) : univ && result ? (
         <section className="space-y-4" aria-live="polite">
           <VerdictHero u={univ} a={result} budgetUsd={input.budgetUsd} />
+          <ScholarshipsAtGlance a={result} uniName={univ.shortName || univ.name} />
           <button
             onClick={() => setFull(!full)}
             aria-expanded={full}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-primary"
           >
             <ChevronDown className={`w-4 h-4 transition-transform ${full ? "rotate-180" : ""}`} />
-            {full
-              ? "Hide full breakdown"
-              : "See full breakdown (grades, deadlines, scholarships, options)"}
+            {full ? "Hide full breakdown" : "See full breakdown (grades, deadlines, options)"}
           </button>
           {full && (
             <div className="motion-safe:animate-in motion-safe:fade-in duration-200 space-y-4">

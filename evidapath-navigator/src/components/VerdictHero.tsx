@@ -56,14 +56,25 @@ export function VerdictHero({
           {v.headline}
         </h2>
         <div className="flex flex-wrap gap-1.5">
-          {v.tags.map((t) => (
-            <span
-              key={t.text}
-              className={`text-xs font-medium px-2.5 py-0.5 rounded-full border ${TONE_CLASS[t.tone]}`}
-            >
-              {t.text}
-            </span>
-          ))}
+          {v.tags.map((t) =>
+            // "N scholarships to try" jumps to the scholarships panel below.
+            /scholarship/i.test(t.text) ? (
+              <a
+                key={t.text}
+                href="#scholarships"
+                className={`text-xs font-medium px-2.5 py-0.5 rounded-full border underline-offset-2 hover:underline ${TONE_CLASS[t.tone]}`}
+              >
+                {t.text} ↓
+              </a>
+            ) : (
+              <span
+                key={t.text}
+                className={`text-xs font-medium px-2.5 py-0.5 rounded-full border ${TONE_CLASS[t.tone]}`}
+              >
+                {t.text}
+              </span>
+            ),
+          )}
         </div>
       </div>
 
