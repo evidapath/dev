@@ -6,6 +6,7 @@ import type { University } from "../lib/mock-data";
 import { money, TONE_CLASS, verdictFor } from "../lib/verdict";
 import { CostBar } from "./CostBar";
 import { CostSplit } from "./CostSplit";
+import { checkedLabel } from "../lib/dates";
 
 // The top of the Analyze page: the deal in one line, three numbers, one action.
 export function VerdictHero({
@@ -129,6 +130,23 @@ export function VerdictHero({
           </Link>
         </div>
       )}
+
+      <p className="text-[11px] text-muted-foreground flex flex-wrap gap-x-3 gap-y-1">
+        <span>
+          {checkedLabel(u.lastVerified) ?? "Not yet re-checked"} against official pages.
+          Universities update fees and rules every year.
+        </span>
+        {/^https?:/.test(u.officialSourceUrl) && (
+          <a
+            href={u.officialSourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-semibold hover:underline"
+          >
+            Official site ↗
+          </a>
+        )}
+      </p>
     </section>
   );
 }

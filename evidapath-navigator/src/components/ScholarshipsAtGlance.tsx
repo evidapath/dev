@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { CalendarDays, GraduationCap, Sparkles, Users } from "lucide-react";
 import { useState } from "react";
 import { fmtDate, type DecisionAnalysis } from "../lib/decision-engine";
+import { checkedLabel } from "../lib/dates";
 
 const ISO = /^\d{4}-\d{2}-\d{2}/;
 const SHOW = 4;
@@ -118,6 +119,21 @@ export function ScholarshipsAtGlance({ a, uniName }: { a: DecisionAnalysis; uniN
                     </dd>
                   </div>
                 </dl>
+                {(s.checked || s.source) && (
+                  <p className="text-[10px] text-muted-foreground flex flex-wrap gap-x-2">
+                    {s.checked && <span>{checkedLabel(s.checked)}</span>}
+                    {s.source && (
+                      <a
+                        href={s.source}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary font-semibold hover:underline"
+                      >
+                        Official page ↗
+                      </a>
+                    )}
+                  </p>
+                )}
               </li>
             );
           })}

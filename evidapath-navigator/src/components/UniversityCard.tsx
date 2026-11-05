@@ -1,6 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
-import { GraduationCap, ShieldCheck, MapPin, ArrowRight, ExternalLink, Info } from "lucide-react";
+import {
+  GraduationCap,
+  ShieldCheck,
+  MapPin,
+  ArrowRight,
+  ExternalLink,
+  Info,
+  ClipboardCheck,
+} from "lucide-react";
+import { otherTests } from "../lib/tests";
 import { Button } from "./ui/button";
 import type { University } from "../lib/mock-data";
 import { formatCost, NOT_PUBLISHED } from "../lib/format";
@@ -196,6 +205,27 @@ export function UniversityCard({ univ, index = 0 }: { univ: University; index?: 
         {/* Scholarships near the top, with who can apply and deadlines */}
         <CardScholarships uniId={univ.id} />
 
+        {/* Tests this programme asks for */}
+        {(pv?.english ||
+          otherTests(pv ?? { admissionsByCurriculum: admissions ?? [] }).length > 0) && (
+          <div className="rounded-lg border border-border px-3 py-2 text-[11px] space-y-1">
+            <p className="font-semibold text-foreground flex items-center gap-1.5">
+              <ClipboardCheck className="w-3.5 h-3.5 text-primary" /> Tests required
+            </p>
+            {pv?.english && (
+              <p className="text-muted-foreground line-clamp-2">
+                <span className="font-medium text-foreground">English:</span> {pv.english}
+              </p>
+            )}
+            {otherTests(pv ?? { admissionsByCurriculum: admissions ?? [] }).length > 0 && (
+              <p className="text-muted-foreground">
+                <span className="font-medium text-foreground">Other:</span>{" "}
+                {otherTests(pv ?? { admissionsByCurriculum: admissions ?? [] }).join(" · ")}
+              </p>
+            )}
+          </div>
+        )}
+
         {(costs.livingSource || residencyNote) && (
           <div className="rounded-lg bg-secondary/50 px-3 py-2 space-y-1 text-[11px] leading-snug text-muted-foreground">
             {costs.livingSource && (
@@ -249,6 +279,16 @@ export function UniversityCard({ univ, index = 0 }: { univ: University; index?: 
                 ? `Checked ${monthYear(univ.lastVerified)}`
                 : "Being checked"}
           </span>
+          {/^https?:/.test(univ.officialSourceUrl) && (
+            <a
+              href={univ.officialSourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 font-medium text-foreground hover:border-primary/40"
+            >
+              Official site <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
           {costs.notChecked && (
             <span className="rounded-full bg-bronze/10 text-bronze px-2.5 py-1 font-medium">
               Costs not re-checked yet

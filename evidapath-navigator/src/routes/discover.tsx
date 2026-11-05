@@ -179,6 +179,7 @@ function DiscoverPage() {
             usd={maxBudget}
             onChange={setMaxBudget}
             label="Max annual cost"
+            hint="All-in per year: tuition, fees and living. Where living cost isn't published, tuition alone is compared."
             id="disc-budget"
           />
         </div>

@@ -46,6 +46,8 @@ export interface FundingItem {
   who?: string;
   /** Grades asked for, as sourced. */
   grades?: string;
+  /** When the scholarship was last checked against its official page (YYYY-MM-DD). */
+  checked?: string;
   annualUsd: number | null; // only for guaranteed % of tuition (counted in the plan)
   source: string;
 }
@@ -547,6 +549,7 @@ export function analyze(
         ...(s.citizenshipEligible && !/^pending|not yet/i.test(s.citizenshipEligible)
           ? { who: s.citizenshipEligible }
           : {}),
+        ...(/^\d{4}-\d{2}-\d{2}/.test(s.lastChecked) ? { checked: s.lastChecked } : {}),
         ...(s.academicThreshold && !/^pending|not yet/i.test(s.academicThreshold)
           ? { grades: s.academicThreshold }
           : {}),

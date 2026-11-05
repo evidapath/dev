@@ -23,6 +23,7 @@ import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { awardHeadline } from "../lib/award-summary";
 import { eligibility, fmtDate } from "../lib/decision-engine";
 import { PageHeader, HeaderStats } from "../components/PageHeader";
+import { checkedLabel } from "../lib/dates";
 import { toast } from "sonner";
 import { useSaveUniversity } from "../lib/use-save-university";
 
@@ -419,7 +420,18 @@ function ScholarshipCard({
         >
           <ShieldCheck className="w-3.5 h-3.5" />
           {s.verificationStatus.startsWith("Verified") ? "Confirmed" : s.verificationStatus}
+          {checkedLabel(s.lastChecked) ? ` · ${checkedLabel(s.lastChecked)!.toLowerCase()}` : ""}
         </span>
+        {s.officialSource && /^https?:/.test(s.officialSource) && (
+          <a
+            href={s.officialSource}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] font-semibold text-primary hover:underline ml-auto"
+          >
+            Official page ↗
+          </a>
+        )}
         {inPlan ? (
           <Link to="/plan">
             <Button

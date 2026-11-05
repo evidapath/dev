@@ -5,6 +5,7 @@ import type { Scholarship } from "../lib/mock-data";
 import { useScholarshipsFn } from "../lib/use-live-data";
 import { awardHeadline } from "../lib/award-summary";
 import { fmtDate } from "../lib/decision-engine";
+import { checkedLabel } from "../lib/dates";
 
 const ISO = /^\d{4}-\d{2}-\d{2}/;
 const PENDING = /^pending|not yet/i;
@@ -110,6 +111,11 @@ export function CardScholarships({ uniId }: { uniId: string }) {
                     : "Deadline not published"}
                 </span>
               </p>
+              {checkedLabel(s.lastChecked) && (
+                <p className="text-[10px] text-muted-foreground">
+                  {checkedLabel(s.lastChecked)} against the official page
+                </p>
+              )}
             </li>
           );
         })}

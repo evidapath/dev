@@ -30,6 +30,8 @@ export interface SearchOption {
   prefix?: string;
   // Extra words that should match when typing (e.g. the country).
   keywords?: string[];
+  // Shorter text for the closed button (e.g. "USD" while the list says "USD · US dollar").
+  short?: string;
   group?: string;
 }
 
@@ -71,7 +73,7 @@ export function SearchSelect({
         >
           <span className={cn("truncate", !current && "text-muted-foreground")}>
             {current
-              ? `${current.prefix ? `${current.prefix} ` : ""}${current.label}`
+              ? `${current.prefix ? `${current.prefix} ` : ""}${current.short ?? current.label}`
               : placeholder}
           </span>
           <ChevronDown className="w-4 h-4 shrink-0 opacity-60" />

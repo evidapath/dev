@@ -32,7 +32,8 @@ export function CareerPaths({
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <h2 className="font-display font-bold text-lg text-foreground flex items-center gap-2">
             <Briefcase className="w-4 h-4 text-primary" />
-            Where {/^[AEIOU]/.test(FAMILY_LABEL[family]) ? "an" : "a"} {FAMILY_LABEL[family]} degree can lead
+            Where {/^[AEIOU]/.test(FAMILY_LABEL[family]) ? "an" : "a"} {FAMILY_LABEL[family]} degree
+            can lead
           </h2>
           <span className="text-xs text-muted-foreground">
             {all.length} careers · UK pay, starter → experienced

@@ -2,6 +2,15 @@ import { useEffect, useState } from "react";
 import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
 import { CURRENCIES, fmtIn, rateOf, useCurrency } from "../lib/currency";
 import type { FxRates } from "../lib/fx.functions";
+import { SearchSelect, type SearchOption } from "./SearchSelect";
+
+const CURRENCY_OPTIONS: SearchOption[] = CURRENCIES.map(([code, name, flag, kw]) => ({
+  value: code,
+  label: `${code} · ${name}`,
+  short: code,
+  prefix: flag,
+  keywords: [code, name, ...(kw ? [kw] : [])],
+}));
 import { useFxRatesFn } from "../lib/use-live-data";
 
 /**
@@ -16,6 +25,7 @@ export function BudgetInput({
   id = "budget",
   max = BUDGET_MAX,
   noLimitAtMax = true,
+  hint = "The whole year: tuition, fees and living costs, not tuition only.",
 }: {
   usd: number;
   onChange: (usd: number) => void;
@@ -24,6 +34,8 @@ export function BudgetInput({
   max?: number;
   /** The top of the slider means "no limit" (budget filters), not a number. */
   noLimitAtMax?: boolean;
+  /** What the amount covers, shown under the label. */
+  hint?: string;
 }) {
   const [cur, setCur] = useCurrency();
   const fetchFx = useFxRatesFn();
@@ -60,20 +72,17 @@ export function BudgetInput({
         </label>
         <div className="flex items-center gap-2">
           <span className="font-mono text-sm font-bold text-foreground">{shown}</span>
-          <select
-            value={cur}
-            onChange={(e) => setCur(e.target.value)}
+          <SearchSelect
             aria-label="Currency"
-            className="h-7 rounded-md border border-input bg-background px-1.5 text-xs font-semibold text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
-          >
-            {CURRENCIES.map(([code, name]) => (
-              <option key={code} value={code} title={name}>
-                {code}
-              </option>
-            ))}
-          </select>
+            options={CURRENCY_OPTIONS}
+            value={cur}
+            onChange={setCur}
+            searchPlaceholder="Type a currency or country…"
+            className="h-8 min-w-24 rounded-md border border-input bg-background px-2 text-xs font-semibold text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
+          />
         </div>
       </div>
+      {hint && <p className="text-[11px] text-muted-foreground -mt-1">{hint}</p>}
       <input
         id={id}
         type="range"

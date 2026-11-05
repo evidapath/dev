@@ -11,6 +11,7 @@ import { useStudent } from "../lib/use-student";
 import { money, verdictFor } from "../lib/verdict";
 import { BUDGET_MAX } from "../lib/budget";
 import { visaFor } from "../lib/visa";
+import { otherTests } from "../lib/tests";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
 const MAX = 3;
@@ -211,6 +212,13 @@ const ROWS: [string, (u: University, a: DecisionAnalysis, budget: number) => Rea
     ),
   ],
   ["English test", (_u, a) => (a.program?.english ? a.program.english : muted("Not published"))],
+  [
+    "Other tests",
+    (_u, a) => {
+      const t = otherTests(a.program);
+      return t.length ? t.join(" · ") : muted("None listed");
+    },
+  ],
   [
     "Next deadline",
     (_u, a) =>

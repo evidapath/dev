@@ -250,6 +250,7 @@ function FundPage() {
             label="Family can pay"
             id="fund-family"
             noLimitAtMax={false}
+            hint="What your family can put towards the whole year: tuition, fees and living."
           />
 
           <div>
