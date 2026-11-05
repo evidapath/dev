@@ -109,6 +109,8 @@ export interface CostTier {
 export interface ProgramView {
   name: string;
   fieldOfStudy: string;
+  /** English test requirement as the university words it ("IELTS 6.5 overall, or TOEFL iBT 80…"). */
+  english?: string;
   /** ISO language codes of instruction, e.g. ["en"] or ["de"]. */
   languages?: string[];
   degree: string;

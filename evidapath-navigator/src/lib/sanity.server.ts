@@ -414,9 +414,18 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
         .filter((t) => t.test_name && t.required !== "not_required")
         .map((t) => `${t.test_name}${t.required ? ` (${testRequirement(t.required)})` : ""}`),
     }));
+  // English test needed (as the university words it): the most common wording
+  // across this programme's admissions rows, so one stray row doesn't win.
+  const englishCounts = new Map<string, number>();
+  for (const a of p.admissions || [])
+    for (const l of a.languages || [])
+      if (l.min_score && /^(en|english)$/i.test(l.language ?? ""))
+        englishCounts.set(l.min_score, (englishCounts.get(l.min_score) ?? 0) + 1);
+  const english = [...englishCounts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
   return {
     name: p.program_name || "Program",
     fieldOfStudy: p.field_of_study || "",
+    ...(english ? { english } : {}),
     languages: (p.language_of_instruction || []).filter(Boolean),
     degree: p.degree_type || "",
     durationYears: years,
