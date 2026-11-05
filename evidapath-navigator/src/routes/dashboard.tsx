@@ -547,7 +547,7 @@ function SavedKeyNumbers({ uni }: { uni: University | undefined }) {
     [
       "Next deadline",
       next
-        ? new Date(next + "T00:00:00").toLocaleDateString("en-GB", {
+        ? new Date(next.slice(0, 10) + "T00:00:00").toLocaleDateString("en-GB", {
             day: "numeric",
             month: "short",
             year: "numeric",

@@ -23,7 +23,16 @@ import {
   UserCircle,
   Briefcase,
   Columns3,
+  CalendarCheck,
+  FileText,
+  BarChart3,
 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,7 +41,7 @@ export function Header() {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
 
-  // PUBLIC nav — simple, understandable in under 5 seconds.
+  // Explore: the public research pages (a dropdown on desktop).
   const exploreItems = [
     { label: "Universities", href: "/universities", icon: GraduationCap },
     { label: "Scholarships", href: "/scholarships", icon: BookOpen },
@@ -41,14 +50,19 @@ export function Header() {
     { label: "Intelligence", href: "/intelligence", icon: ShieldCheck },
   ];
 
-  // LOGGED-IN nav — product workflows grouped under clear categories.
+  // My Path: the signed-in student's own planning pages.
+  const pathItems = [
+    { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+    { label: "Plan", href: "/plan", icon: CalendarCheck },
+    { label: "Documents & tests", href: "/documents", icon: FileText },
+    { label: "Analyse", href: "/analyze", icon: BarChart3 },
+  ];
+
+  // Signed-in workflows shown as plain links after the two dropdowns.
   const memberItems = [
-    { label: "My Path", href: "/dashboard", icon: LayoutDashboard },
-    { label: "Explore", href: "/universities", icon: Compass },
     { label: "Applications", href: "/applications", icon: ClipboardList },
     { label: "Offers", href: "/offer-vault", icon: Vault },
     { label: "Funding", href: "/fund", icon: PiggyBank },
-    { label: "Account", href: "/account", icon: Settings },
   ];
 
   return (
@@ -62,9 +76,11 @@ export function Header() {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
           {user ? (
-            // Logged-in: grouped product nav
+            // Logged-in: My Path and Explore menus, then the workflows
             <>
-              {memberItems.slice(0, 5).map((item) => (
+              <NavMenu label="My Path" items={pathItems} />
+              <NavMenu label="Explore" items={exploreItems} />
+              {memberItems.map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
@@ -83,16 +99,7 @@ export function Header() {
           ) : (
             // Logged-out: simple public nav
             <>
-              <Link
-                to="/universities"
-                activeProps={{ className: "text-foreground font-semibold bg-secondary/80" }}
-                inactiveProps={{
-                  className: "text-muted-foreground hover:text-foreground hover:bg-secondary/40",
-                }}
-                className="px-3 py-1.5 rounded-md text-sm font-medium transition-colors"
-              >
-                Explore
-              </Link>
+              <NavMenu label="Explore" items={exploreItems} />
               <Link
                 to="/intelligence"
                 activeProps={{ className: "text-foreground font-semibold bg-secondary/80" }}
@@ -172,7 +179,7 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden border-b border-border bg-card px-4 pt-3 pb-5 shadow-lg animate-in fade-in-20">
           <div className="flex flex-col space-y-1">
-            {(user ? memberItems : exploreItems).map((item) => {
+            {(user ? [...pathItems, ...memberItems, ...exploreItems] : exploreItems).map((item) => {
               const Icon = item.icon;
               return (
                 <Link
@@ -241,5 +248,32 @@ export function Header() {
         </div>
       )}
     </header>
+  );
+}
+
+type NavItem = { label: string; href: string; icon: typeof Compass };
+
+/** A desktop nav dropdown ("My Path ▾", "Explore ▾"). */
+function NavMenu({ label, items }: { label: string; items: NavItem[] }) {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/40 data-[state=open]:bg-secondary/60 data-[state=open]:text-foreground outline-hidden">
+        {label}
+        <ChevronDown className="w-3.5 h-3.5" />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="start" className="min-w-48">
+        {items.map((item) => {
+          const Icon = item.icon;
+          return (
+            <DropdownMenuItem key={item.href} asChild>
+              <Link to={item.href} className="flex items-center gap-2 cursor-pointer">
+                <Icon className="w-4 h-4 text-muted-foreground" />
+                {item.label}
+              </Link>
+            </DropdownMenuItem>
+          );
+        })}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

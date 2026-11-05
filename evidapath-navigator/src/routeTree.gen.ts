@@ -19,6 +19,7 @@ import { Route as CompareRouteImport } from './routes/compare'
 import { Route as CompareOffersRouteImport } from './routes/compare-offers'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as DiscoverRouteImport } from './routes/discover'
+import { Route as DocumentsRouteImport } from './routes/documents'
 import { Route as FindMyPathRouteImport } from './routes/find-my-path'
 import { Route as FundRouteImport } from './routes/fund'
 import { Route as GuideRouteImport } from './routes/guide'
@@ -79,6 +80,11 @@ const DiscoverRoute = DiscoverRouteImport.update({
   path: '/discover',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DocumentsRoute = DocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FindMyPathRoute = FindMyPathRouteImport.update({
   id: '/find-my-path',
   path: '/find-my-path',
@@ -136,6 +142,7 @@ export interface FileRoutesByFullPath {
   '/compare-offers': typeof CompareOffersRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
+  '/documents': typeof DocumentsRoute
   '/find-my-path': typeof FindMyPathRoute
   '/fund': typeof FundRoute
   '/guide': typeof GuideRoute
@@ -157,6 +164,7 @@ export interface FileRoutesByTo {
   '/compare-offers': typeof CompareOffersRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
+  '/documents': typeof DocumentsRoute
   '/find-my-path': typeof FindMyPathRoute
   '/fund': typeof FundRoute
   '/guide': typeof GuideRoute
@@ -179,6 +187,7 @@ export interface FileRoutesById {
   '/compare-offers': typeof CompareOffersRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
+  '/documents': typeof DocumentsRoute
   '/find-my-path': typeof FindMyPathRoute
   '/fund': typeof FundRoute
   '/guide': typeof GuideRoute
@@ -202,6 +211,7 @@ export interface FileRouteTypes {
     | '/compare-offers'
     | '/dashboard'
     | '/discover'
+    | '/documents'
     | '/find-my-path'
     | '/fund'
     | '/guide'
@@ -223,6 +233,7 @@ export interface FileRouteTypes {
     | '/compare-offers'
     | '/dashboard'
     | '/discover'
+    | '/documents'
     | '/find-my-path'
     | '/fund'
     | '/guide'
@@ -244,6 +255,7 @@ export interface FileRouteTypes {
     | '/compare-offers'
     | '/dashboard'
     | '/discover'
+    | '/documents'
     | '/find-my-path'
     | '/fund'
     | '/guide'
@@ -266,6 +278,7 @@ export interface RootRouteChildren {
   CompareOffersRoute: typeof CompareOffersRoute
   DashboardRoute: typeof DashboardRoute
   DiscoverRoute: typeof DiscoverRoute
+  DocumentsRoute: typeof DocumentsRoute
   FindMyPathRoute: typeof FindMyPathRoute
   FundRoute: typeof FundRoute
   GuideRoute: typeof GuideRoute
@@ -349,6 +362,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DiscoverRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/documents': {
+      id: '/documents'
+      path: '/documents'
+      fullPath: '/documents'
+      preLoaderRoute: typeof DocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/find-my-path': {
       id: '/find-my-path'
       path: '/find-my-path'
@@ -426,6 +446,7 @@ const rootRouteChildren: RootRouteChildren = {
   CompareOffersRoute: CompareOffersRoute,
   DashboardRoute: DashboardRoute,
   DiscoverRoute: DiscoverRoute,
+  DocumentsRoute: DocumentsRoute,
   FindMyPathRoute: FindMyPathRoute,
   FundRoute: FundRoute,
   GuideRoute: GuideRoute,
