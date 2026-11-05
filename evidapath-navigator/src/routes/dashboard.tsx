@@ -396,9 +396,16 @@ function SavedUniversitiesSection() {
         <h3 className="font-display font-bold text-base text-foreground">
           Your saved universities
         </h3>
-        <Link to="/discover" className="text-xs text-primary font-semibold">
-          Add more →
-        </Link>
+        <div className="flex items-center gap-4">
+          {saved.length > 1 && (
+            <Link to="/compare" className="text-xs text-primary font-semibold">
+              Compare these →
+            </Link>
+          )}
+          <Link to="/discover" className="text-xs text-primary font-semibold">
+            Add more →
+          </Link>
+        </div>
       </div>
       {saved.length === 0 ? (
         <div className="rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground">
