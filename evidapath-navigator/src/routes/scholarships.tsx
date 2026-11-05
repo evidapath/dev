@@ -23,9 +23,8 @@ import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { awardHeadline } from "../lib/award-summary";
 import { eligibility, fmtDate } from "../lib/decision-engine";
 import { PageHeader, HeaderStats } from "../components/PageHeader";
-import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
-import { listSavedUniversities, saveUniversity } from "../lib/profile.functions";
+import { useSaveUniversity } from "../lib/use-save-university";
 
 export const Route = createFileRoute("/scholarships")({
   head: () => ({
@@ -106,39 +105,21 @@ function ScholarshipsGraphPage() {
   }, [fetchScholarships]);
 
   // "Add to plan" saves the scholarship's university to My Path; the Plan page
-  // then lists that university's scholarships (the ones you're eligible for) with dates.
-  const saveUniFn = useServerFn(saveUniversity);
-  const listSavedFn = useServerFn(listSavedUniversities);
-  const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
-  useEffect(() => {
-    let active = true;
-    listSavedFn()
-      .then((rows) => active && setSavedIds(new Set(rows.map((r) => r.sanity_university_id))))
-      .catch(() => {});
-    return () => {
-      active = false;
-    };
-  }, [listSavedFn]);
+  // then lists that university's scholarships (the ones you're eligible for) with
+  // dates. Signed out, the student is sent to sign up first (useSaveUniversity).
+  const { savedIds, save } = useSaveUniversity();
   const addToPlan = (s: Scholarship) => {
-    const ids = (s.universityIds ?? []).filter((id) => !savedIds.has(id));
     const uni = PENDING_RE.test(s.universitiesCovered) ? null : s.universitiesCovered;
-    Promise.all(
-      ids.map((id) => saveUniFn({ data: { sanity_university_id: id, university_name: uni } })),
-    )
-      .then(() => {
-        setSavedIds((cur) => new Set([...cur, ...ids]));
+    save(
+      (s.universityIds ?? []).map((id) => ({ id, name: uni })),
+      uni ?? "this university",
+    ).then(
+      (ok) =>
+        ok &&
         toast.success(`${uni ?? "University"} added to your plan.`, {
           action: { label: "See plan", onClick: () => (window.location.href = "/plan") },
-        });
-      })
-      .catch((err: Error) => {
-        console.error("[addToPlan] save failed:", err);
-        toast.error(
-          /not authenticated/i.test(err?.message ?? "")
-            ? "Sign in to add scholarships to your plan."
-            : "Could not save — please try again.",
-        );
-      });
+        }),
+    );
   };
 
   const countries = useMemo(

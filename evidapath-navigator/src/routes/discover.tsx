@@ -1,7 +1,6 @@
 import { useUniversitiesFn, useFxRatesFn } from "../lib/use-live-data";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
 import {
   Search,
   Filter,
@@ -17,7 +16,7 @@ import { toast } from "sonner";
 import { Button } from "../components/ui/button";
 import { type FxRates } from "../lib/fx.functions";
 import { BUDGET_MAX, BUDGET_MIN, annualCostUsd, budgetFit } from "../lib/budget";
-import { listSavedUniversities, saveUniversity } from "../lib/profile.functions";
+import { useSaveUniversity } from "../lib/use-save-university";
 import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
@@ -78,39 +77,13 @@ function DiscoverPage() {
 
   const countries = Array.from(new Set(universities.map((u) => u.country).filter(Boolean))).sort();
 
-  // Save a university to the student's persisted "My Path" (Supabase, RLS-scoped).
-  // Signed-out students are prompted to sign in rather than silently failing.
-  const saveUniFn = useServerFn(saveUniversity);
-  // Already-saved universities show "Saved" so a returning student can see their
-  // path persisted. Signed-out: the list call fails and every card stays "Add".
-  const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
-  const listSavedFn = useServerFn(listSavedUniversities);
-  useEffect(() => {
-    let active = true;
-    listSavedFn()
-      .then((rows) => {
-        if (active) setSavedIds(new Set(rows.map((r) => r.sanity_university_id)));
-      })
-      .catch(() => {});
-    return () => {
-      active = false;
-    };
-  }, [listSavedFn]);
+  // Save a university to the student's "My Path". Signed out, they're sent to sign
+  // up first and the save completes once they're in (useSaveUniversity).
+  const { savedIds, save } = useSaveUniversity();
   const addToMyPath = (u: University) => {
-    saveUniFn({ data: { sanity_university_id: u.id, university_name: u.name } })
-      .then(() => {
-        setSavedIds((s) => new Set(s).add(u.id));
-        toast.success(`${u.shortName} saved to your path.`);
-      })
-      .catch((err: Error) => {
-        // Surface the real reason rather than always blaming sign-in. A silent/
-        // misleading catch here hid a table-GRANT bug for weeks.
-        console.error("[addToMyPath] save failed:", err);
-        const msg = /not authenticated/i.test(err?.message ?? "")
-          ? "Sign in to save universities to your path."
-          : "Could not save — please try again.";
-        toast.error(msg);
-      });
+    save([{ id: u.id, name: u.name }], u.shortName).then(
+      (ok) => ok && toast.success(`${u.shortName} saved to your path.`),
+    );
   };
 
   const filtered = universities.filter((u) => {

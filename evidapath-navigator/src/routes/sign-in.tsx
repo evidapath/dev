@@ -18,8 +18,12 @@ import { getSupabaseBrowserClient } from "../lib/supabase-browser";
 import { useAuth } from "../components/AuthContext";
 
 export const Route = createFileRoute("/sign-in")({
-  validateSearch: (search: Record<string, unknown>) => ({
+  validateSearch: (
+    search: Record<string, unknown>,
+  ): { redirect?: string | undefined; mode?: "signup" } => ({
     redirect: typeof search["redirect"] === "string" ? search["redirect"] : undefined,
+    // ?mode=signup opens on "Create account" (e.g. after Save while signed out).
+    ...(search["mode"] === "signup" ? { mode: "signup" as const } : {}),
   }),
   head: () => ({
     meta: [
@@ -44,9 +48,9 @@ type Mode = "signin" | "signup" | "magic" | "reset";
 function SignInPage() {
   const navigate = useNavigate();
   const { refresh, user } = useAuth();
-  const { redirect } = Route.useSearch();
+  const { redirect, mode: startMode } = Route.useSearch();
 
-  const [mode, setMode] = useState<Mode>("signin");
+  const [mode, setMode] = useState<Mode>(startMode ?? "signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);

@@ -69,6 +69,7 @@ const KIND_META: Record<Kind, { label: string; icon: typeof CalendarCheck }> = {
 };
 
 const DONE_KEY = "evidapath.plan.done";
+const FILTER_KEY = "evidapath.plan.university";
 
 function readDone(): Set<string> {
   try {
@@ -88,7 +89,24 @@ function PlanPage() {
   const [savedIds, setSavedIds] = useState<string[] | null>(null);
   const [input, setInput] = useState<StudentInput | null>(null);
   const [done, setDone] = useState<Set<string>>(new Set());
-  const [filter, setFilter] = useState("all");
+  // Which university's to-do list is open; remembered on this device.
+  const [filter, setFilterState] = useState("all");
+  useEffect(() => {
+    try {
+      const v = localStorage.getItem(FILTER_KEY);
+      if (v) setFilterState(v);
+    } catch {
+      /* storage unavailable */
+    }
+  }, []);
+  const setFilter = (id: string) => {
+    setFilterState(id);
+    try {
+      localStorage.setItem(FILTER_KEY, id);
+    } catch {
+      /* storage unavailable */
+    }
+  };
   const [showAll, setShowAll] = useState(false);
 
   const fetchProfile = useServerFn(getProfile);
@@ -175,13 +193,17 @@ function PlanPage() {
       return next;
     });
 
-  const shown = items.filter((i) => filter === "all" || i.uniId === filter);
+  const unis = Array.from(new Map(items.map((i) => [i.uniId, i.uni])).entries());
+  // A remembered university that's no longer on the path falls back to "all".
+  const current = filter !== "all" && unis.some(([id]) => id === filter) ? filter : "all";
+  const shown = items.filter((i) => current === "all" || i.uniId === current);
   const dated = shown.filter((i) => i.date).sort((a, b) => a.date!.localeCompare(b.date!));
   const anytime = shown.filter((i) => !i.date);
   // Soonest dated deadline first, then preparation, skipping what's done.
   const nextUp = [...dated, ...anytime].filter((i) => !done.has(i.id)).slice(0, 3);
-  const unis = Array.from(new Map(items.map((i) => [i.uniId, i.uni])).entries());
-  const completed = items.filter((i) => done.has(i.id)).length;
+  // Progress counts only the university being viewed.
+  const completed = shown.filter((i) => done.has(i.id)).length;
+  const currentName = unis.find(([id]) => id === current)?.[1];
   const ready = !loading && savedIds !== null && input !== null;
 
   return (
@@ -203,12 +225,12 @@ function PlanPage() {
             text: "The plan is built from universities on your path. Save them from Find My Path or the university list.",
           },
           {
-            title: "Work through “Coming up”",
-            text: "These have official deadlines — application rounds and scholarships — soonest first.",
+            title: "Pick a university",
+            text: "Each university has its own to-do list and progress. Choose “All universities” to see your next steps across them.",
           },
           {
-            title: "Then “Prepare now”",
-            text: "Subjects to check, English tests to book, questions to ask universities, and funding steps.",
+            title: "Deadlines first, then preparation",
+            text: "Each list starts with official deadlines, soonest first, then subjects, English tests and funding steps.",
           },
           {
             title: "Tick things off",
@@ -252,10 +274,10 @@ function PlanPage() {
                 <button
                   key={id}
                   role="tab"
-                  aria-selected={filter === id}
+                  aria-selected={current === id}
                   onClick={() => setFilter(id)}
                   className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
-                    filter === id
+                    current === id
                       ? "bg-primary text-primary-foreground border-primary"
                       : "bg-card text-muted-foreground border-border hover:text-foreground"
                   }`}
@@ -265,13 +287,14 @@ function PlanPage() {
               ))}
             </div>
             <span className="text-xs text-muted-foreground">
-              {completed} of {items.length} done
+              {currentName ? `${currentName}: ` : ""}
+              {completed} of {shown.length} done
             </span>
           </div>
           <div className="h-1.5 rounded-full bg-secondary overflow-hidden" aria-hidden>
             <div
               className="h-full bg-primary transition-all duration-500"
-              style={{ width: `${items.length ? (completed / items.length) * 100 : 0}%` }}
+              style={{ width: `${shown.length ? (completed / shown.length) * 100 : 0}%` }}
             />
           </div>
 
@@ -286,7 +309,9 @@ function PlanPage() {
           />
           <PlanSection
             title="Your next 3"
-            empty="All done — nice work."
+            empty={
+              currentName ? `All done for ${currentName} — nice work.` : "All done — nice work."
+            }
             items={nextUp}
             done={done}
             toggle={toggle}
@@ -301,24 +326,30 @@ function PlanPage() {
             />
             {showAll ? "Hide full plan" : `See full plan (${shown.length} steps)`}
           </button>
-          {showAll && (
-            <>
-              <PlanSection
-                title="Coming up"
-                empty="No upcoming dated deadlines for this cycle."
-                items={dated}
-                done={done}
-                toggle={toggle}
-              />
-              <PlanSection
-                title="Prepare now"
-                empty="Nothing else to prepare — nice."
-                items={anytime}
-                done={done}
-                toggle={toggle}
-              />
-            </>
-          )}
+          {showAll &&
+            // One to-do list per university, each with its own progress.
+            unis
+              .filter(([id]) => current === "all" || id === current)
+              .map(([id, name]) => {
+                const mine = items.filter((i) => i.uniId === id);
+                const list = [
+                  ...mine.filter((i) => i.date).sort((a, b) => a.date!.localeCompare(b.date!)),
+                  ...mine.filter((i) => !i.date),
+                ];
+                const n = mine.filter((i) => done.has(i.id)).length;
+                return (
+                  <PlanSection
+                    key={id}
+                    title={name}
+                    progress={`${n} of ${mine.length} done`}
+                    empty="Nothing to do here yet."
+                    items={list}
+                    done={done}
+                    toggle={toggle}
+                    hideUni
+                  />
+                );
+              })}
         </>
       )}
     </div>
@@ -331,16 +362,25 @@ function PlanSection({
   items,
   done,
   toggle,
+  progress,
+  hideUni,
 }: {
   title: string;
   empty: string;
   items: PlanItem[];
   done: Set<string>;
   toggle: (id: string) => void;
+  /** e.g. "2 of 5 done", shown beside the title. */
+  progress?: string;
+  /** Leave the university off each row (the section is one university's list). */
+  hideUni?: boolean;
 }) {
   return (
     <section className="space-y-3">
-      <h2 className="font-display font-bold text-lg text-foreground">{title}</h2>
+      <div className="flex items-baseline justify-between gap-3">
+        <h2 className="font-display font-bold text-lg text-foreground">{title}</h2>
+        {progress && <span className="text-xs text-muted-foreground shrink-0">{progress}</span>}
+      </div>
       {items.length === 0 ? (
         <p className="text-sm text-muted-foreground">{empty}</p>
       ) : (
@@ -379,8 +419,12 @@ function PlanSection({
                       <Icon className="w-3 h-3" />
                       {meta.label}
                     </span>
-                    <span>·</span>
-                    <span>{i.uni}</span>
+                    {!hideUni && (
+                      <>
+                        <span>·</span>
+                        <span>{i.uni}</span>
+                      </>
+                    )}
                     {i.source && (
                       <>
                         <span>·</span>

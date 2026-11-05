@@ -29,15 +29,11 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { submitGhlForm } from "../lib/ghl";
+import { addPendingSaves, useSaveUniversity } from "../lib/use-save-university";
 import { Button } from "../components/ui/button";
 import { type FxRates } from "../lib/fx.functions";
 import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
-import {
-  getProfile,
-  upsertProfile,
-  saveUniversity,
-  listSavedUniversities,
-} from "../lib/profile.functions";
+import { getProfile, upsertProfile } from "../lib/profile.functions";
 import { useAuth } from "../components/AuthContext";
 import { CounselingWaitlist } from "../components/CounselingWaitlist";
 import type { Scholarship, University } from "../lib/mock-data";
@@ -107,7 +103,6 @@ function FindMyPathPage() {
   const [answers, setAnswers] = useState<IntakeAnswers>(DEFAULTS);
   const [showResults, setShowResults] = useState(false);
   const [quick, setQuick] = useState(true);
-  const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
   const [universities, setUniversities] = useState<University[]>([]);
   const [source, setSource] = useState<"sanity" | "mock" | null>(null);
   const [fx, setFx] = useState<FxRates | null>(null);
@@ -144,15 +139,8 @@ function FindMyPathPage() {
   // answers persist. Silently ignored when signed out (intake still works locally).
   const getProfileFn = useServerFn(getProfile);
   const upsertProfileFn = useServerFn(upsertProfile);
-  const listSavedFn = useServerFn(listSavedUniversities);
   useEffect(() => {
     let active = true;
-    listSavedFn()
-      .then((rows) => {
-        if (!active) return;
-        setSavedIds(new Set(rows.map((r) => r.sanity_university_id)));
-      })
-      .catch(() => {});
     getProfileFn()
       .then((p) => {
         if (!active || !p) return;
@@ -178,54 +166,42 @@ function FindMyPathPage() {
     return () => {
       active = false;
     };
-  }, [getProfileFn, listSavedFn]);
+  }, [getProfileFn]);
 
   // Moving between the form and the results starts at the top of the page.
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [showResults, quick]);
 
-  // Save a pathway's university to the student's persisted path (Supabase).
-  const saveUniFn = useServerFn(saveUniversity);
+  // Save a pathway's university to the account; signed out, the student is sent
+  // to sign up first and the save completes after (useSaveUniversity).
+  const { user } = useAuth();
+  const { savedIds, save } = useSaveUniversity();
   const saveUni = (u: University) => {
-    saveUniFn({ data: { sanity_university_id: u.id, university_name: u.name } })
-      .then(() => {
-        setSavedIds((s) => new Set(s).add(u.id));
-        toast.success(`${u.shortName} saved to your path.`);
-      })
-      .catch((err: Error) => {
-        console.error("[find-my-path] save university failed:", err);
-        toast.error(
-          /not authenticated/i.test(err?.message ?? "")
-            ? "Sign in to save universities to your path."
-            : "Could not save — please try again.",
-        );
-      });
+    save([{ id: u.id, name: u.name }], u.shortName).then(
+      (ok) => ok && toast.success(`${u.shortName} saved to your path.`),
+    );
   };
 
-  // Bottom "Save my path" action. When signed in: save ALL shown pathways + the
-  // profile, then go to the dashboard. When signed out: send to sign-in (the
-  // intake stays in session). Previously this was a dead <Link to="/sign-in">
-  // that saved nothing even for logged-in users (the reported bug).
-  const { user } = useAuth();
+  // Bottom "Save my path" action: save ALL shown pathways. Signed in, they go to
+  // the account with the profile, then the dashboard. Signed out, they're kept on
+  // this device and the student goes to sign up; PendingSavesSync moves them into
+  // the account once they're in.
   const saveMyPath = () => {
+    const items = pathways.map((u) => ({ id: u.id, name: u.name }));
     if (!user) {
-      navigate({ to: "/sign-in", search: { redirect: "/dashboard" } });
+      addPendingSaves(items);
+      navigate({ to: "/sign-in", search: { mode: "signup", redirect: "/dashboard" } });
       return;
     }
     saveProfile();
-    Promise.allSettled(
-      pathways.map((u) =>
-        saveUniFn({ data: { sanity_university_id: u.id, university_name: u.name } }),
-      ),
-    )
-      .then((results) => {
-        const ok = results.filter((r) => r.status === "fulfilled").length;
-        if (ok > 0) toast.success(`Saved ${ok} universit${ok === 1 ? "y" : "ies"} to your path.`);
-        else toast.error("Could not save your path — please try again.");
-        navigate({ to: "/dashboard" });
-      })
-      .catch(() => toast.error("Could not save your path — please try again."));
+    save(items, "Your path").then((ok) => {
+      if (ok)
+        toast.success(
+          `Saved ${items.length} universit${items.length === 1 ? "y" : "ies"} to your path.`,
+        );
+      navigate({ to: "/dashboard" });
+    });
   };
 
   const set = (k: keyof IntakeAnswers, v: string) =>
