@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import type { University } from "../lib/mock-data";
 import { formatCost, NOT_PUBLISHED } from "../lib/format";
 import { AdmissionsPanel } from "./AdmissionsPanel";
+import { CardScholarships } from "./CardScholarships";
 
 // Skeleton placeholder shown while verified data loads — keeps the grid layout
 // stable (no pop-in / layout shift) and signals progress with a gentle pulse.
@@ -192,6 +193,9 @@ export function UniversityCard({ univ, index = 0 }: { univ: University; index?: 
             </p>
           )}
         </div>
+        {/* Scholarships near the top, with who can apply and deadlines */}
+        <CardScholarships uniId={univ.id} />
+
         {(costs.livingSource || residencyNote) && (
           <div className="rounded-lg bg-secondary/50 px-3 py-2 space-y-1 text-[11px] leading-snug text-muted-foreground">
             {costs.livingSource && (
