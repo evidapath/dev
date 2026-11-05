@@ -16,6 +16,7 @@ import { PageHeader } from "../components/PageHeader";
 import { useServerFn } from "@tanstack/react-start";
 import { getProfile, listSavedUniversities } from "../lib/profile.functions";
 import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
+import { BudgetInput } from "../components/BudgetInput";
 
 function money(value: number | null): string {
   return formatCurrency(value, "USD");
@@ -243,24 +244,13 @@ function FundPage() {
             />
           </div>
 
-          <div>
-            <div className="flex justify-between items-center mb-1">
-              <label className="text-xs font-semibold text-muted-foreground">Family can pay</label>
-              <span className="text-sm font-bold text-foreground tabular-nums">
-                {money(expectedFamilyContribution)} / year
-              </span>
-            </div>
-            <input
-              type="range"
-              min={BUDGET_MIN}
-              max={BUDGET_MAX}
-              step="5000"
-              value={expectedFamilyContribution}
-              onChange={(e) => setExpectedFamilyContribution(Number(e.target.value))}
-              className="w-full accent-primary mt-2"
-              aria-label="Family annual capacity in US dollars"
-            />
-          </div>
+          <BudgetInput
+            usd={expectedFamilyContribution}
+            onChange={setExpectedFamilyContribution}
+            label="Family can pay"
+            id="fund-family"
+            noLimitAtMax={false}
+          />
 
           <div>
             <div className="flex justify-between items-center mb-1">

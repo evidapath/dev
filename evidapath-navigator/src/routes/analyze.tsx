@@ -39,6 +39,7 @@ import { AnalysisFootnote, DecisionAnalysisView } from "../components/DecisionAn
 import { ScholarshipsAtGlance } from "../components/ScholarshipsAtGlance";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { PageHeader } from "../components/PageHeader";
+import { BudgetInput } from "../components/BudgetInput";
 
 export const Route = createFileRoute("/analyze")({
   head: () => ({
@@ -339,24 +340,12 @@ function AnalyzePage() {
                 })}
               </div>
             </div>
-            <div>
-              <label className={label} htmlFor="an-budget">
-                Budget per year:{" "}
-                {input.budgetUsd >= BUDGET_MAX
-                  ? "No limit"
-                  : `$${input.budgetUsd.toLocaleString()}`}
-              </label>
-              <input
-                id="an-budget"
-                type="range"
-                min={BUDGET_MIN}
-                max={BUDGET_MAX}
-                step={5000}
-                value={Math.min(Math.max(input.budgetUsd, BUDGET_MIN), BUDGET_MAX)}
-                onChange={(e) => set("budgetUsd", Number(e.target.value))}
-                className="w-full accent-primary mt-3"
-              />
-            </div>
+            <BudgetInput
+              usd={input.budgetUsd}
+              onChange={(v) => set("budgetUsd", v)}
+              label="Budget per year"
+              id="an-budget"
+            />
           </div>
         </section>
       )}

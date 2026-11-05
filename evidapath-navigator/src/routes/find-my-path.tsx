@@ -39,6 +39,7 @@ import { CounselingWaitlist } from "../components/CounselingWaitlist";
 import type { Scholarship, University } from "../lib/mock-data";
 import { DataStatus } from "../components/DataStatus";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
+import { BudgetInput } from "../components/BudgetInput";
 
 export const Route = createFileRoute("/find-my-path")({
   head: () => ({
@@ -586,32 +587,8 @@ function RegionSelect({
 }
 
 function BudgetSlider({ value, set }: { value: string; set: SetAnswer }) {
-  const n = Number(value);
   return (
-    <div className="space-y-2">
-      <div className="flex justify-between items-center">
-        <label className="text-xs font-semibold uppercase text-muted-foreground">
-          Annual budget (USD)
-        </label>
-        <span className="font-mono text-sm font-bold text-foreground">
-          {n >= BUDGET_MAX ? "No limit" : `$${n.toLocaleString()}/yr`}
-        </span>
-      </div>
-      <input
-        type="range"
-        min={BUDGET_MIN}
-        max={BUDGET_MAX}
-        step="5000"
-        value={value}
-        onChange={(e) => set("budget", e.target.value)}
-        className="w-full accent-primary"
-        aria-label="Annual budget in US dollars"
-      />
-      <div className="flex justify-between text-[10px] text-muted-foreground">
-        <span>${BUDGET_MIN / 1000}k</span>
-        <span>$90k+ (no limit)</span>
-      </div>
-    </div>
+    <BudgetInput usd={Number(value)} onChange={(v) => set("budget", String(v))} id="fmp-budget" />
   );
 }
 

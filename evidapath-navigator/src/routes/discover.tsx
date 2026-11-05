@@ -21,6 +21,7 @@ import type { University } from "../lib/mock-data";
 import { formatCost } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { PageHeader } from "../components/PageHeader";
+import { BudgetInput } from "../components/BudgetInput";
 
 export const Route = createFileRoute("/discover")({
   head: () => ({
@@ -174,25 +175,12 @@ function DiscoverPage() {
           </div>
 
           {/* Max Annual Budget Slider */}
-          <div>
-            <div className="flex justify-between items-center mb-1">
-              <label className="text-xs font-semibold uppercase text-muted-foreground">
-                Max Annual Cost
-              </label>
-              <span className="font-mono text-xs font-bold text-foreground">
-                {maxBudget >= BUDGET_MAX ? "No limit" : `$${maxBudget.toLocaleString()} USD`}
-              </span>
-            </div>
-            <input
-              type="range"
-              min={BUDGET_MIN}
-              max={BUDGET_MAX}
-              step="5000"
-              value={maxBudget}
-              onChange={(e) => setMaxBudget(Number(e.target.value))}
-              className="w-full accent-primary mt-2"
-            />
-          </div>
+          <BudgetInput
+            usd={maxBudget}
+            onChange={setMaxBudget}
+            label="Max annual cost"
+            id="disc-budget"
+          />
         </div>
       </div>
 

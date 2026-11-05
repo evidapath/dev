@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import type { PathwayGroup, PathwayResult, PathwayRow } from "../lib/pathways";
 import { fmtDate, type DecisionAnalysis } from "../lib/decision-engine";
+import { LocalAmount } from "./LocalAmount";
 import { money, TONE_CLASS, verdictFor, type Tone } from "../lib/verdict";
 import type { University } from "../lib/mock-data";
 import { CostBar } from "./CostBar";
@@ -466,6 +467,7 @@ function CompactCard({ row, ctx }: { row: PathwayRow; ctx: Ctx }) {
         </div>
         <div className="text-right shrink-0">
           <p className="font-mono font-bold text-foreground">{money(row.netAnnualUsd)}</p>
+          <LocalAmount usd={row.netAnnualUsd} />
           <p className="text-[10px] text-muted-foreground">
             {f.annualComplete ? "per year, all-in" : "tuition / yr"}
           </p>
