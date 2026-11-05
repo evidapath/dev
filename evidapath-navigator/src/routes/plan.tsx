@@ -24,6 +24,7 @@ import { analyze, deadlinesFor, fmtDate, type StudentInput } from "../lib/decisi
 import { currentCurriculum } from "../lib/curricula";
 import { storedUkHome } from "../lib/residence";
 import { PageHeader } from "../components/PageHeader";
+import { DeadlineReminders } from "../components/DeadlineReminders";
 
 export const Route = createFileRoute("/plan")({
   head: () => ({
@@ -204,6 +205,7 @@ function PlanPage() {
   // Progress counts only the university being viewed.
   const completed = shown.filter((i) => done.has(i.id)).length;
   const currentName = unis.find(([id]) => id === current)?.[1];
+  const today = new Date().toISOString().slice(0, 10);
   const ready = !loading && savedIds !== null && input !== null;
 
   return (
@@ -264,6 +266,18 @@ function PlanPage() {
         </div>
       ) : (
         <>
+          <DeadlineReminders
+            items={items
+              .filter((i) => i.date && i.date >= today && !done.has(i.id))
+              .sort((a, b) => a.date!.localeCompare(b.date!))
+              .map((i) => ({
+                id: i.id,
+                date: i.date!,
+                title: i.title,
+                uni: i.uni,
+                ...(i.source ? { source: i.source } : {}),
+              }))}
+          />
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div
               className="flex flex-wrap gap-1.5"
