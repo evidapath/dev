@@ -21,6 +21,7 @@ import {
   LogOut,
   ChevronDown,
   UserCircle,
+  Briefcase,
 } from "lucide-react";
 
 export function Header() {
@@ -34,6 +35,7 @@ export function Header() {
   const exploreItems = [
     { label: "Universities", href: "/universities", icon: GraduationCap },
     { label: "Scholarships", href: "/scholarships", icon: BookOpen },
+    { label: "Careers", href: "/careers", icon: Briefcase },
     { label: "Intelligence", href: "/intelligence", icon: ShieldCheck },
   ];
 

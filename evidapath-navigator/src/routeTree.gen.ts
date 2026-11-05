@@ -14,6 +14,7 @@ import { Route as AcademicReadinessRouteImport } from './routes/academic-readine
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as AnalyzeRouteImport } from './routes/analyze'
 import { Route as ApplicationsRouteImport } from './routes/applications'
+import { Route as CareersRouteImport } from './routes/careers'
 import { Route as CompareOffersRouteImport } from './routes/compare-offers'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as DiscoverRouteImport } from './routes/discover'
@@ -50,6 +51,11 @@ const AnalyzeRoute = AnalyzeRouteImport.update({
 const ApplicationsRoute = ApplicationsRouteImport.update({
   id: '/applications',
   path: '/applications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CompareOffersRoute = CompareOffersRouteImport.update({
@@ -119,6 +125,7 @@ export interface FileRoutesByFullPath {
   '/account': typeof AccountRoute
   '/analyze': typeof AnalyzeRoute
   '/applications': typeof ApplicationsRoute
+  '/careers': typeof CareersRoute
   '/compare-offers': typeof CompareOffersRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
@@ -138,6 +145,7 @@ export interface FileRoutesByTo {
   '/account': typeof AccountRoute
   '/analyze': typeof AnalyzeRoute
   '/applications': typeof ApplicationsRoute
+  '/careers': typeof CareersRoute
   '/compare-offers': typeof CompareOffersRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
@@ -158,6 +166,7 @@ export interface FileRoutesById {
   '/account': typeof AccountRoute
   '/analyze': typeof AnalyzeRoute
   '/applications': typeof ApplicationsRoute
+  '/careers': typeof CareersRoute
   '/compare-offers': typeof CompareOffersRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
@@ -179,6 +188,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/analyze'
     | '/applications'
+    | '/careers'
     | '/compare-offers'
     | '/dashboard'
     | '/discover'
@@ -198,6 +208,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/analyze'
     | '/applications'
+    | '/careers'
     | '/compare-offers'
     | '/dashboard'
     | '/discover'
@@ -217,6 +228,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/analyze'
     | '/applications'
+    | '/careers'
     | '/compare-offers'
     | '/dashboard'
     | '/discover'
@@ -237,6 +249,7 @@ export interface RootRouteChildren {
   AccountRoute: typeof AccountRoute
   AnalyzeRoute: typeof AnalyzeRoute
   ApplicationsRoute: typeof ApplicationsRoute
+  CareersRoute: typeof CareersRoute
   CompareOffersRoute: typeof CompareOffersRoute
   DashboardRoute: typeof DashboardRoute
   DiscoverRoute: typeof DiscoverRoute
@@ -286,6 +299,13 @@ declare module '@tanstack/react-router' {
       path: '/applications'
       fullPath: '/applications'
       preLoaderRoute: typeof ApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/compare-offers': {
@@ -381,6 +401,7 @@ const rootRouteChildren: RootRouteChildren = {
   AccountRoute: AccountRoute,
   AnalyzeRoute: AnalyzeRoute,
   ApplicationsRoute: ApplicationsRoute,
+  CareersRoute: CareersRoute,
   CompareOffersRoute: CompareOffersRoute,
   DashboardRoute: DashboardRoute,
   DiscoverRoute: DiscoverRoute,

@@ -91,6 +91,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/careers" className="hover:text-primary transition-colors">
+                  Careers by degree
+                </Link>
+              </li>
+              <li>
                 <Link
                   to="/sign-in"
                   search={{ redirect: undefined }}

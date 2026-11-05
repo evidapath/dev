@@ -37,6 +37,8 @@ function storedLanguages(curriculum: string): string[] {
 }
 import { AnalysisFootnote, DecisionAnalysisView } from "../components/DecisionAnalysisView";
 import { ScholarshipsAtGlance } from "../components/ScholarshipsAtGlance";
+import { CareerPaths } from "../components/CareerPaths";
+import { careerFamily } from "../lib/careers";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { PageHeader } from "../components/PageHeader";
 import { BudgetInput } from "../components/BudgetInput";
@@ -360,6 +362,10 @@ function AnalyzePage() {
         <section className="space-y-4" aria-live="polite">
           <VerdictHero u={univ} a={result} budgetUsd={input.budgetUsd} />
           <ScholarshipsAtGlance a={result} uniName={univ.shortName || univ.name} />
+          <CareerPaths
+            family={careerFamily(result.program?.fieldOfStudy ?? "", result.programName)}
+            limit={4}
+          />
           <button
             onClick={() => setFull(!full)}
             aria-expanded={full}
