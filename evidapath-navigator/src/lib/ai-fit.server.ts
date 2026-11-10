@@ -15,7 +15,14 @@ import { visaFor } from "./visa";
 import type { University } from "./mock-data";
 import { AI_FIT_RULES_REMINDER, AI_FIT_SYSTEM_PROMPT, AI_FIT_TOOL } from "./ai-fit.prompt";
 
-export const AI_FIT_MODEL = "claude-sonnet-5-5";
+// Sonnet by default. Set AI_FIT_MODEL=claude-haiku-5-5 to use Haiku (cheaper; in
+// tests on the same students it chose the same top picks, and every answer still
+// goes through validate()). Any other value is ignored.
+const MODELS = ["claude-sonnet-5-5", "claude-haiku-5-5"];
+export const aiFitModel = (): string => {
+  const m = process.env["AI_FIT_MODEL"];
+  return m && MODELS.includes(m) ? m : MODELS[0]!;
+};
 
 // ─── Access ────────────────────────────────────────────────────────────────
 
@@ -265,7 +272,91 @@ function buildPack(
     });
     meta.set(u.id, m);
   }
+  addComparisons(candidates, meta);
   return { student: studentFacts(s), candidates, meta };
+}
+
+// Positions across the whole list, worked out here so the model never has to
+// (and can't get them wrong): how demanding each published requirement is among
+// those the student's band meets, and how cheap each all-in cost is among those
+// that fit the budget. The validator lets "highest"/"lowest" claims through only
+// when they cite one of these facts.
+function addComparisons(candidates: Candidate[], meta: Map<string, Meta>) {
+  const ord = (n: number) => (n === 1 ? "1st" : n === 2 ? "2nd" : n === 3 ? "3rd" : `${n}th`);
+  const factOf = (c: Candidate, kind: string) => c.facts.find((f) => f.kind === kind);
+  const place = (
+    rows: { c: Candidate; v: number }[],
+    better: (a: number, b: number) => boolean,
+    say: (pos: number, n: number, tied: boolean) => string,
+  ) => {
+    for (const r of rows) {
+      const pos = 1 + rows.filter((o) => better(o.v, r.v)).length;
+      const tied = rows.some((o) => o !== r && o.v === r.v);
+      r.c.facts.push({
+        id: `${r.c.university_id}:compare-${r.c.facts.filter((f) => f.kind === "comparison").length + 1}`,
+        kind: "comparison",
+        text: say(pos, rows.length, tied),
+      });
+    }
+  };
+  const meets = candidates
+    .map((c) => ({
+      c,
+      v: Number(factOf(c, "selectivity")?.text.match(/(\d\.\d\d) on/)?.[1]),
+      ok: /^Entry for [^:]*: Your band meets/.test(factOf(c, "entry")?.text ?? ""),
+    }))
+    .filter((x) => x.ok && Number.isFinite(x.v));
+  const grades = (scope: string) => (pos: number, n: number, tied: boolean) =>
+    `Compared across this list: of the ${n} programmes ${scope}, this one's published requirement is ${
+      pos === 1
+        ? `${tied ? "joint " : ""}the highest`
+        : pos === n
+          ? `${tied ? "joint " : ""}the lowest`
+          : `${tied ? "joint " : ""}${ord(pos)} of ${n}, counting from the one that asks for the most`
+    } (selectivity scale).`;
+  if (meets.length > 1)
+    place(meets, (a, b) => a > b, grades("whose published requirement your band meets"));
+  const meetsInBudget = meets.filter((x) => !meta.get(x.c.university_id)?.overBudget);
+  if (meetsInBudget.length > 1 && meetsInBudget.length < meets.length)
+    place(
+      meetsInBudget,
+      (a, b) => a > b,
+      grades("whose published requirement your band meets and that fit your budget"),
+    );
+  const costs = candidates
+    .map((c) => ({ c, f: factOf(c, "cost") }))
+    .filter((x) => x.f && /all-in/.test(x.f.text) && !meta.get(x.c.university_id)?.overBudget)
+    .map((x) => ({ c: x.c, v: Number(x.f!.text.match(/\$([\d,]+)/)?.[1]?.replace(/,/g, "")) }))
+    .filter((x) => Number.isFinite(x.v));
+  const noLimit = candidates.some((c) => /No budget limit/.test(factOf(c, "budget")?.text ?? ""));
+  if (costs.length > 1 && !noLimit)
+    place(
+      costs,
+      (a, b) => a < b,
+      (pos, n, tied) =>
+        `Compared across this list: of the ${n} programmes with an all-in cost that fits your budget, this one's cost is ${
+          pos === 1
+            ? `${tied ? "joint " : ""}the lowest`
+            : `${tied ? "joint " : ""}${ord(pos)} of ${n}, counting from the cheapest`
+        }.`,
+    );
+}
+
+/** "46 programmes match … 13 fit your budget …": counted from the facts. */
+function codeSummary(pack: ReturnType<typeof buildPack>): CitedLine {
+  const has = (re: RegExp, kind: string) =>
+    pack.candidates.filter((c) => c.facts.some((f) => f.kind === kind && re.test(f.text)));
+  const n = pack.candidates.length;
+  const meets = has(/^Entry for [^:]*: Your band meets/, "entry");
+  const fits = has(/^Fits/, "budget");
+  const both = meets.filter((c) => fits.includes(c)).length;
+  const noLimit = has(/No budget limit/, "budget").length > 0;
+  const facts = pack.student.filter((f) => ["S:subject", "S:grades", "S:budget"].includes(f.id));
+  const progs = (k: number) => `${k} programme${k === 1 ? "" : "s"}`;
+  const text = noLimit
+    ? `${progs(n)} here offer your subject (or a closely related one) in a language you study in. Your grade band meets the published requirement at ${meets.length} of them. You set no budget limit, so cost wasn't used to narrow them.`
+    : `${progs(n)} here offer your subject (or a closely related one) in a language you study in. ${fits.length} fit your budget, your grade band meets the published requirement at ${meets.length}, and ${both} do both.`;
+  return { text, facts };
 }
 
 // ─── Validation ────────────────────────────────────────────────────────────
@@ -274,6 +365,8 @@ const BANNED =
   /\b(rank\w*|top[- ]?ranked|top \d+|prestig\w*|reputation\w*|renowned|world[- ]class|elite|leading|famous|ivy league|russell group|best university|highly regarded|well[- ]known)\b/i;
 const PREDICT =
   /\b(will get in|likely to (be admitted|get in)|good chance|guaranteed (a place|admission)|you('| a)re in)\b/i;
+const SUPERLATIVE =
+  /\b(highest|lowest|cheapest|smallest|largest|biggest|closest|most (?:selective|demanding|affordable)|least (?:selective|demanding|expensive))\b/i;
 const num = (s: string) => (s.match(/\d[\d,]*(?:\.\d+)?/g) ?? []).map((n) => n.replace(/,/g, ""));
 
 export interface CitedLine {
@@ -311,9 +404,53 @@ function validate(raw: unknown, pack: ReturnType<typeof buildPack>): FitResult {
     for (const f of c.facts) factIndex.set(f.id, { fact: f, uni: c.university_id });
   let removed = 0;
 
+  // A pick's line may cite another university's selectivity or cost only to
+  // compare, and only if the comparison is true: it must cite this university's
+  // own fact of that kind, say one direction ("higher"/"more" or "lower"/"less"),
+  // and that direction must hold against every other one cited. Costs compare only
+  // like with like (all-in with all-in, tuition with tuition).
+  const value = (f: Fact) =>
+    f.kind === "selectivity"
+      ? Number(f.text.match(/(\d\.\d\d) on/)?.[1])
+      : Number(f.text.match(/\$([\d,]+)/)?.[1]?.replace(/,/g, ""));
+  const scope = (f: Fact) => (f.kind === "cost" ? /all-in/.test(f.text) : true);
+  const comparisonOk = (text: string, uni: string, facts: { fact: Fact; uni: string | null }[]) => {
+    // "Highest" / "lowest" / "cheapest" claims come only from this university's own
+    // "comparison" fact (worked out in code across the whole list), and the fact
+    // must say that same extreme.
+    if (SUPERLATIVE.test(text)) {
+      const cmp = facts
+        .filter((x) => x.uni === uni && x.fact.kind === "comparison")
+        .map((x) => x.fact.text)
+        .join(" ");
+      if (!cmp || /\bclosest\b/i.test(text)) return false;
+      if (/\b(highest|largest|biggest|most)\b/i.test(text) && !/\bhighest\b/.test(cmp))
+        return false;
+      if (/\b(lowest|cheapest|smallest|least)\b/i.test(text) && !/\blowest\b/.test(cmp))
+        return false;
+    }
+    const others = facts.filter((x) => x.uni !== null && x.uni !== uni);
+    // "cheaper than the US programmes" with nothing cited to compare against. "than
+    // you(r)" and "than [the] 3.00 GPA" are fine: the number is checked separately.
+    if (!others.length)
+      return !/\bthan\b(?!\s+(?:you\b|your\b|(?:the\s+|a\s+)?[$£€]?\d))/i.test(text);
+    const up = /\b(higher|more|greater|above)\b/i.test(text);
+    const down = /\b(lower|less|fewer|below|cheaper)\b/i.test(text);
+    if (up === down) return false;
+    return others.every((o) => {
+      if (o.fact.kind !== "selectivity" && o.fact.kind !== "cost") return false;
+      const own = facts.find((x) => x.uni === uni && x.fact.kind === o.fact.kind);
+      if (!own || scope(own.fact) !== scope(o.fact)) return false;
+      const a = value(own.fact);
+      const b = value(o.fact);
+      return Number.isFinite(a) && Number.isFinite(b) && (up ? a > b : a < b);
+    });
+  };
+
   // One line is kept only if: it cites ≥1 known fact; every cited fact belongs to
-  // this university (or the student); it has no banned or predicting words; and
-  // every number in it appears in one of the cited facts.
+  // this university (or the student), apart from a true comparison (above); it has
+  // no banned or predicting words; and every number in it appears in one of the
+  // cited facts.
   const line = (l: RawLine, uni: string | null, anyUni = false): CitedLine | null => {
     const text = typeof l.text === "string" ? l.text.trim() : "";
     const ids = Array.isArray(l.fact_ids)
@@ -326,7 +463,7 @@ function validate(raw: unknown, pack: ReturnType<typeof buildPack>): FitResult {
       text.length > 0 &&
       facts.length > 0 &&
       facts.length === ids.length &&
-      facts.every((x) => anyUni || x.uni === null || x.uni === uni) &&
+      (anyUni || (uni !== null && comparisonOk(text, uni, facts))) &&
       !BANNED.test(text) &&
       !PREDICT.test(text) &&
       num(text).every((n) => facts.some((x) => num(x.fact.text).includes(n)));
@@ -338,12 +475,12 @@ function validate(raw: unknown, pack: ReturnType<typeof buildPack>): FitResult {
   };
 
   const r = (raw ?? {}) as {
-    summary?: unknown;
-    summary_fact_ids?: unknown;
     picks?: unknown;
     data_gaps?: unknown;
   };
-  const summary = line({ text: r.summary, fact_ids: r.summary_fact_ids }, null, true);
+  // The summary is counted here, not written by the model: in tests a model's
+  // summary mixed up two universities, and a summary can't be checked line by line.
+  const summary = codeSummary(pack);
   const seen = new Set<string>();
   const perCategory = new Map<string, number>();
   const picks: FitPick[] = [];
@@ -368,15 +505,7 @@ function validate(raw: unknown, pack: ReturnType<typeof buildPack>): FitResult {
       "safer_option",
     ].includes(cat);
     const overallOk = cat !== "best_overall_fit" || (m && !m.overBudget && !m.belowGrades);
-    if (
-      !cand ||
-      seen.has(uid) ||
-      !catOk ||
-      !overallOk ||
-      (perCategory.get(cat) ?? 0) >= 2 ||
-      BANNED.test(headline) ||
-      num(headline).length
-    ) {
+    if (!cand || seen.has(uid) || !catOk || !overallOk || (perCategory.get(cat) ?? 0) >= 2) {
       removed++;
       continue;
     }
@@ -399,23 +528,41 @@ function validate(raw: unknown, pack: ReturnType<typeof buildPack>): FitResult {
       country: cand.country,
       programme: cand.programme,
       category: cat,
-      headline,
+      // A headline cites nothing, so it's shown only if it passes the same word,
+      // number and comparison checks against this pick's own facts; else it's left out.
+      headline:
+        headline &&
+        !BANNED.test(headline) &&
+        !PREDICT.test(headline) &&
+        !num(headline).length &&
+        comparisonOk(
+          headline,
+          uid,
+          cand.facts.map((fact) => ({ fact, uni: uid })),
+        )
+          ? headline
+          : "",
       reasons,
       cautions,
     });
   }
+  // A gap note must cite facts about one university (plus the student's), and is
+  // checked like a pick's line for that university.
   const gaps = (Array.isArray(r.data_gaps) ? (r.data_gaps as RawLine[]) : [])
     .map((g) => {
       const ids = Array.isArray(g.fact_ids) ? g.fact_ids : [];
-      return ids.length
-        ? line(g, null, true)
-        : typeof g.text === "string" && !BANNED.test(g.text) && !num(g.text).length
-          ? { text: g.text, facts: [] }
-          : null;
+      const unis = new Set(
+        ids.map((i) => (typeof i === "string" ? factIndex.get(i)?.uni : null)).filter(Boolean),
+      );
+      if (unis.size !== 1) {
+        removed++;
+        return null;
+      }
+      return line(g, [...unis][0] as string);
     })
     .filter((x): x is CitedLine => !!x);
 
-  return { summary, picks, gaps, removed, model: AI_FIT_MODEL, candidates: pack.candidates.length };
+  return { summary, picks, gaps, removed, model: aiFitModel(), candidates: pack.candidates.length };
 }
 
 // ─── The call ──────────────────────────────────────────────────────────────
@@ -435,7 +582,7 @@ export async function runAiFit(userId: string, s: StudentInput): Promise<FitResu
   ]);
   const pack = buildPack(s, unis, { scholarships, fx });
   if (!pack.candidates.length)
-    return { summary: null, picks: [], gaps: [], removed: 0, model: AI_FIT_MODEL, candidates: 0 };
+    return { summary: null, picks: [], gaps: [], removed: 0, model: aiFitModel(), candidates: 0 };
 
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
@@ -445,12 +592,14 @@ export async function runAiFit(userId: string, s: StudentInput): Promise<FitResu
       "anthropic-version": "2023-06-01",
     },
     body: JSON.stringify({
-      model: AI_FIT_MODEL,
-      max_tokens: 4000,
-      temperature: 0,
+      model: aiFitModel(),
+      // Sonnet 5.5 thinks before answering (about 2,000-3,000 tokens in tests), so
+      // leave room. It rejects `temperature` and a forced tool_choice; the prompt
+      // tells it to call submit_fit, and a reply without the call shows nothing.
+      max_tokens: 16000,
       system: AI_FIT_SYSTEM_PROMPT,
       tools: [AI_FIT_TOOL],
-      tool_choice: { type: "tool", name: AI_FIT_TOOL.name },
+      tool_choice: { type: "auto" },
       messages: [
         {
           role: "user",
@@ -462,7 +611,7 @@ export async function runAiFit(userId: string, s: StudentInput): Promise<FitResu
         },
       ],
     }),
-    signal: AbortSignal.timeout(90_000),
+    signal: AbortSignal.timeout(120_000),
   });
   if (!res.ok) {
     // Status only: never log the request (it has the student's answers) or the key.

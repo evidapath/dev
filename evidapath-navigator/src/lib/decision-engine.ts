@@ -269,10 +269,11 @@ function academicFit(
   // Ignore worked examples ("e.g. CCC = 9") when looking for a grade requirement.
   const plain = text.replace(/\(?e\.g\.[^)]*\)?/gi, "");
   // "IB" as a whole word, so "TOEFL iBT 70" isn't read as an IB score; and
-  // only totals an IB Diploma can have (24–45).
-  const ibMatch = text.match(
-    /\bIB\b(?: Diploma)?[^0-9.;]{0,25}?(\d{2})\b|\b(\d{2})\s*(?:IB\s*)?points/i,
-  );
+  // only totals an IB Diploma can have (24–45). "24 of 45 points" means 24: the
+  // 45 is the scale, not the requirement.
+  const ibMatch =
+    text.match(/\b(\d{2})\s*(?:of|out of|\/)\s*45\b/i) ??
+    text.match(/\bIB\b(?: Diploma)?[^0-9.;]{0,25}?(\d{2})\b|\b(\d{2})\s*(?:IB\s*)?points/i);
   const ibTotal = ibMatch ? Number(ibMatch[1] ?? ibMatch[2]) : 0;
   const ibReq = ibTotal >= 24 && ibTotal <= 45 ? ibMatch : null;
   const alReq = plain.match(/\b((?:A\*|[A-E]){3})\b/);
