@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { submitGhlForm } from "../lib/ghl";
+import { AiFitPanel } from "../components/AiFitPanel";
 import { addPendingSaves, useSaveUniversity } from "../lib/use-save-university";
 import { Button } from "../components/ui/button";
 import { type FxRates } from "../lib/fx.functions";
@@ -361,6 +362,19 @@ function FindMyPathPage() {
             with your budget yet.
           </p>
         )}
+
+        {/* EXPERIMENTAL: renders only for allow-listed accounts */}
+        <AiFitPanel
+          input={{
+            curriculum: answers.curriculum,
+            gradeBand: answers.gradeBand,
+            subject: answers.subject,
+            budgetUsd: noBudgetLimit ? BUDGET_MAX : budgetUsd,
+            citizenship: answers.citizenship,
+            languages: parseLangs(answers.languages),
+            ukHome: answers.ukHome === "1",
+          }}
+        />
 
         {universities.length === 0 ? (
           <div className="space-y-3" aria-busy="true">
