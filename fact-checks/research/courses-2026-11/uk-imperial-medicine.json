@@ -199,7 +199,7 @@
   ],
   "deadline": {
     "date": "2026-10-15T18:00:00+01:00",
-    "round": "UCAS Medicine deadline",
+    "round": "UCAS deadline",
     "platform": "UCAS",
     "source": "course",
     "note": "Medicine applications for 2027 entry closed on Thursday 15 October 2026 at 18.00 UK time."

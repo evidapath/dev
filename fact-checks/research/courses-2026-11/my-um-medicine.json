@@ -1,0 +1,64 @@
+{
+  "uni": "my-um",
+  "slug": "medicine",
+  "sources": {
+    "course": {
+      "url": "https://study.um.edu.my/bachelor-of-medicine-and-bachelor-of-surgery",
+      "page": "bd24e32b10a1",
+      "title": "Bachelor of Medicine and Bachelor of Surgery | Study@UM, Universiti Malaya",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Duration: 5 Years (10 semester), Full time (Coursework)",
+        "International RM 673,200 ( Note: Not inclusive of 6% Sales and Service Tax (SST))",
+        "Intake Semester 1 (October) Intake",
+        "Diploma Not Offered GCE A-Level Obtain a recognized GCE A-Level qualification Obtain a minimum of grade A in the following subject: Biology & Chemistry Obtain a minimum of grade A in any ONE (1) subject: Physics / Mathematics International Baccalaureate (IB) Obtained a minimum score of 36 points with minimum score of 6 (HL) in TWO (2) subjects and a minimum score of 6 (SL) in ONE (1) subject:",
+        "Indian Pre-University Obtained Indian Pre-University (ICSE/CBSE and state boards) with a minimum A in THREE (3) of the following subjects: Obtain a minimum of grade A in the following subject: Biology & Chemistry Obtain a minimum of grade A in any ONE (1) subject: Physics / Mathematics",
+        "Attained a highs score in MSAT-Malaysia, BMAT, MCAT, GAMSAT or any other equivalent qualifications approved by the Senate in current or previous year.",
+        "Interview is required for this course. Test is required for this course.",
+        "MUET 4.0 IELTS (Academic) 6.0 TOEFL iBT (Centre-based) 60"
+      ]
+    },
+    "fees": {
+      "url": "https://study.um.edu.my/doc/tution-fee/Fee%20Structure,%20UG,%20International%20-%20Updated%2022%20Oct%202025.pdf",
+      "page": "6ecd995cd373",
+      "title": "Fee structure, Bachelor programme (international), Universiti Malaya (PDF)",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Bachelor of Medicine & Bachelor of Surgery 673,200.00",
+        "3) Fees structure is based on minimum or common period of study.",
+        "Academic session 2025/2026"
+      ]
+    }
+  },
+  "program": {
+    "name": "Medicine (MBBS)", "degree_type": "MBBS", "field": "Medicine", "faculty": "Faculty of Medicine",
+    "duration_years": 5, "languages": ["en"], "entry_year": "October intake", "platform": "Universiti Malaya online application", "source": "course",
+    "summary": "Bachelor of Medicine and Bachelor of Surgery (MBBS), 5 years (10 semesters), October intake. Entrance test (MSAT-Malaysia, BMAT, MCAT, GAMSAT or equivalent) and interview required.",
+    "application_requirements": [
+      {"name": "Admissions test", "description": "A high score in MSAT-Malaysia, BMAT, MCAT, GAMSAT or another equivalent approved by the Senate, from the current or previous year.", "type": "standardized_test_score", "source": "course"},
+      {"name": "Interview", "description": "Interview is required for this course.", "type": "interview_or_evaluation_event", "source": "course"}
+    ]
+  },
+  "costs": [
+    {"residency": "international", "currency": "MYR", "tuition_formula": "673200/5", "academic_year": "2025/2026 fee structure", "source": ["fees", "course"],
+     "living_from": "costProfile-my-um-cost-bsc-cs-international",
+     "note": "International: RM 673,200 for the programme (UM's fee structure is based on the minimum period of study, 5 years), shown as RM 134,640 a year. Not inclusive of 6% Sales and Service Tax (SST)."}
+  ],
+  "admissions": [
+    {"curriculum": "a-level", "source": "course",
+     "threshold": "Medicine (international): grade A in Biology and Chemistry and grade A in one of Physics / Mathematics (AAA). Entrance test and interview also required.",
+     "required_subjects": ["Biology", "Chemistry", "Physics or Mathematics"],
+     "tests": [{"name": "MSAT-Malaysia, BMAT, MCAT or GAMSAT", "required": "required"}],
+     "english": {"test_name": "IELTS Academic (or MUET / TOEFL iBT)", "min_score": "IELTS (Academic) 6.0, MUET 4.0 or TOEFL iBT (centre-based) 60.", "source": "course"}},
+    {"curriculum": "ib", "source": "course",
+     "threshold": "Medicine (international): IB 36 points, with at least 6 (HL) in two subjects and 6 (SL) in one subject. Entrance test and interview also required.",
+     "required_subjects": ["Biology", "Chemistry", "Physics or Mathematics"],
+     "tests": [{"name": "MSAT-Malaysia, BMAT, MCAT or GAMSAT", "required": "required"}],
+     "english": {"test_name": "IELTS Academic (or MUET / TOEFL iBT)", "min_score": "IELTS (Academic) 6.0, MUET 4.0 or TOEFL iBT (centre-based) 60.", "source": "course"}},
+    {"curriculum": "cbse", "source": "course",
+     "threshold": "Medicine (Indian Pre-University, ICSE/CBSE and state boards): a minimum A in Biology and Chemistry and in one of Physics / Mathematics. Entrance test and interview also required.",
+     "required_subjects": ["Biology", "Chemistry", "Physics or Mathematics"],
+     "tests": [{"name": "MSAT-Malaysia, BMAT, MCAT or GAMSAT", "required": "required"}],
+     "english": {"test_name": "IELTS Academic (or MUET / TOEFL iBT)", "min_score": "IELTS (Academic) 6.0, MUET 4.0 or TOEFL iBT (centre-based) 60.", "source": "course"}}
+  ]
+}

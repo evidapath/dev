@@ -1,0 +1,148 @@
+{
+  "uni": "uk-nottingham",
+  "slug": "medicine",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Medicine-BMBS.html",
+      "page": "9c67ad5a7b28",
+      "title": "Medicine BMBS | University of Nottingham",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "BMBS Hons UCAS Code A100",
+        "Duration 5 years full-time Location Queen's Medical Centre Select start date September 2027",
+        "The entrance requirements listed apply to 2027 entry.",
+        "AAA: must include biology (or human biology) and chemistry.",
+        "34 points overall including HL6 in biology, HL6 in chemistry or 6,6,6 in 3 HL Certificates with HL 6 in biology, HL6 in chemistry",
+        "IELTS 7.5 (no less than 7.0 in any element)",
+        "All applicants must sit the UCAT in the same year as the application is made for the course. Applicants who achieve a UCAT SJT grade of Band 4 will not be considered for this course.",
+        "All applicants are required to attend an interview during the year in which they apply before an offer can be made for the course.",
+        "International applicants will be invited to attend an interview online via Microsoft Teams"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Medicine-BMBS.html",
+      "page": "9c67ad5a7b28-raw",
+      "title": "Medicine BMBS | University of Nottingham (fee labels in the page)",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "<span class=\"info-bar__list-link-label home-student-detail\"> £10,050 per year</span>",
+        "<span class=\"info-bar__list-link-label international-student-detail\"> £48,900 per year</span>"
+      ]
+    },
+    "ucas": {
+      "url": "https://www.ucas.com/applying/applying-to-university/dates-and-deadlines-for-uni-applications",
+      "page": "576d9609b5a6",
+      "title": "Dates and deadlines for uni applications | UCAS",
+      "organization": "UCAS",
+      "type": "recognized_authority",
+      "quotes": [
+        "2027 entry application deadlines",
+        "2026 28 Apr UCAS' search tool displays 2027 entry courses",
+        "15 Oct (18:00 UK time) Equal consideration date for applications to the universities of Oxford and Cambridge, and for most courses in medicine, dentistry, and veterinary medicine/science"
+      ]
+    }
+  },
+  "program": {
+    "name": "Medicine",
+    "degree_type": "BMBS",
+    "field": "Medicine",
+    "faculty": "School of Medicine",
+    "duration_years": 5,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Medicine BMBS (UCAS A100), 5 years full-time, Queen's Medical Centre. UCAT and interview (online for international applicants).",
+    "application_requirements": [
+      {
+        "name": "UCAT",
+        "description": "All applicants must sit the UCAT in the year they apply. A UCAT SJT grade of Band 4 is not considered.",
+        "type": "standardized_test_score",
+        "source": "course"
+      },
+      {
+        "name": "Interview",
+        "description": "All applicants must attend an interview before an offer; international applicants are interviewed online via Microsoft Teams.",
+        "type": "interview_or_evaluation_event",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-home",
+      "note": "Home fee for a September 2027 start: £10,050 per year (Nottingham Medicine course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 48900,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-international",
+      "note": "International fee for a September 2027 start: £48,900 per year (Nottingham Medicine course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Medicine: AAA, including biology (or human biology) and chemistry. UCAT and interview also required.",
+      "required_subjects": [
+        "Biology",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.5 (no less than 7.0 in any element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Medicine: 34 points overall including HL6 in biology and HL6 in chemistry, or 6,6,6 in 3 HL Certificates with HL 6 in biology and chemistry. UCAT and interview also required.",
+      "required_subjects": [
+        "Biology",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.5 (no less than 7.0 in any element).",
+        "source": "course"
+      }
+    }
+  ],
+  "deadline": {
+    "date": "2026-10-15T18:00:00+01:00",
+    "round": "UCAS deadline",
+    "platform": "UCAS",
+    "source": "ucas",
+    "note": "Nottingham: apply via UCAS by 15 October. UCAS: 15 October (18:00 UK time) for most medicine courses, 2027 entry."
+  }
+}

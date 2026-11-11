@@ -103,15 +103,21 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                     fail(f"{where}: quote not found on {s['url']}:\n   {q}")
             quotes[key] = " ".join(s["quotes"])
 
-        def check_numbers(value, src: str, label: str):
-            missing = nums(str(value)) - nums(quotes[src])
+        def q_of(src) -> str:
+            return " ".join(quotes[x] for x in (src if isinstance(src, list) else [src]))
+
+        def check_numbers(value, src, label: str):
+            missing = nums(str(value)) - nums(q_of(src))
             if missing:
                 fail(f"{where}: {label} has {sorted(missing)} not in the quotes of source '{src}'")
 
         prog_id = f"{uni}-{slug}"
         src_ids = {}
         for key, s in r["sources"].items():
-            h = hashlib.sha1(s["url"].encode()).hexdigest()[:12]
+            # Same id scheme as earlier passes (sha1 of the URL); figures read from a
+            # page's embedded data ("-raw") get their own record.
+            key_url = s["url"] + ("#page-data" if s["page"].endswith("-raw") else "")
+            h = hashlib.sha1(key_url.encode()).hexdigest()[:12]
             sid = f"sourceRecord-ev-{h}"
             src_ids[key] = sid
             muts.append({"createOrReplace": {
@@ -158,7 +164,10 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                 if not re.fullmatch(r"[\d+*/(). ]+", f_):
                     fail(f"{where}: tuition_formula may only hold numbers and + * / ( )")
                 years = sum(int(x) for x in re.findall(r"(\d+)\*", f_))
-                if years != p["duration_years"] or not f_.rstrip().endswith(f"/{p['duration_years']}"):
+                total_over_years = re.fullmatch(r"\s*\d+\s*/\s*(\d+)\s*", f_)  # published total ÷ years
+                if total_over_years and int(total_over_years.group(1)) == p["duration_years"]:
+                    years = p["duration_years"]
+                if years != p["duration_years"] or not f_.replace(" ", "").endswith(f"/{p['duration_years']}"):
                     fail(f"{where}: tuition_formula must cover all {p['duration_years']} years and divide by them")
                 check_numbers(re.sub(r"(\d+)\*", "", f_).split("/")[0], c["source"], "tuition_formula fees")
                 c["tuition_annual"] = round(eval(f_, {"__builtins__": {}}))
@@ -167,9 +176,11 @@ def main(research_dir: str, pages_dir: str, out_path: str):
             check_numbers(c.get("mandatory_fees_annual", ""), c["source"], f"{c['residency']} compulsory fees")
             living = None
             if c.get("living_from"):
-                living = sanity(f'*[_id=="{c["living_from"]}"][0]{{estimated_living_costs_annual, living_cost_source_note, living_cost_source_basis, mandatory_fees_annual, "university": program_ref._ref}}')
+                living = sanity(f'*[_id=="{c["living_from"]}"][0]{{estimated_living_costs_annual, living_cost_source_note, living_cost_source_basis, mandatory_fees_annual, currency, "university": program_ref._ref}}')
                 if not living:
                     fail(f"{where}: living_from {c['living_from']} not found")
+                if living["currency"] != c["currency"]:
+                    fail(f"{where}: living_from is in {living['currency']}, this fee is in {c['currency']}; amounts can't be mixed")
                 if not living["university"].startswith(f"program-{uni}"):
                     fail(f"{where}: living_from belongs to another university")
             cid = f"{uni}-cost-{slug}-{c['residency']}"
@@ -184,7 +195,7 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                 "mandatory_fees_breakdown": [], "other_material_costs": [],
                 "record_status": "VERIFIED", "verification_status": "VERIFIED",
                 "last_checked": TODAY,
-                "source_refs": [ref(src_ids[c["source"]], "s1")],
+                "source_refs": [ref(src_ids[x], f"s{i+1}") for i, x in enumerate(c["source"] if isinstance(c["source"], list) else [c["source"]])],
                 "extension_metadata": {"_type": "extensionMetadata", "fields": [
                     {"_key": "fee_note", "_type": "extensionMetadataFieldEntry", "key": "fee_note",
                      "value": c["note"], "value_type": "string"}]},
@@ -246,7 +257,7 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                 "university_ref": ref(f"university-{uni}"), "program_ref": ref(f"program-{prog_id}"),
                 "academic_year": p["entry_year"], "application_deadline": d["date"],
                 "application_platform": d.get("platform", p.get("platform", "")), "binding": False,
-                "plan_type": "single_stage", "extension_metadata": {"note": f"Round: {d['round']}"},
+                "plan_type": "program_specific_stage", "extension_metadata": {"note": f"Round: {d['round']}"},
                 "notes": d.get("note", ""), "last_checked": TODAY,
                 "record_status": "VERIFIED", "verification_status": "SUPPORTED",
                 "source_refs": [ref(src_ids[d["source"]], "s1")],

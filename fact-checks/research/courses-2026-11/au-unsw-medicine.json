@@ -1,0 +1,53 @@
+{
+  "uni": "au-unsw",
+  "slug": "medicine",
+  "sources": {
+    "course": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-medical-studies-doctor-of-medicine?studentType=International",
+      "page": "7fbeebb3ab6d",
+      "title": "Bachelor of Medical Studies / Doctor of Medicine | UNSW Sydney",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "Duration Degree duration may vary depending on which intake you commence prior to 2028. Click below to check your specific degree duration and what it means for you. 6 Year(s)",
+        "UAC code 428000 Program code 3805",
+        "You'll enter our combined program as an undergraduate student and graduate with both a bachelor's degree and th",
+        "2026 A levels A Levels + UCAT ANZ + Interview 2026 IB Diploma IB+UCAT ANZ+Interview",
+        "All applicants must complete an external test ( UCAT ANZ ) and also complete an interview.",
+        "2026 Indicative first year full fee"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-medical-studies-doctor-of-medicine?studentType=International",
+      "page": "7fbeebb3ab6d-raw",
+      "title": "Bachelor of Medical Studies / Doctor of Medicine | UNSW Sydney (fee data in the page)",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "const feesyear = isInternational ? \"2026\" : \"2026\"",
+        "const feescompletedegree = isInternational ? \"$647,000*\" : \"$78,000*\"",
+        "const feesfirstyear = isInternational ? \"$95,500*\" : \"$10,500*\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Medicine (Medical Studies / Doctor of Medicine)", "degree_type": "BMed/MD", "field": "Medicine", "faculty": "UNSW Medicine and Health",
+    "duration_years": 6, "languages": ["en"], "entry_year": "2027 entry", "platform": "UAC / UNSW", "source": "course",
+    "summary": "Bachelor of Medical Studies / Doctor of Medicine (program 3805, UAC 428000), 6 years: entered straight from school, graduating with a bachelor's degree and the Doctor of Medicine. UCAT ANZ and interview.",
+    "application_requirements": [
+      {"name": "UCAT ANZ", "description": "All applicants must complete the UCAT ANZ test.", "type": "standardized_test_score", "source": "course"},
+      {"name": "Interview", "description": "All applicants must complete an interview.", "type": "interview_or_evaluation_event", "source": "course"}
+    ]
+  },
+  "costs": [
+    {"residency": "international", "currency": "AUD", "tuition_formula": "647000/6", "academic_year": "2026 indicative fees", "source": ["coursedata", "course"],
+     "living_from": "costProfile-au-unsw-cost-beng-hons-international",
+     "note": "International, 2026 indicative: $95,500 for the first year and $647,000 for the whole degree. Shown as the whole-degree fee spread over 6 years: $107,833 a year."}
+  ],
+  "admissions": [
+    {"curriculum": "a-level", "source": "course",
+     "threshold": "Medicine: selection on A levels plus UCAT ANZ plus interview. UNSW publishes no fixed A-level grade for this degree.",
+     "tests": [{"name": "UCAT ANZ", "required": "required"}]},
+    {"curriculum": "ib", "source": "course",
+     "threshold": "Medicine: selection on the IB Diploma plus UCAT ANZ plus interview. UNSW publishes no fixed IB score for this degree.",
+     "tests": [{"name": "UCAT ANZ", "required": "required"}]}
+  ]
+}

@@ -125,7 +125,7 @@
   ],
   "deadline": {
     "date": "2026-10-15T18:00:00+01:00",
-    "round": "UCAS Medicine deadline",
+    "round": "UCAS deadline",
     "platform": "UCAS",
     "source": "ucas",
     "note": "UCAS: 15 October (18:00 UK time) is the equal-consideration date for most medicine courses, 2027 entry."

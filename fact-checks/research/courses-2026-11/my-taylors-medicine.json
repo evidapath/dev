@@ -1,0 +1,102 @@
+{
+  "uni": "my-taylors",
+  "slug": "medicine",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/medicine/undergraduate/bachelor-of-medicine-bachelor-of-surgery.html",
+      "page": "73cadc6faae1",
+      "title": "Bachelor of Medicine, Bachelor of Surgery (MBBS) | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Programme Information for 2026",
+        "Duration 5-year Study options Full Time Only Intake Month April and September Offered by School of Medicine",
+        "Fees MYR 446,690 (Local) USD 134,937 (International)",
+        "Effective 1 July 2025, a 6% Service Tax will be imposed on non-Malaysian citizens, applicable to all fees and charges, except International Security Deposit and EMGS application fees. Fees shown in the Fee Schedule are exclusive of the 6% Service Tax.",
+        "Note : Housemanship in Malaysia is open to Malaysian citizens only.",
+        "A Level Min. BBB / ABC / AAC in Biology, Chemistry and Physics / Mathematics",
+        "International Baccalaureate (IB) Min. 33 points including 2 science subjects (Biology and Chemistry) at Higher Level (HL) and Mathematics at HL with a min. score of 5 each in Biology, Chemistry and Mathematics",
+        "A pass in SPM/O-level or equivalent with 5Bs each in Biology, Chemistry, Physics and Mathematics / Additional Mathematics and another subject at school level or its equivalent.",
+        "INTERNATIONAL STUDENTS IELTS Band 6.0 TOEFL iBT 60"
+      ]
+    }
+  },
+  "program": {
+    "name": "Medicine (MBBS)",
+    "degree_type": "MBBS",
+    "field": "Medicine",
+    "faculty": "School of Medicine",
+    "duration_years": 5,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "Taylor's online application",
+    "source": "course",
+    "summary": "Bachelor of Medicine, Bachelor of Surgery (MBBS), 5 years full time, intakes in April and September. Housemanship in Malaysia is open to Malaysian citizens only.",
+    "application_requirements": [
+      {
+        "name": "Housemanship",
+        "description": "Housemanship in Malaysia is open to Malaysian citizens only, so international graduates must plan their first doctor jobs elsewhere.",
+        "type": "other",
+        "source": "course"
+      },
+      {
+        "name": "Service tax",
+        "description": "A 6% Service Tax applies to non-Malaysian citizens on top of the fees shown (from 1 July 2025).",
+        "type": "other",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "134937/5",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 134,937 for the whole 5-year programme (2026), shown as USD 26,987 a year. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "446690/5",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 446,690 for the whole 5-year programme (2026), shown as MYR 89,338 a year."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Medicine: minimum BBB / ABC / AAC in Biology, Chemistry and Physics / Mathematics.",
+      "required_subjects": [
+        "Biology",
+        "Chemistry",
+        "Physics or Mathematics"
+      ],
+      "english": {
+        "test_name": "IELTS (or TOEFL iBT)",
+        "min_score": "IELTS Band 6.0 or TOEFL iBT 60 (international students).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Medicine: minimum 33 points, with Biology, Chemistry and Mathematics at Higher Level, each at a minimum of 5.",
+      "required_subjects": [
+        "Biology",
+        "Chemistry",
+        "Mathematics"
+      ],
+      "english": {
+        "test_name": "IELTS (or TOEFL iBT)",
+        "min_score": "IELTS Band 6.0 or TOEFL iBT 60 (international students).",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -198,7 +198,11 @@ function selectCost(costs: SanityCost[] | null): { chosen: SanityCost | null; no
   const priced = (costs || []).filter((c) => c.tuition_annual != null);
   if (priced.length === 0) return { chosen: (costs || [])[0] ?? null };
   const sorted = [...priced].sort((a, b) => (b.tuition_annual ?? 0) - (a.tuition_annual ?? 0));
-  const chosen = sorted[0]!;
+  // The international fee is the default. "Highest number" alone breaks when fee
+  // groups use different currencies (MYR 89,338 for Malaysians vs USD 26,987 for
+  // international students at Taylor's Medicine).
+  const intl = sorted.filter((c) => tierKind(c.residencyLabel ?? "") === "international");
+  const chosen = intl[0] ?? sorted[0]!;
   // A residency tier with no published price (e.g. UAE nationals at UAEU) is named,
   // never silently replaced by the international rate.
   const unpriced = (costs || [])
@@ -211,8 +215,8 @@ function selectCost(costs: SanityCost[] | null): { chosen: SanityCost | null; no
     return unpricedNote
       ? { chosen, note: `Price shown is for international students.${unpricedNote}` }
       : { chosen };
-  const lowest = sorted[sorted.length - 1]!;
-  const cur = chosen.currency || "";
+  const lowest = sorted.filter((c) => c !== chosen).at(-1)!;
+  const cur = lowest.currency || "";
   const amount = `${Math.round(lowest.tuition_annual ?? 0).toLocaleString("en-US")} ${cur} a year`;
   const note =
     `Price shown is for international students. ` +

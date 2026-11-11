@@ -467,6 +467,7 @@ const RELATED: [RegExp, string[]][] = [
     ["Computer Science", "Computing", "Informatics", "Software"],
   ],
   [/engineer/i, ["Engineering"]],
+  [/medic|mbbs|mbchb|doctor/i, ["Medicine"]],
 ];
 
 function pickProgram(
