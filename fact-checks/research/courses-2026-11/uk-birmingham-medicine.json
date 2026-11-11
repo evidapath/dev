@@ -1,0 +1,134 @@
+{
+  "uni": "uk-birmingham",
+  "slug": "medicine",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/medicine-courses/medicine-and-surgery-mbchb",
+      "page": "f509ab27460c",
+      "title": "Medicine and Surgery MBChB | University of Birmingham",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "A100 Campus Birmingham (Edgbaston)",
+        "Start date September 2027 Duration 5 years Award Bachelor of Medicine, Bachelor of Surgery",
+        "A Level AAA with predicted AAB including Chemistry, and a second science from Biology/Human Biology, Physics or Maths",
+        "IB 6,6,6 at Higher Level including Chemistry and a second science from Biology/Physics/Maths. Minimum of 32 points.",
+        "every applicant for admission to the University must have reached the age of 18 years on 1 October of the year of entry.",
+        "IELTS*: 7.0 overall with no less than 7.0 in any band.",
+        "£10,050 per year for domestic (UK) students for 2027/28",
+        "15 October 2026 Application deadline for September 2027 entry.",
+        "Sit the University Clinical Aptitude Test (UCAT) in year of application Attend interview if invited"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/medicine-courses/medicine-and-surgery-mbchb",
+      "page": "f509ab27460c-raw",
+      "title": "Medicine and Surgery MBChB | University of Birmingham (fee data on the course page)",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "\"courseYearItems\":[{\"year\":\"2027\"",
+        "\"title\":\"Fees (international)\",\"value\":\"£33,750 (International - pre-clinical years 1 and 2). £53,880 (International - clinical years 3, 4 and 5)\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Medicine and Surgery",
+    "degree_type": "MBChB",
+    "field": "Medicine",
+    "faculty": "Birmingham Medical School",
+    "duration_years": 5,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Medicine and Surgery MBChB (UCAS A100), Bachelor of Medicine, Bachelor of Surgery, 5 years. UCAT and interview.",
+    "application_requirements": [
+      {
+        "name": "UCAT",
+        "description": "Sit the University Clinical Aptitude Test (UCAT) in the year you apply.",
+        "type": "standardized_test_score",
+        "source": "course"
+      },
+      {
+        "name": "Interview",
+        "description": "Attend interview if invited.",
+        "type": "interview_or_evaluation_event",
+        "source": "course"
+      },
+      {
+        "name": "Minimum age",
+        "description": "You must be 18 years old on 1 October of the year of entry.",
+        "type": "other",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-home",
+      "note": "UK fee: £10,050 per year for 2027/28 (Birmingham Medicine course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_formula": "(2*33750+3*53880)/5",
+      "academic_year": "2027 entry",
+      "source": "coursedata",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-international",
+      "note": "International fees for 2027 entry: £33,750 a year in pre-clinical years 1 and 2, then £53,880 a year in clinical years 3, 4 and 5. Shown as the average over the 5 years: £45,828 a year."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Medicine: AAA with predicted AAB, including Chemistry and a second science from Biology/Human Biology, Physics or Maths. UCAT and interview also required.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall with no less than 7.0 in any band.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Medicine: minimum of 32 points, with 6,6,6 at Higher Level including Chemistry and a second science from Biology/Physics/Maths. UCAT and interview also required.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall with no less than 7.0 in any band.",
+        "source": "course"
+      }
+    }
+  ],
+  "deadline": {
+    "date": "2026-10-15",
+    "round": "UCAS Medicine deadline",
+    "platform": "UCAS",
+    "source": "course",
+    "note": "Application deadline for September 2027 entry: 15 October 2026."
+  }
+}

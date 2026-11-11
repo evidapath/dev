@@ -1,0 +1,136 @@
+{
+  "uni": "uk-cambridge",
+  "slug": "medicine",
+  "sources": {
+    "course": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/courses/medicine",
+      "page": "9b7b00363d37",
+      "title": "Medicine | Undergraduate Study, University of Cambridge",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "UCAS code A100 Course length MB, BChir 6 years full-time Start date October 2027",
+        "Overseas fee status places: 22",
+        "The course lasts 6 years:",
+        "Minimum offer level A level: A*A*A IB: 41-42 points, with 776 at Higher Level",
+        "To apply to any of our Colleges for Medicine you will need A Levels/IB Higher Levels (or the equivalent) in: Chemistry",
+        "Colleges usually require A* in Chemistry.",
+        "will not be 18 years old on 1 November of year 1. This is due to national restrictions",
+        "You will need to take the University Clinical Aptitude Test",
+        "There is no minimum threshold for UCAT score.",
+        "We assess applicants through a mixture of academic record, UCAT and interviews.",
+        "Queens'",
+        "Murray Edwards"
+      ]
+    },
+    "fees": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/sites/default/files/2026-09/undergraduate_tuition_fees_2027-28.pdf",
+      "page": "afa5626c6276",
+      "title": "Undergraduate tuition fees 2027-28 (Cambridge, PDF)",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "Undergraduate tuition fees 2027-28",
+        "Medicine 10,050 70,554",
+        "International students - College fees payable in addition to the tuition fee",
+        "Murray Edwards £15,950",
+        "Queens' £12,885"
+      ]
+    }
+  },
+  "program": {
+    "name": "Medicine",
+    "degree_type": "MB BChir",
+    "field": "Medicine",
+    "faculty": "School of Clinical Medicine",
+    "duration_years": 6,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Medicine (UCAS A100), MB BChir, 6 years. UCAT and interviews. Overseas fee status places: 22.",
+    "application_requirements": [
+      {
+        "name": "UCAT",
+        "description": "You must take the University Clinical Aptitude Test (UCAT). There is no minimum threshold for UCAT score.",
+        "type": "standardized_test_score",
+        "source": "course"
+      },
+      {
+        "name": "Interview",
+        "description": "Applicants are assessed through academic record, UCAT and interviews.",
+        "type": "interview_or_evaluation_event",
+        "source": "course"
+      },
+      {
+        "name": "Minimum age",
+        "description": "You can't apply if you will not be 18 years old on 1 November of year 1 (national restrictions).",
+        "type": "other",
+        "source": "course"
+      },
+      {
+        "name": "Places",
+        "description": "Overseas fee status places: 22.",
+        "type": "other",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-cambridge-cost-meng-engineering-home",
+      "note": "Home fee, Medicine, 2027-28: £10,050 (Cambridge fees PDF)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 70554,
+      "mandatory_fees_annual": 12885,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-cambridge-cost-meng-engineering-international",
+      "note": "Overseas fee, Medicine, 2027-28: £70,554 a year, plus a College fee. College fees for international students run from £12,885 (Queens') to £15,950 (Murray Edwards) among the colleges that take Medicine; the lowest is shown."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Medicine: A*A*A minimum offer, including Chemistry and one or two other science or mathematics subjects (depending on the College). Colleges usually require A* in Chemistry. UCAT and interview also required.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "from_existing": "admissionsRequirement-uk-cambridge-admreq-ba-cs-a-level"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Medicine: IB 41-42 points, with 776 at Higher Level, including Chemistry and one or two other science or mathematics subjects (depending on the College). UCAT and interview also required.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "from_existing": "admissionsRequirement-uk-cambridge-admreq-ba-cs-a-level"
+      }
+    }
+  ]
+}

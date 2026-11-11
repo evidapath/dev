@@ -1,0 +1,207 @@
+{
+  "uni": "uk-imperial",
+  "slug": "medicine",
+  "sources": {
+    "course": {
+      "url": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/medicine/",
+      "page": "17cef0232903",
+      "title": "Medicine MBBS/BSc | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "Qualification MBBS/BSc Duration 6 years Start date October 2027 UCAS course code A100",
+        "A*AA including Chemistry and Biology, with A* in one of these subjects (A-levels)",
+        "38 points (International Baccalaureate)",
+        "A* and A in Biology and Chemistry (A* in either) A in a third subject",
+        "Minimum entry standard 38 points To include: 6 in Biology at higher level 6 in Chemistry at higher level",
+        "EITHER 5, 5, 5, 5, 4 to include 5 in Biology, 5 in Chemistry and 5 in either Calculus BC or a relevant science subject OR 5, 5, 5 to include Biology and Chemistry Award of acceptable school leaving qualification (e.g., US High School Diploma) Either 1470 in SAT or 32 in ACT.",
+        "Our minimum entry standard is 91% overall, to include: 95% / 90% in Biology and Chemistry (grades any order) 90% in Mathematics or Physics",
+        "India: 12th Standard CBSE - AISSCE or CISCE - ISC boards",
+        "Our minimum entry standard is 1.5 overall, to include the following abiturprufung exams: 14 in Chemistry 14 in Biology",
+        "You will need to take the University Clinical Aptitude Test (UCAT) to study this course.",
+        "we then begin inviting candidates to attend our Multiple Mini Interviews (MMIs).",
+        "For 2026 entry, the number of Home places is 271 and Overseas places was 74.",
+        "Application deadlines - Thursday 15 October 2026 at 18.00 (UK time)",
+        "All applicants must meet our higher level English language requirement.",
+        "Home fee 2027 entry £10,050 per year",
+        "Overseas fee 2027 entry £61,550 per year"
+      ]
+    },
+    "english": {
+      "url": "https://www.imperial.ac.uk/study/apply/english-language/",
+      "page": "0004cdc8126c",
+      "title": "English language requirements | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "IELTS - Academic (Test-Centre/UKVI SELT/Online) Standard Higher 6.5 overall (minimum 6.0 in all elements) 7.0 overall (minimum 6.5 in all elements)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Medicine",
+    "degree_type": "MBBS/BSc",
+    "field": "Medicine",
+    "faculty": "School of Medicine",
+    "duration_years": 6,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "MBBS/BSc Medicine (UCAS A100), 6 years, School of Medicine. UCAT and Multiple Mini Interviews. For 2026 entry there were 271 Home places and 74 Overseas places.",
+    "application_requirements": [
+      {
+        "name": "UCAT",
+        "description": "You must take the University Clinical Aptitude Test (UCAT) in the year you apply.",
+        "type": "standardized_test_score",
+        "source": "course"
+      },
+      {
+        "name": "Interview",
+        "description": "Shortlisted applicants are invited to Multiple Mini Interviews (MMIs).",
+        "type": "interview_or_evaluation_event",
+        "source": "course"
+      },
+      {
+        "name": "Places",
+        "description": "For 2026 entry: 271 Home places and 74 Overseas places.",
+        "type": "other",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-home",
+      "note": "Home fee, 2027 entry: £10,050 per year (Imperial Medicine course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 61550,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-international",
+      "note": "Overseas fee, 2027 entry: £61,550 per year (Imperial Medicine course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Medicine: A*AA, with A* and A in Biology and Chemistry (A* in either) and A in a third subject. UCAT and interview also required.",
+      "required_subjects": [
+        "Biology",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for Medicine.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Medicine: 38 points, with 6 in Biology and 6 in Chemistry at higher level. UCAT and interview also required.",
+      "required_subjects": [
+        "Biology",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for Medicine.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Medicine (Advanced Placement): EITHER 5, 5, 5, 5, 4 to include 5 in Biology, 5 in Chemistry and 5 in either Calculus BC or a relevant science subject, OR 5, 5, 5 to include Biology and Chemistry; plus a US High School Diploma and either 1470 in SAT or 32 in ACT. UCAT and interview also required.",
+      "required_subjects": [
+        "Biology",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        },
+        {
+          "name": "SAT or ACT",
+          "required": "required",
+          "notes": "1470 in SAT or 32 in ACT"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for Medicine.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Medicine (India: 12th Standard CBSE or CISCE ISC): 91% overall, with 95% / 90% in Biology and Chemistry (any order) and 90% in Mathematics or Physics. UCAT and interview also required.",
+      "required_subjects": [
+        "Biology",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for Medicine.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "abitur",
+      "source": "course",
+      "threshold": "Medicine (German Abitur): 1.5 overall, with 14 in Chemistry and 14 in Biology in the Abiturprüfung exams. UCAT and interview also required.",
+      "required_subjects": [
+        "Biology",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for Medicine.",
+        "source": "english"
+      }
+    }
+  ],
+  "deadline": {
+    "date": "2026-10-15T18:00:00+01:00",
+    "round": "UCAS Medicine deadline",
+    "platform": "UCAS",
+    "source": "course",
+    "note": "Medicine applications for 2027 entry closed on Thursday 15 October 2026 at 18.00 UK time."
+  }
+}

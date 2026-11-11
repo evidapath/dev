@@ -1,0 +1,133 @@
+{
+  "uni": "uk-manchester",
+  "slug": "medicine",
+  "sources": {
+    "course": {
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/01428/mbchb-medicine/",
+      "page": "0311f02fd005",
+      "title": "MBChB Medicine (2027 entry) | The University of Manchester",
+      "organization": "The University of Manchester",
+      "quotes": [
+        "Duration: 5 years Year of entry: 2027 UCAS course code: A106 / Institution code: M20",
+        "Typical A-level offer : AAA (including specific subjects)",
+        "Biology/Human Biology or Chemistry; and One of the following subjects from Chemistry; Biology/Human Biology; Physics; Psychology; Mathematics or Further Mathematics.",
+        "36 points overall. 6,6,6, in Higher Level subjects.",
+        "Major subjects must include Chemistry or Biology, plus another science (one from Chemistry, Biology, Physics, Psychology or Mathematics) and one further subject at Higher Level.",
+        "International English Language Testing Service (IELTS): A minimum average score of 7.0 and with not less than 6.5 in any one component taken at the same sitting;",
+        "All applicants, including dental applicants, must sit the UCAT",
+        "We do not make any offers without interview.",
+        "Tuition fees for home students commencing their studies in September 2026 will be £9,535 for the 2026/27 academic year.",
+        "Tuition fees for international students on the Pre-Clinical part of the programme (Years 1-2) will be £39,900 for the 2026/2027 academic year.",
+        "Fees for the Clinical part of the programme (Years 3-5) are set at the rate applicable when entering Year 3. For students entering the Clinical part of the programme in 2026, the fee for 2026/27 will be £60,900.",
+        "the University reserves the right to increase the tuition fee by up to 7% each year"
+      ]
+    },
+    "ucas": {
+      "url": "https://www.ucas.com/applying/applying-to-university/dates-and-deadlines-for-uni-applications",
+      "page": "576d9609b5a6",
+      "title": "Dates and deadlines for uni applications | UCAS",
+      "organization": "UCAS",
+      "type": "recognized_authority",
+      "quotes": [
+        "2027 entry application deadlines",
+        "2026 28 Apr UCAS' search tool displays 2027 entry courses",
+        "15 Oct (18:00 UK time) Equal consideration date for applications to the universities of Oxford and Cambridge, and for most courses in medicine, dentistry, and veterinary medicine/science"
+      ]
+    }
+  },
+  "program": {
+    "name": "Medicine",
+    "degree_type": "MBChB",
+    "field": "Medicine",
+    "faculty": "Faculty of Biology, Medicine and Health",
+    "duration_years": 5,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "MBChB Medicine (UCAS A106), 5 years. UCAT required; no offers without interview.",
+    "application_requirements": [
+      {
+        "name": "UCAT",
+        "description": "All applicants must sit the UCAT.",
+        "type": "standardized_test_score",
+        "source": "course"
+      },
+      {
+        "name": "Interview",
+        "description": "No offers are made without interview.",
+        "type": "interview_or_evaluation_event",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 9535,
+      "academic_year": "2026/27 (latest published on the 2027 page)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-home",
+      "note": "Home fee published on the 2027-entry page: £9,535 for the 2026/27 academic year (students starting September 2026)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_formula": "(2*39900+3*60900)/5",
+      "academic_year": "2026/27 (latest published on the 2027 page)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-international",
+      "note": "Latest published international fees (2026/27): £39,900 a year in pre-clinical Years 1-2 and £60,900 a year in clinical Years 3-5. Shown as the average over 5 years: £52,500 a year. Clinical fees are set at the rate when you enter Year 3, and the University may raise fees by up to 7% each year, so later entrants are likely to pay more."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Medicine: AAA, including Biology/Human Biology or Chemistry, and one of Chemistry, Biology/Human Biology, Physics, Psychology, Mathematics or Further Mathematics. UCAT and interview also required.",
+      "required_subjects": [
+        "Biology or Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS: a minimum average score of 7.0, with not less than 6.5 in any one component at the same sitting.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Medicine: IB 36 points overall, 6,6,6 in Higher Level subjects, including Chemistry or Biology plus another science (Chemistry, Biology, Physics, Psychology or Mathematics). UCAT and interview also required.",
+      "required_subjects": [
+        "Biology or Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "UCAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS: a minimum average score of 7.0, with not less than 6.5 in any one component at the same sitting.",
+        "source": "course"
+      }
+    }
+  ],
+  "deadline": {
+    "date": "2026-10-15T18:00:00+01:00",
+    "round": "UCAS Medicine deadline",
+    "platform": "UCAS",
+    "source": "ucas",
+    "note": "UCAS: 15 October (18:00 UK time) is the equal-consideration date for most medicine courses, 2027 entry."
+  }
+}

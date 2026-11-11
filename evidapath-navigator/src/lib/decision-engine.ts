@@ -398,7 +398,11 @@ export function citizenshipCode(text: string): string | null {
  */
 export function deadlinesFor(u: University, programName?: string | null) {
   const all = u.deadlines ?? [];
-  return programName ? all.filter((d) => !d.program || d.program === programName) : all;
+  if (!programName) return all;
+  // A programme's own deadlines replace the university-wide ones (UK Medicine
+  // closes on 15 October, not with most courses in January).
+  const own = all.filter((d) => d.program === programName);
+  return own.length ? own : all.filter((d) => !d.program);
 }
 
 /** We only ask British and Irish citizens whether they live in the UK. */
