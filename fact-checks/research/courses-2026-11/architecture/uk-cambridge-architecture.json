@@ -1,0 +1,116 @@
+{
+  "uni": "uk-cambridge",
+  "slug": "architecture",
+  "sources": {
+    "course": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/courses/architecture",
+      "page": "1418cb8411a2",
+      "title": "Architecture | Undergraduate Study, University of Cambridge",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "UCAS code K100 Course length MArch, 4 years, full time or BA (Hons), 3 years, full-time Start date October 2027 Study at All Colleges, except St Catharine's",
+        "Minimum offer level A level: A*AA IB: 41-42 points, with 776 at Higher Level",
+        "Some Colleges ask for specific subjects to apply to Architecture, whereas others don't.",
+        "There is an admission assessment at all Colleges for this course.",
+        "You will need to submit your own artwork prior to interview.",
+        "Queens'"
+      ]
+    },
+    "fees": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/sites/default/files/2026-09/undergraduate_tuition_fees_2027-28.pdf",
+      "page": "afa5626c6276",
+      "title": "Undergraduate tuition fees 2027-28 (Cambridge, PDF)",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "Undergraduate tuition fees 2027-28",
+        "Architecture [1] 10,050 40,296",
+        "International students - College fees payable in addition to the tuition fee",
+        "Queens' £12,885"
+      ]
+    },
+    "colleges": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/colleges",
+      "page": "0ebd6010715e",
+      "title": "College A-Z | Undergraduate Study, University of Cambridge",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "The 29 undergraduate Colleges provide accommodation, support and more for almost all students for at least three years.",
+        "Queens' College"
+      ]
+    }
+  },
+  "program": {
+    "name": "Architecture",
+    "degree_type": "BA (Hons)",
+    "field": "Architecture",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Architecture (UCAS K100), BA (Hons) in 3 years or MArch in 4. Offered at all Colleges except St Catharine's.",
+    "application_requirements": [
+      {
+        "name": "Admission assessment",
+        "description": "There is an admission assessment at all Colleges for this course.",
+        "type": "other",
+        "source": "course"
+      },
+      {
+        "name": "Artwork",
+        "description": "You must submit your own artwork before interview.",
+        "type": "other",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-cambridge-cost-meng-engineering-home",
+      "note": "Home fee, Architecture, 2027-28: £10,050 (Cambridge fees PDF)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 40296,
+      "mandatory_fees_annual": 12885,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": [
+        "fees",
+        "colleges"
+      ],
+      "living_from": "costProfile-uk-cambridge-cost-meng-engineering-international",
+      "note": "Overseas fee, Architecture, 2027-28: £40,296 a year, plus a College fee. The lowest College fee among the undergraduate Colleges is Queens' at £12,885, which is shown."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Architecture: A*AA minimum offer. Some Colleges ask for specific subjects. Admission assessment and submitted artwork also required.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-uk-cambridge-admreq-ba-cs-a-level"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Architecture: IB 41-42 points, with 776 at Higher Level. Admission assessment and submitted artwork also required.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-uk-cambridge-admreq-ba-cs-a-level"
+      }
+    }
+  ]
+}

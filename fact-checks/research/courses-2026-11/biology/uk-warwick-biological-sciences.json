@@ -1,0 +1,105 @@
+{
+  "uni": "uk-warwick",
+  "slug": "biological-sciences",
+  "sources": {
+    "course": {
+      "url": "https://warwick.ac.uk/study/undergraduate/courses/bsc-biological-sciences/",
+      "page": "1cf496283d95",
+      "title": "Biological Sciences BSc | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "UCAS course code C100",
+        "Start date 27 September 2027",
+        "Qualification Bachelor of Science (BSc) Department School of Life Sciences Duration 3 years full-time",
+        "A level typical offer AAB including Biology and a second Science (e.g., Chemistry, Physics, Maths, Applied Science, Environmental Science, Statistics, Geology, Geography, or Psychology) or AAA including Biology.",
+        "International Baccalaureate (IB) typical offer 34 including 5 in HL Biology and 5 in HL Chemistry, Physics, Maths, Geography, or Psychology Or 36 including 5 in HL Biology",
+        "This course requires: Band A",
+        "Tuition fee £10,050 For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050."
+      ]
+    },
+    "fees": {
+      "url": "https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/",
+      "page": "1099e435e96e",
+      "title": "Overseas undergraduate tuition fees | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Course UCAS code 2025-26 2026-27 2027-28",
+        "Biological Sciences (BSc) C100 Band 2 £33,520 £35,530 £37,310"
+      ]
+    },
+    "english": {
+      "url": "https://warwick.ac.uk/study/undergraduate/applying/english-language-requirements/",
+      "page": "43adba7a94bd",
+      "title": "English language requirements | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Band A 6.0 including minimum 5.5 in each component"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biological Sciences",
+    "degree_type": "BSc",
+    "field": "Biology",
+    "faculty": "School of Life Sciences",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Biological Sciences BSc (UCAS C100), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-home",
+      "note": "Home fee, 2027-28: £10,050 (Warwick course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-international",
+      "note": "Overseas fee, 2027-28: £37,310 (Band 2, Warwick overseas fees table).",
+      "tuition_annual": 37310
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Biological Sciences: AAB including Biology and a second science (e.g. Chemistry, Physics, Maths, Applied Science, Environmental Science, Statistics, Geology, Geography or Psychology), or AAA including Biology.",
+      "required_subjects": [
+        "Biology"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 6.0 including minimum 5.5 in each component (Warwick English Band A).",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Biological Sciences: IB 34 including 5 in HL Biology and 5 in HL Chemistry, Physics, Maths, Geography or Psychology, or IB 36 including 5 in HL Biology.",
+      "required_subjects": [
+        "Biology"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 6.0 including minimum 5.5 in each component (Warwick English Band A).",
+        "source": "english"
+      }
+    }
+  ]
+}

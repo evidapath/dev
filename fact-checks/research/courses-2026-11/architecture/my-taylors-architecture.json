@@ -1,0 +1,81 @@
+{
+  "uni": "my-taylors",
+  "slug": "architecture",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/architecture-building-and-design/undergraduate/bachelor-of-science-in-architecture.html",
+      "page": "798aee5bb5e5",
+      "title": "Bachelor of Science (Honours) in Architecture | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Bachelor of Science (Honours) in Architecture",
+        "Programme Information for 2026",
+        "Duration 3-year Study options Full Time Only Intake Month February, April, September Offered by School of Architecture, Building and Design Accredited by Board of Architects Malaysia (LAM) Fees MYR 135,338 (Local) USD 43,845 (International)",
+        "Fees shown in the Fee Schedule are exclusive of the 6% Service Tax.",
+        "A Level Min. CDD excluding General Paper or studies in student's first language",
+        "International Baccalaureate (IB) Min. 28 points and above based on 6 subjects",
+        "INTERNATIONAL STUDENTS IELTS score of 5.5 OR its equivalent"
+      ]
+    }
+  },
+  "program": {
+    "name": "Architecture",
+    "degree_type": "BSc (Hons)",
+    "field": "Architecture",
+    "faculty": "School of Architecture, Building and Design",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Science (Honours) in Architecture, 3 years full time, accredited by the Board of Architects Malaysia (LAM). Intakes February, April and September.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "43845/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 43,845 for the whole 3-year programme (2026), shown as a yearly average. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "135338/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 135,338 for the whole 3-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Architecture: minimum CDD, excluding General Paper or studies in the student's first language.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS (or equivalent)",
+        "min_score": "IELTS 5.5 or equivalent, or a completed Pre-U/Diploma taught in English.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Architecture: minimum 28 points based on 6 subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS (or equivalent)",
+        "min_score": "IELTS 5.5 or equivalent, or a completed Pre-U/Diploma taught in English.",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "uni": "uk-nottingham",
+  "slug": "architecture",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Architecture-BArch-Hons.html",
+      "page": "36a993f188ad",
+      "title": "Architecture BArch | University of Nottingham",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "BArch Hons UCAS Code K100",
+        "Duration 3 years full-time Location University Park Campus Select start date September 2027",
+        "The entrance requirements listed apply to 2027 entry.",
+        "A levels AAA IB 34 points overall",
+        "Required subjects AAA / A*AB",
+        "IB score 34 points overall or 666 in 3 HL certificates",
+        "IELTS 6.5 (no less than 6.0 in any element)",
+        "After you have applied, we will contact you with information on how to submit a portfolio of your artwork. Your portfolio should contain 16 images of your work"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Architecture-BArch-Hons.html",
+      "page": "36a993f188ad-raw",
+      "title": "Architecture BArch | University of Nottingham (fee labels in the page)",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "<span class=\"info-bar__list-link-label home-student-detail\"> £10,050 per year</span>",
+        "<span class=\"info-bar__list-link-label international-student-detail\"> £33,500 per year</span>"
+      ]
+    }
+  },
+  "program": {
+    "name": "Architecture",
+    "degree_type": "BArch",
+    "field": "Architecture",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Architecture BArch (UCAS K100), 3 years.",
+    "application_requirements": [
+      {
+        "name": "Portfolio",
+        "description": "After you apply, you'll be asked to submit a portfolio of your artwork (16 images).",
+        "type": "other",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-home",
+      "note": "Home fee for a September 2027 start: £10,050 per year (Nottingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-international",
+      "note": "International fee for a September 2027 start: £33,500 per year (Nottingham course page).",
+      "tuition_annual": 33500
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Architecture: AAA / A*AB.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Architecture: IB 34 points overall or 666 in 3 HL certificates.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    }
+  ]
+}

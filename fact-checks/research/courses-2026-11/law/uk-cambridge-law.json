@@ -1,0 +1,119 @@
+{
+  "uni": "uk-cambridge",
+  "slug": "law",
+  "sources": {
+    "course": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/courses/law",
+      "page": "015bf7218551",
+      "title": "Law | Undergraduate Study, University of Cambridge",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "UCAS code M100 Course length BA (Hons) 3 years full-time Start date October 2027 Study at All Colleges",
+        "Minimum offer level A level: A*AA IB: 41-42 points, with 776 at Higher Level",
+        "We don't ask for any specific subjects to apply to Law.",
+        "All applicants for Law are required to take the National Admissions Test for Law (LNAT) at an authorised assessment centre. You must register in advance for this test.",
+        "Queens'"
+      ]
+    },
+    "fees": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/sites/default/files/2026-09/undergraduate_tuition_fees_2027-28.pdf",
+      "page": "afa5626c6276",
+      "title": "Undergraduate tuition fees 2027-28 (Cambridge, PDF)",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "Undergraduate tuition fees 2027-28",
+        "Law 10,050 30,798",
+        "International students - College fees payable in addition to the tuition fee",
+        "Queens' £12,885"
+      ]
+    },
+    "colleges": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/colleges",
+      "page": "0ebd6010715e",
+      "title": "College A-Z | Undergraduate Study, University of Cambridge",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "The 29 undergraduate Colleges provide accommodation, support and more for almost all students for at least three years.",
+        "Queens' College"
+      ]
+    }
+  },
+  "program": {
+    "name": "Law",
+    "degree_type": "BA (Hons)",
+    "field": "Law",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Law (UCAS M100), BA (Hons), 3 years. LNAT required. Offered at all Colleges.",
+    "application_requirements": [
+      {
+        "name": "LNAT",
+        "description": "All applicants must take the National Admissions Test for Law (LNAT) at an authorised assessment centre, registering in advance.",
+        "type": "standardized_test_score",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-cambridge-cost-meng-engineering-home",
+      "note": "Home fee, Law, 2027-28: £10,050 (Cambridge fees PDF)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 30798,
+      "mandatory_fees_annual": 12885,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": [
+        "fees",
+        "colleges"
+      ],
+      "living_from": "costProfile-uk-cambridge-cost-meng-engineering-international",
+      "note": "Overseas fee, Law, 2027-28: £30,798 a year, plus a College fee. The lowest College fee among the undergraduate Colleges is Queens' at £12,885, which is shown."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Law: A*AA minimum offer. No specific subjects required. LNAT also required.",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "LNAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "from_existing": "admissionsRequirement-uk-cambridge-admreq-ba-cs-a-level"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Law: IB 41-42 points, with 776 at Higher Level. LNAT also required.",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "LNAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "from_existing": "admissionsRequirement-uk-cambridge-admreq-ba-cs-a-level"
+      }
+    }
+  ]
+}

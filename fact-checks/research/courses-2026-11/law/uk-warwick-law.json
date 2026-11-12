@@ -1,0 +1,102 @@
+{
+  "uni": "uk-warwick",
+  "slug": "law",
+  "sources": {
+    "course": {
+      "url": "https://warwick.ac.uk/study/undergraduate/courses/llb-law/",
+      "page": "8d143c37dd30",
+      "title": "Law LLB | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "UCAS course code M100",
+        "Start date 27 September 2027",
+        "Qualification Bachelor of Law (LLB) Department Law School Duration 3 Years full-time",
+        "A level typical offer A*AA",
+        "International Baccalaureate (IB) typical offer 38",
+        "This course requires: Band C",
+        "Our Law programmes do not currently require the LNAT for admissions consideration.",
+        "Tuition fee £10,050 For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050."
+      ]
+    },
+    "fees": {
+      "url": "https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/",
+      "page": "1099e435e96e",
+      "title": "Overseas undergraduate tuition fees | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Course UCAS code 2025-26 2026-27 2027-28",
+        "Law (3 years) (LLB) M100 Band 1 £26,290 £27,870 £29,260"
+      ]
+    },
+    "english": {
+      "url": "https://warwick.ac.uk/study/undergraduate/applying/english-language-requirements/",
+      "page": "43adba7a94bd",
+      "title": "English language requirements | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Band C 7.0 including minimum 6.5 in each component"
+      ]
+    }
+  },
+  "program": {
+    "name": "Law",
+    "degree_type": "LLB",
+    "field": "Law",
+    "faculty": "Law School",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Law LLB (UCAS M100), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-home",
+      "note": "Home fee, 2027-28: £10,050 (Warwick course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-international",
+      "note": "Overseas fee, 2027-28: £29,260 (Band 1, Warwick overseas fees table).",
+      "tuition_annual": 29260
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Law: A*AA.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 7.0 including minimum 6.5 in each component (Warwick English Band C).",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Law: IB 38.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 7.0 including minimum 6.5 in each component (Warwick English Band C).",
+        "source": "english"
+      }
+    }
+  ]
+}

@@ -31,6 +31,9 @@ existing verified records, by id.
 | Medicine | Imperial, Cambridge, Birmingham, Manchester, Nottingham, UNSW, Taylor's, Universiti Malaya → `pending/2026-11-11-medicine.ndjson` | Cloudflare bot check: UCL, Oxford, Monash (AU and Malaysia), Melbourne. Held: UAE University MD (UAE nationals and children of Emirati mothers only) and Sharjah, until programmes can be limited by nationality. Not yet: Sydney (page loads by script), Germany and the Netherlands (taught in German/Dutch) |
 | Engineering branches | Civil, Electrical and Electronic, Chemical at Imperial, Manchester, Nottingham; Civil and Chemical at Birmingham; Civil, Chemical, Mechanical at Universiti Malaya; Civil, Electrical and Electronic, Chemical at Nottingham Malaysia; Electrical and Electronic, Chemical at Taylor's → `pending/2026-11-12-engineering.ndjson` | Birmingham Electrical: its own subject list links to a missing page and no course page could be found. Not yet: Waterloo, Toronto, McGill (each branch is its own admission; fees come from per-term schedules), UAE universities. Not needed: US universities, UBC, McMaster, Alberta, Cambridge, Warwick, Oxford, UNSW, Monash AU (one Engineering admission; the existing record covers every branch) |
 | Psychology | Manchester, Nottingham, Warwick, Cambridge (Psychological and Behavioural Sciences), Nottingham Malaysia, Taylor's, UNSW (Psychological Science) → `pending/2026-11-12-psychology.ndjson` | Birmingham: its Psychology page has no 2027 entry requirements or fees yet. Not yet: US and Canadian universities (Psychology is a major chosen after admission to the college; needs a way to reuse the college's admission and fee records) |
+| Law | Manchester (LLB), Nottingham (LLB), Warwick (LLB), Cambridge (BA, LNAT), Taylor's (LLB, Malaysian and English law) → `pending/2026-11-12-law.ndjson` | Birmingham: page has no 2027 details. Universiti Malaya: its Bachelor of Laws is "Not Offered" to international applicants. UNSW: law is a double degree for school leavers; not added |
+| Biology / Life Sciences | Imperial (Biological Sciences), Manchester, Nottingham, Warwick (Biological Sciences), Cambridge (Natural Sciences, Biological stream), Taylor's and Universiti Malaya (Biotechnology) → `pending/2026-11-12-biology.ndjson` | Not yet: Birmingham, Nottingham Malaysia, UNSW (general Bachelor of Science) |
+| Architecture | Nottingham (BArch), Cambridge, Taylor's → `pending/2026-11-12-architecture.ndjson` | Manchester: 2027 fees not set (and no international fee given). Universiti Malaya: 3.5-year degree; the fee averaging only handles whole years so far |
 
 Medicine not offered as a first degree (no record added): US universities (medicine is a
 graduate degree there), Warwick (graduate entry only).
@@ -74,3 +77,7 @@ graduate degree there), Warwick (graduate entry only).
 - Warwick Business: showed the 2026-27 overseas fee (£35,530) for 2027 entry.
   Corrected to £37,310 (2027-28, Band 2) from Warwick's overseas fees table
   (`pending/2026-11-12-fixes.ndjson`).
+- A page used as a source by several subjects (e.g. Warwick's fee table, Cambridge's
+  fees PDF) gets one source record with the quotes of all subjects, the same in
+  every batch, so the batches can be applied in any order. A source already in
+  Sanity is patched to the full set of quotes.

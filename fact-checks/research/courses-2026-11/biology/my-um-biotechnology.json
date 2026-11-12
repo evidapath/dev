@@ -1,0 +1,89 @@
+{
+  "uni": "my-um",
+  "slug": "biotechnology",
+  "sources": {
+    "course": {
+      "url": "https://study.um.edu.my/bachelor-of-science-in-biotechnology",
+      "page": "aa19964d5a3c",
+      "title": "Bachelor of Science in Biotechnology | Study@UM, Universiti Malaya",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Duration: 4 Years (8 Semester and 1 Special Semester ), Full Time (Coursework)",
+        "International RM 70,600 ( Note: Not inclusive of 6% Sales and Service Tax (SST))",
+        "GCE A-Level Obtain a recognized GCE A-Level qualification Obtain a minimum of grade B in Biology Obtain a minimum of 60%/grade B- in any ONE (1) of the following subjects: Chemistry / Physics / Mathematics / Further Mathematics",
+        "International Baccalaureate (IB) Obtain a minimum score of 30 points Obtain at least Grade 5 (HL) / 6 (SL) in Biology Obtain at least Grade 5 (HL) / 6 (SL) in any ONE (1) of the following subjects: Chemistry / Physics / Mathematics / Further Mathematics",
+        "MUET 4.0 IELTS (Academic) 5.5 TOEFL iBT (Centre-based) 46"
+      ]
+    },
+    "fees": {
+      "url": "https://study.um.edu.my/doc/tution-fee/Fee%20Structure,%20UG,%20International%20-%20Updated%2022%20Oct%202025.pdf",
+      "page": "6ecd995cd373",
+      "title": "Fee structure, Bachelor programme (international), Universiti Malaya (PDF)",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Bachelor of Science in Biotechnology 70,600.00",
+        "3) Fees structure is based on minimum or common period of study.",
+        "Academic session 2025/2026"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biotechnology",
+    "degree_type": "BSc",
+    "field": "Biology",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Science in Biotechnology, 4 years (8 semesters and 1 special semester), full time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_formula": "70600/4",
+      "academic_year": "2025/2026 fee structure",
+      "source": [
+        "fees",
+        "course"
+      ],
+      "living_from": "costProfile-my-um-cost-bsc-cs-international",
+      "note": "International: RM 70,600 for the programme (UM's fee structure is based on the minimum period of study, 4 years), shown as RM 17,650 a year. Not inclusive of 6% Sales and Service Tax (SST)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Biotechnology (international): a recognised GCE A-Level qualification with at least grade B in Biology and at least 60%/grade B- in one of Chemistry, Physics, Mathematics or Further Mathematics.",
+      "required_subjects": [
+        "Biology"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 5.5, MUET 4.0 or TOEFL iBT (centre-based) 46.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Biotechnology (international): a minimum of 30 points, with at least Grade 5 (HL) / 6 (SL) in Biology and in one of Chemistry, Physics, Mathematics or Further Mathematics.",
+      "required_subjects": [
+        "Biology"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 5.5, MUET 4.0 or TOEFL iBT (centre-based) 46.",
+        "source": "course"
+      }
+    }
+  ]
+}

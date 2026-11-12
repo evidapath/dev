@@ -1,0 +1,183 @@
+{
+  "uni": "uk-imperial",
+  "slug": "biological-sciences",
+  "sources": {
+    "course": {
+      "url": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/biological-sciences/",
+      "page": "37be9a0a6a1b",
+      "title": "Biological Sciences BSc | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "Qualification BSc Duration 3 years Start date October 2027 UCAS course code C100",
+        "Delivered by Department of Life Sciences",
+        "Minimum entry standard AAA To include: A in Biology A in Chemistry, Mathematics or Physics A in a third subject",
+        "Minimum entry standard 38 points To include: 6 in Biology at higher level 6 in Chemistry, Mathematics or Physics at higher level",
+        "EITHER 5, 5, 5, 4, 4 to include 5 in Biology and 5 in one of Chemistry, Calculus (AB or BC), Physics (1 or 2 or C) OR 5, 5, 4 to include 5 in Biology and 5 in one of Chemistry, Calculus (AB or BC), Physics (1 or 2 or C) Award of acceptable school leaving qualification (e.g., US High School Diploma) Either 1460 in SAT or 31 in ACT.",
+        "Our minimum entry standard is 90% overall, to include: 90% in Biology 90% in Chemistry, Maths or Physics 90% Other",
+        "Our minimum entry standard is 1.6 overall, to include the following abiturprufung exams: 14 in Biology 14 in Chemistry, Mathematics or Physics",
+        "you will need to sit three ESAT modules: Mathematics 1 Chemistry Biology",
+        "must achieve the higher university requirement",
+        "Home fee 2027 entry £10,050 per year",
+        "Overseas fee 2027 entry £47,800 per year"
+      ]
+    },
+    "english": {
+      "url": "https://www.imperial.ac.uk/study/apply/english-language/",
+      "page": "0004cdc8126c",
+      "title": "English language requirements | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "IELTS - Academic (Test-Centre/UKVI SELT/Online) Standard Higher 6.5 overall (minimum 6.0 in all elements) 7.0 overall (minimum 6.5 in all elements)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biological Sciences",
+    "degree_type": "BSc",
+    "field": "Biology",
+    "faculty": "Department of Life Sciences",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Biological Sciences BSc (UCAS C100), 3 years, Department of Life Sciences. ESAT required.",
+    "application_requirements": [
+      {
+        "name": "ESAT",
+        "description": "You must sit the Engineering and Science Admissions Test (ESAT): Mathematics 1, Chemistry and Biology.",
+        "type": "standardized_test_score",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-home",
+      "note": "Home fee, 2027 entry: £10,050 per year (Imperial course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 47800,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-international",
+      "note": "Overseas fee, 2027 entry: £47,800 per year (Imperial course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Biological Sciences: AAA, including A in Biology and A in Chemistry, Mathematics or Physics, plus A in a third subject. ESAT also required.",
+      "required_subjects": [
+        "Biology"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Chemistry and Biology."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Biological Sciences: 38 points, with 6 in Biology and 6 in Chemistry, Mathematics or Physics at higher level. ESAT also required.",
+      "required_subjects": [
+        "Biology"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Chemistry and Biology."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Biological Sciences: Advanced Placement: EITHER 5, 5, 5, 4, 4 OR 5, 5, 4, including 5 in Biology and 5 in one of Chemistry, Calculus (AB or BC) or Physics; plus a US High School Diploma and either 1460 in SAT or 31 in ACT. ESAT also required.",
+      "required_subjects": [
+        "Biology"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Chemistry and Biology."
+        },
+        {
+          "name": "SAT or ACT",
+          "required": "required",
+          "notes": "1460 in SAT or 31 in ACT"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Biological Sciences: 90% overall, with 90% in Biology, 90% in Chemistry, Maths or Physics, and 90% in another subject. ESAT also required.",
+      "required_subjects": [
+        "Biology"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Chemistry and Biology."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "abitur",
+      "source": "course",
+      "threshold": "Biological Sciences: 1.6 overall, with 14 in Biology and 14 in Chemistry, Mathematics or Physics in the Abiturprüfung exams. ESAT also required.",
+      "required_subjects": [
+        "Biology"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Chemistry and Biology."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    }
+  ]
+}

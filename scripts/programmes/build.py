@@ -85,6 +85,15 @@ def main(research_dir: str, pages_dir: str, out_path: str):
         fail("no research files")
     muts: list[dict] = []
     categories_needed: dict[str, dict] = {}
+    # A page can be a source for several subjects (e.g. one fee table). Every batch
+    # writes the same source record with the quotes of all subjects, so applying the
+    # batches in any order leaves the same excerpt.
+    shared: dict[str, list[str]] = {}
+    for other in sorted(Path(research_dir).resolve().parent.glob("*/*.json")):
+        for s in json.loads(other.read_text())["sources"].values():
+            k = s["url"] + ("#page-data" if s["page"].endswith("-raw") else "")
+            shared.setdefault(k, [])
+            shared[k] += [q for q in s["quotes"] if q not in shared[k]]
     for f in files:
         r = json.loads(f.read_text())
         uni, slug = r["uni"], r["slug"]
@@ -126,7 +135,7 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                 "_id": sid, "_type": "sourceRecord", "id": f"ev-{h}", "url": s["url"],
                 "title": s["title"], "source_organization": s["organization"],
                 "source_type": "official_university" if s.get("type", "university") == "university" else s["type"],
-                "excerpt": " ".join(s["quotes"]), "retrieved_at": f"{TODAY}T00:00:00Z",
+                "excerpt": " ".join(shared.get(key_url, s["quotes"])), "retrieved_at": f"{TODAY}T00:00:00Z",
                 "retrieval_method": f"Read by EvidaPath course-expansion pass {TODAY}; quotes checked against the saved page",
                 "fields_supported": [], "notes": "",
             }})
@@ -299,8 +308,15 @@ def main(research_dir: str, pages_dir: str, out_path: str):
         if d["_type"] == "costProfile" and d["residency_category_ref"]["_ref"] not in existing:
             fail(f"{d['_id']}: residency category {d['residency_category_ref']['_ref']} doesn't exist")
 
-    # Source records that already exist (same URL, same id) are kept as they are.
-    existing_src = set(sanity('*[_type=="sourceRecord"]._id'))
+    # Source records that already exist (same URL, same id) are kept, except that
+    # their excerpt is brought up to the quotes now used from that page.
+    existing_src = {d["_id"]: d["excerpt"] for d in sanity('*[_type=="sourceRecord"]{_id, excerpt}')}
+    patches = []
+    for m in muts:
+        d = m["createOrReplace"]
+        if d["_type"] == "sourceRecord" and d["_id"] in existing_src and existing_src[d["_id"]] != d["excerpt"]:
+            if d["_id"] not in {p["patch"]["id"] for p in patches}:
+                patches.append({"patch": {"id": d["_id"], "set": {"excerpt": d["excerpt"], "retrieved_at": d["retrieved_at"]}}})
     muts = [m for m in muts if not (m["createOrReplace"]["_type"] == "sourceRecord" and m["createOrReplace"]["_id"] in existing_src)]
     ids = [m["createOrReplace"]["_id"] for m in muts]
     dupes = {i for i in ids if ids.count(i) > 1 and not i.startswith("sourceRecord-")}
@@ -313,8 +329,9 @@ def main(research_dir: str, pages_dir: str, out_path: str):
             continue
         seen.add(i)
         out.append(m)
+    out += patches
     Path(out_path).write_text("".join(json.dumps(m, ensure_ascii=False) + "\n" for m in out))
-    print(f"OK: {len(files)} programmes, {len(out)} mutations → {out_path}")
+    print(f"OK: {len(files)} programmes, {len(out)} mutations ({len(patches)} source excerpts updated) → {out_path}")
 
 
 if __name__ == "__main__":

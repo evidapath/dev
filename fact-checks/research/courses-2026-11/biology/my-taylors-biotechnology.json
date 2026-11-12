@@ -1,0 +1,81 @@
+{
+  "uni": "my-taylors",
+  "slug": "biotechnology",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/biosciences/undergraduate/bachelor-of-biotechnology.html",
+      "page": "c5f814882b10",
+      "title": "Bachelor of Biotechnology (Honours) | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Bachelor of Biotechnology (Honours)",
+        "Programme Information for 2026",
+        "Duration 3-year Study options Full Time Only Intake Month February, April, September Offered by School of Biosciences Accredited by MQA Fees MYR 121,730 (Local) USD 40,049 (International)",
+        "Fees shown in the Fee Schedule are exclusive of the 6% Service Tax.",
+        "A Level Min. DD for 2 subjects",
+        "International Baccalaureate (IB) Min. 24 points based on 6 subjects",
+        "INTERNATIONAL STUDENTS IELTS Band 5.5"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biotechnology",
+    "degree_type": "Bachelor's degree (Honours)",
+    "field": "Biology",
+    "faculty": "School of Biosciences",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Biotechnology (Honours), 3 years full time; intakes February, April and September.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "40049/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 40,049 for the whole 3-year programme (2026), shown as a yearly average. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "121730/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 121,730 for the whole 3-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Biotechnology: minimum DD for 2 subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS (or equivalent)",
+        "min_score": "IELTS Band 5.5, or a completed Pre-University / Foundation in Science programme taught in English.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Biotechnology: minimum 24 points based on 6 subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS (or equivalent)",
+        "min_score": "IELTS Band 5.5, or a completed Pre-University / Foundation in Science programme taught in English.",
+        "source": "course"
+      }
+    }
+  ]
+}

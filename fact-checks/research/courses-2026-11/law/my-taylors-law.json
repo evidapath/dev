@@ -1,0 +1,81 @@
+{
+  "uni": "my-taylors",
+  "slug": "law",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/law-and-governance/undergraduate/bachelor-of-laws.html",
+      "page": "17b45e628af2",
+      "title": "Bachelor of Laws (Honours) | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Bachelor of Laws (Honours)",
+        "Programme Information for 2026",
+        "Duration 3 years Study options Full Time Only Intake Month February, April, September Offered by School of Law and Governance Dual Jurisdiction Programme Malaysian Law and the Law of England and Wales Fees MYR 135,998 (Local) USD 44,033 (International)",
+        "Fees shown in the Fee Schedule are exclusive of the 6% Service Tax.",
+        "A Level Min. CC / BD / AD",
+        "International Baccalaureate (IB) 24 points in 6 subjects and at least 4 points for 3 Higher Level subjects",
+        "INTERNATIONAL STUDENTS IELTS (or Equivalent) Band 6.0"
+      ]
+    }
+  },
+  "program": {
+    "name": "Law",
+    "degree_type": "LLB (Hons)",
+    "field": "Law",
+    "faculty": "School of Law and Governance",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Laws (Honours), 3 years full time, dual jurisdiction: Malaysian law and the law of England and Wales. Intakes February, April and September.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "44033/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 44,033 for the whole 3-year programme (2026), shown as a yearly average. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "135998/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 135,998 for the whole 3-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Law: minimum CC / BD / AD.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS (or equivalent)",
+        "min_score": "IELTS (or equivalent) Band 6.0, or a completed Pre-University / Diploma taught in English.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Law: IB 24 points in 6 subjects and at least 4 points in 3 Higher Level subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS (or equivalent)",
+        "min_score": "IELTS (or equivalent) Band 6.0, or a completed Pre-University / Diploma taught in English.",
+        "source": "course"
+      }
+    }
+  ]
+}

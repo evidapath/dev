@@ -1,0 +1,125 @@
+{
+  "uni": "uk-cambridge",
+  "slug": "natural-sciences",
+  "sources": {
+    "course": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/courses/natural-sciences",
+      "page": "0b03f5e30cc6",
+      "title": "Natural Sciences | Undergraduate Study, University of Cambridge",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "UCAS code BCF0 Course length BA (Hons) or MSci 3 or 4 years, full-time Start date October 2027 Study at All Colleges",
+        "Minimum offer level A level: A*A*A IB: 41-42 points, with 776 at Higher Level",
+        "To apply to any of our Colleges for Natural Sciences, you will need A levels/IB Higher Levels (or the equivalent) in: Mathematics 2 other science or mathematics subjects (Biology, Chemistry, Physics, and, for A level only, Further Mathematics)",
+        "When you apply, you'll need to tell us whether you're interested in Biological or Physical Sciences.",
+        "All applicants for Natural Sciences are required to take the Engineering and Science Admissions Test (ESAT) at an authorised assessment centre. You must register in advance for this test."
+      ]
+    },
+    "fees": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/sites/default/files/2026-09/undergraduate_tuition_fees_2027-28.pdf",
+      "page": "afa5626c6276",
+      "title": "Undergraduate tuition fees 2027-28 (Cambridge, PDF)",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "Undergraduate tuition fees 2027-28",
+        "Natural Sciences [1] 10,050 46,872",
+        "International students - College fees payable in addition to the tuition fee",
+        "Queens' £12,885"
+      ]
+    },
+    "colleges": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/colleges",
+      "page": "0ebd6010715e",
+      "title": "College A-Z | Undergraduate Study, University of Cambridge",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "The 29 undergraduate Colleges provide accommodation, support and more for almost all students for at least three years.",
+        "Queens' College"
+      ]
+    }
+  },
+  "program": {
+    "name": "Natural Sciences (Biological)",
+    "degree_type": "BA (Hons)",
+    "field": "Biology",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Natural Sciences (UCAS BCF0), BA (Hons) in 3 years or MSci in 4. You apply for the Biological or Physical stream. ESAT required.",
+    "application_requirements": [
+      {
+        "name": "ESAT",
+        "description": "All applicants for Natural Sciences must take the Engineering and Science Admissions Test (ESAT) at an authorised assessment centre, registering in advance.",
+        "type": "standardized_test_score",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-cambridge-cost-meng-engineering-home",
+      "note": "Home fee, Natural Sciences, 2027-28: £10,050 (Cambridge fees PDF)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 46872,
+      "mandatory_fees_annual": 12885,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": [
+        "fees",
+        "colleges"
+      ],
+      "living_from": "costProfile-uk-cambridge-cost-meng-engineering-international",
+      "note": "Overseas fee, Natural Sciences, 2027-28: £46,872 a year, plus a College fee. The lowest College fee among the undergraduate Colleges is Queens' at £12,885, which is shown."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Natural Sciences: A*A*A minimum offer, including Mathematics and 2 other science or mathematics subjects (Biology, Chemistry, Physics or Further Mathematics). ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Two of Biology, Chemistry, Physics, Further Mathematics"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "from_existing": "admissionsRequirement-uk-cambridge-admreq-ba-cs-a-level"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Natural Sciences: IB 41-42 points, with 776 at Higher Level, including Mathematics and 2 of Biology, Chemistry or Physics at Higher Level. ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Two of Biology, Chemistry, Physics, Further Mathematics"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "from_existing": "admissionsRequirement-uk-cambridge-admreq-ba-cs-a-level"
+      }
+    }
+  ]
+}

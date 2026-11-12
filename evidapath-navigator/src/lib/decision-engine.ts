@@ -469,6 +469,10 @@ const RELATED: [RegExp, string[]][] = [
   [/electr/i, ["Electrical", "Electronic", "Engineering"]],
   [/engineer/i, ["Engineering"]],
   [/medic|mbbs|mbchb|doctor/i, ["Medicine"]],
+  [/\bllb\b|\blaws?\b|legal/i, ["Law"]],
+  [/psych/i, ["Psychology", "Psychological"]],
+  [/biolog|life sci|bioscien|biotech/i, ["Biology", "Biological", "Biosciences", "Biotechnology"]],
+  [/archit/i, ["Architecture"]],
 ];
 
 // A fallback match never swaps one engineering branch for another: someone asking
