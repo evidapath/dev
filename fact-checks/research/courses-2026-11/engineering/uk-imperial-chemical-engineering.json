@@ -1,0 +1,189 @@
+{
+  "uni": "uk-imperial",
+  "slug": "chemical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/chemical-engineering/",
+      "page": "61267d95eec0",
+      "title": "Chemical Engineering MEng | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "Qualification MEng Duration 4 years Start date October 2027 UCAS course code H801",
+        "Delivered by Department of Chemical Engineering",
+        "Minimum entry standard A*A*A To include: A* in Chemistry A* in Mathematics A in Biology, Business Studies, Economics, Further Mathematics or Physics",
+        "Minimum entry standard 40 points To include: 7 in Mathematics at higher level 7 in Chemistry at higher level 6 in Biology, Business Management, Economics or Physics at higher level",
+        "EITHER 5, 5, 5, 5, 5 to include Chemistry and Calculus BC and at least one of Physics, Biology or Economics OR 5, 5, 5 to include Chemistry and Calculus BC and one of Physics, Biology or Economics Award of acceptable school leaving qualification (e.g., US High School Diploma) Either 1480 in SAT or 33 in ACT.",
+        "Our minimum entry standard is 92% overall, to include: 95% in Mathematics 95% / 90% including Chemistry",
+        "Our minimum entry standard is 1.4 overall, to include the following abiturprufung exams: 14 in Mathematics 14 in Chemistry",
+        "you will need to sit three ESAT modules: Mathematics 1 Mathematics 2 Chemistry",
+        "must achieve the standard university requirement",
+        "Application deadlines - Wednesday 13 January 2027 at 18.00 (UK time)",
+        "Home fee 2027 entry £10,050 per year",
+        "Overseas fee 2027 entry £47,800 per year"
+      ]
+    },
+    "english": {
+      "url": "https://www.imperial.ac.uk/study/apply/english-language/",
+      "page": "0004cdc8126c",
+      "title": "English language requirements | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "IELTS - Academic (Test-Centre/UKVI SELT/Online) Standard Higher 6.5 overall (minimum 6.0 in all elements) 7.0 overall (minimum 6.5 in all elements)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemical Engineering",
+    "degree_type": "MEng",
+    "field": "Engineering",
+    "faculty": "Department of Chemical Engineering",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Chemical Engineering MEng (UCAS H801), 4 years, Department of Chemical Engineering. ESAT required.",
+    "application_requirements": [
+      {
+        "name": "ESAT",
+        "description": "You must sit the Engineering and Science Admissions Test (ESAT): Mathematics 1, Mathematics 2 and Chemistry.",
+        "type": "standardized_test_score",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-home",
+      "note": "Home fee, 2027 entry: £10,050 per year (Imperial course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 47800,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-international",
+      "note": "Overseas fee, 2027 entry: £47,800 per year (Imperial course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Chemical Engineering: A*A*A, including A* in Chemistry and A* in Mathematics, plus A in Biology, Business Studies, Economics, Further Mathematics or Physics. ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Mathematics 2 and Chemistry."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall (minimum 6.0 in all elements): Imperial's standard level.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Chemical Engineering: 40 points, with 7 in Mathematics and 7 in Chemistry at higher level, and 6 in Biology, Business Management, Economics or Physics at higher level. ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Mathematics 2 and Chemistry."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall (minimum 6.0 in all elements): Imperial's standard level.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Chemical Engineering: Advanced Placement: EITHER 5, 5, 5, 5, 5 OR 5, 5, 5, including Chemistry, Calculus BC and one of Physics, Biology or Economics; plus a US High School Diploma and either 1480 in SAT or 33 in ACT. ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Mathematics 2 and Chemistry."
+        },
+        {
+          "name": "SAT or ACT",
+          "required": "required",
+          "notes": "1480 in SAT or 33 in ACT"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall (minimum 6.0 in all elements): Imperial's standard level.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Chemical Engineering: 92% overall, with 95% in Mathematics and 95% / 90% including Chemistry. ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Mathematics 2 and Chemistry."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall (minimum 6.0 in all elements): Imperial's standard level.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "abitur",
+      "source": "course",
+      "threshold": "Chemical Engineering: 1.4 overall, with 14 in Mathematics and 14 in Chemistry in the Abiturprüfung exams. ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Mathematics 2 and Chemistry."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall (minimum 6.0 in all elements): Imperial's standard level.",
+        "source": "english"
+      }
+    }
+  ]
+}

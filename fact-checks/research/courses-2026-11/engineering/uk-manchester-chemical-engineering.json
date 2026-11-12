@@ -1,0 +1,87 @@
+{
+  "uni": "uk-manchester",
+  "slug": "chemical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03340/beng-chemical-engineering/",
+      "page": "f6053ec4d853",
+      "title": "BEng Chemical Engineering (2027 entry) | The University of Manchester",
+      "organization": "The University of Manchester",
+      "quotes": [
+        "Duration: 3 years Year of entry: 2027 UCAS course code: H800 / Institution code: M20",
+        "A-level AAA including Mathematics and either Chemistry or Physics.",
+        "36 points overall with 6,6,6 at Higher Level, including Mathematics and Chemistry or Physics.",
+        "IELTS 6.5 overall with no sub-skill below 6.5",
+        "Tuition fees for home students will be £10,050 for the 2027/28 academic year.",
+        "Tuition fees for international students will be £39,700 for the 2027/28 academic year. For subsequent academic years, the University reserves the right to increase the tuition fee by up to 7% each year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemical Engineering",
+    "degree_type": "BEng",
+    "field": "Engineering",
+    "faculty": "School of Engineering",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Chemical Engineering BEng (UCAS H800), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-home",
+      "note": "Home fee, 2027/28 (2027 entry): £10,050 a year (The University of Manchester course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-international",
+      "note": "International fee for 2027/28: £39,700. The University may raise it by up to 7% a year in later years.",
+      "tuition_annual": 39700
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Chemical Engineering: AAA including Mathematics and either Chemistry or Physics.",
+      "required_subjects": [
+        "Mathematics",
+        "Chemistry or Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall with no sub-skill below 6.5.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Chemical Engineering: 36 points overall with 6,6,6 at Higher Level, including Mathematics and Chemistry or Physics.",
+      "required_subjects": [
+        "Mathematics",
+        "Chemistry or Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall with no sub-skill below 6.5.",
+        "source": "course"
+      }
+    }
+  ]
+}

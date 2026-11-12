@@ -1,0 +1,121 @@
+{
+  "uni": "my-nottingham",
+  "slug": "electrical-electronic-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.edu.my/ugstudy/course/electrical-and-electronic-engineering-meng-hons",
+      "page": "d946944cbf4a",
+      "title": "MEng (Hons) Electrical and Electronic Engineering | University of Nottingham Malaysia",
+      "organization": "University of Nottingham Malaysia",
+      "quotes": [
+        "MEng (Hons) in Electrical and Electronic Engineering",
+        "Full-time: 4 years Part-time: Not available Start date: September 2027 Malaysian fee: RM58,000 per year International fee: RM69,000 per year*",
+        "Enjoy peace of mind with our Fixed Tuition Fee policy, pay the same amount each year until you graduate.",
+        "*For International Students, a 6% Sales and Service Tax (SST) will apply to non-Malaysian citizens from 1 July 2025.",
+        "A Level BBC, including Mathematics and Physics, excluding Critical Thinking and General Studies.",
+        "IB Diploma 26 points with 5 and 4 at Higher Level, including either Mathematics: Analysis and Approaches (HL) or Mathematics: Applications and Interpretation (HL), plus Physics (HL).",
+        "Senior School Certificate Examination (CBSE) / Indian School Certificate (CISCE) - Class XII 78% average from the best four subjects, including Mathematics and Physics at 80% and 70%, respectively.",
+        "Advance Placement (AP) 4, 4, 3, including AP Calculus and AP Physics.",
+        "IELTS (Academic): 6.0 (with no less than 5.5 in each element)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Electrical and Electronic Engineering",
+    "degree_type": "MEng (Hons)",
+    "field": "Engineering",
+    "faculty": "Faculty of Science and Engineering",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "course",
+    "summary": "MEng (Hons) in Electrical and Electronic Engineering, 4 years full-time, September 2027 start.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_annual": 69000,
+      "academic_year": "September 2027 start (fixed for the programme)",
+      "source": "course",
+      "living_from": "costProfile-my-nottingham-cost-meng-me-international",
+      "fees_from": "costProfile-my-nottingham-cost-meng-me-international",
+      "note": "International fee: RM69,000 per year, fixed for the programme. A 6% Sales and Service Tax (SST) applies to non-Malaysian citizens on top of this."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_annual": 58000,
+      "academic_year": "September 2027 start (fixed for the programme)",
+      "source": "course",
+      "living_from": "costProfile-my-nottingham-cost-meng-me-malaysian",
+      "note": "Malaysian fee: RM58,000 per year, fixed for the programme."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: BBC, including Mathematics and Physics, excluding Critical Thinking and General Studies.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0, with no less than 5.5 in each element.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: 26 points with 5 and 4 at Higher Level, including either Mathematics: Analysis and Approaches (HL) or Mathematics: Applications and Interpretation (HL), plus Physics (HL).",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0, with no less than 5.5 in each element.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: 78% average from the best four subjects, including Mathematics and Physics at 80% and 70%, respectively.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0, with no less than 5.5 in each element.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: Advance Placement (AP) 4, 4, 3, including AP Calculus and AP Physics.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0, with no less than 5.5 in each element.",
+        "source": "course"
+      }
+    }
+  ]
+}

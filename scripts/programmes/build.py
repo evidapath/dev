@@ -13,7 +13,8 @@ stops on the first failure:
      appears in a quote of the source that value cites;
   3. deadlines: the day, the month name and the year appear in a cited quote.
 
-Values copied from records already in Sanity ("from_existing") are not re-checked
+Values copied from records already in Sanity ("from_existing", "living_from",
+"fees_from") are not re-checked
 here: they were verified when they were added, and the record id is kept.
 
 Reads SANITY_READ_TOKEN from evidapath-navigator/.env.local only to copy those
@@ -173,7 +174,8 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                 c["tuition_annual"] = round(eval(f_, {"__builtins__": {}}))
             else:
                 check_numbers(c["tuition_annual"], c["source"], f"{c['residency']} tuition")
-            check_numbers(c.get("mandatory_fees_annual", ""), c["source"], f"{c['residency']} compulsory fees")
+            if not c.get("fees_from"):
+                check_numbers(c.get("mandatory_fees_annual", ""), c["source"], f"{c['residency']} compulsory fees")
             living = None
             if c.get("living_from"):
                 living = sanity(f'*[_id=="{c["living_from"]}"][0]{{estimated_living_costs_annual, living_cost_source_note, living_cost_source_basis, mandatory_fees_annual, currency, "university": program_ref._ref}}')
@@ -183,6 +185,16 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                     fail(f"{where}: living_from is in {living['currency']}, this fee is in {c['currency']}; amounts can't be mixed")
                 if not living["university"].startswith(f"program-{uni}"):
                     fail(f"{where}: living_from belongs to another university")
+            # Compulsory non-tuition fees that apply to every programme at the university
+            # (e.g. a visa fee) are copied from an existing verified record, like living costs.
+            extra = None
+            if c.get("fees_from"):
+                extra = sanity(f'*[_id=="{c["fees_from"]}"][0]{{mandatory_fees_annual, currency, "university": program_ref._ref, "note": extension_metadata.fields[key=="compulsory_fees_note"][0].value}}')
+                if not extra or not extra["university"].startswith(f"program-{uni}") or extra["currency"] != c["currency"]:
+                    fail(f"{where}: fees_from {c['fees_from']} missing, another university or another currency")
+                if c.get("mandatory_fees_annual"):
+                    fail(f"{where}: give mandatory_fees_annual or fees_from, not both")
+                c["mandatory_fees_annual"] = extra["mandatory_fees_annual"]
             cid = f"{uni}-cost-{slug}-{c['residency']}"
             doc = {
                 "_id": f"costProfile-{cid}", "_type": "costProfile", "id": cid,
@@ -200,6 +212,10 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                     {"_key": "fee_note", "_type": "extensionMetadataFieldEntry", "key": "fee_note",
                      "value": c["note"], "value_type": "string"}]},
             }
+            if extra and extra["note"]:
+                doc["extension_metadata"]["fields"].append(
+                    {"_key": "compulsory_fees_note", "_type": "extensionMetadataFieldEntry",
+                     "key": "compulsory_fees_note", "value": extra["note"], "value_type": "string"})
             check_numbers(c["note"].replace(f"{c['tuition_annual']:,}", ""), c["source"], f"{c['residency']} fee note")
             if living:
                 doc["estimated_living_costs_annual"] = living["estimated_living_costs_annual"]

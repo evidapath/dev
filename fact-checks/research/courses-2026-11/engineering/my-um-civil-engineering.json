@@ -1,0 +1,88 @@
+{
+  "uni": "my-um",
+  "slug": "civil-engineering",
+  "sources": {
+    "course": {
+      "url": "https://study.um.edu.my/bachelor-of-civil-engineering",
+      "page": "e4d70214cdee",
+      "title": "Bachelor of Civil Engineering | Study@UM, Universiti Malaya",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Duration: 4 Years (8 semester and 1 special semester ), Full time (Coursework)",
+        "International RM 132,100 ( Note: Not inclusive of 6% Sales and Service Tax (SST))",
+        "GCE A-Level Obtain a recognized GCE A-Level qualification Obtain a minimum of grade B in the following subjects: Mathematics & Physics International Baccalaureate (IB) Obtain a minimum score of 30 points Obtain at least Grade 5 (HL) / 6 (SL) in any TWO (2) subjects.",
+        "Candidates who apply for Bachelor of Electrical Engineering and Chemical Engineering must not be colour blind.",
+        "MUET 4.0 IELTS (Academic) 5.5 TOEFL iBT (Centre-based) 46"
+      ]
+    },
+    "fees": {
+      "url": "https://study.um.edu.my/doc/tution-fee/Fee%20Structure,%20UG,%20International%20-%20Updated%2022%20Oct%202025.pdf",
+      "page": "6ecd995cd373",
+      "title": "Fee structure, Bachelor programme (international), Universiti Malaya (PDF)",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Bachelor of Civil Engineering 132,100.00",
+        "3) Fees structure is based on minimum or common period of study.",
+        "Academic session 2025/2026"
+      ]
+    }
+  },
+  "program": {
+    "name": "Civil Engineering",
+    "degree_type": "Bachelor's degree",
+    "field": "Engineering",
+    "faculty": "Faculty of Engineering",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Civil Engineering, 4 years (8 semesters and 1 special semester), full time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_formula": "132100/4",
+      "academic_year": "2025/2026 fee structure",
+      "source": [
+        "fees",
+        "course"
+      ],
+      "living_from": "costProfile-my-um-cost-bsc-cs-international",
+      "note": "International: RM 132,100 for the programme (UM's fee structure is based on the minimum period of study, 4 years), shown as RM 33,025 a year. Not inclusive of 6% Sales and Service Tax (SST)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Civil Engineering (international): a recognised GCE A-Level qualification with at least grade B in Mathematics and Physics.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 5.5, MUET 4.0 or TOEFL iBT (centre-based) 46.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Civil Engineering (international): a minimum of 30 points, with at least Grade 5 (HL) / 6 (SL) in any two subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 5.5, MUET 4.0 or TOEFL iBT (centre-based) 46.",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "uni": "uk-nottingham",
+  "slug": "electrical-electronic-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Electrical-and-Electronic-Engineering-BEng-Hons.html",
+      "page": "ff184f2c5fae",
+      "title": "Electrical and Electronic Engineering BEng | University of Nottingham",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "BEng Hons UCAS Code H603",
+        "A levels AAB IB 32 points overall",
+        "Required subjects Maths and one of electronics, computer science, physics, chemistry, biology, further mathematics, design and technology: systems control or design technology: design engineering H404.",
+        "IB score 32 points overall or 655 in 3 Higher Level Certificates. IB requirements One of HL5 Mathematics: Analysis and Approaches, HL5 Mathematics: Applications and Interpretation OR SL6 Mathematics: Analysis and Approaches AND 5 at HL in one of biology, chemistry, physics or computer science.",
+        "Duration 3 years full-time Location University Park Campus Select start date September 2027",
+        "The entrance requirements listed apply to 2027 entry.",
+        "IELTS 6.0 (no less than 5.5 in any element)"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Electrical-and-Electronic-Engineering-BEng-Hons.html",
+      "page": "ff184f2c5fae-raw",
+      "title": "Electrical and Electronic Engineering BEng | University of Nottingham (fee labels in the page)",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "<span class=\"info-bar__list-link-label home-student-detail\"> £10,050 per year</span>",
+        "<span class=\"info-bar__list-link-label international-student-detail\"> £33,500 per year</span>"
+      ]
+    }
+  },
+  "program": {
+    "name": "Electrical and Electronic Engineering",
+    "degree_type": "BEng",
+    "field": "Engineering",
+    "faculty": "Faculty of Engineering",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Electrical and Electronic Engineering BEng (UCAS H603), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-home",
+      "note": "Home fee for a September 2027 start: £10,050 per year (Nottingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-international",
+      "note": "International fee for a September 2027 start: £33,500 per year (Nottingham course page).",
+      "tuition_annual": 33500
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: AAB, including Maths and one of electronics, computer science, physics, chemistry, biology, further mathematics, or design and technology (systems control or design engineering).",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 (no less than 5.5 in any element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: 32 points overall or 655 in 3 Higher Level Certificates, with HL5 Mathematics (either syllabus) or SL6 Mathematics: Analysis and Approaches, and 5 at HL in one of biology, chemistry, physics or computer science.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 (no less than 5.5 in any element).",
+        "source": "course"
+      }
+    }
+  ]
+}

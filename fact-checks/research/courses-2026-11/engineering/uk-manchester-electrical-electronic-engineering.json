@@ -1,0 +1,86 @@
+{
+  "uni": "uk-manchester",
+  "slug": "electrical-electronic-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03363/beng-electrical-and-electronic-engineering/all-content/",
+      "page": "958525031e7b",
+      "title": "BEng Electrical and Electronic Engineering (2027 entry) | The University of Manchester",
+      "organization": "The University of Manchester",
+      "quotes": [
+        "Duration 3 years",
+        "UCAS course code H600",
+        "A-level A*AA including A* in Mathematics and A in either Physics, Electronics, Further Mathematics, Chemistry or Computer Science.",
+        "37 points overall with 7,6,6 in Higher Level subjects, including 7 in Higher Level Mathematics and 6 in Higher Level Physics or Chemistry.",
+        "IELTS 7.0 overall, with 7.0 in Writing and 6.5 in all other subskills",
+        "Tuition fees for home students will be £10,050 for the 2027/28 academic year.",
+        "Tuition fees for international students will be £37,500 for the 2027/28 academic year. For subsequent academic years, the University reserves the right to increase the tuition fee by up to 7% each year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Electrical and Electronic Engineering",
+    "degree_type": "BEng",
+    "field": "Engineering",
+    "faculty": "School of Engineering",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Electrical and Electronic Engineering BEng (UCAS H600), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-home",
+      "note": "Home fee, 2027/28 (2027 entry): £10,050 a year (The University of Manchester course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-international",
+      "note": "International fee for 2027/28: £37,500. The University may raise it by up to 7% a year in later years.",
+      "tuition_annual": 37500
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: A*AA including A* in Mathematics and A in Physics, Electronics, Further Mathematics, Chemistry or Computer Science.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall, with 7.0 in Writing and 6.5 in all other subskills.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: 37 points overall with 7,6,6 in Higher Level subjects, including 7 in Higher Level Mathematics and 6 in Higher Level Physics or Chemistry.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall, with 7.0 in Writing and 6.5 in all other subskills.",
+        "source": "course"
+      }
+    }
+  ]
+}

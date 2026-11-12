@@ -466,9 +466,20 @@ const RELATED: [RegExp, string[]][] = [
     /computer|computing|software|informatic|\bcs\b/i,
     ["Computer Science", "Computing", "Informatics", "Software"],
   ],
+  [/electr/i, ["Electrical", "Electronic", "Engineering"]],
   [/engineer/i, ["Engineering"]],
   [/medic|mbbs|mbchb|doctor/i, ["Medicine"]],
 ];
+
+// A fallback match never swaps one engineering branch for another: someone asking
+// for Civil Engineering gets a general Engineering programme, not Mechanical.
+const BRANCH =
+  /\b(mechanical|electrical|electronic|civil|chemical|aerospace|computer|software|biomedical)\b/gi;
+function otherBranch(name: string, subject: string): boolean {
+  const same = (w: string) => w.toLowerCase().replace("electronic", "electrical");
+  const asked = same(subject);
+  return (name.match(BRANCH) ?? []).some((b) => !asked.includes(same(b)));
+}
 
 function pickProgram(
   u: University,
@@ -483,7 +494,9 @@ function pickProgram(
   if (!matches.length) {
     const related = RELATED.find(([re]) => re.test(subject))?.[1] ?? [];
     for (const term of related) {
-      matches = find(term);
+      matches = find(term).filter(
+        (p) => !/engineer|electr/i.test(term) || !otherBranch(p.name, subject),
+      );
       if (matches.length) break;
     }
   }

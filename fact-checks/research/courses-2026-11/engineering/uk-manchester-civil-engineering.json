@@ -1,0 +1,88 @@
+{
+  "uni": "uk-manchester",
+  "slug": "civil-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03343/beng-civil-engineering/",
+      "page": "1951b242b66d",
+      "title": "BEng Civil Engineering (2027 entry) | The University of Manchester",
+      "organization": "The University of Manchester",
+      "quotes": [
+        "Duration: 3 years Year of entry: 2027 UCAS course code: H200 / Institution code: M20",
+        "A-level AAA including Mathematics, Physics, and one other subject.",
+        "36 points overall with 6,6,6 at Higher Level, including Mathematics, Physics, and one other subject.",
+        "IELTS 6.5 overall with no subskill below 6.5",
+        "We do not hold interviews",
+        "Tuition fees for home students will be £10,050 for the 2027/28 academic year.",
+        "Tuition fees for international students will be £37,500 for the 2027/28 academic year. For subsequent academic years, the University reserves the right to increase the tuition fee by up to 7% each year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Civil Engineering",
+    "degree_type": "BEng",
+    "field": "Engineering",
+    "faculty": "School of Engineering",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Civil Engineering BEng (UCAS H200), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-home",
+      "note": "Home fee, 2027/28 (2027 entry): £10,050 a year (The University of Manchester course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-international",
+      "note": "International fee for 2027/28: £37,500. The University may raise it by up to 7% a year in later years.",
+      "tuition_annual": 37500
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Civil Engineering: AAA including Mathematics, Physics and one other subject.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall with no subskill below 6.5.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Civil Engineering: 36 points overall with 6,6,6 at Higher Level, including Mathematics, Physics and one other subject.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall with no subskill below 6.5.",
+        "source": "course"
+      }
+    }
+  ]
+}

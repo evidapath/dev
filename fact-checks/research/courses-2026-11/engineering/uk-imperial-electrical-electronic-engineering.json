@@ -1,0 +1,189 @@
+{
+  "uni": "uk-imperial",
+  "slug": "electrical-electronic-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/electrical-electronic-engineering-beng/",
+      "page": "aa9eb5a7af7e",
+      "title": "Electrical and Electronic Engineering BEng | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "Qualification BEng Duration 3 years Start date October 2027 UCAS course code H600",
+        "Delivered by Department of Electrical and Electronic Engineering",
+        "Minimum entry standard A*A*A or A*AAA To include: A* in Mathematics A*/A in Physics ( A* is required if applying with three A-levels. At least an A is required if applying with four A-levels) A in a third and/or fourth subject",
+        "Minimum entry standard 40 points To include: 7 in Mathematics at higher level 7 in Physics at higher level",
+        "EITHER 5, 5, 5, 5, 5 overall, to include Calculus BC, Physics C (Mechanics) and Physics C (Electricity and Magnetism) and two further relevant subjects OR 5, 5, 5 to include Calculus BC, Physics C (Mechanics) or Physics C (Electricity and Magnetism) Award of acceptable school leaving qualification (e.g., US High School Diploma) Either 1480 in SAT or 33 in ACT.",
+        "Our minimum entry standard is 92% overall, to include: 95% in Mathematics 95% in Physics 90% Other",
+        "Our minimum entry standard is 1.4 overall, to include the following abiturprufung exams: 14 in Mathematics 14 in Physics",
+        "you will need to sit three ESAT modules: Mathematics 1 Mathematics 2 Physics",
+        "must achieve the higher university requirement",
+        "Application deadlines - Wednesday 13 January 2027 at 18.00 (UK time)",
+        "Home fee 2027 entry £10,050 per year",
+        "Overseas fee 2027 entry £47,800 per year"
+      ]
+    },
+    "english": {
+      "url": "https://www.imperial.ac.uk/study/apply/english-language/",
+      "page": "0004cdc8126c",
+      "title": "English language requirements | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "IELTS - Academic (Test-Centre/UKVI SELT/Online) Standard Higher 6.5 overall (minimum 6.0 in all elements) 7.0 overall (minimum 6.5 in all elements)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Electrical and Electronic Engineering",
+    "degree_type": "BEng",
+    "field": "Engineering",
+    "faculty": "Department of Electrical and Electronic Engineering",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Electrical and Electronic Engineering BEng (UCAS H600), 3 years, Department of Electrical and Electronic Engineering. ESAT required.",
+    "application_requirements": [
+      {
+        "name": "ESAT",
+        "description": "You must sit the Engineering and Science Admissions Test (ESAT): Mathematics 1, Mathematics 2 and Physics.",
+        "type": "standardized_test_score",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-home",
+      "note": "Home fee, 2027 entry: £10,050 per year (Imperial course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 47800,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-international",
+      "note": "Overseas fee, 2027 entry: £47,800 per year (Imperial course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: A*A*A or A*AAA, including A* in Mathematics and A*/A in Physics (A* if taking three A-levels), plus A in a third and/or fourth subject. ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Mathematics 2 and Physics."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: 40 points, with 7 in Mathematics and 7 in Physics at higher level. ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Mathematics 2 and Physics."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: Advanced Placement: EITHER 5, 5, 5, 5, 5 including Calculus BC, Physics C (Mechanics) and Physics C (Electricity and Magnetism) and two further relevant subjects, OR 5, 5, 5 including Calculus BC and Physics C (Mechanics) or Physics C (Electricity and Magnetism); plus a US High School Diploma and either 1480 in SAT or 33 in ACT. ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Mathematics 2 and Physics."
+        },
+        {
+          "name": "SAT or ACT",
+          "required": "required",
+          "notes": "1480 in SAT or 33 in ACT"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: 92% overall, with 95% in Mathematics, 95% in Physics and 90% in another subject. ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Mathematics 2 and Physics."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "abitur",
+      "source": "course",
+      "threshold": "Electrical and Electronic Engineering: 1.4 overall, with 14 in Mathematics and 14 in Physics in the Abiturprüfung exams. ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required",
+          "notes": "Modules: Mathematics 1, Mathematics 2 and Physics."
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    }
+  ]
+}

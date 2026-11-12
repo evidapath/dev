@@ -1,0 +1,98 @@
+{
+  "uni": "uk-birmingham",
+  "slug": "chemical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-beng",
+      "page": "26f6ea30977b",
+      "title": "Chemical Engineering BEng | University of Birmingham",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "UCAS code H800",
+        "Duration 3 years Award Bachelor of Engineering",
+        "A Level AAA to include A level Mathematics and Chemistry or Physics.",
+        "6,6,6 at Higher Level including Mathematics and Chemistry or Physics at Higher Level grade 6 with a minimum of 32 points overall.",
+        "IELTS*: 6.0 overall with no less than 5.5 in any band.",
+        "Fees (UK/Ireland) £10,050",
+        "Application deadline for September 2027 entry."
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-beng",
+      "page": "26f6ea30977b-raw",
+      "title": "Chemical Engineering BEng | University of Birmingham (fee data on the course page)",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "\"courseYearItems\":[{\"year\":\"2027\"",
+        "\"title\":\"Fees (international)\",\"value\":\"£33,300\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemical Engineering",
+    "degree_type": "BEng",
+    "field": "Engineering",
+    "faculty": "School of Engineering",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Chemical Engineering BEng (UCAS H800), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-home",
+      "note": "UK/Ireland fee, 2027 entry: £10,050 a year (Birmingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027 entry",
+      "source": "coursedata",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-international",
+      "note": "International fee, 2027 entry: £33,300 a year (Birmingham course page).",
+      "tuition_annual": 33300
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Chemical Engineering: AAA including A-level Mathematics and Chemistry or Physics.",
+      "required_subjects": [
+        "Mathematics",
+        "Chemistry or Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 overall with no less than 5.5 in any band.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Chemical Engineering: 32 points overall with 6,6,6 at Higher Level, including Mathematics and Chemistry or Physics.",
+      "required_subjects": [
+        "Mathematics",
+        "Chemistry or Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 overall with no less than 5.5 in any band.",
+        "source": "course"
+      }
+    }
+  ]
+}
