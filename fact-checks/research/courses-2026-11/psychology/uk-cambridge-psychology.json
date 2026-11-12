@@ -1,0 +1,112 @@
+{
+  "uni": "uk-cambridge",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/courses/psychological-and-behavioural-sciences",
+      "page": "0912da34e660",
+      "title": "Psychological and Behavioural Sciences | Undergraduate Study, University of Cambridge",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "UCAS code C800 Course length BA (Hons) 3 years, full-time Start date October 2027 Study at All Colleges, except Peterhouse",
+        "Minimum offer level A level: A*A*A IB: 41-42 points, with 776 at Higher Level",
+        "To apply to any of our Colleges for Psychological and Behavioural Sciences, you will need A levels/IB Higher Levels (or the equivalent) in at least one of the following subjects: Mathematics Biology Chemistry Computer Science Physics",
+        "There is an admissions assessment at some Colleges for this course."
+      ]
+    },
+    "fees": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/sites/default/files/2026-09/undergraduate_tuition_fees_2027-28.pdf",
+      "page": "afa5626c6276",
+      "title": "Undergraduate tuition fees 2027-28 (Cambridge, PDF)",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "Undergraduate tuition fees 2027-28",
+        "Psychological and Behavioural Sciences 10,050 46,872",
+        "International students - College fees payable in addition to the tuition fee",
+        "Queens' £12,885"
+      ]
+    },
+    "colleges": {
+      "url": "https://www.undergraduate.study.cam.ac.uk/colleges",
+      "page": "0ebd6010715e",
+      "title": "College A-Z | Undergraduate Study, University of Cambridge",
+      "organization": "University of Cambridge",
+      "quotes": [
+        "The 29 undergraduate Colleges provide accommodation, support and more for almost all students for at least three years.",
+        "Queens' College"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychological and Behavioural Sciences",
+    "degree_type": "BA (Hons)",
+    "field": "Psychology",
+    "faculty": "Department of Psychology",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Psychological and Behavioural Sciences (UCAS C800), BA (Hons), 3 years. Offered at all Colleges except Peterhouse.",
+    "application_requirements": [
+      {
+        "name": "College admission assessment",
+        "description": "Some Colleges set an admissions assessment for this course; check the College you apply to.",
+        "type": "other",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-cambridge-cost-meng-engineering-home",
+      "note": "Home fee, Psychological and Behavioural Sciences, 2027-28: £10,050 (Cambridge fees PDF)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 46872,
+      "mandatory_fees_annual": 12885,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": [
+        "fees",
+        "colleges"
+      ],
+      "living_from": "costProfile-uk-cambridge-cost-meng-engineering-international",
+      "note": "Overseas fee, Psychological and Behavioural Sciences, 2027-28: £46,872 a year, plus a College fee. The lowest College fee among the undergraduate Colleges is Queens' at £12,885, which is shown."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Psychological and Behavioural Sciences: A*A*A minimum offer, including at least one of Mathematics, Biology, Chemistry, Computer Science or Physics.",
+      "required_subjects": [
+        "One of Mathematics, Biology, Chemistry, Computer Science or Physics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-uk-cambridge-admreq-ba-cs-a-level"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Psychological and Behavioural Sciences: IB 41-42 points, with 776 at Higher Level, including at least one of Mathematics, Biology, Chemistry, Computer Science or Physics at Higher Level.",
+      "required_subjects": [
+        "One of Mathematics, Biology, Chemistry, Computer Science or Physics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-uk-cambridge-admreq-ba-cs-a-level"
+      }
+    }
+  ]
+}

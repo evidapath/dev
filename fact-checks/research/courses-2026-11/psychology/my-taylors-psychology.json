@@ -1,0 +1,81 @@
+{
+  "uni": "my-taylors",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/liberal-arts-and-sciences/undergraduate/bachelor-of-psychology.html",
+      "page": "9ef5e705704f",
+      "title": "Bachelor of Psychology (Honours) | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Bachelor of Psychology (Honours)",
+        "Programme Information for 2026",
+        "Duration 3-year Study options Full Time Only Intake Month February, April, September Offered by School of Liberal Arts and Sciences Fees MYR 110,390 (Local) USD 36,886 (International)",
+        "Fees shown in the Fee Schedule are exclusive of the 6% Service Tax.",
+        "A Level Min. DD",
+        "International Baccalaureate (IB) Min. 24 points in 6 subjects",
+        "INTERNATIONAL STUDENTS IELTS 5.5"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "Bachelor's degree (Honours)",
+    "field": "Psychology",
+    "faculty": "School of Liberal Arts and Sciences",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Psychology (Honours), 3 years full time; intakes February, April and September.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "36886/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 36,886 for the whole 3-year programme (2026), shown as a yearly average. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "110390/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 110,390 for the whole 3-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Psychology: minimum DD.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS (or equivalent)",
+        "min_score": "IELTS 5.5 (or a completed Pre-U / Diploma taught in English).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Psychology: minimum 24 points in 6 subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS (or equivalent)",
+        "min_score": "IELTS 5.5 (or a completed Pre-U / Diploma taught in English).",
+        "source": "course"
+      }
+    }
+  ]
+}

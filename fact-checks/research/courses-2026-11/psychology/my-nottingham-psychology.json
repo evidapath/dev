@@ -1,0 +1,109 @@
+{
+  "uni": "my-nottingham",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.edu.my/ugstudy/course/psychology-bsc-hons",
+      "page": "c0cbeb93ef67",
+      "title": "BSc (Hons) Psychology | University of Nottingham Malaysia",
+      "organization": "University of Nottingham Malaysia",
+      "quotes": [
+        "BSc (Hons) in Psychology",
+        "Full-time: 3 years Part-time: Not available Start date: September 2027 Malaysian fee: RM54,000 per year International fee: RM60,000 per year*",
+        "Enjoy peace of mind with our Fixed Tuition Fee policy, pay the same amount each year until you graduate.",
+        "*For International Students, a 6% Sales and Service Tax (SST) will apply to non-Malaysian citizens from 1 July 2025.",
+        "A Level BCC in either arts or science subjects, excluding Critical Thinking and General Studies. Psychology A Level is not required.",
+        "IB Diploma 24 points overall.",
+        "Senior School Certificate Examination (CBSE) / Indian School Certificate (CISCE) - Class XII 75% average from the best 4 subjects, excluding the local language, Environmental Education, general studies subjects, and Physical Education.",
+        "Advance Placement (AP) 4, 3, 3 in relevant subjects.",
+        "IELTS (Academic): 6.5 (with no less than 6.0 in each element)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BSc (Hons)",
+    "field": "Psychology",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "course",
+    "summary": "BSc (Hons) in Psychology, 3 years full-time, September 2027 start.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_annual": 60000,
+      "academic_year": "September 2027 start (fixed for the programme)",
+      "source": "course",
+      "living_from": "costProfile-my-nottingham-cost-meng-me-international",
+      "fees_from": "costProfile-my-nottingham-cost-meng-me-international",
+      "note": "International fee: RM60,000 per year, fixed for the programme. A 6% Sales and Service Tax (SST) applies to non-Malaysian citizens on top of this."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_annual": 54000,
+      "academic_year": "September 2027 start (fixed for the programme)",
+      "source": "course",
+      "living_from": "costProfile-my-nottingham-cost-meng-me-malaysian",
+      "note": "Malaysian fee: RM54,000 per year, fixed for the programme."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Psychology: BCC in either arts or science subjects, excluding Critical Thinking and General Studies. Psychology A Level is not required.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.5, with no less than 6.0 in each element.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Psychology: IB Diploma 24 points overall.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.5, with no less than 6.0 in each element.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Psychology: 75% average from the best 4 subjects (CBSE / CISCE Class XII), excluding the local language, Environmental Education, general studies subjects and Physical Education.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.5, with no less than 6.0 in each element.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Psychology: Advanced Placement (AP) 4, 3, 3 in relevant subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.5, with no less than 6.0 in each element.",
+        "source": "course"
+      }
+    }
+  ]
+}

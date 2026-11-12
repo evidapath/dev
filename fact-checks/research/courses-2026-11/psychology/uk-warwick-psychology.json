@@ -1,0 +1,104 @@
+{
+  "uni": "uk-warwick",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://warwick.ac.uk/study/undergraduate/courses/bsc-psychology/",
+      "page": "2d3ec195eb8e",
+      "title": "Psychology BSc | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "UCAS course code C800",
+        "Start date 27 September 2027",
+        "Department Department of Psychology Duration 3 years full-time or 4 years full-time (with intercalated year)",
+        "A level typical offer AAB including a science subject from Mathematics, Further Mathematics, Statistics, Chemistry, Biology, Human Biology, Physics Or AAA/A*AB if not studying a science subject.",
+        "International Baccalaureate (IB) typical offer 34 overall including Higher Level Mathematics, Biology, Chemistry, Physics, OR 36 overall if not studying a science subject at higher level.",
+        "This course requires: Band B",
+        "Warwick does not typically interview applicants.",
+        "Tuition fee £10,050 For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050."
+      ]
+    },
+    "fees": {
+      "url": "https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/",
+      "page": "1099e435e96e",
+      "title": "Overseas undergraduate tuition fees | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Course UCAS code 2025-26 2026-27 2027-28",
+        "Psychology (BSc) C800 Band 2 £33,520 £35,530 £37,310",
+        "Management (BSc) N200 Band 2 £33,520 £35,530 £37,310",
+        "Business Studies (BSc) GN42 Band 2 £33,520 £35,530 £37,310"
+      ]
+    },
+    "english": {
+      "url": "https://warwick.ac.uk/study/undergraduate/applying/english-language-requirements/",
+      "page": "43adba7a94bd",
+      "title": "English language requirements | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Band B 6.5 including minimum 6.0 in each component"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BSc",
+    "field": "Psychology",
+    "faculty": "Department of Psychology",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Psychology BSc (UCAS C800), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-home",
+      "note": "Home fee, 2027-28: £10,050 (Warwick course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-international",
+      "note": "Overseas fee, 2027-28: £37,310 (Band 2, Warwick overseas fees table).",
+      "tuition_annual": 37310
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Psychology: AAB including a science subject (Mathematics, Further Mathematics, Statistics, Chemistry, Biology, Human Biology or Physics), or AAA/A*AB if not studying a science subject.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 6.5 including minimum 6.0 in each component (Warwick English Band B).",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Psychology: IB 34 overall including Higher Level Mathematics, Biology, Chemistry or Physics, or IB 36 overall if not studying a science subject at Higher Level.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 6.5 including minimum 6.0 in each component (Warwick English Band B).",
+        "source": "english"
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "uni": "uk-manchester",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00653/bsc-psychology/",
+      "page": "7ef3c18200c5",
+      "title": "BSc Psychology (2027 entry) | The University of Manchester",
+      "organization": "The University of Manchester",
+      "quotes": [
+        "Duration: 3 years (4 years with Study Abroad/Placement Year) Year of entry: 2027 UCAS course code: C800 / Institution code: M20",
+        "A-level AAA including one or more of: Psychology, Biology, Human Biology, Chemistry, Physics, Statistics, Mathematics or Further Mathematics.",
+        "36 points overall. 6, 6, 6 in Higher Level subjects, one of which must include Chemistry, Biology, Physics, Psychology or Mathematics (AA or AI are both considered).",
+        "The course is accredited as conferring eligibility for Graduate Membership of The British Psychological Society",
+        "IELTS 7.0 overall with a minimum of 6.5 in each component",
+        "Tuition fees for home students will be £10,050 for the 2027/28 academic year.",
+        "Tuition fees for international students will be £35,800 for the 2027/28 academic year. For subsequent academic years, the University reserves the right to increase the tuition fee by up to 7% each year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BSc",
+    "field": "Psychology",
+    "faculty": "Faculty of Biology, Medicine and Health",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Psychology BSc (UCAS C800), 3 years. Accredited as conferring eligibility for Graduate Membership of The British Psychological Society.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-home",
+      "note": "Home fee, 2027/28 (2027 entry): £10,050 a year (The University of Manchester course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-international",
+      "note": "International fee for 2027/28: £35,800. The University may raise it by up to 7% a year in later years.",
+      "tuition_annual": 35800
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Psychology: AAA including one or more of Psychology, Biology, Human Biology, Chemistry, Physics, Statistics, Mathematics or Further Mathematics.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall with a minimum of 6.5 in each component.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Psychology: 36 points overall, 6, 6, 6 in Higher Level subjects, one of which must be Chemistry, Biology, Physics, Psychology or Mathematics.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall with a minimum of 6.5 in each component.",
+        "source": "course"
+      }
+    }
+  ]
+}

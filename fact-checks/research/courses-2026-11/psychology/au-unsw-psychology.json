@@ -1,0 +1,76 @@
+{
+  "uni": "au-unsw",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-psychological-science?studentType=International",
+      "page": "52d792914954",
+      "title": "Bachelor of Psychological Science | UNSW Sydney",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "3 Year(s)",
+        "UAC code 429800 Program code 3435",
+        "2026 A levels 10.0 2026 IB Diploma 31.0",
+        "Entry scores are calculated from the best three or four A2 subjects (excluding repeated subjects) using the following values: A*=6, A=5, B=4, C=3, D=2, E=1.",
+        "accredited by the Australian Psychology Accreditation Council (APAC).",
+        "2026 Indicative first year full fee $58,500* 2026 Indicative full fee to complete degree $189,500*"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-psychological-science?studentType=International",
+      "page": "52d792914954-raw",
+      "title": "Bachelor of Psychological Science | UNSW Sydney (fee data in the page)",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "const feesyear = isInternational ? \"2026\" : \"2026\"",
+        "const feescompletedegree = isInternational ? \"$189,500*\" : \"$41,000*\"",
+        "const feesfirstyear = isInternational ? \"$58,500*\" : \"$14,000*\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychological Science",
+    "degree_type": "Bachelor",
+    "field": "Psychology",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UAC",
+    "source": "course",
+    "summary": "Bachelor of Psychological Science (UAC 429800, program 3435), 3 years. Accredited by the Australian Psychology Accreditation Council (APAC).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "AUD",
+      "tuition_formula": "189500/3",
+      "academic_year": "2026 indicative fees",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-au-unsw-cost-beng-hons-international",
+      "note": "International, 2026 indicative: $58,500 for the first year and $189,500 for the whole degree. Shown as the whole-degree fee spread over 3 years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Psychological Science: A-level score of 10.0 from the best three or four A2 subjects (A*=6, A=5, B=4, C=3, D=2, E=1). This is the score that got an offer in 2026, a guide only.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Psychological Science: IB Diploma 31.0. This is the score that got an offer in 2026, a guide only.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

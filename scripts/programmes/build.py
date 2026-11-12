@@ -11,7 +11,8 @@ stops on the first failure:
      (<pages-dir>/<page>.txt, saved by the fetcher when the page was read);
   2. every number in a value we store (fees, grades, scores, years, places)
      appears in a quote of the source that value cites;
-  3. deadlines: the day, the month name and the year appear in a cited quote.
+  3. deadlines: the day, the month name and the year appear in a cited quote;
+  4. the faculty/school named appears on the programme's page.
 
 Values copied from records already in Sanity ("from_existing", "living_from",
 "fees_from") are not re-checked
@@ -21,11 +22,11 @@ Reads SANITY_READ_TOKEN from evidapath-navigator/.env.local only to copy those
 existing records (living costs, English requirement). Never prints it.
 """
 
-import json, re, sys, hashlib, subprocess, urllib.parse
+import datetime, json, re, sys, hashlib, subprocess, urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-TODAY = "2026-11-11"
+TODAY = datetime.date.today().isoformat()  # date this build checked the quotes
 MONTHS = "january february march april may june july august september october november december".split()
 
 # curriculum key → (curriculum_type label the decision engine matches, category suffix)
@@ -131,6 +132,10 @@ def main(research_dir: str, pages_dir: str, out_path: str):
             }})
 
         p = r["program"]
+        # The faculty/school named must be on the programme's own page (or left blank).
+        fac_page = Path(pages_dir) / f"{r['sources'][p['source']]['page']}.txt"
+        if p.get("faculty") and norm(p["faculty"]) not in norm(fac_page.read_text()):
+            fail(f"{where}: faculty '{p['faculty']}' isn't on the programme page")
         check_numbers(p["duration_years"], p["source"], "duration")
         for k in ("degree_type", "summary"):
             check_numbers(p.get(k, ""), p["source"], k)

@@ -1,0 +1,97 @@
+{
+  "uni": "uk-nottingham",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Psychology-BSc-Hons.html",
+      "page": "66d59c83d086",
+      "title": "Psychology BSc | University of Nottingham",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "BSc Hons UCAS Code C800",
+        "Duration 3 years full-time Location University Park Campus Select start date September 2027",
+        "The entrance requirements listed apply to 2027 entry.",
+        "A levels AAA IB 34 points overall",
+        "IB Diploma 34 points overall. Alternatively, grades 666 in three Higher level certificates.",
+        "IELTS 6.5 (no less than 6.0 in any element)"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Psychology-BSc-Hons.html",
+      "page": "66d59c83d086-raw",
+      "title": "Psychology BSc | University of Nottingham (fee labels in the page)",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "<span class=\"info-bar__list-link-label home-student-detail\"> £10,050 per year</span>",
+        "<span class=\"info-bar__list-link-label international-student-detail\"> £33,500 per year</span>"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BSc",
+    "field": "Psychology",
+    "faculty": "School of Psychology",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Psychology BSc (UCAS C800), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-home",
+      "note": "Home fee for a September 2027 start: £10,050 per year (Nottingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-international",
+      "note": "International fee for a September 2027 start: £33,500 per year (Nottingham course page).",
+      "tuition_annual": 33500
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Psychology: AAA.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Psychology: IB Diploma 34 points overall, or 666 in three Higher Level certificates.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    }
+  ]
+}
