@@ -1,0 +1,50 @@
+{
+  "uni": "us-stanford",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://bulletin.stanford.edu/programs/PSYCH-BA",
+      "page": "54f18b2059d0",
+      "title": "PSYCH-BA - Psychology (BA) | Stanford Bulletin",
+      "organization": "Stanford University",
+      "quotes": [
+        "PSYCH-BA - Psychology (BA)",
+        "Psychology Undergraduate Matriculated BA - Bachelor of Arts"
+      ]
+    },
+    "pol": {
+      "url": "https://bulletin.stanford.edu/academic-polices/degree-requirements/undergraduate-major",
+      "page": "bb90f314bec2",
+      "title": "Undergraduate Majors | Stanford Bulletin",
+      "organization": "Stanford University",
+      "quotes": [
+        "Undergraduates must select a major by the end of their sophomore year."
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BA",
+    "field": "Psychology",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Psychology, Bachelor of Arts (BA). Stanford undergraduates select a major by the end of sophomore year.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-stanford-economics",
+    "quote": "Undergraduates must select a major by the end of their sophomore year.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

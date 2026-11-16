@@ -1,0 +1,42 @@
+{
+  "uni": "us-princeton",
+  "slug": "molecular-biology",
+  "sources": {
+    "course": {
+      "url": "https://admission.princeton.edu/academics/degrees-departments",
+      "page": "a7710418c6e9",
+      "title": "Degrees & Departments | Princeton Admission",
+      "organization": "Princeton University",
+      "quotes": [
+        "Students apply to Princeton University, not to individual departments, programs or schools.",
+        "Bachelor of Arts (A.B.)",
+        "Molecular Biology An exploration of the central questions of 21st-century biology, on topics ranging from molecules to genomes."
+      ]
+    }
+  },
+  "program": {
+    "name": "Molecular Biology",
+    "degree_type": "AB",
+    "field": "Biology",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Molecular Biology concentration, Bachelor of Arts (A.B.). Students apply to Princeton University, not to a department.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-princeton-ab-economics",
+    "quote": "Students apply to Princeton University, not to individual departments, programs or schools.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

@@ -1,0 +1,41 @@
+{
+  "uni": "us-asu",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://degrees.apps.asu.edu/bachelors/major/ASU00/LAPGSBS/psychology",
+      "page": "5f9c385691a6",
+      "title": "Psychology Degree, BS | College of Liberal Arts and Sciences | ASU",
+      "organization": "Arizona State University",
+      "quotes": [
+        "Psychology Degree, BS | College of Liberal Arts and Sciences | ASU",
+        "First-year student admission requirements for this program are the same as the university's first-year admission requirements."
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BS",
+    "field": "Psychology",
+    "faculty": "The College of Liberal Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Psychology, BS (The College of Liberal Arts and Sciences, Tempe). First-year admission requirements are the university's general ones.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-asu-bs-economics",
+    "quote": "First-year student admission requirements for this program are the same as the university's first-year admission requirements.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

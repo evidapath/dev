@@ -1,0 +1,42 @@
+{
+  "uni": "us-asu",
+  "slug": "biological-sciences",
+  "sources": {
+    "course": {
+      "url": "https://degrees.asu.edu/bachelors/major/ASU00/LABSCBS/biological-sciences",
+      "page": "561ccc51b6a2",
+      "title": "Biological Sciences Degree, BS | ASU",
+      "organization": "Arizona State University",
+      "quotes": [
+        "Biological Sciences Degree, BS | ASU",
+        "All students are required to meet general university admission requirements.",
+        "In the Bachelor of Science program in biological sciences program, you study the organization and processes of life, from molecules to ecosystems."
+      ]
+    }
+  },
+  "program": {
+    "name": "Biological Sciences",
+    "degree_type": "BS",
+    "field": "Biology",
+    "faculty": "The College of Liberal Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Biological Sciences, BS (The College of Liberal Arts and Sciences, Tempe). Applicants meet the university's general admission requirements.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-asu-bs-economics",
+    "quote": "All students are required to meet general university admission requirements.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

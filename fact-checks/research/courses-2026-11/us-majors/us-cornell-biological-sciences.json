@@ -1,0 +1,41 @@
+{
+  "uni": "us-cornell",
+  "slug": "biological-sciences",
+  "sources": {
+    "course": {
+      "url": "https://courses.cornell.edu/programs/biological-sciences-ba/",
+      "page": "e0bc8ea53a05",
+      "title": "Biological Sciences (BA) | Cornell University Courses of Study",
+      "organization": "Cornell University",
+      "quotes": [
+        "The program's curriculum, academic advising, and undergraduate research components are coordinated for students in both colleges by the Office of Undergraduate Biology",
+        "College of Arts and Sciences"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biological Sciences",
+    "degree_type": "BA",
+    "field": "Biology",
+    "faculty": "College of Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Biological Sciences (BA) in the College of Arts and Sciences (the same college as Economics); the major is also offered in the College of Agriculture and Life Sciences.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-cornell-economics",
+    "quote": "College of Arts and Sciences",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

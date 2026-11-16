@@ -1,0 +1,42 @@
+{
+  "uni": "us-harvard",
+  "slug": "molecular-cellular-biology",
+  "sources": {
+    "course": {
+      "url": "https://college.harvard.edu/academics/liberal-arts-sciences/concentrations",
+      "page": "4706502cf96b",
+      "title": "Concentrations | Harvard College",
+      "organization": "Harvard College",
+      "quotes": [
+        "At Harvard College, students choose a \"concentration,\" which is what we call a major.",
+        "Molecular and Cellular Biology B.A. Sciences",
+        "Molecular and Cellular Biology is rooted in the investigation of biological processes based on the study of molecules and their interactions in the context of cells and tissues, and how the genome orchestrates cell behavior."
+      ]
+    }
+  },
+  "program": {
+    "name": "Molecular and Cellular Biology",
+    "degree_type": "BA",
+    "field": "Biology",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Molecular and Cellular Biology concentration (B.A.), Harvard College. The concentration (major) is chosen at Harvard College after admission.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-harvard-economics",
+    "quote": "At Harvard College, students choose a \"concentration,\" which is what we call a major.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

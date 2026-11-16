@@ -1,0 +1,41 @@
+{
+  "uni": "us-usc",
+  "slug": "biological-sciences",
+  "sources": {
+    "course": {
+      "url": "https://dornsife.usc.edu/bisc/undergraduate/programs-of-study/",
+      "page": "3f21cb635008",
+      "title": "Programs of Study - Biological Sciences - USC Dornsife",
+      "organization": "USC Dornsife College of Letters, Arts and Sciences",
+      "quotes": [
+        "The interdepartmental Biological Sciences program offers both B.A. and B.S. degree options.",
+        "B.S. in Biological Sciences"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biological Sciences",
+    "degree_type": "BS",
+    "field": "Biology",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Biological Sciences (B.S.; a B.A. is also offered), USC Dornsife (the same school as Economics).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-usc-economics",
+    "quote": "The interdepartmental Biological Sciences program offers both B.A. and B.S. degree options.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

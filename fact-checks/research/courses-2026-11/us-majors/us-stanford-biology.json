@@ -1,0 +1,49 @@
+{
+  "uni": "us-stanford",
+  "slug": "biology",
+  "sources": {
+    "course": {
+      "url": "https://bulletin.stanford.edu/programs/BIO-BS",
+      "page": "b922e636ff38",
+      "title": "BIO-BS - Biology (BS) | Stanford Bulletin",
+      "organization": "Stanford University",
+      "quotes": [
+        "Biology Undergraduate Matriculated BS - Bachelor of Science"
+      ]
+    },
+    "pol": {
+      "url": "https://bulletin.stanford.edu/academic-polices/degree-requirements/undergraduate-major",
+      "page": "bb90f314bec2",
+      "title": "Undergraduate Majors | Stanford Bulletin",
+      "organization": "Stanford University",
+      "quotes": [
+        "Undergraduates must select a major by the end of their sophomore year."
+      ]
+    }
+  },
+  "program": {
+    "name": "Biology",
+    "degree_type": "BS",
+    "field": "Biology",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Biology, Bachelor of Science (BS). Stanford undergraduates select a major by the end of sophomore year.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-stanford-economics",
+    "quote": "Undergraduates must select a major by the end of their sophomore year.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

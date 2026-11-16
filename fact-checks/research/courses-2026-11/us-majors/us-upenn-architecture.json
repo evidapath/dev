@@ -1,0 +1,41 @@
+{
+  "uni": "us-upenn",
+  "slug": "architecture",
+  "sources": {
+    "course": {
+      "url": "https://catalog.upenn.edu/undergraduate/arts-sciences/majors/",
+      "page": "4eb0135784a0",
+      "title": "Majors | School of Arts & Sciences | University of Pennsylvania Catalog",
+      "organization": "University of Pennsylvania",
+      "quotes": [
+        "School of Arts & Sciences",
+        "Architecture, BA"
+      ]
+    }
+  },
+  "program": {
+    "name": "Architecture",
+    "degree_type": "BA",
+    "field": "Architecture",
+    "faculty": "School of Arts & Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Architecture, BA, a major in Penn's School of Arts & Sciences (the same school as Economics).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-upenn-economics",
+    "quote": "School of Arts & Sciences",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

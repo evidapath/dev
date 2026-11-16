@@ -46,6 +46,7 @@ UNIVERSITIES = {
         "city": {"slug": "ae-sharjah", "name": "Sharjah"},
         "website": "https://www.aus.edu/", "institution_type": "private-nonprofit",
         "verified_at": "2026-10-21", "currency": "AED",
+        "application_platform_name": "AUS online application",
         "verification_note": "fact-checks/ae-aus-2026-10-21.md",
         # Shared sources (primary). Each program/cost/scholarship cites by key.
         "sources": {
@@ -5797,12 +5798,12 @@ def build_docs(slug, s):
             "program_name": p["program_name"], "field_of_study": p["field"], "degree_type": p["degree"],
             "degree_type_local": p["degree_local"], "duration_value": p["duration"], "duration_unit": "years",
             "language_of_instruction": p.get("lang_instruction", ["en"]), "faculty_school": p["faculty"], "official_program_url": p["url"],
-            "application_platform": s.get("application_platform_name", "AUS online application"),
+            "application_platform": s.get("application_platform_name", ""),
             "decision_context_academic_year": s.get("decision_context_year", "2026-2027 (Fall 2027 entry)"),
             "record_status": "VERIFIED", "university_ref": wref(uni_id),
             "application_requirements": [
                 {"_key": "r1", "_type": "applicationRequirement",
-                 "name": s.get("application_platform_name", "AUS online application"),
+                 "name": s.get("application_platform_name") or "Application form",
                  "necessity": "required", "requirement_type": "form", "description": "", "notes": s.get("deadline_note", "")},
                 {"_key": "r2", "_type": "applicationRequirement", "name": "Subject prerequisites",
                  "necessity": "required", "requirement_type": "other",

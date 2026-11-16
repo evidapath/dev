@@ -20,6 +20,12 @@ pages. Nothing goes to Sanity until it's built into
    (`tuition_formula`), never by hand.
 4. Dry-run against Sanity (`?dryRun=true`), then write to `fact-checks/pending/`.
 
+US majors: students are admitted to a college (or the whole university) and the
+entry requirements and fees are the college's, so a new major reuses those records
+from an existing programme in the same college (`"college"` in the research file),
+with a quote from the university saying so. The builder refuses if a copied
+requirement names the other programme or lists required subjects.
+
 Living costs, university-wide compulsory fees (e.g. Nottingham Malaysia's visa fee)
 and (where the page says so) English levels are reused from the same university's
 existing verified records, by id.
@@ -34,6 +40,7 @@ existing verified records, by id.
 | Law | Manchester (LLB), Nottingham (LLB), Warwick (LLB), Cambridge (BA, LNAT), Taylor's (LLB, Malaysian and English law) → `pending/2026-11-12-law.ndjson` | Birmingham: page has no 2027 details. Universiti Malaya: its Bachelor of Laws is "Not Offered" to international applicants. UNSW: law is a double degree for school leavers; not added |
 | Biology / Life Sciences | Imperial (Biological Sciences), Manchester, Nottingham, Warwick (Biological Sciences), Cambridge (Natural Sciences, Biological stream), Taylor's and Universiti Malaya (Biotechnology) → `pending/2026-11-12-biology.ndjson` | Not yet: Birmingham, Nottingham Malaysia, UNSW (general Bachelor of Science) |
 | Architecture | Nottingham (BArch), Cambridge, Taylor's → `pending/2026-11-12-architecture.ndjson` | Manchester: 2027 fees not set (and no international fee given). Universiti Malaya: 3.5-year degree; the fee averaging only handles whole years so far |
+| US majors (same college) | Psychology: Harvard, Princeton, Stanford, Penn, Cornell, NYU, ASU. Biology: Harvard (Molecular and Cellular Biology), MIT, Princeton (Molecular Biology), Stanford, Penn, Cornell, NYU, USC, ASU. Architecture: MIT, Princeton, Penn. Also MIT Brain and Cognitive Sciences → `pending/2026-11-16-us-majors.ndjson` | Purdue: its fee page is behind a bot check, and fees differ by college. USC Psychology: no official degree page found. Cornell and USC Architecture: 5-year degrees with portfolio rules, not added |
 
 Medicine not offered as a first degree (no record added): US universities (medicine is a
 graduate degree there), Warwick (graduate entry only).
@@ -81,3 +88,10 @@ graduate degree there), Warwick (graduate entry only).
   fees PDF) gets one source record with the quotes of all subjects, the same in
   every batch, so the batches can be applied in any order. A source already in
   Sanity is patched to the full set of quotes.
+
+- 60 programmes (all US and most UAE universities) had "AUS online application" as
+  their application form: the importer's default when a university had no platform
+  name. Patched to each university's platform as already stored on its deadline
+  records, or "Application form" where none is stored
+  (`pending/2026-11-16-application-platform-fix.ndjson`); the importer no longer
+  defaults to AUS. The site doesn't show this field, so no student saw it.

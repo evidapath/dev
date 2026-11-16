@@ -1,0 +1,60 @@
+{"patch": {"id": "program-ae-birmingham-dubai-beng-computer-engineering", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-birmingham-dubai-bsc-business-management", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-birmingham-dubai-bsc-cs", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-birmingham-dubai-bsc-economics", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-canadian-university-dubai-bba", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-canadian-university-dubai-bsc-cs", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-canadian-university-dubai-bsc-eng", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-heriot-watt-dubai-bba", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-heriot-watt-dubai-beng-engineering", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-heriot-watt-dubai-bsc-cs", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-khalifa-bsc-cs", "set": {"application_platform": "KU application (NAPO for UAE nationals)", "application_requirements[_key==\"r1\"].name": "KU application (NAPO for UAE nationals)"}}}
+{"patch": {"id": "program-ae-khalifa-bsc-eng", "set": {"application_platform": "KU application (NAPO for UAE nationals)", "application_requirements[_key==\"r1\"].name": "KU application (NAPO for UAE nationals)"}}}
+{"patch": {"id": "program-ae-rit-dubai-bs-computer-engineering", "set": {"application_platform": "RIT Dubai application", "application_requirements[_key==\"r1\"].name": "RIT Dubai application"}}}
+{"patch": {"id": "program-ae-rit-dubai-bs-computing-it", "set": {"application_platform": "RIT Dubai application", "application_requirements[_key==\"r1\"].name": "RIT Dubai application"}}}
+{"patch": {"id": "program-ae-rit-dubai-bs-global-business", "set": {"application_platform": "RIT Dubai application", "application_requirements[_key==\"r1\"].name": "RIT Dubai application"}}}
+{"patch": {"id": "program-ae-uaeu-b-econ", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-uaeu-bba", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-uaeu-bsc-cs", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-uaeu-bsc-eng", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-university-of-sharjah-b-econ", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-university-of-sharjah-bba", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-university-of-sharjah-bsc-cs", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-ae-university-of-sharjah-bsc-eng", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-us-asu-bs-business", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-us-asu-bs-economics", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-us-asu-bs-engineering", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-us-asu-bscs", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-us-cornell-cs", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-cornell-dyson-aem", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-cornell-economics", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-cornell-engineering", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-harvard-cs", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-harvard-economics", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-harvard-engineering", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-mit-cs-6-3", "set": {"application_platform": "MIT application", "application_requirements[_key==\"r1\"].name": "MIT application"}}}
+{"patch": {"id": "program-us-mit-econ-14-1", "set": {"application_platform": "MIT application", "application_requirements[_key==\"r1\"].name": "MIT application"}}}
+{"patch": {"id": "program-us-mit-engineering", "set": {"application_platform": "MIT application", "application_requirements[_key==\"r1\"].name": "MIT application"}}}
+{"patch": {"id": "program-us-mit-mgmt-15", "set": {"application_platform": "MIT application", "application_requirements[_key==\"r1\"].name": "MIT application"}}}
+{"patch": {"id": "program-us-nyu-cs", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-us-nyu-economics", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-us-nyu-engineering", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-us-nyu-stern-business", "set": {"application_platform": "", "application_requirements[_key==\"r1\"].name": "Application form"}}}
+{"patch": {"id": "program-us-princeton-ab-economics", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-princeton-bse-engineering", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-princeton-cs", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-purdue-bs-economics", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-purdue-bs-engineering", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-purdue-bs-management", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-purdue-bscs", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-stanford-cs", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-stanford-economics", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-stanford-engineering", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-upenn-cs", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-upenn-economics", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-upenn-engineering", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-upenn-wharton-business", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-usc-cs", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-usc-economics", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-usc-engineering", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}
+{"patch": {"id": "program-us-usc-marshall-business", "set": {"application_platform": "Common App", "application_requirements[_key==\"r1\"].name": "Common App"}}}

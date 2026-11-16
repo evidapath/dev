@@ -1,0 +1,40 @@
+{
+  "uni": "us-cornell",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://courses.cornell.edu/programs/psychology-ba/",
+      "page": "51524b652693",
+      "title": "Psychology (BA) | Cornell University Courses of Study",
+      "organization": "Cornell University",
+      "quotes": [
+        "The Psychology major is open to students in the College of Arts and Sciences."
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BA",
+    "field": "Psychology",
+    "faculty": "College of Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Psychology (BA), open to students in the College of Arts and Sciences (the same college as Economics).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-cornell-economics",
+    "quote": "The Psychology major is open to students in the College of Arts and Sciences.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

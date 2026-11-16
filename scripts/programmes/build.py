@@ -15,8 +15,15 @@ stops on the first failure:
   4. the faculty/school named appears on the programme's page.
 
 Values copied from records already in Sanity ("from_existing", "living_from",
-"fees_from") are not re-checked
+"fees_from", "college") are not re-checked
 here: they were verified when they were added, and the record id is kept.
+
+"college": where students are admitted to a college and choose the major later
+(US universities), a new major reuses the entry requirements and fees of an
+existing programme in the same college: {"from": "<program id>", "quote": "<a
+quote of a university page saying the major sits in that college>",
+"copy": ["admissions", "costs"]}. It stops if a copied requirement names the
+other programme or lists required subjects, since those wouldn't be college-wide.
 
 Reads SANITY_READ_TOKEN from evidapath-navigator/.env.local only to copy those
 existing records (living costs, English requirement). Never prints it.
@@ -145,7 +152,10 @@ def main(research_dir: str, pages_dir: str, out_path: str):
         fac_page = Path(pages_dir) / f"{r['sources'][p['source']]['page']}.txt"
         if p.get("faculty") and norm(p["faculty"]) not in norm(fac_page.read_text()):
             fail(f"{where}: faculty '{p['faculty']}' isn't on the programme page")
-        check_numbers(p["duration_years"], p["source"], "duration")
+        col = r.get("college")
+        base_years = col and sanity(f'*[_id=="{col["from"]}"][0].duration_value')
+        if base_years != p["duration_years"]:  # a college major's length can come from its college's record
+            check_numbers(p["duration_years"], p["source"], "duration")
         for k in ("degree_type", "summary"):
             check_numbers(p.get(k, ""), p["source"], k)
         reqs = []
@@ -272,6 +282,45 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                 "record_status": "VERIFIED", "verification_status": "VERIFIED", "last_checked": TODAY,
                 "source_refs": [ref(src_ids[k], f"s{i+1}") for i, k in enumerate(src_list)],
             }})
+
+        # entry requirements and fees shared by the whole college (see the top of this file)
+        if col:
+            if not col["from"].startswith(f"program-{uni}-"):
+                fail(f"{where}: college.from {col['from']} belongs to another university")
+            if norm(col["quote"]) not in norm(" ".join(quotes.values())):
+                fail(f"{where}: college.quote isn't one of the quotes")
+            base = sanity(f'*[_id=="{col["from"]}"][0]{{program_name, field_of_study}}')
+            if not base:
+                fail(f"{where}: college.from {col['from']} not found")
+            names = {base["program_name"].lower(), base["field_of_study"].lower()} - {p["name"].lower(), p["field"].lower()}
+            copied = sanity(f'*[_type in ["admissionsRequirement", "costProfile"] && program_ref._ref=="{col["from"]}" && !(_id in path("drafts.**"))]')
+            kinds = set(col.get("copy", ["admissions", "costs"]))
+            for d in copied:
+                kind = "admissions" if d["_type"] == "admissionsRequirement" else "costs"
+                if kind not in kinds:
+                    continue
+                if kind == "admissions":
+                    text = d.get("academic_threshold", "").lower()
+                    if d.get("required_subjects") or any(n in text for n in names):
+                        fail(f"{where}: {d['_id']} is specific to {base['program_name']}, not college-wide")
+                    suffix = d["prior_curriculum_category_ref"]["_ref"].removeprefix(f"applicantCategory-{uni}-curriculum-")
+                    nid = f"{uni}-admreq-{slug}-{suffix}"
+                else:
+                    suffix = d["residency_category_ref"]["_ref"].removeprefix(f"applicantCategory-{uni}-residency-")
+                    nid = f"{uni}-cost-{slug}-{suffix}"
+                    d["duration_years"] = p["duration_years"]
+                doc = {k: v for k, v in d.items() if not k.startswith("_") or k == "_type"}
+                doc.update({"_id": f"{d['_type']}-{nid}", "id": nid, "program_ref": ref(f"program-{prog_id}")})
+                em = doc.setdefault("extension_metadata", {"_type": "extensionMetadata"})
+                em.setdefault("fields", [])
+                em["fields"] = [f_ for f_ in em["fields"] if f_.get("key") != "copied_from"] + [
+                    {"_key": "copied_from", "_type": "extensionMetadataFieldEntry", "key": "copied_from",
+                     "value": f"Same as {d['_id']}: entry requirements and fees shared by this college's programmes",
+                     "value_type": "string"}]
+                muts.append({"createOrReplace": doc})
+            if not any(m["createOrReplace"].get("program_ref", {}).get("_ref") == f"program-{prog_id}"
+                       and m["createOrReplace"]["_type"] == "admissionsRequirement" for m in muts) and "admissions" in kinds:
+                fail(f"{where}: college.from {col['from']} has no entry requirements to copy")
 
         # programme-specific deadline
         d = r.get("deadline")

@@ -1,0 +1,42 @@
+{
+  "uni": "us-harvard",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://college.harvard.edu/academics/liberal-arts-sciences/concentrations",
+      "page": "4706502cf96b",
+      "title": "Concentrations | Harvard College",
+      "organization": "Harvard College",
+      "quotes": [
+        "At Harvard College, students choose a \"concentration,\" which is what we call a major.",
+        "Psychology B.A. Social Sciences",
+        "Psychology is the scientific study of the mind, and as such, we investigate the minds of humans and other species."
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BA",
+    "field": "Psychology",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Psychology concentration (B.A.), Harvard College. The concentration (major) is chosen at Harvard College after admission.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-harvard-economics",
+    "quote": "At Harvard College, students choose a \"concentration,\" which is what we call a major.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}
