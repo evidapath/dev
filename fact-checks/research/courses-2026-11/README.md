@@ -41,6 +41,7 @@ existing verified records, by id.
 | Biology / Life Sciences | Imperial (Biological Sciences), Manchester, Nottingham, Warwick (Biological Sciences), Cambridge (Natural Sciences, Biological stream), Taylor's and Universiti Malaya (Biotechnology) → `pending/2026-11-12-biology.ndjson` | Not yet: Birmingham, Nottingham Malaysia, UNSW (general Bachelor of Science) |
 | Architecture | Nottingham (BArch), Cambridge, Taylor's → `pending/2026-11-12-architecture.ndjson` | Manchester: 2027 fees not set (and no international fee given). Universiti Malaya: 3.5-year degree; the fee averaging only handles whole years so far |
 | US majors (same college) | Psychology: Harvard, Princeton, Stanford, Penn, Cornell, NYU, ASU. Biology: Harvard (Molecular and Cellular Biology), MIT, Princeton (Molecular Biology), Stanford, Penn, Cornell, NYU, USC, ASU. Architecture: MIT, Princeton, Penn. Also MIT Brain and Cognitive Sciences → `pending/2026-11-16-us-majors.ndjson` | Purdue: its fee page is behind a bot check, and fees differ by college. USC Psychology: no official degree page found. Cornell and USC Architecture: 5-year degrees with portfolio rules, not added |
+| Netherlands Psychology (English track) | University of Amsterdam (270 places), Twente (250 places); both selective (numerus fixus), apply by 15 January 2027 → `pending/2026-11-16-nl-psychology.ndjson` | Delft, Eindhoven: no psychology bachelor's |
 
 Medicine not offered as a first degree (no record added): US universities (medicine is a
 graduate degree there), Warwick (graduate entry only).
@@ -95,3 +96,18 @@ graduate degree there), Warwick (graduate entry only).
   records, or "Application form" where none is stored
   (`pending/2026-11-16-application-platform-fix.ndjson`); the importer no longer
   defaults to AUS. The site doesn't show this field, so no student saw it.
+
+- The builder used to replace a shared source's excerpt with only this pass's quotes.
+  Two records from the 2 November re-verification (Cambridge fees PDF, Universiti
+  Malaya fee PDF) lost the quotes their older Computer Science, Economics and
+  Engineering records rely on. Those quotes are recovered from Sanity's history
+  (`pending/2026-11-16-source-excerpt-restore.ndjson`), and the builder now only
+  appends missing quotes. Excerpts aren't shown on the site.
+- UvA's fee page shows €2,694 under "Statutory tuition fees 2027-2028"; the
+  government's 2027-28 fee is €2,771 (published by Twente, Erasmus, Radboud and
+  Maastricht). Existing UvA records (€2,771) are right; the new Psychology record
+  cites Twente's page for it. UvA's page looks out of date.
+- Twente's English page (September 2027 intake) asks for TOEFL iBT 90, 21 per
+  section; the existing Twente records say TOEFL iBT 80, 17 per section. To check.
+- Universiti Malaya Computer Science: stores RM 22,300 a year (RM 89,200 ÷ 4)
+  but its note says 3.5 years, RM 25,486 a year. To check.

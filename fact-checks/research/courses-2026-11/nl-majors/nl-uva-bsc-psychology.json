@@ -1,0 +1,157 @@
+{
+  "uni": "nl-uva",
+  "slug": "bsc-psychology",
+  "sources": {
+    "course": {
+      "url": "https://www.uva.nl/en/programmes/bachelors/psychology/psychology.html",
+      "page": "923ff7557367",
+      "title": "Bachelor's Psychology - University of Amsterdam",
+      "organization": "University of Amsterdam",
+      "quotes": [
+        "Language of instruction English",
+        "180 EC EC, 36 months",
+        "This Bachelor's programme has a numerus fixus. This means that you need to apply for the selection procedure by 15 January at the latest. The programme has 270 places available for the English track."
+      ]
+    },
+    "app": {
+      "url": "https://www.uva.nl/en/bachelors/bachelorsprogrammes/psychology/application-and-admission/application-and-admission",
+      "page": "uva-psy-app",
+      "title": "Application process - Psychology - University of Amsterdam",
+      "organization": "University of Amsterdam",
+      "quotes": [
+        "You can submit your enrolment application for the academic year 2027-2028 in Studielink from 1 October 2026 till 15 January 2027.",
+        "We will have 270 places available for the English track in the academic year 2027-2028.",
+        "Students with a foreign diploma are eligible to apply if their diploma is equivalent to the Dutch pre-university diploma (vwo-diploma) and includes: Mathematics English as part of your final examinations.",
+        "The level of mathematics should be equivalent to at least the Dutch level of VWO mathematics: Wiskunde A.",
+        "Applicants are therefore required to submit proof of sufficient proficiency in English (Common European Framework of Reference for Languages (CEFR): level C1).",
+        "By completing fully English-taught secondary education in Australia, Canada (with the exception of Quebec), Ireland, New Zealand, the United Kingdom or the United States of America;",
+        "By obtaining an International Baccalaureate DP diploma with English as an IB exam subject",
+        "IELTS Academic 6.5 Each subscore: 6 TOEFL (iBT) Scoring scale: 0-120* 92 Each subscore: 22",
+        "Cambridge C1 Advanced 175 Cambridge C2 Proficiency 180",
+        "*Scoring scale until 20 January 2026",
+        "To be eligible for admission to the programme, you must participate in the selection process."
+      ]
+    },
+    "fees": {
+      "url": "https://www.uva.nl/en/education/fees-and-funding/tuition-fees/tuition-fees.html",
+      "page": "uva-fee-fmg",
+      "title": "Tuition fees - University of Amsterdam",
+      "organization": "University of Amsterdam",
+      "quotes": [
+        "2027-2028 institutional fee per faculty",
+        "Faculty of Social and Behavioural Sciences",
+        "Institutional fee for non-EEA students Bachelor's €16,670"
+      ]
+    },
+    "fmg": {
+      "url": "https://www.uva.nl/en/organisation/faculty-of-social-and-behavioural-sciences/education",
+      "page": "af35bd0428c5",
+      "title": "Education - Faculty of Social and Behavioural Sciences - University of Amsterdam",
+      "organization": "University of Amsterdam",
+      "quotes": [
+        "Our Bachelor's programmes are divided into four clusters: Bachelor's in Child Development and Education Bachelor's in Communication Science Bachelor's in Psychology"
+      ]
+    },
+    "statutory": {
+      "url": "https://www.utwente.nl/en/education/bachelor/study-costs/tuition-fees/",
+      "page": "ef12a0412ae7",
+      "title": "Tuition fees bachelor's | University of Twente",
+      "organization": "University of Twente",
+      "quotes": [
+        "This fee is set and subsidised by the Dutch government and may change each academic year.",
+        "2026-2027 (Sep-Aug) 2027-2028 (Sep-Aug) All bachelor's, except for University College Twente € 2,694 per year € 2,771 per year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BSc",
+    "field": "Psychology",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027-2028",
+    "platform": "Studielink",
+    "source": "course",
+    "summary": "BSc Psychology (English track), 180 EC over 36 months. Numerus fixus with a selection procedure; apply in Studielink by 15 January.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_annual": 16670,
+      "academic_year": "2027-2028 (non-EEA, Social and Behavioural Sciences bachelor)",
+      "source": [
+        "fees",
+        "fmg"
+      ],
+      "living_from": "costProfile-nl-uva-cost-bsc-economics-international",
+      "note": "Institutional fee for non-EEA students, 2027-2028: €16,670 a year for a Bachelor's in the Faculty of Social and Behavioural Sciences, which lists the Bachelor's in Psychology among its programmes."
+    },
+    {
+      "residency": "eu-eea",
+      "currency": "EUR",
+      "tuition_annual": 2771,
+      "academic_year": "2027-2028 (EU/EEA statutory fee)",
+      "source": "statutory",
+      "living_from": "costProfile-nl-uva-cost-bsc-economics-eu-eea",
+      "note": "Statutory fee 2027-2028: €2,771 a year, set by the Dutch government for every Dutch university (figure as published by the University of Twente). UvA's own fee page still shows €2,694 under 2027-2028."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "app",
+      "threshold": "Psychology (English track): a diploma equivalent to the Dutch pre-university (vwo) diploma, with Mathematics (at least VWO Wiskunde A level) and English among the final examinations. Numerus fixus: 270 places on the English track for 2027-2028, filled by a selection procedure.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "source": "app",
+        "min_score": "CEFR C1. IELTS Academic 6.5 (each subscore 6); TOEFL iBT 92 (each subscore 22) on the scale used until 20 January 2026; Cambridge C1 Advanced 175; Cambridge C2 Proficiency 180.",
+        "notes": "Exempt after fully English-taught secondary education in Australia, Canada (except Quebec), Ireland, New Zealand, the UK or the US, or with an IB Diploma with English as an exam subject."
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "app",
+      "threshold": "Psychology (English track): a diploma equivalent to the Dutch pre-university (vwo) diploma, with Mathematics (at least VWO Wiskunde A level) and English among the final examinations. Numerus fixus: 270 places on the English track for 2027-2028, filled by a selection procedure.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "source": "app",
+        "min_score": "CEFR C1. IELTS Academic 6.5 (each subscore 6); TOEFL iBT 92 (each subscore 22) on the scale used until 20 January 2026; Cambridge C1 Advanced 175; Cambridge C2 Proficiency 180.",
+        "notes": "Exempt after fully English-taught secondary education in Australia, Canada (except Quebec), Ireland, New Zealand, the UK or the US, or with an IB Diploma with English as an exam subject."
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "app",
+      "threshold": "Psychology (English track): a diploma equivalent to the Dutch pre-university (vwo) diploma, with Mathematics (at least VWO Wiskunde A level) and English among the final examinations. Numerus fixus: 270 places on the English track for 2027-2028, filled by a selection procedure.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "source": "app",
+        "min_score": "CEFR C1. IELTS Academic 6.5 (each subscore 6); TOEFL iBT 92 (each subscore 22) on the scale used until 20 January 2026; Cambridge C1 Advanced 175; Cambridge C2 Proficiency 180.",
+        "notes": "Exempt after fully English-taught secondary education in Australia, Canada (except Quebec), Ireland, New Zealand, the UK or the US, or with an IB Diploma with English as an exam subject."
+      }
+    }
+  ],
+  "deadline": {
+    "date": "2027-01-15",
+    "source": "app",
+    "round": "Numerus fixus application (Studielink)",
+    "note": "Apply in Studielink between 1 October 2026 and 15 January 2027; selection follows."
+  }
+}

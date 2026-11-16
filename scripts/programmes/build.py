@@ -154,7 +154,8 @@ def main(research_dir: str, pages_dir: str, out_path: str):
             fail(f"{where}: faculty '{p['faculty']}' isn't on the programme page")
         col = r.get("college")
         base_years = col and sanity(f'*[_id=="{col["from"]}"][0].duration_value')
-        if base_years != p["duration_years"]:  # a college major's length can come from its college's record
+        in_months = f"{round(p['duration_years'] * 12)} months" in norm(q_of(p["source"]))  # e.g. "36 months"
+        if base_years != p["duration_years"] and not in_months:  # a college major's length can come from its college's record
             check_numbers(p["duration_years"], p["source"], "duration")
         for k in ("degree_type", "summary"):
             check_numbers(p.get(k, ""), p["source"], k)
@@ -357,15 +358,22 @@ def main(research_dir: str, pages_dir: str, out_path: str):
         if d["_type"] == "costProfile" and d["residency_category_ref"]["_ref"] not in existing:
             fail(f"{d['_id']}: residency category {d['residency_category_ref']['_ref']} doesn't exist")
 
-    # Source records that already exist (same URL, same id) are kept, except that
-    # their excerpt is brought up to the quotes now used from that page.
-    existing_src = {d["_id"]: d["excerpt"] for d in sanity('*[_type=="sourceRecord"]{_id, excerpt}')}
+    # Source records that already exist (same URL, same id) are kept. Quotes now used
+    # from that page that their excerpt lacks are added to the end; nothing already
+    # there is removed (older records may rely on it).
+    existing_src = {d["_id"]: d["excerpt"] or "" for d in sanity('*[_type=="sourceRecord"]{_id, excerpt}')}
     patches = []
     for m in muts:
         d = m["createOrReplace"]
-        if d["_type"] == "sourceRecord" and d["_id"] in existing_src and existing_src[d["_id"]] != d["excerpt"]:
-            if d["_id"] not in {p["patch"]["id"] for p in patches}:
-                patches.append({"patch": {"id": d["_id"], "set": {"excerpt": d["excerpt"], "retrieved_at": d["retrieved_at"]}}})
+        if d["_type"] != "sourceRecord" or d["_id"] not in existing_src:
+            continue
+        if d["_id"] in {p["patch"]["id"] for p in patches}:
+            continue
+        old_ex = existing_src[d["_id"]]
+        url = d["url"] + ("#page-data" if d["_id"] != f"sourceRecord-ev-{hashlib.sha1(d['url'].encode()).hexdigest()[:12]}" else "")
+        missing = [q for q in shared.get(url, []) if norm(q) not in norm(old_ex)]
+        if missing:
+            patches.append({"patch": {"id": d["_id"], "set": {"excerpt": " ".join([old_ex, *missing]).strip(), "retrieved_at": d["retrieved_at"]}}})
     muts = [m for m in muts if not (m["createOrReplace"]["_type"] == "sourceRecord" and m["createOrReplace"]["_id"] in existing_src)]
     ids = [m["createOrReplace"]["_id"] for m in muts]
     dupes = {i for i in ids if ids.count(i) > 1 and not i.startswith("sourceRecord-")}

@@ -1,0 +1,171 @@
+{
+  "uni": "nl-ut",
+  "slug": "bsc-psychology",
+  "sources": {
+    "course": {
+      "url": "https://www.utwente.nl/en/education/bachelor/programmes/psychology/",
+      "page": "03fd311e253c",
+      "title": "Bachelor Psychology | University of Twente",
+      "organization": "University of Twente",
+      "quotes": [
+        "Duration 3 years",
+        "Numerus fixus English track: 250 spots",
+        "Faculty Behavioural, Management & Social Sciences",
+        "You can choose either a (fully) English or Dutch track within the programme. Good to know: only the English-taught track has a numerus fixus."
+      ]
+    },
+    "apply": {
+      "url": "https://www.utwente.nl/en/education/bachelor/programmes/psychology/enrolment/",
+      "page": "9c225c67cca4",
+      "title": "Application Psychology | University of Twente",
+      "organization": "University of Twente",
+      "quotes": [
+        "Do you want to start the English track of Psychology? Make sure you apply via Studielink by 15 January 2027 , because applications after this date will not be accepted.",
+        "This track has a numerus fixus , which means there are 250 places available and you will need to take part in a selection proce"
+      ]
+    },
+    "req": {
+      "url": "https://www.utwente.nl/en/education/bachelor/programmes/psychology/enrolment/admission-requirements/",
+      "page": "f30da47355ee",
+      "title": "Admission requirements Psychology | University of Twente",
+      "organization": "University of Twente",
+      "quotes": [
+        "Please take into account that Psychology has an intake restriction for the English track and as a result participating in a selection procedure is needed.",
+        "You are admissible if you have an international secondary school diploma equivalent to the Dutch VWO (pre-university education) diploma ."
+      ]
+    },
+    "a-level": {
+      "url": "https://www.utwente.nl/en/education/bachelor/application-admission/admission/diplomas/uk/",
+      "page": "d5b0a2e1f4f1",
+      "title": "GCSE & GCE A2-Levels | University of Twente",
+      "organization": "University of Twente",
+      "quotes": [
+        "3 (I)GCSE / GCE O-Level with an A, B or C grade or 4 – 9 score, and 3 full GCE A2-Level with an A, B or C grade.",
+        "Students need to have six different subjects in (I)GCSE / GCE O-Level and A2-Level.",
+        "Psychology GCE A2-Level Mathematics English",
+        "These admission requirements are valid for the September 2027 intake."
+      ]
+    },
+    "ib": {
+      "url": "https://www.utwente.nl/en/education/bachelor/admission/diplomas/international-baccalaureate/",
+      "page": "997b7f12aea9",
+      "title": "International Baccalaureate | University of Twente",
+      "organization": "University of Twente",
+      "quotes": [
+        "Psychology Mathematics Applications and Interpretations -or- Mathematics Analysis and Approaches (on either Standard Level or Higher Level)"
+      ]
+    },
+    "lang": {
+      "url": "https://www.utwente.nl/en/education/bachelor/application-admission/admission/language-requirements/",
+      "page": "979afa0dca25",
+      "title": "Language requirements | University of Twente",
+      "organization": "University of Twente",
+      "quotes": [
+        "not older than two years, with an overall band score of at least 6.0, and a minimum score on each section of at least 5.5.",
+        "not older than two years, with an overall score of 90, and a minimum score on each section of at least 21.",
+        "not older than two years, with an overall score of 4.5, and a minimum score of 4.5 on reading, listening and writing.",
+        "obtained with an overall score of at least 169 and a minimum score on each section of at least 162.",
+        "TOEFL iBT (internet-based) certificate (before January 2026)",
+        "Cambridge C1 Advanced , formerly known as; Cambridge English Advanced (CAE).",
+        "Cambridge C2 Proficiency , formerly known as; Cambridge English Proficiency (CPE)."
+      ]
+    },
+    "fees": {
+      "url": "https://www.utwente.nl/en/education/bachelor/programmes/psychology/enrolment/tuition-fees-interational/",
+      "page": "f2cd5beede0c",
+      "title": "Tuition fees Psychology | University of Twente",
+      "organization": "University of Twente",
+      "quotes": [
+        "The Bachelor's in Psychology is an Alpha-Gamma programme.",
+        "2027-2028 (Sep-Aug) € 2,771 per year",
+        "Overview of institutional tuition fees for this Bachelor's 2026-2027 (Sep-Aug) € 12,300 per year 2027-2028 (Sep-Aug) € 12,652 per year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BSc",
+    "field": "Psychology",
+    "faculty": "Behavioural, Management & Social Sciences",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027-2028",
+    "platform": "Studielink",
+    "source": "course",
+    "summary": "BSc Psychology, 3 years; English track with a numerus fixus of 250 places and a selection procedure (a Dutch track is also offered).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_annual": 12652,
+      "academic_year": "2027-2028 (non-EU/EEA institutional fee)",
+      "source": "fees",
+      "living_from": "costProfile-nl-ut-cost-bsc-iba-international",
+      "note": "Institutional fee for non-EU/EEA students, 2027-2028: €12,652 a year (Psychology is an Alpha-Gamma programme)."
+    },
+    {
+      "residency": "eu-eea",
+      "currency": "EUR",
+      "tuition_annual": 2771,
+      "academic_year": "2027-2028 (EU/EEA statutory fee)",
+      "source": "fees",
+      "living_from": "costProfile-nl-ut-cost-bsc-iba-eu-eea",
+      "note": "Statutory fee 2027-2028: €2,771 a year."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "a-level",
+      "threshold": "Psychology (English track): 3 (I)GCSEs (A-C or 4-9) and 3 full A-Levels (A-C), six different subjects, including A-Level Mathematics, plus English. The English track has an intake restriction, so a selection procedure is part of admission.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "source": "lang",
+        "min_score": "IELTS Academic 6.0 overall, at least 5.5 in each section; TOEFL iBT 90 (at least 21 per section, scale before January 2026) or 4.5 (new scale); Cambridge C1 Advanced or C2 Proficiency 169 (162 per section).",
+        "notes": "An IB Diploma taught in English with an English exam subject exempts you from a test."
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "ib",
+      "threshold": "Psychology (English track): IB Diploma with Mathematics Applications and Interpretations or Analysis and Approaches (SL or HL). The English track has an intake restriction, so a selection procedure is part of admission.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "source": "lang",
+        "min_score": "IELTS Academic 6.0 overall, at least 5.5 in each section; TOEFL iBT 90 (at least 21 per section, scale before January 2026) or 4.5 (new scale); Cambridge C1 Advanced or C2 Proficiency 169 (162 per section).",
+        "notes": "An IB Diploma taught in English with an English exam subject exempts you from a test."
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "req",
+      "threshold": "Psychology (English track): a secondary school diploma equivalent to the Dutch VWO diploma, plus Twente's English and mathematics requirements. The English track has an intake restriction, so a selection procedure is part of admission.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "source": "lang",
+        "min_score": "IELTS Academic 6.0 overall, at least 5.5 in each section; TOEFL iBT 90 (at least 21 per section, scale before January 2026) or 4.5 (new scale); Cambridge C1 Advanced or C2 Proficiency 169 (162 per section).",
+        "notes": "An IB Diploma taught in English with an English exam subject exempts you from a test."
+      }
+    }
+  ],
+  "deadline": {
+    "date": "2027-01-15",
+    "source": "apply",
+    "round": "Numerus fixus application (English track, Studielink)",
+    "note": "Applications after 15 January 2027 are not accepted; selection in February-March 2027."
+  }
+}
