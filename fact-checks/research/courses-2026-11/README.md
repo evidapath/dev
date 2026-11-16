@@ -42,6 +42,7 @@ existing verified records, by id.
 | Architecture | Nottingham (BArch), Cambridge, Taylor's → `pending/2026-11-12-architecture.ndjson` | Manchester: 2027 fees not set (and no international fee given). Universiti Malaya: 3.5-year degree; the fee averaging only handles whole years so far |
 | US majors (same college) | Psychology: Harvard, Princeton, Stanford, Penn, Cornell, NYU, ASU. Biology: Harvard (Molecular and Cellular Biology), MIT, Princeton (Molecular Biology), Stanford, Penn, Cornell, NYU, USC, ASU. Architecture: MIT, Princeton, Penn. Also MIT Brain and Cognitive Sciences → `pending/2026-11-16-us-majors.ndjson` | Purdue: its fee page is behind a bot check, and fees differ by college. USC Psychology: no official degree page found. Cornell and USC Architecture: 5-year degrees with portfolio rules, not added |
 | Netherlands Psychology (English track) | University of Amsterdam (270 places), Twente (250 places); both selective (numerus fixus), apply by 15 January 2027 → `pending/2026-11-16-nl-psychology.ndjson` | Delft, Eindhoven: no psychology bachelor's |
+| Canada Psychology and Biology | UBC (Psychology BA, Arts; Biology BSc, Science), Toronto St. George (Psychology and Biology HBSc, Life Sciences stream), McGill (Psychology and Biology BSc, Faculty of Science) → `pending/2026-11-16-canada-majors.ndjson` | UBC's student tuition page answers 403; fees come from the Academic Calendar's per-credit table × the degree's 120 credits. Not yet: Waterloo, Alberta, McMaster |
 
 Medicine not offered as a first degree (no record added): US universities (medicine is a
 graduate degree there), Warwick (graduate entry only).
@@ -111,3 +112,7 @@ graduate degree there), Warwick (graduate entry only).
   section; the existing Twente records say TOEFL iBT 80, 17 per section. To check.
 - Universiti Malaya Computer Science: stores RM 22,300 a year (RM 89,200 ÷ 4)
   but its note says 3.5 years, RM 25,486 a year. To check.
+- McGill: the Faculty of Science says students "are normally admitted to a four-year
+  degree requiring the completion of 120 credits" (up to 30 credits of advanced
+  standing can shorten it). The existing McGill BSc Computer Science and BA
+  Economics records say 3 years. The new McGill records use 4. To check.

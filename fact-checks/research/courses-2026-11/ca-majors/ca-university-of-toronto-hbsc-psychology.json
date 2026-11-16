@@ -1,0 +1,147 @@
+{
+  "uni": "ca-university-of-toronto",
+  "slug": "hbsc-psychology",
+  "sources": {
+    "course": {
+      "url": "https://future.utoronto.ca/program/psychology",
+      "page": "ut-psy-ib",
+      "title": "Psychology | Future Students, University of Toronto",
+      "organization": "University of Toronto",
+      "quotes": [
+        "St. George campus Faculty of Arts & Science",
+        "Psychology Work-integrated learning option available. HBSc Major, Minor, Specialist TLG",
+        "Complete Diploma, including English.",
+        "English English (HL / SL)",
+        "Biology Biology (HL / SL)",
+        "Math (Calculus) Mathematics: Applications and Interpretations HL / Analysis and Approaches SL / Analysis and Approaches HL",
+        "Chemistry RECOMMENDED Chemistry (HL / SL)",
+        "Physics RECOMMENDED Physics (HL / SL)"
+      ]
+    },
+    "uk": {
+      "url": "https://future.utoronto.ca/program/psychology",
+      "page": "ut-psy-uk",
+      "title": "Psychology | Future Students, University of Toronto (British-patterned requirements)",
+      "organization": "University of Toronto",
+      "quotes": [
+        "Five different IGCSE/GCSE/Ordinary Level academic subjects and three different A Level/International A Level academic subjects.",
+        "English IGCSE / GCSE / O-level / AS / A Level English",
+        "Biology Biology AS / A-Level",
+        "Math (Calculus) Math AS / A-Level",
+        "Chemistry RECOMMENDED Chemistry AS / A-Level",
+        "Physics RECOMMENDED Physics AS / A-Level"
+      ]
+    },
+    "us": {
+      "url": "https://future.utoronto.ca/program/psychology",
+      "page": "ut-psy-us",
+      "title": "Psychology | Future Students, University of Toronto (U.S.-patterned requirements)",
+      "organization": "University of Toronto",
+      "quotes": [
+        "High School Diploma from an accredited high school. We expect competitive applicants to be enrolled in a rigorous academic course load, and to have taken the highest level of course available to them in prerequisite subjects.",
+        "English Senior Year/Grade 12 level or AP/IB English",
+        "Biology Senior Year/Grade 12 level or AP/IB Biology",
+        "Math (Calculus) Senior Year/Grade 12 level or AP/IB Calculus",
+        "Chemistry RECOMMENDED Senior Year/Grade 12 level or AP/IB Chemistry"
+      ]
+    },
+    "fees": {
+      "url": "https://tuitionexplorer.registrar.utoronto.ca/index.php?academicYear=2026-27&sessionType=1&studyLevel=UG&residency=INT&campus=UTSG&faculty=ARTSC-UG",
+      "page": "ut-fee-207",
+      "title": "Tuition Explorer 2026/27, Arts & Science, international | University of Toronto",
+      "organization": "University of Toronto",
+      "quotes": [
+        "Admission Streams Year 1: Commerce, Computer Science, Humanities, Life Sciences, Mathematical and Physical Sciences, and Social Sciences",
+        "Students with fewer than 4.0 credits completed $66,110.00 $2,100.29 $948.00 $69,158.29"
+      ]
+    },
+    "fees2": {
+      "url": "https://tuitionexplorer.registrar.utoronto.ca/index.php?academicYear=2026-27&sessionType=1&studyLevel=UG&residency=INT&campus=UTSG&faculty=ARTSC-UG",
+      "page": "ut-fee-199",
+      "title": "Tuition Explorer 2026/27, Arts & Science, international | University of Toronto",
+      "organization": "University of Toronto",
+      "quotes": [
+        "2026/27 Fall and Winter",
+        "(Honours) Bachelor of Science - Year 2 or Higher",
+        "Students with 4.0 or more credits completed $66,110.00 $2,100.29 $948.00 $69,158.29"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "HBSc",
+    "field": "Psychology",
+    "faculty": "Faculty of Arts & Science",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "OUAC",
+    "source": "course",
+    "summary": "Psychology, Honours Bachelor of Science (HBSc; major, minor or specialist), Faculty of Arts & Science, St. George campus. Apply through OUAC (code TLG).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-ca-university-of-toronto-ba-economics",
+    "quote": "St. George campus Faculty of Arts & Science",
+    "copy": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CAD",
+      "tuition_annual": 66110,
+      "academic_year": "2026/27 (Arts & Science international program fee; Year 1 and Year 2 or higher)",
+      "source": [
+        "fees",
+        "fees2"
+      ],
+      "fees_from": "costProfile-ca-university-of-toronto-cost-ba-economics-international",
+      "living_from": "costProfile-ca-university-of-toronto-cost-ba-economics-international",
+      "note": "International program fee 2026/27: CAD 66,110 for Year 1 (all Arts & Science admission streams, including Life Sciences) and CAD 66,110 for the Honours BSc from Year 2. Incidental and system access fee CAD 2,100.29 and UHIP CAD 948 are extra."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Psychology (St. George, Arts & Science, OUAC TLG): complete IB Diploma including English, with Biology (HL/SL) and Maths for calculus (AI HL, or AA SL/HL); Chemistry and Physics recommended. Admission is competitive.",
+      "required_subjects": [
+        "English",
+        "Biology",
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-university-of-toronto-admreq-ba-economics-ib"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "uk",
+      "threshold": "Psychology (St. George, Arts & Science, OUAC TLG): five different IGCSE/GCSE/O-Level subjects and three different A-Levels, including English (IGCSE or higher), Biology (AS/A-Level) and Maths (AS/A-Level); Chemistry and Physics recommended. Admission is competitive.",
+      "required_subjects": [
+        "English",
+        "Biology",
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-university-of-toronto-admreq-ba-economics-ib"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "us",
+      "threshold": "Psychology (St. George, Arts & Science, OUAC TLG): a high school diploma from an accredited school, with senior-level (or AP/IB) English, Biology and Calculus; Chemistry and Physics recommended. Admission is competitive.",
+      "required_subjects": [
+        "English"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-university-of-toronto-admreq-ba-economics-ib"
+      }
+    }
+  ]
+}

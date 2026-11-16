@@ -154,9 +154,12 @@ def main(research_dir: str, pages_dir: str, out_path: str):
             fail(f"{where}: faculty '{p['faculty']}' isn't on the programme page")
         col = r.get("college")
         base_years = col and sanity(f'*[_id=="{col["from"]}"][0].duration_value')
-        in_months = f"{round(p['duration_years'] * 12)} months" in norm(q_of(p["source"]))  # e.g. "36 months"
+        dq = norm(q_of(p.get("duration_source", p["source"])))
+        word = {3: "three", 4: "four", 5: "five", 6: "six"}.get(p["duration_years"], "-")
+        in_months = (f"{round(p['duration_years'] * 12)} months" in dq  # e.g. "36 months"
+                     or re.search(rf"\b{word}[- ]years?\b", dq) is not None)  # e.g. "a four-year degree"
         if base_years != p["duration_years"] and not in_months:  # a college major's length can come from its college's record
-            check_numbers(p["duration_years"], p["source"], "duration")
+            check_numbers(p["duration_years"], p.get("duration_source", p["source"]), "duration")
         for k in ("degree_type", "summary"):
             check_numbers(p.get(k, ""), p["source"], k)
         reqs = []
@@ -185,7 +188,11 @@ def main(research_dir: str, pages_dir: str, out_path: str):
         for c in r.get("costs", []):
             # A fee that differs by year is averaged here, from quoted numbers only:
             # "tuition_formula": "(2*33750+3*53880)/5".
-            if c.get("tuition_formula"):
+            if c.get("tuition_per_credit"):
+                # Per-credit fee (e.g. UBC): rate × the degree's quoted credit total ÷ its years.
+                check_numbers(f'{c["tuition_per_credit"]} {c["degree_credits"]}', c["source"], "per-credit fee and credits")
+                c["tuition_annual"] = round(c["tuition_per_credit"] * c["degree_credits"] / p["duration_years"], 2)
+            elif c.get("tuition_formula"):
                 f_ = c["tuition_formula"]
                 if not re.fullmatch(r"[\d+*/(). ]+", f_):
                     fail(f"{where}: tuition_formula may only hold numbers and + * / ( )")
@@ -241,7 +248,7 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                 doc["extension_metadata"]["fields"].append(
                     {"_key": "compulsory_fees_note", "_type": "extensionMetadataFieldEntry",
                      "key": "compulsory_fees_note", "value": extra["note"], "value_type": "string"})
-            check_numbers(c["note"].replace(f"{c['tuition_annual']:,}", ""), c["source"], f"{c['residency']} fee note")
+            check_numbers(c["note"].replace(f"{c['tuition_annual']:,.2f}", "").replace(f"{c['tuition_annual']:,}", ""), c["source"], f"{c['residency']} fee note")
             if living:
                 doc["estimated_living_costs_annual"] = living["estimated_living_costs_annual"]
                 doc["living_cost_source_note"] = living["living_cost_source_note"]
