@@ -188,7 +188,22 @@ def main(research_dir: str, pages_dir: str, out_path: str):
         for c in r.get("costs", []):
             # A fee that differs by year is averaged here, from quoted numbers only:
             # "tuition_formula": "(2*33750+3*53880)/5".
-            if c.get("tuition_per_credit"):
+            if c.get("tuition_per_term"):
+                # Per-term fee (e.g. Waterloo): the term fee is quoted; the terms per year
+                # must be backed by quotes naming the terms (e.g. "fall term – September to
+                # December", "winter term – January to April").
+                check_numbers(c["tuition_per_term"], c["source"], "per-term fee")
+                for q in c["terms_evidence"]:
+                    if norm(q) not in norm(q_of(c["source"])):
+                        fail(f"{where}: terms_evidence quote isn't among the fee's quotes: {q}")
+                if len(c["terms_evidence"]) != c["terms_per_year"]:
+                    fail(f"{where}: give one quote per term for terms_per_year")
+                c["tuition_annual"] = round(c["tuition_per_term"] * c["terms_per_year"], 2)
+                if c.get("mandatory_per_term"):
+                    check_numbers(c["mandatory_per_term"], c["source"], "per-term compulsory fees")
+                    c["mandatory_fees_annual"] = round(c["mandatory_per_term"] * c["terms_per_year"], 2)
+                    c["_computed_fees"] = True
+            elif c.get("tuition_per_credit"):
                 # Per-credit fee (e.g. UBC): rate × the degree's quoted credit total ÷ its years.
                 check_numbers(f'{c["tuition_per_credit"]} {c["degree_credits"]}', c["source"], "per-credit fee and credits")
                 c["tuition_annual"] = round(c["tuition_per_credit"] * c["degree_credits"] / p["duration_years"], 2)
@@ -206,7 +221,7 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                 c["tuition_annual"] = round(eval(f_, {"__builtins__": {}}))
             else:
                 check_numbers(c["tuition_annual"], c["source"], f"{c['residency']} tuition")
-            if not c.get("fees_from"):
+            if not c.get("fees_from") and not c.get("_computed_fees"):
                 check_numbers(c.get("mandatory_fees_annual", ""), c["source"], f"{c['residency']} compulsory fees")
             living = None
             if c.get("living_from"):
