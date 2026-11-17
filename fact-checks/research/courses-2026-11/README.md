@@ -44,6 +44,7 @@ existing verified records, by id.
 | Netherlands Psychology (English track) | University of Amsterdam (270 places), Twente (250 places); both selective (numerus fixus), apply by 15 January 2027 → `pending/2026-11-16-nl-psychology.ndjson` | Delft, Eindhoven: no psychology bachelor's |
 | Canada Psychology and Biology | UBC (Psychology BA, Arts; Biology BSc, Science), Toronto St. George (Psychology and Biology HBSc, Life Sciences stream), McGill (Psychology and Biology BSc, Faculty of Science), Waterloo (Psychology and Biology BSc, Life Sciences) → `pending/2026-11-16-canada-majors.ndjson` | UBC's student tuition page answers 403; fees come from the Academic Calendar's per-credit table × the degree's 120 credits. Alberta: fees only come from an interactive cost calculator that opens a browser dialog when driven automatically; not done. McMaster: not yet |
 | UAE | AUS: Chemical, Civil, Electrical Engineering, Architecture (BArch, 5 years, portfolio; same tuition for all majors and the same subject rules for each major group, so admission and fees reuse AUS Computer Engineering / Computer Science). Heriot-Watt Dubai: Psychology, Civil Engineering, Mechanical Engineering, Architecture. Birmingham Dubai: Psychology → `pending/2026-11-17-uae-majors.ndjson` | AUS Mechanical Engineering and Biology: their pages don't state a length. AUS Psychology: no subject rule published for it, so the shared records can't be reused. McMaster: first-year Gateway admission and interactive requirement and cost pages; not done |
+| UAE and UNSW, second batch | RIT Dubai Psychology (BS; same AED 68,000 tuition as every RIT Dubai bachelor's), Canadian University Dubai Psychology (BA and BSc), UNSW Architectural Studies → `pending/2026-11-17-uae-unsw-more.ndjson` | RIT Dubai Electrical, Mechanical, Industrial Engineering: course sequences run to a fifth year (co-op), length unclear. CUD Architecture: page didn't load its details. Khalifa: one engineering admission, the existing record covers the branches. Sharjah, Zayed: not yet |
 
 Medicine not offered as a first degree (no record added): US universities (medicine is a
 graduate degree there), Warwick (graduate entry only).
@@ -126,3 +127,9 @@ graduate degree there), Warwick (graduate entry only).
 - Birmingham Dubai Psychology: the page gives no English score, so none is stored.
 - Heriot-Watt Dubai Civil, Mechanical and Architecture: the course pages give the fee
   without naming the intake; stored as "intake not stated".
+- RIT Dubai Computer Engineering: stored as 4 years, but RIT Dubai's engineering course
+  sequences (Electrical, Mechanical, Industrial) run to a "Fifth Year". To check.
+- University of Sharjah: existing records store AED 63,740 a year while their note says
+  about AED 60,703. To check.
+- Canadian University Dubai: the Computer Science record uses the pre-VAT credit fee and
+  the BBA record the VAT-inclusive one. New Psychology records use VAT-inclusive fees. To check.

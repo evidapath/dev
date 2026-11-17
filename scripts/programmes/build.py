@@ -204,9 +204,13 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                     check_numbers(c["mandatory_per_term"], c["source"], "per-term compulsory fees")
                     c["mandatory_fees_annual"] = round(c["mandatory_per_term"] * c["terms_per_year"], 2)
                     c["_computed_fees"] = True
+            elif c.get("tuition_per_credit") and c.get("credits_per_year"):
+                # Per-credit fee with a published yearly credit load (e.g. CUD's "Cr Hrs per Year").
+                check_numbers(f'{c["tuition_per_credit"]:.2f} {c["credits_per_year"]}', c["source"], "per-credit fee and yearly credits")
+                c["tuition_annual"] = round(c["tuition_per_credit"] * c["credits_per_year"], 2)
             elif c.get("tuition_per_credit"):
                 # Per-credit fee (e.g. UBC): rate × the degree's quoted credit total ÷ its years.
-                check_numbers(f'{c["tuition_per_credit"]} {c["degree_credits"]}', c["source"], "per-credit fee and credits")
+                check_numbers(f'{c["tuition_per_credit"]:.2f} {c["degree_credits"]}', c["source"], "per-credit fee and credits")
                 c["tuition_annual"] = round(c["tuition_per_credit"] * c["degree_credits"] / p["duration_years"], 2)
             elif c.get("tuition_formula"):
                 f_ = c["tuition_formula"]
