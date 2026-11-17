@@ -1,0 +1,70 @@
+{
+  "uni": "ae-university-of-sharjah",
+  "slug": "bsc-electrical-electronics-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.sharjah.ac.ae/en/academics/degree/undergraduate/electrical-and-electronics-engineering",
+      "page": "1585ad40acfd",
+      "title": "Bachelor of Science in Electrical and Electronics Engineering | University of Sharjah",
+      "organization": "University of Sharjah",
+      "quotes": [
+        "Total Credit Hours 132 Cr. Hrs. Duration 4 Years",
+        "Language English"
+      ]
+    },
+    "req": {
+      "url": "https://www.sharjah.ac.ae/Admissions/bachelors-degree",
+      "page": "d4a0572e3422",
+      "title": "Bachelor's degree admission | University of Sharjah",
+      "organization": "University of Sharjah",
+      "quotes": [
+        "College of Engineering Programs Minimum average Required school subjects Required test Programs Bachelor of Science in Architectural Engineering Bachelor of Science in Chemical and Water Desalination Engineering Bachelor of Science in Civil Engineering Bachelor of Science in Electrical and Electronics Engineering Bachelor of Science in Industrial Engineering and Engineering Management Bachelor of Science in Mechanical Engineering Bachelor of Science in Mechatronics and Robotics Engineering Bachelor of Science in Nuclear Engineering Bachelor of Science in Sustainable and Renewable Energy Engineering Minimum average Advanced track: 75% General track: 85% Applied/Literary: not accepted Required school subjects At least 80% in Mathematics and Physics and in one science subject (Chemistry or Biology)."
+      ]
+    },
+    "fees": {
+      "url": "https://www.sharjah.ac.ae/-/media/project/uos/sites/uos/admission/tuition-fees/ug--after-w-ch.pdf",
+      "page": "uos-fee",
+      "title": "Tuition fees for undergraduates admitted from 2022/2023 (PDF) | University of Sharjah",
+      "organization": "University of Sharjah",
+      "quotes": [
+        "Tuition Fees for Students who have been admitted from Academic Year 2022/2023",
+        "Bachelor of Science in Electrical and Electronics Engineering 31,870 63,740 2,656"
+      ]
+    }
+  },
+  "program": {
+    "name": "Electrical and Electronics Engineering",
+    "degree_type": "BSc",
+    "field": "Engineering",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "University of Sharjah online application",
+    "source": "course",
+    "summary": "Bachelor of Science in Electrical and Electronics Engineering, 4 years, 132 credit hours, taught in English.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-ae-university-of-sharjah-bsc-eng",
+    "quote": "College of Engineering Programs Minimum average Required school subjects Required test Programs Bachelor of Science in Architectural Engineering Bachelor of Science in Chemical and Water Desalination Engineering Bachelor of Science in Civil Engineering Bachelor of Science in Electrical and Electronics Engineering Bachelor of Science in Industrial Engineering and Engineering Management Bachelor of Science in Mechanical Engineering Bachelor of Science in Mechatronics and Robotics Engineering Bachelor of Science in Nuclear Engineering Bachelor of Science in Sustainable and Renewable Energy Engineering Minimum average Advanced track: 75% General track: 85% Applied/Literary: not accepted Required school subjects At least 80% in Mathematics and Physics and in one science subject (Chemistry or Biology).",
+    "subjects_quote": "College of Engineering Programs Minimum average Required school subjects Required test Programs Bachelor of Science in Architectural Engineering Bachelor of Science in Chemical and Water Desalination Engineering Bachelor of Science in Civil Engineering Bachelor of Science in Electrical and Electronics Engineering Bachelor of Science in Industrial Engineering and Engineering Management Bachelor of Science in Mechanical Engineering Bachelor of Science in Mechatronics and Robotics Engineering Bachelor of Science in Nuclear Engineering Bachelor of Science in Sustainable and Renewable Energy Engineering Minimum average Advanced track: 75% General track: 85% Applied/Literary: not accepted Required school subjects At least 80% in Mathematics and Physics and in one science subject (Chemistry or Biology).",
+    "copy": [
+      "admissions"
+    ]
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 63740,
+      "academic_year": "Fee table for students admitted from 2022/2023 (current published table)",
+      "source": "fees",
+      "living_from": "costProfile-ae-university-of-sharjah-cost-bsc-eng-all-students",
+      "note": "Bachelor of Science in Electrical and Electronics Engineering: semester fee AED 31,870, annual fee AED 63,740, AED 2,656 per credit hour."
+    }
+  ],
+  "admissions": []
+}

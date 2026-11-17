@@ -1,0 +1,134 @@
+{
+  "uni": "ae-university-of-sharjah",
+  "slug": "llb-english",
+  "sources": {
+    "course": {
+      "url": "https://www.sharjah.ac.ae/en/academics/degree/undergraduate/law-in-english",
+      "page": "96e7b778f515",
+      "title": "Bachelor of Law in English | University of Sharjah",
+      "organization": "University of Sharjah",
+      "quotes": [
+        "Total Credit Hours 125 Cr. Hrs. Duration 4 Years",
+        "Language English"
+      ]
+    },
+    "req": {
+      "url": "https://www.sharjah.ac.ae/Admissions/bachelors-degree",
+      "page": "d4a0572e3422",
+      "title": "Bachelor's degree admission | University of Sharjah",
+      "organization": "University of Sharjah",
+      "quotes": [
+        "Bachelor of Law in English Minimum average 75% in all tracks Required school subjects 70% in Mathematics Required test IELTS Academic: 5.5 TOEFL iBT: 61 TOEFL ITP: 500 PTE Academic: 44",
+        "School grades stated on this page are those of the UAE curriculum (Advanced track). Grades from other curricula are converted to their UAE equivalent"
+      ]
+    },
+    "fees": {
+      "url": "https://www.sharjah.ac.ae/-/media/project/uos/sites/uos/admission/tuition-fees/ug--after-w-ch.pdf",
+      "page": "uos-fee",
+      "title": "Tuition fees for undergraduates admitted from 2022/2023 (PDF) | University of Sharjah",
+      "organization": "University of Sharjah",
+      "quotes": [
+        "Tuition Fees for Students who have been admitted from Academic Year 2022/2023",
+        "Bachelor of Law in English 31,870 63,740 2,656"
+      ]
+    }
+  },
+  "program": {
+    "name": "Law (taught in English)",
+    "degree_type": "Bachelor of Law",
+    "field": "Law",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "University of Sharjah online application",
+    "source": "course",
+    "summary": "Bachelor of Law in English, 4 years, 125 credit hours, College of Law.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 63740,
+      "academic_year": "Fee table for students admitted from 2022/2023 (current published table)",
+      "source": "fees",
+      "living_from": "costProfile-ae-university-of-sharjah-cost-bsc-eng-all-students",
+      "note": "Bachelor of Law in English: semester fee AED 31,870, annual fee AED 63,740, AED 2,656 per credit hour."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "uae-shs",
+      "source": "req",
+      "threshold": "Bachelor of Law in English: UAE secondary certificate, minimum average 75% in all tracks, with at least 70% in Mathematics. Meeting the minimum doesn't guarantee a place.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or TOEFL / PTE)",
+        "source": "req",
+        "min_score": "IELTS Academic 5.5, TOEFL iBT 61, TOEFL ITP 500 or PTE Academic 44."
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "req",
+      "threshold": "Bachelor of Law in English: IB Diploma: an average equivalent to 75% (Sharjah converts other curricula to the UAE scale), with the equivalent of 70% in Mathematics. Meeting the minimum doesn't guarantee a place.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or TOEFL / PTE)",
+        "source": "req",
+        "min_score": "IELTS Academic 5.5, TOEFL iBT 61, TOEFL ITP 500 or PTE Academic 44."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "req",
+      "threshold": "Bachelor of Law in English: British curriculum: an average equivalent to 75% (Sharjah converts other curricula to the UAE scale), with the equivalent of 70% in Mathematics. Meeting the minimum doesn't guarantee a place.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or TOEFL / PTE)",
+        "source": "req",
+        "min_score": "IELTS Academic 5.5, TOEFL iBT 61, TOEFL ITP 500 or PTE Academic 44."
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "req",
+      "threshold": "Bachelor of Law in English: American high school diploma: an average equivalent to 75% (Sharjah converts other curricula to the UAE scale), with the equivalent of 70% in Mathematics. Meeting the minimum doesn't guarantee a place.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or TOEFL / PTE)",
+        "source": "req",
+        "min_score": "IELTS Academic 5.5, TOEFL iBT 61, TOEFL ITP 500 or PTE Academic 44."
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "req",
+      "threshold": "Bachelor of Law in English: Other curricula: an average equivalent to 75% (Sharjah converts other curricula to the UAE scale), with the equivalent of 70% in Mathematics. Meeting the minimum doesn't guarantee a place.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or TOEFL / PTE)",
+        "source": "req",
+        "min_score": "IELTS Academic 5.5, TOEFL iBT 61, TOEFL ITP 500 or PTE Academic 44."
+      }
+    }
+  ]
+}
