@@ -136,3 +136,35 @@ graduate degree there), Warwick (graduate entry only).
   figure is right and the note is out of date.
 - Canadian University Dubai: the Computer Science record uses the pre-VAT credit fee and
   the BBA record the VAT-inclusive one. New Psychology records use VAT-inclusive fees. To check.
+
+## Data fixes, 2026-11-17 (`pending/2026-11-17-data-fixes.ndjson`)
+
+Every item marked "To check" above was re-read from the university's own page:
+
+- Taylor's Computer Science, Business and Mechanical Engineering (international): the
+  stored figure used the Malaysian-student total plus 6%. Taylor's 2027 international fee
+  schedules give the tuition: RM 127,776 / 3, RM 136,200 / 3 and RM 176,192 / 4, so
+  RM 42,592, RM 45,400 and RM 44,048 a year (6% service tax extra).
+- Universiti Malaya Computer Science and Economics are 3.5-year degrees on UM's course
+  pages (stored as 4 and 3). Durations and yearly fees corrected for international and
+  UPU students; UM's pages say fees are "Not inclusive of 6% Sales and Service Tax", so
+  the "SST-exempt" notes are corrected (also on Electrical Engineering).
+- Twente: English test levels updated to TOEFL iBT 90 (21 per section) or 4.5 on the
+  new scale, from Twente's language requirements page.
+- McGill BSc Computer Science: 4 years (Faculty of Science, "normally admitted to a
+  four-year degree requiring the completion of 120 credits"). Commerce and Economics are
+  left at 3: the Commerce rules say "three- or four-year" and no Arts statement was found.
+- RIT Dubai Computer Engineering: 5 years; its typical course sequence runs to a fifth
+  year (with co-op).
+- AUS: compulsory fees were the activities fee only (AED 886). Every student also pays a
+  health plan (at least AED 300 a semester) and the clinic fee (AED 112.50 + VAT a
+  semester): about AED 1,722 a year, on all eight AUS records.
+- Canadian University Dubai Computer Science and Engineering: the stored amounts already
+  include VAT; the notes said pre-VAT. Notes corrected.
+- University of Sharjah: stored AED 63,740 is right; notes now quote the fee table.
+- Waterloo Engineering and AFM: stored first-year figures are right (terms 1A + 1B);
+  notes corrected.
+- Heriot-Watt Dubai: the "Engineering" record is renamed Electrical and Electronic
+  Engineering (the page it points to).
+- Checked, no change: Taylor's Medicine shows USD 26,987 a year (USD 134,937 / 5,
+  rounded).
