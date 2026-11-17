@@ -1,0 +1,69 @@
+{
+  "uni": "ae-aus",
+  "slug": "barch",
+  "sources": {
+    "course": {
+      "url": "https://www.aus.edu/caad/department-of-architecture/bachelor-of-architecture",
+      "page": "d7f806f8e743",
+      "title": "Bachelor of Architecture | American University of Sharjah",
+      "organization": "American University of Sharjah",
+      "quotes": [
+        "Our rigorous five-year Bachelor of Architecture program is enhanced by on-the-job professional trainin"
+      ]
+    },
+    "fees": {
+      "url": "https://www.aus.edu/admissions/bachelors-degrees/undergraduate-tuition-and-fees",
+      "page": "d6ebdade3863",
+      "title": "Undergraduate Tuition and Fees | American University of Sharjah",
+      "organization": "American University of Sharjah",
+      "quotes": [
+        "Undergraduate Tuition and Fees for Academic Year 2026-2027*",
+        "Tuition for all majors is AED 110,876 per academic year."
+      ]
+    },
+    "req": {
+      "url": "https://www.aus.edu/admissions/bachelors-degrees/application-requirements",
+      "page": "22de3cd61421",
+      "title": "Application Requirements | American University of Sharjah",
+      "organization": "American University of Sharjah",
+      "quotes": [
+        "Architecture & Interior Design Math and a Science subject",
+        "applicants to the majors of architecture, design management, and interior design should submit a portfolio."
+      ]
+    }
+  },
+  "program": {
+    "name": "Architecture",
+    "degree_type": "BArch",
+    "field": "Architecture",
+    "faculty": "",
+    "duration_years": 5,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "AUS online application",
+    "source": "course",
+    "summary": "Bachelor of Architecture, a five-year programme; applicants submit a portfolio.",
+    "application_requirements": [
+      {
+        "name": "Portfolio",
+        "description": "Applicants to the majors of architecture, design management and interior design should submit a portfolio.",
+        "source": "req",
+        "necessity": "required",
+        "type": "other"
+      }
+    ]
+  },
+  "college": {
+    "from": "program-ae-aus-bscs",
+    "quote": "Tuition for all majors is AED 110,876 per academic year.",
+    "subjects_quote": "Architecture & Interior Design Math and a Science subject",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

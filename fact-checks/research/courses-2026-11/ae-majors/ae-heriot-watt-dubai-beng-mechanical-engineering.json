@@ -1,0 +1,105 @@
+{
+  "uni": "ae-heriot-watt-dubai",
+  "slug": "beng-mechanical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.hw.ac.uk/dubai/study/undergraduate/mechanical-engineering",
+      "page": "831d011009df",
+      "title": "BEng (Hons) Mechanical Engineering | Heriot-Watt University Dubai",
+      "organization": "Heriot-Watt University Dubai",
+      "quotes": [
+        "BEng (Hons) Mechanical Engineering",
+        "Duration 3-4 years",
+        "Show all Year 1",
+        "We have standard entry requirements for all of our courses that you will have to meet.",
+        "Our entry criteria are listed below. However, please note that the final decision remains at the discretion of the course director after evaluating scores of individual relevant subjects.",
+        "All tuition fees inclusive of VAT.",
+        "Status Full Time UAE and International AED 82,264",
+        "GCE A-Level - CCC (or AABB at AS-Level), including mandatory subjects Math and Physics",
+        "CBSE/Other Indian Boards - 65%, including mandatory subjects Math and Physics",
+        "American High School Diploma/SABIS - 70%, including mandatory subjects Math and Physics + SAT I – 1000 (500 English and 500 Math)",
+        "International Baccalaureate Diploma Programme - 24 points (3 HL, including mandatory subjects Math and Physics and 3 SL)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Mechanical Engineering",
+    "degree_type": "BEng (Hons)",
+    "field": "Engineering",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 intakes",
+    "platform": "Direct application (Heriot-Watt Dubai)",
+    "source": "course",
+    "summary": "BEng (Hons) Mechanical Engineering, Heriot-Watt University Dubai; 3-4 years (4 years from Year 1 entry, the entry route shown here).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 82264,
+      "academic_year": "Fee shown on the course page in November 2026 (intake not stated)",
+      "source": "course",
+      "living_from": "costProfile-ae-heriot-watt-dubai-cost-bsc-cs-all-students",
+      "note": "AED 82,264 a year, full time, UAE and international students, inclusive of VAT (course page; the page doesn't say which intake)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "BEng (Hons) Mechanical Engineering, Year 1 entry: GCE A-Level CCC (or AABB at AS-Level), including Maths and Physics. The final decision is at the course director's discretion.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ae-heriot-watt-dubai-admreq-bsc-cs-ib"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "BEng (Hons) Mechanical Engineering, Year 1 entry: IB Diploma, 24 points (3 HL including Maths and Physics, and 3 SL). The final decision is at the course director's discretion.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ae-heriot-watt-dubai-admreq-bsc-cs-ib"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "BEng (Hons) Mechanical Engineering, Year 1 entry: American High School Diploma/SABIS 70% including Maths and Physics, plus SAT I 1000 (500 English and 500 Math). The final decision is at the course director's discretion.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ae-heriot-watt-dubai-admreq-bsc-cs-ib"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "BEng (Hons) Mechanical Engineering, Year 1 entry: CBSE/Other Indian Boards 65%, including Maths and Physics. The final decision is at the course director's discretion.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ae-heriot-watt-dubai-admreq-bsc-cs-ib"
+      }
+    }
+  ]
+}

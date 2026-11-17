@@ -1,0 +1,60 @@
+{
+  "uni": "ae-aus",
+  "slug": "bsche",
+  "sources": {
+    "course": {
+      "url": "https://www.aus.edu/cen/department-of-chemical-and-biological-engineering/bachelor-of-science-in-chemical-engineering",
+      "page": "19aff0ba4800",
+      "title": "Bachelor of Science in Chemical Engineering | American University of Sharjah",
+      "organization": "American University of Sharjah",
+      "quotes": [
+        "Our comprehensive curriculum consists of a four-year , 130-credit degree plan leading to the Bachelor of Science in Chemical Engineering"
+      ]
+    },
+    "fees": {
+      "url": "https://www.aus.edu/admissions/bachelors-degrees/undergraduate-tuition-and-fees",
+      "page": "d6ebdade3863",
+      "title": "Undergraduate Tuition and Fees | American University of Sharjah",
+      "organization": "American University of Sharjah",
+      "quotes": [
+        "Undergraduate Tuition and Fees for Academic Year 2026-2027*",
+        "Tuition for all majors is AED 110,876 per academic year."
+      ]
+    },
+    "req": {
+      "url": "https://www.aus.edu/admissions/bachelors-degrees/application-requirements",
+      "page": "22de3cd61421",
+      "title": "Application Requirements | American University of Sharjah",
+      "organization": "American University of Sharjah",
+      "quotes": [
+        "Engineering majors Math and Physics Applicants must have completed math within the final three years of secondary education. The physics science subjects must be completed by at least Grade 11, with preference given to Grade 12."
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemical Engineering",
+    "degree_type": "BSc",
+    "field": "Engineering",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "AUS online application",
+    "source": "course",
+    "summary": "Bachelor of Science in Chemical Engineering, a four-year, 130-credit degree plan.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-ae-aus-bscoe",
+    "quote": "Tuition for all majors is AED 110,876 per academic year.",
+    "subjects_quote": "Engineering majors Math and Physics Applicants must have completed math within the final three years of secondary education. The physics science subjects must be completed by at least Grade 11, with preference given to Grade 12.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

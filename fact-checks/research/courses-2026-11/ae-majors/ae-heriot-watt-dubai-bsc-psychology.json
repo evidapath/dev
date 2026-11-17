@@ -1,0 +1,93 @@
+{
+  "uni": "ae-heriot-watt-dubai",
+  "slug": "bsc-psychology",
+  "sources": {
+    "course": {
+      "url": "https://www.hw.ac.uk/dubai/study/undergraduate/psychology",
+      "page": "881389623751",
+      "title": "BSc (Hons) Psychology | Heriot-Watt University Dubai",
+      "organization": "Heriot-Watt University Dubai",
+      "quotes": [
+        "BSc (Hons) Psychology",
+        "Duration 3-4 years",
+        "This programme is available for the January intake with Year 1 entry only.",
+        "September 2027 / January 2028 intake tuition fees Status Full Time UAE and International AED 87,010",
+        "All tuition fees inclusive of VAT.",
+        "We have standard entry requirements for all of our courses that you will have to meet.",
+        "Our normal entry criteria are listed below. However, please note that the final decision remains at the discretion of the course director after evaluating scores of individual relevant subjects.",
+        "GCE A-Level - CCD (or BBBB at AS Level)",
+        "CBSE/Other Indian Boards – 70%",
+        "American High School Diploma/SABIS - 70% + SAT I – 1000 (500 English + 500 Math)",
+        "International Baccalaureate Diploma Programme - 24 points (3 HL and 3 SL)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BSc (Hons)",
+    "field": "Psychology",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "September 2027 / January 2028 intake",
+    "platform": "Direct application (Heriot-Watt Dubai)",
+    "source": "course",
+    "summary": "BSc (Hons) Psychology, Heriot-Watt University Dubai; 3-4 years (4 years from Year 1 entry, the entry route shown here).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 87010,
+      "academic_year": "September 2027 / January 2028 intake",
+      "source": "course",
+      "living_from": "costProfile-ae-heriot-watt-dubai-cost-bsc-cs-all-students",
+      "note": "BSc (Hons) Psychology: AED 87,010 a year, UAE and international students, full time, September 2027 / January 2028 intake; inclusive of VAT."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "BSc (Hons) Psychology, Year 1 entry: GCE A-Level CCD (or BBBB at AS Level). The final decision is at the course director's discretion.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ae-heriot-watt-dubai-admreq-bsc-cs-ib"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "BSc (Hons) Psychology, Year 1 entry: IB Diploma, 24 points (3 HL and 3 SL). The final decision is at the course director's discretion.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ae-heriot-watt-dubai-admreq-bsc-cs-ib"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "BSc (Hons) Psychology, Year 1 entry: American High School Diploma/SABIS 70% plus SAT I 1000 (500 English + 500 Math). The final decision is at the course director's discretion.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ae-heriot-watt-dubai-admreq-bsc-cs-ib"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "BSc (Hons) Psychology, Year 1 entry: CBSE/Other Indian Boards 70%. The final decision is at the course director's discretion.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ae-heriot-watt-dubai-admreq-bsc-cs-ib"
+      }
+    }
+  ]
+}

@@ -23,7 +23,8 @@ here: they were verified when they were added, and the record id is kept.
 existing programme in the same college: {"from": "<program id>", "quote": "<a
 quote of a university page saying the major sits in that college>",
 "copy": ["admissions", "costs"]}. It stops if a copied requirement names the
-other programme or lists required subjects, since those wouldn't be college-wide.
+other programme, or lists required subjects without a "subjects_quote" showing the
+same subjects apply to the new major's group.
 
 Reads SANITY_READ_TOKEN from evidapath-navigator/.env.local only to copy those
 existing records (living costs, English requirement). Never prints it.
@@ -324,7 +325,10 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                     continue
                 if kind == "admissions":
                     text = d.get("academic_threshold", "").lower()
-                    if d.get("required_subjects") or any(n in text for n in names):
+                    # Required subjects can only be copied when a quote says the same subjects
+                    # apply to this group of majors (e.g. AUS: "Science majors ... Math and a Science subject").
+                    shared_subjects = col.get("subjects_quote") and norm(col["subjects_quote"]) in norm(" ".join(quotes.values()))
+                    if (d.get("required_subjects") and not shared_subjects) or any(n in text for n in names):
                         fail(f"{where}: {d['_id']} is specific to {base['program_name']}, not college-wide")
                     suffix = d["prior_curriculum_category_ref"]["_ref"].removeprefix(f"applicantCategory-{uni}-curriculum-")
                     nid = f"{uni}-admreq-{slug}-{suffix}"

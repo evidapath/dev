@@ -1,0 +1,71 @@
+{
+  "uni": "ae-birmingham-dubai",
+  "slug": "bsc-psychology",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/psychology-courses/psychology-bsc",
+      "page": "bf7bb1cfe56a",
+      "title": "Psychology BSc | University of Birmingham Dubai",
+      "organization": "University of Birmingham Dubai",
+      "quotes": [
+        "Duration 3 years (full-time)",
+        "September 2027: AED 162,203 per year",
+        "This programme is accredited by the United Arab Emirates Ministry of Higher Education and Scientific Research.",
+        "A Level AAA - ABB A Minimum of 5/B in GCSE Math’s or equivalent is also required.",
+        "IB 6,6,6 - 6,5,5 from 3 HL subjects is required.",
+        "85 - 75% CBSE",
+        "Number of A levels required: 3",
+        "To study at the University, you must be able to demonstrate a good level of written and spoken English."
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "BSc",
+    "field": "Psychology",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "September 2027 entry",
+    "platform": "Direct application (Birmingham Dubai admissions portal)",
+    "source": "course",
+    "summary": "Psychology BSc, 3 years full-time, University of Birmingham Dubai; accredited by the UAE Ministry of Higher Education and Scientific Research.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 162203,
+      "academic_year": "September 2027 entry",
+      "source": "course",
+      "living_from": "costProfile-ae-birmingham-dubai-cost-bsc-cs-all-students",
+      "note": "Psychology BSc fee: AED 162,203 per year for September 2027 entry (full-time)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Psychology BSc: AAA - ABB from three A-Levels, with at least 5/B in GCSE Maths or equivalent.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Psychology BSc: 6,6,6 - 6,5,5 from three Higher Level subjects.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Psychology BSc: 85 - 75% (CBSE).",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

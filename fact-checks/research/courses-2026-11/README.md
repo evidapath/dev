@@ -43,6 +43,7 @@ existing verified records, by id.
 | US majors (same college) | Psychology: Harvard, Princeton, Stanford, Penn, Cornell, NYU, ASU. Biology: Harvard (Molecular and Cellular Biology), MIT, Princeton (Molecular Biology), Stanford, Penn, Cornell, NYU, USC, ASU. Architecture: MIT, Princeton, Penn. Also MIT Brain and Cognitive Sciences → `pending/2026-11-16-us-majors.ndjson` | Purdue: its fee page is behind a bot check, and fees differ by college. USC Psychology: no official degree page found. Cornell and USC Architecture: 5-year degrees with portfolio rules, not added |
 | Netherlands Psychology (English track) | University of Amsterdam (270 places), Twente (250 places); both selective (numerus fixus), apply by 15 January 2027 → `pending/2026-11-16-nl-psychology.ndjson` | Delft, Eindhoven: no psychology bachelor's |
 | Canada Psychology and Biology | UBC (Psychology BA, Arts; Biology BSc, Science), Toronto St. George (Psychology and Biology HBSc, Life Sciences stream), McGill (Psychology and Biology BSc, Faculty of Science), Waterloo (Psychology and Biology BSc, Life Sciences) → `pending/2026-11-16-canada-majors.ndjson` | UBC's student tuition page answers 403; fees come from the Academic Calendar's per-credit table × the degree's 120 credits. Alberta: fees only come from an interactive cost calculator that opens a browser dialog when driven automatically; not done. McMaster: not yet |
+| UAE | AUS: Chemical, Civil, Electrical Engineering, Architecture (BArch, 5 years, portfolio; same tuition for all majors and the same subject rules for each major group, so admission and fees reuse AUS Computer Engineering / Computer Science). Heriot-Watt Dubai: Psychology, Civil Engineering, Mechanical Engineering, Architecture. Birmingham Dubai: Psychology → `pending/2026-11-17-uae-majors.ndjson` | AUS Mechanical Engineering and Biology: their pages don't state a length. AUS Psychology: no subject rule published for it, so the shared records can't be reused. McMaster: first-year Gateway admission and interactive requirement and cost pages; not done |
 
 Medicine not offered as a first degree (no record added): US universities (medicine is a
 graduate degree there), Warwick (graduate entry only).
@@ -118,3 +119,10 @@ graduate degree there), Warwick (graduate entry only).
   Economics records say 3 years. The new McGill records use 4. To check.
 - Waterloo AFM: the existing international record stores CAD 54,020 a year, but its
   own note says CAD 55,346 (2 × 27,673, the AFM co-op rate). To check.
+- AUS Computer Science cost: stores compulsory fees of AED 886 a year, but its own note
+  says about AED 1,486. To check.
+- Heriot-Watt Dubai "Engineering": the existing record points to the Electrical and
+  Electronic Engineering page, so it is that branch, not engineering in general.
+- Birmingham Dubai Psychology: the page gives no English score, so none is stored.
+- Heriot-Watt Dubai Civil, Mechanical and Architecture: the course pages give the fee
+  without naming the intake; stored as "intake not stated".
