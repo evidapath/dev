@@ -1,0 +1,144 @@
+{
+  "uni": "ca-university-of-toronto",
+  "slug": "hbsc-physics",
+  "sources": {
+    "course": {
+      "url": "https://future.utoronto.ca/program/physics",
+      "page": "ut-phys-ib",
+      "title": "Physics | Future Students, University of Toronto",
+      "organization": "University of Toronto",
+      "quotes": [
+        "St. George campus Faculty of Arts & Science",
+        "HBSc Major, Minor, Specialist TPG",
+        "Complete Diploma, including English.",
+        "English English (HL / SL)",
+        "Math (Calculus) Mathematics: Applications and Interpretations HL / Analysis and Approaches SL / Analysis and Approaches HL",
+        "Physics Physics (HL / SL)"
+      ]
+    },
+    "uk": {
+      "url": "https://future.utoronto.ca/program/physics",
+      "page": "ut-phys-uk",
+      "title": "Physics | Future Students, University of Toronto (British-patterned requirements)",
+      "organization": "University of Toronto",
+      "quotes": [
+        "Five different IGCSE/GCSE/Ordinary Level academic subjects and three different A Level/International A Level academic subjects.",
+        "English IGCSE / GCSE / O-level / AS / A Level English",
+        "Math (Calculus) Math AS / A-Level",
+        "Physics Physics AS / A-Level"
+      ]
+    },
+    "us": {
+      "url": "https://future.utoronto.ca/program/physics",
+      "page": "ut-phys-us",
+      "title": "Physics | Future Students, University of Toronto (U.S.-patterned requirements)",
+      "organization": "University of Toronto",
+      "quotes": [
+        "High School Diploma from an accredited high school. We expect competitive applicants to be enrolled in a rigorous academic course load, and to have taken the highest level of course available to them in prerequisite subjects.",
+        "English Senior Year/Grade 12 level or AP/IB English",
+        "Math (Calculus) Senior Year/Grade 12 level or AP/IB Calculus",
+        "Physics Senior Year/Grade 12 level or AP/IB Physics"
+      ]
+    },
+    "fees": {
+      "url": "https://tuitionexplorer.registrar.utoronto.ca/index.php?academicYear=2026-27&sessionType=1&studyLevel=UG&residency=INT&campus=UTSG&faculty=ARTSC-UG",
+      "page": "ut-fee-207",
+      "title": "Tuition Explorer 2026/27, Arts & Science, international | University of Toronto",
+      "organization": "University of Toronto",
+      "quotes": [
+        "Admission Streams Year 1: Commerce, Computer Science, Humanities, Life Sciences, Mathematical and Physical Sciences, and Social Sciences",
+        "Students with fewer than 4.0 credits completed $66,110.00 $2,100.29 $948.00 $69,158.29"
+      ]
+    },
+    "fees2": {
+      "url": "https://tuitionexplorer.registrar.utoronto.ca/index.php?academicYear=2026-27&sessionType=1&studyLevel=UG&residency=INT&campus=UTSG&faculty=ARTSC-UG",
+      "page": "ut-fee-199",
+      "title": "Tuition Explorer 2026/27, Arts & Science, international | University of Toronto",
+      "organization": "University of Toronto",
+      "quotes": [
+        "2026/27 Fall and Winter",
+        "(Honours) Bachelor of Science - Year 2 or Higher",
+        "Students with 4.0 or more credits completed $66,110.00 $2,100.29 $948.00 $69,158.29"
+      ]
+    }
+  },
+  "program": {
+    "name": "Physics",
+    "degree_type": "HBSc",
+    "field": "Physics",
+    "faculty": "Faculty of Arts & Science",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "OUAC",
+    "source": "course",
+    "summary": "Physics, Honours Bachelor of Science (HBSc), Faculty of Arts & Science, St. George campus. Apply through OUAC (code TPG).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-ca-university-of-toronto-ba-economics",
+    "quote": "St. George campus Faculty of Arts & Science",
+    "copy": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CAD",
+      "tuition_annual": 66110,
+      "academic_year": "2026/27 (Arts & Science international program fee; Year 1 and Honours Bachelor of Science Year 2 or higher)",
+      "source": [
+        "fees",
+        "fees2"
+      ],
+      "fees_from": "costProfile-ca-university-of-toronto-cost-ba-economics-international",
+      "living_from": "costProfile-ca-university-of-toronto-cost-ba-economics-international",
+      "note": "International program fee 2026/27: CAD 66,110 for Year 1 (all Arts & Science admission streams) and CAD 66,110 for the Honours Bachelor of Science from Year 2. Incidental and system access fee and UHIP (CAD 948) are extra."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "required_subjects": [
+        "English",
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-university-of-toronto-admreq-ba-economics-ib"
+      },
+      "threshold": "Physics (St. George, Arts & Science, OUAC TPG): complete IB Diploma including English. Required: English, Math (Calculus), Physics. Admission is competitive."
+    },
+    {
+      "curriculum": "a-level",
+      "source": "uk",
+      "required_subjects": [
+        "English",
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-university-of-toronto-admreq-ba-economics-ib"
+      },
+      "threshold": "Physics (St. George, Arts & Science, OUAC TPG): five different IGCSE/GCSE/O-Level subjects and three different A-Levels. Required: English, Math (Calculus), Physics. Admission is competitive."
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "us",
+      "required_subjects": [
+        "English",
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-university-of-toronto-admreq-ba-economics-ib"
+      },
+      "threshold": "Physics (St. George, Arts & Science, OUAC TPG): a high school diploma from an accredited school. Required: English, Math (Calculus), Physics. Admission is competitive."
+    }
+  ]
+}

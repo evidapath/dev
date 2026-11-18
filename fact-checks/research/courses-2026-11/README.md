@@ -106,6 +106,13 @@ Found on the way:
 - The simulator fetches live exchange rates, so USD figures move between runs; diffs above
   compare everything except the USD column.
 
+### Toronto and McGill, more majors (2026-11-18) → `pending/2026-11-18-toronto-mcgill.ndjson`
+
+| University | Added | Held / not added |
+|---|---|---|
+| Toronto, St. George, Arts & Science (`gen/ca_ut_more.py`) | Mathematics, Physics, Chemistry (HBSc, OUAC TPG), Political Science (HBA, TAX), History, English (HBA, TAH). Requirement rows read only from the St. George section of each IB, British-patterned and U.S.-patterned view (the pages also list Mississauga and Scarborough). Fee: Arts & Science international program fee 2026/27 CAD 66,110 in Year 1 (all admission streams) and in Year 2 or higher; the Honours BA Year 2 row (CAD 66,110; incidental fee CAD 2,135.97) was read from Tuition Explorer (`program=7`) | |
+| McGill (Faculty of Science) | Chemistry (Physical, Earth, Math & Computer Sciences group: IB 35 to 38, A-Levels A*AA to ABB; Science prerequisites; CAD 64,785.90) | Mathematics and Physics: their pages say only "apply to the Faculty of Science" without naming the admission group, so the grade range can't be assigned. Held |
+
 Found on the way (to check, not changed):
 - `program-uk-birmingham-beng-engineering` is named Mechanical Engineering and points to the
   Mechanical page, but its summary still reads "BEng Engineering ... Disciplines: Mechanical,
