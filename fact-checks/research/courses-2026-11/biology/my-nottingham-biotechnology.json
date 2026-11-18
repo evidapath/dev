@@ -1,0 +1,110 @@
+{
+  "uni": "my-nottingham",
+  "slug": "biotechnology",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.edu.my/ugstudy/course/biotechnology-bsc-hons",
+      "page": "645d8c14a448",
+      "title": "Biotechnology BSc (Hons) - University of Nottingham Malaysia",
+      "organization": "University of Nottingham Malaysia",
+      "quotes": [
+        "BSc (Hons) in Biotechnology",
+        "Full-time: 3 years Part-time: Not available Start date: September 2027 Malaysian fee: RM54,000 per year International fee: RM62,000 per year*",
+        "Enjoy peace of mind with our Fixed Tuition Fee policy, pay the same amount each year until you graduate.",
+        "*For International Students, a 6% Sales and Service Tax (SST) will apply to non-Malaysian citizens from 1 July 2025.",
+        "A Level BCC, including two science-based subjects from Biology, Chemistry, Physics, or Mathematics. Excludes Critical Thinking and General Studies.",
+        "IB Diploma 24 points with 5 and 4 at Higher Level, including two science-based subjects such as Biology (HL), Chemistry (HL), Physics (HL), or Mathematics (HL).",
+        "Senior School Certificate Examination (CBSE) / Indian School Certificate (CISCE) - Class XII 75% average from the best four subjects, including two science-based subjects from Biology, Chemistry, Physics, or Mathematics, with one subject at 80% and the other at 70%. Excludes local language, Environmental Education, General Studies, and Physical Education.",
+        "Advance Placement (AP) 4, 3, 3, including two science-based subjects such as AP Biology, AP Chemistry, AP Calculus, or AP Physics.",
+        "applicants must have at least a credit (normally grade C) in Mathematics at SPM/GCSE/IGCSE/High School Diploma or equivalent.",
+        "IELTS (Academic): 6.0 (with no less than 5.5 in each element)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biotechnology",
+    "degree_type": "BSc (Hons)",
+    "field": "Biology",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "course",
+    "summary": "BSc (Hons) in Biotechnology, 3 years full-time, September 2027 start.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_annual": 62000,
+      "academic_year": "September 2027 start (fixed for the programme)",
+      "source": "course",
+      "living_from": "costProfile-my-nottingham-cost-meng-me-international",
+      "fees_from": "costProfile-my-nottingham-cost-meng-me-international",
+      "note": "International fee: RM62,000 per year, fixed for the programme. A 6% Sales and Service Tax (SST) applies to non-Malaysian citizens on top of this."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_annual": 54000,
+      "academic_year": "September 2027 start (fixed for the programme)",
+      "source": "course",
+      "living_from": "costProfile-my-nottingham-cost-meng-me-malaysian",
+      "note": "Malaysian fee: RM54,000 per year, fixed for the programme."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Biotechnology: BCC, including two science-based subjects from Biology, Chemistry, Physics or Mathematics (excludes Critical Thinking and General Studies). Also at least a credit (normally grade C) in Mathematics at GCSE/IGCSE or equivalent.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0, with no less than 5.5 in each element.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Biotechnology: IB Diploma 24 points with 5 and 4 at Higher Level, including two science-based subjects such as Biology, Chemistry, Physics or Mathematics (HL).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0, with no less than 5.5 in each element.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Biotechnology: 75% average from the best four subjects (CBSE / CISCE Class XII), including two science-based subjects from Biology, Chemistry, Physics or Mathematics, one at 80% and the other at 70%. Excludes local language, Environmental Education, General Studies and Physical Education.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0, with no less than 5.5 in each element.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Biotechnology: Advanced Placement (AP) 4, 3, 3, including two science-based subjects such as AP Biology, AP Chemistry, AP Calculus or AP Physics.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0, with no less than 5.5 in each element.",
+        "source": "course"
+      }
+    }
+  ]
+}

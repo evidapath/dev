@@ -1,0 +1,92 @@
+{
+  "uni": "uk-birmingham",
+  "slug": "law",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/law-courses/law-llb",
+      "page": "8724fcac28d9",
+      "title": "Law LLB | University of Birmingham",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "UCAS code M100 Delivery format In person Start date September 2027 Duration 3 years, 4 years with year abroad Award Bachelor of Law",
+        "A Level AAA IB 6,6,6 including 32 points overall.",
+        "We do not require or consider the LNAT admissions test for entry onto our programmes.",
+        "IELTS: 6.5 overall with no less than 6.0 in any band.",
+        "£10,050 per year for domestic (UK) students for 2027/28",
+        "For all undergraduate courses at Birmingham, you apply online through UCAS.",
+        "Birmingham Law School"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/law-courses/law-llb",
+      "page": "8724fcac28d9-raw",
+      "title": "Law LLB | University of Birmingham (fee data in the page)",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "\"courseYearItems\":[{\"year\":\"2027\"",
+        "\"title\":\"Fees (international)\",\"value\":\"£26,220\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Law",
+    "degree_type": "LLB",
+    "field": "Law",
+    "faculty": "Birmingham Law School",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Law LLB (UCAS M100), Bachelor of Law, 3 years (4 years with a year abroad). LNAT not required.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-home",
+      "note": "UK fee: £10,050 per year for 2027/28 (Birmingham Law course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 26220,
+      "academic_year": "2027 entry",
+      "source": "coursedata",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-international",
+      "note": "International fee for 2027 entry: £26,220 a year (Birmingham Law course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Law: AAA. LNAT not required.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall with no less than 6.0 in any band.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Law: 6,6,6 including 32 points overall. LNAT not required.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall with no less than 6.0 in any band.",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "uni": "au-unsw",
+  "slug": "science-biology",
+  "sources": {
+    "course": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-science?studentType=International",
+      "page": "abbfa6fd959e",
+      "title": "Bachelor of Science | UNSW Sydney",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "Tailor the Bachelor of Science around your interests with 28 majors across the physical, natural and human sciences.",
+        "3 Year(s)",
+        "UAC code 429000 Program code 3970",
+        "2026 A levels 10.0 2026 IB Diploma 31.0",
+        "Entry scores are calculated from the best three or four A2 subjects (excluding repeated subjects) using the following values: A*=6, A=5, B=4, C=3, D=2, E=1.",
+        "Biology & Biodiversity Study life science and explore how organisms function, grow, evolve and relate to their environment.",
+        "Molecular and Cell Biology Study cell biology, which explores molecular structures, cellular processes, and their roles in function, reproduction and development.",
+        "Faculty of Science",
+        "2026 Indicative first year full fee $61,000* 2026 Indicative full fee to complete degree $194,000*",
+        "Indicative fees to complete the degree/program include tuition plus an estimate of study-related costs of approximately $1,000 per year and have been calculated based on percentage increase for every year of the degree/program"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-science?studentType=International",
+      "page": "abbfa6fd959e-raw",
+      "title": "Bachelor of Science | UNSW Sydney (fee data in the page)",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "const feesyear = isInternational ? \"2026\" : \"2026\"",
+        "const feescompletedegree = isInternational ? \"$194,000*\" : \"$30,500*\"",
+        "const feesfirstyear = isInternational ? \"$61,000*\" : \"$9,500*\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Science (Biology majors)",
+    "degree_type": "Bachelor",
+    "field": "Biology",
+    "faculty": "Faculty of Science",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UAC",
+    "source": "course",
+    "summary": "Bachelor of Science (UAC 429000, program 3970), 3 years. One degree with 28 majors; life-science majors include Biology & Biodiversity and Molecular and Cell Biology.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "AUD",
+      "tuition_formula": "194000/3",
+      "academic_year": "2026 indicative fees",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-au-unsw-cost-beng-hons-international",
+      "note": "International, 2026 indicative: $61,000 for the first year and $194,000 for the whole degree (UNSW says the whole-degree figure includes about $1,000 a year of study-related costs and yearly increases). Shown as the whole-degree fee spread over 3 years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Bachelor of Science: A-level score of 10.0 from the best three or four A2 subjects (A*=6, A=5, B=4, C=3, D=2, E=1). This is the score that got an offer in 2026, a guide only.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Bachelor of Science: IB Diploma 31.0. This is the score that got an offer in 2026, a guide only.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}
