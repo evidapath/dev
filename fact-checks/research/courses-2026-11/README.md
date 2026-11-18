@@ -120,6 +120,15 @@ Found on the way (to check, not changed):
 - `build.py` patches a shared source excerpt without `ifRevisionID`; the guard was added to the
   patch in this pending file by hand (the live `_rev` at build time).
 
+### USC, ASU and Waterloo majors (2026-11-19) → `pending/2026-11-19-usc-asu-waterloo.ndjson`
+
+| University | Added | Held / not added |
+|---|---|---|
+| USC, Dornsife (`gen/us_more2.py`) | Mathematics (BS), Physics (BS), Chemistry (BS), Biochemistry (BS), Political Science (BA), International Relations (BA), History (BA), English (BA), Philosophy (BA), Psychology (BA). Degree names from the 2026-2027 catalogue's Programs by School page, Dornsife section (read in the browser; the page is script-loaded). Admission and fee records reused from Economics (same school) | Neuroscience: no matching subject on the site yet |
+| ASU, The College of Liberal Arts and Sciences, Tempe (`gen/us_more2.py`) | Mathematics (BS), Physics (BS), Chemistry (BS), Biochemistry (BS), Political Science (BA), History (BA), Philosophy (BA). Each degree page: "All students are required to meet general university admission requirements." Plan codes from ASU's degree search. Admission and fee records reused from Economics, as for Psychology and Biological Sciences; the fee includes ASU's highest college fee (labelled; the real CLAS fee may be lower) | English: ASU's degree search lists the CLAS English BA as online only |
+| Waterloo (`gen/ca_waterloo_more.py`) | Biochemistry (Life Sciences, same sources as Biology), Physics and Chemistry (Physical Sciences: same three requirement lines as Life Sciences, on the group's own pages), Political Science, History, English, Philosophy (Honours Arts: A-Levels two Bs and one C; IB total 27; US "low 80s", stored as text, so the site can't compare it), Mathematics (BMath: A-Level Maths A plus two As; IB HL Maths AA 6, total 30; US 88%; Admission Information Form). Fees: Fall 2026 international maximum tuition per term × 2 terms, Regular Year 1: Science CAD 25,296, Arts CAD 27,010, Mathematics CAD 29,259 | |
+| Princeton | — | The admission page lists concentrations without saying A.B. or B.S.E. for each; the Undergraduate Announcement (ua.princeton.edu) shows a Cloudflare bot check (not bypassed); department pages tried either show the same check or don't name the degree |
+
 Medicine not offered as a first degree (no record added): US universities (medicine is a
 graduate degree there), Warwick (graduate entry only).
 

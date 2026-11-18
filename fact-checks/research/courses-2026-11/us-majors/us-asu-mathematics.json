@@ -1,0 +1,42 @@
+{
+  "uni": "us-asu",
+  "slug": "mathematics",
+  "sources": {
+    "course": {
+      "url": "https://degrees.apps.asu.edu/bachelors/major/ASU00/LAMATBS/mathematics",
+      "page": "a5f75185daed",
+      "title": "Mathematics Degree, BS | ASU",
+      "organization": "Arizona State University",
+      "quotes": [
+        "Mathematics Degree, BS | ASU",
+        "Plan code: LAMATBS",
+        "All students are required to meet general university admission requirements."
+      ]
+    }
+  },
+  "program": {
+    "name": "Mathematics",
+    "degree_type": "BS",
+    "field": "Mathematics",
+    "faculty": "The College of Liberal Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Mathematics, BS (The College of Liberal Arts and Sciences, Tempe). Applicants meet the university's general admission requirements.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-asu-bs-economics",
+    "quote": "All students are required to meet general university admission requirements.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

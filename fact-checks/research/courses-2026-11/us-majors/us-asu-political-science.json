@@ -1,0 +1,42 @@
+{
+  "uni": "us-asu",
+  "slug": "political-science",
+  "sources": {
+    "course": {
+      "url": "https://degrees.apps.asu.edu/bachelors/major/ASU00/LAPOSBA/political-science",
+      "page": "ab75835a71a6",
+      "title": "Political Science Degree, BA | College of Liberal Arts and Sciences | ASU",
+      "organization": "Arizona State University",
+      "quotes": [
+        "Political Science Degree, BA | College of Liberal Arts and Sciences | ASU",
+        "Plan code: LAPOSBA",
+        "All students are required to meet general university admission requirements."
+      ]
+    }
+  },
+  "program": {
+    "name": "Political Science",
+    "degree_type": "BA",
+    "field": "Politics",
+    "faculty": "The College of Liberal Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Political Science, BA (The College of Liberal Arts and Sciences, Tempe). Applicants meet the university's general admission requirements.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-asu-bs-economics",
+    "quote": "All students are required to meet general university admission requirements.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

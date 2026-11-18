@@ -1,0 +1,43 @@
+{
+  "uni": "us-usc",
+  "slug": "biochemistry",
+  "sources": {
+    "course": {
+      "url": "https://catalogue.usc.edu/content.php?catoid=22&navoid=9453",
+      "page": "601306a34d21",
+      "title": "Programs by School - USC Catalogue 2026-2027",
+      "organization": "University of Southern California",
+      "quotes": [
+        "USC Catalogue 2026-2027",
+        "USC Dornsife College of Letters, Arts and Sciences",
+        "Bachelor’s Degree",
+        "Biochemistry (BS)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biochemistry",
+    "degree_type": "BS",
+    "field": "Biochemistry",
+    "faculty": "USC Dornsife College of Letters, Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Biochemistry (BS), USC Dornsife College of Letters, Arts and Sciences (the same school as Economics).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-usc-economics",
+    "quote": "USC Dornsife College of Letters, Arts and Sciences",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

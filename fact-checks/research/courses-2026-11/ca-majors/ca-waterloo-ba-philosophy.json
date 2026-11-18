@@ -1,0 +1,160 @@
+{
+  "uni": "ca-waterloo",
+  "slug": "ba-philosophy",
+  "sources": {
+    "course": {
+      "url": "https://uwaterloo.ca/future-students/programs/philosophy",
+      "page": "760c35bf5d82",
+      "title": "Philosophy degree | Undergraduate Programs | University of Waterloo",
+      "organization": "University of Waterloo",
+      "quotes": [
+        "Bachelor of Arts in Philosophy",
+        "You can choose to study Philosophy through Honours Arts or Honours Arts and Business .",
+        "Faculty of Arts"
+      ]
+    },
+    "reg": {
+      "url": "https://uwaterloo.ca/future-students/co-op/regular-system-study",
+      "page": "dda2d9fb70b1",
+      "title": "Regular system of study | Undergraduate Programs | University of Waterloo",
+      "organization": "University of Waterloo",
+      "quotes": [
+        "In the regular system of study, you'll be in school between September and April each year and have your summers free to work, travel, and pursue your interests outside of school.",
+        "Finish your degree in four years, instead of five years as in co-op."
+      ]
+    },
+    "uk": {
+      "url": "https://uwaterloo.ca/future-students/admissions/admission-requirements/honours-arts/high-school/international-system/british-system/",
+      "page": "b1b9cd3133f8",
+      "title": "Honours Arts (includes 28 majors) admission requirements for British System (A Levels) high school students | Undergraduate Programs | University of Waterloo",
+      "organization": "University of Waterloo",
+      "quotes": [
+        "Three A Level courses, minimum final grade of two B's and one C. English at either the GCSE, AS, or A Level, minimum final grade of B/5.",
+        "Passes in at least five unique subjects, three of which must be at the Advanced Level"
+      ]
+    },
+    "ib": {
+      "url": "https://uwaterloo.ca/future-students/admissions/admission-requirements/honours-arts/high-school/international-system/ib/",
+      "page": "020cf3cc397d",
+      "title": "Honours Arts (includes 28 majors) admission requirements for International Baccalaureate (IB) high school students | Undergraduate Programs | University of Waterloo",
+      "organization": "University of Waterloo",
+      "quotes": [
+        "HL or SL English A - minimum 4 or HL English B - minimum 5; total 27",
+        "IB diploma required with six total IB courses; at least three must be HL.",
+        "Total scores exclude diploma points."
+      ]
+    },
+    "us": {
+      "url": "https://uwaterloo.ca/future-students/admissions/admission-requirements/honours-arts/high-school/international-system/american-system/",
+      "page": "ed6b7a0affe6",
+      "title": "Honours Arts (includes 28 majors) admission requirements for American (US) system high school students | Undergraduate Programs | University of Waterloo",
+      "organization": "University of Waterloo",
+      "quotes": [
+        "Grade 12 English, minimum final grade of 75%. Minimum Grade 12 average of low 80s."
+      ]
+    },
+    "dl": {
+      "url": "https://uwaterloo.ca/future-students/admissions/deadlines",
+      "page": "058cab974011",
+      "title": "Application deadlines | Undergraduate Programs | University of Waterloo",
+      "organization": "University of Waterloo",
+      "quotes": [
+        "Programs other than Engineering February 1, 2027 February 15, 2027"
+      ]
+    },
+    "fees": {
+      "url": "https://uwaterloo.ca/finance/fee-schedule-international-undergraduate-students-fall-2026",
+      "page": "92cd8f540ce4",
+      "title": "Fee schedule for international undergraduate students, Fall 2026 | University of Waterloo",
+      "organization": "University of Waterloo",
+      "quotes": [
+        "Fees below are for Fall 2026 term only.",
+        "University of Waterloo bills students one term at a time:",
+        "fall term – September to December",
+        "winter term – January to April",
+        "Arts programs Faculty/Program Price per 0.5 unit course Maximum tuition per term Co-op fee Incidental fees (including HST) FT = 1.5 or more units PT = fewer than 1.5 units Regular Year 1 $5,402.00 $27,010.00 - $1,143.94 FT"
+      ]
+    }
+  },
+  "program": {
+    "name": "Philosophy",
+    "degree_type": "BA",
+    "field": "Philosophy",
+    "faculty": "Faculty of Arts",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "OUAC",
+    "source": "course",
+    "duration_source": "reg",
+    "summary": "Philosophy, Bachelor of Arts, applied to through Honours Arts (Faculty of Arts; regular system of study, co-op also offered).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CAD",
+      "tuition_per_term": 27010,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "fall term – September to December",
+        "winter term – January to April"
+      ],
+      "academic_year": "Fall 2026 rate (Arts programs, regular, maximum tuition per term × fall and winter terms)",
+      "source": [
+        "fees",
+        "reg"
+      ],
+      "mandatory_per_term": 1143.94,
+      "living_from": "costProfile-ca-waterloo-cost-bsc-cs-international",
+      "note": "International, Arts programs, Regular Year 1: maximum tuition CAD 27,010.00 per term (Fall 2026), billed one term at a time; regular students are in school September to April (fall and winter terms). Incidental fees CAD 1,143.94 per full-time term."
+    }
+  ],
+  "deadline": {
+    "date": "2027-02-01",
+    "source": "dl",
+    "round": "Application (OUAC)",
+    "platform": "OUAC",
+    "note": "Programs other than Engineering. Documents due February 15, 2027."
+  },
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "uk",
+      "threshold": "Philosophy (Honours Arts, Faculty of Arts): three A-Levels with minimum final grades of two Bs and one C, and English at GCSE, AS or A-Level (minimum B/5); passes in five subjects, three at A-Level.",
+      "required_subjects": [
+        "English"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-waterloo-admreq-ba-economics-ib"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "ib",
+      "threshold": "Philosophy (Honours Arts, Faculty of Arts): IB Diploma (six courses, at least three HL) with English A (HL or SL, minimum 4, or HL English B 5); total 27, excluding diploma points.",
+      "required_subjects": [
+        "English"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-waterloo-admreq-ba-economics-ib"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "us",
+      "threshold": "Philosophy (Honours Arts, Faculty of Arts): Grade 12 English (minimum 75%) and a Grade 12 average in the low 80s (no exact figure published).",
+      "required_subjects": [
+        "English"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-waterloo-admreq-ba-economics-ib"
+      }
+    }
+  ]
+}

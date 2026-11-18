@@ -1,0 +1,42 @@
+{
+  "uni": "us-asu",
+  "slug": "biochemistry",
+  "sources": {
+    "course": {
+      "url": "https://degrees.apps.asu.edu/bachelors/major/ASU00/LABCHBS/biochemistry",
+      "page": "1df40f1ebab0",
+      "title": "Biochemistry Degree, BS | ASU",
+      "organization": "Arizona State University",
+      "quotes": [
+        "Biochemistry Degree, BS | ASU",
+        "Plan code: LABCHBS",
+        "All students are required to meet general university admission requirements."
+      ]
+    }
+  },
+  "program": {
+    "name": "Biochemistry",
+    "degree_type": "BS",
+    "field": "Biochemistry",
+    "faculty": "The College of Liberal Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Biochemistry, BS (The College of Liberal Arts and Sciences, Tempe). Applicants meet the university's general admission requirements.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-asu-bs-economics",
+    "quote": "All students are required to meet general university admission requirements.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}
