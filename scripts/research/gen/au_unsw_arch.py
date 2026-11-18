@@ -1,0 +1,19 @@
+import sys; import os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import write
+U="https://www.unsw.edu.au/study/undergraduate/bachelor-of-architectural-studies?studentType=International"
+write("au-majors",{"uni":"au-unsw","slug":"architectural-studies",
+ "sources":{"course":{"url":U,"page":"4e7939bad249","title":"Bachelor of Architectural Studies | UNSW Sydney","organization":"UNSW Sydney",
+    "quotes":["3 Year(s)","UAC code 423000 Program code 3261","2026 A levels 15.0 2026 IB Diploma 36.0",
+              "Entry scores are calculated from the best three or four A2 subjects (excluding repeated subjects) using the following values: A*=6, A=5, B=4, C=3, D=2, E=1.",
+              "A strong portfolio could help you secure an early conditional offer with an adjusted ATAR requirement",
+              "2026 Indicative first year full fee $52,000* 2026 Indicative full fee to complete degree $167,500*",
+              "is architecture degree also offers seamless progression into the professionally‑accredited architectural Master of Architecture"]},
+  "coursedata":{"url":U,"page":"4e7939bad249-raw","title":"Bachelor of Architectural Studies | UNSW Sydney (fee data in the page)","organization":"UNSW Sydney",
+    "quotes":["const feesyear = isInternational ? \"2026\" : \"2026\"","const feescompletedegree = isInternational ? \"$167,500*\" : \"$30,000*\"","const feesfirstyear = isInternational ? \"$52,000*\" : \"$9,500*\""]}},
+ "program":{"name":"Architectural Studies","degree_type":"Bachelor","field":"Architecture","faculty":"","duration_years":3,"languages":["en"],"entry_year":"2027 entry","platform":"UAC","source":"course",
+   "summary":"Bachelor of Architectural Studies (UAC 423000, program 3261), 3 years; leads on to the professionally accredited Master of Architecture.","application_requirements":[]},
+ "costs":[{"residency":"international","currency":"AUD","tuition_formula":"167500/3","academic_year":"2026 indicative fees","source":["coursedata","course"],"living_from":"costProfile-au-unsw-cost-beng-hons-international",
+           "note":"International, 2026 indicative: $52,000 for the first year and $167,500 for the whole degree. Shown as the whole-degree fee spread over 3 years."}],
+ "admissions":[{"curriculum":"a-level","source":"course","threshold":"Architectural Studies: A-level score of 15.0 from the best three or four A2 subjects (A*=6, A=5, B=4, C=3, D=2, E=1). This is the score that got an offer in 2026, a guide only.","required_subjects":[],"tests":[]},
+               {"curriculum":"ib","source":"course","threshold":"Architectural Studies: IB Diploma 36.0. This is the score that got an offer in 2026, a guide only.","required_subjects":[],"tests":[]}]})
+print("ok")

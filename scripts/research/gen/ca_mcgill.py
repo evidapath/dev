@@ -1,0 +1,35 @@
+import sys; import os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import write
+SUB="ca-majors"; U="ca-mcgill"
+ENG={"from_existing":"admissionsRequirement-ca-mcgill-admreq-bsc-cs-ib"}
+GQ="For this program, you'll need to apply to the Faculty of Science in the Biological, Biomedical & Life Sciences group."
+SRC={"years":{"url":"https://coursecatalogue.mcgill.ca/en/undergraduate/science/degree-requirements/minimum-credit-requirement/","page":"225dee1426b1","title":"Minimum Credit Requirement | Faculty of Science | Course Catalogue - McGill University","organization":"McGill University",
+      "quotes":["Students are normally admitted to a four-year degree requiring the completion of 120 credits. At the time of admission to the Science program, Advanced Standing of up to 30 credits may be granted based on pre-McGill academic studies"]},
+     "ib":{"url":"https://www.mcgill.ca/undergraduate-admissions/apply/requirements/international/ib","page":"f43fc7924468","title":"International Baccalaureate Diploma | Undergraduate Admissions - McGill University","organization":"McGill University",
+      "quotes":["The Diploma with grades of 5 or better on each Higher and Standard Level subject is the minimum expected for most programs.",
+                "Science PREREQUISITES Mathematics and two of Biology, Chemistry or Physics, at Higher or Standard Level; at least one math/science at HL Note : SL Math AI is not accepted.",
+                "Biological, Biomedical and Life Sciences Group Predicted/Final (out of 42) : 36 to 39 subject points"]},
+     "al":{"url":"https://www.mcgill.ca/undergraduate-admissions/apply/requirements/international/advanced-levels","page":"c63f73aa9816","title":"Advanced Levels | Undergraduate Admissions - McGill University","organization":"McGill University",
+      "quotes":["Minimum of three A-Levels in three different subjects, including A-Level Math and at least one A-Level in biology, chemistry, or physics;","Biology, chemistry, math and physics at GCSE level",
+                "Biological, Biomedical and Life Sciences Group Predicted/Final A-Levels: A*AA - AAB"]},
+     "us":{"url":"https://www.mcgill.ca/undergraduate-admissions/apply/requirements/us","page":"61e38a36472f","title":"U.S. high school | Undergraduate Admissions - McGill University","organization":"McGill University",
+      "quotes":["Courses must include: Pre-calculus; two of biology, chemistry or physics",
+                "Biological, Biomedical and Life Sciences Group Bio-Physical-Computational Sciences Group Physical, Earth, Math and Computer Sciences Group B+ to A- average (unweighted) in each of grades 11 and 12 A- in each prerequisite math and science ACT 29-31; or SAT: EB Read & Writing 690-700, Math 690-710"]},
+     "fees":{"url":"https://www.mcgill.ca/student-accounts/files/student-accounts/new_intl_ugrad_degree_students_admitted_2026-27_0.pdf","page":"mcg-intl-fee","title":"Tuition and Fees 2026-27 - International undergraduate (PDF) | McGill Student Accounts","organization":"McGill University",
+      "quotes":["2026-2027 Tuition Rates - International Undergraduate Students","Bachelor of Science (BSc)","64,785.90","Students admitted to this undergraduate program in 2026-27 will be guaranteed tuition for the duration of the program"]}}
+def mc(slug,url,page,name,field,quotes,summary):
+    srcs={"course":{"url":url,"page":page,"title":f"{name} | Undergraduate Admissions - McGill University","organization":"McGill University","quotes":[GQ,*quotes]},**SRC}
+    a=lambda cur,src,th,subj:{"curriculum":cur,"source":src,"threshold":f"{name} (Faculty of Science, Biological, Biomedical & Life Sciences group): {th} Guideline ranges only; admission is competitive.","required_subjects":subj,"tests":[],"english":ENG}
+    write(SUB,{"uni":U,"slug":slug,"sources":srcs,
+      "program":{"name":name,"degree_type":"BSc","field":field,"faculty":"Faculty of Science","duration_years":4,"languages":["en"],"entry_year":"2026-2027 (Fall 2027 entry)","platform":"","source":"course","duration_source":"years","summary":summary,"application_requirements":[]},
+      "costs":[{"residency":"international","currency":"CAD","tuition_annual":64785.90,"academic_year":"2026-27 (international students admitted Fall 2026; Bachelor of Science)","source":"fees",
+                "fees_from":"costProfile-ca-mcgill-cost-bsc-cs-international","living_from":"costProfile-ca-mcgill-cost-bsc-cs-international",
+                "note":"International tuition 2026-2027, Bachelor of Science: CAD 64,785.90 a year; the cost per credit is guaranteed for the duration of the programme for students admitted in 2026-27."}],
+      "admissions":[a("ib","ib","IB Diploma with Maths and two of Biology, Chemistry or Physics (at least one maths/science at HL; SL Maths AI not accepted); typical range 36 to 39 subject points out of 42.",["Mathematics","two of Biology, Chemistry, Physics"]),
+                    a("a-level","al","three A-Levels including Maths and at least one of Biology, Chemistry or Physics, with Biology, Chemistry, Maths and Physics at GCSE; typical range A*AA to AAB.",["Mathematics","Biology, Chemistry or Physics"]),
+                    a("us-hs","us","pre-calculus and two of biology, chemistry or physics; typically B+ to A- average in grades 11 and 12 with A- in each prerequisite maths and science; SAT/ACT typical ACT 29-31 or SAT Reading & Writing 690-700, Math 690-710.",["Mathematics","two of Biology, Chemistry, Physics"])]})
+mc("bsc-biology","https://www.mcgill.ca/undergraduate-admissions/program/biology","a9a0d3477c02","Biology","Biology",
+   ["Put simply, biology is the study of life."],"Biology, Bachelor of Science (BSc), Faculty of Science; apply in the Biological, Biomedical & Life Sciences group.")
+mc("bsc-psychology","https://www.mcgill.ca/undergraduate-admissions/program/psychology-faculty-science","da8bd5e60cf1","Psychology (Faculty of Science)","Psychology",[],
+   "Psychology, Bachelor of Science (BSc), Faculty of Science; apply in the Biological, Biomedical & Life Sciences group.")
+print("ok")

@@ -7,12 +7,13 @@ pages. Nothing goes to Sanity until it's built into
 
 ## How a programme gets in
 
-1. Read the official page (`curl`, or the browser when a site blocks scripts),
-   saving its text. Pages behind a bot check (Cloudflare "security
+1. Read the official page with `scripts/research/fetch.sh <url>` (or
+   `scripts/research/bfetch.sh` when the page only renders in a browser), which saves its
+   text to `.research-cache/pages/` (local, git-ignored). Pages behind a bot check (Cloudflare "security
    verification") are not worked around; they're listed below as blocked.
 2. Write one JSON file per programme, in this subject's folder (`medicine/`,
    `engineering/`, ...): values plus verbatim quotes.
-3. `python3 -I scripts/programmes/build.py <subject folder> <saved pages dir> <out.ndjson>`
+3. `python3 -I scripts/programmes/build.py <subject folder> .research-cache/pages <out.ndjson>`
    stops unless every quote is on its saved page, every number we store is in
    a quote of the source it cites, every deadline's day, month and year are
    quoted, and the faculty/school named is on the programme's page. Fees that

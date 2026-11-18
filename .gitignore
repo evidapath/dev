@@ -56,3 +56,9 @@ __pycache__/
 .agents/
 .claude/
 skills-lock.json
+
+# ---- Local research cache (copies of university pages; never commit) ----
+.research-cache/
+
+# ---- Local secret patterns (the test password etc.); read by scripts/hooks/secret-scan.sh ----
+.secret-patterns

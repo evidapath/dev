@@ -1,0 +1,5 @@
+#!/bin/sh
+# git pre-commit hook (installed by scripts/hooks/install-git-hooks.sh): refuse a commit whose staged
+# diff contains a token or a private pattern from .secret-patterns. Applies to every commit, by anyone.
+ROOT=$(git rev-parse --show-toplevel)
+n=$(git diff --cached | sh "$ROOT/scripts/hooks/secret-scan.sh") || { echo "pre-commit: staged changes contain $n secret line(s) (or .secret-patterns is missing). Commit refused." >&2; exit 1; }
