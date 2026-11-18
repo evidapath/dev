@@ -1,0 +1,102 @@
+{
+  "uni": "uk-nottingham",
+  "slug": "pharmacology",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Pharmacology-BSc-Hons.html",
+      "page": "3a1fcec11746",
+      "title": "Pharmacology BSc (Hons) | University of Nottingham",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "BSc Hons UCAS Code B211",
+        "Duration 3 years full-time Location Queen's Medical Centre Select start date September 2027",
+        "The entrance requirements listed apply to 2027 entry.",
+        "A levels AAB-ABB IB 32 points overall",
+        "IELTS 6.5 (no less than 6.0 in any element)",
+        "Required subjects Chemistry and one of biology/human biology, physics, physical education, mathematics, statistics, life and health sciences",
+        "IB score 32 points overall or 6,6,5 in three HL certificates IB requirements HL5 and HL6 in chemistry and biology in any order"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Pharmacology-BSc-Hons.html",
+      "page": "3a1fcec11746-raw",
+      "title": "Pharmacology BSc (Hons) | University of Nottingham (fee labels in the page)",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "<span class=\"info-bar__list-link-label home-student-detail\"> £10,050 per year</span>",
+        "<span class=\"info-bar__list-link-label international-student-detail\"> £33,500 per year</span>"
+      ]
+    }
+  },
+  "program": {
+    "name": "Pharmacology",
+    "degree_type": "BSc (Hons)",
+    "field": "Pharmacology",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Pharmacology BSc (Hons) (UCAS B211), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-home",
+      "note": "Home fee for a September 2027 start: £10,050 per year (Nottingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 33500,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-international",
+      "note": "International fee for a September 2027 start: £33,500 per year (Nottingham course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Pharmacology: A levels AAB-ABB. Required subjects: Chemistry and one of biology/human biology, physics, physical education, mathematics, statistics, life and health sciences.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Pharmacology: IB 32 points overall or 6,6,5 in three HL certificates. HL5 and HL6 in chemistry and biology in any order.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "uni": "uk-manchester",
+  "slug": "pharmacology",
+  "sources": {
+    "course": {
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00634/bsc-pharmacology/",
+      "page": "2785669dad5e",
+      "title": "BSc Pharmacology (2027 entry) | The University of Manchester",
+      "organization": "The University of Manchester",
+      "quotes": [
+        "Duration: 3 years Year of entry: 2027 UCAS course code: B210 / Institution code: M20",
+        "A-level AAB, including two of Biology, Chemistry, Physics and Mathematics (the Core Sciences).",
+        "International Baccalaureate 35 points overall with 6, 6, 5 in higher level subjects, including two science subjects, normally Biology and Chemistry.",
+        "IELTS 6.5 with no less than 6.5 in any one component, or;",
+        "Tuition fees for home students will be £10,050 for the 2027/28 academic year.",
+        "Tuition fees for international students will be £38,000 for the 2027/28 academic year. For subsequent academic years, the University reserves the right to increase the tuition fee by up to 7% each year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Pharmacology",
+    "degree_type": "BSc",
+    "field": "Pharmacology",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "BSc Pharmacology (UCAS B210), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-home",
+      "note": "Home fee, 2027/28 (2027 entry): £10,050 a year (The University of Manchester course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-international",
+      "tuition_annual": 38000,
+      "note": "International fee for 2027/28: £38,000. The University may raise it by up to 7% a year in later years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Pharmacology: AAB, including two of Biology, Chemistry, Physics and Mathematics (the Core Sciences).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 with no less than 6.5 in any one component.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Pharmacology: IB 35 points overall with 6, 6, 5 in higher level subjects, including two science subjects, normally Biology and Chemistry.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 with no less than 6.5 in any one component.",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "uni": "my-nottingham",
+  "slug": "mathematics-data-science",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.edu.my/ugstudy/course/mathematics-and-data-science-bsc-hons",
+      "page": "475f1650cf7e",
+      "title": "BSc (Hons) in Mathematics and Data Science | University of Nottingham Malaysia",
+      "organization": "University of Nottingham Malaysia",
+      "quotes": [
+        "BSc (Hons) in Mathematics and Data Science",
+        "Full-time: 3 years Part-time: Not available Start date: September 2027 Malaysian fee: RM55,000 per year International fee: RM62,000 per year*",
+        "Enjoy peace of mind with our Fixed Tuition Fee policy, pay the same amount each year until you graduate.",
+        "*For International Students, a 6% Sales and Service Tax (SST) will apply to non-Malaysian citizens from 1 July 2025.",
+        "A Level BBC, including Mathematics at grade B, excluding Critical Thinking and General Studies.",
+        "IB Diploma 26 points, including Mathematics: Analysis and Approaches (HL) at 5 points.",
+        "Senior School Certificate Examination (CBSE) / Indian School Certificate (CISCE) - Class XII 78% average from the best four subjects, including 80% in Mathematics (CBSE Applied Mathematics is not accepted). Excludes local language, Environmental Education, General Studies, and Physical Education.",
+        "Advance Placement (AP) 4, 4, 3, including AP Calculus BC with a score of 4.",
+        "IELTS (Academic): 6.0 (with no less than 5.5 in each element)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Mathematics and Data Science",
+    "degree_type": "BSc (Hons)",
+    "field": "Mathematics",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "course",
+    "summary": "BSc (Hons) in Mathematics and Data Science, 3 years full-time, September 2027 start.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_annual": 62000,
+      "academic_year": "September 2027 start (fixed for the programme)",
+      "source": "course",
+      "living_from": "costProfile-my-nottingham-cost-meng-me-international",
+      "fees_from": "costProfile-my-nottingham-cost-meng-me-international",
+      "note": "International fee: RM62,000 per year, fixed for the programme. A 6% Sales and Service Tax (SST) applies to non-Malaysian citizens on top of this."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_annual": 55000,
+      "academic_year": "September 2027 start (fixed for the programme)",
+      "source": "course",
+      "living_from": "costProfile-my-nottingham-cost-meng-me-malaysian",
+      "note": "Malaysian fee: RM55,000 per year, fixed for the programme."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Mathematics and Data Science: BBC, including Mathematics at grade B, excluding Critical Thinking and General Studies.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0 (with no less than 5.5 in each element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Mathematics and Data Science: IB Diploma 26 points, including Mathematics: Analysis and Approaches (HL) at 5 points.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0 (with no less than 5.5 in each element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Mathematics and Data Science: CBSE / CISCE Class XII: 78% average from the best four subjects, including 80% in Mathematics (CBSE Applied Mathematics is not accepted). Excludes local language, Environmental Education, General Studies, and Physical Education.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0 (with no less than 5.5 in each element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Mathematics and Data Science: Advanced Placement (AP) 4, 4, 3, including AP Calculus BC with a score of 4.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS (Academic) 6.0 (with no less than 5.5 in each element).",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "uni": "uk-nottingham",
+  "slug": "ppe",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Philosophy-Politics-and-Economics-BA-Hons.html",
+      "page": "d2671d99358c",
+      "title": "Philosophy, Politics and Economics BA (Hons) | University of Nottingham",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "BA Hons UCAS Code VLL5",
+        "Duration 3 years full-time Location University Park Campus Select start date September 2027",
+        "The entrance requirements listed apply to 2027 entry.",
+        "A levels A*AA IB 36 points overall",
+        "IELTS 6.5 (no less than 6.0 in any element)",
+        "IB score 36 points overall or 766 in 3 HL certificates IB requirements GCSE maths 7 (A) or above OR 6 in standard level or 4 in higher level maths",
+        "A levels A*AA / A*A*B (AAA / A*AB including mathematics)",
+        "GCSEs GCSE maths grade 7 (A) or above, unless taking it at A level; and GCSE English grade 4 (C) or above"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Philosophy-Politics-and-Economics-BA-Hons.html",
+      "page": "d2671d99358c-raw",
+      "title": "Philosophy, Politics and Economics BA (Hons) | University of Nottingham (fee labels in the page)",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "<span class=\"info-bar__list-link-label home-student-detail\"> £10,050 per year</span>",
+        "<span class=\"info-bar__list-link-label international-student-detail\"> £27,600 per year</span>"
+      ]
+    }
+  },
+  "program": {
+    "name": "Philosophy, Politics and Economics",
+    "degree_type": "BA (Hons)",
+    "field": "Politics, Philosophy and Economics",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Philosophy, Politics and Economics BA (Hons) (UCAS VLL5), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-home",
+      "note": "Home fee for a September 2027 start: £10,050 per year (Nottingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 27600,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-international",
+      "note": "International fee for a September 2027 start: £27,600 per year (Nottingham course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Philosophy, Politics and Economics: A levels A*AA / A*A*B (AAA / A*AB including mathematics). GCSEs: GCSE maths grade 7 (A) or above, unless taking it at A level; and GCSE English grade 4 (C) or above.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Philosophy, Politics and Economics: IB 36 points overall or 766 in 3 HL certificates. GCSE maths 7 (A) or above OR 6 in standard level or 4 in higher level maths.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    }
+  ]
+}

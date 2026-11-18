@@ -1,0 +1,116 @@
+{
+  "uni": "uk-imperial",
+  "slug": "aeronautical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/aeronautical-engineering/",
+      "page": "6e0bde9659ec",
+      "title": "Aeronautical Engineering MEng | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "Qualification MEng Duration 4 years Start date October 2027 UCAS course code H401",
+        "Delivered by Department of Aeronautics",
+        "A-levels Minimum entry standard A*A*A or A*AAA To include: A* in Mathematics A/A* in Physics (A* is required if applying with three A-levels. At least an A is required if applying with four A-levels) A in a third and/or fourth subject",
+        "Minimum entry standard 40 points To include: 7 in Mathematics* at higher level 7 in Physics at higher level",
+        "must achieve the standard university requirement",
+        "Home fee 2027 entry £10,050 per year",
+        "Overseas fee 2027 entry £47,800 per year",
+        "You must sit the Engineering and Science Admissions Test (ESAT) as part of the application process for this course.",
+        "you will need to sit three ESAT modules: Mathematics 1 Mathematics 2 Physics"
+      ]
+    },
+    "english": {
+      "url": "https://www.imperial.ac.uk/study/apply/english-language/",
+      "page": "0004cdc8126c",
+      "title": "English language requirements | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "IELTS - Academic (Test-Centre/UKVI SELT/Online) Standard Higher 6.5 overall (minimum 6.0 in all elements) 7.0 overall (minimum 6.5 in all elements)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Aeronautical Engineering",
+    "degree_type": "MEng",
+    "field": "Aerospace Engineering",
+    "faculty": "Department of Aeronautics",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Aeronautical Engineering MEng (UCAS H401), 4 years. ESAT also required.",
+    "application_requirements": [
+      {
+        "name": "ESAT",
+        "description": "Sit the Engineering and Science Admissions Test (ESAT): Mathematics 1, Mathematics 2 and Physics modules.",
+        "type": "standardized_test_score",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-home",
+      "note": "Home fee, 2027 entry: £10,050 per year (Imperial course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 47800,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-international",
+      "note": "Overseas fee, 2027 entry: £47,800 per year (Imperial course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Aeronautical Engineering: A*A*A or A*AAA, to include: A* in Mathematics A/A* in Physics (A* is required if applying with three A-levels. At least an A is required if applying with four A-levels) A in a third and/or fourth subject ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall (minimum 6.0 in all elements): Imperial's standard level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Aeronautical Engineering: IB 40 points, to include: 7 in Mathematics* at higher level 7 in Physics at higher level ESAT also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall (minimum 6.0 in all elements): Imperial's standard level, required for this course.",
+        "source": "english"
+      }
+    }
+  ]
+}

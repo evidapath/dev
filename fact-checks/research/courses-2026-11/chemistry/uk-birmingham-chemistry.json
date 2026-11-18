@@ -1,0 +1,96 @@
+{
+  "uni": "uk-birmingham",
+  "slug": "chemistry",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemistry-courses/chemistry-bsc",
+      "page": "f345132487ef",
+      "title": "Chemistry BSc | University of Birmingham",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "UCAS code F100 Delivery format In person Start date September Duration 3 years Award Bachelor of Science",
+        "A Level AAA - AAB to include A-level Chemistry. Further details below.",
+        "IB 6,6,6 - 6,6,5 at Higher Level, including Chemistry at Higher Level, with a minimum of 32 points overall. Further information below.",
+        "IELTS*: 6.0 overall with no less than 5.5 in any band.",
+        "£10,050 per year for domestic (UK) students for 2027/28",
+        "For all undergraduate courses at Birmingham, you apply online through UCAS.",
+        "13 January 2027 Application deadline for September 2027 entry. Applications close at 18:00 GMT."
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemistry-courses/chemistry-bsc",
+      "page": "f345132487ef-raw",
+      "title": "Chemistry BSc | University of Birmingham (fee data in the page)",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "\"courseYearItems\":[{\"year\":\"2027\"",
+        "\"title\":\"Fees (international)\",\"value\":\"£30,180\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemistry",
+    "degree_type": "BSc",
+    "field": "Chemistry",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Chemistry BSc (F100), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-home",
+      "note": "UK fee: £10,050 per year for 2027/28 (Birmingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027 entry",
+      "source": "coursedata",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-international",
+      "tuition_annual": 30180,
+      "note": "International fee for 2027 entry: £30,180 a year (Birmingham course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Chemistry: AAA - AAB to include A-level Chemistry.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 overall with no less than 5.5 in any band.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Chemistry: IB 6,6,6 - 6,6,5 at Higher Level, including Chemistry at Higher Level, with a minimum of 32 points overall.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 overall with no less than 5.5 in any band.",
+        "source": "course"
+      }
+    }
+  ]
+}

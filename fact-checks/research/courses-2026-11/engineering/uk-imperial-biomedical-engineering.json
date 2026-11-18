@@ -1,0 +1,98 @@
+{
+  "uni": "uk-imperial",
+  "slug": "biomedical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/biomedical-engineering/",
+      "page": "bab20cf89582",
+      "title": "Biomedical Engineering MEng | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "Qualification MEng Duration 4 Years Start date October 2027 UCAS course code BH9C",
+        "Delivered by Department of Bioengineering",
+        "A-levels Minimum entry standard A*AA To include: A* in Mathematics A in Physics A in a third subject",
+        "Minimum entry standard 39 points To include: 6 in Mathematics at higher level 6 in Physics at higher level 6 in a third subject at higher level",
+        "must achieve the higher university requirement",
+        "Home fee 2027 entry £10,050 per year",
+        "Overseas fee 2027 entry £47,800 per year",
+        "This department does not use a test as part of its selection process"
+      ]
+    },
+    "english": {
+      "url": "https://www.imperial.ac.uk/study/apply/english-language/",
+      "page": "0004cdc8126c",
+      "title": "English language requirements | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "IELTS - Academic (Test-Centre/UKVI SELT/Online) Standard Higher 6.5 overall (minimum 6.0 in all elements) 7.0 overall (minimum 6.5 in all elements)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biomedical Engineering",
+    "degree_type": "MEng",
+    "field": "Biomedical Engineering",
+    "faculty": "Department of Bioengineering",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Biomedical Engineering MEng (UCAS BH9C), 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-home",
+      "note": "Home fee, 2027 entry: £10,050 per year (Imperial course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 47800,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-international",
+      "note": "Overseas fee, 2027 entry: £47,800 per year (Imperial course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Biomedical Engineering: A*AA, to include: A* in Mathematics A in Physics A in a third subject",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Biomedical Engineering: IB 39 points, to include: 6 in Mathematics at higher level 6 in Physics at higher level 6 in a third subject at higher level",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    }
+  ]
+}

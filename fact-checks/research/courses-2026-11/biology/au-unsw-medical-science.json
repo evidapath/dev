@@ -1,0 +1,77 @@
+{
+  "uni": "au-unsw",
+  "slug": "medical-science",
+  "sources": {
+    "course": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-medical-science?studentType=International",
+      "page": "608a36181749",
+      "title": "Bachelor of Medical Science | UNSW Sydney",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "3 Year(s)",
+        "UAC code 429700 Program code 3991",
+        "2026 A levels 13.0 2026 IB Diploma 35.0",
+        "Entry scores are calculated from the best three or four A2 subjects (excluding repeated subjects) using the following values: A*=6, A=5, B=4, C=3, D=2, E=1.",
+        "2026 Indicative first year full fee $62,500* 2026 Indicative full fee to complete degree $198,500*",
+        "Indicative fees to complete the degree/program include tuition plus an estimate of study-related costs of approximately $1,000 per year and have been calculated based on percentage increase for every year of the degree/program",
+        "Assumed knowledge Chemistry, Mathematics Advanced"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-medical-science?studentType=International",
+      "page": "608a36181749-raw",
+      "title": "Bachelor of Medical Science | UNSW Sydney (fee data in the page)",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "const feesyear = isInternational ? \"2026\" : \"2026\"",
+        "const feescompletedegree = isInternational ? \"$198,500*\" : \"$29,500*\"",
+        "const feesfirstyear = isInternational ? \"$62,500*\" : \"$9,000*\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Medical Science",
+    "degree_type": "Bachelor",
+    "field": "Medical Science",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UAC",
+    "source": "course",
+    "summary": "Bachelor of Medical Science (UAC 429700, program 3991), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "AUD",
+      "tuition_formula": "198500/3",
+      "academic_year": "2026 indicative fees",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-au-unsw-cost-beng-hons-international",
+      "note": "International, 2026 indicative: $62,500 for the first year and $198,500 for the whole degree (UNSW says the whole-degree figure includes about $1,000 a year of study-related costs and yearly increases). Shown as the whole-degree fee spread over 3 years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "threshold": "Bachelor of Medical Science: A-level score of 13.0 from the best three or four A2 subjects (A*=6, A=5, B=4, C=3, D=2, E=1). This is the score that got an offer in 2026, a guide only. UNSW assumes knowledge of: Chemistry, Mathematics Advanced (NSW subjects)."
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "threshold": "Bachelor of Medical Science: IB Diploma 35.0. This is the score that got an offer in 2026, a guide only. UNSW assumes knowledge of: Chemistry, Mathematics Advanced (NSW subjects)."
+    }
+  ]
+}

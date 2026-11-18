@@ -1,0 +1,102 @@
+{
+  "uni": "uk-warwick",
+  "slug": "politics-international-studies",
+  "sources": {
+    "course": {
+      "url": "https://warwick.ac.uk/study/undergraduate/courses/ba-politics-international-studies/",
+      "page": "7867aaabf0fd",
+      "title": "Politics and International Studies (BA) | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "UCAS course code L260",
+        "Start date 27 September 2027",
+        "Department Department of Politics & International Studies Duration 3 years full-time",
+        "A level typical offer AAA",
+        "International Baccalaureate (IB) typical offer 36.",
+        "This course requires: Band B",
+        "Warwick does not typically interview applicants.",
+        "Tuition fee £10,050 For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050."
+      ]
+    },
+    "fees": {
+      "url": "https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/",
+      "page": "1099e435e96e",
+      "title": "Overseas fees | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Course UCAS code 2025-26 2026-27 2027-28",
+        "Politics and International Studies (BA) L260 Band 1 £26,290 £27,870 £29,260"
+      ]
+    },
+    "english": {
+      "url": "https://warwick.ac.uk/study/undergraduate/applying/english-language-requirements/",
+      "page": "43adba7a94bd",
+      "title": "English language requirements | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Band B 6.5 including minimum 6.0 in each component"
+      ]
+    }
+  },
+  "program": {
+    "name": "Politics and International Studies",
+    "degree_type": "BA",
+    "field": "Politics",
+    "faculty": "Department of Politics & International Studies",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Politics and International Studies BA (UCAS L260), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-home",
+      "note": "Home fee, 2027-28: £10,050 (Warwick course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 29260,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-international",
+      "note": "Overseas fee, 2027-28: £29,260 (Band 1, Warwick overseas fees table)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Politics and International Studies: AAA",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 6.5 including minimum 6.0 in each component (Warwick English Band B).",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Politics and International Studies: IB 36.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 6.5 including minimum 6.0 in each component (Warwick English Band B).",
+        "source": "english"
+      }
+    }
+  ]
+}

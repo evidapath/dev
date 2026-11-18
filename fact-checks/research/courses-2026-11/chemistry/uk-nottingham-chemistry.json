@@ -1,0 +1,102 @@
+{
+  "uni": "uk-nottingham",
+  "slug": "chemistry",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Chemistry-BSc-Hons.html",
+      "page": "bdcd86bf74c9",
+      "title": "Chemistry BSc (Hons) | University of Nottingham",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "BSc Hons UCAS Code F100",
+        "Duration 3 years full-time Location University Park Campus Select start date September 2027",
+        "The entrance requirements listed apply to 2027 entry.",
+        "A levels AAB-ABB IB 32-30 points overall",
+        "IELTS 6.0 (no less than 5.5 in any element)",
+        "Required subjects Chemistry",
+        "IB score 32-30 including 6 in chemistry at Higher Level IB requirements 32 points including HL 6 chemistry. Alternative conditions HL Certificates 6,6,5 including HL 6 in chemistry."
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Chemistry-BSc-Hons.html",
+      "page": "bdcd86bf74c9-raw",
+      "title": "Chemistry BSc (Hons) | University of Nottingham (fee labels in the page)",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "<span class=\"info-bar__list-link-label home-student-detail\"> £10,050 per year</span>",
+        "<span class=\"info-bar__list-link-label international-student-detail\"> £33,500 per year</span>"
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemistry",
+    "degree_type": "BSc (Hons)",
+    "field": "Chemistry",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Chemistry BSc (Hons) (UCAS F100), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-home",
+      "note": "Home fee for a September 2027 start: £10,050 per year (Nottingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 33500,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-international",
+      "note": "International fee for a September 2027 start: £33,500 per year (Nottingham course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Chemistry: A levels AAB-ABB. Required subjects: Chemistry.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 (no less than 5.5 in any element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Chemistry: IB 32-30 including 6 in chemistry at Higher Level. 32 points including HL 6 chemistry. Alternative conditions HL Certificates 6,6,5 including HL 6 in chemistry.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 (no less than 5.5 in any element).",
+        "source": "course"
+      }
+    }
+  ]
+}

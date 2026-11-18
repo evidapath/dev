@@ -1,0 +1,82 @@
+{
+  "uni": "uk-manchester",
+  "slug": "accounting-finance",
+  "sources": {
+    "course": {
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/05151/baecon-accounting-and-finance/",
+      "page": "5cc7e40ce67a",
+      "title": "BAEcon Accounting and Finance (2027 entry) | The University of Manchester",
+      "organization": "The University of Manchester",
+      "quotes": [
+        "Duration: 3 or 4 years Year of entry: 2027 UCAS course code: NN43 / Institution code: M20",
+        "A-level AAA, including at least one of the following A-Level subjects (preference will be given to applicants studying two of these subjects): Accounting; Economics; Finance; Business Studies; Development Studies; Government and Politics; Economic and Social History; Mathematics; Anthropology; Sociology; Philosophy; Religious Studies; English Language; English Literature; Geography; Psychology; Classical Civilisation; History; Archaeology; Communication Studies; Environmental Studies; World Development; Biology; Chemistry; Physics; Modern Languages.",
+        "International Baccalaureate 36 points overall. 6,6,6 in Higher Level subjects",
+        "IELTS 6.5 overall with no lower than 6 in any component.",
+        "Tuition fees for home students will be £10,050 for the 2027/28 academic year.",
+        "Tuition fees for international students will be £34,800 for the 2027/28 academic year. For subsequent academic years, the University reserves the right to increase the tuition fee by up to 7% each year",
+        "You can apply to study overseas for an unforgettable year at one of our international partner universities. You apply in Year 2 to spend a year abroad in Year 3."
+      ]
+    }
+  },
+  "program": {
+    "name": "Accounting and Finance",
+    "degree_type": "BAEcon",
+    "field": "Accounting and Finance",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "BAEcon Accounting and Finance (UCAS NN43), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-home",
+      "note": "Home fee, 2027/28 (2027 entry): £10,050 a year (The University of Manchester course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-international",
+      "tuition_annual": 34800,
+      "note": "International fee for 2027/28: £34,800. The University may raise it by up to 7% a year in later years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Accounting and Finance: AAA, including at least one of the following A-Level subjects (preference will be given to applicants studying two of these subjects): Accounting; Economics; Finance; Business Studies; Development Studies; Government and Politics; Economic and Social History; Mathematics; Anthropology; Sociology; Philosophy; Religious Studies; English Language; English Literature; Geography; Psychology; Classical Civilisation; History; Archaeology; Communication Studies; Environmental Studies; World Development; Biology; Chemistry; Physics; Modern Languages.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall with no lower than 6 in any component.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Accounting and Finance: IB 36 points overall. 6,6,6 in Higher Level subjects",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall with no lower than 6 in any component.",
+        "source": "course"
+      }
+    }
+  ]
+}

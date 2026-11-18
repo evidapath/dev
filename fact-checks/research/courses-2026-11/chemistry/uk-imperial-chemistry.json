@@ -1,0 +1,98 @@
+{
+  "uni": "uk-imperial",
+  "slug": "chemistry",
+  "sources": {
+    "course": {
+      "url": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/chemistry-bsc/",
+      "page": "f10de0be5ce8",
+      "title": "Chemistry BSc | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "Qualification BSc Duration 3 years Start date October 2027 UCAS course code F100",
+        "Delivered by Department of Chemistry",
+        "A-levels Minimum entry standard AAA To include: A in Chemistry A in Mathematics A in a third subject (Biology, Physics and Further Maths are preferred)",
+        "Minimum entry standard 38 points To include: 6 in Chemistry at higher level 6 in Mathematics at higher level 6 in a third subject at higher level (Biology, Economics or Physics are preferred)",
+        "must achieve the higher university requirement",
+        "Home fee 2027 entry £10,050 per year",
+        "Overseas fee 2027 entry £47,800 per year",
+        "This department does not use a test as part of its selection process"
+      ]
+    },
+    "english": {
+      "url": "https://www.imperial.ac.uk/study/apply/english-language/",
+      "page": "0004cdc8126c",
+      "title": "English language requirements | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "IELTS - Academic (Test-Centre/UKVI SELT/Online) Standard Higher 6.5 overall (minimum 6.0 in all elements) 7.0 overall (minimum 6.5 in all elements)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemistry",
+    "degree_type": "BSc",
+    "field": "Chemistry",
+    "faculty": "Department of Chemistry",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Chemistry BSc (UCAS F100), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-home",
+      "note": "Home fee, 2027 entry: £10,050 per year (Imperial course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 47800,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-international",
+      "note": "Overseas fee, 2027 entry: £47,800 per year (Imperial course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Chemistry: AAA, to include: A in Chemistry A in Mathematics A in a third subject (Biology, Physics and Further Maths are preferred)",
+      "required_subjects": [
+        "Chemistry",
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Chemistry: IB 38 points, to include: 6 in Chemistry at higher level 6 in Mathematics at higher level 6 in a third subject at higher level (Biology, Economics or Physics are preferred)",
+      "required_subjects": [
+        "Chemistry",
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    }
+  ]
+}

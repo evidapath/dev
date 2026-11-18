@@ -1,0 +1,115 @@
+{
+  "uni": "uk-imperial",
+  "slug": "mathematics",
+  "sources": {
+    "course": {
+      "url": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/mathematics-bsc/",
+      "page": "eb2e28296649",
+      "title": "Mathematics BSc | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "Qualification BSc Duration 3 years Start date October 2027 UCAS course code G100",
+        "Delivered by Department of Mathematics",
+        "A-levels Minimum entry standard A*A*A - A*A*AA To include: A* in Mathematics A* in Further Mathematics A in another subject",
+        "Minimum entry standard 39 points To include: 7 in Mathematics at higher level 6 in another subject at higher level",
+        "must achieve the higher university requirement",
+        "Home fee 2027 entry £10,050 per year",
+        "Overseas fee 2027 entry £44,850 per year",
+        "All applicants should take the Test for Mathematics for University Admission (TMUA) as part of the application process for this course."
+      ]
+    },
+    "english": {
+      "url": "https://www.imperial.ac.uk/study/apply/english-language/",
+      "page": "0004cdc8126c",
+      "title": "English language requirements | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "IELTS - Academic (Test-Centre/UKVI SELT/Online) Standard Higher 6.5 overall (minimum 6.0 in all elements) 7.0 overall (minimum 6.5 in all elements)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Mathematics",
+    "degree_type": "BSc",
+    "field": "Mathematics",
+    "faculty": "Department of Mathematics",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Mathematics BSc (UCAS G100), 3 years. TMUA also required.",
+    "application_requirements": [
+      {
+        "name": "TMUA",
+        "description": "All applicants should take the Test of Mathematics for University Admission (TMUA).",
+        "type": "standardized_test_score",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-home",
+      "note": "Home fee, 2027 entry: £10,050 per year (Imperial course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 44850,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-international",
+      "note": "Overseas fee, 2027 entry: £44,850 per year (Imperial course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Mathematics: A*A*A - A*A*AA, to include: A* in Mathematics A* in Further Mathematics A in another subject TMUA also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Further Mathematics"
+      ],
+      "tests": [
+        {
+          "name": "TMUA",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Mathematics: IB 39 points, to include: 7 in Mathematics at higher level 6 in another subject at higher level TMUA also required.",
+      "required_subjects": [
+        "Mathematics",
+        "Further Mathematics"
+      ],
+      "tests": [
+        {
+          "name": "TMUA",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    }
+  ]
+}

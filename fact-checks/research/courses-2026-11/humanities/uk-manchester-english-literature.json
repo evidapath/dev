@@ -1,0 +1,85 @@
+{
+  "uni": "uk-manchester",
+  "slug": "english-literature",
+  "sources": {
+    "course": {
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00060/ba-english-literature/",
+      "page": "5f3151ff5c01",
+      "title": "BA English Literature (2027 entry) | The University of Manchester",
+      "organization": "The University of Manchester",
+      "quotes": [
+        "Duration: 3 years Year of entry: 2027 UCAS course code: Q320 / Institution code: M20",
+        "A-level AAA including English Literature or English Language & Literature.",
+        "International Baccalaureate 36 points overall. 6,6,6 in Higher Level subjects including English Literature or English Language and Literature.",
+        "IELTS Academic or IELTS UKVI 7.0 overall, or;",
+        "Tuition fees for home students will be £10,050 for the 2027/28 academic year.",
+        "Tuition fees for international students will be £29,200 for the 2027/28 academic year. For subsequent academic years, the University reserves the right to increase the tuition fee by up to 7% each year"
+      ]
+    }
+  },
+  "program": {
+    "name": "English Literature",
+    "degree_type": "BA",
+    "field": "English",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "BA English Literature (UCAS Q320), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-home",
+      "note": "Home fee, 2027/28 (2027 entry): £10,050 a year (The University of Manchester course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-international",
+      "tuition_annual": 29200,
+      "note": "International fee for 2027/28: £29,200. The University may raise it by up to 7% a year in later years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "English Literature: AAA including English Literature or English Language & Literature.",
+      "required_subjects": [
+        "English Literature (or English Language & Literature)"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic or IELTS UKVI 7.0 overall.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "English Literature: IB 36 points overall. 6,6,6 in Higher Level subjects including English Literature or English Language and Literature.",
+      "required_subjects": [
+        "English Literature (or English Language & Literature)"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic or IELTS UKVI 7.0 overall.",
+        "source": "course"
+      }
+    }
+  ]
+}

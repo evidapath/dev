@@ -1,0 +1,106 @@
+{
+  "uni": "uk-warwick",
+  "slug": "accounting-finance",
+  "sources": {
+    "course": {
+      "url": "https://warwick.ac.uk/study/undergraduate/courses/bsc-accounting-finance/",
+      "page": "3c201c1d9f27",
+      "title": "Accounting and Finance (BSc) | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "UCAS course code NN34",
+        "Start date 27 September 2027",
+        "Department Warwick Business School Duration 3 years full-time",
+        "A level typical offer A*AA including A in Maths.",
+        "International Baccalaureate (IB) typical offer 38 to include 6 in Higher Level Mathematics (either 'Analysis and Approaches' or 'Applications and Interpretation').",
+        "This course requires: Band C",
+        "Warwick does not typically interview applicants.",
+        "Tuition fee £10,050 For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050."
+      ]
+    },
+    "fees": {
+      "url": "https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/",
+      "page": "1099e435e96e",
+      "title": "Overseas fees | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Course UCAS code 2025-26 2026-27 2027-28",
+        "Accounting and Finance (BSc) NN34 Band 2 £33,520 £35,530 £37,310"
+      ]
+    },
+    "english": {
+      "url": "https://warwick.ac.uk/study/undergraduate/applying/english-language-requirements/",
+      "page": "43adba7a94bd",
+      "title": "English language requirements | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Band C 7.0 including minimum 6.5 in each component"
+      ]
+    }
+  },
+  "program": {
+    "name": "Accounting and Finance",
+    "degree_type": "BSc",
+    "field": "Accounting and Finance",
+    "faculty": "Warwick Business School",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Accounting and Finance BSc (UCAS NN34), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-home",
+      "note": "Home fee, 2027-28: £10,050 (Warwick course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 37310,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-international",
+      "note": "Overseas fee, 2027-28: £37,310 (Band 2, Warwick overseas fees table)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Accounting and Finance: A*AA including A in Maths.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 7.0 including minimum 6.5 in each component (Warwick English Band C).",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Accounting and Finance: IB 38 to include 6 in Higher Level Mathematics (either 'Analysis and Approaches' or 'Applications and Interpretation').",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 7.0 including minimum 6.5 in each component (Warwick English Band C).",
+        "source": "english"
+      }
+    }
+  ]
+}

@@ -54,6 +54,41 @@ local page cache is missing Taylor's pages (`c5f814882b10`, `17b45e628af2`), so 
 Law and Biology folders can't be rebuilt on this machine until those pages are re-fetched.
 The new pages aren't sources for any other research file, so no shared excerpt is affected.
 
+### New subjects, UK, Malaysia and UNSW (2026-11-18) → `pending/2026-11-18-new-subjects.ndjson`
+
+New subject folders: `mathematics/`, `physics/`, `chemistry/`, `pharmacy/`, `politics/`,
+`accounting/`, `dentistry/`, `humanities/`. Generators: `scripts/research/gen/uk_birmingham.py`,
+`uk_nottingham.py`, `uk_manchester.py`, `uk_warwick.py`, `uk_imperial.py` (quotes are lifted
+line by line from the saved pages; build.py re-checks them). All fees are for 2027 entry.
+
+| University | Added | Held / not added |
+|---|---|---|
+| Birmingham | Mathematics, Physics, Chemistry, Electronic and Electrical Engineering, Aerospace Engineering, Computer Engineering, Accounting and Finance, International Relations, Politics and International Relations, PPE, Dental Surgery (BDS, 5 years; international £30,180 in year 1 then £53,880 in years 2-5, shown as the 5-year average, our calculation; UCAT, interview, deadline 15 October 2026) | Mechanical Engineering: already in Sanity as `program-uk-birmingham-beng-engineering` (same page). Biological Sciences, Psychology: international fee "To be confirmed" |
+| Nottingham | Mathematics, Physics, Chemistry, Pharmacy (MPharm, 4 years), Aerospace Engineering, Politics and International Relations, PPE, Finance Accounting and Management, Biochemistry, Pharmacology, English, History, Geography | Mechanical: already in Sanity (`program-uk-nottingham-beng-engineering`). Veterinary Medicine, Physics with Astronomy, Mathematics and Economics: guessed page addresses returned 404, not pursued |
+| Manchester | Mathematics, Physics, Chemistry, Pharmacy (MPharm, interview), Aerospace Engineering, Politics and International Relations, PPE, Accounting and Finance, English Literature, History, Geography, Biochemistry, Pharmacology. "3 or 4 years" courses stored as 3: the fourth year is an optional year abroad or placement (quoted) | Dentistry: year 1 fee £40,200 (2027/28), but the clinical-year fee is only published for students entering Year 2 in 2027 (£63,900), not for a 2027 starter; a full-course cost would be a guess. Held |
+| Warwick | Mathematics (TMUA typically required), Physics, Chemistry, Politics and International Studies, Accounting and Finance, History. Overseas fees from the 2027-28 column of Warwick's overseas fees table; English level from the course's band | English Literature: the fees table row reads "Band 0 £21,950 £27,870 £21,950" (2027-28 lower than 2026-27), which looks like an error on Warwick's page. Held. PPE and Pharmacy: guessed page addresses 404 |
+| Imperial | Mathematics (TMUA), Physics (ESAT), Chemistry, Biochemistry (ESAT), Aeronautical Engineering (MEng, ESAT), Biomedical Engineering (MEng) | Mechanical: already in Sanity |
+| Nottingham Malaysia (`gen/my_nottingham.py`) | Biomedical Science, Finance Accounting and Management, International Business Management, International Relations, English Language and Literature, Mathematics and Data Science, Mechatronic Engineering (MEng, 4 years). Fixed fees for a September 2027 start; 6% SST on top for non-Malaysians | Pharmacy MPharm: 2 years in Malaysia (RM75,000 a year) then 2 years in the UK (GBP £33,500 a year); one cost record holds one currency, so it can't be stored faithfully. Held |
+| UNSW (`gen/au_unsw.py`) | Economics, Arts, Actuarial Studies, Data Science and Decisions, Medical Science, International Studies, Media (Communication and Journalism). 2026 indicative international fees; 2026 A-level/IB offer scores (a guide); NSW "assumed knowledge" shown in the threshold text, not as required subjects | Exercise Science: guessed page address 404 |
+
+Not done yet (pages read, records not built):
+- Cambridge (Mathematics, History, English, HSPS, Geography, Veterinary Medicine, Land Economy,
+  History and Politics, Philosophy): course pages load the College list by script, and the
+  College used for the fee (Queens') isn't listed for several of them; the 2027-28 fees PDF
+  isn't in the local cache. Needs the lowest-fee College that offers each course.
+- Taylor's (Pharmacy, Biomedical Science, Accounting and Finance, Actuarial Studies, Finance and
+  Economics, PPE, International Relations, Mass Communication, Software Engineering, Mechatronics,
+  Hospitality): pages are saved, but their entry blocks differ page to page (some give no A-level
+  line in the usual place; several are dual awards). Each needs reading by hand.
+- Universiti Malaya: course pages plus the international fee PDF; not started this pass.
+
+Found on the way (to check, not changed):
+- `program-uk-birmingham-beng-engineering` is named Mechanical Engineering and points to the
+  Mechanical page, but its summary still reads "BEng Engineering ... Disciplines: Mechanical,
+  Electrical, Chemical, Civil, Materials. A-level offer not verified from primary source this pass."
+- `build.py` patches a shared source excerpt without `ifRevisionID`; the guard was added to the
+  patch in this pending file by hand (the live `_rev` at build time).
+
 Medicine not offered as a first degree (no record added): US universities (medicine is a
 graduate degree there), Warwick (graduate entry only).
 

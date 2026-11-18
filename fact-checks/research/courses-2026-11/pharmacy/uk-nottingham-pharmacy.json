@@ -1,0 +1,103 @@
+{
+  "uni": "uk-nottingham",
+  "slug": "pharmacy",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Pharmacy-MPharm.html",
+      "page": "8896bd9a4d3a",
+      "title": "Pharmacy MPharm (Hons) | University of Nottingham",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "MPharm Hons UCAS Code B230",
+        "Duration 4 years full-time Location University Park Campus Select start date September 2027",
+        "The entrance requirements listed apply to 2027 entry.",
+        "A levels AAA IB 34 points overall",
+        "IELTS 7.0 (no less than 6.0 in each element)",
+        "Required subjects AAA including chemistry and at least one further science A level from biology, maths, further maths or physics",
+        "IB score IB score 34 points overall or 666 in 3 HL certificates IB requirements IB Diploma 34 points overall with 6,6, in chemistry and a second science subject, or IB Higher Level Certificates 6,6,6 including chemistry and a second science subject.",
+        "GCSEs B/6 in mathematics"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Pharmacy-MPharm.html",
+      "page": "8896bd9a4d3a-raw",
+      "title": "Pharmacy MPharm (Hons) | University of Nottingham (fee labels in the page)",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "<span class=\"info-bar__list-link-label home-student-detail\"> £10,050 per year</span>",
+        "<span class=\"info-bar__list-link-label international-student-detail\"> £33,500 per year</span>"
+      ]
+    }
+  },
+  "program": {
+    "name": "Pharmacy",
+    "degree_type": "MPharm (Hons)",
+    "field": "Pharmacy",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Pharmacy MPharm (Hons) (UCAS B230), 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-home",
+      "note": "Home fee for a September 2027 start: £10,050 per year (Nottingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 33500,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-international",
+      "note": "International fee for a September 2027 start: £33,500 per year (Nottingham course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Pharmacy: A levels AAA. Required subjects: AAA including chemistry and at least one further science A level from biology, maths, further maths or physics. GCSEs: B/6 in mathematics.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 (no less than 6.0 in each element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Pharmacy: IB 34 points overall or 666 in 3 HL certificates. IB Diploma 34 points overall with 6,6, in chemistry and a second science subject, or IB Higher Level Certificates 6,6,6 including chemistry and a second science subject.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 (no less than 6.0 in each element).",
+        "source": "course"
+      }
+    }
+  ]
+}

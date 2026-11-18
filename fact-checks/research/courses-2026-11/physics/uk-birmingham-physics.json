@@ -1,0 +1,98 @@
+{
+  "uni": "uk-birmingham",
+  "slug": "physics",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-bsc",
+      "page": "b1ff0eae93f1",
+      "title": "Physics BSc | University of Birmingham",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "UCAS code F300 Delivery format In person Start date September Duration 3 years Award Bachelor of Science",
+        "A Level A*AA /AAAA to include A-level Mathematics and A-level Physics grades A*A (or AA as part of the four A level offer).",
+        "IB 7,6,6 at HL, to include Mathematics and Physics, with a minimum of 32 points overall. 7 must be in Mathematics or Physics.",
+        "IELTS*: 6.0 overall with no less than 5.5 in any band.",
+        "£10,050 per year for domestic (UK) students for 2027/28",
+        "For all undergraduate courses at Birmingham, you apply online through UCAS.",
+        "13 January 2027 Application deadline for September 2027 entry. Applications close at 18:00 GMT."
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-bsc",
+      "page": "b1ff0eae93f1-raw",
+      "title": "Physics BSc | University of Birmingham (fee data in the page)",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "\"courseYearItems\":[{\"year\":\"2027\"",
+        "\"title\":\"Fees (international)\",\"value\":\"£30,180\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Physics",
+    "degree_type": "BSc",
+    "field": "Physics",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Physics BSc (F300), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-home",
+      "note": "UK fee: £10,050 per year for 2027/28 (Birmingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027 entry",
+      "source": "coursedata",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-international",
+      "tuition_annual": 30180,
+      "note": "International fee for 2027 entry: £30,180 a year (Birmingham course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Physics: A*AA /AAAA to include A-level Mathematics and A-level Physics grades A*A (or AA as part of the four A level offer).",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 overall with no less than 5.5 in any band.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Physics: IB 7,6,6 at HL, to include Mathematics and Physics, with a minimum of 32 points overall. 7 must be in Mathematics or Physics.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 overall with no less than 5.5 in any band.",
+        "source": "course"
+      }
+    }
+  ]
+}

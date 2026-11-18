@@ -1,0 +1,93 @@
+{
+  "uni": "uk-birmingham",
+  "slug": "politics-international-relations",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/politics-international-relations-and-development-courses/politics-and-international-relations-ba",
+      "page": "3305faeb2921",
+      "title": "Politics and International Relations BA | University of Birmingham",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "UCAS code L256 Delivery format In person Start date September 2027 Duration 3 years Award Bachelor of Arts",
+        "A Level AAB",
+        "IB 6,6,5 at Higher Level with a minimum of 32 points overall",
+        "IELTS: 6.5 overall with no less than 6.0 in any band.",
+        "£10,050 per year for domestic (UK) students for 2027/28",
+        "For all undergraduate courses at Birmingham, you apply online through UCAS.",
+        "13 January 2027 Application deadline for September 2027 entry. Applications close at 18:00 GMT.",
+        "Department of Political Science and International Studies"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/politics-international-relations-and-development-courses/politics-and-international-relations-ba",
+      "page": "3305faeb2921-raw",
+      "title": "Politics and International Relations BA | University of Birmingham (fee data in the page)",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "\"courseYearItems\":[{\"year\":\"2027\"",
+        "\"title\":\"Fees (international)\",\"value\":\"£24,840\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Politics and International Relations",
+    "degree_type": "BA",
+    "field": "Politics",
+    "faculty": "Department of Political Science and International Studies",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Politics and International Relations BA (L256), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-home",
+      "note": "UK fee: £10,050 per year for 2027/28 (Birmingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027 entry",
+      "source": "coursedata",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-international",
+      "tuition_annual": 24840,
+      "note": "International fee for 2027 entry: £24,840 a year (Birmingham course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Politics and International Relations: AAB",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall with no less than 6.0 in any band.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Politics and International Relations: IB 6,6,5 at Higher Level with a minimum of 32 points overall",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 overall with no less than 6.0 in any band.",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "uni": "au-unsw",
+  "slug": "data-science-decisions",
+  "sources": {
+    "course": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-data-science-and-decisions?studentType=International",
+      "page": "999f0605f571",
+      "title": "Bachelor of Data Science and Decisions | UNSW Sydney",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "3 Year(s)",
+        "UAC code 429150 Program code 3959",
+        "2026 A levels 13.0 2026 IB Diploma 35.0",
+        "Entry scores are calculated from the best three or four A2 subjects (excluding repeated subjects) using the following values: A*=6, A=5, B=4, C=3, D=2, E=1.",
+        "2026 Indicative first year full fee $60,000* 2026 Indicative full fee to complete degree $189,000*",
+        "Indicative fees to complete the degree/program include tuition plus an estimate of study-related costs of approximately $1,000 per year and have been calculated based on percentage increase for every year of the degree/program",
+        "Assumed knowledge Mathematics Extension 1"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-data-science-and-decisions?studentType=International",
+      "page": "999f0605f571-raw",
+      "title": "Bachelor of Data Science and Decisions | UNSW Sydney (fee data in the page)",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "const feesyear = isInternational ? \"2026\" : \"2026\"",
+        "const feescompletedegree = isInternational ? \"$189,000*\" : \"$27,000*\"",
+        "const feesfirstyear = isInternational ? \"$60,000*\" : \"$8,500*\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Data Science and Decisions",
+    "degree_type": "Bachelor",
+    "field": "Data Science",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UAC",
+    "source": "course",
+    "summary": "Bachelor of Data Science and Decisions (UAC 429150, program 3959), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "AUD",
+      "tuition_formula": "189000/3",
+      "academic_year": "2026 indicative fees",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-au-unsw-cost-beng-hons-international",
+      "note": "International, 2026 indicative: $60,000 for the first year and $189,000 for the whole degree (UNSW says the whole-degree figure includes about $1,000 a year of study-related costs and yearly increases). Shown as the whole-degree fee spread over 3 years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "threshold": "Bachelor of Data Science and Decisions: A-level score of 13.0 from the best three or four A2 subjects (A*=6, A=5, B=4, C=3, D=2, E=1). This is the score that got an offer in 2026, a guide only. UNSW assumes knowledge of: Mathematics Extension 1 (NSW subjects)."
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "threshold": "Bachelor of Data Science and Decisions: IB Diploma 35.0. This is the score that got an offer in 2026, a guide only. UNSW assumes knowledge of: Mathematics Extension 1 (NSW subjects)."
+    }
+  ]
+}

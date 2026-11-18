@@ -1,0 +1,96 @@
+{
+  "uni": "uk-birmingham",
+  "slug": "computer-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/computer-engineering-bsc",
+      "page": "68ce7bb23c44",
+      "title": "Computer Engineering BSc | University of Birmingham",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "UCAS code HH64 Delivery format In person Start date September Duration 3 years Award Bachelor of Science",
+        "A Level AAB to include A-level Mathematics.",
+        "IB 6,6,5 at Higher Level (including Mathematics) with 32 points overall.",
+        "IELTS*: 6.0 overall with no less than 5.5 in any band.",
+        "£10,050 per year for domestic (UK) students for 2027/28",
+        "For all undergraduate courses at Birmingham, you apply online through UCAS.",
+        "13 January 2027 Application deadline for September 2027 entry. Applications close at 18:00 GMT."
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/computer-engineering-bsc",
+      "page": "68ce7bb23c44-raw",
+      "title": "Computer Engineering BSc | University of Birmingham (fee data in the page)",
+      "organization": "University of Birmingham",
+      "quotes": [
+        "\"courseYearItems\":[{\"year\":\"2027\"",
+        "\"title\":\"Fees (international)\",\"value\":\"£33,300\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Engineering",
+    "degree_type": "BSc",
+    "field": "Computer Engineering",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Computer Engineering BSc (HH64), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-home",
+      "note": "UK fee: £10,050 per year for 2027/28 (Birmingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027 entry",
+      "source": "coursedata",
+      "living_from": "costProfile-uk-birmingham-cost-beng-engineering-international",
+      "tuition_annual": 33300,
+      "note": "International fee for 2027 entry: £33,300 a year (Birmingham course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Computer Engineering: AAB to include A-level Mathematics.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 overall with no less than 5.5 in any band.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Computer Engineering: IB 6,6,5 at Higher Level (including Mathematics) with 32 points overall.",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.0 overall with no less than 5.5 in any band.",
+        "source": "course"
+      }
+    }
+  ]
+}

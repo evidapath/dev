@@ -1,0 +1,93 @@
+{
+  "uni": "uk-manchester",
+  "slug": "pharmacy",
+  "sources": {
+    "course": {
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/01695/mpharm-pharmacy/",
+      "page": "31d64b6e7636",
+      "title": "MPharm Pharmacy (2027 entry) | The University of Manchester",
+      "organization": "The University of Manchester",
+      "quotes": [
+        "Duration: 4 years Year of entry: 2027 UCAS course code: B230 / Institution code: M20",
+        "A-level AAB including Chemistry, either Mathematics or Biology, and one further rigorous academic subject.",
+        "International Baccalaureate 35 points overall. 6, 6, 5 including in Higher Level Chemistry, alongside either: higher level Biology and standard level Mathematics, or; higher level Mathematics and standard level Biology.",
+        "IELTS Academic or IELTS UKVI grade 7 (with no component less than 6.5) or;",
+        "Tuition fees for home students will be £10,050 for the 2027/28 academic year.",
+        "Tuition fees for international students will be £34,800 for the 2027/28 academic year. For subsequent academic years, the University reserves the right to increase the tuition fee by up to 7% each year",
+        "Selection for interview is normally based on predicted grades matching the entry requirement (i.e. AAB)."
+      ]
+    }
+  },
+  "program": {
+    "name": "Pharmacy",
+    "degree_type": "MPharm",
+    "field": "Pharmacy",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "MPharm Pharmacy (UCAS B230), 4 years. Interview.",
+    "application_requirements": [
+      {
+        "name": "Interview",
+        "description": "Selection for interview is normally based on predicted grades matching the entry requirement (AAB).",
+        "type": "interview_or_evaluation_event",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-home",
+      "note": "Home fee, 2027/28 (2027 entry): £10,050 a year (The University of Manchester course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-international",
+      "tuition_annual": 34800,
+      "note": "International fee for 2027/28: £34,800. The University may raise it by up to 7% a year in later years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Pharmacy: AAB including Chemistry, either Mathematics or Biology, and one further rigorous academic subject. Interview.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic or IELTS UKVI grade 7 (with no component less than 6.5).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Pharmacy: IB 35 points overall. 6, 6, 5 including in Higher Level Chemistry, alongside either: higher level Biology and standard level Mathematics, or; higher level Mathematics and standard level Biology. Interview.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic or IELTS UKVI grade 7 (with no component less than 6.5).",
+        "source": "course"
+      }
+    }
+  ]
+}

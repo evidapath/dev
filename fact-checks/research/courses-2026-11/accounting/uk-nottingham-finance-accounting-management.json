@@ -1,0 +1,98 @@
+{
+  "uni": "uk-nottingham",
+  "slug": "finance-accounting-management",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Finance-Accounting-and-Management-BSc-Hons.html",
+      "page": "222ccbde612a",
+      "title": "Finance, Accounting and Management BSc (Hons) | University of Nottingham",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "BSc Hons UCAS Code NN34",
+        "Duration 3 years full-time Location Jubilee Campus Select start date September 2027",
+        "The entrance requirements listed apply to 2027 entry.",
+        "A levels AAA IB 34 points overall",
+        "IELTS 6.5 (no less than 6.0 in any element)",
+        "IB score 34 points overall or 666 in 3 HL certificates IB requirements GCSE maths 6 (B) or above OR 5 in standard level or 4 in higher level maths",
+        "GCSEs English grade 4/C and maths grade 6 (B)"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Finance-Accounting-and-Management-BSc-Hons.html",
+      "page": "222ccbde612a-raw",
+      "title": "Finance, Accounting and Management BSc (Hons) | University of Nottingham (fee labels in the page)",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "<span class=\"info-bar__list-link-label home-student-detail\"> £10,050 per year</span>",
+        "<span class=\"info-bar__list-link-label international-student-detail\"> £26,200 per year</span>"
+      ]
+    }
+  },
+  "program": {
+    "name": "Finance, Accounting and Management",
+    "degree_type": "BSc (Hons)",
+    "field": "Accounting and Finance",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Finance, Accounting and Management BSc (Hons) (UCAS NN34), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-home",
+      "note": "Home fee for a September 2027 start: £10,050 per year (Nottingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 26200,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-international",
+      "note": "International fee for a September 2027 start: £26,200 per year (Nottingham course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Finance, Accounting and Management: A levels AAA. GCSEs: English grade 4/C and maths grade 6 (B).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Finance, Accounting and Management: IB 34 points overall or 666 in 3 HL certificates. GCSE maths 6 (B) or above OR 5 in standard level or 4 in higher level maths.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    }
+  ]
+}

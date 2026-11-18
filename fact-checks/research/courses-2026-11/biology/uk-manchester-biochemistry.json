@@ -1,0 +1,85 @@
+{
+  "uni": "uk-manchester",
+  "slug": "biochemistry",
+  "sources": {
+    "course": {
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00521/bsc-biochemistry/",
+      "page": "a38559eafd8d",
+      "title": "BSc Biochemistry (2027 entry) | The University of Manchester",
+      "organization": "The University of Manchester",
+      "quotes": [
+        "Duration: 3 years Year of entry: 2027 UCAS course code: C700 / Institution code: M20",
+        "A-level AAB, including grades AB in Chemistry and one of Biology, Physics and Mathematics (the Core Sciences).",
+        "International Baccalaureate 35 points overall, including 6, 6, 5 at higher level, with Chemistry and another core science, normally Biology.",
+        "IELTS 6.5 with no less than 6.5 in any component or;",
+        "Tuition fees for home students will be £10,050 for the 2027/28 academic year.",
+        "Tuition fees for international students will be £38,000 for the 2027/28 academic year. For subsequent academic years, the University reserves the right to increase the tuition fee by up to 7% each year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biochemistry",
+    "degree_type": "BSc",
+    "field": "Biochemistry",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "BSc Biochemistry (UCAS C700), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-home",
+      "note": "Home fee, 2027/28 (2027 entry): £10,050 a year (The University of Manchester course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-international",
+      "tuition_annual": 38000,
+      "note": "International fee for 2027/28: £38,000. The University may raise it by up to 7% a year in later years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Biochemistry: AAB, including grades AB in Chemistry and one of Biology, Physics and Mathematics (the Core Sciences).",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 with no less than 6.5 in any component.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Biochemistry: IB 35 points overall, including 6, 6, 5 at higher level, with Chemistry and another core science, normally Biology.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 with no less than 6.5 in any component.",
+        "source": "course"
+      }
+    }
+  ]
+}

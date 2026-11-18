@@ -1,0 +1,77 @@
+{
+  "uni": "au-unsw",
+  "slug": "actuarial-studies",
+  "sources": {
+    "course": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-actuarial-studies?studentType=International",
+      "page": "809c554319be",
+      "title": "Bachelor of Actuarial Studies | UNSW Sydney",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "3 Year(s)",
+        "UAC code 424300 Program code 3586",
+        "2026 A levels 19.0 2026 IB Diploma 43.0",
+        "Entry scores are calculated from the best three or four A2 subjects (excluding repeated subjects) using the following values: A*=6, A=5, B=4, C=3, D=2, E=1.",
+        "2026 Indicative first year full fee $58,000* 2026 Indicative full fee to complete degree $183,000*",
+        "Indicative fees to complete the degree/program include tuition plus an estimate of study-related costs of approximately $1,000 per year and have been calculated based on percentage increase for every year of the degree/program",
+        "Assumed knowledge Mathematics Extension 1"
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.unsw.edu.au/study/undergraduate/bachelor-of-actuarial-studies?studentType=International",
+      "page": "809c554319be-raw",
+      "title": "Bachelor of Actuarial Studies | UNSW Sydney (fee data in the page)",
+      "organization": "UNSW Sydney",
+      "quotes": [
+        "const feesyear = isInternational ? \"2026\" : \"2026\"",
+        "const feescompletedegree = isInternational ? \"$183,000*\" : \"$40,500*\"",
+        "const feesfirstyear = isInternational ? \"$58,000*\" : \"$13,500*\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Actuarial Studies",
+    "degree_type": "Bachelor",
+    "field": "Actuarial Studies",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UAC",
+    "source": "course",
+    "summary": "Bachelor of Actuarial Studies (UAC 424300, program 3586), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "AUD",
+      "tuition_formula": "183000/3",
+      "academic_year": "2026 indicative fees",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-au-unsw-cost-beng-hons-international",
+      "note": "International, 2026 indicative: $58,000 for the first year and $183,000 for the whole degree (UNSW says the whole-degree figure includes about $1,000 a year of study-related costs and yearly increases). Shown as the whole-degree fee spread over 3 years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "threshold": "Bachelor of Actuarial Studies: A-level score of 19.0 from the best three or four A2 subjects (A*=6, A=5, B=4, C=3, D=2, E=1). This is the score that got an offer in 2026, a guide only. UNSW assumes knowledge of: Mathematics Extension 1 (NSW subjects)."
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "threshold": "Bachelor of Actuarial Studies: IB Diploma 43.0. This is the score that got an offer in 2026, a guide only. UNSW assumes knowledge of: Mathematics Extension 1 (NSW subjects)."
+    }
+  ]
+}

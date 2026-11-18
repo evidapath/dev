@@ -1,0 +1,127 @@
+{
+  "uni": "uk-warwick",
+  "slug": "mathematics",
+  "sources": {
+    "course": {
+      "url": "https://warwick.ac.uk/study/undergraduate/courses/bsc-mathematics/",
+      "page": "edb11f0acc6b",
+      "title": "Mathematics (BSc) | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "UCAS course code G100",
+        "Start date 27 September 2027",
+        "Department Mathematics Institute Duration 3 years full-time",
+        "A level typical offer A*A* in Maths and Further Maths, plus A in a third subject at A level",
+        "International Baccalaureate (IB) typical offer 39 with 6 in three Higher Level subjects to include Mathematics ('Analysis and Approaches' only)",
+        "This course requires: Band A",
+        "Warwick does not typically interview applicants.",
+        "Tuition fee £10,050 For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+        "All applicants will typically be required to take TMUA except for applicants who are eligible for a Contextual Offer",
+        "Grade 2 in STEP will be a requirement of offers to applicants who have not taken TMUA"
+      ]
+    },
+    "fees": {
+      "url": "https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/",
+      "page": "1099e435e96e",
+      "title": "Overseas fees | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Course UCAS code 2025-26 2026-27 2027-28",
+        "Mathematics (BSc) G100 Band 2 £33,520 £35,530 £37,310"
+      ]
+    },
+    "english": {
+      "url": "https://warwick.ac.uk/study/undergraduate/applying/english-language-requirements/",
+      "page": "43adba7a94bd",
+      "title": "English language requirements | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Band A 6.0 including minimum 5.5 in each component"
+      ]
+    }
+  },
+  "program": {
+    "name": "Mathematics",
+    "degree_type": "BSc",
+    "field": "Mathematics",
+    "faculty": "Mathematics Institute",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Mathematics BSc (UCAS G100), 3 years. TMUA typically required.",
+    "application_requirements": [
+      {
+        "name": "TMUA",
+        "description": "All applicants will typically be required to take TMUA (except those eligible for a Contextual Offer). Without TMUA, the offer requires grade 2 in STEP.",
+        "type": "standardized_test_score",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-home",
+      "note": "Home fee, 2027-28: £10,050 (Warwick course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 37310,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-international",
+      "note": "Overseas fee, 2027-28: £37,310 (Band 2, Warwick overseas fees table)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Mathematics: A*A* in Maths and Further Maths, plus A in a third subject at A level TMUA typically required.",
+      "required_subjects": [
+        "Mathematics",
+        "Further Mathematics"
+      ],
+      "tests": [
+        {
+          "name": "TMUA",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 6.0 including minimum 5.5 in each component (Warwick English Band A).",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Mathematics: IB 39 with 6 in three Higher Level subjects to include Mathematics ('Analysis and Approaches' only) TMUA typically required.",
+      "required_subjects": [
+        "Mathematics",
+        "Further Mathematics"
+      ],
+      "tests": [
+        {
+          "name": "TMUA",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 6.0 including minimum 5.5 in each component (Warwick English Band A).",
+        "source": "english"
+      }
+    }
+  ]
+}

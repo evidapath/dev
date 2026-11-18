@@ -1,0 +1,114 @@
+{
+  "uni": "uk-imperial",
+  "slug": "biochemistry",
+  "sources": {
+    "course": {
+      "url": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/biochemistry-bsc/",
+      "page": "8cf145b3980e",
+      "title": "Biochemistry BSc | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "Qualification BSc Duration 3 years Start date October 2027 UCAS course code C700",
+        "Delivered by Department of Life Sciences",
+        "A-levels Minimum entry standard AAA To include: A in Chemistry A in Biology, Mathematics or Physics A in a third subject",
+        "Minimum entry standard 38 points To include: 6 in Chemistry at higher level 6 in Biology, Mathematics or Physics at higher level",
+        "must achieve the higher university requirement",
+        "Home fee 2027 entry £10,050 per year",
+        "Overseas fee 2027 entry £47,800 per year",
+        "You must sit the Engineering and Science Admissions Test (ESAT) as part of the application process for this course.",
+        "you will need to sit three ESAT modules: Mathematics 1 Chemistry Biology"
+      ]
+    },
+    "english": {
+      "url": "https://www.imperial.ac.uk/study/apply/english-language/",
+      "page": "0004cdc8126c",
+      "title": "English language requirements | Imperial College London",
+      "organization": "Imperial College London",
+      "quotes": [
+        "IELTS - Academic (Test-Centre/UKVI SELT/Online) Standard Higher 6.5 overall (minimum 6.0 in all elements) 7.0 overall (minimum 6.5 in all elements)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biochemistry",
+    "degree_type": "BSc",
+    "field": "Biochemistry",
+    "faculty": "Department of Life Sciences",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Biochemistry BSc (UCAS C700), 3 years. ESAT also required.",
+    "application_requirements": [
+      {
+        "name": "ESAT",
+        "description": "Sit the Engineering and Science Admissions Test (ESAT): Mathematics 1, Chemistry and Biology modules.",
+        "type": "standardized_test_score",
+        "source": "course"
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-home",
+      "note": "Home fee, 2027 entry: £10,050 per year (Imperial course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 47800,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "living_from": "costProfile-uk-imperial-cost-meng-engineering-international",
+      "note": "Overseas fee, 2027 entry: £47,800 per year (Imperial course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Biochemistry: AAA, to include: A in Chemistry A in Biology, Mathematics or Physics A in a third subject ESAT also required.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Biochemistry: IB 38 points, to include: 6 in Chemistry at higher level 6 in Biology, Mathematics or Physics at higher level ESAT also required.",
+      "required_subjects": [
+        "Chemistry"
+      ],
+      "tests": [
+        {
+          "name": "ESAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 7.0 overall (minimum 6.5 in all elements): Imperial's higher level, required for this course.",
+        "source": "english"
+      }
+    }
+  ]
+}

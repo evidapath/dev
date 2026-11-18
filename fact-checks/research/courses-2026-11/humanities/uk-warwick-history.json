@@ -1,0 +1,106 @@
+{
+  "uni": "uk-warwick",
+  "slug": "history",
+  "sources": {
+    "course": {
+      "url": "https://warwick.ac.uk/study/undergraduate/courses/ba-history/",
+      "page": "2be4f44fabb4",
+      "title": "History (BA) | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "UCAS course code V100",
+        "Start date 27 September 2027",
+        "Department Department of History Duration 3 years full-time",
+        "A level typical offer AAA to include History.",
+        "International Baccalaureate (IB) typical offer 36 with at least a 6 in Higher Level History.",
+        "This course requires: Band B",
+        "Warwick does not typically interview applicants.",
+        "Tuition fee £10,050 For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050."
+      ]
+    },
+    "fees": {
+      "url": "https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/",
+      "page": "1099e435e96e",
+      "title": "Overseas fees | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Course UCAS code 2025-26 2026-27 2027-28",
+        "History (BA) V100 Band 1 £26,290 £27,870 £29,260"
+      ]
+    },
+    "english": {
+      "url": "https://warwick.ac.uk/study/undergraduate/applying/english-language-requirements/",
+      "page": "43adba7a94bd",
+      "title": "English language requirements | University of Warwick",
+      "organization": "University of Warwick",
+      "quotes": [
+        "Band B 6.5 including minimum 6.0 in each component"
+      ]
+    }
+  },
+  "program": {
+    "name": "History",
+    "degree_type": "BA",
+    "field": "History",
+    "faculty": "Department of History",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "History BA (UCAS V100), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-home",
+      "note": "Home fee, 2027-28: £10,050 (Warwick course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 29260,
+      "academic_year": "2027-28 (2027 entry)",
+      "source": "fees",
+      "living_from": "costProfile-uk-warwick-cost-bsc-cs-international",
+      "note": "Overseas fee, 2027-28: £29,260 (Band 1, Warwick overseas fees table)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "History: AAA to include History.",
+      "required_subjects": [
+        "History"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 6.5 including minimum 6.0 in each component (Warwick English Band B).",
+        "source": "english"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "History: IB 36 with at least a 6 in Higher Level History.",
+      "required_subjects": [
+        "History"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic 6.5 including minimum 6.0 in each component (Warwick English Band B).",
+        "source": "english"
+      }
+    }
+  ]
+}

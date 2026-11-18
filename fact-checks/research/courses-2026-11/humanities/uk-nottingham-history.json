@@ -1,0 +1,97 @@
+{
+  "uni": "uk-nottingham",
+  "slug": "history",
+  "sources": {
+    "course": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/History-BA-Hons.html",
+      "page": "0b564db49938",
+      "title": "History BA (Hons) | University of Nottingham",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "BA Hons UCAS Code V100",
+        "Duration 3 years full-time Location University Park Campus Select start date September 2027",
+        "The entrance requirements listed apply to 2027 entry.",
+        "A levels AAB IB 32 points overall",
+        "IELTS 6.5 (no less than 6.0 in any element)",
+        "GCSEs English grade 4 (C)."
+      ]
+    },
+    "coursedata": {
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/History-BA-Hons.html",
+      "page": "0b564db49938-raw",
+      "title": "History BA (Hons) | University of Nottingham (fee labels in the page)",
+      "organization": "University of Nottingham",
+      "quotes": [
+        "<span class=\"info-bar__list-link-label home-student-detail\"> £10,050 per year</span>",
+        "<span class=\"info-bar__list-link-label international-student-detail\"> £26,200 per year</span>"
+      ]
+    }
+  },
+  "program": {
+    "name": "History",
+    "degree_type": "BA (Hons)",
+    "field": "History",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "History BA (Hons) (UCAS V100), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-home",
+      "note": "Home fee for a September 2027 start: £10,050 per year (Nottingham course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 26200,
+      "academic_year": "2027 entry",
+      "source": [
+        "coursedata",
+        "course"
+      ],
+      "living_from": "costProfile-uk-nottingham-cost-beng-engineering-international",
+      "note": "International fee for a September 2027 start: £26,200 per year (Nottingham course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "History: A levels AAB. GCSEs: English grade 4 (C).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "History: IB 32 points overall.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS 6.5 (no less than 6.0 in any element).",
+        "source": "course"
+      }
+    }
+  ]
+}

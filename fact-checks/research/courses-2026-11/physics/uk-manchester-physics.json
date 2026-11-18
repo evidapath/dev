@@ -1,0 +1,87 @@
+{
+  "uni": "uk-manchester",
+  "slug": "physics",
+  "sources": {
+    "course": {
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00638/bsc-physics/",
+      "page": "cd8f176465c4",
+      "title": "BSc Physics (2027 entry) | The University of Manchester",
+      "organization": "The University of Manchester",
+      "quotes": [
+        "Duration: 3 years Year of entry: 2027 UCAS course code: F300 / Institution code: M20",
+        "A-level A*A*A, including A* in Physics and A* in Mathematics or Further Mathematics.",
+        "International Baccalaureate 38 points overall with 7,7,6 at Higher Level, including 7 in both Physics and Mathematics.",
+        "•IELTS Academic or IELTS UKVI 6.0 overall with no sub-skill below 5.5, or;",
+        "Tuition fees for home students will be £10,050 for the 2027/28 academic year.",
+        "Tuition fees for international students will be £40,300 for the 2027/28 academic year. For subsequent academic years, the University reserves the right to increase the tuition fee by up to 7% each year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Physics",
+    "degree_type": "BSc",
+    "field": "Physics",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "BSc Physics (UCAS F300), 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "home",
+      "currency": "GBP",
+      "tuition_annual": 10050,
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-home",
+      "note": "Home fee, 2027/28 (2027 entry): £10,050 a year (The University of Manchester course page)."
+    },
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "academic_year": "2027/28 (2027 entry)",
+      "source": "course",
+      "living_from": "costProfile-uk-manchester-cost-beng-mechanical-eng-international",
+      "tuition_annual": 40300,
+      "note": "International fee for 2027/28: £40,300. The University may raise it by up to 7% a year in later years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Physics: A*A*A, including A* in Physics and A* in Mathematics or Further Mathematics.",
+      "required_subjects": [
+        "Physics",
+        "Mathematics (or Further Mathematics)"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic or IELTS UKVI 6.0 overall with no sub-skill below 5.5.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Physics: IB 38 points overall with 7,7,6 at Higher Level, including 7 in both Physics and Mathematics.",
+      "required_subjects": [
+        "Physics",
+        "Mathematics (or Further Mathematics)"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or accepted equivalent)",
+        "min_score": "IELTS Academic or IELTS UKVI 6.0 overall with no sub-skill below 5.5.",
+        "source": "course"
+      }
+    }
+  ]
+}
