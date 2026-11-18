@@ -504,6 +504,17 @@ function pickProgram(
       if (matches.length) break;
     }
   }
+  // Several programmes can match (e.g. "Engineering" matches every branch). Show the one
+  // named or filed exactly as the subject first, then any that don't name another
+  // engineering branch, instead of whichever sorts first alphabetically.
+  const s = subject.trim().toLowerCase();
+  const rank = (p: ProgramView) =>
+    p.name.toLowerCase() === s || (p.fieldOfStudy ?? "").toLowerCase() === s
+      ? 0
+      : otherBranch(p.name, subject)
+        ? 2
+        : 1;
+  matches = [...matches].sort((a, b) => rank(a) - rank(b));
   return { program: matches[0] ?? progs[0] ?? null, matches: matches.map((p) => p.name) };
 }
 
