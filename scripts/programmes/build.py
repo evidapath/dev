@@ -75,9 +75,13 @@ def sanity(query: str):
     url = "https://jxwrtsiz.api.sanity.io/v2024-01-01/data/query/staging?" + urllib.parse.urlencode(
         {"query": query, "perspective": "raw"}
     )
-    out = subprocess.run(["curl", "-s", "-H", f"Authorization: Bearer {token}", url],
-                         capture_output=True, text=True, check=True).stdout
-    return json.loads(out)["result"]
+    # The token goes to curl on stdin (-H @-), never in its arguments: an argument list
+    # shows up in process listings and in tracebacks when a call fails.
+    r = subprocess.run(["curl", "-s", "-H", "@-", url], input=f"Authorization: Bearer {token}\n",
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        fail(f"Sanity query failed (curl exit {r.returncode}); try again")
+    return json.loads(r.stdout)["result"]
 
 
 def ref(_id: str, key: str | None = None):
