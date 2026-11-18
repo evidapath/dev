@@ -1,0 +1,147 @@
+{
+  "uni": "ca-ubc",
+  "slug": "ba-political-science",
+  "sources": {
+    "course": {
+      "url": "https://you.ubc.ca/programs/political-science-vancouver/",
+      "page": "f72ddf3d7319",
+      "title": "Political Science at UBC's Vancouver campus",
+      "organization": "The University of British Columbia",
+      "quotes": [
+        "Program length 4 years",
+        "Faculty Faculty of Arts",
+        "Degree Bachelor of Arts",
+        "Completed IB Diploma, including at least three Higher Level courses.",
+        "Degree-specific requirements: Arts No specific courses required beyond those needed for general admission"
+      ]
+    },
+    "uk": {
+      "url": "https://you.ubc.ca/programs/political-science-vancouver/",
+      "page": "ubc-political-science-uk",
+      "title": "Political Science at UBC's Vancouver campus (United Kingdom requirements)",
+      "organization": "The University of British Columbia",
+      "quotes": [
+        "Standing in at least six academic subject areas (GCSE, AS Levels, A Levels), including English, with at least three academic A Levels or six AS Levels.",
+        "A minimum grade of C in English Literature or English Language at the GCSE, AS, or A Level.",
+        "Degree-specific requirements: Arts No specific courses required beyond those needed for general admission"
+      ]
+    },
+    "us": {
+      "url": "https://you.ubc.ca/programs/political-science-vancouver/",
+      "page": "ubc-political-science-us",
+      "title": "Political Science at UBC's Vancouver campus (United States requirements)",
+      "organization": "The University of British Columbia",
+      "quotes": [
+        "Graduation from an academic or college preparation program at a US regionally accredited school.",
+        "English (composition/literature) to the senior level.",
+        "Three years of mathematics to the junior level.",
+        "A minimum grade of B- in an English course to at least the junior level.",
+        "Applicants who choose not to submit a standardized test score will not be disadvantaged.",
+        "Degree-specific requirements: Arts No specific courses required beyond those needed for general admission"
+      ]
+    },
+    "fees": {
+      "url": "https://vancouver.calendar.ubc.ca/fees/tuition-fees/undergraduate",
+      "page": "ff6d5ef77a2c",
+      "title": "Undergraduate tuition fees | UBC Vancouver Academic Calendar",
+      "organization": "The University of British Columbia",
+      "quotes": [
+        "International per-credit rate (commenced in 2026S or later)",
+        "Arts $1,717.68",
+        "For international undergraduate students starting their degree programs in the 2026/27 academic year, tuition will increase by no more than 3% each year for the subsequent four years or until graduation from their current degree program, whichever comes first.",
+        "Domestic per-credit rate",
+        "Arts $206.69"
+      ]
+    },
+    "credits": {
+      "url": "https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/faculty-arts/bachelor-arts/degree-requirements-students-who-enter-program-202425-or-later",
+      "page": "d2aa4d8e22cb",
+      "title": "Degree requirements | Bachelor of Arts | UBC Vancouver Academic Calendar",
+      "organization": "The University of British Columbia",
+      "quotes": [
+        "A minimum of 72 of the 120 credits required for the Bachelor of Arts degree program must be Arts credit"
+      ]
+    }
+  },
+  "program": {
+    "name": "Political Science",
+    "degree_type": "BA",
+    "field": "Politics",
+    "faculty": "Faculty of Arts",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Political Science, Bachelor of Arts (major or honours), Faculty of Arts, UBC Vancouver; 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CAD",
+      "tuition_per_credit": 1717.68,
+      "degree_credits": 120,
+      "academic_year": "2026/27 rate for students starting in 2026 (Arts CAD 1,717.68 per credit × 120 credits ÷ 4 years); 2027 starters' rate not yet published",
+      "source": [
+        "fees",
+        "credits",
+        "course"
+      ],
+      "fees_from": "costProfile-ca-ubc-cost-ba-economics-international",
+      "living_from": "costProfile-ca-ubc-cost-ba-economics-international",
+      "note": "International per-credit rate for Arts students starting in 2026/27: CAD 1,717.68. The degree needs 120 credits over 4 years, so this is the yearly average. Rises by no more than 3% a year after the first year."
+    },
+    {
+      "residency": "domestic",
+      "currency": "CAD",
+      "tuition_per_credit": 206.69,
+      "degree_credits": 120,
+      "academic_year": "2026/27 domestic rate (Arts CAD 206.69 per credit × 120 credits ÷ 4 years)",
+      "source": [
+        "fees",
+        "credits",
+        "course"
+      ],
+      "fees_from": "costProfile-ca-ubc-cost-ba-economics-domestic",
+      "living_from": "costProfile-ca-ubc-cost-ba-economics-domestic",
+      "note": "Domestic per-credit rate for Arts, 2026/27: CAD 206.69, over the degree's 120 credits and 4 years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "uk",
+      "threshold": "Political Science: at least six academic subjects (GCSE, AS, A-Level) including English, with at least three A-Levels (or six AS-Levels) and at least a C in English. Arts: no specific courses beyond general admission.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-ubc-admreq-ba-economics-ib"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Political Science: completed IB Diploma with at least three Higher Level courses. Arts: no specific courses beyond general admission.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-ubc-admreq-ba-economics-ib"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "us",
+      "threshold": "Political Science: a US diploma from a regionally accredited school, senior-level English, three years of maths and at least B- in English; SAT/ACT optional. Arts: no specific courses beyond general admission.",
+      "required_subjects": [
+        "English"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-ubc-admreq-ba-economics-ib"
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "uni": "us-cornell",
+  "slug": "government",
+  "sources": {
+    "course": {
+      "url": "https://courses.cornell.edu/programs/government-ba/",
+      "page": "0f9ace47e247",
+      "title": "Government (BA) | Cornell University Courses of Study",
+      "organization": "Cornell University",
+      "quotes": [
+        "Government (BA) College of Arts and Sciences Program Website"
+      ]
+    }
+  },
+  "program": {
+    "name": "Government",
+    "degree_type": "BA",
+    "field": "Politics",
+    "faculty": "College of Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Government (BA) in the College of Arts and Sciences (the same college as Economics).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-cornell-economics",
+    "quote": "Government (BA) College of Arts and Sciences Program Website",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

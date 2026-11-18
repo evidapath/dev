@@ -1,0 +1,49 @@
+{
+  "uni": "us-stanford",
+  "slug": "chemistry",
+  "sources": {
+    "course": {
+      "url": "https://bulletin.stanford.edu/programs/CHEM-BS",
+      "page": "290339c9df86",
+      "title": "CHEM-BS - Chemistry (BS) | Stanford Bulletin",
+      "organization": "Stanford University",
+      "quotes": [
+        "Chemistry School of Humanities & Sciences Major Minor Program Info About the Program Major: Bachelor of Science"
+      ]
+    },
+    "pol": {
+      "url": "https://bulletin.stanford.edu/academic-polices/degree-requirements/undergraduate-major",
+      "page": "bb90f314bec2",
+      "title": "Undergraduate Majors | Stanford Bulletin",
+      "organization": "Stanford University",
+      "quotes": [
+        "Undergraduates must select a major by the end of their sophomore year."
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemistry",
+    "degree_type": "BS",
+    "field": "Chemistry",
+    "faculty": "School of Humanities & Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Chemistry, Bachelor of Science (BS), School of Humanities & Sciences. Stanford undergraduates select a major by the end of sophomore year.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-stanford-economics",
+    "quote": "Undergraduates must select a major by the end of their sophomore year.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

@@ -1,0 +1,42 @@
+{
+  "uni": "us-harvard",
+  "slug": "philosophy",
+  "sources": {
+    "course": {
+      "url": "https://college.harvard.edu/academics/liberal-arts-sciences/concentrations",
+      "page": "4706502cf96b",
+      "title": "Concentrations | Harvard College",
+      "organization": "Harvard College",
+      "quotes": [
+        "At Harvard College, students choose a \"concentration,\" which is what we call a major.",
+        "Philosophy B.A. Arts and Humanities",
+        "Philosophy studies many of humanity’s fundamental questions: how should we live, what kind of society should we strive towards, what are the limits of human knowledge? What is truth? Justice? Beauty? These questions are central to our lives, because in much of what we do, we at least implicitly assume answers to them."
+      ]
+    }
+  },
+  "program": {
+    "name": "Philosophy",
+    "degree_type": "BA",
+    "field": "Philosophy",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Philosophy concentration (B.A.), Harvard College. The concentration (major) is chosen at Harvard College after admission.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-harvard-economics",
+    "quote": "At Harvard College, students choose a \"concentration,\" which is what we call a major.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

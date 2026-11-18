@@ -1,0 +1,40 @@
+{
+  "uni": "us-cornell",
+  "slug": "history",
+  "sources": {
+    "course": {
+      "url": "https://courses.cornell.edu/programs/history-ba/",
+      "page": "d76f9f43b935",
+      "title": "History (BA) | Cornell University Courses of Study",
+      "organization": "Cornell University",
+      "quotes": [
+        "History (BA) College of Arts and Sciences Program Website"
+      ]
+    }
+  },
+  "program": {
+    "name": "History",
+    "degree_type": "BA",
+    "field": "History",
+    "faculty": "College of Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "History (BA) in the College of Arts and Sciences (the same college as Economics).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-cornell-economics",
+    "quote": "History (BA) College of Arts and Sciences Program Website",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

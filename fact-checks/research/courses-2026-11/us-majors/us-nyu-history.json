@@ -1,0 +1,41 @@
+{
+  "uni": "us-nyu",
+  "slug": "history",
+  "sources": {
+    "course": {
+      "url": "https://bulletins.nyu.edu/undergraduate/arts-science/programs/history-ba/",
+      "page": "9750f9ed7830",
+      "title": "History (BA) | NYU Bulletins",
+      "organization": "New York University",
+      "quotes": [
+        "History (BA)",
+        "College of Arts and Science"
+      ]
+    }
+  },
+  "program": {
+    "name": "History",
+    "degree_type": "BA",
+    "field": "History",
+    "faculty": "College of Arts and Science",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "History (BA), College of Arts and Science (the same college as Economics).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-nyu-economics",
+    "quote": "College of Arts and Science",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

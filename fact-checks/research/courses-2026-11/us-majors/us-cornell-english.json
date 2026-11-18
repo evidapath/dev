@@ -1,0 +1,40 @@
+{
+  "uni": "us-cornell",
+  "slug": "english",
+  "sources": {
+    "course": {
+      "url": "https://courses.cornell.edu/programs/english-ba/",
+      "page": "2930eeeb33e7",
+      "title": "English (BA) | Cornell University Courses of Study",
+      "organization": "Cornell University",
+      "quotes": [
+        "English (BA) College of Arts and Sciences Program Website"
+      ]
+    }
+  },
+  "program": {
+    "name": "English",
+    "degree_type": "BA",
+    "field": "English",
+    "faculty": "College of Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "English (BA) in the College of Arts and Sciences (the same college as Economics).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-cornell-economics",
+    "quote": "English (BA) College of Arts and Sciences Program Website",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

@@ -1,0 +1,40 @@
+{
+  "uni": "us-cornell",
+  "slug": "physics",
+  "sources": {
+    "course": {
+      "url": "https://courses.cornell.edu/programs/physics-ba/",
+      "page": "734b4f8511a4",
+      "title": "Physics (BA) | Cornell University Courses of Study",
+      "organization": "Cornell University",
+      "quotes": [
+        "Physics (BA) College of Arts and Sciences Program Website"
+      ]
+    }
+  },
+  "program": {
+    "name": "Physics",
+    "degree_type": "BA",
+    "field": "Physics",
+    "faculty": "College of Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Physics (BA) in the College of Arts and Sciences (the same college as Economics).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-cornell-economics",
+    "quote": "Physics (BA) College of Arts and Sciences Program Website",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

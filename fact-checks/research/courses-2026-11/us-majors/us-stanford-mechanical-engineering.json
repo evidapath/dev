@@ -1,0 +1,49 @@
+{
+  "uni": "us-stanford",
+  "slug": "mechanical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://bulletin.stanford.edu/programs/ME-BS",
+      "page": "23f7815eac66",
+      "title": "ME-BS - Mechanical Engineering (BS) | Stanford Bulletin",
+      "organization": "Stanford University",
+      "quotes": [
+        "Mechanical Engineering School of Engineering Major Minor Program Info About the Program Major: Bachelor of Science"
+      ]
+    },
+    "pol": {
+      "url": "https://bulletin.stanford.edu/academic-polices/degree-requirements/undergraduate-major",
+      "page": "bb90f314bec2",
+      "title": "Undergraduate Majors | Stanford Bulletin",
+      "organization": "Stanford University",
+      "quotes": [
+        "Undergraduates must select a major by the end of their sophomore year."
+      ]
+    }
+  },
+  "program": {
+    "name": "Mechanical Engineering",
+    "degree_type": "BS",
+    "field": "Mechanical Engineering",
+    "faculty": "School of Engineering",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Mechanical Engineering, Bachelor of Science (BS), School of Engineering. Stanford undergraduates select a major by the end of sophomore year.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-stanford-economics",
+    "quote": "Undergraduates must select a major by the end of their sophomore year.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

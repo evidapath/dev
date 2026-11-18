@@ -1,0 +1,49 @@
+{
+  "uni": "us-mit",
+  "slug": "political-science-17",
+  "sources": {
+    "course": {
+      "url": "https://catalog.mit.edu/degree-charts/political-science-course-17/",
+      "page": "d303d390016d",
+      "title": "Political Science (Course 17) | MIT Course Catalog",
+      "organization": "Massachusetts Institute of Technology",
+      "quotes": [
+        "Political Science (SB, Course 17)"
+      ]
+    },
+    "reg": {
+      "url": "https://registrar.mit.edu/registration-academics/academic-requirements/majors-minors/declaring-major",
+      "page": "b39aefafe459",
+      "title": "Declaring a major | MIT Registrar's Office",
+      "organization": "MIT Registrar's Office",
+      "quotes": [
+        "Most students declare a major in the spring term of their first year at MIT. Those who do not must decide on a major by the end of their sophomore year."
+      ]
+    }
+  },
+  "program": {
+    "name": "Political Science",
+    "degree_type": "SB",
+    "field": "Politics",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Political Science (Course 17), Bachelor of Science (SB). MIT students declare a major in the first or second year.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-mit-econ-14-1",
+    "quote": "Most students declare a major in the spring term of their first year at MIT. Those who do not must decide on a major by the end of their sophomore year.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

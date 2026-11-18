@@ -1,0 +1,40 @@
+{
+  "uni": "us-cornell",
+  "slug": "mathematics",
+  "sources": {
+    "course": {
+      "url": "https://courses.cornell.edu/programs/mathematics-ba/",
+      "page": "c2061a7c9ad2",
+      "title": "Mathematics (BA) | Cornell University Courses of Study",
+      "organization": "Cornell University",
+      "quotes": [
+        "Mathematics (BA) College of Arts and Sciences Program Website"
+      ]
+    }
+  },
+  "program": {
+    "name": "Mathematics",
+    "degree_type": "BA",
+    "field": "Mathematics",
+    "faculty": "College of Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Mathematics (BA) in the College of Arts and Sciences (the same college as Economics).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-cornell-economics",
+    "quote": "Mathematics (BA) College of Arts and Sciences Program Website",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

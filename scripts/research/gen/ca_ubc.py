@@ -51,4 +51,37 @@ ubc("ba-psychology",PSY,"496ede999dfd","ubc-psy-uk","ubc-psy-us","Psychology","B
     "completed IB Diploma with at least three Higher Level courses. Arts: no specific courses beyond general admission.",
     [],[],
     "Psychology, Bachelor of Arts (major or honours), Faculty of Arts, UBC Vancouver; 4 years.")
+# More majors (2026-11-18): same faculty, so the same faculty-wide entry requirements, per-credit
+# rate and credit total as Biology (Science) or Psychology (Arts); each page carries those lines.
+import hashlib
+SCI=dict(fac="Faculty of Science",rate_label="Science",intl=1769.40,
+    credits=("https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/faculty-science/bachelor-science/general-degree-requirements","493caa4f9e34","General degree requirements | Bachelor of Science | UBC Vancouver Academic Calendar"),
+    credits_q="A major, combined major, double major, or General Science option requires a minimum of 120 credits but may require more.",
+    fi="costProfile-ca-ubc-cost-bsc-cs-international",fd="costProfile-ca-ubc-cost-bsc-cs-domestic",deg="Bachelor of Science",short="BSc")
+ARTS=dict(fac="Faculty of Arts",rate_label="Arts",intl=1717.68,
+    credits=("https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/faculty-arts/bachelor-arts/degree-requirements-students-who-enter-program-202425-or-later","d2aa4d8e22cb","Degree requirements | Bachelor of Arts | UBC Vancouver Academic Calendar"),
+    credits_q="A minimum of 72 of the 120 credits required for the Bachelor of Arts degree program must be Arts credit",
+    fi="costProfile-ca-ubc-cost-ba-economics-international",fd="costProfile-ca-ubc-cost-ba-economics-domestic",deg="Bachelor of Arts",short="BA")
+import json as _j
+_bio=_j.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../../../fact-checks/research/courses-2026-11/ca-majors/ca-ubc-bsc-biology.json")))
+_psy=_j.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../../../fact-checks/research/courses-2026-11/ca-majors/ca-ubc-ba-psychology.json")))
+def _extra(ref,src): return [q for q in ref["sources"][src]["quotes"] if q.startswith("Degree-specific requirements")]
+def _th(ref,cur): return next(a["threshold"] for a in ref["admissions"] if a["curriculum"]==cur).split(": ",1)[1]
+def _subj(ref,cur): return next(a["required_subjects"] for a in ref["admissions"] if a["curriculum"]==cur)
+for slug,path,key,name,field,F,ref in [
+    ("bsc-mathematics","mathematics-vancouver-bsc","mathematics","Mathematics","Mathematics",SCI,_bio),
+    ("bsc-physics","physics-vancouver","physics","Physics","Physics",SCI,_bio),
+    ("bsc-chemistry","chemistry-vancouver","chemistry","Chemistry","Chemistry",SCI,_bio),
+    ("ba-history","history-vancouver","history","History","History",ARTS,_psy),
+    # English: held; its page (static and browser) doesn't show the general IB requirement line.
+    ("ba-international-relations","international-relations-vancouver","international-relations","International Relations","International Relations",ARTS,_psy),
+    ("ba-philosophy","philosophy-vancouver","philosophy","Philosophy","Philosophy",ARTS,_psy),
+    ("ba-political-science","political-science-vancouver","political-science","Political Science","Politics",ARTS,_psy)]:
+    u=f"https://you.ubc.ca/programs/{path}/"
+    ubc(slug,u,hashlib.sha1(u.encode()).hexdigest()[:12],f"ubc-{key}-uk",f"ubc-{key}-us",name,F["deg"],field,F["fac"],F["rate_label"],F["intl"],206.69,
+        F["credits"],120,F["credits_q"],F["fi"],F["fd"],F["fi"],F["fd"],F["short"],
+        _extra(ref,"uk"),_extra(ref,"us"),[q for q in ref["sources"]["course"]["quotes"] if q.startswith("Degree-specific requirements")],
+        _th(ref,"a-level"),_th(ref,"us-hs"),_th(ref,"ib"),_subj(ref,"a-level"),_subj(ref,"ib"),
+        f"{name}, {F['deg']} (major or honours), {F['fac']}, UBC Vancouver; 4 years.")
+
 print("ok")

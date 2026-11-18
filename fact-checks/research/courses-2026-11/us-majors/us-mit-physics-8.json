@@ -1,0 +1,49 @@
+{
+  "uni": "us-mit",
+  "slug": "physics-8",
+  "sources": {
+    "course": {
+      "url": "https://catalog.mit.edu/degree-charts/physics-course-8/",
+      "page": "c9564cd91820",
+      "title": "Physics (Course 8) | MIT Course Catalog",
+      "organization": "Massachusetts Institute of Technology",
+      "quotes": [
+        "Physics (SB, Course 8)"
+      ]
+    },
+    "reg": {
+      "url": "https://registrar.mit.edu/registration-academics/academic-requirements/majors-minors/declaring-major",
+      "page": "b39aefafe459",
+      "title": "Declaring a major | MIT Registrar's Office",
+      "organization": "MIT Registrar's Office",
+      "quotes": [
+        "Most students declare a major in the spring term of their first year at MIT. Those who do not must decide on a major by the end of their sophomore year."
+      ]
+    }
+  },
+  "program": {
+    "name": "Physics",
+    "degree_type": "SB",
+    "field": "Physics",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Physics (Course 8), Bachelor of Science (SB). MIT students declare a major in the first or second year.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-mit-econ-14-1",
+    "quote": "Most students declare a major in the spring term of their first year at MIT. Those who do not must decide on a major by the end of their sophomore year.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

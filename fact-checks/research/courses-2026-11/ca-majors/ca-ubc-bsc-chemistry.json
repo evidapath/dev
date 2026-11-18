@@ -1,0 +1,152 @@
+{
+  "uni": "ca-ubc",
+  "slug": "bsc-chemistry",
+  "sources": {
+    "course": {
+      "url": "https://you.ubc.ca/programs/chemistry-vancouver/",
+      "page": "52a8a57bb519",
+      "title": "Chemistry at UBC's Vancouver campus",
+      "organization": "The University of British Columbia",
+      "quotes": [
+        "Program length 4 years",
+        "Faculty Faculty of Science",
+        "Degree Bachelor of Science",
+        "Completed IB Diploma, including at least three Higher Level courses.",
+        "Degree-specific requirements: Science IB Math Analysis and Approaches SL or HL, or IB Math Applications and Interpretations HL (IB Math Applications and Interpretations SL, or IB Math Studies, are not acceptable) One of IB Biology, IB Chemistry, or IB Physics"
+      ]
+    },
+    "uk": {
+      "url": "https://you.ubc.ca/programs/chemistry-vancouver/",
+      "page": "ubc-chemistry-uk",
+      "title": "Chemistry at UBC's Vancouver campus (United Kingdom requirements)",
+      "organization": "The University of British Columbia",
+      "quotes": [
+        "Standing in at least six academic subject areas (GCSE, AS Levels, A Levels), including English, with at least three academic A Levels or six AS Levels.",
+        "A minimum grade of C in English Literature or English Language at the GCSE, AS, or A Level.",
+        "Degree-specific requirements: Science Math (A or AS Level) Chemistry (GCSE) Physics (GCSE; may be waived with grades of A in A-Level Math and A-Level Chemistry)"
+      ]
+    },
+    "us": {
+      "url": "https://you.ubc.ca/programs/chemistry-vancouver/",
+      "page": "ubc-chemistry-us",
+      "title": "Chemistry at UBC's Vancouver campus (United States requirements)",
+      "organization": "The University of British Columbia",
+      "quotes": [
+        "Graduation from an academic or college preparation program at a US regionally accredited school.",
+        "English (composition/literature) to the senior level.",
+        "Three years of mathematics to the junior level.",
+        "A minimum grade of B- in an English course to at least the junior level.",
+        "Applicants who choose not to submit a standardized test score will not be disadvantaged.",
+        "Degree-specific requirements: Science Pre-Calculus (AP or high school Calculus is recommended if you’re pursuing a BSc) One year of Chemistry One year of Physics (may be waived with grades of A in Pre-Calculus Math and AP Chemistry)"
+      ]
+    },
+    "fees": {
+      "url": "https://vancouver.calendar.ubc.ca/fees/tuition-fees/undergraduate",
+      "page": "ff6d5ef77a2c",
+      "title": "Undergraduate tuition fees | UBC Vancouver Academic Calendar",
+      "organization": "The University of British Columbia",
+      "quotes": [
+        "International per-credit rate (commenced in 2026S or later)",
+        "Science $1,769.40",
+        "For international undergraduate students starting their degree programs in the 2026/27 academic year, tuition will increase by no more than 3% each year for the subsequent four years or until graduation from their current degree program, whichever comes first.",
+        "Domestic per-credit rate",
+        "Science $206.69"
+      ]
+    },
+    "credits": {
+      "url": "https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/faculty-science/bachelor-science/general-degree-requirements",
+      "page": "493caa4f9e34",
+      "title": "General degree requirements | Bachelor of Science | UBC Vancouver Academic Calendar",
+      "organization": "The University of British Columbia",
+      "quotes": [
+        "A major, combined major, double major, or General Science option requires a minimum of 120 credits but may require more."
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemistry",
+    "degree_type": "BSc",
+    "field": "Chemistry",
+    "faculty": "Faculty of Science",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Chemistry, Bachelor of Science (major or honours), Faculty of Science, UBC Vancouver; 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CAD",
+      "tuition_per_credit": 1769.4,
+      "degree_credits": 120,
+      "academic_year": "2026/27 rate for students starting in 2026 (Science CAD 1,769.40 per credit × 120 credits ÷ 4 years); 2027 starters' rate not yet published",
+      "source": [
+        "fees",
+        "credits",
+        "course"
+      ],
+      "fees_from": "costProfile-ca-ubc-cost-bsc-cs-international",
+      "living_from": "costProfile-ca-ubc-cost-bsc-cs-international",
+      "note": "International per-credit rate for Science students starting in 2026/27: CAD 1,769.40. The degree needs 120 credits over 4 years, so this is the yearly average. Rises by no more than 3% a year after the first year."
+    },
+    {
+      "residency": "domestic",
+      "currency": "CAD",
+      "tuition_per_credit": 206.69,
+      "degree_credits": 120,
+      "academic_year": "2026/27 domestic rate (Science CAD 206.69 per credit × 120 credits ÷ 4 years)",
+      "source": [
+        "fees",
+        "credits",
+        "course"
+      ],
+      "fees_from": "costProfile-ca-ubc-cost-bsc-cs-domestic",
+      "living_from": "costProfile-ca-ubc-cost-bsc-cs-domestic",
+      "note": "Domestic per-credit rate for Science, 2026/27: CAD 206.69, over the degree's 120 credits and 4 years."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "uk",
+      "threshold": "Chemistry: at least six academic subjects (GCSE, AS, A-Level) including English, with at least three A-Levels (or six AS-Levels) and at least a C in English. Science: Maths at A or AS Level, plus GCSE Chemistry and Physics (Physics may be waived with A grades in A-Level Maths and Chemistry).",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-ubc-admreq-ba-economics-ib"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Chemistry: completed IB Diploma with at least three Higher Level courses. Science: IB Maths Analysis and Approaches (SL or HL) or Applications and Interpretations HL, and one of IB Biology, Chemistry or Physics.",
+      "required_subjects": [
+        "Mathematics",
+        "Biology, Chemistry or Physics"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-ubc-admreq-ba-economics-ib"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "us",
+      "threshold": "Chemistry: a US diploma from a regionally accredited school, senior-level English, three years of maths and at least B- in English; SAT/ACT optional. Science: Pre-Calculus, a year of Chemistry and a year of Physics.",
+      "required_subjects": [
+        "English"
+      ],
+      "tests": [],
+      "english": {
+        "from_existing": "admissionsRequirement-ca-ubc-admreq-ba-economics-ib"
+      }
+    }
+  ]
+}

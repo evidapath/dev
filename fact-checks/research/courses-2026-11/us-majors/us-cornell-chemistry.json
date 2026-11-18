@@ -1,0 +1,40 @@
+{
+  "uni": "us-cornell",
+  "slug": "chemistry",
+  "sources": {
+    "course": {
+      "url": "https://courses.cornell.edu/programs/chemistry-ba/",
+      "page": "1c4661f4276f",
+      "title": "Chemistry (BA) | Cornell University Courses of Study",
+      "organization": "Cornell University",
+      "quotes": [
+        "Chemistry (BA) College of Arts and Sciences Program Website"
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemistry",
+    "degree_type": "BA",
+    "field": "Chemistry",
+    "faculty": "College of Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Chemistry (BA) in the College of Arts and Sciences (the same college as Economics).",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-cornell-economics",
+    "quote": "Chemistry (BA) College of Arts and Sciences Program Website",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

@@ -82,6 +82,30 @@ Not done yet (pages read, records not built):
   line in the usual place; several are dual awards). Each needs reading by hand.
 - Universiti Malaya: course pages plus the international fee PDF; not started this pass.
 
+### US and UBC majors, second batch (2026-11-18) → `pending/2026-11-18-us-ubc-majors.ndjson`
+
+Same-college reuse (admission and fee records of an existing programme in the same college,
+with a quote saying so). Generators: `scripts/research/gen/us_more.py`, `ca_ubc.py` (end).
+
+| University | Added | Held / not added |
+|---|---|---|
+| Harvard | Mathematics, Physics, Chemistry, Government, History, English, Philosophy (each tagged "B.A." on the concentrations page) | |
+| Penn (School of Arts & Sciences) | Mathematics, Physics, Chemistry, Biochemistry, Political Science, International Relations, History, English, Philosophy | |
+| MIT | Mathematics (18), Physics (8), Chemistry (5), Mechanical Engineering (2), Aerospace Engineering (16), Chemical Engineering (10), Political Science (17) | |
+| Stanford | Mathematics, Chemistry, Mechanical Engineering (BS) | Physics, Political Science, History, English: guessed bulletin addresses (PHYSICS-BS, POLISCI-BA, HISTORY-BA, ENGLISH-BA) returned 404 |
+| Cornell (College of Arts and Sciences) | Mathematics, Physics, Chemistry, Government, History, English (each page's header names the college) | |
+| NYU (College of Arts and Science) | Mathematics, Physics, Chemistry, Politics, History | English: bulletin address 404 |
+| UBC Vancouver | Mathematics, Physics, Chemistry (Faculty of Science, as Biology), History, International Relations, Philosophy, Political Science (Faculty of Arts, as Psychology). Each programme page and its UK and US requirement views carry the same faculty-wide lines | English: its page (static and in the browser) doesn't show the general IB requirement line; held |
+| Princeton | — | The concentrations page lists A.B. and B.S.E. concentrations together without saying which degree each leads to; not added until a department page can be quoted |
+
+Found on the way:
+- `build.py` and `q.py` passed the Sanity read token to curl as a command argument; when a
+  query failed on a network error, the traceback printed it. Fixed: the token now goes to
+  curl on stdin (`-H @-`) and a failed query prints only curl's exit code (negative-tested
+  with a dead proxy). Builder output otherwise unchanged (Birmingham rebuilt and diffed).
+- The simulator fetches live exchange rates, so USD figures move between runs; diffs above
+  compare everything except the USD column.
+
 Found on the way (to check, not changed):
 - `program-uk-birmingham-beng-engineering` is named Mechanical Engineering and points to the
   Mechanical page, but its summary still reads "BEng Engineering ... Disciplines: Mechanical,
