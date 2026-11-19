@@ -156,7 +156,15 @@ on one line, and checks the two rows agree. Fees are the 2027 indicative Year 1 
 
 Not added: Melbourne majors. Melbourne publishes the Bachelor of Science international fee as a
 range that depends on subjects chosen (the existing record stores the lowest), so a per-major fee
-would be a guess. Monash: not attempted this pass.
+would be a guess.
+
+### Purdue majors, and Monash blocked (2026-11-19) → `pending/2026-11-19-purdue.ndjson`
+
+| University | Added | Held / not added |
+|---|---|---|
+| Purdue, West Lafayette (`gen/us_purdue.py`) | Mathematics, Physics, Chemistry, Biology (BS, College of Science), History, English, Political Science, Philosophy (BA, College of Liberal Arts), Psychological Sciences (BS, College of Health and Human Sciences). Degree, college and minimum high-school coursework quoted from each admissions major page. Admission records are Purdue-wide (test scores, English) and reused from Computer Science; the fee is not copied from CS (CS pays a differential). Fee: Bursar 2026-2027 general Fall/Spring flat rate, international sub-total USD 32,104 (the generator checks this figure sits in the general block, before the first differential block). The Bursar lists differential fees only for CS/Data Science/Engineering, Daniels Business/BA Economics, Polytechnic, Veterinary Technology and Nursing | |
+| Monash (Clayton) | — | Course pages show a Cloudflare security check, in the browser too (not bypassed). Blocked |
+| Monash Malaysia | — | Course and fee pages show the same check. Blocked |
 
 Medicine not offered as a first degree (no record added): US universities (medicine is a
 graduate degree there), Warwick (graduate entry only).

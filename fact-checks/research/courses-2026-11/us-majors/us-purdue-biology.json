@@ -1,0 +1,66 @@
+{
+  "uni": "us-purdue",
+  "slug": "biology",
+  "sources": {
+    "course": {
+      "url": "https://admissions.purdue.edu/majors/biology/",
+      "page": "505197a28935",
+      "title": "Biology major – Purdue University",
+      "organization": "Purdue University",
+      "quotes": [
+        "Degree: Bachelor of Science Location(s): West Lafayette College/School: Science",
+        "You should pursue the most rigorous high school curriculum available to you.",
+        "stronger candidate for Purdue’s competitive admission process",
+        "Minimum high school coursework (many applicants exceed these minimums): Math – 4 years English – 4 years Lab science – 3 years Social studies – 3 years World language – 2 years",
+        "College of Science"
+      ]
+    },
+    "fees": {
+      "url": "https://www.purdue.edu/treasurer/finance/bursar-office/tuition/fee-rates-2026-2027/undergraduate-tuition-and-fees-2026-2027/",
+      "page": "5bb7507a1b3b",
+      "title": "Undergraduate Tuition and Fees — 2026-2027 - Finance | Purdue University",
+      "organization": "Purdue University Office of the Bursar",
+      "quotes": [
+        "Undergraduate Tuition and Fees — 2026-2027",
+        "Some undergraduate programs at Purdue have additional fees. Please review the chart carefully to select the program that fits your interest.",
+        "Fall/Spring – Flat Rate (8+ credit hours)",
+        "Indiana Resident Non-Resident International",
+        "International Student Tuition $ 1,655.00 $ 3,310.00 Sub-Total Tuition: $ 16,052.00 $ 32,104.00"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biology",
+    "degree_type": "BS",
+    "field": "Biology",
+    "faculty": "College of Science",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "Biology, Bachelor of Science, College of Science (West Lafayette). Minimum high school coursework: Math 4 years, English 4 years, lab science 3 years, social studies 3 years, world language 2 years.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-purdue-bscs",
+    "quote": "stronger candidate for Purdue’s competitive admission process",
+    "copy": [
+      "admissions"
+    ]
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 32104,
+      "academic_year": "2026-2027 (international, general flat rate; tuition sub-total includes required fees)",
+      "source": "fees",
+      "living_from": "costProfile-us-purdue-cost-bscs-international",
+      "note": "2026-2027 international, Fall/Spring flat rate (8+ credit hours), general rate: sub-total tuition USD 32,104 for the academic year, including the international student tuition (USD 3,310). This major is not in a programme with differential fees."
+    }
+  ],
+  "admissions": []
+}
