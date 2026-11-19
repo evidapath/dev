@@ -1,6 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
+import { PRIVACY_EMAIL } from "../lib/legal";
 import {
   UserCircle,
   Trash2,
@@ -188,6 +189,7 @@ function AccountPage() {
         <ul className="text-sm text-muted-foreground space-y-1.5 pl-1">
           {[
             "your profile / account",
+            "your Find My Path answers and saved universities",
             "applications",
             "offers",
             "uploaded offer / scholarship documents",
@@ -207,6 +209,19 @@ function AccountPage() {
           <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
           <span>This action cannot be undone.</span>
         </div>
+
+        <p className="text-xs text-muted-foreground">
+          Forms you sent us (such as the counseling waitlist or a course request) are kept
+          separately in our contact records. To delete those too, email{" "}
+          <a href={`mailto:${PRIVACY_EMAIL}`} className="underline">
+            {PRIVACY_EMAIL}
+          </a>
+          . See the{" "}
+          <Link to="/privacy" hash="delete-account" className="underline">
+            Privacy Policy
+          </Link>
+          .
+        </p>
 
         {/* Summary */}
         <div className="rounded-xl border border-border bg-background p-4">

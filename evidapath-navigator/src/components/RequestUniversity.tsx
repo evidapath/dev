@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { CheckCircle2, PlusCircle } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "./ui/button";
@@ -161,6 +162,14 @@ export function RequestUniversity({
       <Button type="submit" disabled={sending} className="text-sm">
         {sending ? "Sending…" : "Request it"}
       </Button>
+      <p className="text-[11px] text-muted-foreground">
+        What you send goes to the EvidaPath team. We use it only to decide what to add and tell you
+        when it's added. See our{" "}
+        <Link to="/privacy" className="underline hover:text-foreground">
+          Privacy Policy
+        </Link>
+        .
+      </p>
     </form>
   );
 }

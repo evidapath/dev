@@ -252,6 +252,14 @@ export function FeedbackPrompt() {
             <Button onClick={send} disabled={sending} className="mt-3 w-full text-sm">
               {sending ? "Sending…" : "Send"}
             </Button>
+            <p className="text-[11px] text-muted-foreground mt-2">
+              Answers go to the EvidaPath team. We use it only to improve the site and, if you give
+              your email, reply. See our{" "}
+              <Link to="/privacy" className="underline hover:text-foreground">
+                Privacy Policy
+              </Link>
+              .
+            </p>
           </>
         )}
 

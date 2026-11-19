@@ -13,10 +13,12 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AcademicReadinessRouteImport } from './routes/academic-readiness'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as AnalyzeRouteImport } from './routes/analyze'
+import { Route as AnswersRouteImport } from './routes/answers'
 import { Route as ApplicationsRouteImport } from './routes/applications'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as CompareRouteImport } from './routes/compare'
 import { Route as CompareOffersRouteImport } from './routes/compare-offers'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as DocumentsRouteImport } from './routes/documents'
@@ -26,8 +28,10 @@ import { Route as GuideRouteImport } from './routes/guide'
 import { Route as IntelligenceRouteImport } from './routes/intelligence'
 import { Route as OfferVaultRouteImport } from './routes/offer-vault'
 import { Route as PlanRouteImport } from './routes/plan'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ScholarshipsRouteImport } from './routes/scholarships'
 import { Route as SignInRouteImport } from './routes/sign-in'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as UniversitiesRouteImport } from './routes/universities'
 
 const IndexRoute = IndexRouteImport.update({
@@ -50,6 +54,11 @@ const AnalyzeRoute = AnalyzeRouteImport.update({
   path: '/analyze',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnswersRoute = AnswersRouteImport.update({
+  id: '/answers',
+  path: '/answers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApplicationsRoute = ApplicationsRouteImport.update({
   id: '/applications',
   path: '/applications',
@@ -68,6 +77,11 @@ const CompareRoute = CompareRouteImport.update({
 const CompareOffersRoute = CompareOffersRouteImport.update({
   id: '/compare-offers',
   path: '/compare-offers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -115,6 +129,11 @@ const PlanRoute = PlanRouteImport.update({
   path: '/plan',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ScholarshipsRoute = ScholarshipsRouteImport.update({
   id: '/scholarships',
   path: '/scholarships',
@@ -123,6 +142,11 @@ const ScholarshipsRoute = ScholarshipsRouteImport.update({
 const SignInRoute = SignInRouteImport.update({
   id: '/sign-in',
   path: '/sign-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const UniversitiesRoute = UniversitiesRouteImport.update({
@@ -136,10 +160,12 @@ export interface FileRoutesByFullPath {
   '/academic-readiness': typeof AcademicReadinessRoute
   '/account': typeof AccountRoute
   '/analyze': typeof AnalyzeRoute
+  '/answers': typeof AnswersRoute
   '/applications': typeof ApplicationsRoute
   '/careers': typeof CareersRoute
   '/compare': typeof CompareRoute
   '/compare-offers': typeof CompareOffersRoute
+  '/cookies': typeof CookiesRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
   '/documents': typeof DocumentsRoute
@@ -149,8 +175,10 @@ export interface FileRoutesByFullPath {
   '/intelligence': typeof IntelligenceRoute
   '/offer-vault': typeof OfferVaultRoute
   '/plan': typeof PlanRoute
+  '/privacy': typeof PrivacyRoute
   '/scholarships': typeof ScholarshipsRoute
   '/sign-in': typeof SignInRoute
+  '/terms': typeof TermsRoute
   '/universities': typeof UniversitiesRoute
 }
 export interface FileRoutesByTo {
@@ -158,10 +186,12 @@ export interface FileRoutesByTo {
   '/academic-readiness': typeof AcademicReadinessRoute
   '/account': typeof AccountRoute
   '/analyze': typeof AnalyzeRoute
+  '/answers': typeof AnswersRoute
   '/applications': typeof ApplicationsRoute
   '/careers': typeof CareersRoute
   '/compare': typeof CompareRoute
   '/compare-offers': typeof CompareOffersRoute
+  '/cookies': typeof CookiesRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
   '/documents': typeof DocumentsRoute
@@ -171,8 +201,10 @@ export interface FileRoutesByTo {
   '/intelligence': typeof IntelligenceRoute
   '/offer-vault': typeof OfferVaultRoute
   '/plan': typeof PlanRoute
+  '/privacy': typeof PrivacyRoute
   '/scholarships': typeof ScholarshipsRoute
   '/sign-in': typeof SignInRoute
+  '/terms': typeof TermsRoute
   '/universities': typeof UniversitiesRoute
 }
 export interface FileRoutesById {
@@ -181,10 +213,12 @@ export interface FileRoutesById {
   '/academic-readiness': typeof AcademicReadinessRoute
   '/account': typeof AccountRoute
   '/analyze': typeof AnalyzeRoute
+  '/answers': typeof AnswersRoute
   '/applications': typeof ApplicationsRoute
   '/careers': typeof CareersRoute
   '/compare': typeof CompareRoute
   '/compare-offers': typeof CompareOffersRoute
+  '/cookies': typeof CookiesRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
   '/documents': typeof DocumentsRoute
@@ -194,8 +228,10 @@ export interface FileRoutesById {
   '/intelligence': typeof IntelligenceRoute
   '/offer-vault': typeof OfferVaultRoute
   '/plan': typeof PlanRoute
+  '/privacy': typeof PrivacyRoute
   '/scholarships': typeof ScholarshipsRoute
   '/sign-in': typeof SignInRoute
+  '/terms': typeof TermsRoute
   '/universities': typeof UniversitiesRoute
 }
 export interface FileRouteTypes {
@@ -205,10 +241,12 @@ export interface FileRouteTypes {
     | '/academic-readiness'
     | '/account'
     | '/analyze'
+    | '/answers'
     | '/applications'
     | '/careers'
     | '/compare'
     | '/compare-offers'
+    | '/cookies'
     | '/dashboard'
     | '/discover'
     | '/documents'
@@ -218,8 +256,10 @@ export interface FileRouteTypes {
     | '/intelligence'
     | '/offer-vault'
     | '/plan'
+    | '/privacy'
     | '/scholarships'
     | '/sign-in'
+    | '/terms'
     | '/universities'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -227,10 +267,12 @@ export interface FileRouteTypes {
     | '/academic-readiness'
     | '/account'
     | '/analyze'
+    | '/answers'
     | '/applications'
     | '/careers'
     | '/compare'
     | '/compare-offers'
+    | '/cookies'
     | '/dashboard'
     | '/discover'
     | '/documents'
@@ -240,8 +282,10 @@ export interface FileRouteTypes {
     | '/intelligence'
     | '/offer-vault'
     | '/plan'
+    | '/privacy'
     | '/scholarships'
     | '/sign-in'
+    | '/terms'
     | '/universities'
   id:
     | '__root__'
@@ -249,10 +293,12 @@ export interface FileRouteTypes {
     | '/academic-readiness'
     | '/account'
     | '/analyze'
+    | '/answers'
     | '/applications'
     | '/careers'
     | '/compare'
     | '/compare-offers'
+    | '/cookies'
     | '/dashboard'
     | '/discover'
     | '/documents'
@@ -262,8 +308,10 @@ export interface FileRouteTypes {
     | '/intelligence'
     | '/offer-vault'
     | '/plan'
+    | '/privacy'
     | '/scholarships'
     | '/sign-in'
+    | '/terms'
     | '/universities'
   fileRoutesById: FileRoutesById
 }
@@ -272,10 +320,12 @@ export interface RootRouteChildren {
   AcademicReadinessRoute: typeof AcademicReadinessRoute
   AccountRoute: typeof AccountRoute
   AnalyzeRoute: typeof AnalyzeRoute
+  AnswersRoute: typeof AnswersRoute
   ApplicationsRoute: typeof ApplicationsRoute
   CareersRoute: typeof CareersRoute
   CompareRoute: typeof CompareRoute
   CompareOffersRoute: typeof CompareOffersRoute
+  CookiesRoute: typeof CookiesRoute
   DashboardRoute: typeof DashboardRoute
   DiscoverRoute: typeof DiscoverRoute
   DocumentsRoute: typeof DocumentsRoute
@@ -285,8 +335,10 @@ export interface RootRouteChildren {
   IntelligenceRoute: typeof IntelligenceRoute
   OfferVaultRoute: typeof OfferVaultRoute
   PlanRoute: typeof PlanRoute
+  PrivacyRoute: typeof PrivacyRoute
   ScholarshipsRoute: typeof ScholarshipsRoute
   SignInRoute: typeof SignInRoute
+  TermsRoute: typeof TermsRoute
   UniversitiesRoute: typeof UniversitiesRoute
 }
 
@@ -320,6 +372,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnalyzeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/answers': {
+      id: '/answers'
+      path: '/answers'
+      fullPath: '/answers'
+      preLoaderRoute: typeof AnswersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/applications': {
       id: '/applications'
       path: '/applications'
@@ -346,6 +405,13 @@ declare module '@tanstack/react-router' {
       path: '/compare-offers'
       fullPath: '/compare-offers'
       preLoaderRoute: typeof CompareOffersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -411,6 +477,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlanRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/scholarships': {
       id: '/scholarships'
       path: '/scholarships'
@@ -423,6 +496,13 @@ declare module '@tanstack/react-router' {
       path: '/sign-in'
       fullPath: '/sign-in'
       preLoaderRoute: typeof SignInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/universities': {
@@ -440,10 +520,12 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicReadinessRoute: AcademicReadinessRoute,
   AccountRoute: AccountRoute,
   AnalyzeRoute: AnalyzeRoute,
+  AnswersRoute: AnswersRoute,
   ApplicationsRoute: ApplicationsRoute,
   CareersRoute: CareersRoute,
   CompareRoute: CompareRoute,
   CompareOffersRoute: CompareOffersRoute,
+  CookiesRoute: CookiesRoute,
   DashboardRoute: DashboardRoute,
   DiscoverRoute: DiscoverRoute,
   DocumentsRoute: DocumentsRoute,
@@ -453,8 +535,10 @@ const rootRouteChildren: RootRouteChildren = {
   IntelligenceRoute: IntelligenceRoute,
   OfferVaultRoute: OfferVaultRoute,
   PlanRoute: PlanRoute,
+  PrivacyRoute: PrivacyRoute,
   ScholarshipsRoute: ScholarshipsRoute,
   SignInRoute: SignInRoute,
+  TermsRoute: TermsRoute,
   UniversitiesRoute: UniversitiesRoute,
 }
 export const routeTree = rootRouteImport

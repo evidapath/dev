@@ -67,6 +67,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/answers" className="hover:text-primary transition-colors">
+                  Questions answered
+                </Link>
+              </li>
+              <li>
                 <Link to="/intelligence" className="hover:text-primary transition-colors">
                   Intelligence
                 </Link>
@@ -124,13 +129,23 @@ export function Footer() {
         {/* Bottom Disclaimers */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} EvidaPath Intelligence. All rights reserved. An emerging
+            © {new Date().getFullYear()} EvidaPath. All rights reserved. An emerging
             decision-intelligence platform whose live datasets are currently being built and
             verified.
           </p>
           <div className="flex flex-wrap items-center gap-6">
-            <span className="hover:text-foreground cursor-pointer">Privacy & Data Security</span>
-            <span className="hover:text-foreground cursor-pointer">Terms</span>
+            <Link to="/privacy" className="hover:text-foreground">
+              Privacy
+            </Link>
+            <Link to="/terms" className="hover:text-foreground">
+              Terms
+            </Link>
+            <Link to="/cookies" className="hover:text-foreground">
+              Cookies
+            </Link>
+            <Link to="/privacy" hash="delete-account" className="hover:text-foreground">
+              Delete your data
+            </Link>
           </div>
         </div>
       </div>

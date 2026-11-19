@@ -45,6 +45,10 @@ to make the markup look complete; an unpublished figure is left out, not guessed
 - The out-of-date `/universities` description is rewritten.
 - AnswerThePublic: first three seeds run (UAE, English):
   `fact-checks/aeo/answerthepublic/2026-11-19-uae.md`.
+- `/answers`: the AnswerThePublic questions EvidaPath can answer (cost per country, cheapest in
+  Dubai, IB for Toronto/Warwick/Waterloo, UAEU English, SAT for AUS/Harvard/MIT, UAE scholarships),
+  built from verified records with each figure's source link and the record's own fee note;
+  `FAQPage` JSON-LD from the same text. In the footer and sitemap.
 - Still to do: per-university and per-programme pages, sitemap from Sanity, staging `noindex`,
   robots.txt AI-crawler choice and `llms.txt` (decisions for Subhan), question pages, Rich
   Results Test / validator.schema.org runs on the deployed page.

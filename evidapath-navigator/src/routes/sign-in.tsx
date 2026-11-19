@@ -16,6 +16,8 @@ import { Button } from "../components/ui/button";
 import { EvidaPathMark } from "../components/brand/EvidaPathLogo";
 import { getSupabaseBrowserClient } from "../lib/supabase-browser";
 import { useAuth } from "../components/AuthContext";
+import { submitGhlForm } from "../lib/ghl";
+import { ADULT_AGE, MIN_AGE } from "../lib/legal";
 
 export const Route = createFileRoute("/sign-in")({
   validateSearch: (
@@ -56,6 +58,8 @@ function SignInPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
+  const [age, setAge] = useState<AgeAnswer>({ group: "", parentEmail: "", agreed: false });
+  const ageProblem = mode === "signup" ? ageCheck(age, email) : null;
 
   // If an already-authenticated user lands on /sign-in (direct nav, back
   // button, or after an OAuth callback already resolved the session), bounce
@@ -90,16 +94,19 @@ function SignInPage() {
         await refresh();
         navigate({ to: postLoginDestination("signin") });
       } else if (mode === "signup") {
+        if (ageProblem) throw new Error(ageProblem);
         const { data, error: signUpError } = await supabase.auth.signUp({
           email,
           password,
           options: {
+            data: consentRecord(age),
             emailRedirectTo: `${window.location.origin}/sign-in?redirect=${encodeURIComponent(
               redirect ?? "/find-my-path",
             )}`,
           },
         });
         if (signUpError) throw signUpError;
+        await sendParentAgreement(age, email, "email sign-up");
         // If email confirmation is required, no session is returned.
         if (!data.session) {
           setInfo(
@@ -114,6 +121,9 @@ function SignInPage() {
         const { error: magicError } = await supabase.auth.signInWithOtp({
           email,
           options: {
+            // Magic links sign in existing accounts only; new accounts go through Sign Up,
+            // which has the age and parent-agreement check.
+            shouldCreateUser: false,
             emailRedirectTo: `${window.location.origin}/sign-in?redirect=${encodeURIComponent(
               redirect ?? "/dashboard",
             )}`,
@@ -143,8 +153,13 @@ function SignInPage() {
 
   async function handleGoogle() {
     setError(null);
+    if (ageProblem) {
+      setError(ageProblem);
+      return;
+    }
     setLoading(true);
     try {
+      if (mode === "signup") await sendParentAgreement(age, "", "Google sign-up");
       const supabase = getSupabaseBrowserClient();
       const { error: oauthError } = await supabase.auth.signInWithOAuth({
         provider: "google",
@@ -244,6 +259,8 @@ function SignInPage() {
               Back to sign in
             </button>
           )}
+
+          {mode === "signup" && <AgeConsent value={age} onChange={setAge} />}
 
           {/* Google OAuth — shown above email form on Sign In / Sign Up tabs.
               Always visible; Supabase returns an error if the provider is misconfigured. */}
@@ -388,6 +405,20 @@ function SignInPage() {
             </div>
           )}
 
+          {mode === "signin" && (
+            <p className="mt-4 text-[11px] text-muted-foreground text-center">
+              New here? Use Sign Up. By continuing you agree to our{" "}
+              <Link to="/terms" className="underline hover:text-foreground">
+                Terms
+              </Link>{" "}
+              and{" "}
+              <Link to="/privacy" className="underline hover:text-foreground">
+                Privacy Policy
+              </Link>
+              .
+            </p>
+          )}
+
           <div className="mt-6 pt-5 border-t border-border flex items-center gap-2 text-[11px] text-muted-foreground">
             <ShieldCheck className="w-3.5 h-3.5 text-primary shrink-0" />
             <span>
@@ -442,6 +473,151 @@ function SignInPage() {
   );
 }
 
+// ── Age and parent agreement (sign-up only) ────────────────────────────────────
+// Accounts are for 13+. Under-18s confirm a parent or guardian has agreed and give the
+// parent's email; the agreement is stored on the account and sent to the team (GHL) so
+// they can contact the parent. This is a declaration, not verified parental consent.
+
+type AgeGroup = "" | "under13" | "13-17" | "18+";
+interface AgeAnswer {
+  group: AgeGroup;
+  parentEmail: string;
+  agreed: boolean;
+}
+
+function ageCheck(a: AgeAnswer, studentEmail: string): string | null {
+  if (!a.group) return "Please tell us your age group.";
+  if (a.group === "under13")
+    return `You need to be at least ${MIN_AGE} to create an account. You can still use EvidaPath without one.`;
+  if (a.group === "13-17") {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(a.parentEmail.trim()))
+      return "Please enter your parent or guardian's email.";
+    if (studentEmail && a.parentEmail.trim().toLowerCase() === studentEmail.trim().toLowerCase())
+      return "Your parent or guardian's email must be different from yours.";
+    if (!a.agreed) return "Please confirm your parent or guardian has agreed.";
+    return null;
+  }
+  return a.agreed ? null : "Please agree to the Terms and Privacy Policy.";
+}
+
+function consentRecord(a: AgeAnswer) {
+  return {
+    age_group: a.group,
+    terms_accepted_at: new Date().toISOString(),
+    ...(a.group === "13-17"
+      ? { parent_email: a.parentEmail.trim(), parent_agreed_at: new Date().toISOString() }
+      : {}),
+  };
+}
+
+async function sendParentAgreement(a: AgeAnswer, studentEmail: string, via: string) {
+  if (a.group !== "13-17") return;
+  // The account is already created when this runs; a failed send is logged, not shown,
+  // because the agreement is also stored on the account (email sign-up).
+  await submitGhlForm("parent-agreement", "Parent / Guardian Agreement", {
+    email: { label: "Email Address", value: a.parentEmail.trim() },
+    student_email: { label: "Student Email", value: studentEmail },
+    age_group: { label: "Student Age Group", value: "13 to 17" },
+    agreement: {
+      label: "Agreement",
+      value: "Student confirmed a parent or guardian agreed to the Terms and Privacy Policy",
+    },
+    signup_method: { label: "Sign-up Method", value: via },
+  }).catch((err: Error) => console.error("[parent-agreement] GHL submit failed:", err));
+}
+
+function AgeConsent({ value, onChange }: { value: AgeAnswer; onChange: (a: AgeAnswer) => void }) {
+  const set = (p: Partial<AgeAnswer>) => onChange({ ...value, ...p });
+  const label = "block text-xs font-semibold uppercase text-muted-foreground mb-1.5";
+  const input =
+    "w-full h-10 px-3 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary";
+  return (
+    <fieldset className="mb-5 space-y-3 rounded-xl border border-border bg-secondary/30 p-4">
+      <legend className="sr-only">Age and agreement</legend>
+      <div>
+        <label htmlFor="age-group" className={label}>
+          How old are you?
+        </label>
+        <select
+          id="age-group"
+          value={value.group}
+          onChange={(e) => set({ group: e.target.value as AgeGroup, agreed: false })}
+          className={input}
+        >
+          <option value="">Choose…</option>
+          <option value="under13">Under {MIN_AGE}</option>
+          <option value="13-17">
+            {MIN_AGE} to {ADULT_AGE - 1}
+          </option>
+          <option value="18+">{ADULT_AGE} or older</option>
+        </select>
+      </div>
+      {value.group === "under13" && (
+        <p className="text-xs text-foreground">
+          You need to be at least {MIN_AGE} to create an account. You can still explore
+          universities, scholarships and Find My Path without one.
+        </p>
+      )}
+      {value.group === "13-17" && (
+        <>
+          <div>
+            <label htmlFor="parent-email" className={label}>
+              Parent or guardian's email
+            </label>
+            <input
+              id="parent-email"
+              type="email"
+              value={value.parentEmail}
+              onChange={(e) => set({ parentEmail: e.target.value })}
+              className={input}
+            />
+          </div>
+          <label className="flex items-start gap-2 text-xs text-foreground">
+            <input
+              type="checkbox"
+              checked={value.agreed}
+              onChange={(e) => set({ agreed: e.target.checked })}
+              className="mt-0.5"
+            />
+            <span>
+              My parent or guardian has read the{" "}
+              <Link to="/terms" target="_blank" className="underline">
+                Terms
+              </Link>{" "}
+              and{" "}
+              <Link to="/privacy" target="_blank" className="underline">
+                Privacy Policy
+              </Link>{" "}
+              and agrees to me using EvidaPath. EvidaPath may email them.
+            </span>
+          </label>
+        </>
+      )}
+      {value.group === "18+" && (
+        <label className="flex items-start gap-2 text-xs text-foreground">
+          <input
+            type="checkbox"
+            checked={value.agreed}
+            onChange={(e) => set({ agreed: e.target.checked })}
+            className="mt-0.5"
+          />
+          <span>
+            I agree to the{" "}
+            <Link to="/terms" target="_blank" className="underline">
+              Terms
+            </Link>{" "}
+            and have read the{" "}
+            <Link to="/privacy" target="_blank" className="underline">
+              Privacy Policy
+            </Link>
+            .
+          </span>
+        </label>
+      )}
+    </fieldset>
+  );
+}
+
 function humanizeAuthError(message: string): string {
   const lower = message.toLowerCase();
   if (lower.includes("invalid login credentials")) {
@@ -458,6 +634,9 @@ function humanizeAuthError(message: string): string {
   }
   if (lower.includes("rate limit")) {
     return "Too many attempts. Please wait a moment and try again.";
+  }
+  if (lower.includes("signups not allowed")) {
+    return "No account uses this email yet. Use Sign Up to create one.";
   }
   if (lower.includes("magic link") || lower.includes("otp")) {
     return "We couldn't send the link. Please try again in a moment.";

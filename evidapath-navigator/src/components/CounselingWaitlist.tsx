@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "./ui/button";
@@ -165,6 +166,14 @@ export function CounselingWaitlist({
       <Button type="submit" disabled={sending} className="text-sm">
         {sending ? "Joining…" : "Join the counseling waitlist"}
       </Button>
+      <p className="text-[11px] text-muted-foreground">
+        What you send goes to the EvidaPath team. We use it only to contact you about counseling.
+        See our{" "}
+        <Link to="/privacy" className="underline hover:text-foreground">
+          Privacy Policy
+        </Link>
+        .
+      </p>
     </form>
   );
 }

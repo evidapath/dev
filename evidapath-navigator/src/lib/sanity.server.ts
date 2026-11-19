@@ -113,7 +113,7 @@ interface SanityUniversity {
   scholarshipCount: number | null;
 }
 
-async function sanityQuery<T>(query: string): Promise<T> {
+export async function sanityQuery<T>(query: string): Promise<T> {
   // Secret: read from process.env ONLY (never import.meta.env), so it is never
   // serialized into the client bundle — same guard as SUPABASE_SERVICE_ROLE_KEY.
   const token = process.env["SANITY_READ_TOKEN"];
@@ -156,7 +156,7 @@ function testRequirement(r: string): string {
 
 // Rows the re-verification pass couldn't confirm are marked UNKNOWN; anything not
 // VERIFIED / SUPPORTED / VERIFIED_ABSENT is shown as "not checked yet".
-function notChecked(status: string | null | undefined): boolean {
+export function notChecked(status: string | null | undefined): boolean {
   return !status || !["VERIFIED", "SUPPORTED", "VERIFIED_ABSENT"].includes(status);
 }
 
@@ -331,7 +331,7 @@ function confidenceLabel(universityId: string, sanityVerified: boolean | null): 
 // Used both for each entry of programDetails[] and for the featured flat fields.
 // Classify a residency tier from its label, so the app can pick the fee that
 // applies to a given student (e.g. Malaysians at a Malaysian university).
-function tierKind(label: string): CostTier["kind"] {
+export function tierKind(label: string): CostTier["kind"] {
   if (/^home\b/i.test(label)) return "home";
   if (/domestic/i.test(label)) return "domestic";
   if (/EU\/EFTA|EU\/EEA \(|^EU\b/i.test(label) && !/non-EU/i.test(label)) return "eu";
