@@ -166,6 +166,46 @@ would be a guess.
 | Monash (Clayton) | — | Course pages show a Cloudflare security check, in the browser too (not bypassed). Blocked |
 | Monash Malaysia | — | Course and fee pages show the same check. Blocked |
 
+### NYU Abu Dhabi, Twente and Universiti Malaya (2026-11-19) → `pending/2026-11-19-nyuad-twente-um.ndjson`
+
+| University | Added | Held / not added |
+|---|---|---|
+| NYU Abu Dhabi (`gen/ae_nyuad.py`) | Mathematics, Physics, Chemistry, Biology, Mechanical, Civil and Electrical Engineering (BS); Political Science, History, Philosophy (BA). Degree from each NYU Bulletin page (NYU Abu Dhabi › Programs › …), matching NYUAD's rule (BA: Arts and Humanities, Social Science, Psychology; BS: Engineering, Science). Admission and fee records reused from Economics: "Students declare a major by the end of their second year." (graduation requirements page, read with its sections opened) | Psychology: the Bulletin page says "Psychology (BS)", NYUAD's page says Psychology majors earn the BA. Conflict, held |
+| Twente (`gen/nl_ut.py`) | Advanced Technology, Applied Mathematics, Applied Physics, Business Information Technology, Civil Engineering, Communication Science, Creative Technology, Electrical Engineering, Industrial Design Engineering, Industrial Engineering and Management (all BSc, 3 years, English). Required A-Level and IB subjects from the two shared "admission requirements per bachelor's programme" lists (September 2027 intake); fees from each programme's fee page: 2027-2028 non-EU €16,869 (Communication Science, an Alpha-Gamma programme, €12,652), EU €2,771 | Biomedical Engineering, Health Sciences, Technical Medicine: the lists require Dutch |
+| Universiti Malaya (`gen/my_um.py`) | Chemistry, Physics, Biochemistry, Actuarial Science, Business Administration, Finance, Architecture, Biomedical Science, English, History. A-Level and IB lines from each page's International tab only (the generator checks they come after the last "Malaysian citizen" block); fee from the page and the matching row of the 2025/2026 international fee structure, spread over the stated duration (several are 3.5 years) | Law: no international fee and no international IB line on its page. Mathematics, Pharmacy, Accounting, Dentistry, International & Strategic Studies: the course addresses tried return 404 |
+
+Builder change: a "published total ÷ years" fee formula may now divide by a decimal duration
+(3.5 years). Rebuilding the earlier formula records whose pages are cached (UNSW 9,
+Birmingham Dentistry) with the old and new builder gives identical output; a formula that
+divides by the wrong number of years is still refused (negative-tested with 60900/3 on a
+3.5-year programme).
+
+Site code change (`decision-engine.ts`, `pickProgram`): when a search falls back to a related subject
+(e.g. Economics → Business), a programme filed under that subject now comes before one that only has
+the word in its name. Without it, Twente's Economics and Accounting searches showed Business
+Information Technology instead of International Business Administration. Simulator: on current data
+the change alters nothing; with this batch it alters only those four Twente results. To check: an
+"Engineering" search at Twente now shows Advanced Technology (filed as Engineering) rather than
+Mechanical Engineering, because an exact field match comes first.
+
+Also tried, not added:
+- TU Delft (Earth, Climate and Technology; Nanobiology): requirements and study load read, but
+  Delft's fee page writes the BSc institutional rate as "€ 20.563" (dot as thousands separator) and
+  the programme fee pages show no figure; the builder reads 20.563, so nothing is built
+  (`gen/nl_delft.py` marked HELD).
+- McMaster (Chemical & Physical Sciences, Life Sciences, Mathematics & Statistics Gateways,
+  Humanities I): requirements (from the requirements tool, international applicant with British,
+  IB and US views) and 2026/2027 international tuition estimates (cost estimator: CAD 47,535.30
+  Science gateways, CAD 45,158.40 Humanities/Social Sciences; Computer Science returns the stored
+  CAD 56,232.60) were read and saved as `mcm-req-*` / `mcm-cost-*`, but no page read states the
+  programmes' length, so they are not built. Health Sciences also needs a supplementary
+  application.
+- Oxford, Melbourne: Cloudflare "Just a moment..." check. Alberta: CloudFront "Request blocked"
+  (403). Blocked, not bypassed.
+- Not attempted this pass: Cambridge (College fee issue above), Taylor's (pages saved, irregular),
+  HCT, Khalifa, Zayed, UAEU, RIT Dubai, Canadian University Dubai, Birmingham Dubai, and the German
+  universities.
+
 Medicine not offered as a first degree (no record added): US universities (medicine is a
 graduate degree there), Warwick (graduate entry only).
 

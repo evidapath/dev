@@ -221,8 +221,8 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                 if not re.fullmatch(r"[\d+*/(). ]+", f_):
                     fail(f"{where}: tuition_formula may only hold numbers and + * / ( )")
                 years = sum(int(x) for x in re.findall(r"(\d+)\*", f_))
-                total_over_years = re.fullmatch(r"\s*\d+\s*/\s*(\d+)\s*", f_)  # published total ÷ years
-                if total_over_years and int(total_over_years.group(1)) == p["duration_years"]:
+                total_over_years = re.fullmatch(r"\s*\d+\s*/\s*(\d+(?:\.\d+)?)\s*", f_)  # published total ÷ years (e.g. 3.5)
+                if total_over_years and float(total_over_years.group(1)) == p["duration_years"]:
                     years = p["duration_years"]
                 if years != p["duration_years"] or not f_.replace(" ", "").endswith(f"/{p['duration_years']}"):
                     fail(f"{where}: tuition_formula must cover all {p['duration_years']} years and divide by them")

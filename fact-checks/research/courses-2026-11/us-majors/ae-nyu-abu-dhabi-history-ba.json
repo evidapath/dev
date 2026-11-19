@@ -1,0 +1,52 @@
+{
+  "uni": "ae-nyu-abu-dhabi",
+  "slug": "history-ba",
+  "sources": {
+    "course": {
+      "url": "https://bulletins.nyu.edu/undergraduate/abu-dhabi/programs/history-ba/",
+      "page": "1d321d8afc7f",
+      "title": "History (BA) | NYU Bulletins",
+      "organization": "New York University",
+      "quotes": [
+        "History (BA) | NYU Bulletins",
+        "NYU Abu Dhabi › Programs › History (BA)"
+      ]
+    },
+    "grad": {
+      "url": "https://nyuad.nyu.edu/en/about/administration-and-governance/graduation-requirements-undergraduate.html",
+      "page": "37148e4c3ab2",
+      "title": "Graduation Requirements for Undergraduates | NYU Abu Dhabi",
+      "organization": "NYU Abu Dhabi",
+      "quotes": [
+        "Students declare a major by the end of their second year.",
+        "Students who major in the Arts and Humanities, Social Science, and Psychology, and who complete all the degree and other graduation requirements earn the BA degree.",
+        "The BS degree is awarded to students who major in Engineering or Science (except Psychology) and who complete all the degree and other graduation requirements."
+      ]
+    }
+  },
+  "program": {
+    "name": "History",
+    "degree_type": "BA",
+    "field": "History",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "",
+    "source": "course",
+    "summary": "History (BA), NYU Abu Dhabi. Students are admitted to NYUAD and declare a major by the end of their second year.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-ae-nyu-abu-dhabi-ba-economics",
+    "quote": "Students declare a major by the end of their second year.",
+    "copy": [
+      "admissions",
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

@@ -498,9 +498,13 @@ function pickProgram(
   if (!matches.length) {
     const related = RELATED.find(([re]) => re.test(subject))?.[1] ?? [];
     for (const term of related) {
-      matches = find(term).filter(
-        (p) => !/engineer|electr/i.test(term) || !otherBranch(p.name, subject),
-      );
+      // Prefer a programme filed under the related subject over one that only has the
+      // word in its name (e.g. "Business" field, not "Business Information Technology").
+      const filed = (p: ProgramView) =>
+        matchesSubject({ ...u, programs: [p.fieldOfStudy] } as University, term) ? 0 : 1;
+      matches = find(term)
+        .filter((p) => !/engineer|electr/i.test(term) || !otherBranch(p.name, subject))
+        .sort((a, b) => filed(a) - filed(b));
       if (matches.length) break;
     }
   }

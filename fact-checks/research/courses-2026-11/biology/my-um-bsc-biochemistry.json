@@ -1,0 +1,86 @@
+{
+  "uni": "my-um",
+  "slug": "bsc-biochemistry",
+  "sources": {
+    "course": {
+      "url": "https://study.um.edu.my/bachelor-of-science-in-biochemistry",
+      "page": "724c51df1b08",
+      "title": "BACHELOR OF SCIENCE IN BIOCHEMISTRY",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Duration: 4 Years (8 Semester)",
+        "International RM 70,600 ( Note: Not inclusive of 6% Sales and Service Tax (SST))",
+        "Entry Requirement Local International",
+        "GCE A-Level qualification Obtain a minimum of grade B in the following subjects: Biology, Chemistry",
+        "International Baccalaureate (IB) Obtain a minimum score of 30 points Obtain at least Grade 5 (HL) / 6 (SL) in the following subjects: Biology, Chemistry",
+        "MUET 4.0 IELTS (Academic) 5.5 TOEFL iBT (Centre-based) 46"
+      ]
+    },
+    "fees": {
+      "url": "https://study.um.edu.my/doc/tution-fee/Fee%20Structure,%20UG,%20International%20-%20Updated%2022%20Oct%202025.pdf",
+      "page": "um-fee",
+      "title": "Fee structure, Bachelor programme (international), Universiti Malaya (PDF)",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Bachelor of Science in Biochemistry 70,600.00",
+        "3) Fees structure is based on minimum or common period of study.",
+        "Academic session 2025/2026"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biochemistry",
+    "degree_type": "BSc",
+    "field": "Biochemistry",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "course",
+    "summary": "BACHELOR OF SCIENCE IN BIOCHEMISTRY, 4 Years (8 Semester).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_formula": "70600/4",
+      "academic_year": "2025/2026 fee structure",
+      "source": [
+        "fees",
+        "course"
+      ],
+      "living_from": "costProfile-my-um-cost-bsc-cs-international",
+      "note": "International: RM 70,600 for the programme (UM's fee structure is based on the minimum period of study, 4 years), shown spread over 4 years. Not inclusive of 6% Sales and Service Tax (SST)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 5.5, MUET 4.0 or TOEFL iBT (centre-based) 46.",
+        "source": "course"
+      },
+      "threshold": "Biochemistry (international applicants): GCE A-Level: Obtain a minimum of grade B in the following subjects: Biology, Chemistry"
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 5.5, MUET 4.0 or TOEFL iBT (centre-based) 46.",
+        "source": "course"
+      },
+      "threshold": "Biochemistry (international applicants): IB: Obtain a minimum score of 30 points Obtain at least Grade 5 (HL) / 6 (SL) in the following subjects: Biology, Chemistry"
+    }
+  ]
+}

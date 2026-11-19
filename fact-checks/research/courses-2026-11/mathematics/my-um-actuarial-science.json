@@ -1,0 +1,86 @@
+{
+  "uni": "my-um",
+  "slug": "actuarial-science",
+  "sources": {
+    "course": {
+      "url": "https://study.um.edu.my/bachelor-of-actuarial-science",
+      "page": "a9a376b490ae",
+      "title": "BACHELOR OF ACTUARIAL SCIENCE",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Duration: 4 Years (8 Semester)",
+        "International RM 78,400 ( Note: Not inclusive of 6% Sales and Service Tax (SST))",
+        "Entry Requirement Local International",
+        "GCE A-Level qualification Obtain a minimum of grade B in Mathematics/Further Mathematics Obtain a minimum of grade B in any ONE (1) of the following subjects: Biology / Physics / Chemistry / Mathematics / Further Mathematics",
+        "International Baccalaureate (IB) Obtain a minimum score of 34 points Obtain at least Grade 5 (HL) / 6 (SL) in Mathematics/Further Mathematics Obtain at least Grade 5 (HL) / 6 (SL) in any ONE (1) of the following subjects: Biology / Physics / Chemistry / Mathematics / Further Mathematics",
+        "MUET 4.0 IELTS (Academic) 5.5 TOEFL iBT (Centre-based) 46"
+      ]
+    },
+    "fees": {
+      "url": "https://study.um.edu.my/doc/tution-fee/Fee%20Structure,%20UG,%20International%20-%20Updated%2022%20Oct%202025.pdf",
+      "page": "um-fee",
+      "title": "Fee structure, Bachelor programme (international), Universiti Malaya (PDF)",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Bachelor of Actuarial Science 78,400.00",
+        "3) Fees structure is based on minimum or common period of study.",
+        "Academic session 2025/2026"
+      ]
+    }
+  },
+  "program": {
+    "name": "Actuarial Science",
+    "degree_type": "Bachelor",
+    "field": "Actuarial Studies",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "course",
+    "summary": "BACHELOR OF ACTUARIAL SCIENCE, 4 Years (8 Semester).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_formula": "78400/4",
+      "academic_year": "2025/2026 fee structure",
+      "source": [
+        "fees",
+        "course"
+      ],
+      "living_from": "costProfile-my-um-cost-bsc-cs-international",
+      "note": "International: RM 78,400 for the programme (UM's fee structure is based on the minimum period of study, 4 years), shown spread over 4 years. Not inclusive of 6% Sales and Service Tax (SST)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 5.5, MUET 4.0 or TOEFL iBT (centre-based) 46.",
+        "source": "course"
+      },
+      "threshold": "Actuarial Science (international applicants): GCE A-Level: Obtain a minimum of grade B in Mathematics/Further Mathematics Obtain a minimum of grade B in any ONE (1) of the following subjects: Biology / Physics / Chemistry / Mathematics / Further Mathematics"
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 5.5, MUET 4.0 or TOEFL iBT (centre-based) 46.",
+        "source": "course"
+      },
+      "threshold": "Actuarial Science (international applicants): IB: Obtain a minimum score of 34 points Obtain at least Grade 5 (HL) / 6 (SL) in Mathematics/Further Mathematics Obtain at least Grade 5 (HL) / 6 (SL) in any ONE (1) of the following subjects: Biology / Physics / Chemistry / Mathematics / Further Mathematics"
+    }
+  ]
+}

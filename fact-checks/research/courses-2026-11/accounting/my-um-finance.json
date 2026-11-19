@@ -1,0 +1,86 @@
+{
+  "uni": "my-um",
+  "slug": "finance",
+  "sources": {
+    "course": {
+      "url": "https://study.um.edu.my/bachelor-of-finance",
+      "page": "9229e27b2ee9",
+      "title": "BACHELOR OF FINANCE",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Duration: 3.5 Years (7 Semester)",
+        "International RM 84,100 ( Note: Not inclusive of 6% Sales and Service Tax (SST))",
+        "Entry Requirement Local International",
+        "GCE A-Level Qualification Obtain a minimum of grade B in any TWO (2) subjects: Accounting/Mathematics/Economics/Business Studies/Physics/Chemistry",
+        "International Baccalaureate (IB) Obtain a minimum score of 30 points Obtain a minimum of grade 5 (HL) / 6 (SL) in any TWO (2) subjects: Mathematics/Economics/Business Studies/Physics/Chemistry",
+        "MUET 4.0 IELTS (Academic) 6.0 TOEFL iBT (Centre-based) 60"
+      ]
+    },
+    "fees": {
+      "url": "https://study.um.edu.my/doc/tution-fee/Fee%20Structure,%20UG,%20International%20-%20Updated%2022%20Oct%202025.pdf",
+      "page": "um-fee",
+      "title": "Fee structure, Bachelor programme (international), Universiti Malaya (PDF)",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Bachelor of Finance 84,100.00",
+        "3) Fees structure is based on minimum or common period of study.",
+        "Academic session 2025/2026"
+      ]
+    }
+  },
+  "program": {
+    "name": "Finance",
+    "degree_type": "Bachelor",
+    "field": "Accounting and Finance",
+    "faculty": "",
+    "duration_years": 3.5,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "course",
+    "summary": "BACHELOR OF FINANCE, 3.5 Years (7 Semester).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_formula": "84100/3.5",
+      "academic_year": "2025/2026 fee structure",
+      "source": [
+        "fees",
+        "course"
+      ],
+      "living_from": "costProfile-my-um-cost-bsc-cs-international",
+      "note": "International: RM 84,100 for the programme (UM's fee structure is based on the minimum period of study, 3.5 years), shown spread over 3.5 years. Not inclusive of 6% Sales and Service Tax (SST)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 6.0, MUET 4.0 or TOEFL iBT (centre-based) 60.",
+        "source": "course"
+      },
+      "threshold": "Finance (international applicants): GCE A-Level: Obtain a minimum of grade B in any TWO (2) subjects: Accounting/Mathematics/Economics/Business Studies/Physics/Chemistry"
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 6.0, MUET 4.0 or TOEFL iBT (centre-based) 60.",
+        "source": "course"
+      },
+      "threshold": "Finance (international applicants): IB: Obtain a minimum score of 30 points Obtain a minimum of grade 5 (HL) / 6 (SL) in any TWO (2) subjects: Mathematics/Economics/Business Studies/Physics/Chemistry"
+    }
+  ]
+}

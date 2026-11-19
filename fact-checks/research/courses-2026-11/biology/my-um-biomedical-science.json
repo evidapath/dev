@@ -1,0 +1,86 @@
+{
+  "uni": "my-um",
+  "slug": "biomedical-science",
+  "sources": {
+    "course": {
+      "url": "https://study.um.edu.my/bachelor-of-biomedical-science",
+      "page": "9d564bd537e7",
+      "title": "BACHELOR OF BIOMEDICAL SCIENCE",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Duration: 4 Years (8 semester)",
+        "International RM 149,200 ( Note: Not inclusive of 6% Sales and Service Tax (SST))",
+        "Entry Requirement Local International",
+        "GCE A-Level with a minimum of ABB in THREE (3) of the following subjects: Obtain a minimum grade of the following subjects: (Biology: A / B) & (Chemistry: A / B) Obtain a minimum grade in any ONE (1) subject: (Physics: A / B) or (Mathematics: A / B)",
+        "International Baccalaureate (IB) Obtained a minimum score of 34 points with a minimum score of 6 (HL) in ONE (1) subject and 5 (HL) / 6 (SL) in TWO (2) subjects of the following subjects: Obtain a minimum grade of the following subjects: [Biology: 5 (HL) / 6 (SL)] & [Chemistry: 5 (HL) / 6 (SL)] Obtain a minimum grade in any ONE (1) subject: [Physics: 5 (HL) / 6 (SL)] or [Mathematics: 5 (HL) / 6 (SL)]",
+        "MUET 4.0 IELTS (Academic) 6.0 TOEFL iBT (Centre-based) 60"
+      ]
+    },
+    "fees": {
+      "url": "https://study.um.edu.my/doc/tution-fee/Fee%20Structure,%20UG,%20International%20-%20Updated%2022%20Oct%202025.pdf",
+      "page": "um-fee",
+      "title": "Fee structure, Bachelor programme (international), Universiti Malaya (PDF)",
+      "organization": "Universiti Malaya",
+      "quotes": [
+        "Bachelor of Biomedical Science 149,200.00",
+        "3) Fees structure is based on minimum or common period of study.",
+        "Academic session 2025/2026"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biomedical Science",
+    "degree_type": "Bachelor",
+    "field": "Biomedical Science",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "course",
+    "summary": "BACHELOR OF BIOMEDICAL SCIENCE, 4 Years (8 semester).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_formula": "149200/4",
+      "academic_year": "2025/2026 fee structure",
+      "source": [
+        "fees",
+        "course"
+      ],
+      "living_from": "costProfile-my-um-cost-bsc-cs-international",
+      "note": "International: RM 149,200 for the programme (UM's fee structure is based on the minimum period of study, 4 years), shown spread over 4 years. Not inclusive of 6% Sales and Service Tax (SST)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 6.0, MUET 4.0 or TOEFL iBT (centre-based) 60.",
+        "source": "course"
+      },
+      "threshold": "Biomedical Science (international applicants): GCE A-Level: with a minimum of ABB in THREE (3) of the following subjects: Obtain a minimum grade of the following subjects: (Biology: A / B) & (Chemistry: A / B) Obtain a minimum grade in any ONE (1) subject: (Physics: A / B) or (Mathematics: A / B)"
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or MUET / TOEFL iBT)",
+        "min_score": "IELTS (Academic) 6.0, MUET 4.0 or TOEFL iBT (centre-based) 60.",
+        "source": "course"
+      },
+      "threshold": "Biomedical Science (international applicants): IB: Obtained a minimum score of 34 points with a minimum score of 6 (HL) in ONE (1) subject and 5 (HL) / 6 (SL) in TWO (2) subjects of the following subjects: Obtain a minimum grade of the following subjects: [Biology: 5 (HL) / 6 (SL)] & [Chemistry: 5 (HL) / 6 (SL)] Obtain a minimum grade in any ONE (1) subject: [Physics: 5 (HL) / 6 (SL)] or [Mathematics: 5 (HL) / 6 (SL)]"
+    }
+  ]
+}
