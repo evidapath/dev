@@ -37,6 +37,7 @@ import { BUDGET_MAX, BUDGET_MIN } from "../lib/budget";
 import { getProfile, upsertProfile } from "../lib/profile.functions";
 import { useAuth } from "../components/AuthContext";
 import { CounselingWaitlist } from "../components/CounselingWaitlist";
+import { RequestUniversity } from "../components/RequestUniversity";
 import type { Scholarship, University } from "../lib/mock-data";
 import { DataStatus } from "../components/DataStatus";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
@@ -422,6 +423,8 @@ function FindMyPathPage() {
             </Button>
           </div>
         </div>
+
+        <RequestUniversity source="Find My Path results" />
 
         <div id="counseling" className="scroll-mt-24" />
         <CounselingWaitlist

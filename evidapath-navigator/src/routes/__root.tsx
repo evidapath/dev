@@ -156,6 +156,7 @@ function RootShell({ children }: { children: ReactNode }) {
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { PendingSavesSync } from "../components/PendingSavesSync";
+import { FeedbackPrompt } from "../components/FeedbackPrompt";
 import { cachedSession, rememberSession } from "../lib/session-cache";
 
 function RootComponent() {
@@ -173,6 +174,7 @@ function RootComponent() {
           </main>
           <Footer />
         </div>
+        <FeedbackPrompt />
       </AuthContextProvider>
     </QueryClientProvider>
   );

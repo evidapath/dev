@@ -7,6 +7,7 @@ import { GraduationCap, Search, ShieldCheck } from "lucide-react";
 import type { University } from "../lib/mock-data";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { UniversityCard, UniversityCardSkeleton } from "../components/UniversityCard";
+import { RequestUniversity } from "../components/RequestUniversity";
 
 export const Route = createFileRoute("/universities")({
   head: () => ({
@@ -173,7 +174,11 @@ function UniversitiesDirectoryPage() {
         </div>
       ) : filtered.length === 0 ? (
         <p className="text-sm text-muted-foreground animate-in fade-in duration-300">
-          No universities match your search.
+          No universities match your search.{" "}
+          <a href="#request-university" className="font-semibold text-primary hover:underline">
+            Ask us to add it
+          </a>
+          .
         </p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -184,6 +189,12 @@ function UniversitiesDirectoryPage() {
       )}
       {!loading && (
         <ShowMore remaining={paged.remaining} onClick={paged.showMore} noun="universities" />
+      )}
+      {!loading && (
+        <RequestUniversity
+          source="Universities page"
+          defaultUniversity={filtered.length === 0 ? query : ""}
+        />
       )}
     </div>
   );

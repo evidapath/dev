@@ -5,6 +5,8 @@ Sciences and Architecture to the 53 universities, from each university's own
 pages. Nothing goes to Sanity until it's built into
 `fact-checks/pending/*.ndjson` and applied by hand.
 
+What's left to do, by university: `REMAINING.md`.
+
 ## How a programme gets in
 
 1. Read the official page with `scripts/research/fetch.sh <url>` (or

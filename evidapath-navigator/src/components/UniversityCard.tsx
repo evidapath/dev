@@ -15,6 +15,7 @@ import type { University } from "../lib/mock-data";
 import { formatCost, NOT_PUBLISHED } from "../lib/format";
 import { AdmissionsPanel } from "./AdmissionsPanel";
 import { CardScholarships } from "./CardScholarships";
+import { SearchSelect } from "./SearchSelect";
 
 // Skeleton placeholder shown while verified data loads — keeps the grid layout
 // stable (no pop-in / layout shift) and signals progress with a gentle pulse.
@@ -153,21 +154,19 @@ export function UniversityCard({ univ, index = 0 }: { univ: University; index?: 
         {/* Program selector (only when the university has more than one program) */}
         {details && details.length > 1 && (
           <div>
-            <label className="block text-[11px] font-medium text-muted-foreground mb-1">
-              Program
-            </label>
-            <select
-              value={sel}
-              onChange={(e) => setSel(Number(e.target.value))}
+            <p className="block text-[11px] font-medium text-muted-foreground mb-1">Program</p>
+            <SearchSelect
+              aria-label={`Program at ${univ.name}`}
+              value={String(sel)}
+              onChange={(v) => setSel(Number(v))}
+              searchPlaceholder="Type a subject, e.g. Physics"
+              options={details.map((p, i) => ({
+                value: String(i),
+                label: `${p.name}${p.degree ? ` (${p.degree})` : ""}`,
+                keywords: [p.fieldOfStudy],
+              }))}
               className="w-full h-9 px-2 rounded-lg border border-input bg-background text-xs text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
-            >
-              {details.map((p, i) => (
-                <option key={i} value={i}>
-                  {p.name}
-                  {p.degree ? ` (${p.degree})` : ""}
-                </option>
-              ))}
-            </select>
+            />
           </div>
         )}
 
