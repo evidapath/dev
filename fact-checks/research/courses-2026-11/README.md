@@ -129,6 +129,35 @@ Found on the way (to check, not changed):
 | Waterloo (`gen/ca_waterloo_more.py`) | Biochemistry (Life Sciences, same sources as Biology), Physics and Chemistry (Physical Sciences: same three requirement lines as Life Sciences, on the group's own pages), Political Science, History, English, Philosophy (Honours Arts: A-Levels two Bs and one C; IB total 27; US "low 80s", stored as text, so the site can't compare it), Mathematics (BMath: A-Level Maths A plus two As; IB HL Maths AA 6, total 30; US 88%; Admission Information Form). Fees: Fall 2026 international maximum tuition per term × 2 terms, Regular Year 1: Science CAD 25,296, Arts CAD 27,010, Mathematics CAD 29,259 | |
 | Princeton | — | The admission page lists concentrations without saying A.B. or B.S.E. for each; the Undergraduate Announcement (ua.princeton.edu) shows a Cloudflare bot check (not bypassed); department pages tried either show the same check or don't name the degree |
 
+### University of Sydney (2026-11-19) → `pending/2026-11-19-sydney.ndjson`
+
+Source: the University of Sydney International Guide, applying for 2027 entry (PDF,
+`usyd-international-guide.pdf`), read with `pdftotext` (no `-layout`, saved as
+`usyd-intl-guide-notes`). Generator `gen/au_usyd.py`. Each record quotes the table header (column
+order), the course's table row, the course's own block (ATAR, IB, duration, assumed knowledge;
+its IB and duration must match the row), the A-level aggregate rule (A*=6 ... E=1) and "Tuition fees
+are subject to annual increases". Two rows (B Arts, B Arts and B Laws) print without the course name
+in that copy; the generator takes their CRICOS code from the `-layout` copy, where name and row are
+on one line, and checks the two rows agree. Fees are the 2027 indicative Year 1 fee per 1.0 EFTSL.
+
+| Added | IB | A-level aggregate (3 / 4 subjects) | AUD per year |
+|---|---|---|---|
+| Mathematical Sciences | 34 | 15 / 16 | 63,600 |
+| Psychology | 29 | 13 / 13 | 63,600 |
+| Science (Biology, Chemistry and Physics majors: three records, one degree) | 29 | 13 / 13 | 63,600 |
+| Science (Medical Science) | 31 | 14 / 14 | 63,600 |
+| Arts | 26 | 12 / 12 | 55,100 |
+| International Studies | 31 | 14 / 14 | 55,100 |
+| Politics, Philosophy and Economics | 32 | 14 / 15 | 55,100 |
+| Commerce | 38 | 17 / 19 | 59,100 |
+| Design in Architecture | 34 | 15 / 16 | 55,100 |
+| Pharmacy (Honours) and Master of Pharmacy Practice (5 years) | 31 | 14 / 14 | 63,600 |
+| Arts and Laws (5 years) | 38 | 16 / 18 | 59,100 |
+
+Not added: Melbourne majors. Melbourne publishes the Bachelor of Science international fee as a
+range that depends on subjects chosen (the existing record stores the lowest), so a per-major fee
+would be a guess. Monash: not attempted this pass.
+
 Medicine not offered as a first degree (no record added): US universities (medicine is a
 graduate degree there), Warwick (graduate entry only).
 

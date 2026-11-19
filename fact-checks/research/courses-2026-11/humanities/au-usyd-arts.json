@@ -1,0 +1,62 @@
+{
+  "uni": "au-usyd",
+  "slug": "arts",
+  "sources": {
+    "guide": {
+      "url": "https://www.sydney.edu.au/dam/corporate/documents/study/guides/usyd-international-guide.pdf",
+      "page": "usyd-intl-guide-notes",
+      "title": "University of Sydney International Guide, applying for 2027 entry (PDF)",
+      "organization": "The University of Sydney",
+      "quotes": [
+        "Duration (full time in years) Commencing semester(s) 2027 indicative Year 1 tuition fee ($AUD)/1.0 EFTSL## English - IELTS Academic English - TOEFL iBT International ATAR IB Diploma GCE 3/4 A Levels",
+        "000705M 3 Feb/Aug 55,100 6.5 (6.0) 85 (17/19) 75 26 12/12",
+        "B Arts ATAR: 75 IB: 26 Entry: Feb/Aug Duration (full time): 3 years Dalyell by invitation Assumed knowledge: Depends on majors or units of study chosen",
+        "## Tuition fees are subject to annual increases.",
+        "The first score listed is the requirement for three subjects; the second score is for four subjects. If there are more than four subjects, the best four will be used to calculate the aggregate. The aggregate is calculated from the A2 subjects based on A*=6, A=5, B=4, C=3, D=2, E=1.",
+        "Entry is based on the total score for the completed International Baccalaureate (IB) Diploma."
+      ]
+    }
+  },
+  "program": {
+    "name": "Arts",
+    "degree_type": "Bachelor",
+    "field": "Arts",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "guide",
+    "summary": "Bachelor of Arts (CRICOS 000705M), 3 years full time, starting Feb/Aug.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "AUD",
+      "tuition_annual": 55100,
+      "academic_year": "2027 indicative Year 1 tuition fee (per 1.0 EFTSL, a full-time year)",
+      "source": "guide",
+      "living_from": "costProfile-au-usyd-cost-becon-international",
+      "note": "International, 2027 indicative Year 1 tuition fee: AUD 55,100 per 1.0 EFTSL (a full-time study load for a year). Sydney says tuition fees are subject to annual increases."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "guide",
+      "required_subjects": [],
+      "tests": [],
+      "threshold": "Arts: A-level aggregate 12 from three A2 subjects or 12 from four (A*=6, A=5, B=4, C=3, D=2, E=1). 2027 entry guide. Assumed knowledge (NSW subjects): Depends on majors or units of study chosen."
+    },
+    {
+      "curriculum": "ib",
+      "source": "guide",
+      "required_subjects": [],
+      "tests": [],
+      "threshold": "Arts: IB Diploma total 26. 2027 entry guide. Assumed knowledge (NSW subjects): Depends on majors or units of study chosen."
+    }
+  ]
+}

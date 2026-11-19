@@ -1,0 +1,62 @@
+{
+  "uni": "au-usyd",
+  "slug": "design-in-architecture",
+  "sources": {
+    "guide": {
+      "url": "https://www.sydney.edu.au/dam/corporate/documents/study/guides/usyd-international-guide.pdf",
+      "page": "usyd-intl-guide-notes",
+      "title": "University of Sydney International Guide, applying for 2027 entry (PDF)",
+      "organization": "The University of Sydney",
+      "quotes": [
+        "Duration (full time in years) Commencing semester(s) 2027 indicative Year 1 tuition fee ($AUD)/1.0 EFTSL## English - IELTS Academic English - TOEFL iBT International ATAR IB Diploma GCE 3/4 A Levels",
+        "B Design in Architecture 052456D 3 Feb 55,100 7.0 (6.0) 96 (17/19) 90 34 15/16",
+        "B Design in Architecture ATAR: 90 IB: 34 Entry: Feb Duration (full time): 3 years Assumed knowledge: English Advanced and Mathematics Advanced",
+        "## Tuition fees are subject to annual increases.",
+        "The first score listed is the requirement for three subjects; the second score is for four subjects. If there are more than four subjects, the best four will be used to calculate the aggregate. The aggregate is calculated from the A2 subjects based on A*=6, A=5, B=4, C=3, D=2, E=1.",
+        "Entry is based on the total score for the completed International Baccalaureate (IB) Diploma."
+      ]
+    }
+  },
+  "program": {
+    "name": "Design in Architecture",
+    "degree_type": "Bachelor",
+    "field": "Architecture",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027 entry",
+    "platform": "",
+    "source": "guide",
+    "summary": "Bachelor of Design in Architecture (CRICOS 052456D), 3 years full time, starting Feb.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "AUD",
+      "tuition_annual": 55100,
+      "academic_year": "2027 indicative Year 1 tuition fee (per 1.0 EFTSL, a full-time year)",
+      "source": "guide",
+      "living_from": "costProfile-au-usyd-cost-becon-international",
+      "note": "International, 2027 indicative Year 1 tuition fee: AUD 55,100 per 1.0 EFTSL (a full-time study load for a year). Sydney says tuition fees are subject to annual increases."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "guide",
+      "required_subjects": [],
+      "tests": [],
+      "threshold": "Design in Architecture: A-level aggregate 15 from three A2 subjects or 16 from four (A*=6, A=5, B=4, C=3, D=2, E=1). 2027 entry guide. Assumed knowledge (NSW subjects): English Advanced and Mathematics Advanced."
+    },
+    {
+      "curriculum": "ib",
+      "source": "guide",
+      "required_subjects": [],
+      "tests": [],
+      "threshold": "Design in Architecture: IB Diploma total 34. 2027 entry guide. Assumed knowledge (NSW subjects): English Advanced and Mathematics Advanced."
+    }
+  ]
+}
