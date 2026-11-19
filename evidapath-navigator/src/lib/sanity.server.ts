@@ -113,7 +113,7 @@ interface SanityUniversity {
   scholarshipCount: number | null;
 }
 
-export async function sanityQuery<T>(query: string): Promise<T> {
+async function fetchSanity<T>(query: string, perspective: string): Promise<T> {
   // Secret: read from process.env ONLY (never import.meta.env), so it is never
   // serialized into the client bundle — same guard as SUPABASE_SERVICE_ROLE_KEY.
   const token = process.env["SANITY_READ_TOKEN"];
@@ -122,10 +122,6 @@ export async function sanityQuery<T>(query: string): Promise<T> {
       "SANITY_READ_TOKEN is not configured (add it to .dev.vars locally / Cloudflare env in prod).",
     );
   }
-  // Production reads ONLY published content. Dev may opt into previewing unpublished
-  // drafts (e.g. the Batch-2 university imports) by setting SANITY_PERSPECTIVE=drafts
-  // in .dev.vars — never set this in production.
-  const perspective = process.env["SANITY_PERSPECTIVE"] || "published";
   const url =
     `https://${PROJECT}.api.sanity.io/v${API_VERSION}/data/query/${DATASET}` +
     `?perspective=${perspective}&query=${encodeURIComponent(query)}`;
@@ -135,6 +131,120 @@ export async function sanityQuery<T>(query: string): Promise<T> {
   }
   const json = (await res.json()) as { result: T };
   return json.result;
+}
+
+// ── Query cache ──────────────────────────────────────────────────────────────
+// The universities query returns ~1.6 MB and takes ~1.3–1.5 s, and pages that render
+// it on the server (/universities, /answers) waited for it on every visit. Published
+// content changes only when a fact-check file is applied, so results are cached:
+//   - fresh for FRESH_MS: served from cache;
+//   - stale up to STALE_MS: served from cache while one background request refreshes it;
+//   - older, or nothing cached: fetched and the visitor waits.
+// If Sanity fails, the last good result is served rather than an error or mock data.
+// Two layers: this worker's memory, and Cloudflare's Cache API (shared by the workers
+// in one data centre). Neither holds the token; keys are a hash of the query.
+const FRESH_MS = 5 * 60_000;
+const STALE_MS = 60 * 60_000;
+const RETRY_MS = 30_000;
+
+interface Entry {
+  at: number;
+  value: unknown;
+  refreshingSince?: number;
+}
+const memo = new Map<string, Entry>();
+const inflight = new Map<string, Promise<unknown>>();
+
+const edgeCache = (): Cache | null =>
+  typeof caches !== "undefined" && "default" in caches
+    ? (caches as unknown as { default: Cache }).default
+    : null;
+
+async function cacheKey(key: string): Promise<Request> {
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(key));
+  const hex = [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
+  return new Request(`https://sanity-query-cache.evidapath.internal/${hex}`);
+}
+
+async function readEdge(key: string): Promise<Entry | null> {
+  const cache = edgeCache();
+  if (!cache) return null;
+  try {
+    const res = await cache.match(await cacheKey(key));
+    if (!res) return null;
+    const at = Number(res.headers.get("x-fetched-at"));
+    return Number.isFinite(at) ? { at, value: await res.json() } : null;
+  } catch {
+    return null;
+  }
+}
+
+async function writeEdge(key: string, entry: Entry): Promise<void> {
+  const cache = edgeCache();
+  if (!cache) return;
+  try {
+    await cache.put(
+      await cacheKey(key),
+      new Response(JSON.stringify(entry.value), {
+        headers: {
+          "content-type": "application/json",
+          "cache-control": `max-age=${STALE_MS / 1000}`,
+          "x-fetched-at": String(entry.at),
+        },
+      }),
+    );
+  } catch {
+    // Cache write failures only cost speed.
+  }
+}
+
+function load<T>(key: string, query: string, perspective: string): Promise<T> {
+  const running = inflight.get(key);
+  if (running) return running as Promise<T>;
+  const p = fetchSanity<T>(query, perspective)
+    .then(async (value) => {
+      const entry = { at: Date.now(), value };
+      memo.set(key, entry);
+      await writeEdge(key, entry);
+      return value;
+    })
+    .finally(() => inflight.delete(key));
+  inflight.set(key, p);
+  return p;
+}
+
+export async function sanityQuery<T>(query: string): Promise<T> {
+  // Production reads ONLY published content. Dev may opt into previewing unpublished
+  // drafts (e.g. the Batch-2 university imports) by setting SANITY_PERSPECTIVE=drafts
+  // in .dev.vars — never set this in production.
+  const perspective = process.env["SANITY_PERSPECTIVE"] || "published";
+  const key = `${DATASET}|${perspective}|${query}`;
+  let hit = memo.get(key);
+  if (!hit || Date.now() - hit.at >= FRESH_MS) {
+    const edge = await readEdge(key);
+    if (edge && (!hit || edge.at > hit.at)) memo.set(key, (hit = edge));
+  }
+  const age = hit ? Date.now() - hit.at : Infinity;
+  if (hit && age < FRESH_MS) return hit.value as T;
+  if (hit && age < STALE_MS) {
+    const since = hit.refreshingSince ?? 0;
+    if (Date.now() - since > RETRY_MS) {
+      hit.refreshingSince = Date.now();
+      load<T>(key, query, perspective).catch((err) =>
+        console.error("[sanity] background refresh failed:", err),
+      );
+    }
+    return hit.value as T;
+  }
+  try {
+    return await load<T>(key, query, perspective);
+  } catch (err) {
+    if (hit) {
+      console.error("[sanity] fetch failed, serving last good result:", err);
+      return hit.value as T;
+    }
+    throw err;
+  }
 }
 
 // ── helpers ────────────────────────────────────────────────────────────────
