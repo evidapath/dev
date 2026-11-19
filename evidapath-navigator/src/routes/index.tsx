@@ -6,6 +6,8 @@ import { PathwaysEntryHero } from "../components/PathwaysEntryHero";
 import { DecisionModelDemo } from "../components/DecisionModelDemo";
 import { buildBriefs } from "../lib/data-briefs";
 import { useLiveData } from "../lib/use-live-data";
+import { getHomeHero } from "../lib/home.functions";
+import { homeStats, pickFeatured } from "../lib/home";
 import { ReadinessMap } from "../components/ReadinessMap";
 import { HowItWorks } from "../components/HowItWorks";
 import { UniversityCard } from "../components/UniversityCard";
@@ -13,6 +15,8 @@ import { formatCost, formatCurrency } from "../lib/format";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 
 export const Route = createFileRoute("/")({
+  // Hero cards and counts come with the page; the rest of the data loads in the browser.
+  loader: () => getHomeHero(),
   head: () => ({
     meta: [
       { title: "EvidaPath — Know where you stand. See where you can go." },
@@ -39,30 +43,15 @@ function Index() {
   // Featured cards come from live data: universities with a verified full annual
   // cost, and scholarships whose guaranteed/competitive basis is confirmed.
   const { data } = useLiveData();
-  const featuredUnis = useMemo(() => {
-    const all = data?.universities ?? [];
-    // Fully priced and checked, one per country, so the preview shows a spread.
-    const good = all.filter(
-      (u) => u.costs.totalAnnual != null && u.evidenceConfidence.startsWith("Verified"),
-    );
-    const seen = new Set<string>();
-    const spread = good.filter((u) => !seen.has(u.country) && seen.add(u.country));
-    return (spread.length >= 3 ? spread : good.length >= 3 ? good : all).slice(0, 3);
-  }, [data]);
-  const stats = useMemo(() => {
-    const unis = data?.universities ?? [];
-    if (!unis.length) return null;
-    return [
-      [unis.length, "universities"],
-      [new Set(unis.map((u) => u.country)).size, "countries"],
-      [unis.reduce((n, u) => n + (u.programDetails?.length || 1), 0), "programmes"],
-      [
-        (data?.scholarships ?? []).filter((x) => x.verificationStatus.startsWith("Verified"))
-          .length,
-        "scholarships checked",
-      ],
-    ] as const;
-  }, [data]);
+  const hero = Route.useLoaderData();
+  const featuredUnis = useMemo(
+    () => (data ? pickFeatured(data.universities) : hero.featured),
+    [data, hero],
+  );
+  const stats = useMemo(
+    () => (data ? homeStats(data.universities, data.scholarships) : hero.stats),
+    [data, hero],
+  );
   const briefs = useMemo(() => (data ? buildBriefs(data) : []), [data]);
   const featuredScholarships = useMemo(() => {
     const all = data?.scholarships ?? [];

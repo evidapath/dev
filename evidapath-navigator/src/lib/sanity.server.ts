@@ -138,13 +138,14 @@ async function fetchSanity<T>(query: string, perspective: string): Promise<T> {
 // it on the server (/universities, /answers) waited for it on every visit. Published
 // content changes only when a fact-check file is applied, so results are cached:
 //   - fresh for FRESH_MS: served from cache;
-//   - stale up to STALE_MS: served from cache while one background request refreshes it;
+//   - stale up to STALE_MS (a day): served from cache while one background request refreshes
+//     it, so a visitor after a quiet spell doesn't wait for Sanity;
 //   - older, or nothing cached: fetched and the visitor waits.
 // If Sanity fails, the last good result is served rather than an error or mock data.
 // Two layers: this worker's memory, and Cloudflare's Cache API (shared by the workers
 // in one data centre). Neither holds the token; keys are a hash of the query.
 const FRESH_MS = 5 * 60_000;
-const STALE_MS = 60 * 60_000;
+const STALE_MS = 24 * 60 * 60_000;
 const RETRY_MS = 30_000;
 
 interface Entry {
