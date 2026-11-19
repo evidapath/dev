@@ -443,6 +443,7 @@ function buildProgramView(p: SanityProgram, countryCurrency: string | null): Pro
       ...(notChecked(cost?.verification_status) ? { notChecked: true } : {}),
     },
     ...(note ? { costResidencyNote: note } : {}),
+    ...(cost?.residencyLabel ? { costLabel: cost.residencyLabel } : {}),
     ...(tiers.length > 1 ? { costTiers: tiers } : {}),
     admissionsByCurriculum,
   };

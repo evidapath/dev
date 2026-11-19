@@ -129,6 +129,8 @@ export interface ProgramView {
     notChecked?: boolean;
   };
   costResidencyNote?: string;
+  /** Who the shown tuition is for, as the cost record names it (e.g. "International students"). */
+  costLabel?: string;
   /** All residency tiers when a programme prices by residency. */
   costTiers?: CostTier[];
   admissionsByCurriculum: {

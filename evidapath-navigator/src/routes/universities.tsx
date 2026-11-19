@@ -1,59 +1,57 @@
-import { useUniversitiesFn } from "../lib/use-live-data";
+import { loadUniversities } from "../lib/use-live-data";
+import { jsonLdScript, universitiesJsonLd } from "../lib/structured-data";
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { usePaged } from "../lib/use-paged";
 import { ShowMore } from "../components/ShowMore";
 import { GraduationCap, Search, ShieldCheck } from "lucide-react";
-import type { University } from "../lib/mock-data";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { UniversityCard, UniversityCardSkeleton } from "../components/UniversityCard";
 import { RequestUniversity } from "../components/RequestUniversity";
 
 export const Route = createFileRoute("/universities")({
-  head: () => ({
+  // Loaded on the server so the HTML carries the universities and their JSON-LD.
+  loader: () => loadUniversities(),
+  head: ({ loaderData }) => ({
     meta: [
       { title: "University Cost Database — EvidaPath" },
       {
         name: "description",
         content:
-          "The university database built around decisions, not rankings. Tuition, living costs, prerequisites, and affordability will be displayed as verified data is added.",
+          "Tuition, living costs and entry requirements for each programme, from the universities' own published sources. Where a figure isn't published, we say so.",
       },
       { property: "og:title", content: "University Cost Database — EvidaPath" },
       {
         property: "og:description",
         content:
-          "Cost of attendance, scholarship availability, and admissions evidence — currently being built and verified.",
+          "Compare tuition, living costs and entry requirements for each programme, from official sources.",
       },
       ogUrlMeta("/universities"),
     ],
     links: [canonicalLink("/universities")],
+    // Verified records only: the illustrative fallback set never goes into structured data.
+    scripts:
+      loaderData?.source === "sanity"
+        ? [jsonLdScript(universitiesJsonLd(loaderData.universities, "/universities"))]
+        : [],
   }),
+  // Shown while a client-side navigation waits for the data.
+  pendingComponent: () => (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <UniversityCardSkeleton key={i} index={i} />
+        ))}
+      </div>
+    </div>
+  ),
   component: UniversitiesDirectoryPage,
 });
 
 function UniversitiesDirectoryPage() {
   const [query, setQuery] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("All");
-  const [universities, setUniversities] = useState<University[]>([]);
-  const [source, setSource] = useState<"sanity" | "mock" | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  const fetchUniversities = useUniversitiesFn();
-  useEffect(() => {
-    let active = true;
-    fetchUniversities()
-      .then((res) => {
-        if (!active) return;
-        setUniversities(res.universities);
-        setSource(res.source);
-      })
-      .finally(() => {
-        if (active) setLoading(false);
-      });
-    return () => {
-      active = false;
-    };
-  }, [fetchUniversities]);
+  const { universities, source } = Route.useLoaderData();
 
   const countries = useMemo(
     () => Array.from(new Set(universities.map((u) => u.country).filter(Boolean))).sort(),
@@ -156,7 +154,7 @@ function UniversitiesDirectoryPage() {
               );
             })}
           </div>
-          {source !== "sanity" && !loading && (
+          {source !== "sanity" && (
             <p className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
               <ShieldCheck className="w-3.5 h-3.5" />
               Illustrative preview. University data is still being verified.
@@ -166,13 +164,7 @@ function UniversitiesDirectoryPage() {
       </div>
 
       {/* University Profiles Grid */}
-      {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <UniversityCardSkeleton key={i} index={i} />
-          ))}
-        </div>
-      ) : filtered.length === 0 ? (
+      {filtered.length === 0 ? (
         <p className="text-sm text-muted-foreground animate-in fade-in duration-300">
           No universities match your search.{" "}
           <a href="#request-university" className="font-semibold text-primary hover:underline">
@@ -187,15 +179,11 @@ function UniversitiesDirectoryPage() {
           ))}
         </div>
       )}
-      {!loading && (
-        <ShowMore remaining={paged.remaining} onClick={paged.showMore} noun="universities" />
-      )}
-      {!loading && (
-        <RequestUniversity
-          source="Universities page"
-          defaultUniversity={filtered.length === 0 ? query : ""}
-        />
-      )}
+      <ShowMore remaining={paged.remaining} onClick={paged.showMore} noun="universities" />
+      <RequestUniversity
+        source="Universities page"
+        defaultUniversity={filtered.length === 0 ? query : ""}
+      />
     </div>
   );
 }

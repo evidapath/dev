@@ -32,6 +32,23 @@ to make the markup look complete; an unpublished figure is left out, not guessed
   (domain lock ends around 2026-12-28), so this work lands on the Cloudflare app and
   goes live with that move.
 
+## Progress (2026-11-19)
+
+- `/universities` now loads its data on the server: the HTML a crawler gets carries the first page
+  of university cards and, in JSON-LD, all 53 universities (`CollegeOrUniversity` in an
+  `ItemList`) and all 459 programmes (`EducationalOccupationalProgram` with `provider`,
+  `educationalCredentialAwarded`, `timeToComplete` and one tuition `Offer` per fee group). Built in
+  `src/lib/structured-data.ts` from the records the page renders; illustrative fallback data and
+  costs marked not re-checked are left out. Every property was checked against schema.org's own
+  vocabulary file (`inLanguage` isn't defined for this type, so it isn't used).
+- Every page carries `Organization` and `WebSite` JSON-LD.
+- The out-of-date `/universities` description is rewritten.
+- AnswerThePublic: first three seeds run (UAE, English):
+  `fact-checks/aeo/answerthepublic/2026-11-19-uae.md`.
+- Still to do: per-university and per-programme pages, sitemap from Sanity, staging `noindex`,
+  robots.txt AI-crawler choice and `llms.txt` (decisions for Subhan), question pages, Rich
+  Results Test / validator.schema.org runs on the deployed page.
+
 ## Phase 1: facts crawlers can read
 
 1. Load the university data in the route loaders (server side), so the HTML of

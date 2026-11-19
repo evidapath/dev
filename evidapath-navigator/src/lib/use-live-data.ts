@@ -36,6 +36,16 @@ export function useUniversitiesFn() {
   return useCallback(() => (uniCache ??= cached(() => fn()))(), [fn]);
 }
 
+/**
+ * For route loaders: universities rendered into the server HTML, so crawlers and answer
+ * engines see the data. In the browser it shares the cache above; on the server it
+ * fetches fresh for each request.
+ */
+export function loadUniversities() {
+  if (typeof window === "undefined") return getUniversities();
+  return (uniCache ??= cached(() => getUniversities()))();
+}
+
 /** Drop-in for useServerFn(getScholarships), served from the shared cache. */
 export function useScholarshipsFn() {
   const fn = useServerFn(getScholarships);
