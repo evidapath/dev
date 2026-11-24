@@ -19,16 +19,20 @@ export const Route = createFileRoute("/")({
   loader: () => getHomeHero(),
   head: () => ({
     meta: [
-      { title: "EvidaPath — Know where you stand. See where you can go." },
+      { title: "Compare University Fees and Entry Grades Abroad | EvidaPath" },
       {
         name: "description",
         content:
-          "Premium education decision-intelligence platform. Evidence-based academic readiness, university cost modeling, scholarship graphs, and 4-year capital planning.",
+          "Tuition, living costs, entry grades and deadlines for universities in 8 countries, taken from each university's own pages. Not published? We say so.",
       },
-      { property: "og:title", content: "EvidaPath — Academic & Financial Decision Intelligence" },
+      {
+        property: "og:title",
+        content: "Compare University Fees and Entry Grades Abroad | EvidaPath",
+      },
       {
         property: "og:description",
-        content: "Pathways, not wishful thinking. Evidence-based academic strategy.",
+        content:
+          "Tuition, living costs, entry grades and deadlines for universities in 8 countries, taken from each university's own pages. Not published? We say so.",
       },
       { property: "og:type", content: "website" },
       ogUrlMeta("/"),

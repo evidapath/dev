@@ -129,9 +129,9 @@ export function Footer() {
         {/* Bottom Disclaimers */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} EvidaPath. All rights reserved. An emerging
-            decision-intelligence platform whose live datasets are currently being built and
-            verified.
+            © {new Date().getFullYear()} EvidaPath. All rights reserved. We take fees, grades and
+            deadlines from universities' own pages and say when a figure isn't published. Always
+            confirm with the university before you apply or pay.
           </p>
           <div className="flex flex-wrap items-center gap-6">
             <Link to="/privacy" className="hover:text-foreground">

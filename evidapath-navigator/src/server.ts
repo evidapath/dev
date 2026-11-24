@@ -44,12 +44,34 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+// TanStack Start answers page requests whose Accept header names neither text/html nor */*
+// (e.g. an AI tool asking for text/markdown) with a 500 "Only HTML requests are supported
+// here". Serve those clients the HTML page instead. Server functions keep their own header.
+function acceptHtml(request: Request): Request {
+  if (request.method !== "GET" && request.method !== "HEAD") return request;
+  if (new URL(request.url).pathname.startsWith("/_serverFn/")) return request;
+  const accept = request.headers.get("Accept");
+  if (!accept || /text\/html|\*\/\*/.test(accept)) return request;
+  const headers = new Headers(request.headers);
+  headers.set("Accept", `text/html, ${accept}`);
+  return new Request(request, { headers });
+}
+
+// The staging copy (*.workers.dev) must not compete with evidapath.com in search results.
+function markStaging(request: Request, response: Response): Response {
+  if (!new URL(request.url).hostname.endsWith(".workers.dev")) return response;
+  const out = new Response(response.body, response);
+  out.headers.set("X-Robots-Tag", "noindex, nofollow");
+  return out;
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const req = acceptHtml(request);
+      const response = await handler.fetch(req, env, ctx);
+      return markStaging(req, await normalizeCatastrophicSsrResponse(response));
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {

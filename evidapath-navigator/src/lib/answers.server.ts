@@ -101,6 +101,24 @@ interface AdmissionRow {
 const firstSentence = (t: string | null) =>
   t ? t.split(/(?<=[a-z0-9)%])\.\s+(?=[A-Z])/)[0]!.replace(/\.?$/, ".") : null;
 
+// A note is shown to students only when it explains the figure beside it: it must contain
+// that figure and no research remarks (estimates, "secondary sources", field names). Notes
+// written for an earlier year's fee, or for the research log, stay off the page.
+const RESEARCH_REMARK =
+  /~|≈|=>|conflict|secondary source|confidence|primary source|_|verify|re-check|expected|approx|estimate/i;
+function noteFor(note: string | null, tuition: number): string | null {
+  // A recorded conflict between official pages must stay visible, in plain words.
+  if (note && /source conflict/i.test(note))
+    return "The university's own pages give different figures for this fee; confirm with the university.";
+  const t = firstSentence(note);
+  if (!t || RESEARCH_REMARK.test(t)) return null;
+  // A sentence cut short by the splitter (e.g. at "incl.") leaves a bracket open.
+  if ((t.match(/\(/g) ?? []).length !== (t.match(/\)/g) ?? []).length) return null;
+  const n = Math.round(tuition);
+  const shown = [String(n), n.toLocaleString("en-US")];
+  return shown.some((x) => t.includes(x)) ? t : null;
+}
+
 // The academic year as stored can carry a working note in brackets; show the year only.
 const shortYear = (y: string | null) => (y ? y.split(" (")[0]!.trim() : null);
 const progName = (p: { program_name: string | null; degree_type: string | null }) => {
@@ -140,7 +158,7 @@ export async function getAnswersFromSanity(): Promise<AnswersData> {
       sourceUrl: r.source?.url ?? null,
       sourceTitle: r.source?.title ?? null,
       note:
-        firstSentence(r.feeNote) ??
+        noteFor(r.feeNote, r.tuition_annual) ??
         (r.tuition_basis === "per-credit"
           ? "Worked out from the published per-credit rate."
           : null),

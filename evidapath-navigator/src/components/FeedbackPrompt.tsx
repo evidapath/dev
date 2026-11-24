@@ -79,6 +79,11 @@ export function FeedbackPrompt() {
   const { user } = useAuth();
   const path = useRouterState({ select: (s) => s.location.pathname });
   const [open, setOpen] = useState(false);
+  // On a phone the full card would cover about half the screen, so it starts as a slim bar
+  // the student can open or dismiss.
+  const [expanded, setExpanded] = useState(
+    () => typeof window === "undefined" || !window.matchMedia("(max-width: 639px)").matches,
+  );
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [comment, setComment] = useState("");
@@ -147,6 +152,32 @@ export function FeedbackPrompt() {
       .finally(() => setSending(false));
   };
 
+  if (!expanded)
+    return (
+      <div
+        role="dialog"
+        aria-label="Help us improve EvidaPath"
+        className="fixed z-50 bottom-3 left-3 right-3 flex items-center gap-2 rounded-2xl border border-border bg-card pl-4 pr-1 shadow-xl motion-safe:animate-in motion-safe:fade-in duration-500"
+      >
+        <MessageSquareHeart className="w-4 h-4 text-primary shrink-0" />
+        <button
+          type="button"
+          onClick={() => setExpanded(true)}
+          className="flex-1 min-h-11 text-left text-sm font-medium text-foreground"
+        >
+          Help us improve: 4 quick taps
+        </button>
+        <button
+          type="button"
+          onClick={close}
+          aria-label="Close"
+          className="flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground"
+        >
+          <X className="w-4 h-4" />
+        </button>
+      </div>
+    );
+
   const total = QUESTIONS.length + 1;
   const current = QUESTIONS[step];
   const wantsMoreUnis = answers["improve_first"] === "Add more universities and courses";
@@ -169,7 +200,7 @@ export function FeedbackPrompt() {
           type="button"
           onClick={close}
           aria-label="Close"
-          className="rounded-full p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
+          className="-mr-3 flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground"
         >
           <X className="w-4 h-4" />
         </button>

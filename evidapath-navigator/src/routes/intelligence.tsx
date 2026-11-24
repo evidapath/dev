@@ -9,11 +9,11 @@ import { PageHeader } from "../components/PageHeader";
 export const Route = createFileRoute("/intelligence")({
   head: () => ({
     meta: [
-      { title: "EvidaPath Intelligence — Evidence for Better Education Decisions" },
+      { title: "Data Briefs: University Costs and Admissions | EvidaPath" },
       {
         name: "description",
         content:
-          "Research and intelligence publications examining how academic benchmarks, university affordability, scholarships, and pathways interact.",
+          "Short findings on costs, admissions, scholarships and deadlines, computed from EvidaPath's university records. They update when the data changes.",
       },
       {
         property: "og:title",
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/intelligence")({
       {
         property: "og:description",
         content:
-          "Live data briefs on costs, admissions, scholarships and deadlines, computed from verified university records.",
+          "Short findings on costs, admissions, scholarships and deadlines, computed from EvidaPath's university records. They update when the data changes.",
       },
       ogUrlMeta("/intelligence"),
     ],

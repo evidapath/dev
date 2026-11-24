@@ -26,17 +26,17 @@ import { BudgetInput } from "../components/BudgetInput";
 export const Route = createFileRoute("/discover")({
   head: () => ({
     meta: [
-      { title: "Discover Universities & Global Pathways — EvidaPath" },
+      { title: "Find Universities Within Your Budget | EvidaPath" },
       {
         name: "description",
         content:
-          "Discover universities that fit your academic profile, budget, geography and career ambitions. Decisions built around evidence, not rankings.",
+          "Filter universities by subject, country and yearly budget. Cost means tuition, fees and living; where living isn't published, tuition alone is used.",
       },
-      { property: "og:title", content: "Discover Universities & Global Pathways — EvidaPath" },
+      { property: "og:title", content: "Find Universities Within Your Budget | EvidaPath" },
       {
         property: "og:description",
         content:
-          "Explore global academic pathways matching your profile — currently being built and verified.",
+          "Filter universities by subject, country and yearly budget. Cost means tuition, fees and living; where living isn't published, tuition alone is used.",
       },
       ogUrlMeta("/discover"),
     ],

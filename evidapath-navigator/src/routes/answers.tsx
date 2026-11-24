@@ -79,13 +79,13 @@ export const Route = createFileRoute("/answers")({
   loader: () => getAnswers(),
   head: ({ loaderData }) => ({
     meta: [
-      { title: "Study Abroad Questions, Answered With Official Figures — EvidaPath" },
+      { title: "Study Abroad Costs and Entry Rules, Answered | EvidaPath" },
       {
         name: "description",
         content:
-          "Tuition for international students by country, the cheapest universities in Dubai, IB, IELTS and SAT requirements, and UAE scholarships, from universities' own published pages.",
+          "International student tuition by country, the cheapest Dubai universities, IB, IELTS and SAT rules, UAE scholarships. Each figure links to its source.",
       },
-      { property: "og:title", content: "Study Abroad Questions, Answered — EvidaPath" },
+      { property: "og:title", content: "Study Abroad Costs and Entry Rules, Answered | EvidaPath" },
       ogUrlMeta("/answers"),
     ],
     links: [canonicalLink("/answers")],
@@ -206,6 +206,25 @@ function ScholarshipList({ rows }: { rows: Scholarship[] }) {
   );
 }
 
+// The next step for a visitor who arrives from a search: check their own fit.
+function FitCta() {
+  return (
+    <div className="rounded-2xl border border-primary/30 bg-primary/5 p-5 flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
+      <p className="text-sm text-foreground">
+        <span className="font-semibold">Which of these fit your grades and budget?</span> Answer 4
+        questions and see the universities that match, with the same sourced figures. No sign-in
+        needed.
+      </p>
+      <Link
+        to="/find-my-path"
+        className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 shrink-0"
+      >
+        Find My Path
+      </Link>
+    </div>
+  );
+}
+
 function AnswersPage() {
   const d = Route.useLoaderData();
   if (!d)
@@ -240,6 +259,8 @@ function AnswersPage() {
           ))}
         </ol>
       </nav>
+
+      <FitCta />
 
       {(() => {
         let n = 0;
@@ -309,6 +330,8 @@ function AnswersPage() {
           </>
         );
       })()}
+
+      <FitCta />
 
       <p className="text-sm text-muted-foreground">
         Can't find your university?{" "}

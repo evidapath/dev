@@ -46,17 +46,17 @@ import { BudgetInput } from "../components/BudgetInput";
 export const Route = createFileRoute("/find-my-path")({
   head: () => ({
     meta: [
-      { title: "Find My Path — EvidaPath" },
+      { title: "Which Universities Fit My Grades and Budget? | EvidaPath" },
       {
         name: "description",
         content:
-          "Tell us a few things about yourself and see realistic university pathways. A simple guided intake — complexity only when you ask for it.",
+          "Answer 4 questions (curriculum, grades, subject, yearly budget) and see universities that fit, with costs and entry grades from official sources.",
       },
-      { property: "og:title", content: "Find My Path — EvidaPath" },
+      { property: "og:title", content: "Which Universities Fit My Grades and Budget? | EvidaPath" },
       {
         property: "og:description",
         content:
-          "Tell us a little about yourself. We'll show you where you stand and what looks realistic.",
+          "Answer 4 questions (curriculum, grades, subject, yearly budget) and see universities that fit, with costs and entry grades from official sources.",
       },
       ogUrlMeta("/find-my-path"),
     ],

@@ -1,10 +1,8 @@
 import type { ImgHTMLAttributes } from "react";
 
-export const EVIDAPATH_HORIZONTAL_LOGO_URL =
-  "https://vibe.filesafe.space/1790101091506917993/attachments/97f9ed1b-deaf-4b63-b9a8-4b2e1801ea23.png";
+export const EVIDAPATH_HORIZONTAL_LOGO_URL = "/brand/logo-horizontal.png";
 
-export const EVIDAPATH_ICON_URL =
-  "https://vibe.filesafe.space/1790101091506917993/attachments/42806b48-2493-4ff4-ac73-5110d9c6ec2b.png";
+export const EVIDAPATH_ICON_URL = "/brand/icon-96.png";
 
 interface BrandImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   size?: number;

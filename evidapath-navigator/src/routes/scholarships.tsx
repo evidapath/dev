@@ -30,11 +30,11 @@ import { useSaveUniversity } from "../lib/use-save-university";
 export const Route = createFileRoute("/scholarships")({
   head: () => ({
     meta: [
-      { title: "EvidaPath Scholarship Graph — Funding Intelligence" },
+      { title: "Scholarships for International Students | EvidaPath" },
       {
         name: "description",
         content:
-          "Don't search thousands of scholarships. Find the ones connected to you through eligibility, citizenship, and academic thresholds — as verified data is added.",
+          "Scholarships at universities on EvidaPath: who can apply, what they ask for and the amount, with a source for each. Records are still being checked.",
       },
       {
         property: "og:title",
@@ -43,7 +43,7 @@ export const Route = createFileRoute("/scholarships")({
       {
         property: "og:description",
         content:
-          "Structured scholarship records — currently being built and verified against official sources.",
+          "Scholarships at universities on EvidaPath: who can apply, what they ask for and the amount, with a source for each. Records are still being checked.",
       },
       ogUrlMeta("/scholarships"),
     ],

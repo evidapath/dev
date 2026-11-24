@@ -94,32 +94,41 @@ export const Route = createRootRouteWithContext<RouterContext>()({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "EvidaPath — Education Decision Intelligence" },
+      { title: "EvidaPath: University Fees and Entry Grades Abroad" },
       {
         name: "description",
         content:
-          "EvidaPath is an emerging education decision-intelligence platform. Know where you stand. See where you can go.",
+          "Tuition, living costs, entry grades and deadlines for universities abroad, taken from each university's own pages. Not published? We say so.",
       },
       { name: "author", content: "EvidaPath" },
-      { property: "og:title", content: "EvidaPath — Education Decision Intelligence" },
+      { property: "og:title", content: "EvidaPath: University Fees and Entry Grades Abroad" },
       {
         property: "og:description",
         content:
-          "Pathways, not wishful thinking. Evidence-based academic strategy for ambitious students and families.",
+          "Tuition, living costs, entry grades and deadlines for universities abroad, taken from each university's own pages. Not published? We say so.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "EvidaPath" },
+      { property: "og:image", content: canonicalUrl("/og-image.jpg") },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "EvidaPath: university fees and entry grades abroad, from official pages.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: canonicalUrl("/og-image.jpg") },
     ],
     scripts: [jsonLdScript(siteJsonLd())],
     links: [
       {
         rel: "icon",
         type: "image/png",
-        href: "https://vibe.filesafe.space/1790101091506917993/attachments/42806b48-2493-4ff4-ac73-5110d9c6ec2b.png",
+        href: "/brand/favicon-48.png",
       },
       {
         rel: "apple-touch-icon",
-        href: "https://vibe.filesafe.space/1790101091506917993/attachments/42806b48-2493-4ff4-ac73-5110d9c6ec2b.png",
+        href: "/brand/apple-touch-icon.png",
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -158,6 +167,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { PendingSavesSync } from "../components/PendingSavesSync";
 import { jsonLdScript, siteJsonLd } from "../lib/structured-data";
+import { canonicalUrl } from "../lib/seo";
 import { FeedbackPrompt } from "../components/FeedbackPrompt";
 import { cachedSession, rememberSession } from "../lib/session-cache";
 

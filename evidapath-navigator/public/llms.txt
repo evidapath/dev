@@ -1,0 +1,20 @@
+# EvidaPath
+
+> Free help for international secondary-school students choosing, affording and applying to universities abroad: tuition, living costs, entry requirements and deadlines, taken from universities' own published pages. Where a figure isn't published, EvidaPath says so instead of guessing.
+
+As of 24 November 2026, EvidaPath lists 53 universities in 8 countries (Australia, Canada, Germany, Malaysia, the Netherlands, the United Arab Emirates, the United Kingdom and the United States) and 459 programmes. Figures link to the official page they were read from. Some yearly fees are worked out from a per-credit rate or a whole-course total; the site says so where it does. Universities change fees and rules, so confirm with the university before applying or paying.
+
+## Main pages
+- [Questions answered](https://evidapath.com/answers): tuition for international students by country, the cheapest universities in Dubai on EvidaPath, IB, IELTS and SAT requirements, and UAE scholarships, each with its source.
+- [Universities](https://evidapath.com/universities): tuition, living costs, entry requirements by qualification, English tests and application deadlines for each programme.
+- [Find My Path](https://evidapath.com/find-my-path): answer 4 questions (curriculum, grades, subject, yearly budget) and see programmes that fit. No sign-in needed.
+- [Scholarships](https://evidapath.com/scholarships): scholarships at universities on EvidaPath. The page marks itself as a preview while scholarship records are still being checked.
+- [Careers by degree](https://evidapath.com/careers): jobs each degree can lead to, with UK pay ranges from the UK government's National Careers Service.
+
+## Policies
+- [Privacy](https://evidapath.com/privacy)
+- [Terms](https://evidapath.com/terms)
+- [Cookies](https://evidapath.com/cookies)
+
+## Contact
+- evidapath@gmail.com

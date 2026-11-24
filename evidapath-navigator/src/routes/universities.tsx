@@ -14,17 +14,17 @@ export const Route = createFileRoute("/universities")({
   loader: () => loadUniversities(),
   head: ({ loaderData }) => ({
     meta: [
-      { title: "University Cost Database — EvidaPath" },
+      { title: "University Fees and Entry Grades by Course | EvidaPath" },
       {
         name: "description",
         content:
-          "Tuition, living costs and entry requirements for each programme, from the universities' own published sources. Where a figure isn't published, we say so.",
+          "Compare tuition, living costs and entry grades for each programme in the UK, US, Canada, Germany, UAE and more, from official pages. Missing ones flagged.",
       },
-      { property: "og:title", content: "University Cost Database — EvidaPath" },
+      { property: "og:title", content: "University Fees and Entry Grades by Course | EvidaPath" },
       {
         property: "og:description",
         content:
-          "Compare tuition, living costs and entry requirements for each programme, from official sources.",
+          "Compare tuition, living costs and entry grades for each programme in the UK, US, Canada, Germany, UAE and more, from official pages. Missing ones flagged.",
       },
       ogUrlMeta("/universities"),
     ],

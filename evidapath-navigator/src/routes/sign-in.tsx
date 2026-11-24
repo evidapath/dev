@@ -29,16 +29,18 @@ export const Route = createFileRoute("/sign-in")({
   }),
   head: () => ({
     meta: [
-      { title: "Sign In — EvidaPath" },
+      { name: "robots", content: "noindex" },
+      { title: "Sign In | EvidaPath" },
       {
         name: "description",
         content:
-          "Sign in or create your EvidaPath account to continue building your education decision-intelligence profile.",
+          "Sign in to your EvidaPath account to see your saved universities, fit checks and plan.",
       },
-      { property: "og:title", content: "Sign In — EvidaPath" },
+      { property: "og:title", content: "Sign In | EvidaPath" },
       {
         property: "og:description",
-        content: "Access your EvidaPath decision roadmap, readiness profile, and capital plan.",
+        content:
+          "Sign in to your EvidaPath account to see your saved universities, fit checks and plan.",
       },
     ],
   }),
