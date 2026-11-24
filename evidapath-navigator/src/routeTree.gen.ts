@@ -23,6 +23,7 @@ import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as DocumentsRouteImport } from './routes/documents'
+import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as FindMyPathRouteImport } from './routes/find-my-path'
 import { Route as FundRouteImport } from './routes/fund'
 import { Route as GuideRouteImport } from './routes/guide'
@@ -106,6 +107,11 @@ const DiscoverRoute = DiscoverRouteImport.update({
 const DocumentsRoute = DocumentsRouteImport.update({
   id: '/documents',
   path: '/documents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesRoute = FeaturesRouteImport.update({
+  id: '/features',
+  path: '/features',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FindMyPathRoute = FindMyPathRouteImport.update({
@@ -194,6 +200,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
   '/documents': typeof DocumentsRoute
+  '/features': typeof FeaturesRoute
   '/find-my-path': typeof FindMyPathRoute
   '/fund': typeof FundRoute
   '/guide': typeof GuideRoute
@@ -224,6 +231,7 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
   '/documents': typeof DocumentsRoute
+  '/features': typeof FeaturesRoute
   '/find-my-path': typeof FindMyPathRoute
   '/fund': typeof FundRoute
   '/guide': typeof GuideRoute
@@ -255,6 +263,7 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
   '/documents': typeof DocumentsRoute
+  '/features': typeof FeaturesRoute
   '/find-my-path': typeof FindMyPathRoute
   '/fund': typeof FundRoute
   '/guide': typeof GuideRoute
@@ -287,6 +296,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/discover'
     | '/documents'
+    | '/features'
     | '/find-my-path'
     | '/fund'
     | '/guide'
@@ -317,6 +327,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/discover'
     | '/documents'
+    | '/features'
     | '/find-my-path'
     | '/fund'
     | '/guide'
@@ -347,6 +358,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/discover'
     | '/documents'
+    | '/features'
     | '/find-my-path'
     | '/fund'
     | '/guide'
@@ -378,6 +390,7 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   DiscoverRoute: typeof DiscoverRoute
   DocumentsRoute: typeof DocumentsRoute
+  FeaturesRoute: typeof FeaturesRoute
   FindMyPathRoute: typeof FindMyPathRoute
   FundRoute: typeof FundRoute
   GuideRoute: typeof GuideRoute
@@ -492,6 +505,13 @@ declare module '@tanstack/react-router' {
       path: '/documents'
       fullPath: '/documents'
       preLoaderRoute: typeof DocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features': {
+      id: '/features'
+      path: '/features'
+      fullPath: '/features'
+      preLoaderRoute: typeof FeaturesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/find-my-path': {
@@ -610,6 +630,7 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   DiscoverRoute: DiscoverRoute,
   DocumentsRoute: DocumentsRoute,
+  FeaturesRoute: FeaturesRoute,
   FindMyPathRoute: FindMyPathRoute,
   FundRoute: FundRoute,
   GuideRoute: GuideRoute,

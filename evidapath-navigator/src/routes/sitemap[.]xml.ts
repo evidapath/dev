@@ -18,6 +18,7 @@ const STATIC: [string, number][] = [
   ["/compare", 0.7],
   ["/careers", 0.6],
   ["/intelligence", 0.6],
+  ["/features", 0.8],
   ["/about", 0.6],
   ["/privacy", 0.3],
   ["/terms", 0.3],

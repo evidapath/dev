@@ -13,6 +13,10 @@ As of 24 November 2026, EvidaPath lists 53 universities in 8 countries (Australi
 - Country cost pages (https://evidapath.com/study-in/<country>/cost, e.g. https://evidapath.com/study-in/united-kingdom/cost): each university's lowest yearly tuition for international students in that country, with sources.
 - [Careers by degree](https://evidapath.com/careers): jobs each degree can lead to, with UK pay ranges from the UK government's National Careers Service.
 
+## What students can do (details: https://evidapath.com/features)
+- No account needed: entry requirements by qualification (IB Diploma; A-Levels: GCE, Edexcel, Cambridge; US High School Diploma + APs; UAE Ministry of Education; Indian CBSE / ISC; German Abitur; other national curricula), the full yearly and whole-degree cost (tuition, compulsory fees, living costs, minus guaranteed scholarships), scholarship eligibility by citizenship, visa costs and post-study work rules (UK, Canada, Germany, Netherlands; official links for the US, Australia, Malaysia and the UAE), careers with UK pay, and Find My Path matching across countries.
+- With a free account: a fit check for one university with an optional AI explanation, a dated application and scholarship plan, a family funding-gap plan comparing two universities, application and document tracking, the Offer Vault for offer letters, and offer comparison.
+
 ## Policies
 - [Privacy](https://evidapath.com/privacy)
 - [Terms](https://evidapath.com/terms)

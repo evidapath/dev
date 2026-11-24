@@ -101,7 +101,7 @@ export function Header() {
             <>
               <NavMenu label="Explore" items={exploreItems} />
               <Link
-                to="/about"
+                to="/features"
                 activeProps={{ className: "text-foreground font-semibold bg-secondary/80" }}
                 inactiveProps={{
                   className: "text-muted-foreground hover:text-foreground hover:bg-secondary/40",
@@ -195,7 +195,7 @@ export function Header() {
             })}
             {!user && (
               <Link
-                to="/about"
+                to="/features"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-2.5 px-3 py-2 rounded-md text-sm font-medium text-foreground hover:bg-secondary transition-colors"
               >
