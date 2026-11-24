@@ -67,10 +67,15 @@ function buildFaq(d: Loaded) {
       q: `Do I need the SAT for ${unisIn(d.data.sat).join(", ")}?`,
       a: d.data.sat.map(reqLine).join(" "),
     });
-  if (d.uaeScholarships.length)
+  const { open, nationals } = splitUae(d.uaeScholarships);
+  if (open.length)
     qa.push({
       q: "What scholarships are available for international students in the UAE?",
-      a: `EvidaPath lists ${d.uaeScholarships.length} scholarships at UAE universities: ${d.uaeScholarships.map((s) => `${s.name} (${s.provider})`).join("; ")}.`,
+      a:
+        `EvidaPath lists ${open.length} scholarships at UAE universities that are not limited to UAE nationals: ${open.map((s) => `${s.name} (${s.provider})`).join("; ")}.` +
+        (nationals.length
+          ? ` A further ${nationals.length} are for UAE nationals only: ${nationals.map((s) => `${s.name} (${s.provider})`).join("; ")}.`
+          : ""),
     });
   return qa;
 }
@@ -192,6 +197,16 @@ function ReqList({ rows }: { rows: RequirementFact[] }) {
   );
 }
 
+// "Nationals only" means the record's eligible citizenships are country codes with no "all"
+// (e.g. ["ae"]). Everything else is open to international students, as stored.
+function splitUae(rows: Scholarship[]) {
+  const nationalsOnly = (s: Scholarship) => {
+    const c = s.eligibleCitizenships ?? [];
+    return c.length > 0 && !c.includes("all") && c.every((x) => !x.startsWith("not:"));
+  };
+  return { open: rows.filter((s) => !nationalsOnly(s)), nationals: rows.filter(nationalsOnly) };
+}
+
 function ScholarshipList({ rows }: { rows: Scholarship[] }) {
   return (
     <ul className="space-y-2 text-sm">
@@ -199,6 +214,9 @@ function ScholarshipList({ rows }: { rows: Scholarship[] }) {
         <li key={s.id} className="border-l-2 border-primary/30 pl-3">
           <span className="font-semibold">{s.name}</span> ({s.provider})
           {s.awardSummary ? `: ${s.awardSummary}` : ""}{" "}
+          {/under review/i.test(s.verificationStatus) ? (
+            <span className="text-xs text-muted-foreground">(eligibility under review) </span>
+          ) : null}
           {s.officialSource ? <Source url={s.officialSource} title={s.name} /> : null}
         </li>
       ))}
@@ -237,6 +255,7 @@ function AnswersPage() {
   const ans = (q: string) => faq.find((x) => x.q === q)?.a ?? "";
   const dub = dubai(d.data.costs);
   const multi = (c: CountryCost) => d.data.costs.filter((x) => x.country === c.country).length > 1;
+  const uae = splitUae(d.uaeScholarships);
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
@@ -315,13 +334,21 @@ function AnswersPage() {
                   </QA>
                 );
               })()}
-            {d.uaeScholarships.length > 0 && (
+            {uae.open.length > 0 && (
               <QA
                 id={id()}
                 q="What scholarships are available for international students in the UAE?"
-                a={ans("What scholarships are available for international students in the UAE?")}
+                a={`Open to international students (${uae.open.length}):`}
               >
-                <ScholarshipList rows={d.uaeScholarships} />
+                <ScholarshipList rows={uae.open} />
+                {uae.nationals.length > 0 && (
+                  <>
+                    <p className="text-sm font-semibold pt-2">
+                      For UAE nationals only ({uae.nationals.length}):
+                    </p>
+                    <ScholarshipList rows={uae.nationals} />
+                  </>
+                )}
                 <p className="text-sm">
                   Eligibility and deadlines for each: <Link to="/scholarships">Scholarships</Link>.
                 </p>

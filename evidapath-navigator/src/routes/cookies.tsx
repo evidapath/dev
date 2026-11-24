@@ -58,7 +58,8 @@ function CookiesPage() {
       intro={
         <p>
           EvidaPath uses no advertising or analytics cookies and doesn't track you on other
-          websites. We use one sign-in cookie and a few items in your browser's storage that
+          websites. Our visit counts come from Cloudflare Web Analytics, which stores nothing on
+          your device. We use one sign-in cookie and a few items in your browser's storage that
           remember choices you made. Because these are needed for the features you use or only
           change how the site looks for you, we don't ask for consent, but you can clear them at any
           time.

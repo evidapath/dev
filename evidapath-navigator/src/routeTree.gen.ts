@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AcademicReadinessRouteImport } from './routes/academic-readiness'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as AnalyzeRouteImport } from './routes/analyze'
@@ -37,6 +38,11 @@ import { Route as UniversitiesRouteImport } from './routes/universities'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AcademicReadinessRoute = AcademicReadinessRouteImport.update({
@@ -157,6 +163,7 @@ const UniversitiesRoute = UniversitiesRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/academic-readiness': typeof AcademicReadinessRoute
   '/account': typeof AccountRoute
   '/analyze': typeof AnalyzeRoute
@@ -183,6 +190,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/academic-readiness': typeof AcademicReadinessRoute
   '/account': typeof AccountRoute
   '/analyze': typeof AnalyzeRoute
@@ -210,6 +218,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/academic-readiness': typeof AcademicReadinessRoute
   '/account': typeof AccountRoute
   '/analyze': typeof AnalyzeRoute
@@ -238,6 +247,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/academic-readiness'
     | '/account'
     | '/analyze'
@@ -264,6 +274,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/academic-readiness'
     | '/account'
     | '/analyze'
@@ -290,6 +301,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/academic-readiness'
     | '/account'
     | '/analyze'
@@ -317,6 +329,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AcademicReadinessRoute: typeof AcademicReadinessRoute
   AccountRoute: typeof AccountRoute
   AnalyzeRoute: typeof AnalyzeRoute
@@ -349,6 +362,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/academic-readiness': {
@@ -517,6 +537,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AcademicReadinessRoute: AcademicReadinessRoute,
   AccountRoute: AccountRoute,
   AnalyzeRoute: AnalyzeRoute,

@@ -79,3 +79,17 @@ a company is formed.
    they load (or from a lawyer).
 5. Self-host the fonts so Google receives no visitor IPs (removes one third party).
 6. Email notice to existing users about the new Terms and Privacy Policy.
+
+## Update 2026-11-24: visit statistics
+
+Subhan chose Cloudflare Web Analytics (cookieless). Sources read 2026-11-24 (saved in
+`.research-cache/pages/`): cloudflare.com/web-analytics: "Cloudflare Web Analytics does not use
+any client-side state, such as cookies or localStorage, to collect usage metrics." and "We also
+don't “fingerprint” individuals via their IP address, User Agent string, or any other data for
+the purpose of displaying analytics." developers.cloudflare.com/web-analytics/about: "Cloudflare
+Web Analytics does not collect or use your visitors’ personal data." FAQ: "Currently, Cloudflare
+Web Analytics do not log query strings" (so UTM tags are not recorded; referrers are).
+/privacy, /cookies and the Cloudflare entry in `src/lib/legal.ts` now say this
+(LEGAL_UPDATED 24 November 2026). It runs only once Subhan turns it on in the Cloudflare
+dashboard (automatic setup for a proxied site). No storage is added, so no consent banner is
+needed under PECR Sch. A1 as read on 19 Nov.

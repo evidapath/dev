@@ -3,7 +3,7 @@
 // form, a new provider, a new browser-storage key), update this file and the pages follow.
 // Research, sources and open items: fact-checks/legal/2026-11-19-legal-review.md
 
-export const LEGAL_UPDATED = "19 November 2026";
+export const LEGAL_UPDATED = "24 November 2026";
 export const PRIVACY_EMAIL = "evidapath@gmail.com";
 
 // EvidaPath isn't a registered company yet; it is run by its two founders. Replace this when
@@ -40,8 +40,8 @@ export const PROCESSORS = [
   },
   {
     name: "Cloudflare",
-    what: "Technical request data such as your IP address, browser and the pages you open.",
-    why: "Hosting and security of the website.",
+    what: "Technical request data such as your IP address, browser and the pages you open. For visit statistics (Cloudflare Web Analytics): the pages viewed and the site that linked you here. Cloudflare states it uses no cookies or browser storage for this and doesn't fingerprint visitors.",
+    why: "Hosting and security of the website, and counting visits so we know which pages help students and where visitors come from.",
     where: "Global network.",
   },
   {

@@ -46,6 +46,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://evidapath.com/about</loc>
+    <lastmod>2026-11-24</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://evidapath.com/privacy</loc>
     <lastmod>2026-11-24</lastmod>
     <priority>0.3</priority>

@@ -86,8 +86,8 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link to="/intelligence" className="hover:text-primary transition-colors">
-                  The EvidaPath Decision Model
+                <Link to="/about" className="hover:text-primary transition-colors">
+                  How we check figures
                 </Link>
               </li>
               <li>

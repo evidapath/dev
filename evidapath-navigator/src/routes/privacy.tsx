@@ -75,7 +75,7 @@ function PrivacyPage() {
           EvidaPath helps students compare universities abroad. This policy explains, in plain
           language, what we collect, why, who sees it, how long we keep it and what you can do about
           it. We don't sell your data, we don't show ads, and we don't use advertising or analytics
-          cookies.
+          cookies. We count visits with Cloudflare Web Analytics, which sets no cookies.
         </p>
       }
       sections={[
@@ -282,7 +282,8 @@ function PrivacyPage() {
           body: (
             <p>
               We use a sign-in cookie and a few browser-storage items that remember your choices. No
-              advertising or analytics cookies. Full list and how to clear them:{" "}
+              advertising or analytics cookies; our visit counts (Cloudflare Web Analytics) don't
+              use cookies or browser storage. Full list and how to clear them:{" "}
               <Link to="/cookies">Cookies &amp; storage</Link>.
             </p>
           ),
