@@ -32,8 +32,11 @@ import { Route as PlanRouteImport } from './routes/plan'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ScholarshipsRouteImport } from './routes/scholarships'
 import { Route as SignInRouteImport } from './routes/sign-in'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as UniversitiesRouteImport } from './routes/universities'
+import { Route as UniversitiesSlugRouteImport } from './routes/universities_.$slug'
+import { Route as StudyInCountryCostRouteImport } from './routes/study-in.$country.cost'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -150,6 +153,11 @@ const SignInRoute = SignInRouteImport.update({
   path: '/sign-in',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -158,6 +166,16 @@ const TermsRoute = TermsRouteImport.update({
 const UniversitiesRoute = UniversitiesRouteImport.update({
   id: '/universities',
   path: '/universities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UniversitiesSlugRoute = UniversitiesSlugRouteImport.update({
+  id: '/universities_/$slug',
+  path: '/universities/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudyInCountryCostRoute = StudyInCountryCostRouteImport.update({
+  id: '/study-in/$country/cost',
+  path: '/study-in/$country/cost',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -185,8 +203,11 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/scholarships': typeof ScholarshipsRoute
   '/sign-in': typeof SignInRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/universities': typeof UniversitiesRoute
+  '/universities/$slug': typeof UniversitiesSlugRoute
+  '/study-in/$country/cost': typeof StudyInCountryCostRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -212,8 +233,11 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/scholarships': typeof ScholarshipsRoute
   '/sign-in': typeof SignInRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/universities': typeof UniversitiesRoute
+  '/universities/$slug': typeof UniversitiesSlugRoute
+  '/study-in/$country/cost': typeof StudyInCountryCostRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -240,8 +264,11 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/scholarships': typeof ScholarshipsRoute
   '/sign-in': typeof SignInRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/universities': typeof UniversitiesRoute
+  '/universities_/$slug': typeof UniversitiesSlugRoute
+  '/study-in/$country/cost': typeof StudyInCountryCostRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -269,8 +296,11 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/scholarships'
     | '/sign-in'
+    | '/sitemap.xml'
     | '/terms'
     | '/universities'
+    | '/universities/$slug'
+    | '/study-in/$country/cost'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -296,8 +326,11 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/scholarships'
     | '/sign-in'
+    | '/sitemap.xml'
     | '/terms'
     | '/universities'
+    | '/universities/$slug'
+    | '/study-in/$country/cost'
   id:
     | '__root__'
     | '/'
@@ -323,8 +356,11 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/scholarships'
     | '/sign-in'
+    | '/sitemap.xml'
     | '/terms'
     | '/universities'
+    | '/universities_/$slug'
+    | '/study-in/$country/cost'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -351,8 +387,11 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   ScholarshipsRoute: typeof ScholarshipsRoute
   SignInRoute: typeof SignInRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   UniversitiesRoute: typeof UniversitiesRoute
+  UniversitiesSlugRoute: typeof UniversitiesSlugRoute
+  StudyInCountryCostRoute: typeof StudyInCountryCostRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -518,6 +557,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignInRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -530,6 +576,20 @@ declare module '@tanstack/react-router' {
       path: '/universities'
       fullPath: '/universities'
       preLoaderRoute: typeof UniversitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/universities_/$slug': {
+      id: '/universities_/$slug'
+      path: '/universities/$slug'
+      fullPath: '/universities/$slug'
+      preLoaderRoute: typeof UniversitiesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/study-in/$country/cost': {
+      id: '/study-in/$country/cost'
+      path: '/study-in/$country/cost'
+      fullPath: '/study-in/$country/cost'
+      preLoaderRoute: typeof StudyInCountryCostRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -559,8 +619,11 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   ScholarshipsRoute: ScholarshipsRoute,
   SignInRoute: SignInRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   UniversitiesRoute: UniversitiesRoute,
+  UniversitiesSlugRoute: UniversitiesSlugRoute,
+  StudyInCountryCostRoute: StudyInCountryCostRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

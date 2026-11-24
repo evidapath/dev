@@ -5,6 +5,7 @@
 
 import type { ProgramView, University } from "./mock-data";
 import { canonicalUrl } from "./seo";
+import { universityPath } from "./paths";
 
 type Json = Record<string, unknown>;
 
@@ -79,10 +80,42 @@ function programJsonLd(p: ProgramView, providerId: string): Json {
   };
 }
 
+/** One id per university, at its own page, shared by every page that describes it. */
+const universityId = (u: University) => `${canonicalUrl(universityPath(u.name))}#university`;
+
+function collegeJsonLd(u: University): Json {
+  return {
+    "@type": "CollegeOrUniversity",
+    "@id": universityId(u),
+    name: u.name,
+    url: canonicalUrl(universityPath(u.name)),
+    ...(u.officialSourceUrl ? { sameAs: u.officialSourceUrl } : {}),
+    ...(u.city || u.country
+      ? {
+          address: {
+            "@type": "PostalAddress",
+            ...(u.city ? { addressLocality: u.city } : {}),
+            ...(u.country ? { addressCountry: u.country } : {}),
+          },
+        }
+      : {}),
+  };
+}
+
+/** A university's own page: the university and each of its programmes. */
+export function universityJsonLd(u: University): Json {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      collegeJsonLd(u),
+      ...(u.programDetails ?? []).map((p) => programJsonLd(p, universityId(u))),
+    ],
+  };
+}
+
 /** The /universities list: every university, and each of its programmes. */
 export function universitiesJsonLd(universities: University[], pagePath: string): Json {
   const page = canonicalUrl(pagePath);
-  const idOf = (u: University) => `${page}#${u.id}`;
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -95,24 +128,12 @@ export function universitiesJsonLd(universities: University[], pagePath: string)
           "@type": "ListItem",
           position: i + 1,
           item: {
-            "@type": "CollegeOrUniversity",
-            "@id": idOf(u),
-            name: u.name,
-            ...(u.officialSourceUrl ? { sameAs: u.officialSourceUrl } : {}),
-            ...(u.city || u.country
-              ? {
-                  address: {
-                    "@type": "PostalAddress",
-                    ...(u.city ? { addressLocality: u.city } : {}),
-                    ...(u.country ? { addressCountry: u.country } : {}),
-                  },
-                }
-              : {}),
+            ...collegeJsonLd(u),
           },
         })),
       },
       ...universities.flatMap((u) =>
-        (u.programDetails ?? []).map((p) => programJsonLd(p, idOf(u))),
+        (u.programDetails ?? []).map((p) => programJsonLd(p, universityId(u))),
       ),
     ],
   };

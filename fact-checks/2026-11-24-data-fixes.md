@@ -19,3 +19,4 @@ Business (IB and A-level students): no change in any matching line.
 Not done:
 - UCL Economics note (says £39,200 for 2026-27 while the record shows £40,800 for 2027-28): ucl.ac.uk returns 403 to our fetcher and the browser extension has no permission for the domain. The note is already hidden on /answers. To check.
 - Melbourne note with an estimated rise ("expected ~2-4% higher"): hidden on /answers; record not re-checked.
+- University of Toronto Computer Science: the English line reads "C (final or predicted)", which is not an English test score. Seen on the new university page; record not changed. To check.

@@ -2,6 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { HelpCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import { PageHeader } from "../components/PageHeader";
+import { FitCta } from "../components/FitCta";
+import { countryCostPath } from "../lib/paths";
+import { at, costAnswer, FeeTable, money, place, Source } from "../components/fees";
 import { getAnswers } from "../lib/answers.functions";
 import type { CountryCost, FeeFact, RequirementFact } from "../lib/answers.server";
 import type { Scholarship } from "../lib/mock-data";
@@ -15,20 +18,8 @@ import { jsonLdScript } from "../lib/structured-data";
 
 type Loaded = NonNullable<Awaited<ReturnType<typeof getAnswers>>>;
 
-const money = (f: FeeFact) =>
-  f.tuition === 0 ? `no tuition fee (0 ${f.currency})` : formatCost(f.tuition, f.currency);
-// "the United Kingdom", "the Netherlands"; "Canada", "Germany".
-const place = (c: string) => (/^(United |Netherlands)/.test(c) ? `the ${c}` : c);
-const at = (f: FeeFact) => `${f.programme} at ${f.university}${f.year ? ` (${f.year})` : ""}`;
-
 function costQuestion(c: CountryCost, multi: boolean) {
   return `How much does it cost an international student to study in ${place(c.country)}?${multi ? ` (fees in ${c.currency})` : ""}`;
-}
-function costAnswer(c: CountryCost) {
-  const unis = `${c.universities} ${c.universities === 1 ? "university" : "universities"}`;
-  if (c.lowest.tuition === c.highest.tuition)
-    return `On EvidaPath, yearly tuition for international students at ${unis} in ${place(c.country)} is ${money(c.lowest)} for all ${c.programmes} programmes listed${c.lowest.year ? ` (${c.lowest.year})` : ""}.`;
-  return `On EvidaPath, yearly tuition for international students at ${unis} in ${place(c.country)} (${c.programmes} programmes) ranges from ${money(c.lowest)} for ${at(c.lowest)} to ${money(c.highest)} for ${at(c.highest)}.`;
 }
 function dubai(costs: CountryCost[]) {
   const uae = costs.find((c) => c.country === "United Arab Emirates" && c.currency === "AED");
@@ -112,15 +103,6 @@ export const Route = createFileRoute("/answers")({
   component: AnswersPage,
 });
 
-function Source({ url, title }: { url: string | null; title: string | null }) {
-  if (!url) return <span className="text-muted-foreground">source on file</span>;
-  return (
-    <a href={url} target="_blank" rel="noopener noreferrer" className="text-primary underline">
-      {title ? "source" : new URL(url).hostname}
-    </a>
-  );
-}
-
 function QA({ id, q, a, children }: { id: string; q: string; a: string; children?: ReactNode }) {
   return (
     <section
@@ -131,48 +113,6 @@ function QA({ id, q, a, children }: { id: string; q: string; a: string; children
       <p className="text-[15px] leading-relaxed text-foreground">{a}</p>
       {children}
     </section>
-  );
-}
-
-function FeeTable({ rows }: { rows: FeeFact[] }) {
-  return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-sm min-w-[520px]">
-        <thead className="text-left text-muted-foreground">
-          <tr className="border-b border-border">
-            <th className="py-2 pr-3 font-semibold">University (lowest-fee programme)</th>
-            <th className="py-2 pr-3 font-semibold">Tuition / year</th>
-            <th className="py-2 pr-3 font-semibold">Year</th>
-            <th className="py-2 font-semibold">Source</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((f) => (
-            <tr
-              key={`${f.universityId}-${f.programme}`}
-              className="border-b border-border/60 align-top"
-            >
-              <td className="py-2 pr-3">
-                {f.university}
-                <span className="block text-xs text-muted-foreground">{f.programme}</span>
-              </td>
-              <td className="py-2 pr-3 tabular-nums font-medium">
-                {money(f)}
-                {f.note && (
-                  <span className="block text-xs font-normal text-muted-foreground max-w-xs">
-                    {f.note}
-                  </span>
-                )}
-              </td>
-              <td className="py-2 pr-3 text-muted-foreground">{f.year ?? "not stated"}</td>
-              <td className="py-2">
-                <Source url={f.sourceUrl} title={f.sourceTitle} />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
   );
 }
 
@@ -221,25 +161,6 @@ function ScholarshipList({ rows }: { rows: Scholarship[] }) {
         </li>
       ))}
     </ul>
-  );
-}
-
-// The next step for a visitor who arrives from a search: check their own fit.
-function FitCta() {
-  return (
-    <div className="rounded-2xl border border-primary/30 bg-primary/5 p-5 flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
-      <p className="text-sm text-foreground">
-        <span className="font-semibold">Which of these fit your grades and budget?</span> Answer 4
-        questions and see the universities that match, with the same sourced figures. No sign-in
-        needed.
-      </p>
-      <Link
-        to="/find-my-path"
-        className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 shrink-0"
-      >
-        Find My Path
-      </Link>
-    </div>
   );
 }
 
@@ -300,6 +221,11 @@ function AnswersPage() {
               return (
                 <QA key={q} id={id()} q={q} a={costAnswer(c)}>
                   <FeeTable rows={c.perUniversity} />
+                  <p className="text-sm">
+                    <Link to={countryCostPath(c.country)} className="text-primary underline">
+                      Cost of studying in {place(c.country)}
+                    </Link>
+                  </p>
                 </QA>
               );
             })}

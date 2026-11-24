@@ -16,6 +16,7 @@ import { formatCost, NOT_PUBLISHED } from "../lib/format";
 import { AdmissionsPanel } from "./AdmissionsPanel";
 import { CardScholarships } from "./CardScholarships";
 import { SearchSelect } from "./SearchSelect";
+import { universityPath } from "../lib/paths";
 
 // Skeleton placeholder shown while verified data loads — keeps the grid layout
 // stable (no pop-in / layout shift) and signals progress with a gentle pulse.
@@ -142,7 +143,9 @@ export function UniversityCard({ univ, index = 0 }: { univ: University; index?: 
           </span>
         </div>
         <h3 className="font-display font-bold text-xl text-foreground mt-3 leading-tight">
-          {univ.name}
+          <Link to={universityPath(univ.name)} className="hover:text-primary hover:underline">
+            {univ.name}
+          </Link>
         </h3>
         <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
           <MapPin className="w-3 h-3" />

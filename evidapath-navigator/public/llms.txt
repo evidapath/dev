@@ -9,6 +9,8 @@ As of 24 November 2026, EvidaPath lists 53 universities in 8 countries (Australi
 - [Universities](https://evidapath.com/universities): tuition, living costs, entry requirements by qualification, English tests and application deadlines for each programme.
 - [Find My Path](https://evidapath.com/find-my-path): answer 4 questions (curriculum, grades, subject, yearly budget) and see programmes that fit. No sign-in needed.
 - [Scholarships](https://evidapath.com/scholarships): scholarships at universities on EvidaPath. The page marks itself as a preview while scholarship records are still being checked.
+- University pages (https://evidapath.com/universities/<name>, e.g. https://evidapath.com/universities/university-of-toronto): every programme's fees, entry requirements by qualification and deadlines for one university. All of them are listed in https://evidapath.com/sitemap.xml.
+- Country cost pages (https://evidapath.com/study-in/<country>/cost, e.g. https://evidapath.com/study-in/united-kingdom/cost): each university's lowest yearly tuition for international students in that country, with sources.
 - [Careers by degree](https://evidapath.com/careers): jobs each degree can lead to, with UK pay ranges from the UK government's National Careers Service.
 
 ## Policies
