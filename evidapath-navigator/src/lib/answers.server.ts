@@ -101,9 +101,9 @@ interface AdmissionRow {
 const firstSentence = (t: string | null) =>
   t ? t.split(/(?<=[a-z0-9)%])\.\s+(?=[A-Z])/)[0]!.replace(/\.?$/, ".") : null;
 
-// A note is shown to students only when it explains the figure beside it: it must contain
-// that figure and no research remarks (estimates, "secondary sources", field names). Notes
-// written for an earlier year's fee, or for the research log, stay off the page.
+// A note is shown to students only when it explains the figure beside it and carries no
+// research remarks (estimates, "secondary sources", field names). Notes written for another
+// year's fee, or for the research log, stay off the page.
 const RESEARCH_REMARK =
   /~|≈|=>|conflict|secondary source|confidence|primary source|_|verify|re-check|expected|approx|estimate/i;
 function noteFor(note: string | null, tuition: number): string | null {
@@ -115,8 +115,10 @@ function noteFor(note: string | null, tuition: number): string | null {
   // A sentence cut short by the splitter (e.g. at "incl.") leaves a bracket open.
   if ((t.match(/\(/g) ?? []).length !== (t.match(/\)/g) ?? []).length) return null;
   const n = Math.round(tuition);
-  const shown = [String(n), n.toLocaleString("en-US")];
-  return shown.some((x) => t.includes(x)) ? t : null;
+  if (n === 0 || [String(n), n.toLocaleString("en-US")].some((x) => t.includes(x))) return t;
+  // A note giving some other yearly fee was written for a different figure (often an
+  // earlier year); one explaining a whole-course total or a per-credit rate still fits.
+  return /\/\s*y(?:ea)?r\b|\ba year\b|per year|annual/i.test(t) ? null : t;
 }
 
 // The academic year as stored can carry a working note in brackets; show the year only.
