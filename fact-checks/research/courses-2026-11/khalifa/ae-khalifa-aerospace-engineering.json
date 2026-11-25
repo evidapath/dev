@@ -1,0 +1,97 @@
+{
+  "uni": "ae-khalifa",
+  "slug": "aerospace-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.ku.ac.ae/academics/undergraduate-programs/b-sc-in-aerospace-engineering",
+      "page": "a69ff4a27a20",
+      "title": "BSc in Aerospace Engineering | Khalifa University",
+      "organization": "Khalifa University",
+      "quotes": [
+        "BSc in Aerospace Engineering"
+      ]
+    },
+    "fees": {
+      "url": "https://ku.ac.ae/fee-and-payment-guidelines",
+      "page": "7f7c04609db1",
+      "title": "Fee and Payment Guidelines | Khalifa University",
+      "organization": "Khalifa University",
+      "quotes": [
+        "Bachelor of Science (BSc): AED 2,500 per credit hour",
+        "Bachelor of Science (BSc) 81,250 AED 4 Years"
+      ]
+    },
+    "admissions": {
+      "url": "https://www.ku.ac.ae/undergraduate-admissions",
+      "page": "a3528353eb04",
+      "title": "Undergraduate Admissions | Khalifa University",
+      "organization": "Khalifa University",
+      "quotes": [
+        "*Applicants must be awarded the full IB Diploma with six HL/SL subjects (excluding Islamic Education)",
+        "*Minimum score of 4 in each subject – with a total of 24 points.",
+        "Minimum five IGCSE/GCSE (O-Level) subjects with grade C or above.",
+        "Mathematics (Mandatory) (minimum Grade C) • Two of the following: Physics, Chemistry, and/or Biology (minimum Grade C)",
+        "Mandatory English Proficiency Test Score IELTS Academic 6.0 OR TOEFL iBT 79",
+        "Shortlisted applicants will be required to take KU Admission Tests",
+        "Applicants must have graduated from high school no later than two years before the current year (i.e., not before 2023).",
+        "Aerospace Engineering ✔ ✔ X X"
+      ]
+    }
+  },
+  "program": {
+    "name": "Aerospace Engineering",
+    "degree_type": "BSc",
+    "field": "Aerospace Engineering",
+    "duration_years": 4,
+    "duration_source": "fees",
+    "languages": [],
+    "entry_year": "Current (KU pages; year not stated)",
+    "platform": "",
+    "source": "course",
+    "summary": "BSc in Aerospace Engineering at Khalifa University, Abu Dhabi.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 81250,
+      "academic_year": "Current (KU fee page; year not stated)",
+      "source": "fees",
+      "note": "SOURCE CONFLICT: KU's fee page gives AED 2,500 per credit hour and an estimated AED 81,250 a year for a BSc (normal duration 4 years); KU's partial-scholarship page shows a higher yearly 'Full Tuition'. Housing and transport are extra.",
+      "living_from": "costProfile-ae-khalifa-cost-bsc-eng-all-students"
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "admissions",
+      "threshold": "Aerospace Engineering: full IB Diploma (six HL/SL subjects), at least 4 in each subject and 24 points in total, including Mathematics and Physics. Shortlisted applicants take KU's admission tests; high-school graduation no earlier than 2023.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic / TOEFL iBT",
+        "min_score": "IELTS Academic 6.0 or TOEFL iBT 79 (mandatory).",
+        "source": "admissions"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "admissions",
+      "threshold": "Aerospace Engineering: five IGCSE/GCSE subjects at grade C or above, plus three AS/A Level subjects at grade C or above including Mathematics and Physics. Shortlisted applicants take KU's admission tests; high-school graduation no earlier than 2023.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic / TOEFL iBT",
+        "min_score": "IELTS Academic 6.0 or TOEFL iBT 79 (mandatory).",
+        "source": "admissions"
+      }
+    }
+  ]
+}

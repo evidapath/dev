@@ -360,3 +360,18 @@ all 22 earlier folders rebuilt with old and new builder: identical output.
 Sim (IB 34-36, $40k): HCT now offered for Accounting, Mechanical Engineering, Nursing; Business
 shows Business Analytics (requirement published) instead of Finance (none). All "can't compare":
 HCT sets subject grades, not an overall score.
+
+## 2026-11-25: Khalifa University, eleven BSc programmes
+
+`khalifa/` (generator `scripts/research/gen/ae_khalifa.py`) → `pending/2026-11-25-khalifa.ndjson`
+(57 records: 55 creates + 2 source excerpts that only grow; dry-run HTTP 200). Aerospace,
+Biomedical, Chemical, Civil, Electrical, Mechanical, Petroleum and Energy Engineering,
+Engineering Systems and Management, Robotics and AI, Applied Mathematics, Statistics and Data
+Science. Fee: KU fee page "Bachelor of Science (BSc) 81,250 AED 4 Years" (AED 2,500 per credit
+hour); note marks the conflict with KU's partial-scholarship page (higher "Full Tuition"), so
+/answers shows the conflict warning. Living cost reused from the existing Khalifa engineering
+record (housing AED 20,000 a year), so new and old records compare like for like. Entry: IB
+full diploma, 4 in each subject, 24 total, Maths + Physics; A-level Maths + Physics at C;
+IELTS 6.0 / TOEFL iBT 79; KU admission tests; graduated no earlier than 2023. Teaching language
+not stated. Sim (IB 34-36): Mechanical / Aerospace now match the named programme (was generic
+"Engineering"), same cost $27,570; Mathematics adds Applied Mathematics (IB 24).

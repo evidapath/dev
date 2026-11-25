@@ -9,7 +9,7 @@ quotes and page details. Grouped by what has to happen before a programme can go
 |---|---|
 | Cambridge | More courses. First settle the College fee rule (README "Found on the way": Darwin vs Queens'). |
 | HCT (Higher Colleges of Technology) | 12 done 2026-11-25. Held: Cybersecurity and Data Science (programme pages link to catalogue entries named Information Technology / Information Systems). Not attempted: Education, Health Information Management, Medical Laboratory, Emergency Medical Services, Pharmacy, Midwifery, Social Work, Veterinary Science, Logistics, Aviation, Marine, Tourism, HRM, Finance-adjacent, Quality, Innovation. Teaching language not stated anywhere read. |
-| Khalifa University | Same. |
+| Khalifa University | 11 BSc done 2026-11-25 (every programme on its undergraduate list). Not attempted: Cell and Molecular Biology, Earth and Planetary Sciences, Computer Engineering (named in the admissions table, not on the programme list page). |
 | Zayed University | Psychology and Architecture were tried: only a 2018 study plan and older catalogues with conflicting credit totals. Need a current page. |
 | UAE University | Same as HCT. Medicine held (UAE nationals only). |
 | RIT Dubai | Same as HCT. Engineering sequences run to a "Fifth Year": check length. |
