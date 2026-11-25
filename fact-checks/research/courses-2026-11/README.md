@@ -385,3 +385,14 @@ Software Design (AED 72,465.90), seven BBA concentrations (AED 2,359.35 × 30 cr
 AED 70,780.50, our calculation: CUD's "Tuition per Year" column shows AED 0.00 for BBA rows).
 Length "4 Years (8 Semesters)" and credit hours from each programme page. Teaching language
 not stated on pages read. Held: Communication (no fee row).
+
+## 2026-11-25: University of Birmingham Dubai, thirteen courses
+
+`bham-dubai/` (generator `scripts/research/gen/ae_bham_dubai.py`) → `pending/2026-11-25-bham-dubai.ndjson`
+(78 creates, dry-run HTTP 200). Biomedical Science, Accounting and Finance, Business Management
+with Economics / Finance / Marketing / Psychology, Money Banking and Finance, AI and Computer
+Science, Mechanical Engineering, Mechanical Engineering (Biomedical), Robotics and AI, Commercial
+Law, Digital Media and Communications. Fee: the page data's "Fees (international)" September
+2027 figure (raw.py → <id>-raw), equal to the visible UK/Ireland box on every page. Entry lines
+taken from each page. Held: Civil and Electronic/Electrical Engineering (years 2-3 in the UK).
+Sim (IB 37-39): Accounting and Finance now shows the named course (IB 32); Law adds Commercial Law.

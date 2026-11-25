@@ -1,0 +1,77 @@
+{
+  "uni": "ae-birmingham-dubai",
+  "slug": "beng-robotics-and-artificial-intelligence",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/engineering-courses/robotics-artificial-intelligence-ai-beng-dubai",
+      "page": "9937fb50054c",
+      "title": "Robotics and Artificial Intelligence BEng | University of Birmingham Dubai",
+      "organization": "University of Birmingham Dubai",
+      "quotes": [
+        "Duration 3 years (full-time)",
+        "A Level AAB - ABB",
+        "IB 6,6,5 - 6,5,5 at Higher Level to include 6 in Mathematics with a minimum of 32 points overall",
+        "To study at the University, you must be able to demonstrate a good level of written and spoken English."
+      ]
+    },
+    "intl": {
+      "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/engineering-courses/robotics-artificial-intelligence-ai-beng-dubai",
+      "page": "9937fb50054c-raw",
+      "title": "Robotics and Artificial Intelligence BEng: page data (international fee) | University of Birmingham Dubai",
+      "organization": "University of Birmingham Dubai",
+      "quotes": [
+        "\"Fees (international)\",\"value\":\"September 2027: AED 154,325 per year\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Robotics and Artificial Intelligence",
+    "degree_type": "BEng",
+    "field": "Mechatronic Engineering",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [],
+    "entry_year": "September 2027 entry",
+    "platform": "Direct application (Birmingham Dubai admissions portal)",
+    "source": "course",
+    "summary": "Robotics and Artificial Intelligence BEng, 3 years full-time, University of Birmingham Dubai.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 154325,
+      "academic_year": "September 2027 entry",
+      "source": "intl",
+      "living_from": "costProfile-ae-birmingham-dubai-cost-bsc-cs-all-students",
+      "note": "International fee: AED 154,325 per year for September 2027 entry (the course page's international fee, the same as its UK/Ireland figure)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Robotics and Artificial Intelligence: A Level AAB - ABB.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English language",
+        "min_score": "A good level of written and spoken English (see the course page for accepted tests).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Robotics and Artificial Intelligence: IB 6,6,5 - 6,5,5 at Higher Level to include 6 in Mathematics with a minimum of 32 points overall.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English language",
+        "min_score": "A good level of written and spoken English (see the course page for accepted tests).",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "uni": "ae-birmingham-dubai",
+  "slug": "bsc-business-management-with-economics",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/business-and-finance-courses/business-management-with-economics-bsc",
+      "page": "ebff0721ff79",
+      "title": "Business Management with Economics BSc | University of Birmingham Dubai",
+      "organization": "University of Birmingham Dubai",
+      "quotes": [
+        "Duration 3 years (full-time)",
+        "Typical offer: AAB-BBB",
+        "International Baccalaureate Diploma 6,6,5 at Higher Level with a minimum of 32 points overall",
+        "To study at the University, you must be able to demonstrate a good level of written and spoken English."
+      ]
+    },
+    "intl": {
+      "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/business-and-finance-courses/business-management-with-economics-bsc",
+      "page": "ebff0721ff79-raw",
+      "title": "Business Management with Economics BSc: page data (international fee) | University of Birmingham Dubai",
+      "organization": "University of Birmingham Dubai",
+      "quotes": [
+        "\"Fees (international)\",\"value\":\"September 2027: AED 146,806 per year\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Business Management with Economics",
+    "degree_type": "BSc",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [],
+    "entry_year": "September 2027 entry",
+    "platform": "Direct application (Birmingham Dubai admissions portal)",
+    "source": "course",
+    "summary": "Business Management with Economics BSc, 3 years full-time, University of Birmingham Dubai.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 146806,
+      "academic_year": "September 2027 entry",
+      "source": "intl",
+      "living_from": "costProfile-ae-birmingham-dubai-cost-bsc-cs-all-students",
+      "note": "International fee: AED 146,806 per year for September 2027 entry (the course page's international fee, the same as its UK/Ireland figure)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Business Management with Economics: Typical offer: AAB-BBB.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English language",
+        "min_score": "A good level of written and spoken English (see the course page for accepted tests).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Business Management with Economics: International Baccalaureate Diploma 6,6,5 at Higher Level with a minimum of 32 points overall.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English language",
+        "min_score": "A good level of written and spoken English (see the course page for accepted tests).",
+        "source": "course"
+      }
+    }
+  ]
+}

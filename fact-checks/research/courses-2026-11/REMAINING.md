@@ -14,7 +14,7 @@ quotes and page details. Grouped by what has to happen before a programme can go
 | UAE University | Fee table read 2026-11-25 (saved `65949822798d`, 2026/2027 onwards, credits and totals per programme). Held: programme length (model study-plan PDFs; download refused by the permission system), so no yearly averages. Medicine held (UAE nationals only). |
 | RIT Dubai | Same as HCT. Engineering sequences run to a "Fifth Year": check length. |
 | Canadian University Dubai | 11 done 2026-11-25 (VAT-inclusive, as the 17 Nov fixes). Held: three Communication programmes (no row on CUD's fee page). Not attempted: engineering branches, Architecture, Interior Design, Design and AI (programme list loads by script). To check: two existing "Psychology" programme records. |
-| University of Birmingham Dubai | Same as HCT. |
+| University of Birmingham Dubai | 13 done 2026-11-25. Held: Civil and Electronic/Electrical Engineering (years 2-3 in Birmingham UK). Not attempted: foundation-year, placement and MEng variants. To check: existing Birmingham Dubai records use the visible 'Fees (UK/Ireland)' box; the page data's international fee matched it on every page read. |
 | German universities (e.g. TUM) | Most bachelor's are taught in German; find English-taught ones only. |
 
 ## 2. Blocked by bot checks (re-try later; never bypass)

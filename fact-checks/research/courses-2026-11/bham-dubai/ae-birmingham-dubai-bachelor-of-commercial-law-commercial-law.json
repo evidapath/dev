@@ -1,0 +1,77 @@
+{
+  "uni": "ae-birmingham-dubai",
+  "slug": "bachelor-of-commercial-law-commercial-law",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/law-courses/bachelor-commercial-law",
+      "page": "511da8c5989c",
+      "title": "Commercial Law Bachelor of Commercial Law | University of Birmingham Dubai",
+      "organization": "University of Birmingham Dubai",
+      "quotes": [
+        "Duration 3 years (full-time)",
+        "Typical offer: ABB",
+        "IB 6,5,5 at Higher Level with a minimum of 32 points overall",
+        "To study at the University, you must be able to demonstrate a good level of written and spoken English."
+      ]
+    },
+    "intl": {
+      "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/law-courses/bachelor-commercial-law",
+      "page": "511da8c5989c-raw",
+      "title": "Commercial Law Bachelor of Commercial Law: page data (international fee) | University of Birmingham Dubai",
+      "organization": "University of Birmingham Dubai",
+      "quotes": [
+        "\"Fees (international)\",\"value\":\"September 2027: AED 146,806 per year\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Commercial Law",
+    "degree_type": "Bachelor of Commercial Law",
+    "field": "Law",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [],
+    "entry_year": "September 2027 entry",
+    "platform": "Direct application (Birmingham Dubai admissions portal)",
+    "source": "course",
+    "summary": "Commercial Law Bachelor of Commercial Law, 3 years full-time, University of Birmingham Dubai.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 146806,
+      "academic_year": "September 2027 entry",
+      "source": "intl",
+      "living_from": "costProfile-ae-birmingham-dubai-cost-bsc-cs-all-students",
+      "note": "International fee: AED 146,806 per year for September 2027 entry (the course page's international fee, the same as its UK/Ireland figure)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Commercial Law: Typical offer: ABB.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English language",
+        "min_score": "A good level of written and spoken English (see the course page for accepted tests).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Commercial Law: IB 6,5,5 at Higher Level with a minimum of 32 points overall.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English language",
+        "min_score": "A good level of written and spoken English (see the course page for accepted tests).",
+        "source": "course"
+      }
+    }
+  ]
+}

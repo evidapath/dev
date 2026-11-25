@@ -1,0 +1,77 @@
+{
+  "uni": "ae-birmingham-dubai",
+  "slug": "bsc-artificial-intelligence-and-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/computer-science-courses/artificial-intelligence-and-computer-science-bsc",
+      "page": "204539fa77d0",
+      "title": "Artificial Intelligence and Computer Science BSc | University of Birmingham Dubai",
+      "organization": "University of Birmingham Dubai",
+      "quotes": [
+        "Duration 3 years (full-time)",
+        "A Level A*AA - ABB",
+        "IB 6,6,6 - 6,5,5 at Higher Level to include 6 in Mathematics with a minimum of 32 points overall",
+        "To study at the University, you must be able to demonstrate a good level of written and spoken English."
+      ]
+    },
+    "intl": {
+      "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/computer-science-courses/artificial-intelligence-and-computer-science-bsc",
+      "page": "204539fa77d0-raw",
+      "title": "Artificial Intelligence and Computer Science BSc: page data (international fee) | University of Birmingham Dubai",
+      "organization": "University of Birmingham Dubai",
+      "quotes": [
+        "\"Fees (international)\",\"value\":\"September 2027: AED 162,203 per year\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Artificial Intelligence and Computer Science",
+    "degree_type": "BSc",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [],
+    "entry_year": "September 2027 entry",
+    "platform": "Direct application (Birmingham Dubai admissions portal)",
+    "source": "course",
+    "summary": "Artificial Intelligence and Computer Science BSc, 3 years full-time, University of Birmingham Dubai.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 162203,
+      "academic_year": "September 2027 entry",
+      "source": "intl",
+      "living_from": "costProfile-ae-birmingham-dubai-cost-bsc-cs-all-students",
+      "note": "International fee: AED 162,203 per year for September 2027 entry (the course page's international fee, the same as its UK/Ireland figure)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Artificial Intelligence and Computer Science: A Level A*AA - ABB.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English language",
+        "min_score": "A good level of written and spoken English (see the course page for accepted tests).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Artificial Intelligence and Computer Science: IB 6,6,6 - 6,5,5 at Higher Level to include 6 in Mathematics with a minimum of 32 points overall.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English language",
+        "min_score": "A good level of written and spoken English (see the course page for accepted tests).",
+        "source": "course"
+      }
+    }
+  ]
+}

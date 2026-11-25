@@ -1,0 +1,77 @@
+{
+  "uni": "ae-birmingham-dubai",
+  "slug": "bsc-biomedical-science",
+  "sources": {
+    "course": {
+      "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/biomedical-science-courses/biomedical-science-bsc",
+      "page": "ae7673fdcdb0",
+      "title": "Biomedical Science BSc | University of Birmingham Dubai",
+      "organization": "University of Birmingham Dubai",
+      "quotes": [
+        "Duration 3 years (full-time)",
+        "Typical offer: AAB-ABB",
+        "IB 6,6,5 Overall score of 32 points",
+        "To study at the University, you must be able to demonstrate a good level of written and spoken English."
+      ]
+    },
+    "intl": {
+      "url": "https://www.birmingham.ac.uk/dubai/study/undergraduate/subjects/biomedical-science-courses/biomedical-science-bsc",
+      "page": "ae7673fdcdb0-raw",
+      "title": "Biomedical Science BSc: page data (international fee) | University of Birmingham Dubai",
+      "organization": "University of Birmingham Dubai",
+      "quotes": [
+        "\"Fees (international)\",\"value\":\"September 2027: AED 162,203 per year\""
+      ]
+    }
+  },
+  "program": {
+    "name": "Biomedical Science",
+    "degree_type": "BSc",
+    "field": "Biomedical Science",
+    "faculty": "",
+    "duration_years": 3,
+    "languages": [],
+    "entry_year": "September 2027 entry",
+    "platform": "Direct application (Birmingham Dubai admissions portal)",
+    "source": "course",
+    "summary": "Biomedical Science BSc, 3 years full-time, University of Birmingham Dubai.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 162203,
+      "academic_year": "September 2027 entry",
+      "source": "intl",
+      "living_from": "costProfile-ae-birmingham-dubai-cost-bsc-cs-all-students",
+      "note": "International fee: AED 162,203 per year for September 2027 entry (the course page's international fee, the same as its UK/Ireland figure)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Biomedical Science: Typical offer: AAB-ABB.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English language",
+        "min_score": "A good level of written and spoken English (see the course page for accepted tests).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Biomedical Science: IB 6,6,5 Overall score of 32 points.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English language",
+        "min_score": "A good level of written and spoken English (see the course page for accepted tests).",
+        "source": "course"
+      }
+    }
+  ]
+}
