@@ -437,3 +437,37 @@ with the same quote checks; it never overwrites an existing university. `build.p
 `costs[].living` (monthly amounts quoted from the university's page × months, our calculation;
 negative tests: an unquoted EUR 750 refused, a wrong yearly total refused) and an optional 4th
 argument naming a pending base file whose fee groups count as existing (that file is applied first).
+
+## 2026-11-25: low-budget batch 2: Bologna, Padua, METU, KAIST, BME (new countries: Türkiye, South Korea, Hungary)
+
+Pending files (base records first, then programmes; all dry-run HTTP 200):
+- `2026-11-25-unibo.ndjson` (`gen/it_unibo.py`): Economics and Finance, Business and Economics (3 years,
+  English, SAT ranking, no minimum). Fees 2026/2027: maximum EUR 2,040 + EUR 157.04 (international);
+  reduced fixed fee EUR 1,000 + 157.04 (nationals of non-OECD countries on Unibo's list) and EUR 500 + 157.04
+  (particularly poor or developing countries), family income only outside Italy. Living EUR 8,944 (our calc).
+  The engine shows the maximum by default; the reduced tiers show as tabs (matching citizenship to Unibo's
+  Italian-language country lists is not automated yet). No English test stated on the pages read.
+- `2026-11-25-unipd.ndjson` (`gen/it_unipd.py`): Information Engineering, Biology of Human and Environmental
+  Health, Economics Governance and Decision-Making, Earth and Climate Dynamics: EUR 2,950 a year (course
+  pages) + EUR 208 first-year instalment (not stated whether included, so added); CEnT-S; English B2.
+  Living EUR 10,834 (our calc).
+- `2026-11-25-metu.ndjson` (`gen/tr_metu.py`): nine 4-year B.S. programmes (7 Engineering at USD 1,200 a
+  semester, Economics and Business Administration at USD 800), 2026-2027, two semesters (calendar). Entry:
+  IB 33 / A-level ABB / SAT 1200 (Math 700 Engineering) minimums, list dated 05/01/2024. Living not stored:
+  METU prices it in Turkish lira, tuition is in USD.
+- `2026-11-25-kaist.ndjson` (`gen/kr_kaist.py`): eleven majors (undeclared entry, major chosen in year two),
+  cost of attendance: tuition KRW 6,866,000, NHI KRW 916,680, living KRW 7,103,000; plus a KAIST Scholarship
+  record (guaranteed, full tuition for 8 semesters, KRW 350,000 a month) so the site subtracts tuition.
+- `2026-11-25-bme.ndjson` (`gen/hu_bme.py`): Computer Science Engineering, Electrical, Civil, Engineering
+  Management, Mathematics: EUR 3,200 a semester (non-EU, 2026/27); 6-8 semesters; English B2. Living EUR 3,720
+  (BME's own EUR equivalents; our calc).
+
+build.py: European number format in quotes ("2.040,00 €", "€ 400,00"); living `weekly` (× 52) and `yearly`
+items; lengths stated in semesters ("7 semesters" = 3.5 years). Negative tests: a 3.5-year length against
+"6 semesters" refused; earlier checks unchanged.
+
+Held: Politecnico di Torino (fee set per country of origin through a long table); University of Tokyo PEAK
+(site unreachable from this machine and the browser, SSL error); Waseda SILS (about JPY 1.5-1.7 million a year,
+mid-budget); Tsinghua (no undergraduate fee on the English programme pages read); Warsaw University of
+Technology (English-taught fees EUR 3,000-5,700 a semester, credit-based); NUS and Hong Kong (about S$30,000+
+a year, not low-budget); Taiwan (TWD isn't in the ECB rates the site uses).

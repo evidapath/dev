@@ -188,8 +188,48 @@ export const VISAS: Record<string, VisaInfo> = {
     money: [],
     note: "We haven't confirmed Italy's visa fees, money to show and work rules yet. Politecnico di Milano says non-EU applicants living abroad apply for the study visa through the Universitaly portal; check the Foreign Ministry's visa site too.",
     sources: [
-      { label: "Universitaly (Italian Ministry of University)", url: "https://www.universitaly.it/" },
-      { label: "Il visto per l'Italia (Ministry of Foreign Affairs)", url: "https://vistoperitalia.esteri.it/" },
+      {
+        label: "Universitaly (Italian Ministry of University)",
+        url: "https://www.universitaly.it/",
+      },
+      {
+        label: "Il visto per l'Italia (Ministry of Foreign Affairs)",
+        url: "https://vistoperitalia.esteri.it/",
+      },
+    ],
+  },
+  Türkiye: {
+    country: "Türkiye",
+    visa: "Student residence permit (e-ikamet)",
+    money: [],
+    note: "We haven't confirmed Türkiye's visa fees, money to show and work rules yet. METU says students complete the online student residence permit application at e-ikamet.goc.gov.tr and hand their documents to its International Students Office.",
+    sources: [
+      {
+        label: "Residence permit (METU International Students Office)",
+        url: "https://iso.metu.edu.tr/en/residence-permit",
+      },
+    ],
+  },
+  "South Korea": {
+    country: "South Korea",
+    visa: "Student visa D-2-2 (undergraduate study)",
+    money: [],
+    note: "We haven't confirmed Korea's visa fees and work rules yet. KAIST's 2027 guide says proof of funds of KRW 16,000,000 is generally required for the visa, but because of the KAIST Scholarship its applicants show about USD 3,200.",
+    sources: [
+      { label: "Korea Visa Portal (Ministry of Justice)", url: "https://www.visa.go.kr/" },
+      { label: "Study in Korea (Korean Government)", url: "https://www.studyinkorea.go.kr/" },
+    ],
+  },
+  Hungary: {
+    country: "Hungary",
+    visa: "Residence permit for study purposes",
+    money: [],
+    note: "We haven't confirmed Hungary's visa fees, money to show and work rules yet. BME says students need a residence permit after arriving, and its mentors help book the appointment.",
+    sources: [
+      {
+        label: "National Directorate-General for Aliens Policing (OIF)",
+        url: "https://oif.gov.hu/",
+      },
     ],
   },
 };

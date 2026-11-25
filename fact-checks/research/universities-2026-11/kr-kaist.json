@@ -1,0 +1,62 @@
+{
+  "uni": "kr-kaist",
+  "name": "Korea Advanced Institute of Science and Technology",
+  "aliases": [
+    "KAIST"
+  ],
+  "type": "public",
+  "website": "https://www.kaist.ac.kr/en/",
+  "country": {
+    "cc": "kr",
+    "name": "South Korea",
+    "currency": "KRW"
+  },
+  "city": {
+    "slug": "kr-daejeon",
+    "name": "Daejeon"
+  },
+  "sources": {
+    "main": {
+      "url": "https://admission.kaist.ac.kr/wz/api/common/files/view/intl-undergraduate/pdf/Admissions_Guide_for_2027_admission.pdf",
+      "page": "kaist-guide-2027",
+      "organization": "KAIST",
+      "title": "Admissions Guide for 2027 admission, international undergraduates (PDF) | KAIST",
+      "quotes": [
+        "Thank you for your interest in KAIST (Korea Advanced Institute of Science and Technology).",
+        "291 Daehak-ro, Yuseong-gu, Daejeon 34141,",
+        "All international students receive full financial support, including tuition and living expenses.",
+        "Students enter KAIST without declaring a major and have the opportunity to explore various STEM fields",
+        "The official language of communication and instruction for international students at KAIST is English.",
+        "TOEFL iBT 83 (Taken before Jan 21, 2026) / 4.5 (Taken on or after Jan 21, 2026)",
+        "IELTS 6.5",
+        "(e.g., SAT, ACT, AP, IB, GCE A-Level, or other national high school leaving or university entrance",
+        "Interviews may be conducted if deemed necessary."
+      ]
+    },
+    "coa": {
+      "url": "https://admission.kaist.ac.kr/intl-undergraduate/support/coa",
+      "page": "ada244a8f2f4",
+      "organization": "KAIST",
+      "title": "Cost of Attendance | KAIST Office of Admissions",
+      "quotes": [
+        "Tuition Fees 3,433,000 3,433,000 6,866,000",
+        "NHI Premiums 458,340 458,340 916,680",
+        "Books 150,000 150,000 300,000",
+        "Housing 664,000 664,000 1,328,000",
+        "Food 2,737,500 2,737,500 5,475,000",
+        "KAIST Scholarship covering entire tution fee for 4 years once admitted",
+        "Monthly Stipend 2,100,000 2,100,000 4,200,000 KRW 350,000 * 12 Months",
+        "Total((A+B)-C)) 1,679,500 1,679,500 3,359,000"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "source": "coa",
+      "label": "International students",
+      "description": "KAIST's published cost of attendance for international undergraduates; the KAIST Scholarship covers tuition."
+    }
+  ]
+}

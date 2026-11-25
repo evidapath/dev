@@ -1,0 +1,169 @@
+{
+  "uni": "hu-bme",
+  "slug": "bsc-civil-engineering",
+  "sources": {
+    "course": {
+      "url": "https://xplore.bme.hu/available-programmes/",
+      "page": "ca95119fd146",
+      "title": "Degree programmes | BME Xplore",
+      "organization": "Budapest University of Technology and Economics",
+      "quotes": [
+        "civil engineer bsc the purpose of the training is to train well-prepared engineers who are suitable for construction, maintenance and operation, business and professional authority tasks. duration of studies 8 semesters"
+      ]
+    },
+    "fees": {
+      "url": "https://xplore.bme.hu/tuition-fees/",
+      "page": "fdcdd07115d4",
+      "organization": "Budapest University of Technology and Economics",
+      "title": "Tuition fees | BME Xplore",
+      "quotes": [
+        "Please see below the tuition fees for academic year 2026/27.",
+        "Budapest University of Technology and Economics determines all tuition fees for the academic year and reserves the right to change them without prior notice.",
+        "BSc Faculty of Civil Engineering / Non-EU citizens 3200 EUR/ semester"
+      ]
+    },
+    "cal": {
+      "url": "https://xplore.bme.hu/calendar/",
+      "page": "78b2c2b59ab0",
+      "organization": "Budapest University of Technology and Economics",
+      "title": "Calendar | BME Xplore",
+      "quotes": [
+        "FIRST (FALL) SEMESTER",
+        "SECOND (SPRING) SEMESTER"
+      ]
+    },
+    "adm": {
+      "url": "https://xplore.bme.hu/admission/",
+      "page": "5a072c27416a",
+      "organization": "Budapest University of Technology and Economics",
+      "title": "Admission | BME Xplore",
+      "quotes": [
+        "BSc, OTM a) CV and motivational letter b) copy of passport c) high School certificate d) proof of English language proficiency e) Receipt of the transfer of EUR 150 application fee",
+        "individual units may establish additional criteria for admission, such as specific academic backgrounds, oral examinations , or minimum language test scores higher than the general BME minimum requirements.",
+        "Students applying for BSc or MSc Programmes are required to submit one of the following documents of English language proficiency (minimum level B2): IELTS & IELTS Online min. 5.5",
+        "TOEFL iBT & TOEFL iBT Home Edition min. 72",
+        "Duolingo English Test min. 100"
+      ]
+    },
+    "living": {
+      "url": "https://xplore.bme.hu/useful_info/",
+      "page": "c0101be4c9df",
+      "organization": "Budapest University of Technology and Economics",
+      "title": "Useful info: costs of living | BME Xplore",
+      "quotes": [
+        "Costs of Living / month",
+        "Shared flat 55 500 HUF ~ 174 €",
+        "Basic food/ month 40 000 HUF ~ 125 €",
+        "Urban public transport (Monthly pass with Hungarian Student ID) 3 450 HUF ~11 €",
+        "Please note that the prices listed are guidelines, not actual prices."
+      ]
+    }
+  },
+  "program": {
+    "name": "Civil Engineering",
+    "degree_type": "BSc",
+    "field": "Civil Engineering",
+    "faculty": "",
+    "duration_years": 4.0,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026/27 fees",
+    "platform": "BME E-admission",
+    "source": "course",
+    "summary": "Civil Engineering (BSc), BME Budapest, taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_per_term": 3200,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "FIRST (FALL) SEMESTER",
+        "SECOND (SPRING) SEMESTER"
+      ],
+      "academic_year": "2026/27",
+      "source": [
+        "fees",
+        "cal"
+      ],
+      "note": "2026/27: EUR 3200 per semester for non-EU citizens (fall and spring); yearly figure is our calculation.",
+      "living": {
+        "monthly": [
+          174,
+          125,
+          11
+        ],
+        "months": 12,
+        "source": "living",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "Our calculation from BME's monthly guide prices (its own EUR equivalents): shared flat EUR 174, basic food EUR 125, student monthly transport pass EUR 11, × 12 = EUR 3,720 a year. BME says these are guidelines, not actual prices."
+      }
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "adm",
+      "threshold": "Civil Engineering: no grade cut-off is published on the pages read. BSc applications need a CV and motivational letter, the high school certificate and proof of English; individual units may add criteria such as oral examinations.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English B2 certificate (IELTS / TOEFL iBT / Duolingo...)",
+        "source": "adm",
+        "min_score": "B2: IELTS 5.5, TOEFL iBT 72, Duolingo 100 (or the other certificates BME lists), or a Medium of Instruction Certificate."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "adm",
+      "threshold": "Civil Engineering: no grade cut-off is published on the pages read. BSc applications need a CV and motivational letter, the high school certificate and proof of English; individual units may add criteria such as oral examinations.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English B2 certificate (IELTS / TOEFL iBT / Duolingo...)",
+        "source": "adm",
+        "min_score": "B2: IELTS 5.5, TOEFL iBT 72, Duolingo 100 (or the other certificates BME lists), or a Medium of Instruction Certificate."
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "adm",
+      "threshold": "Civil Engineering: no grade cut-off is published on the pages read. BSc applications need a CV and motivational letter, the high school certificate and proof of English; individual units may add criteria such as oral examinations.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English B2 certificate (IELTS / TOEFL iBT / Duolingo...)",
+        "source": "adm",
+        "min_score": "B2: IELTS 5.5, TOEFL iBT 72, Duolingo 100 (or the other certificates BME lists), or a Medium of Instruction Certificate."
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "adm",
+      "threshold": "Civil Engineering: no grade cut-off is published on the pages read. BSc applications need a CV and motivational letter, the high school certificate and proof of English; individual units may add criteria such as oral examinations.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English B2 certificate (IELTS / TOEFL iBT / Duolingo...)",
+        "source": "adm",
+        "min_score": "B2: IELTS 5.5, TOEFL iBT 72, Duolingo 100 (or the other certificates BME lists), or a Medium of Instruction Certificate."
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "adm",
+      "threshold": "Civil Engineering: no grade cut-off is published on the pages read. BSc applications need a CV and motivational letter, the high school certificate and proof of English; individual units may add criteria such as oral examinations.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English B2 certificate (IELTS / TOEFL iBT / Duolingo...)",
+        "source": "adm",
+        "min_score": "B2: IELTS 5.5, TOEFL iBT 72, Duolingo 100 (or the other certificates BME lists), or a Medium of Instruction Certificate."
+      }
+    }
+  ]
+}

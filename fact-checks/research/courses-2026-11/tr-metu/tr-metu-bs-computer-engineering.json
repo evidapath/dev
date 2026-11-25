@@ -1,0 +1,160 @@
+{
+  "uni": "tr-metu",
+  "slug": "bs-computer-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.metu.edu.tr/undergraduate-programs-and-degrees",
+      "page": "ae22dad927ab",
+      "title": "Undergraduate Programs and Degrees | METU",
+      "organization": "Middle East Technical University",
+      "quotes": [
+        "Computer Engineering Computer Engineering 4 B.S."
+      ]
+    },
+    "quota": {
+      "url": "https://iso.metu.edu.tr/en/international-students-quotas-undergraduate-programs",
+      "page": "5dd5f79a546f",
+      "title": "International Students Quotas for Undergraduate Programs | METU",
+      "organization": "Middle East Technical University",
+      "quotes": [
+        "2026-2027 ACADEMIC YEAR UNDERGRADUATE PROGRAMS OFFERED TO INTERNATIONAL STUDENTS ODTÜ/METU ANKARA",
+        "Computer Engineering 22"
+      ]
+    },
+    "fees": {
+      "url": "https://iso.metu.edu.tr/en/system/files/2026-2027_tuition_fees_14092026.pdf",
+      "page": "metu-fees-2627",
+      "organization": "Middle East Technical University",
+      "title": "2026-2027 tuition fees for international students (PDF) | METU",
+      "quotes": [
+        "2026-2027 Academic Year Tuition Fees for International Students per semester (those who registered through international student quotas)",
+        "Faculty of Engineering All programs 1200 USD",
+        "Faculty of Economics All programs 800 USD"
+      ]
+    },
+    "cal": {
+      "url": "https://oidb.metu.edu.tr/en/metu-ankara-and-erdemli-campuses-2026-2027-academic-year-calendar",
+      "page": "c14d065eed4b",
+      "organization": "Middle East Technical University",
+      "title": "METU Ankara and Erdemli Campuses 2026-2027 Academic Year Calendar",
+      "quotes": [
+        "2026-2027 Academic Year Calendar FALL SEMESTER",
+        "the Spring Semester of the 2026 - 2027 Academic Year"
+      ]
+    },
+    "req": {
+      "url": "https://iso.metu.edu.tr/en/system/files/odtu_iso_requirements.pdf",
+      "page": "metu-req",
+      "organization": "Middle East Technical University",
+      "title": "Minimum application requirements for international students (PDF) | METU",
+      "quotes": [
+        "INTERNATIONAL STUDENT MINIMUM APPLICATION REQUIREMENTS",
+        "(Last update: 05/01/2024)",
+        "International Baccalaureate (IB) Diploma An International Baccalaureate Diploma with a min. total score of 33 (at least one High Level-HL course relevant to the program applied for should be taken.)",
+        "A minimum grade of ABB in three A-level subjects, two of which are relevant to the program applied for.",
+        "A minimum total score of 1200 (with an additional minimum “Math” score of 700 out of 800 for the Faculty of Engineering, Faculty of Architecture, and scientific",
+        "(Language subjects other than English cannot be used"
+      ]
+    },
+    "pol": {
+      "url": "https://iso.metu.edu.tr/en/application-requirements",
+      "page": "48986c480046",
+      "organization": "Middle East Technical University",
+      "title": "Application requirements | METU International Students Office",
+      "quotes": [
+        "The criteria specified in this list represent the minimum application requirements. However, fulfilling these requirements does not guarantee admission."
+      ]
+    },
+    "engp": {
+      "url": "https://iso.metu.edu.tr/en/english-proficiency",
+      "page": "5a9afd6a819b",
+      "organization": "Middle East Technical University",
+      "title": "English proficiency | METU International Students Office",
+      "quotes": [
+        "The medium of instruction at METU is English. However, for undergraduate programs, submitting an English proficiency score is not obligatory for the application .",
+        "Those who do not satisfy the minimum score from this exam will attend English Preparatory Class at the Department of Basic English for one year.",
+        "IELTS exams taken on or after the 24th of December 2022 will not be anymore accepted."
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Engineering",
+    "degree_type": "B.S.",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027",
+    "platform": "METU international student application (online)",
+    "source": "course",
+    "summary": "Computer Engineering (B.S.), 4 years, METU Ankara campus; taught in English (one-year English preparatory class if needed).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_per_term": 1200,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "2026-2027 Academic Year Calendar FALL SEMESTER",
+        "the Spring Semester of the 2026 - 2027 Academic Year"
+      ],
+      "academic_year": "2026-2027",
+      "source": [
+        "fees",
+        "cal"
+      ],
+      "note": "2026-2027: USD 1200 per semester (Fall and Spring), paid in Turkish lira at the Central Bank rate; yearly figure is our calculation. Living costs aren't added: METU publishes them in Turkish lira only."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "req",
+      "threshold": "Computer Engineering: IB Diploma with at least 33 points, including at least one Higher Level course relevant to the programme. These are METU's minimum application requirements (list last updated 05/01/2024); meeting them doesn't guarantee admission, which is decided within the international student quota.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (not needed to apply)",
+        "source": "engp",
+        "min_score": "Not needed to apply. METU teaches in English; without a valid TOEFL or PTE Academic score at registration you take METU's English Proficiency Exam, or a one-year English preparatory class.",
+        "notes": "METU no longer accepts IELTS taken on or after 24 December 2022."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "req",
+      "threshold": "Computer Engineering: A-levels ABB in three subjects, two of them relevant to the programme (languages other than English can't be used). These are METU's minimum application requirements (list last updated 05/01/2024); meeting them doesn't guarantee admission, which is decided within the international student quota.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (not needed to apply)",
+        "source": "engp",
+        "min_score": "Not needed to apply. METU teaches in English; without a valid TOEFL or PTE Academic score at registration you take METU's English Proficiency Exam, or a one-year English preparatory class.",
+        "notes": "METU no longer accepts IELTS taken on or after 24 December 2022."
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "req",
+      "threshold": "Computer Engineering: SAT total 1200 with Math 700 (Engineering) (one of the accepted qualifications). These are METU's minimum application requirements (list last updated 05/01/2024); meeting them doesn't guarantee admission, which is decided within the international student quota.",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "SAT",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "English (not needed to apply)",
+        "source": "engp",
+        "min_score": "Not needed to apply. METU teaches in English; without a valid TOEFL or PTE Academic score at registration you take METU's English Proficiency Exam, or a one-year English preparatory class.",
+        "notes": "METU no longer accepts IELTS taken on or after 24 December 2022."
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "uni": "tr-metu",
+  "name": "Middle East Technical University",
+  "aliases": [
+    "METU",
+    "ODTÜ"
+  ],
+  "type": "public",
+  "website": "https://www.metu.edu.tr",
+  "country": {
+    "cc": "tr",
+    "name": "Türkiye",
+    "currency": "TRY"
+  },
+  "city": {
+    "slug": "tr-ankara",
+    "name": "Ankara"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.metu.edu.tr/undergraduate-programs-and-degrees",
+      "page": "ae22dad927ab",
+      "organization": "Middle East Technical University",
+      "title": "Undergraduate Programs and Degrees | METU",
+      "quotes": [
+        "Undergraduate Programs and Degrees | METU - Middle East Technical University",
+        "06800 Çankaya/Ankara"
+      ]
+    },
+    "fees": {
+      "url": "https://iso.metu.edu.tr/en/system/files/2026-2027_tuition_fees_14092026.pdf",
+      "page": "metu-fees-2627",
+      "organization": "Middle East Technical University",
+      "title": "2026-2027 tuition fees for international students (PDF) | METU",
+      "quotes": [
+        "2026-2027 Academic Year Tuition Fees for International Students per semester (those who registered through international student quotas)",
+        "Faculty of Engineering All programs 1200 USD",
+        "Faculty of Economics All programs 800 USD"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "source": "fees",
+      "label": "International students (international student quota)",
+      "description": "METU's per-semester tuition for students registered through the international student quotas, announced in USD and paid in Turkish lira at the Central Bank rate."
+    }
+  ]
+}

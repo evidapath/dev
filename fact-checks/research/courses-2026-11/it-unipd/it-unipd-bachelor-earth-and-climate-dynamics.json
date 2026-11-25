@@ -1,0 +1,177 @@
+{
+  "uni": "it-unipd",
+  "slug": "bachelor-earth-and-climate-dynamics",
+  "sources": {
+    "course": {
+      "url": "https://apply.unipd.it/courses/course/220-earth-and-climate-dynamics",
+      "page": "38e4c8d54a84",
+      "title": "Earth and Climate Dynamics | University of Padua",
+      "organization": "University of Padua",
+      "quotes": [
+        "Earth and Climate Dynamics University of Padua Italy, Padua",
+        "Nominal duration 3 years (180 ECTS ) Study language English",
+        "Tuition fee €2,950 per year",
+        "This degree programme requires the new CISIA CEnT-S test.",
+        "B2 level"
+      ]
+    },
+    "fees": {
+      "url": "https://www.unipd.it/en/tuition-fees",
+      "page": "50fd577665bf",
+      "organization": "University of Padua",
+      "title": "Student fees | University of Padua",
+      "quotes": [
+        "208 euros (of which 192 euros for the regional tax for the right to university education and 16 euros for stamp duty) for those enrolling in the first year, to be paid at the time of enrolment",
+        "Tuition Fees and Exemptions Notice for the 2026-2027 academic year"
+      ]
+    },
+    "living": {
+      "url": "https://www.unipd.it/en/studying-padova/funding-and-fees/living-costs",
+      "page": "b1906f861991",
+      "organization": "University of Padua",
+      "title": "Cost of living in Padua | University of Padua",
+      "quotes": [
+        "Cost of living in Padua These are some examples of general expenses that you need to cover to live in Padua as a Unipd student.",
+        "Accommodation in a single room: from € 300 to € 600 + expenses",
+        "Supermarket grocery shopping for one week: approximately € 60",
+        "Bus/tram travelcard: from €8,80 (weekly) to €247,50 (annual)",
+        "Application for issue / renewal of the residence permit for study purposes: approximately € 116,46",
+        "Health insurance valid for the issue / renewal of the residence permit for study purposes: approximately from € 120 to € 150"
+      ]
+    }
+  },
+  "program": {
+    "name": "Earth and Climate Dynamics",
+    "degree_type": "Bachelor's degree",
+    "field": "Earth Sciences",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027/2028 intake (course page)",
+    "platform": "University of Padua application portal (apply.unipd.it)",
+    "source": "course",
+    "summary": "Earth and Climate Dynamics, bachelor's degree, 3 years (180 ECTS), taught in English, University of Padua.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_annual": 2950,
+      "mandatory_fees_annual": 208,
+      "academic_year": "2027/2028 intake (course page)",
+      "source": [
+        "course",
+        "fees"
+      ],
+      "note": "EUR 2,950 a year (course page). Compulsory fees: the EUR 208 first-year instalment (regional tax EUR 192 + stamp duty EUR 16) from the fees page; the course page doesn't say whether the EUR 2,950 already includes it.",
+      "living": {
+        "monthly": [
+          600
+        ],
+        "months": 12,
+        "weekly": [
+          60
+        ],
+        "yearly": [
+          247.5,
+          116.46,
+          150
+        ],
+        "source": "living",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "Our calculation from the University of Padua's cost-of-living page: single room up to EUR 600 a month × 12, groceries EUR 60 a week × 52, annual bus travelcard EUR 247.50, residence permit EUR 116.46 and health insurance up to EUR 150 = EUR 10,834 a year. Utilities and other expenses on top of rent aren't priced."
+      }
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Earth and Climate Dynamics: no school-grade cut-off is published. Entry needs the CISIA CEnT-S test.",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "CISIA CEnT-S",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "English B2 (CEFR) certificate",
+        "min_score": "English B2 level (CEFR) or equivalent; accepted certificates and exemptions on the University of Padua's list.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Earth and Climate Dynamics: no school-grade cut-off is published. Entry needs the CISIA CEnT-S test.",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "CISIA CEnT-S",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "English B2 (CEFR) certificate",
+        "min_score": "English B2 level (CEFR) or equivalent; accepted certificates and exemptions on the University of Padua's list.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Earth and Climate Dynamics: no school-grade cut-off is published. Entry needs the CISIA CEnT-S test.",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "CISIA CEnT-S",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "English B2 (CEFR) certificate",
+        "min_score": "English B2 level (CEFR) or equivalent; accepted certificates and exemptions on the University of Padua's list.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Earth and Climate Dynamics: no school-grade cut-off is published. Entry needs the CISIA CEnT-S test.",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "CISIA CEnT-S",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "English B2 (CEFR) certificate",
+        "min_score": "English B2 level (CEFR) or equivalent; accepted certificates and exemptions on the University of Padua's list.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Earth and Climate Dynamics: no school-grade cut-off is published. Entry needs the CISIA CEnT-S test.",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "CISIA CEnT-S",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "English B2 (CEFR) certificate",
+        "min_score": "English B2 level (CEFR) or equivalent; accepted certificates and exemptions on the University of Padua's list.",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "uni": "kr-kaist",
+  "slug": "bs-aerospace-engineering",
+  "sources": {
+    "guide": {
+      "url": "https://admission.kaist.ac.kr/wz/api/common/files/view/intl-undergraduate/pdf/Admissions_Guide_for_2027_admission.pdf",
+      "page": "kaist-guide-2027",
+      "organization": "KAIST",
+      "title": "Admissions Guide for 2027 admission, international undergraduates (PDF) | KAIST",
+      "quotes": [
+        "Thank you for your interest in KAIST (Korea Advanced Institute of Science and Technology).",
+        "291 Daehak-ro, Yuseong-gu, Daejeon 34141,",
+        "All international students receive full financial support, including tuition and living expenses.",
+        "Students enter KAIST without declaring a major and have the opportunity to explore various STEM fields",
+        "The official language of communication and instruction for international students at KAIST is English.",
+        "TOEFL iBT 83 (Taken before Jan 21, 2026) / 4.5 (Taken on or after Jan 21, 2026)",
+        "IELTS 6.5",
+        "(e.g., SAT, ACT, AP, IB, GCE A-Level, or other national high school leaving or university entrance",
+        "Interviews may be conducted if deemed necessary.",
+        "Aerospace Engineering"
+      ]
+    },
+    "coa": {
+      "url": "https://admission.kaist.ac.kr/intl-undergraduate/support/coa",
+      "page": "ada244a8f2f4",
+      "organization": "KAIST",
+      "title": "Cost of Attendance | KAIST Office of Admissions",
+      "quotes": [
+        "Tuition Fees 3,433,000 3,433,000 6,866,000",
+        "NHI Premiums 458,340 458,340 916,680",
+        "Books 150,000 150,000 300,000",
+        "Housing 664,000 664,000 1,328,000",
+        "Food 2,737,500 2,737,500 5,475,000",
+        "KAIST Scholarship covering entire tution fee for 4 years once admitted",
+        "Monthly Stipend 2,100,000 2,100,000 4,200,000 KRW 350,000 * 12 Months",
+        "Total((A+B)-C)) 1,679,500 1,679,500 3,359,000"
+      ]
+    },
+    "sch": {
+      "url": "https://admission.kaist.ac.kr/intl-undergraduate/support/scholarships/kaist",
+      "page": "ecf4842c5cae",
+      "organization": "KAIST",
+      "title": "KAIST Scholarship | KAIST Office of Admissions",
+      "quotes": [
+        "Full tuition fee: tuition exemption for 8 semesters",
+        "Living expenses: 350,000 KRW per month",
+        "Students must maintain GPA over 2.7 out of 4.3 at KAIST after their freshman year",
+        "Upon being selected for admission, you will automatically be entitled to the KAIST Scholarship."
+      ]
+    }
+  },
+  "program": {
+    "name": "Aerospace Engineering",
+    "degree_type": "B.S.",
+    "field": "Aerospace Engineering",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "coa",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Spring or Fall 2027",
+    "platform": "KAIST international undergraduate application (online)",
+    "source": "guide",
+    "summary": "Aerospace Engineering at KAIST, Daejeon: enter with an undeclared major, choose it in year two; taught in English; the KAIST Scholarship covers tuition for admitted international students.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "KRW",
+      "tuition_annual": 6866000,
+      "mandatory_fees_annual": 916680,
+      "academic_year": "Cost of attendance as published (KAIST Office of Admissions)",
+      "source": "coa",
+      "note": "Tuition KRW 6,866,000 a year before the KAIST Scholarship, which covers the entire tuition for 4 years for admitted international students (plus a KRW 350,000 monthly stipend and NHI). Compulsory: NHI premiums KRW 916,680 a year. KAIST's own net figure is KRW 3,359,000 a year.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          1328000,
+          5475000,
+          300000
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "KAIST's cost of attendance: housing KRW 1,328,000 (shared Hee Mang Hall), food KRW 5,475,000 (school cafeteria) and books KRW 300,000 = KRW 7,103,000 a year. The KAIST Scholarship's KRW 350,000 monthly stipend (KRW 4,200,000 a year) isn't subtracted here."
+      }
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "guide",
+      "threshold": "Aerospace Engineering at KAIST: no published grade cut-off. You enter KAIST without a declared major and choose Aerospace Engineering in your second year. Applications are reviewed as a whole: transcripts, standardized test reports (e.g. SAT, ACT, AP, IB, GCE A-Level), English test, recommendation letters (highly recommended) and awards; interviews only if deemed necessary.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "TOEFL iBT / IELTS (recommended scores)",
+        "source": "guide",
+        "min_score": "Recommended: TOEFL iBT 83 (taken before 21 Jan 2026) or 4.5 (from 21 Jan 2026), IELTS 6.5.",
+        "notes": "Exempt: nationals of English-speaking countries listed by KAIST, or a high school taught in English (school letter needed)."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "guide",
+      "threshold": "Aerospace Engineering at KAIST: no published grade cut-off. You enter KAIST without a declared major and choose Aerospace Engineering in your second year. Applications are reviewed as a whole: transcripts, standardized test reports (e.g. SAT, ACT, AP, IB, GCE A-Level), English test, recommendation letters (highly recommended) and awards; interviews only if deemed necessary.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "TOEFL iBT / IELTS (recommended scores)",
+        "source": "guide",
+        "min_score": "Recommended: TOEFL iBT 83 (taken before 21 Jan 2026) or 4.5 (from 21 Jan 2026), IELTS 6.5.",
+        "notes": "Exempt: nationals of English-speaking countries listed by KAIST, or a high school taught in English (school letter needed)."
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "guide",
+      "threshold": "Aerospace Engineering at KAIST: no published grade cut-off. You enter KAIST without a declared major and choose Aerospace Engineering in your second year. Applications are reviewed as a whole: transcripts, standardized test reports (e.g. SAT, ACT, AP, IB, GCE A-Level), English test, recommendation letters (highly recommended) and awards; interviews only if deemed necessary.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "TOEFL iBT / IELTS (recommended scores)",
+        "source": "guide",
+        "min_score": "Recommended: TOEFL iBT 83 (taken before 21 Jan 2026) or 4.5 (from 21 Jan 2026), IELTS 6.5.",
+        "notes": "Exempt: nationals of English-speaking countries listed by KAIST, or a high school taught in English (school letter needed)."
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "guide",
+      "threshold": "Aerospace Engineering at KAIST: no published grade cut-off. You enter KAIST without a declared major and choose Aerospace Engineering in your second year. Applications are reviewed as a whole: transcripts, standardized test reports (e.g. SAT, ACT, AP, IB, GCE A-Level), English test, recommendation letters (highly recommended) and awards; interviews only if deemed necessary.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "TOEFL iBT / IELTS (recommended scores)",
+        "source": "guide",
+        "min_score": "Recommended: TOEFL iBT 83 (taken before 21 Jan 2026) or 4.5 (from 21 Jan 2026), IELTS 6.5.",
+        "notes": "Exempt: nationals of English-speaking countries listed by KAIST, or a high school taught in English (school letter needed)."
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "guide",
+      "threshold": "Aerospace Engineering at KAIST: no published grade cut-off. You enter KAIST without a declared major and choose Aerospace Engineering in your second year. Applications are reviewed as a whole: transcripts, standardized test reports (e.g. SAT, ACT, AP, IB, GCE A-Level), English test, recommendation letters (highly recommended) and awards; interviews only if deemed necessary.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "TOEFL iBT / IELTS (recommended scores)",
+        "source": "guide",
+        "min_score": "Recommended: TOEFL iBT 83 (taken before 21 Jan 2026) or 4.5 (from 21 Jan 2026), IELTS 6.5.",
+        "notes": "Exempt: nationals of English-speaking countries listed by KAIST, or a high school taught in English (school letter needed)."
+      }
+    }
+  ]
+}

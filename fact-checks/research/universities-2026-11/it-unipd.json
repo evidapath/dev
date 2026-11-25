@@ -1,0 +1,50 @@
+{
+  "uni": "it-unipd",
+  "name": "University of Padua",
+  "aliases": [
+    "Università di Padova",
+    "UniPD",
+    "University of Padova"
+  ],
+  "type": "public",
+  "website": "https://www.unipd.it/en",
+  "country": {
+    "cc": "it",
+    "name": "Italy",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "it-padua",
+    "name": "Padua"
+  },
+  "sources": {
+    "main": {
+      "url": "https://apply.unipd.it/courses/course/182-information-engineering",
+      "page": "d299bd382330",
+      "organization": "University of Padua",
+      "title": "Information Engineering | University of Padua",
+      "quotes": [
+        "Information Engineering University of Padua Italy, Padua"
+      ]
+    },
+    "fees": {
+      "url": "https://www.unipd.it/en/tuition-fees",
+      "page": "50fd577665bf",
+      "organization": "University of Padua",
+      "title": "Student fees | University of Padua",
+      "quotes": [
+        "208 euros (of which 192 euros for the regional tax for the right to university education and 16 euros for stamp duty) for those enrolling in the first year, to be paid at the time of enrolment",
+        "Tuition Fees and Exemptions Notice for the 2026-2027 academic year"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "source": "fees",
+      "label": "International students (course page fee)",
+      "description": "The fee listed on each English-taught course page of the University of Padua's application portal."
+    }
+  ]
+}

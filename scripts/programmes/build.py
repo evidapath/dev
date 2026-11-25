@@ -56,6 +56,12 @@ def norm(s: str) -> str:
 
 def nums(s: str) -> set[str]:
     out = set()
+    # European format in a quote ("2.040,00 €" = 2040.00): also read it the English way.
+    for m in re.findall(r"\b\d{1,3}(?:\.\d{3})+(?:,\d+)?\b|\b\d+,\d{2}\b", s):
+        whole, _, dec = m.replace(".", "").partition(",")
+        out.add(whole)
+        if dec and dec.strip("0"):
+            out |= {f"{whole}.{dec}", f"{whole}.{dec}".rstrip("0")}
     for n in re.findall(r"\d[\d,]*(?:\.\d+)?", s):
         n = n.replace(",", "")
         out.add(n)
@@ -163,6 +169,7 @@ def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None
         word = {3: "three", 4: "four", 5: "five", 6: "six"}.get(p["duration_years"], "-")
         ordinal = {3: "third", 4: "fourth", 5: "fifth", 6: "sixth"}.get(p["duration_years"], "-")
         in_months = (f"{round(p['duration_years'] * 12)} months" in dq  # e.g. "36 months"
+                     or re.search(rf"\b{p['duration_years'] * 2:g} semesters\b", dq) is not None  # e.g. BME's "7 semesters" = 3.5 years
                      or re.search(rf"\b{word}[- ]years?\b", dq) is not None  # e.g. "a four-year degree"
                      # the last year of a published typical course sequence (e.g. RIT's "Fifth Year"),
                      # only when no later year is named in the same quotes
@@ -263,13 +270,14 @@ def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None
                 lv = c["living"]
                 if lv["kind"] not in ("genuine_cost_of_living_estimate", "official_housing_only"):
                     fail(f"{where}: living kind must be genuine_cost_of_living_estimate or official_housing_only")
-                check_numbers(" ".join(str(x) for x in lv["monthly"]), lv["source"], "monthly living costs")
+                # Weekly items × 52 and yearly items (e.g. health insurance) may be added.
+                check_numbers(" ".join(str(x) for x in lv["monthly"] + lv.get("weekly", []) + lv.get("yearly", [])), lv["source"], "living costs")
                 if lv["months"] != 12 and norm(lv.get("months_quote", "-")) not in norm(q_of(lv["source"])):
                     fail(f"{where}: living months other than 12 need a months_quote among the source's quotes")
-                annual = round(sum(lv["monthly"]) * lv["months"])
+                annual = round(sum(lv["monthly"]) * lv["months"] + sum(lv.get("weekly", [])) * 52 + sum(lv.get("yearly", [])))
                 if f"{annual:,}" not in lv["note"]:
                     fail(f"{where}: living note must state the yearly figure {annual:,}")
-                check_numbers(lv["note"].replace(f"{annual:,}", "").replace(f"× {lv['months']}", ""), lv["source"], "living note")
+                check_numbers(lv["note"].replace(f"{annual:,}", "").replace(f"× {lv['months']}", "").replace("× 52", ""), lv["source"], "living note")
                 living = {
                     "estimated_living_costs_annual": annual,
                     "living_cost_source_note": lv["note"],

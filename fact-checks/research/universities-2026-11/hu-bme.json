@@ -1,0 +1,40 @@
+{
+  "uni": "hu-bme",
+  "name": "Budapest University of Technology and Economics",
+  "aliases": [
+    "BME",
+    "Budapest University of Technology"
+  ],
+  "type": "public",
+  "website": "https://www.bme.hu/en",
+  "country": {
+    "cc": "hu",
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  "city": {
+    "slug": "hu-budapest",
+    "name": "Budapest"
+  },
+  "sources": {
+    "main": {
+      "url": "https://xplore.bme.hu/tuition-fees/",
+      "page": "fdcdd07115d4",
+      "organization": "Budapest University of Technology and Economics",
+      "title": "Tuition fees | BME Xplore",
+      "quotes": [
+        "Please see below the tuition fees for academic year 2026/27.",
+        "Budapest University of Technology and Economics determines all tuition fees for the academic year and reserves the right to change them without prior notice."
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "source": "main",
+      "label": "Non-EU citizens",
+      "description": "BME's per-semester tuition for non-EU citizens on its 2026/27 tuition fee table."
+    }
+  ]
+}
