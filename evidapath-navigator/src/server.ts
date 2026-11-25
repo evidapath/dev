@@ -58,10 +58,17 @@ function acceptHtml(request: Request): Request {
 }
 
 // The staging copy (*.workers.dev) must not compete with evidapath.com in search results.
-function markStaging(request: Request, response: Response): Response {
-  if (!new URL(request.url).hostname.endsWith(".workers.dev")) return response;
+// Plus baseline security headers on every response the worker builds. No X-Frame-Options or
+// frame-ancestors: the site is previewed inside other tools (AI Studio). HSTS only on the
+// real domain, without includeSubDomains, so other subdomains aren't forced onto HTTPS.
+function finalHeaders(request: Request, response: Response): Response {
+  const host = new URL(request.url).hostname;
   const out = new Response(response.body, response);
-  out.headers.set("X-Robots-Tag", "noindex, nofollow");
+  out.headers.set("X-Content-Type-Options", "nosniff");
+  out.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  out.headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=()");
+  if (host === "evidapath.com") out.headers.set("Strict-Transport-Security", "max-age=31536000");
+  if (host.endsWith(".workers.dev")) out.headers.set("X-Robots-Tag", "noindex, nofollow");
   return out;
 }
 
@@ -71,7 +78,7 @@ export default {
       const handler = await getServerEntry();
       const req = acceptHtml(request);
       const response = await handler.fetch(req, env, ctx);
-      return markStaging(req, await normalizeCatastrophicSsrResponse(response));
+      return finalHeaders(req, await normalizeCatastrophicSsrResponse(response));
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {
