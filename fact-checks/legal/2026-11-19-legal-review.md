@@ -77,7 +77,7 @@ a company is formed.
    with a confirm link) before relying on it, and before 13 May 2027 for India if that date holds.
 4. Read the ICO Children's code, UAE PDPL and India DPDP Act/Rules from their official sites when
    they load (or from a lawyer).
-5. Self-host the fonts so Google receives no visitor IPs (removes one third party).
+5. Done 2026-11-25: fonts are self-hosted (@fontsource-variable), so Google receives no visitor IPs; /privacy and /cookies updated.
 6. Email notice to existing users about the new Terms and Privacy Policy.
 
 ## Update 2026-11-24: visit statistics

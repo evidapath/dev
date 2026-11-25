@@ -3,7 +3,7 @@
 // form, a new provider, a new browser-storage key), update this file and the pages follow.
 // Research, sources and open items: fact-checks/legal/2026-11-19-legal-review.md
 
-export const LEGAL_UPDATED = "24 November 2026";
+export const LEGAL_UPDATED = "25 November 2026";
 export const PRIVACY_EMAIL = "evidapath@gmail.com";
 
 // EvidaPath isn't a registered company yet; it is run by its two founders. Replace this when
@@ -45,9 +45,9 @@ export const PROCESSORS = [
     where: "Global network.",
   },
   {
-    name: "Google (Google Fonts, and Google sign-in if you choose it)",
-    what: "Your IP address when the page loads its fonts; if you sign in with Google, Google confirms your email to us.",
-    why: "Displaying the site's fonts; optional sign-in.",
+    name: "Google (only if you choose Google sign-in)",
+    what: "If you sign in with Google, Google confirms your email to us.",
+    why: "Optional sign-in.",
     where: "May be processed outside your country, including the United States.",
   },
 ] as const;

@@ -116,8 +116,8 @@ function CookiesPage() {
           heading: "Other services",
           body: (
             <p>
-              Pages load fonts from Google Fonts, which receives your IP address but sets no cookie
-              from our site. If you choose Google sign-in, Google's own cookies apply on Google's
+              Fonts are served from our own site, so loading a page sends nothing to Google. If you
+              choose Google sign-in, Google's own cookies apply on Google's
               pages. Forms send what you type to our contact system only when you press send. See
               the <Link to="/privacy">Privacy Policy</Link> for every service we use.
             </p>
