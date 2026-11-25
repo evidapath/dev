@@ -36,6 +36,7 @@ import { Route as SignInRouteImport } from './routes/sign-in'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as UniversitiesRouteImport } from './routes/universities'
+import { Route as ExampleFitCheckRouteImport } from './routes/example.fit-check'
 import { Route as UniversitiesSlugRouteImport } from './routes/universities_.$slug'
 import { Route as StudyInCountryCostRouteImport } from './routes/study-in.$country.cost'
 
@@ -174,6 +175,11 @@ const UniversitiesRoute = UniversitiesRouteImport.update({
   path: '/universities',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExampleFitCheckRoute = ExampleFitCheckRouteImport.update({
+  id: '/example/fit-check',
+  path: '/example/fit-check',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UniversitiesSlugRoute = UniversitiesSlugRouteImport.update({
   id: '/universities_/$slug',
   path: '/universities/$slug',
@@ -213,6 +219,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/universities': typeof UniversitiesRoute
+  '/example/fit-check': typeof ExampleFitCheckRoute
   '/universities/$slug': typeof UniversitiesSlugRoute
   '/study-in/$country/cost': typeof StudyInCountryCostRoute
 }
@@ -244,6 +251,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/universities': typeof UniversitiesRoute
+  '/example/fit-check': typeof ExampleFitCheckRoute
   '/universities/$slug': typeof UniversitiesSlugRoute
   '/study-in/$country/cost': typeof StudyInCountryCostRoute
 }
@@ -276,6 +284,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/universities': typeof UniversitiesRoute
+  '/example/fit-check': typeof ExampleFitCheckRoute
   '/universities_/$slug': typeof UniversitiesSlugRoute
   '/study-in/$country/cost': typeof StudyInCountryCostRoute
 }
@@ -309,6 +318,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/universities'
+    | '/example/fit-check'
     | '/universities/$slug'
     | '/study-in/$country/cost'
   fileRoutesByTo: FileRoutesByTo
@@ -340,6 +350,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/universities'
+    | '/example/fit-check'
     | '/universities/$slug'
     | '/study-in/$country/cost'
   id:
@@ -371,6 +382,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/universities'
+    | '/example/fit-check'
     | '/universities_/$slug'
     | '/study-in/$country/cost'
   fileRoutesById: FileRoutesById
@@ -403,6 +415,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   UniversitiesRoute: typeof UniversitiesRoute
+  ExampleFitCheckRoute: typeof ExampleFitCheckRoute
   UniversitiesSlugRoute: typeof UniversitiesSlugRoute
   StudyInCountryCostRoute: typeof StudyInCountryCostRoute
 }
@@ -598,6 +611,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UniversitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/example/fit-check': {
+      id: '/example/fit-check'
+      path: '/example/fit-check'
+      fullPath: '/example/fit-check'
+      preLoaderRoute: typeof ExampleFitCheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/universities_/$slug': {
       id: '/universities_/$slug'
       path: '/universities/$slug'
@@ -643,6 +663,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   UniversitiesRoute: UniversitiesRoute,
+  ExampleFitCheckRoute: ExampleFitCheckRoute,
   UniversitiesSlugRoute: UniversitiesSlugRoute,
   StudyInCountryCostRoute: StudyInCountryCostRoute,
 }

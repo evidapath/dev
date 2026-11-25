@@ -156,6 +156,8 @@ const FEATURES: Feature[] = [
       </>
     ),
     access: "Free account",
+    to: "/example/fit-check",
+    cta: "See an example for a sample student",
   },
   {
     icon: CalendarCheck,
