@@ -471,3 +471,17 @@ Held: Politecnico di Torino (fee set per country of origin through a long table)
 mid-budget); Tsinghua (no undergraduate fee on the English programme pages read); Warsaw University of
 Technology (English-taught fees EUR 3,000-5,700 a semester, credit-based); NUS and Hong Kong (about S$30,000+
 a year, not low-budget); Taiwan (TWD isn't in the ECB rates the site uses).
+
+## 2026-11-25: 10 per cheaper country (request in progress): Hungary done, Türkiye 2, Italy 2
+
+Subhan: "10 per country, only the cheaper countries" (Italy, Türkiye, Hungary, South Korea, Germany, Malaysia).
+New pending files (base records first; all dry-run HTTP 200): Türkiye: `boun` (6 engineering, USD 10,000),
+`bilkent` (10, USD 18,400 for 2026 admits). Hungary: `elte` (4), `unideb` (6), `szeged` (3), `pecs` (6), `mate` (4),
+`obuda` (6), `corvinus` (2), `sze` (4), `miskolc` (8), `pannon` (1). Italy: `sapienza` (2; band A/B/C fees EUR
+300/700/1500 by country of income), `unipi` (1; max EUR 2,900 + EUR 140). Generators `scripts/research/gen/*` use
+the shared `gen/newuni.py`. Several course pages don't state the fee's academic year; the records say so.
+build.py: `tuition_per_semester` + `semesters_quote` ("N semesters (Y years)" or bare "N semesters"); "four
+academic years"; space-separated thousands read in quotes only. 27 earlier folders rebuild identically.
+Held: ITU (fee currency not stated), Hacettepe (2024 fee decision), Sabancı (USD 36,500), Trento (official
+pages conflict: EUR 6,000 vs 3,000 max), University of Milan (Cloudflare bot check), Milano-Bicocca (course
+list behind sign-in), Pisa IPH (own fee), several programmes whose pages lack length/language (see generators).
