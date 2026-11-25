@@ -1,0 +1,110 @@
+{
+  "uni": "hu-szeged",
+  "slug": "bsc-business-administration-and-management",
+  "sources": {
+    "course": {
+      "url": "https://apply.u-szeged.hu/en_GB/courses/course/230-bsc-business-administration-and-management",
+      "page": "c0d8cc0fde10",
+      "title": "Business Administration and Management BSc | University of Szeged",
+      "organization": "University of Szeged",
+      "quotes": [
+        "[BSc] Business Administration and Management - University of Szeged",
+        "Study location Hungary, Szeged",
+        "Nominal duration 7 semesters",
+        "Study language English",
+        "Tuition fee €2,700 per semester",
+        "a demonstrated proficiency in English (Intermediate, B2, IELTS or TOEFL ) ; - and a written and oral entrance examination taken in the university’s electronic study system. A solid knowledge of Mathematics is essential"
+      ]
+    }
+  },
+  "program": {
+    "name": "Business Administration and Management",
+    "degree_type": "BSc",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 3.5,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Course page (year not stated)",
+    "platform": "University of Szeged application portal (apply.u-szeged.hu)",
+    "source": "course",
+    "summary": "Business Administration and Management (BSc), University of Szeged; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_per_semester": 2700,
+      "semesters_quote": "Nominal duration 7 semesters",
+      "semesters_source": "course",
+      "academic_year": "Course page (year not stated)",
+      "source": "course",
+      "note": "EUR 2,700 per semester (course page; the academic year isn't stated); two semesters a year, so the yearly figure is our calculation. Living costs not added."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off published; high school diploma, transcripts of all secondary years, English (B2) and a written and oral entrance examination; solid Mathematics is essential.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 (intermediate) from an accredited four-skill exam, IELTS or TOEFL.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off published; high school diploma, transcripts of all secondary years, English (B2) and a written and oral entrance examination; solid Mathematics is essential.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 (intermediate) from an accredited four-skill exam, IELTS or TOEFL.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off published; high school diploma, transcripts of all secondary years, English (B2) and a written and oral entrance examination; solid Mathematics is essential.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 (intermediate) from an accredited four-skill exam, IELTS or TOEFL.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off published; high school diploma, transcripts of all secondary years, English (B2) and a written and oral entrance examination; solid Mathematics is essential.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 (intermediate) from an accredited four-skill exam, IELTS or TOEFL.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off published; high school diploma, transcripts of all secondary years, English (B2) and a written and oral entrance examination; solid Mathematics is essential.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 (intermediate) from an accredited four-skill exam, IELTS or TOEFL.",
+        "source": "course"
+      }
+    }
+  ]
+}

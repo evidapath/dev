@@ -213,13 +213,15 @@ def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None
                 # Per-semester fee where the programme page gives "N semesters (Y years)" (e.g. ELTE):
                 # semesters a year = N ÷ Y from that quote; yearly fee our calculation.
                 sq = c["semesters_quote"]
-                m = re.fullmatch(r".*?(\d+) semesters \((\d+) years?\).*", sq)
+                # A bare "N semesters" (e.g. Szeged) counts as N ÷ 2 years, as for programme lengths.
+                m = re.fullmatch(r".*?(\d+) semesters(?: \((\d+) years?\))?.*", sq)
                 if not m or norm(sq) not in norm(q_of(c["semesters_source"])):
-                    fail(f"{where}: semesters_quote must be a quote of '{c['semesters_source']}' reading 'N semesters (Y years)'")
-                if int(m.group(2)) != p["duration_years"]:
-                    fail(f"{where}: semesters_quote gives {m.group(2)} years, the programme {p['duration_years']}")
+                    fail(f"{where}: semesters_quote must be a quote of '{c['semesters_source']}' reading 'N semesters' or 'N semesters (Y years)'")
+                sem_years = int(m.group(2)) if m.group(2) else int(m.group(1)) / 2
+                if sem_years != p["duration_years"]:
+                    fail(f"{where}: semesters_quote gives {sem_years:g} years, the programme {p['duration_years']}")
                 check_numbers(c["tuition_per_semester"], c["source"], "per-semester fee")
-                c["tuition_annual"] = round(c["tuition_per_semester"] * int(m.group(1)) / int(m.group(2)), 2)
+                c["tuition_annual"] = round(c["tuition_per_semester"] * int(m.group(1)) / sem_years, 2)
             elif c.get("tuition_per_term"):
                 # Per-term fee (e.g. Waterloo): the term fee is quoted; the terms per year
                 # must be backed by quotes naming the terms (e.g. "fall term – September to

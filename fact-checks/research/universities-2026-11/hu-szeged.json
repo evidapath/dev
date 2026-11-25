@@ -1,0 +1,40 @@
+{
+  "uni": "hu-szeged",
+  "name": "University of Szeged",
+  "aliases": [
+    "SZTE",
+    "Szegedi Tudományegyetem"
+  ],
+  "type": "public",
+  "website": "https://u-szeged.hu/english",
+  "country": {
+    "cc": "hu",
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  "city": {
+    "slug": "hu-szeged",
+    "name": "Szeged"
+  },
+  "sources": {
+    "main": {
+      "url": "https://apply.u-szeged.hu/en_GB/courses/course/474-bsc-computer-science",
+      "page": "448262d7f496",
+      "title": "Computer Science BSc | University of Szeged",
+      "organization": "University of Szeged",
+      "quotes": [
+        "[BSc] Computer Science - University of Szeged",
+        "Study location Hungary, Szeged"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "Self-financing students (course page fee)",
+      "description": "The tuition fee on each University of Szeged course page of its application portal.",
+      "source": "main"
+    }
+  ]
+}

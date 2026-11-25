@@ -1,0 +1,110 @@
+{
+  "uni": "hu-szeged",
+  "slug": "bsc-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://apply.u-szeged.hu/en_GB/courses/course/474-bsc-computer-science",
+      "page": "448262d7f496",
+      "title": "Computer Science BSc | University of Szeged",
+      "organization": "University of Szeged",
+      "quotes": [
+        "[BSc] Computer Science - University of Szeged",
+        "Study location Hungary, Szeged",
+        "Nominal duration 6 semesters",
+        "Study language English",
+        "Tuition fee €3,200 per semester",
+        "a demonstrated proficiency in English ( TELC B2, ECL B2, TOEFL iBT test score of 72, or RPDT score 72; Cambridge First Certificate “B”; IELTS score of 5.5 at least, LanguageCert B2 level) and an entrance exam (skype interview online)."
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science",
+    "degree_type": "BSc",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 3.0,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Course page (year not stated)",
+    "platform": "University of Szeged application portal (apply.u-szeged.hu)",
+    "source": "course",
+    "summary": "Computer Science (BSc), University of Szeged; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_per_semester": 3200,
+      "semesters_quote": "Nominal duration 6 semesters",
+      "semesters_source": "course",
+      "academic_year": "Course page (year not stated)",
+      "source": "course",
+      "note": "EUR 3,200 per semester (course page; the academic year isn't stated); two semesters a year, so the yearly figure is our calculation. Living costs not added."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Computer Science: no grade cut-off published; completed secondary education, English proficiency and an entrance exam (online interview).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT (or B2 certificate)",
+        "min_score": "IELTS 5.5, TOEFL iBT 72, or a B2 certificate (TELC, ECL, LanguageCert, Cambridge First 'B').",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Computer Science: no grade cut-off published; completed secondary education, English proficiency and an entrance exam (online interview).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT (or B2 certificate)",
+        "min_score": "IELTS 5.5, TOEFL iBT 72, or a B2 certificate (TELC, ECL, LanguageCert, Cambridge First 'B').",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Computer Science: no grade cut-off published; completed secondary education, English proficiency and an entrance exam (online interview).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT (or B2 certificate)",
+        "min_score": "IELTS 5.5, TOEFL iBT 72, or a B2 certificate (TELC, ECL, LanguageCert, Cambridge First 'B').",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Computer Science: no grade cut-off published; completed secondary education, English proficiency and an entrance exam (online interview).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT (or B2 certificate)",
+        "min_score": "IELTS 5.5, TOEFL iBT 72, or a B2 certificate (TELC, ECL, LanguageCert, Cambridge First 'B').",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Computer Science: no grade cut-off published; completed secondary education, English proficiency and an entrance exam (online interview).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT (or B2 certificate)",
+        "min_score": "IELTS 5.5, TOEFL iBT 72, or a B2 certificate (TELC, ECL, LanguageCert, Cambridge First 'B').",
+        "source": "course"
+      }
+    }
+  ]
+}
