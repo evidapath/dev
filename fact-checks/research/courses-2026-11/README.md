@@ -396,3 +396,16 @@ Law, Digital Media and Communications. Fee: the page data's "Fees (international
 2027 figure (raw.py → <id>-raw), equal to the visible UK/Ireland box on every page. Entry lines
 taken from each page. Held: Civil and Electronic/Electrical Engineering (years 2-3 in the UK).
 Sim (IB 37-39): Accounting and Finance now shows the named course (IB 32); Law adds Commercial Law.
+
+## 2026-11-25: RIT Dubai, seven programmes; builder length rules
+
+`rit/` (generator `scripts/research/gen/ae_rit_more.py`) → `pending/2026-11-25-rit.ndjson` (40 records:
+36 creates + 4 excerpts that only grow; dry-run HTTP 200). Cybersecurity, Electrical, Mechanical,
+Industrial Engineering (5 years: typical sequence runs to a "Fifth Year"), Finance, Marketing,
+New Media Design (4 years). Fee AED 68,000 a year (RIT tuition page; copied from the Global
+Business Management record with its AED 20,000 living estimate). Entry from the group PDFs
+(Business, Computing, Engineering: IB 28 with Maths/Physics/Chem-or-Bio at 4; New Media Design).
+build.py: (1) the last year of a published typical sequence ("Fifth Year") now counts as the
+length when no later year is named; (2) a record fails if its own quotes name a later year than
+its length (closes a gap where a college major could inherit a shorter length). Negative tests:
+4-year claimed as 5 refused; 5-year claimed as 4 refused. All 26 other folders rebuild identically.

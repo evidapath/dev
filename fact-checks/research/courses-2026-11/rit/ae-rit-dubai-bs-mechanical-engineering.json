@@ -1,0 +1,103 @@
+{
+  "uni": "ae-rit-dubai",
+  "slug": "bs-mechanical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.rit.edu/dubai/bachelor-science-mechanical-engineering",
+      "page": "100149f63041",
+      "title": "BS in Mechanical Engineering | RIT Dubai",
+      "organization": "RIT Dubai",
+      "quotes": [
+        "Total Credit Hours - 129",
+        "Fifth Year"
+      ]
+    },
+    "adm": {
+      "url": "https://www.rit.edu/dubai/sites/rit.edu.dubai/files/docs/Admissions%20Related/Admission%20Requirements%20Engineering.pdf",
+      "page": "rit-adm-engineering",
+      "title": "Admission Requirements, Engineering (PDF) | RIT Dubai",
+      "organization": "RIT Dubai",
+      "quotes": [
+        "British Required Scores Minimum 5 IGCSE (C’s or above) and 2 As or 1 A level (D’s or above) Math, Physics and 1 of Chemistry/Biology minimum grade C or above in IGCSE or in AS/A Level Completion of Grade 12/ Year 13 Minimum average 80%",
+        "International Baccalaureate Required Scores Minimum 28 points Math, Physics and 1 of Chemistry/Biology minimum grade is 4 or above",
+        "Engineering students must appear for Math and physics placement tests prior to course registration."
+      ]
+    },
+    "eng": {
+      "url": "https://www.rit.edu/dubai/undergraduate-admissions",
+      "page": "fc3cdd20e9da",
+      "title": "Undergraduate Admissions | RIT Dubai",
+      "organization": "RIT Dubai",
+      "quotes": [
+        "Academic IELTS Overall 6.5 and above Overall 5.0 - 6.0 TOEFL ITP 550 and above 500 - 547 TOEFL IBT 79 and above 61 - 78 EmSAT - English 1550 and above 1100 - 1525",
+        "International Curricula (American, British, IB, Australian, Canadian and SABIS): Students enrolled in international curricula where English is the primary language of instruction may qualify for an exemption from the English Proficiency test"
+      ]
+    },
+    "fees": {
+      "url": "https://www.rit.edu/dubai/tuition-and-fees",
+      "page": "3be86f64f014",
+      "title": "Tuition and Fees | RIT Dubai",
+      "organization": "RIT Dubai",
+      "quotes": [
+        "Bachelor Tuition (per year)",
+        "Bachelor Tuition (per year) Bachelor of Science in Cybersecurity Bachelor of Science in Computing and Information Technologies Bachelor of Science in Computer Engineering Bachelor of Science in Electrical Engineering Bachelor of Science in Mechanical Engineering Bachelor of Science in Industrial Engineering Bachelor of Science in Finance Bachelor of Science in Marketing Bachelor of Science in Global Business Management Bachelor of Science in Psychology Bachelor of Science in Advertising and Public Relations Bachelor of Fine Arts in New Media Design 68,000"
+      ]
+    }
+  },
+  "program": {
+    "name": "Mechanical Engineering",
+    "degree_type": "BS",
+    "field": "Mechanical Engineering",
+    "faculty": "",
+    "duration_years": 5,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2026-2027 (Fall 2027 entry)",
+    "platform": "RIT Dubai application",
+    "source": "course",
+    "summary": "BS in Mechanical Engineering, RIT Dubai; 129 total credit hours over a five-year (with co-op) typical course sequence.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-ae-rit-dubai-bs-global-business",
+    "quote": "Bachelor Tuition (per year) Bachelor of Science in Cybersecurity Bachelor of Science in Computing and Information Technologies Bachelor of Science in Computer Engineering Bachelor of Science in Electrical Engineering Bachelor of Science in Mechanical Engineering Bachelor of Science in Industrial Engineering Bachelor of Science in Finance Bachelor of Science in Marketing Bachelor of Science in Global Business Management Bachelor of Science in Psychology Bachelor of Science in Advertising and Public Relations Bachelor of Fine Arts in New Media Design 68,000",
+    "copy": [
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "adm",
+      "threshold": "BS Mechanical Engineering: British system: at least 5 IGCSEs (C or above) and 2 AS-Levels or 1 A-Level (D or above), with Maths, Physics and Chemistry or Biology at grade C or above (IGCSE or AS/A Level), Year 13 completed, minimum average 80%. Maths and physics placement tests. Meeting the minimum doesn't guarantee direct admission.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "Academic IELTS (or TOEFL / EmSAT English)",
+        "source": "eng",
+        "min_score": "Full admission: Academic IELTS overall 6.5 and above, TOEFL iBT 79 and above, TOEFL ITP 550 and above, or EmSAT English 1550 and above. Conditional admission: IELTS 5.0 - 6.0, TOEFL iBT 61 - 78, TOEFL ITP 500 - 547, EmSAT 1100 - 1525.",
+        "notes": "Students in English-medium international curricula may qualify for an exemption."
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "adm",
+      "threshold": "BS Mechanical Engineering: IB, minimum 28 points, with Maths, Physics and Chemistry or Biology at 4 or above. Maths and physics placement tests. Meeting the minimum doesn't guarantee direct admission.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "Academic IELTS (or TOEFL / EmSAT English)",
+        "source": "eng",
+        "min_score": "Full admission: Academic IELTS overall 6.5 and above, TOEFL iBT 79 and above, TOEFL ITP 550 and above, or EmSAT English 1550 and above. Conditional admission: IELTS 5.0 - 6.0, TOEFL iBT 61 - 78, TOEFL ITP 500 - 547, EmSAT 1100 - 1525.",
+        "notes": "Students in English-medium international curricula may qualify for an exemption."
+      }
+    }
+  ]
+}

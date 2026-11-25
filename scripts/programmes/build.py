@@ -161,8 +161,17 @@ def main(research_dir: str, pages_dir: str, out_path: str):
         base_years = col and sanity(f'*[_id=="{col["from"]}"][0].duration_value')
         dq = norm(q_of(p.get("duration_source", p["source"])))
         word = {3: "three", 4: "four", 5: "five", 6: "six"}.get(p["duration_years"], "-")
+        ordinal = {3: "third", 4: "fourth", 5: "fifth", 6: "sixth"}.get(p["duration_years"], "-")
         in_months = (f"{round(p['duration_years'] * 12)} months" in dq  # e.g. "36 months"
-                     or re.search(rf"\b{word}[- ]years?\b", dq) is not None)  # e.g. "a four-year degree"
+                     or re.search(rf"\b{word}[- ]years?\b", dq) is not None  # e.g. "a four-year degree"
+                     # the last year of a published typical course sequence (e.g. RIT's "Fifth Year"),
+                     # only when no later year is named in the same quotes
+                     or (re.search(rf"\b{ordinal} year\b", dq) is not None
+                         and not any(re.search(rf"\b{o} year\b", dq) for n, o in {4: "fourth", 5: "fifth", 6: "sixth", 7: "seventh"}.items() if n > p["duration_years"])))
+        later = [o for n, o in {4: "fourth", 5: "fifth", 6: "sixth", 7: "seventh"}.items()
+                 if n > p["duration_years"] and re.search(rf"\b{o} year\b", dq)]
+        if later:  # the programme's own sequence names a later year than the length given
+            fail(f"{where}: duration {p['duration_years']} but the quotes name a '{later[0]} year'")
         if base_years != p["duration_years"] and not in_months:  # a college major's length can come from its college's record
             check_numbers(p["duration_years"], p.get("duration_source", p["source"]), "duration")
         for k in ("degree_type", "summary"):
