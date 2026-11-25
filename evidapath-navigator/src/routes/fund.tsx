@@ -381,14 +381,14 @@ function PathwayColumn({
               aria-label={`Scholarships ${money(plan.scholarship)}, family ${money(plan.family)}, still to find ${money(plan.gap)}`}
             >
               <div className="bg-primary" style={{ width: `${pct(plan.scholarship)}%` }} />
-              <div className="bg-navy dark:bg-sky-400" style={{ width: `${pct(plan.family)}%` }} />
+              <div className="bg-navy dark:bg-stone-300" style={{ width: `${pct(plan.family)}%` }} />
               <div className="bg-bronze" style={{ width: `${pct(plan.gap ?? 0)}%` }} />
             </div>
             <dl className="grid grid-cols-3 gap-2 text-[11px]">
               {(
                 [
                   ["bg-primary", "Scholarships", plan.scholarship],
-                  ["bg-navy dark:bg-sky-400", "Your family", plan.family],
+                  ["bg-navy dark:bg-stone-300", "Your family", plan.family],
                   ["bg-bronze", "Still to find", plan.gap ?? 0],
                 ] as const
               ).map(([c, k, v]) => (

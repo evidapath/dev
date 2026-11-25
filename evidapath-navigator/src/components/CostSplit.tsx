@@ -3,7 +3,7 @@ import { money } from "../lib/verdict";
 // Where a year's money goes: tuition, fees, living — one stacked bar, then the
 // amounts. Guaranteed aid is shown coming off the top. USD per year.
 const PARTS = [
-  { key: "tuition", label: "Tuition", cls: "bg-navy dark:bg-sky-400" },
+  { key: "tuition", label: "Tuition", cls: "bg-navy dark:bg-stone-300" },
   { key: "fees", label: "Fees", cls: "bg-bronze" },
   { key: "living", label: "Living & other", cls: "bg-primary" },
 ] as const;

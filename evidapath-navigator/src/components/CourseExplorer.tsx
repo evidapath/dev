@@ -56,7 +56,7 @@ const GROUPS: { key: Group; title: string; icon: ReactNode; tone: string }[] = [
     key: "needed",
     title: "Also needed",
     icon: <FileText className="w-4 h-4" />,
-    tone: "text-navy dark:text-sky-300 bg-navy/10 dark:bg-sky-400/10",
+    tone: "text-navy dark:text-stone-200 bg-navy/10 dark:bg-stone-300/10",
   },
   {
     key: "english",
@@ -201,7 +201,7 @@ function YearRoute({ years }: { years: number }) {
 /** One year's money as a split bar, then the amounts. */
 function MoneyBar({ c }: { c: CostView }) {
   const parts = [
-    { label: "Tuition", v: c.tuitionPerYear, cls: "bg-navy dark:bg-sky-400" },
+    { label: "Tuition", v: c.tuitionPerYear, cls: "bg-navy dark:bg-stone-300" },
     { label: "Compulsory fees", v: c.mandatoryFees, cls: "bg-bronze" },
     { label: "Living", v: c.livingPerYear, cls: "bg-primary" },
   ];
@@ -371,7 +371,7 @@ function Entry({ p }: { p: ProgramView }) {
           {a.tests.map((s) => (
             <span
               key={s}
-              className="inline-flex items-center gap-1 rounded-full bg-navy/10 dark:bg-sky-400/10 text-foreground px-2.5 py-1 text-xs font-medium"
+              className="inline-flex items-center gap-1 rounded-full bg-navy/10 dark:bg-stone-300/10 text-foreground px-2.5 py-1 text-xs font-medium"
             >
               <FileText className="w-3 h-3" /> {s}
             </span>
