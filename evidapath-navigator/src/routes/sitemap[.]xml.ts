@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getAnswers } from "../lib/answers.functions";
-import { countryCostPath, universityPath } from "../lib/paths";
+import { countryCostPath, coursePath, courseSlugs, universityPath } from "../lib/paths";
 import { canonicalUrl } from "../lib/seo";
 import { getUniversities } from "../lib/universities.functions";
 
-// /sitemap.xml, built from the live data so every university and country page is listed.
+// /sitemap.xml, built from the live data so every university, course and country page is listed.
 // University and country pages appear only when the data comes from Sanity (never the
 // illustrative fallback set). Static pages carry the date their content last changed.
 const STATIC_UPDATED = "2026-11-24";
@@ -46,6 +46,10 @@ export const Route = createFileRoute("/sitemap.xml")({
           for (const x of u.universities)
             urls.push(
               `<url><loc>${esc(canonicalUrl(universityPath(x.name)))}</loc><priority>0.8</priority></url>`,
+              ...courseSlugs(x.programDetails ?? []).map(
+                (s) =>
+                  `<url><loc>${esc(canonicalUrl(coursePath(x.name, s)))}</loc><priority>0.7</priority></url>`,
+              ),
             );
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`;
         return new Response(xml, {

@@ -39,6 +39,7 @@ import { Route as UniversitiesRouteImport } from './routes/universities'
 import { Route as ExampleFitCheckRouteImport } from './routes/example.fit-check'
 import { Route as UniversitiesSlugRouteImport } from './routes/universities_.$slug'
 import { Route as StudyInCountryCostRouteImport } from './routes/study-in.$country.cost'
+import { Route as UniversitiesSlugCourseRouteImport } from './routes/universities_.$slug_.$course'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -190,6 +191,11 @@ const StudyInCountryCostRoute = StudyInCountryCostRouteImport.update({
   path: '/study-in/$country/cost',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UniversitiesSlugCourseRoute = UniversitiesSlugCourseRouteImport.update({
+  id: '/universities_/$slug_/$course',
+  path: '/universities/$slug/$course',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -222,6 +228,7 @@ export interface FileRoutesByFullPath {
   '/example/fit-check': typeof ExampleFitCheckRoute
   '/universities/$slug': typeof UniversitiesSlugRoute
   '/study-in/$country/cost': typeof StudyInCountryCostRoute
+  '/universities/$slug/$course': typeof UniversitiesSlugCourseRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -254,6 +261,7 @@ export interface FileRoutesByTo {
   '/example/fit-check': typeof ExampleFitCheckRoute
   '/universities/$slug': typeof UniversitiesSlugRoute
   '/study-in/$country/cost': typeof StudyInCountryCostRoute
+  '/universities/$slug/$course': typeof UniversitiesSlugCourseRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -287,6 +295,7 @@ export interface FileRoutesById {
   '/example/fit-check': typeof ExampleFitCheckRoute
   '/universities_/$slug': typeof UniversitiesSlugRoute
   '/study-in/$country/cost': typeof StudyInCountryCostRoute
+  '/universities_/$slug_/$course': typeof UniversitiesSlugCourseRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -321,6 +330,7 @@ export interface FileRouteTypes {
     | '/example/fit-check'
     | '/universities/$slug'
     | '/study-in/$country/cost'
+    | '/universities/$slug/$course'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -353,6 +363,7 @@ export interface FileRouteTypes {
     | '/example/fit-check'
     | '/universities/$slug'
     | '/study-in/$country/cost'
+    | '/universities/$slug/$course'
   id:
     | '__root__'
     | '/'
@@ -385,6 +396,7 @@ export interface FileRouteTypes {
     | '/example/fit-check'
     | '/universities_/$slug'
     | '/study-in/$country/cost'
+    | '/universities_/$slug_/$course'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -418,6 +430,7 @@ export interface RootRouteChildren {
   ExampleFitCheckRoute: typeof ExampleFitCheckRoute
   UniversitiesSlugRoute: typeof UniversitiesSlugRoute
   StudyInCountryCostRoute: typeof StudyInCountryCostRoute
+  UniversitiesSlugCourseRoute: typeof UniversitiesSlugCourseRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -632,6 +645,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StudyInCountryCostRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/universities_/$slug_/$course': {
+      id: '/universities_/$slug_/$course'
+      path: '/universities/$slug/$course'
+      fullPath: '/universities/$slug/$course'
+      preLoaderRoute: typeof UniversitiesSlugCourseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -666,6 +686,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExampleFitCheckRoute: ExampleFitCheckRoute,
   UniversitiesSlugRoute: UniversitiesSlugRoute,
   StudyInCountryCostRoute: StudyInCountryCostRoute,
+  UniversitiesSlugCourseRoute: UniversitiesSlugCourseRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

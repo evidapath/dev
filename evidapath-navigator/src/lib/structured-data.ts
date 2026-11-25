@@ -5,7 +5,7 @@
 
 import type { ProgramView, University } from "./mock-data";
 import { canonicalUrl } from "./seo";
-import { universityPath } from "./paths";
+import { coursePath, universityPath } from "./paths";
 
 type Json = Record<string, unknown>;
 
@@ -132,6 +132,36 @@ export function universitiesJsonLd(universities: University[], pagePath: string)
             ...collegeJsonLd(u),
           },
         })),
+      },
+    ],
+  };
+}
+
+/** One course's own page: the programme, its university, and where the page sits. */
+export function courseJsonLd(u: University, p: ProgramView, slug: string): Json {
+  const url = canonicalUrl(coursePath(u.name, slug));
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      collegeJsonLd(u),
+      { ...programJsonLd(p, universityId(u)), "@id": `${url}#programme`, url },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Universities",
+            item: canonicalUrl("/universities"),
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: u.name,
+            item: canonicalUrl(universityPath(u.name)),
+          },
+          { "@type": "ListItem", position: 3, name: p.name, item: url },
+        ],
       },
     ],
   };
