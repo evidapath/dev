@@ -1,0 +1,81 @@
+{
+  "uni": "my-taylors",
+  "slug": "philosophy-politics-economics",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/law-and-governance/undergraduate/bachelor-in-philosophy-politics-and-economics.html",
+      "page": "4cb105a7c23a",
+      "title": "Bachelor of Philosophy, Politics and Economics | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Programme Information for 2026",
+        "Duration 3 years",
+        "Fees MYR 119,678 (Local) USD 39,477 (International)",
+        "A Level ABB",
+        "International Baccalaureate (IB) Min. 36 points in 6 subjects",
+        "INTERNATIONAL STUDENTS IELTS Band 6.0",
+        "Fees shown in the Fee Schedule are exclusive of the 6% Service Tax."
+      ]
+    }
+  },
+  "program": {
+    "name": "Philosophy, Politics and Economics",
+    "degree_type": "Bachelor's degree (Honours)",
+    "field": "Politics, Philosophy and Economics",
+    "faculty": "School of Law and Governance",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "Philosophy, Politics and Economics at Taylor's University, 3 years full time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "39477/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 39,477 for the whole 3-year programme (2026), shown as a yearly average. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "119678/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 119,678 for the whole 3-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Philosophy, Politics and Economics: ABB.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 6.0 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Philosophy, Politics and Economics: Min. 36 points in 6 subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 6.0 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    }
+  ]
+}

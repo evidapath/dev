@@ -329,3 +329,17 @@ Every item marked "To check" above was re-read from the university's own page:
   Engineering (the page it points to).
 - Checked, no change: Taylor's Medicine shows USD 26,987 a year (USD 134,937 / 5,
   rounded).
+
+## 2026-11-25: Taylor's, eleven more programmes
+
+`taylors/` (generator `scripts/research/gen/my_taylors_more.py`) → `pending/2026-11-25-taylors.ndjson`
+(66 records, dry-run HTTP 200, all creates). Software Engineering, Accounting and Finance,
+Actuarial Studies (3-year route), Finance and Economics, Mechatronics Engineering, Pharmacy,
+Biomedical Science (3.5 years), Mass Communication, International Relations, Philosophy, Politics
+and Economics, International Hospitality Management (April/September intake fee; January is
+USD 40,736). Fee rule as before: the course page's 2026 USD total for international students ÷
+years, excluding the 6% Service Tax; Malaysian MYR total ÷ years. Each page read by hand (A-level,
+IB and English lines differ page to page). Sim (IB 37-39, $60k): Economics now offers Taylor's
+Finance and Economics (IB 26) instead of Business; International Relations and Pharmacy (IB 30)
+added; Computer Science unchanged. Builder negative test: a changed IB score was refused.
+Not added: Mechanical/Chemical/Electrical (already in), Medicine (in).

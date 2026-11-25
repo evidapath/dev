@@ -1,0 +1,81 @@
+{
+  "uni": "my-taylors",
+  "slug": "software-engineering",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/computer-science/undergraduate/bachelor-of-software-engineering.html",
+      "page": "3391181f098c",
+      "title": "Bachelor of Software Engineering | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Programme Information for 2026",
+        "Duration 3-year",
+        "Fees MYR 125,414 (Local) USD 41,080 (International)",
+        "A Level Pass with min. DD",
+        "International Baccalaureate (IB) Min. 24 points in 6 subjects",
+        "INTERNATIONAL STUDENTS IELTS 5.0",
+        "Fees shown in the Fee Schedule are exclusive of the 6% Service Tax."
+      ]
+    }
+  },
+  "program": {
+    "name": "Software Engineering",
+    "degree_type": "Bachelor's degree (Honours)",
+    "field": "Computer Science",
+    "faculty": "School of Computer Science",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "Software Engineering at Taylor's University, 3 years full time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "41080/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 41,080 for the whole 3-year programme (2026), shown as a yearly average. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "125414/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 125,414 for the whole 3-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Software Engineering: Pass with min. DD.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 5.0 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Software Engineering: Min. 24 points in 6 subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 5.0 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    }
+  ]
+}

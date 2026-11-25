@@ -1,0 +1,89 @@
+{
+  "uni": "my-taylors",
+  "slug": "pharmacy",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/pharmacy/undergraduate/bachelor-of-pharmacy.html",
+      "page": "a81b3ffc3d5e",
+      "title": "Bachelor of Pharmacy | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Programme Information for 2026",
+        "Duration 4-year",
+        "Fees MYR 206,662 (Local) USD 64,522 (International)",
+        "A Level Min. ABC / BBB / AAC in Biology, Chemistry, and Physics / Mathematics with min. B in Chemistry",
+        "International Baccalaureate (IB) Pass with min. score of 30 overall and attained a min. score of 5 each in: Chemistry, Biology, Physics / Mathematics with min. 2 at Higher Level and and 1 at Standard Level",
+        "INTERNATIONAL STUDENTS IELTS Band 6.0 TOEFL iBT 60 PTE 59 Linguaskill 169",
+        "Fees shown in the Fee Schedule are exclusive of the 6% Service Tax."
+      ]
+    }
+  },
+  "program": {
+    "name": "Pharmacy",
+    "degree_type": "Bachelor's degree (Honours)",
+    "field": "Pharmacy",
+    "faculty": "School of Pharmacy",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "Pharmacy at Taylor's University, 4 years full time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "64522/4",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 64,522 for the whole 4-year programme (2026), shown as a yearly average. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "206662/4",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 206,662 for the whole 4-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Pharmacy: Min. ABC / BBB / AAC in Biology, Chemistry, and Physics / Mathematics with min. B in Chemistry.",
+      "required_subjects": [
+        "Chemistry",
+        "Biology",
+        "Physics or Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 6.0, TOEFL iBT 60, PTE 59 or Linguaskill 169 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Pharmacy: IB Diploma with at least 30 points overall and at least 5 in each of Chemistry, Biology and Physics / Mathematics (2 of them at Higher Level and 1 at Standard Level).",
+      "required_subjects": [
+        "Chemistry",
+        "Biology",
+        "Physics or Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 6.0, TOEFL iBT 60, PTE 59 or Linguaskill 169 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "uni": "my-taylors",
+  "slug": "biomedical-science",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/biosciences/undergraduate/bachelor-of-biomedical-science.html",
+      "page": "4dc388830cee",
+      "title": "Bachelor of Biomedical Science | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Programme Information for 2026",
+        "Duration 3.5-year",
+        "Fees MYR 141,314 (Local) USD 45,956 (International)",
+        "A Level Min. DD including min. D in (ANY 2) subjects: Biology, Physics / Mathematics, Chemistry",
+        "International Baccalaureate (IB) Min. 24 points in 6 subjects including min. 5 points at Higher Level (HL) in (ANY 2) subjects: Biology, Physics / Mathematics, Chemistry",
+        "INTERNATIONAL STUDENTS IELTS Band 5.5 TOEFL iBT 46 PTE 51 Linguaskill 160"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biomedical Science",
+    "degree_type": "Bachelor's degree (Honours)",
+    "field": "Biomedical Science",
+    "faculty": "School of Biosciences",
+    "duration_years": 3.5,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "Biomedical Science at Taylor's University, 3.5 years full time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "45956/3.5",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 45,956 for the whole 3.5-year programme (2026), shown as a yearly average. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "141314/3.5",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 141,314 for the whole 3.5-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Biomedical Science: Min. DD including min. D in (ANY 2) subjects: Biology, Physics / Mathematics, Chemistry.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 5.5, TOEFL iBT 46, PTE 51 or Linguaskill 160 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Biomedical Science: Min. 24 points in 6 subjects including min. 5 points at Higher Level (HL) in (ANY 2) subjects: Biology, Physics / Mathematics, Chemistry.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 5.5, TOEFL iBT 46, PTE 51 or Linguaskill 160 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    }
+  ]
+}

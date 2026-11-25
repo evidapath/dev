@@ -1,0 +1,81 @@
+{
+  "uni": "my-taylors",
+  "slug": "mass-communication",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/media-and-communication/undergraduate/bachelor-of-mass-communication.html",
+      "page": "3e8c4ecae83a",
+      "title": "Bachelor of Mass Communication | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Programme Information for 2026",
+        "Duration 3-year",
+        "Fees MYR 124,334 (Local) USD 40,779 (International)",
+        "A Level Min. DD (2 subjects)",
+        "International Baccalaureate (IB) Min. 24 points in 6 subjects",
+        "INTERNATIONAL STUDENTS IELTS 5.0",
+        "Fees shown in the Fee Schedule are exclusive of the 6% Service Tax."
+      ]
+    }
+  },
+  "program": {
+    "name": "Mass Communication",
+    "degree_type": "Bachelor's degree (Honours)",
+    "field": "Media and Communication",
+    "faculty": "School of Media and Communication",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "Mass Communication at Taylor's University, 3 years full time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "40779/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 40,779 for the whole 3-year programme (2026), shown as a yearly average. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "124334/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 124,334 for the whole 3-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Mass Communication: Min. DD (2 subjects).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 5.0 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Mass Communication: Min. 24 points in 6 subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 5.0 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    }
+  ]
+}

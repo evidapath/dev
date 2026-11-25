@@ -1,0 +1,81 @@
+{
+  "uni": "my-taylors",
+  "slug": "international-relations",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/liberal-arts-and-sciences/undergraduate/bachelor-of-social-science-in-international-relations.html",
+      "page": "701de7eb1f91",
+      "title": "Bachelor of International Relations | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Programme Information for 2026",
+        "Duration 3-year",
+        "Fees MYR 111,050 (Local) USD 37,073 (International)",
+        "A Level Min. DDD",
+        "International Baccalaureate (IB) Min. 24 points in 6 subjects",
+        "INTERNATIONAL STUDENTS IELTS 5.0",
+        "Fees shown in the Fee Schedule are exclusive of the 6% Service Tax."
+      ]
+    }
+  },
+  "program": {
+    "name": "International Relations",
+    "degree_type": "Bachelor's degree (Honours)",
+    "field": "International Relations",
+    "faculty": "School of Liberal Arts and Sciences",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "International Relations at Taylor's University, 3 years full time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "37073/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 37,073 for the whole 3-year programme (2026), shown as a yearly average. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "111050/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 111,050 for the whole 3-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "International Relations: Min. DDD.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 5.0 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "International Relations: Min. 24 points in 6 subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 5.0 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    }
+  ]
+}

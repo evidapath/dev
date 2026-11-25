@@ -1,0 +1,87 @@
+{
+  "uni": "my-taylors",
+  "slug": "mechatronics-engineering",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/engineering/undergraduate/bachelor-of-mechatronics-engineering.html",
+      "page": "ca7d21c4c0f4",
+      "title": "Bachelor of Mechatronics Engineering | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Programme Information for 2026",
+        "Duration 4-year",
+        "Fees MYR 173,802 (Local) USD 55,367 (International)",
+        "A Level Min. DDD including Mathematics and Physics / Chemistry",
+        "International Baccalaureate (IB) Min. 24 points in 6 subjects including Mathematics and Physics / Chemistry",
+        "INTERNATIONAL STUDENTS IELTS score of 5.0 OR its equivalent",
+        "Fees shown in the Fee Schedule are exclusive of the 6% Service Tax."
+      ]
+    }
+  },
+  "program": {
+    "name": "Mechatronics Engineering",
+    "degree_type": "Bachelor's degree (Honours)",
+    "field": "Mechatronic Engineering",
+    "faculty": "School of Engineering",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "Mechatronics Engineering at Taylor's University, 4 years full time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "55367/4",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 55,367 for the whole 4-year programme (2026), shown as a yearly average. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "173802/4",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 173,802 for the whole 4-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Mechatronics Engineering: Min. DDD including Mathematics and Physics / Chemistry.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics or Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 5.0 or equivalent (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Mechatronics Engineering: Min. 24 points in 6 subjects including Mathematics and Physics / Chemistry.",
+      "required_subjects": [
+        "Mathematics",
+        "Physics or Chemistry"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "IELTS 5.0 or equivalent (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    }
+  ]
+}

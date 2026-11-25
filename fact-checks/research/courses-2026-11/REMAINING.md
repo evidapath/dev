@@ -8,7 +8,6 @@ quotes and page details. Grouped by what has to happen before a programme can go
 | University | What to do |
 |---|---|
 | Cambridge | More courses. First settle the College fee rule (README "Found on the way": Darwin vs Queens'). |
-| Taylor's University | Course pages saved, but layout irregular; build a generator. Its USD course totals vs MYR 2027 schedule need one rule. |
 | HCT (Higher Colleges of Technology) | Find course pages, fees, entry rules for international students. |
 | Khalifa University | Same. |
 | Zayed University | Psychology and Architecture were tried: only a 2018 study plan and older catalogues with conflicting credit totals. Need a current page. |

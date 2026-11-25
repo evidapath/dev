@@ -1,0 +1,81 @@
+{
+  "uni": "my-taylors",
+  "slug": "actuarial-studies",
+  "sources": {
+    "course": {
+      "url": "https://university.taylors.edu.my/en/study/explore-all-programmes/business/undergraduate/bachelor-of-actuarial-studies.html",
+      "page": "92fa3acbaac6",
+      "title": "Bachelor of Actuarial Studies | Taylor's University",
+      "organization": "Taylor's University",
+      "quotes": [
+        "Programme Information for 2026",
+        "Duration 3 years",
+        "MYR 117,962 (Local, 3 years) MYR 128,870 (Local, 4 years) USD 39,001 (International, 3 years)",
+        "A Level Minimum DD",
+        "International Baccalaureate (IB) Minimum of 24 points for 6 subjects",
+        "INTERNATIONAL STUDENTS MUET Band 3 CEFR Low B2",
+        "Fees shown in the Fee Schedule are exclusive of the 6% Service Tax."
+      ]
+    }
+  },
+  "program": {
+    "name": "Actuarial Studies",
+    "degree_type": "Bachelor's degree (Honours)",
+    "field": "Actuarial Studies",
+    "faculty": "Taylor's Business School",
+    "duration_years": 3,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 intakes",
+    "platform": "",
+    "source": "course",
+    "summary": "Actuarial Studies at Taylor's University, 3 years full time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_formula": "39001/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "note": "International: USD 39,001 for the whole 3-year programme (2026), shown as a yearly average. Excludes the 6% Service Tax for non-Malaysian citizens. Living costs are published by Taylor's in MYR only, so they aren't added to this USD figure."
+    },
+    {
+      "residency": "malaysian",
+      "currency": "MYR",
+      "tuition_formula": "117962/3",
+      "academic_year": "2026 intakes",
+      "source": "course",
+      "living_from": "costProfile-my-taylors-cost-bsc-cs-malaysian",
+      "note": "Malaysian students: MYR 117,962 for the whole 3-year programme (2026), shown as a yearly average."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Actuarial Studies: Minimum DD.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "MUET Band 3 or CEFR Low B2 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Actuarial Studies: Minimum of 24 points for 6 subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English proficiency",
+        "min_score": "MUET Band 3 or CEFR Low B2 (or a completed Pre-U/Diploma taught in English).",
+        "source": "course"
+      }
+    }
+  ]
+}
