@@ -1,0 +1,72 @@
+{
+  "uni": "it-sapienza",
+  "name": "Sapienza University of Rome",
+  "aliases": [
+    "Sapienza",
+    "Sapienza Università di Roma"
+  ],
+  "type": "public",
+  "website": "https://www.uniroma1.it/en",
+  "country": {
+    "cc": "it",
+    "name": "Italy",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "it-rome",
+    "name": "Rome"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.uniroma1.it/sites/default/files/field_file_allegati/academic_requirements_movein_2026-2027_web.pdf",
+      "page": "sapienza-req-2627",
+      "title": "Online pre-selection for international students 2026-2027 (PDF) | Sapienza",
+      "organization": "Sapienza University of Rome",
+      "quotes": [
+        "The Master of Science Program in Economics at Sapienza University of Rome",
+        "ONLINE PRE-SELECTION FOR INTERNATIONAL STUDENTS"
+      ]
+    },
+    "fees": {
+      "url": "https://www.uniroma1.it/en/content/standard-registration-fee-amounts",
+      "page": "0ae24a9523be",
+      "title": "Standard registration fee amounts | Sapienza Università di Roma",
+      "organization": "Sapienza University of Rome",
+      "quotes": [
+        "If you earn income in foreign countries and therefore cannot submit the ISEE declaration",
+        "you pay a fixed contribution of a different amount depending on the country of origin, as illustrated below (Board of Directors' resolution of 30 May 2023).",
+        "Countries in Band A Total €300",
+        "Countries in Band B Total €700",
+        "Countries in Band C Total €1500",
+        "Countries in Band A Afghanistan; Albania; Algeria;",
+        "India; Indonesia;",
+        "Nigeria; Pakistan;",
+        "Countries in Band B Antigua and Barbuda; Argentina;",
+        "Malaysia;",
+        "Countries in Band C Andorra;",
+        "United Arab Emirates;"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "band-c",
+      "label": "Income abroad, Band C countries (e.g. UAE, UK, US, Saudi Arabia)",
+      "description": "Sapienza fixed contribution for students with income in Band C countries.",
+      "source": "fees"
+    },
+    {
+      "key": "band-b",
+      "label": "Income abroad, Band B countries (e.g. Malaysia, Türkiye, Argentina)",
+      "description": "Sapienza fixed contribution for students with income in Band B countries.",
+      "source": "fees"
+    },
+    {
+      "key": "band-a",
+      "label": "Income abroad, Band A countries (e.g. India, Pakistan, Nigeria)",
+      "description": "Sapienza fixed contribution for students with income in Band A countries.",
+      "source": "fees"
+    }
+  ]
+}
