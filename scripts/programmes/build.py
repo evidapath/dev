@@ -209,7 +209,18 @@ def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None
         for c in r.get("costs", []):
             # A fee that differs by year is averaged here, from quoted numbers only:
             # "tuition_formula": "(2*33750+3*53880)/5".
-            if c.get("tuition_per_term"):
+            if c.get("tuition_per_semester"):
+                # Per-semester fee where the programme page gives "N semesters (Y years)" (e.g. ELTE):
+                # semesters a year = N ÷ Y from that quote; yearly fee our calculation.
+                sq = c["semesters_quote"]
+                m = re.fullmatch(r".*?(\d+) semesters \((\d+) years?\).*", sq)
+                if not m or norm(sq) not in norm(q_of(c["semesters_source"])):
+                    fail(f"{where}: semesters_quote must be a quote of '{c['semesters_source']}' reading 'N semesters (Y years)'")
+                if int(m.group(2)) != p["duration_years"]:
+                    fail(f"{where}: semesters_quote gives {m.group(2)} years, the programme {p['duration_years']}")
+                check_numbers(c["tuition_per_semester"], c["source"], "per-semester fee")
+                c["tuition_annual"] = round(c["tuition_per_semester"] * int(m.group(1)) / int(m.group(2)), 2)
+            elif c.get("tuition_per_term"):
                 # Per-term fee (e.g. Waterloo): the term fee is quoted; the terms per year
                 # must be backed by quotes naming the terms (e.g. "fall term – September to
                 # December", "winter term – January to April").

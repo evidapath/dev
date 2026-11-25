@@ -1,0 +1,141 @@
+{
+  "uni": "hu-elte",
+  "slug": "bsc-chemistry",
+  "sources": {
+    "course": {
+      "url": "https://apply.elte.hu/courses/course/368-bsc-chemistry",
+      "page": "e81117a4590e",
+      "title": "Chemistry BSc | ELTE",
+      "organization": "Eötvös Loránd University",
+      "quotes": [
+        "[BSc] Chemistry - Eötvös Loránd University",
+        "Nominal duration 6 semesters (3 years)",
+        "Study language English",
+        "Tuition fee €3,150 per semester",
+        "September 2027/28",
+        "Studies commence 1 Sept 2027",
+        "Applicants need to submit their secondary school certificate and records of final two years in secondary school.",
+        "Minimum level of language proficiency (oral) (A1-C2): B2"
+      ]
+    },
+    "living": {
+      "url": "https://tatk.elte.hu/en/faq/prospectivestudents",
+      "page": "ad451aabf7de",
+      "title": "FAQ for prospective students | ELTE Faculty of Science",
+      "organization": "Eötvös Loránd University",
+      "quotes": [
+        "Here’s a general breakdown of typical monthly expenses for international students.",
+        "Accommodation : €200–€500 per month",
+        "Utilities (electricity, water, heating, internet): €50–€100 per month, if not included in the rent.",
+        "Food and Groceries : €150–€250 per month",
+        "Public Transportation : €10–€30 per month",
+        "Health Insurance : €20–€50 per month",
+        "Other (entertainment, personal expenses): €50–€150 per month"
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemistry",
+    "degree_type": "BSc",
+    "field": "Chemistry",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "September 2027/28",
+    "platform": "ELTE application portal (apply.elte.hu)",
+    "source": "course",
+    "summary": "Chemistry (BSc), ELTE Budapest, taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_per_semester": 3150,
+      "semesters_quote": "Nominal duration 6 semesters (3 years)",
+      "semesters_source": "course",
+      "academic_year": "September 2027/28 intake",
+      "source": "course",
+      "note": "EUR 3,150 per semester (course page, September 2027/28 intake); 6 semesters over 3 years, so the yearly figure is our calculation.",
+      "living": {
+        "monthly": [
+          500,
+          100,
+          250,
+          30,
+          50,
+          150
+        ],
+        "months": 12,
+        "source": "living",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "Our calculation from the top of each monthly range in ELTE's Faculty of Science guide: accommodation EUR 500, utilities EUR 100, food EUR 250, public transport EUR 30, health insurance EUR 50, other EUR 150, × 12 = EUR 12,960 a year."
+      }
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Chemistry: no grade cut-off published; secondary school certificate and final two years' records, CV and motivation letter.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 level (CEFR), oral and written.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Chemistry: no grade cut-off published; secondary school certificate and final two years' records, CV and motivation letter.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 level (CEFR), oral and written.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Chemistry: no grade cut-off published; secondary school certificate and final two years' records, CV and motivation letter.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 level (CEFR), oral and written.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Chemistry: no grade cut-off published; secondary school certificate and final two years' records, CV and motivation letter.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 level (CEFR), oral and written.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Chemistry: no grade cut-off published; secondary school certificate and final two years' records, CV and motivation letter.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 level (CEFR), oral and written.",
+        "source": "course"
+      }
+    }
+  ]
+}

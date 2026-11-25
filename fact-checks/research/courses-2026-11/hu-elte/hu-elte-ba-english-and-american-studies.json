@@ -1,0 +1,141 @@
+{
+  "uni": "hu-elte",
+  "slug": "ba-english-and-american-studies",
+  "sources": {
+    "course": {
+      "url": "https://apply.elte.hu/courses/course/83-ba-english-and-american-studies",
+      "page": "f9f9b298fb58",
+      "title": "English and American Studies BA | ELTE",
+      "organization": "Eötvös Loránd University",
+      "quotes": [
+        "[BA] English and American Studies - Eötvös Loránd University",
+        "Nominal duration 6 semesters (3 years)",
+        "Study language English",
+        "Tuition fee €2,300 per semester",
+        "September 2027/28",
+        "Studies commence 1 Sept 2027",
+        "a very good command of English is required during the oral entrance exam and throughout the whole program.",
+        "Minimum requirement: B2 level proficiency ( CEFR ). TOEFL IBT (Internet-based test): 4.0 – 4.5 (previously 72-94) IELTS (International English Language Testing System): 5.5 minimum"
+      ]
+    },
+    "living": {
+      "url": "https://tatk.elte.hu/en/faq/prospectivestudents",
+      "page": "ad451aabf7de",
+      "title": "FAQ for prospective students | ELTE Faculty of Science",
+      "organization": "Eötvös Loránd University",
+      "quotes": [
+        "Here’s a general breakdown of typical monthly expenses for international students.",
+        "Accommodation : €200–€500 per month",
+        "Utilities (electricity, water, heating, internet): €50–€100 per month, if not included in the rent.",
+        "Food and Groceries : €150–€250 per month",
+        "Public Transportation : €10–€30 per month",
+        "Health Insurance : €20–€50 per month",
+        "Other (entertainment, personal expenses): €50–€150 per month"
+      ]
+    }
+  },
+  "program": {
+    "name": "English and American Studies",
+    "degree_type": "BA",
+    "field": "Humanities",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "September 2027/28",
+    "platform": "ELTE application portal (apply.elte.hu)",
+    "source": "course",
+    "summary": "English and American Studies (BA), ELTE Budapest, taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_per_semester": 2300,
+      "semesters_quote": "Nominal duration 6 semesters (3 years)",
+      "semesters_source": "course",
+      "academic_year": "September 2027/28 intake",
+      "source": "course",
+      "note": "EUR 2,300 per semester (course page, September 2027/28 intake); 6 semesters over 3 years, so the yearly figure is our calculation.",
+      "living": {
+        "monthly": [
+          500,
+          100,
+          250,
+          30,
+          50,
+          150
+        ],
+        "months": 12,
+        "source": "living",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "Our calculation from the top of each monthly range in ELTE's Faculty of Science guide: accommodation EUR 500, utilities EUR 100, food EUR 250, public transport EUR 30, health insurance EUR 50, other EUR 150, × 12 = EUR 12,960 a year."
+      }
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "English and American Studies: no grade cut-off published; secondary school matriculation certificate and an oral entrance exam.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT",
+        "min_score": "B2: IELTS 5.5, or TOEFL iBT 4.0-4.5 (previously 72-94).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "English and American Studies: no grade cut-off published; secondary school matriculation certificate and an oral entrance exam.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT",
+        "min_score": "B2: IELTS 5.5, or TOEFL iBT 4.0-4.5 (previously 72-94).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "English and American Studies: no grade cut-off published; secondary school matriculation certificate and an oral entrance exam.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT",
+        "min_score": "B2: IELTS 5.5, or TOEFL iBT 4.0-4.5 (previously 72-94).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "English and American Studies: no grade cut-off published; secondary school matriculation certificate and an oral entrance exam.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT",
+        "min_score": "B2: IELTS 5.5, or TOEFL iBT 4.0-4.5 (previously 72-94).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "English and American Studies: no grade cut-off published; secondary school matriculation certificate and an oral entrance exam.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT",
+        "min_score": "B2: IELTS 5.5, or TOEFL iBT 4.0-4.5 (previously 72-94).",
+        "source": "course"
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "uni": "hu-elte",
+  "name": "Eötvös Loránd University",
+  "aliases": [
+    "ELTE"
+  ],
+  "type": "public",
+  "website": "https://www.elte.hu/en/",
+  "country": {
+    "cc": "hu",
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  "city": {
+    "slug": "hu-budapest",
+    "name": "Budapest"
+  },
+  "sources": {
+    "main": {
+      "url": "https://apply.elte.hu/courses/course/149-bsc-computer-science",
+      "page": "77a89d9cf43d",
+      "title": "Computer Science BSc | ELTE",
+      "organization": "Eötvös Loránd University",
+      "quotes": [
+        "[BSc] Computer Science - Eötvös Loránd University",
+        "Study location Hungary, Budapest"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "Self-financing students (course page fee)",
+      "description": "The tuition fee on each ELTE course page of its application portal (self-financing students).",
+      "source": "main"
+    }
+  ]
+}
