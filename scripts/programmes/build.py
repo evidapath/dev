@@ -214,7 +214,13 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                 c["tuition_annual"] = round(c["tuition_per_credit"] * c["credits_per_year"], 2)
             elif c.get("tuition_per_credit"):
                 # Per-credit fee (e.g. UBC): rate × the degree's quoted credit total ÷ its years.
-                check_numbers(f'{c["tuition_per_credit"]:.2f} {c["degree_credits"]}', c["source"], "per-credit fee and credits")
+                # The credit total may be quoted on another source of the same record
+                # ("credits_source", e.g. HCT: fee on the admissions page, credits in the catalogue).
+                if c.get("credits_source"):
+                    check_numbers(f'{c["tuition_per_credit"]:.2f}', c["source"], "per-credit fee")
+                    check_numbers(c["degree_credits"], c["credits_source"], "degree credits")
+                else:
+                    check_numbers(f'{c["tuition_per_credit"]:.2f} {c["degree_credits"]}', c["source"], "per-credit fee and credits")
                 c["tuition_annual"] = round(c["tuition_per_credit"] * c["degree_credits"] / p["duration_years"], 2)
             elif c.get("tuition_formula"):
                 f_ = c["tuition_formula"]

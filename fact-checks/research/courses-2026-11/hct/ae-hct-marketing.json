@@ -1,0 +1,95 @@
+{
+  "uni": "ae-hct",
+  "slug": "marketing",
+  "sources": {
+    "course": {
+      "url": "https://hct.ac.ae/en/majors/bachelor-of-marketing/",
+      "page": "0101716469eb",
+      "title": "Bachelor of Marketing | Higher Colleges of Technology",
+      "organization": "Higher Colleges of Technology",
+      "quotes": [
+        "Bachelor of Marketing"
+      ]
+    },
+    "catalog": {
+      "url": "https://hctcatalog.hct.ac.ae/programmes/business/marketing/",
+      "page": "c7ec67e90f4a",
+      "title": "Bachelor of Marketing | HCT Catalog",
+      "organization": "Higher Colleges of Technology",
+      "quotes": [
+        "Total Credits 120",
+        "Minimum Duration of Study 4 years"
+      ]
+    },
+    "admissions": {
+      "url": "https://hct.ac.ae/en/admissions/international-admissions/",
+      "page": "04636dccb4ab",
+      "title": "International Admissions | Higher Colleges of Technology",
+      "organization": "Higher Colleges of Technology",
+      "quotes": [
+        "Tuition Fees for Expatriate Students (Self-Sponsored Students) Academic Year 2026-2027",
+        "Bachelor AED 37,104.45 (Based on 15 CH) AED 2,473.63 per credit hour 4 Years",
+        "Note: All other admission requirements, program-specific criteria, and subject equivalencies are the same for local and international applicants.",
+        "Applied Bachelor Degree High School English: 80% and fulfilment of program-specific admission requirements",
+        "Bachelor Programs TOEFL iBT 71 (0-120 scale) or 4.0 (1-6 scale)",
+        "Business 80% General / 70% Advanced N/A N/A N/A Mathematics required",
+        "Mathematics (Non-Engineering Bachelor Programs): SAT 485, ACT 20, IB SL Mathematics 4, AP Mathematics 3, or IGCSE/AS/A Level Grade C."
+      ]
+    }
+  },
+  "program": {
+    "name": "Marketing",
+    "degree_type": "Bachelor",
+    "field": "Business",
+    "duration_years": 4,
+    "duration_source": "catalog",
+    "languages": [],
+    "entry_year": "2026-2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Marketing at the Higher Colleges of Technology (UAE).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "AED",
+      "tuition_per_credit": 2473.63,
+      "degree_credits": 120,
+      "credits_source": "catalog",
+      "academic_year": "2026-2027",
+      "source": "admissions",
+      "note": "Expatriate (self-sponsored) students, 2026-2027: AED 2,473.63 per credit hour × 120 credits ÷ 4 years (our calculation). HCT says the per-credit fee may vary by programme. Fees are zero-rated for VAT."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "admissions",
+      "threshold": "IB: Mathematics at SL 4 or higher (HCT's equivalent of its 80% school maths requirement).",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "TOEFL iBT (or 80% in high-school English)",
+        "min_score": "TOEFL iBT 71 (0-120 scale) or 4.0 (1-6 scale), or 80% in high-school English.",
+        "source": "admissions"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "admissions",
+      "threshold": "A-Level: Mathematics at IGCSE/AS/A Level grade C or higher (HCT's equivalent of its 80% school maths requirement).",
+      "required_subjects": [
+        "Mathematics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "TOEFL iBT (or 80% in high-school English)",
+        "min_score": "TOEFL iBT 71 (0-120 scale) or 4.0 (1-6 scale), or 80% in high-school English.",
+        "source": "admissions"
+      }
+    }
+  ]
+}

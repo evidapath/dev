@@ -343,3 +343,20 @@ IB and English lines differ page to page). Sim (IB 37-39, $60k): Economics now o
 Finance and Economics (IB 26) instead of Business; International Relations and Pharmacy (IB 30)
 added; Computer Science unchanged. Builder negative test: a changed IB score was refused.
 Not added: Mechanical/Chemical/Electrical (already in), Medicine (in).
+
+## 2026-11-25: HCT, twelve programmes
+
+`hct/` (generator `scripts/research/gen/ae_hct.py`) → `pending/2026-11-25-hct.ndjson` (75 records:
+74 creates + 1 source excerpt that only grows, 886 → 1,932 characters; dry-run HTTP 200).
+Accounting, Actuarial Science, Business Analytics, International Business, Marketing, Digital
+Media, Chemical / Civil / Electrical / Mechanical / Mechatronics Engineering Technology, Nursing.
+Fee: International Admissions page, 2026-2027 expatriate rate AED 2,473.63 per credit hour × the
+HCT Catalog's "Total Credits 120" ÷ "Minimum Duration of Study 4 years" = AED 74,208.90 a year
+(our calculation; equals the existing Finance record). Entry: the division table plus HCT's own
+IB SL / A-level equivalents; English TOEFL iBT 71 or 4.0, or 80% in school English. Teaching
+language not stated on any HCT page read, so none stored (the site then makes no language claim).
+Builder: new `credits_source` (credit total quoted on another source of the same record);
+all 22 earlier folders rebuilt with old and new builder: identical output.
+Sim (IB 34-36, $40k): HCT now offered for Accounting, Mechanical Engineering, Nursing; Business
+shows Business Analytics (requirement published) instead of Finance (none). All "can't compare":
+HCT sets subject grades, not an overall score.
