@@ -18,8 +18,15 @@ import { jsonLdScript } from "../lib/structured-data";
 
 type Loaded = NonNullable<Awaited<ReturnType<typeof getAnswers>>>;
 
-function costQuestion(c: CountryCost, multi: boolean) {
-  return `How much does it cost an international student to study in ${place(c.country)}?${multi ? ` (fees in ${c.currency})` : ""}`;
+function costQuestion(country: string) {
+  return `How much does it cost an international student to study in ${place(country)}?`;
+}
+// One question per country; a country with fees in two currencies gets one table per
+// currency inside the same answer (fees in different currencies are never compared).
+function byCountry(costs: CountryCost[]): [string, CountryCost[]][] {
+  const m = new Map<string, CountryCost[]>();
+  for (const c of costs) m.set(c.country, [...(m.get(c.country) ?? []), c]);
+  return [...m];
 }
 function dubai(costs: CountryCost[]) {
   const uae = costs.find((c) => c.country === "United Arab Emirates" && c.currency === "AED");
@@ -34,7 +41,6 @@ const reqLine = (r: RequirementFact) => `${r.university}, ${r.programme}: ${r.te
 const unisIn = (rows: RequirementFact[]) => [...new Set(rows.map((r) => r.university))];
 
 function buildFaq(d: Loaded) {
-  const multi = (c: CountryCost) => d.data.costs.filter((x) => x.country === c.country).length > 1;
   const qa: { q: string; a: string }[] = [];
   const dub = dubai(d.data.costs);
   if (dub)
@@ -42,7 +48,8 @@ function buildFaq(d: Loaded) {
       q: "Which is the cheapest university in Dubai for international students?",
       a: dub.answer,
     });
-  for (const c of d.data.costs) qa.push({ q: costQuestion(c, multi(c)), a: costAnswer(c) });
+  for (const [country, groups] of byCountry(d.data.costs))
+    qa.push({ q: costQuestion(country), a: groups.map(costAnswer).join(" ") });
   if (d.data.ib.length)
     qa.push({
       q: `What are the IB requirements for ${unisIn(d.data.ib).join(", ")}?`,
@@ -175,7 +182,6 @@ function AnswersPage() {
   const faq = buildFaq(d);
   const ans = (q: string) => faq.find((x) => x.q === q)?.a ?? "";
   const dub = dubai(d.data.costs);
-  const multi = (c: CountryCost) => d.data.costs.filter((x) => x.country === c.country).length > 1;
   const uae = splitUae(d.uaeScholarships);
 
   return (
@@ -216,14 +222,21 @@ function AnswersPage() {
                 <FeeTable rows={dub.list} />
               </QA>
             )}
-            {d.data.costs.map((c) => {
-              const q = costQuestion(c, multi(c));
+            {byCountry(d.data.costs).map(([country, groups]) => {
+              const q = costQuestion(country);
               return (
-                <QA key={q} id={id()} q={q} a={costAnswer(c)}>
-                  <FeeTable rows={c.perUniversity} />
+                <QA key={q} id={id()} q={q} a={groups.map(costAnswer).join(" ")}>
+                  {groups.map((c) => (
+                    <div key={c.currency} className="space-y-1">
+                      {groups.length > 1 ? (
+                        <p className="text-sm font-semibold">Fees in {c.currency}</p>
+                      ) : null}
+                      <FeeTable rows={c.perUniversity} />
+                    </div>
+                  ))}
                   <p className="text-sm">
-                    <Link to={countryCostPath(c.country)} className="text-primary underline">
-                      Cost of studying in {place(c.country)}
+                    <Link to={countryCostPath(country)} className="text-primary underline">
+                      Cost of studying in {place(country)}
                     </Link>
                   </p>
                 </QA>

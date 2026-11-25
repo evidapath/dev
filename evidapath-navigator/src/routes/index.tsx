@@ -258,7 +258,7 @@ function Index() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredUnis.map((univ, i) => (
+          {featuredUnis.slice(1).map((univ, i) => (
             <UniversityCard key={univ.id} univ={univ} index={i} />
           ))}
         </div>

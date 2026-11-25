@@ -3,14 +3,15 @@ import type { Scholarship, University } from "./mock-data";
 // Homepage hero picks, shared by the server loader (so the first paint already has them)
 // and the page (which recomputes once the full data arrives in the browser).
 
-/** Fully priced and checked, one per country, so the preview shows a spread. */
+/** Fully priced and checked, one per country, so the preview shows a spread. The first goes
+ *  in the hero card, the next three in the featured row, so no card appears twice. */
 export function pickFeatured(all: University[]): University[] {
   const good = all.filter(
     (u) => u.costs.totalAnnual != null && u.evidenceConfidence.startsWith("Verified"),
   );
   const seen = new Set<string>();
   const spread = good.filter((u) => !seen.has(u.country) && seen.add(u.country));
-  return (spread.length >= 3 ? spread : good.length >= 3 ? good : all).slice(0, 3);
+  return (spread.length >= 4 ? spread : good.length >= 4 ? good : all).slice(0, 4);
 }
 
 export type HomeStats = (readonly [number, string])[];
