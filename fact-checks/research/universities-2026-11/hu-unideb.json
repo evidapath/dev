@@ -1,0 +1,39 @@
+{
+  "uni": "hu-unideb",
+  "name": "University of Debrecen",
+  "aliases": [
+    "UD",
+    "Debreceni Egyetem"
+  ],
+  "type": "public",
+  "website": "https://unideb.hu/en",
+  "country": {
+    "cc": "hu",
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  "city": {
+    "slug": "hu-debrecen",
+    "name": "Debrecen"
+  },
+  "sources": {
+    "main": {
+      "url": "https://edu.unideb.hu/p/chemistry-bsc",
+      "page": "76befc5b0352",
+      "title": "Chemistry BSc | University of Debrecen",
+      "organization": "University of Debrecen",
+      "quotes": [
+        "BSc at the University of Debrecen?"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "self-financed",
+      "label": "Self-financed students (programme page fee)",
+      "description": "The yearly tuition fee on each English-taught programme page of the University of Debrecen.",
+      "source": "main"
+    }
+  ]
+}

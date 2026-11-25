@@ -1,0 +1,107 @@
+{
+  "uni": "hu-unideb",
+  "slug": "bsc-computer-science-engineering",
+  "sources": {
+    "course": {
+      "url": "https://edu.unideb.hu/p/computer-science-engineering-bsc",
+      "page": "c02c76df82dc",
+      "title": "Computer Science Engineering BSc | University of Debrecen",
+      "organization": "University of Debrecen",
+      "quotes": [
+        "The tuition fee for this program is 7,000 USD/Year",
+        "This is a 3.5-year program consisting of 7 academic semesters",
+        "This is supplemented by the application fee of $150 USD (one-time) and the entrance procedure fee of $350 USD",
+        "All courses are taught in English ; therefore, a B2 level English proficiency is required.",
+        "Admission requires a high school certificate; an English Placement Test with an Oral Entrance Exam and passing a written and oral entrance exam in Mathematics and Physics."
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science Engineering",
+    "degree_type": "BSc",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 3.5,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Self-financed procedure (programme page)",
+    "platform": "University of Debrecen online application",
+    "source": "course",
+    "summary": "Computer Science Engineering (BSc), University of Debrecen; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "self-financed",
+      "currency": "USD",
+      "tuition_annual": 7000,
+      "academic_year": "Not stated on the programme page",
+      "source": "course",
+      "note": "USD 7,000 a year (programme page; the academic year isn't stated). One-time: USD 150 application fee and USD 350 entrance procedure fee. Living costs not added."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Computer Science Engineering: no grade cut-off published. Admission requires a high school certificate; an English Placement Test with an Oral Entrance Exam and passing a written and oral entrance exam in Mathematics and Physics.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 level English proficiency.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Computer Science Engineering: no grade cut-off published. Admission requires a high school certificate; an English Placement Test with an Oral Entrance Exam and passing a written and oral entrance exam in Mathematics and Physics.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 level English proficiency.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Computer Science Engineering: no grade cut-off published. Admission requires a high school certificate; an English Placement Test with an Oral Entrance Exam and passing a written and oral entrance exam in Mathematics and Physics.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 level English proficiency.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Computer Science Engineering: no grade cut-off published. Admission requires a high school certificate; an English Placement Test with an Oral Entrance Exam and passing a written and oral entrance exam in Mathematics and Physics.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 level English proficiency.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Computer Science Engineering: no grade cut-off published. Admission requires a high school certificate; an English Placement Test with an Oral Entrance Exam and passing a written and oral entrance exam in Mathematics and Physics.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "English (B2)",
+        "min_score": "B2 level English proficiency.",
+        "source": "course"
+      }
+    }
+  ]
+}
