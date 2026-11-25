@@ -281,6 +281,12 @@ export function UniversityCard({ univ, index = 0 }: { univ: University; index?: 
                 ? `Checked ${monthYear(univ.lastVerified)}`
                 : "Being checked"}
           </span>
+          <Link
+            to={universityPath(univ.name)}
+            className="inline-flex items-center gap-1 rounded-full border border-primary/40 bg-primary/5 px-2.5 py-1 font-semibold text-primary hover:bg-primary/10"
+          >
+            All courses and fees
+          </Link>
           {/^https?:/.test(univ.officialSourceUrl) && (
             <a
               href={univ.officialSourceUrl}
