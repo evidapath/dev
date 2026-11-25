@@ -1,0 +1,39 @@
+{
+  "uni": "hu-pecs",
+  "name": "University of Pécs",
+  "aliases": [
+    "PTE",
+    "Pécsi Tudományegyetem"
+  ],
+  "type": "public",
+  "website": "https://international.pte.hu",
+  "country": {
+    "cc": "hu",
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  "city": {
+    "slug": "hu-pecs",
+    "name": "Pécs"
+  },
+  "sources": {
+    "main": {
+      "url": "https://apply.pte.hu/en_GB/courses/course/252-computer-science-bsc",
+      "page": "03a7ba2432af",
+      "title": "Computer Science BSc | University of Pécs",
+      "organization": "University of Pécs",
+      "quotes": [
+        "Computer Science BSc University of Pécs Hungary, Pécs"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students (course page fee)",
+      "description": "The tuition fee on each University of Pécs course page of its application portal.",
+      "source": "main"
+    }
+  ]
+}

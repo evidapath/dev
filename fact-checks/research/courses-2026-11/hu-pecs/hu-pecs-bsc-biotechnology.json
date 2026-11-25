@@ -1,0 +1,84 @@
+{
+  "uni": "hu-pecs",
+  "slug": "bsc-biotechnology",
+  "sources": {
+    "course": {
+      "url": "https://apply.pte.hu/en_GB/courses/course/523-biotechnology-bsc",
+      "page": "0bf0ab24c4fa",
+      "title": "Biotechnology BSc | University of Pécs",
+      "organization": "University of Pécs",
+      "quotes": [
+        "Biotechnology BSc University of Pécs Hungary, Pécs",
+        "Nominal duration 6 semesters (3 years)",
+        "Study language English",
+        "Tuition fee €3,500 per semester",
+        "A motivation letter must be adde"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biotechnology",
+    "degree_type": "BSc",
+    "field": "Biology",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Course page (year not stated)",
+    "platform": "University of Pécs application portal (apply.pte.hu)",
+    "source": "course",
+    "summary": "Biotechnology (BSc), University of Pécs; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "academic_year": "Course page (year not stated)",
+      "source": "course",
+      "tuition_per_semester": 3500,
+      "semesters_quote": "Nominal duration 6 semesters (3 years)",
+      "semesters_source": "course",
+      "note": "EUR 3,500 per semester (course page; the academic year isn't stated); yearly figure our calculation. Living costs not added."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Biotechnology: the course page lists no grade cut-off and refers to the University of Pécs's general entry requirements (international.pte.hu/admission/entry-requirements); a motivation letter is required.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Biotechnology: the course page lists no grade cut-off and refers to the University of Pécs's general entry requirements (international.pte.hu/admission/entry-requirements); a motivation letter is required.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Biotechnology: the course page lists no grade cut-off and refers to the University of Pécs's general entry requirements (international.pte.hu/admission/entry-requirements); a motivation letter is required.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Biotechnology: the course page lists no grade cut-off and refers to the University of Pécs's general entry requirements (international.pte.hu/admission/entry-requirements); a motivation letter is required.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Biotechnology: the course page lists no grade cut-off and refers to the University of Pécs's general entry requirements (international.pte.hu/admission/entry-requirements); a motivation letter is required.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}
