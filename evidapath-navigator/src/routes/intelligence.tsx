@@ -1,12 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { ArrowRight, Database, ExternalLink, ShieldCheck } from "lucide-react";
-import { useLiveData } from "../lib/use-live-data";
+import { loadLive } from "../lib/use-live-data";
 import { buildBriefs, type Brief, type BriefCategory } from "../lib/data-briefs";
 import { canonicalLink, ogUrlMeta } from "../lib/seo";
 import { PageHeader } from "../components/PageHeader";
 
 export const Route = createFileRoute("/intelligence")({
+  // Briefs are computed where the data loads and only they are sent to the page (a few KB
+  // instead of every university record). Built only from verified (Sanity) data: the
+  // illustrative fallback set never produces "findings".
+  loader: async () => {
+    const d = await loadLive();
+    return d.source === "sanity" ? buildBriefs(d) : null;
+  },
   head: () => ({
     meta: [
       { title: "Data Briefs: University Costs and Admissions | EvidaPath" },
@@ -32,8 +39,9 @@ export const Route = createFileRoute("/intelligence")({
 });
 
 function IntelligencePage() {
-  const { data, loading } = useLiveData();
-  const briefs = useMemo(() => (data ? buildBriefs(data) : []), [data]);
+  const data = Route.useLoaderData();
+  const loading = false;
+  const briefs = data ?? [];
   const [category, setCategory] = useState<"All" | BriefCategory>("All");
   const categories: ("All" | BriefCategory)[] = [
     "All",

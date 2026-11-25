@@ -58,6 +58,20 @@ export function useFxRatesFn() {
   return useCallback(() => (fxCache ??= cached(() => fn()))(), [fn]);
 }
 
+/** Route-loader twins of the hooks above: data rendered into the server HTML. */
+export function loadScholarships() {
+  if (typeof window === "undefined") return getScholarships();
+  return (scholCache ??= cached(() => getScholarships()))();
+}
+export function loadFx(): Promise<FxRates | null> {
+  if (typeof window === "undefined") return getFxRates().catch(() => null);
+  return (fxCache ??= cached(() => getFxRates()))().catch(() => null);
+}
+export async function loadLive(): Promise<LiveData> {
+  const [u, s, fx] = await Promise.all([loadUniversities(), loadScholarships(), loadFx()]);
+  return { universities: u.universities, scholarships: s.scholarships, fx, source: u.source };
+}
+
 export interface LiveData {
   universities: University[];
   scholarships: Scholarship[];

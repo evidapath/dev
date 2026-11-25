@@ -1,6 +1,6 @@
-import { useUniversitiesFn, useFxRatesFn } from "../lib/use-live-data";
+import { loadFx, loadUniversities } from "../lib/use-live-data";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Search,
   Filter,
@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "../components/ui/button";
-import { type FxRates } from "../lib/fx.functions";
 import { BUDGET_MAX, BUDGET_MIN, annualCostUsd, budgetFit } from "../lib/budget";
 import { useSaveUniversity } from "../lib/use-save-university";
 import type { University } from "../lib/mock-data";
@@ -24,6 +23,11 @@ import { PageHeader } from "../components/PageHeader";
 import { BudgetInput } from "../components/BudgetInput";
 
 export const Route = createFileRoute("/discover")({
+  // Rendered on the server so crawlers see the universities, not "Loading…".
+  loader: async () => {
+    const [u, fx] = await Promise.all([loadUniversities(), loadFx()]);
+    return { ...u, fx };
+  },
   head: () => ({
     meta: [
       { title: "Find Universities Within Your Budget | EvidaPath" },
@@ -50,31 +54,8 @@ function DiscoverPage() {
   const [selectedCountry, setSelectedCountry] = useState("All");
   const [maxBudget, setMaxBudget] = useState(80000);
   const [selectedDuration, setSelectedDuration] = useState("All");
-  const [universities, setUniversities] = useState<University[]>([]);
-  const [source, setSource] = useState<"sanity" | "mock" | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  const fetchUniversities = useUniversitiesFn();
-  const fetchFx = useFxRatesFn();
-  const [fx, setFx] = useState<FxRates | null>(null);
-  useEffect(() => {
-    let active = true;
-    fetchFx()
-      .then((r) => active && setFx(r))
-      .catch(() => {});
-    fetchUniversities()
-      .then((res) => {
-        if (!active) return;
-        setUniversities(res.universities);
-        setSource(res.source);
-      })
-      .finally(() => {
-        if (active) setLoading(false);
-      });
-    return () => {
-      active = false;
-    };
-  }, [fetchUniversities, fetchFx]);
+  const { universities, source, fx } = Route.useLoaderData();
+  const loading = false;
 
   const countries = Array.from(new Set(universities.map((u) => u.country).filter(Boolean))).sort();
 

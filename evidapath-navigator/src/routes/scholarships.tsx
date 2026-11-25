@@ -1,6 +1,6 @@
-import { useScholarshipsFn } from "../lib/use-live-data";
+import { loadScholarships } from "../lib/use-live-data";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import { usePaged } from "../lib/use-paged";
 import { ShowMore } from "../components/ShowMore";
 import {
@@ -28,6 +28,8 @@ import { toast } from "sonner";
 import { useSaveUniversity } from "../lib/use-save-university";
 
 export const Route = createFileRoute("/scholarships")({
+  // Rendered on the server so crawlers see the scholarships, not an empty shell.
+  loader: () => loadScholarships(),
   head: () => ({
     meta: [
       { title: "Scholarships for International Students | EvidaPath" },
@@ -84,26 +86,8 @@ function ScholarshipsGraphPage() {
   const [search, setSearch] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("All");
   const [quick, setQuick] = useState<Set<QuickFilter>>(new Set());
-  const [scholarships, setScholarships] = useState<Scholarship[]>([]);
-  const [source, setSource] = useState<"sanity" | "mock" | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  const fetchScholarships = useScholarshipsFn();
-  useEffect(() => {
-    let active = true;
-    fetchScholarships()
-      .then((res) => {
-        if (!active) return;
-        setScholarships(res.scholarships);
-        setSource(res.source);
-      })
-      .finally(() => {
-        if (active) setLoading(false);
-      });
-    return () => {
-      active = false;
-    };
-  }, [fetchScholarships]);
+  const { scholarships, source } = Route.useLoaderData();
+  const loading = false;
 
   // "Add to plan" saves the scholarship's university to My Path; the Plan page
   // then lists that university's scholarships (the ones you're eligible for) with

@@ -63,13 +63,17 @@ export function AdmissionsPanel({
 }
 
 function Deadlines({ deadlines }: { deadlines: Deadline[] }) {
+  // The "in N days" badge depends on today's date, so it is drawn only in the browser:
+  // server HTML (and the copies search engines keep) carries the fixed date alone.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   return (
     <div className="space-y-1.5">
       <p className="text-[10px] uppercase font-semibold text-muted-foreground">
         Application deadlines
       </p>
       {deadlines.map((d, i) => {
-        const days = d.deadline ? daysUntil(d.deadline) : null;
+        const days = mounted && d.deadline ? daysUntil(d.deadline) : null;
         return (
           <div
             key={i}
