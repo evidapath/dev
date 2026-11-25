@@ -113,7 +113,8 @@ export function universityJsonLd(u: University): Json {
   };
 }
 
-/** The /universities list: every university, and each of its programmes. */
+/** The /universities list: every university, each linking to its own page, where its
+ *  programmes are described (universityJsonLd). */
 export function universitiesJsonLd(universities: University[], pagePath: string): Json {
   const page = canonicalUrl(pagePath);
   return {
@@ -132,9 +133,6 @@ export function universitiesJsonLd(universities: University[], pagePath: string)
           },
         })),
       },
-      ...universities.flatMap((u) =>
-        (u.programDetails ?? []).map((p) => programJsonLd(p, universityId(u))),
-      ),
     ],
   };
 }

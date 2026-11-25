@@ -26,7 +26,12 @@ export const Route = createFileRoute("/discover")({
   // Rendered on the server so crawlers see the universities, not "Loading…".
   loader: async () => {
     const [u, fx] = await Promise.all([loadUniversities(), loadFx()]);
-    return { ...u, fx };
+    // This page shows each university's headline cost only, so the per-programme detail
+    // (about 85% of the data) stays out of the page.
+    const universities = u.universities.map(
+      ({ programDetails: _p, admissionsByCurriculum: _a, deadlines: _d, ...rest }) => rest,
+    );
+    return { universities, source: u.source, fx };
   },
   head: () => ({
     meta: [
