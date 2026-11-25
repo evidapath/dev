@@ -1,0 +1,51 @@
+{
+  "uni": "tr-boun",
+  "name": "Boğaziçi University",
+  "aliases": [
+    "Bogazici University",
+    "BOUN"
+  ],
+  "type": "public",
+  "website": "https://bogazici.edu.tr/en",
+  "country": {
+    "cc": "tr",
+    "name": "Türkiye",
+    "currency": "TRY"
+  },
+  "city": {
+    "slug": "tr-istanbul",
+    "name": "Istanbul"
+  },
+  "sources": {
+    "main": {
+      "url": "https://globalstudents.bogazici.edu.tr/en/pages/accommodation/3025",
+      "page": "6230fb692adf",
+      "title": "Accommodation | Boğaziçi University Global Students",
+      "organization": "Boğaziçi University",
+      "quotes": [
+        "Boğaziçi University offers a variety of on-campus housing options",
+        "whose families reside outside of Istanbul, are guaranteed on-campus housing only for their first year"
+      ]
+    },
+    "fees": {
+      "url": "https://globalstudents.bogazici.edu.tr/en/pages/tuition-fees/3022",
+      "page": "08bf6c6b7582",
+      "title": "Tuition Fees | Boğaziçi University Global Students",
+      "organization": "Boğaziçi University",
+      "quotes": [
+        "Tuition for Undergraduate Programs for International Students Tuition per Years",
+        "Faculty of Engineering 10.000 USD",
+        "Bogazici University does not offer scholarships or financial aid to international students."
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students (international quota)",
+      "description": "Boğaziçi University's tuition for undergraduate international students; no scholarships or financial aid for them.",
+      "source": "fees"
+    }
+  ]
+}

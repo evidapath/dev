@@ -1,0 +1,130 @@
+{
+  "uni": "tr-boun",
+  "slug": "bs-electrical-and-electronics-engineering",
+  "sources": {
+    "course": {
+      "url": "https://eng.bogazici.edu.tr/en",
+      "page": "5c7ef8955248",
+      "title": "Faculty of Engineering | Boğaziçi University",
+      "organization": "Boğaziçi University",
+      "quotes": [
+        "our Faculty of Engineering cultivates leading engineers in Computer, Electrical-Electronics, Industrial, Civil, Chemical, and Mechanical Engineering through its four-year undergraduate programs"
+      ]
+    },
+    "fees": {
+      "url": "https://globalstudents.bogazici.edu.tr/en/pages/tuition-fees/3022",
+      "page": "08bf6c6b7582",
+      "title": "Tuition Fees | Boğaziçi University Global Students",
+      "organization": "Boğaziçi University",
+      "quotes": [
+        "Tuition for Undergraduate Programs for International Students Tuition per Years",
+        "Faculty of Engineering 10.000 USD",
+        "Bogazici University does not offer scholarships or financial aid to international students."
+      ]
+    },
+    "pdf": {
+      "url": "https://mediastore.cc.bogazici.edu.tr/web/userfiles/files/T121621-tuition_fees_for_international_undergraduate_and_graduate_students_2026-2027_intake(1).pdf",
+      "page": "boun-fees-2627",
+      "title": "Tuition fees for international students, 2026-2027 intake (PDF) | Boğaziçi University",
+      "organization": "Boğaziçi University",
+      "quotes": [
+        "Tuition Fees for Undergraduate (International Quota) and Graduate (International) Students: 2026‐2027 Intake (per semester)",
+        "enrolled in 2026‐2027 5.000,00 USD"
+      ]
+    },
+    "exams": {
+      "url": "https://globalstudents.bogazici.edu.tr/en/pages/recognized-examinations-diplomas/3017",
+      "page": "b6eaf3ec43d3",
+      "title": "Recognized Examinations / Diplomas | Boğaziçi University",
+      "organization": "Boğaziçi University",
+      "quotes": [
+        "Applicants must submit at least one of the following examination or diploma results with the minimum required scores at the time of application.",
+        "SAT (Scholastic Aptitude Test) Faculty of Engineering: Minimum Total Score 1350/1600 and Math 700/800",
+        "International Baccalaureate (IB) Minimum IB Diploma Diploma Score of 36/45",
+        "GCE AL (General Certificate of Education Advanced Level) A grade in minimum 3 subjects relevant to the program applied for",
+        "Pakistan Higher Secondary School Certificate (HSSC) Minimum overall success rate of 80% For Engineering and Science programs, a minimum of 75% in both Mathematics and Physics is required"
+      ]
+    },
+    "eng": {
+      "url": "https://globalstudents.bogazici.edu.tr/en/pages/english-proficiency-and-exemption/3020",
+      "page": "be757ac46b20",
+      "title": "English Proficiency and Exemption | Boğaziçi University",
+      "organization": "Boğaziçi University",
+      "quotes": [
+        "The language of instruction at Boğaziçi University is English.",
+        "IELTS Academic (Paper-based/Computer-delivered) Overall Band Score of 6.5, with a Writing score of 6.5.",
+        "TOEFL® IBT and IELTS Academic (Paper-based/Computer-delivered) success criteria effective as of 12 June 2026: TOEFL® IBT Overall Score of at least 4.5, with a minimum score of 4.5 in each of the Reading, Listening, Speaking, and W"
+      ]
+    }
+  },
+  "program": {
+    "name": "Electrical and Electronics Engineering",
+    "degree_type": "B.S.",
+    "field": "Electrical and Electronic Engineering",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 intake",
+    "platform": "Boğaziçi international student online application",
+    "source": "course",
+    "summary": "Electrical and Electronics Engineering (B.S.), Faculty of Engineering, Boğaziçi University, Istanbul; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 10000,
+      "academic_year": "2026-2027 intake",
+      "source": [
+        "fees",
+        "pdf"
+      ],
+      "note": "USD 10,000 a year for the Faculty of Engineering (fee page); the 2026-2027 intake table gives USD 5,000 per semester. Boğaziçi gives no scholarships or financial aid to international students. Living costs aren't published on the pages read."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "exams",
+      "threshold": "Electrical and Electronics Engineering: IB Diploma score of at least 36/45. These are Boğaziçi's minimum scores to apply; places are limited to the international quota.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic / TOEFL iBT",
+        "source": "eng",
+        "min_score": "IELTS Academic 6.5 overall with Writing 6.5, or TOEFL iBT 4.5 overall with 4.5 in each section (from 12 June 2026); or Boğaziçi's own BÜYES/BUEPT exam.",
+        "notes": "Teaching is in English; proficiency must be documented to register for the programme."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "exams",
+      "threshold": "Electrical and Electronics Engineering: grade A in at least 3 A-level subjects relevant to the programme. These are Boğaziçi's minimum scores to apply; places are limited to the international quota.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic / TOEFL iBT",
+        "source": "eng",
+        "min_score": "IELTS Academic 6.5 overall with Writing 6.5, or TOEFL iBT 4.5 overall with 4.5 in each section (from 12 June 2026); or Boğaziçi's own BÜYES/BUEPT exam.",
+        "notes": "Teaching is in English; proficiency must be documented to register for the programme."
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "exams",
+      "threshold": "Electrical and Electronics Engineering: SAT total at least 1350/1600 with Math 700/800 (Faculty of Engineering). These are Boğaziçi's minimum scores to apply; places are limited to the international quota.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic / TOEFL iBT",
+        "source": "eng",
+        "min_score": "IELTS Academic 6.5 overall with Writing 6.5, or TOEFL iBT 4.5 overall with 4.5 in each section (from 12 June 2026); or Boğaziçi's own BÜYES/BUEPT exam.",
+        "notes": "Teaching is in English; proficiency must be documented to register for the programme."
+      }
+    }
+  ]
+}
