@@ -1,0 +1,90 @@
+{
+  "uni": "hu-obuda",
+  "slug": "bsc-environmental-engineering",
+  "sources": {
+    "course": {
+      "url": "https://uni-obuda.hu/undergraduate-programs/",
+      "page": "0b20bbcdad94",
+      "title": "Bachelor's Programs | Obuda University",
+      "organization": "Obuda University",
+      "quotes": [
+        "Water Management Credits 210 Study Option Full-time Study Type In-person at OU campus Language English Duration 7 semesters Location Budapest, Rejtő Sándor Faculty of Light Industry and Environmental Engineering"
+      ]
+    },
+    "fees": {
+      "url": "https://uni-obuda.hu/tuition-fees/",
+      "page": "5504bfbb9d75",
+      "title": "Tuition fees | Obuda University",
+      "organization": "Obuda University",
+      "quotes": [
+        "Level Program Specialisation(s) Tuition Fee/semester EU/EEA Non-EEA BSc",
+        "Environmental Engineering Sustainable Energy Management 2,000 EUR 2,900 EUR"
+      ]
+    }
+  },
+  "program": {
+    "name": "Environmental Engineering",
+    "degree_type": "BSc",
+    "field": "Environmental Science",
+    "faculty": "",
+    "duration_years": 3.5,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Fee page (year not stated)",
+    "platform": "Obuda University online application",
+    "source": "course",
+    "summary": "Environmental Engineering (BSc), Obuda University, Budapest; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eea",
+      "currency": "EUR",
+      "tuition_per_semester": 2900,
+      "semesters_quote": "Duration 7 semesters",
+      "semesters_source": "course",
+      "academic_year": "Fee page (year not stated)",
+      "source": "fees",
+      "note": "EUR 2,900 per semester for non-EEA students (Obuda University's fee table; the year isn't stated). Yearly figure our calculation."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Environmental Engineering: entry requirements aren't on the pages read; see Obuda University's admission pages.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Environmental Engineering: entry requirements aren't on the pages read; see Obuda University's admission pages.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Environmental Engineering: entry requirements aren't on the pages read; see Obuda University's admission pages.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Environmental Engineering: entry requirements aren't on the pages read; see Obuda University's admission pages.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Environmental Engineering: entry requirements aren't on the pages read; see Obuda University's admission pages.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

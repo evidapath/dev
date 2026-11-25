@@ -1,0 +1,49 @@
+{
+  "uni": "hu-obuda",
+  "name": "Obuda University",
+  "aliases": [
+    "Óbuda University",
+    "OU"
+  ],
+  "type": "public",
+  "website": "https://uni-obuda.hu",
+  "country": {
+    "cc": "hu",
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  "city": {
+    "slug": "hu-budapest",
+    "name": "Budapest"
+  },
+  "sources": {
+    "main": {
+      "url": "https://uni-obuda.hu/undergraduate-programs/",
+      "page": "0b20bbcdad94",
+      "title": "Bachelor's Programs | Obuda University",
+      "organization": "Obuda University",
+      "quotes": [
+        "Obuda University Venture Capital",
+        "IT Security Credits 210 Study Option Full-time Study Type In-person at OU campus Language English Duration 7 semesters Location Budapest, John von Neumann Faculty of Informatics"
+      ]
+    },
+    "fees": {
+      "url": "https://uni-obuda.hu/tuition-fees/",
+      "page": "5504bfbb9d75",
+      "title": "Tuition fees | Obuda University",
+      "organization": "Obuda University",
+      "quotes": [
+        "Level Program Specialisation(s) Tuition Fee/semester EU/EEA Non-EEA BSc"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eea",
+      "label": "Non-EEA students",
+      "description": "Obuda University's per-semester tuition for non-EEA students, by programme.",
+      "source": "fees"
+    }
+  ]
+}
