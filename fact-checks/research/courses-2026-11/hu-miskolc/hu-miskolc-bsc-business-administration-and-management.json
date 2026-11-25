@@ -1,0 +1,111 @@
+{
+  "uni": "hu-miskolc",
+  "slug": "bsc-business-administration-and-management",
+  "sources": {
+    "course": {
+      "url": "https://apply.uni-miskolc.hu/courses/course/35-bsc-business-administration-and-management",
+      "page": "0dc2adca26bf",
+      "title": "Business Administration and Management BSc | University of Miskolc",
+      "organization": "University of Miskolc",
+      "quotes": [
+        "[BSc] Business Administration and Management - University of Miskolc",
+        "Study location Hungary, Miskolc",
+        "Nominal duration 7 semesters",
+        "Study language English",
+        "Tuition fee €2,400 per semester",
+        "Entry qualification High school / secondary education (or higher)",
+        "a demonstrated proficiency in English (B2 level or equivalent: IELTS 6.0, TOEFL 72, GCSE English, Duolingo 100)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Business Administration and Management",
+    "degree_type": "BSc",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 3.5,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Course page (year not stated)",
+    "platform": "University of Miskolc application portal (apply.uni-miskolc.hu)",
+    "source": "course",
+    "summary": "Business Administration and Management (BSc), University of Miskolc; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_per_semester": 2400,
+      "semesters_quote": "Nominal duration 7 semesters",
+      "semesters_source": "course",
+      "academic_year": "Course page (year not stated)",
+      "source": "course",
+      "note": "EUR 2,400 per semester (course page; the academic year isn't stated). Yearly figure our calculation."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL / Duolingo (B2)",
+        "min_score": "B2: IELTS 6.0, TOEFL 72, GCSE English or Duolingo 100.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL / Duolingo (B2)",
+        "min_score": "B2: IELTS 6.0, TOEFL 72, GCSE English or Duolingo 100.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL / Duolingo (B2)",
+        "min_score": "B2: IELTS 6.0, TOEFL 72, GCSE English or Duolingo 100.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL / Duolingo (B2)",
+        "min_score": "B2: IELTS 6.0, TOEFL 72, GCSE English or Duolingo 100.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL / Duolingo (B2)",
+        "min_score": "B2: IELTS 6.0, TOEFL 72, GCSE English or Duolingo 100.",
+        "source": "course"
+      }
+    }
+  ]
+}

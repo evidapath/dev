@@ -1,0 +1,85 @@
+{
+  "uni": "hu-miskolc",
+  "slug": "ba-international-relations",
+  "sources": {
+    "course": {
+      "url": "https://apply.uni-miskolc.hu/courses/course/71-ba-international-relations",
+      "page": "c483a0323e29",
+      "title": "International Relations BA | University of Miskolc",
+      "organization": "University of Miskolc",
+      "quotes": [
+        "[BA] International Relations - University of Miskolc",
+        "Study location Hungary, Miskolc",
+        "Nominal duration 6 semesters",
+        "Study language English",
+        "Tuition fee €2,400 per semester",
+        "Entry qualification High school / secondary education (or higher)"
+      ]
+    }
+  },
+  "program": {
+    "name": "International Relations",
+    "degree_type": "BA",
+    "field": "Politics",
+    "faculty": "",
+    "duration_years": 3.0,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Course page (year not stated)",
+    "platform": "University of Miskolc application portal (apply.uni-miskolc.hu)",
+    "source": "course",
+    "summary": "International Relations (BA), University of Miskolc; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_per_semester": 2400,
+      "semesters_quote": "Nominal duration 6 semesters",
+      "semesters_source": "course",
+      "academic_year": "Course page (year not stated)",
+      "source": "course",
+      "note": "EUR 2,400 per semester (course page; the academic year isn't stated). Yearly figure our calculation."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "International Relations: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "International Relations: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "International Relations: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "International Relations: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "International Relations: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

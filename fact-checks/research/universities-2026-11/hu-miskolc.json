@@ -1,0 +1,39 @@
+{
+  "uni": "hu-miskolc",
+  "name": "University of Miskolc",
+  "aliases": [
+    "Miskolci Egyetem"
+  ],
+  "type": "public",
+  "website": "https://www.uni-miskolc.hu/en/",
+  "country": {
+    "cc": "hu",
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  "city": {
+    "slug": "hu-miskolc",
+    "name": "Miskolc"
+  },
+  "sources": {
+    "main": {
+      "url": "https://apply.uni-miskolc.hu/courses/course/36-bsc-computer-science-engineering",
+      "page": "c9c15a8aa3f3",
+      "title": "Computer Science Engineering BSc | University of Miskolc",
+      "organization": "University of Miskolc",
+      "quotes": [
+        "[BSc] Computer Science Engineering - University of Miskolc",
+        "Study location Hungary, Miskolc"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students (course page fee)",
+      "description": "The tuition fee on each University of Miskolc course page of its application portal.",
+      "source": "main"
+    }
+  ]
+}

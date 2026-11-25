@@ -1,0 +1,85 @@
+{
+  "uni": "hu-miskolc",
+  "slug": "bsc-mechanical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://apply.uni-miskolc.hu/courses/course/37-bsc-mechanical-engineering",
+      "page": "447f248c5ce4",
+      "title": "Mechanical Engineering BSc | University of Miskolc",
+      "organization": "University of Miskolc",
+      "quotes": [
+        "[BSc] Mechanical Engineering - University of Miskolc",
+        "Study location Hungary, Miskolc",
+        "Nominal duration 7 semesters",
+        "Study language English",
+        "Tuition fee €3,000 per semester",
+        "Entry qualification High school / secondary education (or higher)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Mechanical Engineering",
+    "degree_type": "BSc",
+    "field": "Mechanical Engineering",
+    "faculty": "",
+    "duration_years": 3.5,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Course page (year not stated)",
+    "platform": "University of Miskolc application portal (apply.uni-miskolc.hu)",
+    "source": "course",
+    "summary": "Mechanical Engineering (BSc), University of Miskolc; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_per_semester": 3000,
+      "semesters_quote": "Nominal duration 7 semesters",
+      "semesters_source": "course",
+      "academic_year": "Course page (year not stated)",
+      "source": "course",
+      "note": "EUR 3,000 per semester (course page; the academic year isn't stated). Yearly figure our calculation."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Mechanical Engineering: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Mechanical Engineering: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Mechanical Engineering: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Mechanical Engineering: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Mechanical Engineering: no grade cut-off published; a completed secondary education is required (see the course page for the documents and any entry exam).",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}
