@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Turn programme research files into Sanity mutations, refusing anything unsourced.
 
-  python3 -I scripts/programmes/build.py <research-dir> <pages-dir> <out.ndjson>
+  python3 -I scripts/programmes/build.py <research-dir> <pages-dir> <out.ndjson> [<new-university base.ndjson>]
 
 Each research file (JSON, one programme) lists its sources with verbatim quotes
 copied from the official page. Before writing anything this script checks, and
@@ -91,7 +91,7 @@ def ref(_id: str, key: str | None = None):
     return r
 
 
-def main(research_dir: str, pages_dir: str, out_path: str):
+def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None = None):
     files = sorted(Path(research_dir).glob("*.json"))
     if not files:
         fail("no research files")
@@ -256,6 +256,27 @@ def main(research_dir: str, pages_dir: str, out_path: str):
                     fail(f"{where}: living_from is in {living['currency']}, this fee is in {c['currency']}; amounts can't be mixed")
                 if not living["university"].startswith(f"program-{uni}"):
                     fail(f"{where}: living_from belongs to another university")
+            elif c.get("living"):
+                # Living costs quoted from the university's own page (a new university has no
+                # record to copy from). Monthly items from the page; the yearly figure is our
+                # calculation: sum of the quoted monthly amounts × the months given.
+                lv = c["living"]
+                if lv["kind"] not in ("genuine_cost_of_living_estimate", "official_housing_only"):
+                    fail(f"{where}: living kind must be genuine_cost_of_living_estimate or official_housing_only")
+                check_numbers(" ".join(str(x) for x in lv["monthly"]), lv["source"], "monthly living costs")
+                if lv["months"] != 12 and norm(lv.get("months_quote", "-")) not in norm(q_of(lv["source"])):
+                    fail(f"{where}: living months other than 12 need a months_quote among the source's quotes")
+                annual = round(sum(lv["monthly"]) * lv["months"])
+                if f"{annual:,}" not in lv["note"]:
+                    fail(f"{where}: living note must state the yearly figure {annual:,}")
+                check_numbers(lv["note"].replace(f"{annual:,}", "").replace(f"× {lv['months']}", ""), lv["source"], "living note")
+                living = {
+                    "estimated_living_costs_annual": annual,
+                    "living_cost_source_note": lv["note"],
+                    "living_cost_source_basis": {"_type": "livingCostSourceBasis", "kind": lv["kind"],
+                                                 "administering_body": r["sources"][lv["source"]]["organization"],
+                                                 "description": lv["note"]},
+                }
             # Compulsory non-tuition fees that apply to every programme at the university
             # (e.g. a visa fee) are copied from an existing verified record, like living costs.
             extra = None
@@ -394,6 +415,10 @@ def main(research_dir: str, pages_dir: str, out_path: str):
 
     # Curriculum categories that don't exist yet (e.g. Indian CBSE at a UK university)
     existing = set(sanity('*[_type=="applicantCategory"]._id'))
+    # A new university's base records (scripts/research/new_university.py) may still be a
+    # pending file: its fee groups count as existing, and that file must be applied first.
+    if base_path:
+        existing |= {json.loads(l)["createOrReplace"]["_id"] for l in Path(base_path).read_text().splitlines() if l.strip()}
     for cid, c in categories_needed.items():
         if cid not in existing:
             muts.append({"createOrReplace": {
@@ -441,4 +466,4 @@ def main(research_dir: str, pages_dir: str, out_path: str):
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:4])
+    main(*sys.argv[1:5])

@@ -409,3 +409,31 @@ build.py: (1) the last year of a published typical sequence ("Fifth Year") now c
 length when no later year is named; (2) a record fails if its own quotes name a later year than
 its length (closes a gap where a college major could inherit a shorter length). Negative tests:
 4-year claimed as 5 refused; 5-year claimed as 4 refused. All 26 other folders rebuild identically.
+
+## 2026-11-25: Politecnico di Milano (new country: Italy); new-university tooling
+
+Why: a strong student with a low budget was only shown Malaysia and a few UAE options. First of
+the low-cost countries Subhan chose (Italy; Japan and Korea; Turkey and Central Europe; Hong Kong,
+Singapore, Taiwan and China).
+
+`it-polimi/` (generator `scripts/research/gen/it_polimi.py`) → `pending/2026-11-25-polimi.ndjson`
+(48 lines: 6 base records first, then 42 programme records; dry-run HTTP 200). Four BSc taught in
+English, 3 years each (programme pages): Engineering Science (Milan), Process Engineering (Cremona),
+Industrial Engineering (Piacenza), Civil Engineering (Milan, Italian or English).
+- Fee 2026/2027: one income-based scale for every bachelor's student; EUR 3,943.04 is the maximum
+  (charged without an ISEE; all-inclusive contribution), EUR 157.04 with an ISEE up to EUR 22,000;
+  income abroad needs an ISEEU parificato. The maximum is stored (overstating is the safe error).
+- Entry: no school-grade cut-off; ranking on an entrance test (TOL, or CEnT-S / SAT in English),
+  2026/2027 call (the next isn't published). English: TOEFL iBT 59, IELTS 5, Cambridge B2 First C.
+- Living: top of each monthly range on PoliMi's cost-of-living page (700 + 200 + 200 + 30 + 30) × 12
+  = EUR 13,920 a year, our calculation.
+- Visa: links only (Universitaly; Il visto per l'Italia), no figures yet.
+Sim (IB 40+, $20,000, Mechanical / Civil Engineering): PoliMi now appears at about $19,533 a year,
+"Requirement published, but not as a grade we can compare" (correct: entry is by test ranking).
+
+Tooling: `scripts/research/new_university.py <spec> <pages> <out>` creates country (if new), city,
+university, fee groups and source records from a spec in `fact-checks/research/universities-2026-11/`,
+with the same quote checks; it never overwrites an existing university. `build.py` gained
+`costs[].living` (monthly amounts quoted from the university's page × months, our calculation;
+negative tests: an unquoted EUR 750 refused, a wrong yearly total refused) and an optional 4th
+argument naming a pending base file whose fee groups count as existing (that file is applied first).

@@ -421,6 +421,7 @@ const HOME_COUNTRY: Record<string, string> = {
   de: "Germany",
   nl: "Netherlands",
   fr: "France",
+  it: "Italy",
 };
 const INTL_NAME = /\binternational\b(?! baccalaureate)/i;
 const INTL_ONLY =
@@ -814,6 +815,7 @@ const COUNTRY_OF: Record<string, string> = {
   gb: "United Kingdom",
   au: "Australia",
   us: "United States",
+  it: "Italy",
 };
 
 /**

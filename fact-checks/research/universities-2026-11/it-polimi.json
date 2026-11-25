@@ -1,0 +1,51 @@
+{
+  "uni": "it-polimi",
+  "name": "Politecnico di Milano",
+  "aliases": [
+    "PoliMi",
+    "Polimi"
+  ],
+  "type": "public",
+  "website": "https://www.polimi.it/en",
+  "country": {
+    "cc": "it",
+    "name": "Italy",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "it-milan",
+    "name": "Milan"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.polimi.it/en/prospective-students/politecnico-programmes/new-undergraduate-programmes",
+      "page": "7f7abe63a070",
+      "organization": "Politecnico di Milano",
+      "title": "New undergraduate programmes | Politecnico di Milano",
+      "quotes": [
+        "Politecnico di Milano is launching other three new international bachelor's programmes, fully taught in English and starting in September 2026",
+        "Engineering Science Milano – Leonardo and Bovisa Campuses"
+      ]
+    },
+    "fees": {
+      "url": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/laurea-laurea-magistrale-and-single-cycle-programmes",
+      "page": "7fe6091013b3",
+      "organization": "Politecnico di Milano",
+      "title": "Laurea, Laurea Magistrale and Single-cycle programmes: costs | Politecnico di Milano",
+      "quotes": [
+        "For a standard study plan of between 46 and 74 ECTS and an ISEE of up to € 22,000, the amount is € 157.04 ; for a higher-value ISEE, the amount gradually increases up to a maximum of € 3,943.04 .",
+        "The maximum amount is automatically charged to students: without an ISEE certificate who decide not to submit one;",
+        "You are a future student of the 2026/2027 academic year"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "all-students",
+      "source": "fees",
+      "label": "All students (amount depends on family income)",
+      "description": "Politecnico di Milano charges every bachelor's student on one scale set by family income (ISEE, or ISEEU parificato for income abroad); the maximum applies when none is submitted."
+    }
+  ]
+}

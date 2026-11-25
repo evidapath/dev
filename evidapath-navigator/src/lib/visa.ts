@@ -182,6 +182,16 @@ export const VISAS: Record<string, VisaInfo> = {
     note: "We haven't confirmed UAE student visa costs and work rules yet. Ask your university's admissions office, and check the UAE's official portal.",
     sources: [{ label: "UAE official portal (u.ae)", url: "https://u.ae/en" }],
   },
+  Italy: {
+    country: "Italy",
+    visa: "Study visa, applied for through Universitaly",
+    money: [],
+    note: "We haven't confirmed Italy's visa fees, money to show and work rules yet. Politecnico di Milano says non-EU applicants living abroad apply for the study visa through the Universitaly portal; check the Foreign Ministry's visa site too.",
+    sources: [
+      { label: "Universitaly (Italian Ministry of University)", url: "https://www.universitaly.it/" },
+      { label: "Il visto per l'Italia (Ministry of Foreign Affairs)", url: "https://vistoperitalia.esteri.it/" },
+    ],
+  },
 };
 
 export function visaFor(country: string): VisaInfo | null {

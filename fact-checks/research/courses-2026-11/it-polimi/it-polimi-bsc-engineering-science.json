@@ -1,0 +1,213 @@
+{
+  "uni": "it-polimi",
+  "slug": "bsc-engineering-science",
+  "sources": {
+    "course": {
+      "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science",
+      "page": "ae76b1245903",
+      "title": "Engineering Science (BSc) | Politecnico di Milano",
+      "organization": "Politecnico di Milano",
+      "quotes": [
+        "Engineering Science",
+        "Duration 3 Years Language English Campus Milano Leonardo Milano Bovisa"
+      ]
+    },
+    "fees": {
+      "url": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/laurea-laurea-magistrale-and-single-cycle-programmes",
+      "page": "7fe6091013b3",
+      "organization": "Politecnico di Milano",
+      "title": "Laurea, Laurea Magistrale and Single-cycle programmes: costs | Politecnico di Milano",
+      "quotes": [
+        "For a standard study plan of between 46 and 74 ECTS and an ISEE of up to € 22,000, the amount is € 157.04 ; for a higher-value ISEE, the amount gradually increases up to a maximum of € 3,943.04 .",
+        "The maximum amount is automatically charged to students: without an ISEE certificate who decide not to submit one;",
+        "You are a future student of the 2026/2027 academic year"
+      ]
+    },
+    "abroad": {
+      "url": "https://www.polimi.it/en/students/tuition-fees-scholarships-and-financial-aid/tuition-fees/students-with-income-and-property-abroad",
+      "page": "ade533cf5813",
+      "organization": "Politecnico di Milano",
+      "title": "Students with income and property abroad | Politecnico di Milano",
+      "quotes": [
+        "If you have income or assets abroad (*), for the calculation of your university fees you must request the document known as the ISEEU parificato from the affiliated CAF, which will send it directly to the Politecnico di Milano.",
+        "exempt only from payment of the all-inclusive contribution"
+      ]
+    },
+    "call": {
+      "url": "https://www.polimi.it/fileadmin/user_upload/futuri_studenti/Engineering_BSc_call_for_admission_2026-27__English_.pdf",
+      "page": "polimi-call-eng-2026",
+      "organization": "Politecnico di Milano",
+      "title": "Engineering BSc call for admission 2026-27, English translation (PDF) | Politecnico di Milano",
+      "quotes": [
+        "CEnT-S (provided by the Interuniversity Consortium for Integrated Access Systems - CISIA www.cisiaonline.it), test administered in English;",
+        "SAT (provided by The College Board www.collegeboard.org), test administered in English.",
+        "To access Bachelor degree programmes taught in English, the following are required:",
+        "Proficiency in English is an entry requirement, which must be demonstrated before enrollment;",
+        "For courses taught in English, access will be granted through specific rankings.",
+        "Those eligible for enrollment must complete the application for a study visa through the Universitaly portal",
+        "ART. 7 - NON-EU ENTRIES A.Y. 2026/2027"
+      ]
+    },
+    "lang": {
+      "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/language-requirements",
+      "page": "90a0674f7060",
+      "organization": "Politecnico di Milano",
+      "title": "Language requirements, Bachelor of Science | Politecnico di Milano",
+      "quotes": [
+        "Internet Based Score ≥ 59 (total score)",
+        "IELTS Academic and IELTS General Training+ ≥ 5",
+        "≥ B2 First - GRADE C",
+        "students holding a high school qualification (or equivalent) awarded in English",
+        "Italian-language proficiency is not an admission requirement"
+      ]
+    },
+    "living": {
+      "url": "https://www.polimi.it/en/information-for/international-prospective-students/life/living-in-italy/useful-information/cost-of-living",
+      "page": "528203fd44d5",
+      "organization": "Politecnico di Milano",
+      "title": "Cost of living | Politecnico di Milano",
+      "quotes": [
+        "Accomodation €400 - €700 per month",
+        "Food €150 - €200 per month",
+        "Social life €100-200 for month",
+        "Travel costs €20-30 per month",
+        "Mobile phones €10 - €30 per month",
+        "It is impossible to calculate these costs because it depends on what you are studying"
+      ]
+    }
+  },
+  "program": {
+    "name": "Engineering Science",
+    "degree_type": "BSc",
+    "field": "Engineering",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026/2027 rules (next year's not yet published)",
+    "platform": "Politecnico di Milano Online Services",
+    "source": "course",
+    "summary": "BSc in Engineering Science, Politecnico di Milano, 3 years, taught in English; Milan (Leonardo and Bovisa campuses).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "EUR",
+      "tuition_annual": 3943.04,
+      "academic_year": "2026/2027",
+      "source": [
+        "fees",
+        "abroad"
+      ],
+      "note": "2026/2027: the yearly amount depends on family income. EUR 3,943.04 is the maximum (all-inclusive contribution), charged when no ISEE is submitted; with an ISEE of up to EUR 22,000 it is EUR 157.04. With income or assets abroad you need an ISEEU parificato from an affiliated CAF to pay less.",
+      "living": {
+        "monthly": [
+          700,
+          200,
+          200,
+          30,
+          30
+        ],
+        "months": 12,
+        "source": "living",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "Our calculation: the top of each monthly range in Politecnico di Milano's cost-of-living guide (accommodation EUR 700, food EUR 200, social life EUR 200, travel EUR 30, mobile phone EUR 30) × 12 = EUR 13,920 a year. Study costs aren't included; PoliMi says it is impossible to calculate them."
+      }
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "call",
+      "threshold": "Engineering Science: no school-grade cut-off. Places on English-taught programmes go by ranking on an entrance test: Politecnico's own test (TOL), or the CEnT-S or SAT, both taken in English. English proficiency must be shown before enrolment. Non-EU applicants living abroad also apply for a study visa through the Universitaly portal. (2026/2027 call; the next call isn't published yet.)",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "TOL, CEnT-S or SAT (entrance test ranking)",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "English certificate (TOEFL iBT / IELTS / Cambridge)",
+        "source": "lang",
+        "min_score": "TOEFL iBT 59 (total), IELTS Academic 5, or Cambridge B2 First grade C. Not needed with a high school qualification awarded in English.",
+        "notes": "Italian isn't an admission requirement; without it you get Additional Educational Obligations to clear during the degree."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "call",
+      "threshold": "Engineering Science: no school-grade cut-off. Places on English-taught programmes go by ranking on an entrance test: Politecnico's own test (TOL), or the CEnT-S or SAT, both taken in English. English proficiency must be shown before enrolment. Non-EU applicants living abroad also apply for a study visa through the Universitaly portal. (2026/2027 call; the next call isn't published yet.)",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "TOL, CEnT-S or SAT (entrance test ranking)",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "English certificate (TOEFL iBT / IELTS / Cambridge)",
+        "source": "lang",
+        "min_score": "TOEFL iBT 59 (total), IELTS Academic 5, or Cambridge B2 First grade C. Not needed with a high school qualification awarded in English.",
+        "notes": "Italian isn't an admission requirement; without it you get Additional Educational Obligations to clear during the degree."
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "call",
+      "threshold": "Engineering Science: no school-grade cut-off. Places on English-taught programmes go by ranking on an entrance test: Politecnico's own test (TOL), or the CEnT-S or SAT, both taken in English. English proficiency must be shown before enrolment. Non-EU applicants living abroad also apply for a study visa through the Universitaly portal. (2026/2027 call; the next call isn't published yet.)",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "TOL, CEnT-S or SAT (entrance test ranking)",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "English certificate (TOEFL iBT / IELTS / Cambridge)",
+        "source": "lang",
+        "min_score": "TOEFL iBT 59 (total), IELTS Academic 5, or Cambridge B2 First grade C. Not needed with a high school qualification awarded in English.",
+        "notes": "Italian isn't an admission requirement; without it you get Additional Educational Obligations to clear during the degree."
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "call",
+      "threshold": "Engineering Science: no school-grade cut-off. Places on English-taught programmes go by ranking on an entrance test: Politecnico's own test (TOL), or the CEnT-S or SAT, both taken in English. English proficiency must be shown before enrolment. Non-EU applicants living abroad also apply for a study visa through the Universitaly portal. (2026/2027 call; the next call isn't published yet.)",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "TOL, CEnT-S or SAT (entrance test ranking)",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "English certificate (TOEFL iBT / IELTS / Cambridge)",
+        "source": "lang",
+        "min_score": "TOEFL iBT 59 (total), IELTS Academic 5, or Cambridge B2 First grade C. Not needed with a high school qualification awarded in English.",
+        "notes": "Italian isn't an admission requirement; without it you get Additional Educational Obligations to clear during the degree."
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "call",
+      "threshold": "Engineering Science: no school-grade cut-off. Places on English-taught programmes go by ranking on an entrance test: Politecnico's own test (TOL), or the CEnT-S or SAT, both taken in English. English proficiency must be shown before enrolment. Non-EU applicants living abroad also apply for a study visa through the Universitaly portal. (2026/2027 call; the next call isn't published yet.)",
+      "required_subjects": [],
+      "tests": [
+        {
+          "name": "TOL, CEnT-S or SAT (entrance test ranking)",
+          "required": "required"
+        }
+      ],
+      "english": {
+        "test_name": "English certificate (TOEFL iBT / IELTS / Cambridge)",
+        "source": "lang",
+        "min_score": "TOEFL iBT 59 (total), IELTS Academic 5, or Cambridge B2 First grade C. Not needed with a high school qualification awarded in English.",
+        "notes": "Italian isn't an admission requirement; without it you get Additional Educational Obligations to clear during the degree."
+      }
+    }
+  ]
+}

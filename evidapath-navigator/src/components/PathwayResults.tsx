@@ -67,15 +67,17 @@ function pickTop3(
   const byNet = (x: PathwayRow, y: PathwayRow) =>
     (x.netAnnualUsd ?? Infinity) - (y.netAnnualUsd ?? Infinity);
 
+  // Universities whose own aid records say they meet full (100% of demonstrated) need.
+  const fullNeed = (x: PathwayRow) =>
+    x.a.financial.funding.some((f) =>
+      /100% of demonstrated|full(?:y)? (?:demonstrated )?need/i.test(`${f.name} ${f.award}`),
+    );
+
   if (noLimit) {
     const matches = all.filter((x) => home(x) && strong(x)).sort(byDemand);
     // Holistic universities (no grade cut-off): those that meet full financial
     // need first, then fully priced, then cheapest. Those meeting full need are
     // mostly the most selective, so for modest grades it's cheapest first.
-    const fullNeed = (x: PathwayRow) =>
-      x.a.financial.funding.some((f) =>
-        /100% of demonstrated|full(?:y)? (?:demonstrated )?need/i.test(`${f.name} ${f.award}`),
-      );
     const holistic = all
       .filter((x) => home(x) && x.a.academic.level === "unknown")
       .sort(
@@ -163,6 +165,19 @@ function pickTop3(
         )
       : take("Also close to your budget", Gem, above.filter(free)[0]),
   );
+  // A low budget shouldn't hide universities that meet full financial need: their
+  // published price is far above what many admitted students pay. Strong grades only,
+  // since these are among the most selective; the card says why it's shown.
+  if (!modestGrades)
+    out.push(
+      take(
+        "Could cost far less: meets full financial need",
+        Gem,
+        [...all, ...r.groups.reach].filter(
+          (x) => home(x) && free(x) && fullNeed(x) && x.a.academic.level !== "gap",
+        )[0],
+      ),
+    );
   return out.filter((x): x is NonNullable<typeof x> => !!x);
 }
 
@@ -272,7 +287,9 @@ export function PathwayResults({
           <h2 id="top3" className="font-display font-bold text-xl text-foreground">
             Your top {top.length}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div
+            className={`grid grid-cols-1 gap-3 ${top.length > 3 ? "md:grid-cols-2 xl:grid-cols-4" : "md:grid-cols-3"}`}
+          >
             {top.map(({ label, icon: Icon, row }) => (
               <TopCard key={row.u.id} label={label} Icon={Icon} row={row} ctx={ctx} />
             ))}
