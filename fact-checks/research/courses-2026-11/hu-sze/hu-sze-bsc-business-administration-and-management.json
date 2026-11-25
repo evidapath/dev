@@ -1,0 +1,106 @@
+{
+  "uni": "hu-sze",
+  "slug": "bsc-business-administration-and-management",
+  "sources": {
+    "course": {
+      "url": "https://admissions.sze.hu/bachelor-of-business-administration-and-management-bsc-",
+      "page": "a5d009373394",
+      "title": "Business Administration and Management BSc | Széchenyi István University",
+      "organization": "Széchenyi István University",
+      "quotes": [
+        "Economist in Business Administration and Management (BSc) 7 semesters – full time programme 210 credits 1,700 EUR / semester",
+        "Applicants must have at least B2-level English language proficiency. Minimum accepted requirements: IELTS Academic: minimum overall score of 6.0 TOEFL iBT: minimum score of 72"
+      ]
+    }
+  },
+  "program": {
+    "name": "Business Administration and Management",
+    "degree_type": "BSc",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 3.5,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Programme page (year not stated)",
+    "platform": "Széchenyi István University admissions",
+    "source": "course",
+    "summary": "Business Administration and Management (BSc), Széchenyi István University, Győr; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_per_semester": 1700,
+      "semesters_quote": "7 semesters",
+      "semesters_source": "course",
+      "academic_year": "Programme page (year not stated)",
+      "source": "course",
+      "note": "EUR 1,700 per semester (programme page; the academic year isn't stated). Yearly figure our calculation."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off on the programme page read; English B2 is required.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic / TOEFL iBT (B2)",
+        "min_score": "B2: IELTS Academic 6.0 overall, TOEFL iBT 72, or another B2 certificate.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off on the programme page read; English B2 is required.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic / TOEFL iBT (B2)",
+        "min_score": "B2: IELTS Academic 6.0 overall, TOEFL iBT 72, or another B2 certificate.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off on the programme page read; English B2 is required.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic / TOEFL iBT (B2)",
+        "min_score": "B2: IELTS Academic 6.0 overall, TOEFL iBT 72, or another B2 certificate.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off on the programme page read; English B2 is required.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic / TOEFL iBT (B2)",
+        "min_score": "B2: IELTS Academic 6.0 overall, TOEFL iBT 72, or another B2 certificate.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Business Administration and Management: no grade cut-off on the programme page read; English B2 is required.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic / TOEFL iBT (B2)",
+        "min_score": "B2: IELTS Academic 6.0 overall, TOEFL iBT 72, or another B2 certificate.",
+        "source": "course"
+      }
+    }
+  ]
+}

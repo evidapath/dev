@@ -1,0 +1,40 @@
+{
+  "uni": "hu-sze",
+  "name": "Széchenyi István University",
+  "aliases": [
+    "SZE",
+    "Széchenyi István Egyetem"
+  ],
+  "type": "public",
+  "website": "https://uni.sze.hu/en_GB",
+  "country": {
+    "cc": "hu",
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  "city": {
+    "slug": "hu-gyor",
+    "name": "Győr"
+  },
+  "sources": {
+    "main": {
+      "url": "https://admissions.sze.hu/english-taught-bsc-in-international-business-economics",
+      "page": "8e4e6adc4aef",
+      "title": "International Business Economics BSc | Széchenyi István University",
+      "organization": "Széchenyi István University",
+      "quotes": [
+        "International Business Economics BSc programme at Széchenyi István University",
+        "H-9026 Győr, Egyetem tér 1. Hungary"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students (programme page fee)",
+      "description": "The per-semester tuition on each English-taught programme page of Széchenyi István University.",
+      "source": "main"
+    }
+  ]
+}
