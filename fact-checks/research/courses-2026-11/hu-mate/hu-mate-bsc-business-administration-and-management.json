@@ -1,0 +1,93 @@
+{
+  "uni": "hu-mate",
+  "slug": "bsc-business-administration-and-management",
+  "sources": {
+    "course": {
+      "url": "https://ed.uni-mate.hu/en/bsc-in-business-administration-and-management",
+      "page": "48fd7b11976c",
+      "title": "BSc in Business Administration and Management | MATE Directorate of Education",
+      "organization": "Hungarian University of Agriculture and Life Sciences",
+      "quotes": [
+        "Length of program: 7 semesters",
+        "Language of conduction: Gödöllő (Szent István Campus): Hungarian, English (only full-time training)"
+      ]
+    },
+    "fees": {
+      "url": "https://ed.uni-mate.hu/tuition-fees",
+      "page": "c0a01b7c021a",
+      "title": "Tuition Fees | MATE Directorate of Education",
+      "organization": "Hungarian University of Agriculture and Life Sciences",
+      "quotes": [
+        "self-financed courses at the Hungarian University of Agriculture and Life Sciences",
+        "The tuition fees listed in the table below apply to students beginning their studies in the 2026-2027 academic year.",
+        "Tuition fees for the first two semesters of the programme shall be paid before admission and entering Hungary.",
+        "Business Administration and Management Gödöllő 7 Stipendium Hungaricum, Hungarian Diaspora Scholarship yes 2300 Euro/semester"
+      ]
+    }
+  },
+  "program": {
+    "name": "Business Administration and Management",
+    "degree_type": "BSc",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 3.5,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 fees",
+    "platform": "MATE application for self-financed students",
+    "source": "course",
+    "summary": "BSc in Business Administration and Management, MATE, Gödöllő campus; taught in English there.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "self-funded",
+      "currency": "EUR",
+      "tuition_per_semester": 2300,
+      "semesters_quote": "Length of program: 7 semesters",
+      "semesters_source": "course",
+      "academic_year": "2026-2027",
+      "source": "fees",
+      "note": "EUR 2,300 per semester for students starting in 2026-2027 (Gödöllő); the first two semesters are paid before admission and entering Hungary. Yearly figure our calculation."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "fees",
+      "threshold": "Business Administration and Management: entry requirements aren't published on the pages read; check MATE's application procedure for BSc.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "a-level",
+      "source": "fees",
+      "threshold": "Business Administration and Management: entry requirements aren't published on the pages read; check MATE's application procedure for BSc.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "fees",
+      "threshold": "Business Administration and Management: entry requirements aren't published on the pages read; check MATE's application procedure for BSc.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "cbse",
+      "source": "fees",
+      "threshold": "Business Administration and Management: entry requirements aren't published on the pages read; check MATE's application procedure for BSc.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "international-other",
+      "source": "fees",
+      "threshold": "Business Administration and Management: entry requirements aren't published on the pages read; check MATE's application procedure for BSc.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

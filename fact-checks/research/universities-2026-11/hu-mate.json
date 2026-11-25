@@ -1,0 +1,41 @@
+{
+  "uni": "hu-mate",
+  "name": "Hungarian University of Agriculture and Life Sciences",
+  "aliases": [
+    "MATE"
+  ],
+  "type": "public",
+  "website": "https://en.uni-mate.hu",
+  "country": {
+    "cc": "hu",
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  "city": {
+    "slug": "hu-godollo",
+    "name": "Gödöllő"
+  },
+  "sources": {
+    "main": {
+      "url": "https://ed.uni-mate.hu/tuition-fees",
+      "page": "c0a01b7c021a",
+      "title": "Tuition Fees | MATE Directorate of Education",
+      "organization": "Hungarian University of Agriculture and Life Sciences",
+      "quotes": [
+        "self-financed courses at the Hungarian University of Agriculture and Life Sciences",
+        "The tuition fees listed in the table below apply to students beginning their studies in the 2026-2027 academic year.",
+        "Tuition fees for the first two semesters of the programme shall be paid before admission and entering Hungary.",
+        "Agricultural Engineering Gödöllő 7 Stipendium Hungaricum, Scholarship for Christian Young People, Hungarian Diaspora Scholarship yes 2200 Euro/semester"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "self-funded",
+      "label": "Self-funded students",
+      "description": "MATE's per-semester tuition for self-funded students beginning in 2026-2027.",
+      "source": "main"
+    }
+  ]
+}
