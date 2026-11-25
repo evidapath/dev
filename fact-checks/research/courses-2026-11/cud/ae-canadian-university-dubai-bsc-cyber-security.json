@@ -1,0 +1,121 @@
+{
+  "uni": "ae-canadian-university-dubai",
+  "slug": "bsc-cyber-security",
+  "sources": {
+    "course": {
+      "url": "https://www.cud.ac.ae/programs/undergraduate/engineering-applied-science-and-technology/bachelor-of-science-in-cyber-security",
+      "page": "ee4df160dece",
+      "title": "Bachelor of Science in Cyber Security | Canadian University Dubai",
+      "organization": "Canadian University Dubai",
+      "quotes": [
+        "Bachelor of Science in Cyber Security Degree Program",
+        "4 Years (8 Semesters)",
+        "127 Credit Hours"
+      ]
+    },
+    "adm": {
+      "url": "https://www.cud.ac.ae/prospective-students/undergraduate",
+      "page": "d709d1d380f5",
+      "title": "Undergraduate Admissions | Canadian University Dubai",
+      "organization": "Canadian University Dubai",
+      "quotes": [
+        "Are holders of UAE secondary education certificate with passing grade in all subjects",
+        "British System: Completion of Year 13 / Grade 12 of schooling",
+        "Equivalency Certificate is Issued by Ministry of Education in the UAE.",
+        "Provide a valid English Language Proficiency Certificate with a minimum score of IELTS Academic (Band 5.0), TOEFL iBT (61), TOEFL ITP (500)",
+        "Applicants seeking admission to the Engineering program must meet the following subject-specific requirements:"
+      ]
+    },
+    "fees": {
+      "url": "https://www.cud.ac.ae/fees",
+      "page": "5875657056d8",
+      "title": "Fees | Canadian University Dubai",
+      "organization": "Canadian University Dubai",
+      "quotes": [
+        "*Estimated first-year costs based on full-time studies, including the application fee.",
+        "Cr Hrs per Year",
+        "VAT 5%",
+        "Bachelor of Science in Cyber Security AED 2,300.50 AED 115.03 AED 2,415.53 AED 7,246.58 30 AED 72,465.90 USD AED 2,236.50"
+      ]
+    }
+  },
+  "program": {
+    "name": "Cyber Security",
+    "degree_type": "BSc",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 4,
+    "languages": [],
+    "entry_year": "2026-2027",
+    "platform": "CUD online application",
+    "source": "course",
+    "summary": "Bachelor of Science in Cyber Security, 4 years (8 semesters), 127 credit hours.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_annual": 72465.9,
+      "mandatory_fees_annual": 2236.5,
+      "academic_year": "Rates on CUD's fee page in November 2026 (the page doesn't state the academic year)",
+      "source": "fees",
+      "living_from": "costProfile-ae-canadian-university-dubai-cost-bsc-cs-all-students",
+      "note": "Tuition per year AED 72,465.90 (CUD's fee page: AED 2,415.53 per credit hour including 5% VAT (AED 2,300.50 before VAT) × 30 credit hours a year), plus AED 2,236.50 incidental fees."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "adm",
+      "threshold": "Bachelor of Science in Cyber Security: British system: completion of Year 13 / Grade 12, with a UAE Ministry of Education equivalency certificate. CUD lists subject-specific requirements only for Engineering.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or TOEFL)",
+        "source": "adm",
+        "min_score": "IELTS Academic 5.0, TOEFL iBT 61 or TOEFL ITP 500.",
+        "notes": "Not needed with official proof that your school taught in English, or 80% in English on the UAE Advanced Track."
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "adm",
+      "threshold": "Bachelor of Science in Cyber Security: IB: assessed under UAE Ministry of Education equivalency rules. CUD lists subject-specific requirements only for Engineering.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or TOEFL)",
+        "source": "adm",
+        "min_score": "IELTS Academic 5.0, TOEFL iBT 61 or TOEFL ITP 500.",
+        "notes": "Not needed with official proof that your school taught in English, or 80% in English on the UAE Advanced Track."
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "adm",
+      "threshold": "Bachelor of Science in Cyber Security: American system: high school diploma with a UAE Ministry of Education equivalency certificate. CUD lists subject-specific requirements only for Engineering.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or TOEFL)",
+        "source": "adm",
+        "min_score": "IELTS Academic 5.0, TOEFL iBT 61 or TOEFL ITP 500.",
+        "notes": "Not needed with official proof that your school taught in English, or 80% in English on the UAE Advanced Track."
+      }
+    },
+    {
+      "curriculum": "uae-shs",
+      "source": "adm",
+      "threshold": "Bachelor of Science in Cyber Security: UAE secondary education certificate with a passing grade in all subjects. CUD lists subject-specific requirements only for Engineering.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic (or TOEFL)",
+        "source": "adm",
+        "min_score": "IELTS Academic 5.0, TOEFL iBT 61 or TOEFL ITP 500.",
+        "notes": "Not needed with official proof that your school taught in English, or 80% in English on the UAE Advanced Track."
+      }
+    }
+  ]
+}

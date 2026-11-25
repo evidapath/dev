@@ -375,3 +375,13 @@ full diploma, 4 in each subject, 24 total, Maths + Physics; A-level Maths + Phys
 IELTS 6.0 / TOEFL iBT 79; KU admission tests; graduated no earlier than 2023. Teaching language
 not stated. Sim (IB 34-36): Mechanical / Aerospace now match the named programme (was generic
 "Engineering"), same cost $27,570; Mathematics adds Applied Mathematics (IB 24).
+
+## 2026-11-25: Canadian University Dubai, eleven programmes
+
+`cud/` (generator `scripts/research/gen/ae_cud_more.py`) → `pending/2026-11-25-cud.ndjson` (78 records:
+77 creates + 1 fee-page excerpt that only grows; dry-run HTTP 200). Computer and Networking
+Engineering Technology, Artificial Intelligence (published AED 79,712.33 a year), Cyber Security,
+Software Design (AED 72,465.90), seven BBA concentrations (AED 2,359.35 × 30 credit hours =
+AED 70,780.50, our calculation: CUD's "Tuition per Year" column shows AED 0.00 for BBA rows).
+Length "4 Years (8 Semesters)" and credit hours from each programme page. Teaching language
+not stated on pages read. Held: Communication (no fee row).

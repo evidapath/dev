@@ -11,9 +11,9 @@ quotes and page details. Grouped by what has to happen before a programme can go
 | HCT (Higher Colleges of Technology) | 12 done 2026-11-25. Held: Cybersecurity and Data Science (programme pages link to catalogue entries named Information Technology / Information Systems). Not attempted: Education, Health Information Management, Medical Laboratory, Emergency Medical Services, Pharmacy, Midwifery, Social Work, Veterinary Science, Logistics, Aviation, Marine, Tourism, HRM, Finance-adjacent, Quality, Innovation. Teaching language not stated anywhere read. |
 | Khalifa University | 11 BSc done 2026-11-25 (every programme on its undergraduate list). Not attempted: Cell and Molecular Biology, Earth and Planetary Sciences, Computer Engineering (named in the admissions table, not on the programme list page). |
 | Zayed University | Psychology and Architecture were tried: only a 2018 study plan and older catalogues with conflicting credit totals. Need a current page. |
-| UAE University | Same as HCT. Medicine held (UAE nationals only). |
+| UAE University | Fee table read 2026-11-25 (saved `65949822798d`, 2026/2027 onwards, credits and totals per programme). Held: programme length (model study-plan PDFs; download refused by the permission system), so no yearly averages. Medicine held (UAE nationals only). |
 | RIT Dubai | Same as HCT. Engineering sequences run to a "Fifth Year": check length. |
-| Canadian University Dubai | Same as HCT. Decide VAT-inclusive vs pre-VAT fee (records differ today). |
+| Canadian University Dubai | 11 done 2026-11-25 (VAT-inclusive, as the 17 Nov fixes). Held: three Communication programmes (no row on CUD's fee page). Not attempted: engineering branches, Architecture, Interior Design, Design and AI (programme list loads by script). To check: two existing "Psychology" programme records. |
 | University of Birmingham Dubai | Same as HCT. |
 | German universities (e.g. TUM) | Most bachelor's are taught in German; find English-taught ones only. |
 
