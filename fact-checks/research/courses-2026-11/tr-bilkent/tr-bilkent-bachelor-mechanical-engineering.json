@@ -1,0 +1,126 @@
+{
+  "uni": "tr-bilkent",
+  "slug": "bachelor-mechanical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://w3.bilkent.edu.tr/international/undergraduate-programs/",
+      "page": "d958abebf97f",
+      "title": "Undergraduate Programs | Bilkent University International Students",
+      "organization": "Bilkent University",
+      "quotes": [
+        "Department of Mechanical Engineering"
+      ]
+    },
+    "len": {
+      "url": "https://catalog.bilkent.edu.tr/general/standing.html",
+      "page": "76022574ae04",
+      "title": "Duration of study | Bilkent University Online Academic Catalog",
+      "organization": "Bilkent University",
+      "quotes": [
+        "The normal period for completion of undergraduate studies at Bilkent University is four academic years."
+      ]
+    },
+    "fees": {
+      "url": "https://w3.bilkent.edu.tr/bilkent/international-and-other-students-tuition-fees/",
+      "page": "d2154cea6d18",
+      "title": "Tuition Fees for International Students | Bilkent University",
+      "organization": "Bilkent University",
+      "quotes": [
+        "Tuition fee for the 2026 – 2027 academic year (including 10% VAT):",
+        "For students admitted in 2026 is 18,400 USD",
+        "The annual tuition fee is paid in two equal installments, before Fall and Spring semester course registrations"
+      ]
+    },
+    "apply": {
+      "url": "https://w3.bilkent.edu.tr/international/how-to-apply/",
+      "page": "4f4400ee3c47",
+      "title": "How to Apply? | Bilkent University International Students",
+      "organization": "Bilkent University",
+      "quotes": [
+        "Meeting these minimum qualifications does not guarantee admission to a program.",
+        "Reasoning Test: A minimum score of 1000 out of 1600 in “Math” and “Critical Reading” sections.",
+        "Minimum three A level subjects in particular area of the applied program with at least “C” grade.",
+        "Please note that applications with predicted grades/results/scores will not be evaluated.",
+        "International Baccalaureate (IB): A minimum diploma score of 28 out of 45. Mimimum one HL subject related to the applied program.",
+        "Ankara, The Capital",
+        "Bilkent University accepts international qualifications listed below"
+      ]
+    },
+    "eng": {
+      "url": "https://w3.bilkent.edu.tr/international/english-language-proficiency/",
+      "page": "39ed3dcf001e",
+      "title": "English Language Proficiency | Bilkent University",
+      "organization": "Bilkent University",
+      "quotes": [
+        "The medium of instruction at Bilkent University is English.",
+        "IELTS – 6.5 overall, with a minimum of 5.5 on each section",
+        "TOEFL iBT – 87 in total",
+        "Students who cannot meet proficiency requirements are required to attend the English Language Preparatory Program."
+      ]
+    }
+  },
+  "program": {
+    "name": "Mechanical Engineering",
+    "degree_type": "Bachelor's",
+    "field": "Mechanical Engineering",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "len",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027 rules (2027 intake fee not yet published)",
+    "platform": "Bilkent international online application",
+    "source": "course",
+    "summary": "Mechanical Engineering, Bilkent University, Ankara; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 18400,
+      "academic_year": "2026-2027 (students admitted in 2026)",
+      "source": "fees",
+      "note": "2026-2027 tuition for students admitted in 2026: 18,400 USD including 10% VAT, paid in two equal instalments (Fall and Spring). The fee for students admitted in 2027 isn't published yet. Living costs aren't published on the pages read."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "apply",
+      "threshold": "Mechanical Engineering: IB Diploma score of at least 28/45 with at least one HL subject related to the programme. Bilkent's minimum qualifications to apply; meeting them doesn't guarantee admission, and predicted results aren't evaluated.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT (or Bilkent's PAE exam)",
+        "source": "eng",
+        "min_score": "IELTS 6.5 overall with at least 5.5 in each section, or TOEFL iBT 87; otherwise Bilkent's own PAE exam on arrival, or the English Language Preparatory Program."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "apply",
+      "threshold": "Mechanical Engineering: at least three A-level subjects in the programme's area at grade C or better. Bilkent's minimum qualifications to apply; meeting them doesn't guarantee admission, and predicted results aren't evaluated.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT (or Bilkent's PAE exam)",
+        "source": "eng",
+        "min_score": "IELTS 6.5 overall with at least 5.5 in each section, or TOEFL iBT 87; otherwise Bilkent's own PAE exam on arrival, or the English Language Preparatory Program."
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "apply",
+      "threshold": "Mechanical Engineering: SAT at least 1000/1600 in Math and Critical Reading. Bilkent's minimum qualifications to apply; meeting them doesn't guarantee admission, and predicted results aren't evaluated.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS / TOEFL iBT (or Bilkent's PAE exam)",
+        "source": "eng",
+        "min_score": "IELTS 6.5 overall with at least 5.5 in each section, or TOEFL iBT 87; otherwise Bilkent's own PAE exam on arrival, or the English Language Preparatory Program."
+      }
+    }
+  ]
+}

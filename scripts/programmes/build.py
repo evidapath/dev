@@ -170,7 +170,7 @@ def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None
         ordinal = {3: "third", 4: "fourth", 5: "fifth", 6: "sixth"}.get(p["duration_years"], "-")
         in_months = (f"{round(p['duration_years'] * 12)} months" in dq  # e.g. "36 months"
                      or re.search(rf"\b{p['duration_years'] * 2:g} semesters\b", dq) is not None  # e.g. BME's "7 semesters" = 3.5 years
-                     or re.search(rf"\b{word}[- ]years?\b", dq) is not None  # e.g. "a four-year degree"
+                     or re.search(rf"\b{word}[- ](?:academic )?years?\b", dq) is not None  # e.g. "a four-year degree", "four academic years"
                      # the last year of a published typical course sequence (e.g. RIT's "Fifth Year"),
                      # only when no later year is named in the same quotes
                      or (re.search(rf"\b{ordinal} year\b", dq) is not None

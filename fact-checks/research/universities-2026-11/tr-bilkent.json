@@ -1,0 +1,55 @@
+{
+  "uni": "tr-bilkent",
+  "name": "Bilkent University",
+  "aliases": [
+    "Bilkent"
+  ],
+  "type": "private",
+  "website": "https://w3.bilkent.edu.tr/en/",
+  "country": {
+    "cc": "tr",
+    "name": "Türkiye",
+    "currency": "TRY"
+  },
+  "city": {
+    "slug": "tr-ankara",
+    "name": "Ankara"
+  },
+  "sources": {
+    "main": {
+      "url": "https://w3.bilkent.edu.tr/international/how-to-apply/",
+      "page": "4f4400ee3c47",
+      "title": "How to Apply? | Bilkent University International Students",
+      "organization": "Bilkent University",
+      "quotes": [
+        "Meeting these minimum qualifications does not guarantee admission to a program.",
+        "Reasoning Test: A minimum score of 1000 out of 1600 in “Math” and “Critical Reading” sections.",
+        "Minimum three A level subjects in particular area of the applied program with at least “C” grade.",
+        "Please note that applications with predicted grades/results/scores will not be evaluated.",
+        "International Baccalaureate (IB): A minimum diploma score of 28 out of 45. Mimimum one HL subject related to the applied program.",
+        "Ankara, The Capital",
+        "Bilkent University accepts international qualifications listed below"
+      ]
+    },
+    "fees": {
+      "url": "https://w3.bilkent.edu.tr/bilkent/international-and-other-students-tuition-fees/",
+      "page": "d2154cea6d18",
+      "title": "Tuition Fees for International Students | Bilkent University",
+      "organization": "Bilkent University",
+      "quotes": [
+        "Tuition fee for the 2026 – 2027 academic year (including 10% VAT):",
+        "For students admitted in 2026 is 18,400 USD",
+        "The annual tuition fee is paid in two equal installments, before Fall and Spring semester course registrations"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students and students admitted from abroad",
+      "description": "Bilkent University's tuition for international students and students admitted from abroad, by year of admission.",
+      "source": "fees"
+    }
+  ]
+}
