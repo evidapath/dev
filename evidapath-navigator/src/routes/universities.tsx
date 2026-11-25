@@ -1,7 +1,8 @@
 import { loadUniversities } from "../lib/use-live-data";
 import { jsonLdScript, universitiesJsonLd } from "../lib/structured-data";
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import type { University } from "../lib/mock-data";
 import { usePaged } from "../lib/use-paged";
 import { ShowMore } from "../components/ShowMore";
 import { GraduationCap, Search, ShieldCheck } from "lucide-react";
@@ -10,8 +11,20 @@ import { UniversityCard, UniversityCardSkeleton } from "../components/University
 import { RequestUniversity } from "../components/RequestUniversity";
 
 export const Route = createFileRoute("/universities")({
-  // Loaded on the server so the HTML carries the universities and their JSON-LD.
-  loader: () => loadUniversities(),
+  // Loaded on the server so the HTML carries the universities and their JSON-LD. The server
+  // page carries full programme detail only for the first page of cards (about 85% of the
+  // data is programme detail); the browser fetches the rest right after the page opens.
+  loader: async () => {
+    const d = await loadUniversities();
+    const programmes = d.universities.reduce((n, u) => n + (u.programDetails?.length || 1), 0);
+    if (typeof window !== "undefined") return { ...d, programmes, partial: false };
+    const universities = d.universities.map((u, i) => {
+      if (i < FIRST_PAGE) return u;
+      const { programDetails: _p, admissionsByCurriculum: _a, ...rest } = u;
+      return rest;
+    });
+    return { universities, source: d.source, programmes, partial: true };
+  },
   head: ({ loaderData }) => ({
     meta: [
       { title: "University Fees and Entry Grades by Course | EvidaPath" },
@@ -48,10 +61,25 @@ export const Route = createFileRoute("/universities")({
   component: UniversitiesDirectoryPage,
 });
 
+const FIRST_PAGE = 12; // usePaged's default page size
+
 function UniversitiesDirectoryPage() {
   const [query, setQuery] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("All");
-  const { universities, source } = Route.useLoaderData();
+  const loaded = Route.useLoaderData();
+  const { source, programmes } = loaded;
+  const [full, setFull] = useState<University[] | null>(null);
+  useEffect(() => {
+    if (!loaded.partial) return;
+    let live = true;
+    loadUniversities()
+      .then((d) => live && setFull(d.universities))
+      .catch(() => {});
+    return () => {
+      live = false;
+    };
+  }, [loaded]);
+  const universities: University[] = full ?? loaded.universities;
 
   const countries = useMemo(
     () => Array.from(new Set(universities.map((u) => u.country).filter(Boolean))).sort(),
@@ -98,10 +126,7 @@ function UniversitiesDirectoryPage() {
               {[
                 [String(universities.length), "universities"],
                 [String(countries.length), "countries"],
-                [
-                  String(universities.reduce((n, u) => n + (u.programDetails?.length || 1), 0)),
-                  "programmes",
-                ],
+                [String(programmes), "programmes"],
               ].map(([v, k]) => (
                 <div key={k} className="rounded-2xl bg-secondary/60 px-4 py-3">
                   <dt className="sr-only">{k}</dt>
