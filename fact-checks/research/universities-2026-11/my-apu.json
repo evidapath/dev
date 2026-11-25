@@ -1,0 +1,40 @@
+{
+  "uni": "my-apu",
+  "name": "Asia Pacific University of Technology & Innovation",
+  "aliases": [
+    "APU",
+    "Asia Pacific University"
+  ],
+  "type": "private",
+  "website": "https://www.apu.edu.my",
+  "country": {
+    "cc": "my",
+    "name": "Malaysia",
+    "currency": "MYR"
+  },
+  "city": {
+    "slug": "my-kuala-lumpur",
+    "name": "Kuala Lumpur"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.apu.edu.my/course/bsc-hons-in-computer-science",
+      "page": "52906b975c85",
+      "title": "BSc (Hons) in Computer Science | APU",
+      "organization": "Asia Pacific University of Technology & Innovation",
+      "quotes": [
+        "The Asia Pacific University of Technology & Innovation (APU) is conveniently loca",
+        "Bukit Jalil, 57000 Kuala Lumpur"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "APU's international fee schedule on each course page (6% SST extra).",
+      "source": "main"
+    }
+  ]
+}
