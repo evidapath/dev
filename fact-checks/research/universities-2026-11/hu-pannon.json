@@ -1,0 +1,41 @@
+{
+  "uni": "hu-pannon",
+  "name": "University of Pannonia",
+  "aliases": [
+    "Pannon Egyetem"
+  ],
+  "type": "public",
+  "website": "https://uni-pannon.hu/en",
+  "country": {
+    "cc": "hu",
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  "city": {
+    "slug": "hu-veszprem",
+    "name": "Veszprém"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.gtk.uni-pannon.hu/en/bsc-in-data-science-in-business/",
+      "page": "f7a71f928ce2",
+      "title": "BSc in Data Science in Business | University of Pannonia",
+      "organization": "University of Pannonia",
+      "quotes": [
+        "BSc in Data Science in Business - University of Pannonia",
+        "Place of training Veszprém, Hungary",
+        "The tuition fee for NON EU Students is 4000 EUR /Academic year (2 semesters) Language and form of training English Full time Study duration 8 semesters",
+        "Entry requirements Finished secondary school studies. Language requirements: B2 level English language certificate"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU students",
+      "description": "University of Pannonia's per-year tuition for non-EU students on the programme page.",
+      "source": "main"
+    }
+  ]
+}

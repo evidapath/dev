@@ -1,0 +1,106 @@
+{
+  "uni": "hu-pannon",
+  "slug": "bsc-data-science-in-business",
+  "sources": {
+    "course": {
+      "url": "https://www.gtk.uni-pannon.hu/en/bsc-in-data-science-in-business/",
+      "page": "f7a71f928ce2",
+      "title": "BSc in Data Science in Business | University of Pannonia",
+      "organization": "University of Pannonia",
+      "quotes": [
+        "BSc in Data Science in Business - University of Pannonia",
+        "Place of training Veszprém, Hungary",
+        "The tuition fee for NON EU Students is 4000 EUR /Academic year (2 semesters) Language and form of training English Full time Study duration 8 semesters",
+        "Entry requirements Finished secondary school studies. Language requirements: B2 level English language certificate"
+      ]
+    }
+  },
+  "program": {
+    "name": "Data Science in Business",
+    "degree_type": "BSc",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Programme page (year not stated)",
+    "platform": "University of Pannonia application",
+    "source": "course",
+    "summary": "BSc in Data Science in Business, University of Pannonia, Veszprém; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_annual": 4000,
+      "academic_year": "Programme page (year not stated)",
+      "source": "course",
+      "note": "Non-EU: EUR 4000 per academic year (2 semesters), programme page; the academic year isn't stated."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Data Science in Business: finished secondary school studies and B2 English; no grade cut-off published.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "B2 English certificate",
+        "min_score": "B2 level certificate (TOEFL, IELTS, Cambridge and others), or proof of studies in English.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Data Science in Business: finished secondary school studies and B2 English; no grade cut-off published.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "B2 English certificate",
+        "min_score": "B2 level certificate (TOEFL, IELTS, Cambridge and others), or proof of studies in English.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Data Science in Business: finished secondary school studies and B2 English; no grade cut-off published.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "B2 English certificate",
+        "min_score": "B2 level certificate (TOEFL, IELTS, Cambridge and others), or proof of studies in English.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Data Science in Business: finished secondary school studies and B2 English; no grade cut-off published.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "B2 English certificate",
+        "min_score": "B2 level certificate (TOEFL, IELTS, Cambridge and others), or proof of studies in English.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Data Science in Business: finished secondary school studies and B2 English; no grade cut-off published.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "B2 English certificate",
+        "min_score": "B2 level certificate (TOEFL, IELTS, Cambridge and others), or proof of studies in English.",
+        "source": "course"
+      }
+    }
+  ]
+}
