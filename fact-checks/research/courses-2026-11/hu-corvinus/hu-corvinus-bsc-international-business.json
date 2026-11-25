@@ -1,0 +1,82 @@
+{
+  "uni": "hu-corvinus",
+  "slug": "bsc-international-business",
+  "sources": {
+    "course": {
+      "url": "https://www.uni-corvinus.hu/post/landing-page/bachelors/bsc-in-international-business/?lang=en",
+      "page": "af6ed255189e",
+      "title": "International Business BSc | Corvinus University of Budapest",
+      "organization": "Corvinus University of Budapest",
+      "quotes": [
+        "Programme name International Business",
+        "Duration 8 semesters (4 years)",
+        "Start date September 2027",
+        "Tuition fee (Non-EEA) 3 500 EUR/semester 7 000 EUR/year",
+        "This programme is available only in English."
+      ]
+    }
+  },
+  "program": {
+    "name": "International Business",
+    "degree_type": "BSc",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "September 2027",
+    "platform": "Corvinus online application",
+    "source": "course",
+    "summary": "International Business (BSc), Corvinus University of Budapest; taught only in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eea",
+      "currency": "EUR",
+      "tuition_annual": 7000,
+      "academic_year": "September 2027 start",
+      "source": "course",
+      "note": "Non-EEA: EUR 7,000 a year (EUR 3,500 per semester) for the September 2027 start; the official price list is in Corvinus's fee regulation."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "International Business: admission requirements aren't on the programme page read; see Corvinus's Admissions Requirements page.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "International Business: admission requirements aren't on the programme page read; see Corvinus's Admissions Requirements page.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "International Business: admission requirements aren't on the programme page read; see Corvinus's Admissions Requirements page.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "International Business: admission requirements aren't on the programme page read; see Corvinus's Admissions Requirements page.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "International Business: admission requirements aren't on the programme page read; see Corvinus's Admissions Requirements page.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "uni": "hu-corvinus",
+  "name": "Corvinus University of Budapest",
+  "aliases": [
+    "Corvinus",
+    "Budapesti Corvinus Egyetem"
+  ],
+  "type": "public",
+  "website": "https://www.uni-corvinus.hu/?lang=en",
+  "country": {
+    "cc": "hu",
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  "city": {
+    "slug": "hu-budapest",
+    "name": "Budapest"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.uni-corvinus.hu/post/landing-page/bachelors/bsc-in-international-business/?lang=en",
+      "page": "af6ed255189e",
+      "title": "International Business BSc | Corvinus University of Budapest",
+      "organization": "Corvinus University of Budapest",
+      "quotes": [
+        "Corvinus University of Budapest Jump to main content",
+        "Budapest"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eea",
+      "label": "Non-EEA students",
+      "description": "Corvinus University of Budapest's tuition for non-EEA students on each programme page.",
+      "source": "main"
+    }
+  ]
+}

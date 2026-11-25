@@ -54,8 +54,12 @@ def norm(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip().lower()
 
 
-def nums(s: str) -> set[str]:
+def nums(s: str, quote: bool = True) -> set[str]:
     out = set()
+    # Space-separated thousands in a quote ("7 000 EUR/year", "1 980 000 HUF") = 7000, 1980000.
+    # Quotes only: a value we built may list separate numbers with spaces ("700 200 200").
+    for m in (re.findall(r"\b\d{1,3}(?: \d{3})+\b", s) if quote else []):
+        out.add(m.replace(" ", ""))
     # European format in a quote ("2.040,00 €" = 2040.00): also read it the English way.
     for m in re.findall(r"\b\d{1,3}(?:\.\d{3})+(?:,\d+)?\b|\b\d+,\d{2}\b", s):
         whole, _, dec = m.replace(".", "").partition(",")
@@ -136,7 +140,7 @@ def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None
             return " ".join(quotes[x] for x in (src if isinstance(src, list) else [src]))
 
         def check_numbers(value, src, label: str):
-            missing = nums(str(value)) - nums(q_of(src))
+            missing = nums(str(value), quote=False) - nums(q_of(src))
             if missing:
                 fail(f"{where}: {label} has {sorted(missing)} not in the quotes of source '{src}'")
 
