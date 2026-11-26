@@ -1,0 +1,9 @@
+{
+  "name": "evidapath-research-browser",
+  "private": true,
+  "type": "module",
+  "description": "Renders script-only university pages for the research cache (scripts/research/bfetch.sh). Never used to get past bot checks or CAPTCHAs.",
+  "dependencies": {
+    "playwright-core": "1.57.0"
+  }
+}
