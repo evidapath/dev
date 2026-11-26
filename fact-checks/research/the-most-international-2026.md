@@ -23,7 +23,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 10 | Nanyang Technological University, Singapore | Singapore | todo |
 | 11 | King’s College London | United Kingdom | have |
 | 12 | National University of Singapore | Singapore | todo |
-| 13 | UCL | United Kingdom | todo |
+| 13 | UCL | United Kingdom | held: Cloudflare check ("Just a moment...") on course pages (2026-11-26) |
 | =14 | The Chinese University of Hong Kong | Hong Kong | done (pending 2026-11-26-cuhk.ndjson) |
 | =14 | University of Vienna | Austria | todo |
 | 16 | London School of Economics and Political Science | United Kingdom | done (pending 2026-11-26-lse.ndjson) |
@@ -60,7 +60,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 47 | Leiden University | Netherlands | todo |
 | 48 | TU Wien | Austria | todo |
 | 49 | University of Alberta | Canada | have |
-| 50 | California Institute of Technology | United States | todo |
+| 50 | California Institute of Technology | United States | done (pending 2026-11-26-caltech.ndjson) |
 | 51 | Lebanese American University | Lebanon | todo |
 | 52 | University of York | United Kingdom | have? |
 | 53 | Aalto University | Finland | todo |

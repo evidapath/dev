@@ -658,7 +658,9 @@ function adapt(u: SanityUniversity): University {
     ...(costResidencyNote ? { costResidencyNote } : {}),
     ...(deadlines.length ? { deadlines } : {}),
     ...(admissionsByCurriculum.length ? { admissionsByCurriculum } : {}),
-    ...(programDetails.length > 1 ? { programDetails } : {}),
+    // Always set, even for one programme: subject matching, course pages and the sitemap
+    // read programDetails only (the card hides its selector below two programmes).
+    ...(programDetails.length ? { programDetails } : {}),
     evidenceConfidence: confidenceLabel(u.id, u.evidapath_verified),
     lastVerified: u.last_verified || "Not yet verified",
     officialSourceUrl: u.official_website || "",

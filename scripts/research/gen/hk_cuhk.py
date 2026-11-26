@@ -34,7 +34,7 @@ prog("hk-cuhk", "bsc-computer-science-and-engineering",
       "application_requirements": []},
      [{"residency": "international", "currency": "HKD", "tuition_annual": 230000, "academic_year": "2027-2028", "source": "fees",
        "note": "Non-local students: HK$230,000 per annum (2027-2028); any yearly adjustment for the 2027 cohort capped at 3%."}],
-     adm_all({"ib": "Computer Science & Engineering: lowest reference score range 33-35 for the IB Diploma (2023-2025 entries; for reference only).",
-              "a-level": "Computer Science & Engineering: lowest reference score range ABB to AAB at GCE AL / IAL (2023-2025 entries; for reference only)."},
+     adm_all({"ib": "Computer Science & Engineering: IB 33-35, the lowest reference score range for the IB Diploma (2023-2025 entries; for reference only, not a guarantee).",
+              "a-level": "Computer Science & Engineering: ABB to AAB, the lowest reference score range at GCE AL / IAL (2023-2025 entries; for reference only, not a guarantee)."},
              "ref"))
 print("wrote cuhk")

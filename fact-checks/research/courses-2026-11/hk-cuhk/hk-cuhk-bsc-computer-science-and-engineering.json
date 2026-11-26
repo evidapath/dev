@@ -63,14 +63,14 @@
     {
       "curriculum": "ib",
       "source": "ref",
-      "threshold": "Computer Science & Engineering: lowest reference score range 33-35 for the IB Diploma (2023-2025 entries; for reference only).",
+      "threshold": "Computer Science & Engineering: IB 33-35, the lowest reference score range for the IB Diploma (2023-2025 entries; for reference only, not a guarantee).",
       "required_subjects": [],
       "tests": []
     },
     {
       "curriculum": "a-level",
       "source": "ref",
-      "threshold": "Computer Science & Engineering: lowest reference score range ABB to AAB at GCE AL / IAL (2023-2025 entries; for reference only).",
+      "threshold": "Computer Science & Engineering: ABB to AAB, the lowest reference score range at GCE AL / IAL (2023-2025 entries; for reference only, not a guarantee).",
       "required_subjects": [],
       "tests": []
     }

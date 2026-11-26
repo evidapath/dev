@@ -25,5 +25,5 @@ prog("au-anu", "bachelor-of-computing", {"course": src("654c442ffec9", "Bachelor
       "summary": "Bachelor of Computing, The Australian National University; 3 years full-time.", "application_requirements": []},
      [{"residency": "international", "currency": "AUD", "tuition_annual": 57640, "academic_year": "2027", "source": "course",
        "note": "Annual indicative fee for international students: $57,640 (2027, standard full-time load)."}],
-     adm_all({"ib": "Bachelor of Computing: International Baccalaureate 31 (ANU admission requirement, 2027)."}, "course"))
+     adm_all({"ib": "Bachelor of Computing: IB 31 (International Baccalaureate admission requirement listed for 2027)."}, "course"))
 print("wrote anu")

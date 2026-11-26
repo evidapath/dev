@@ -47,7 +47,7 @@ for main, req, fee, name, field in P:
            "note": f"International/EU fee rate 2027/8: £{intl:,} for one year.",
            "living": {"monthly": [1546], "months": 12, "source": "living", "kind": "genuine_cost_of_living_estimate",
                       "note": "The University of Edinburgh estimates £1,546 a month, £18,552 for a full year (× 12 = £18,552)."}}],
-         adm_all({"a-level": f"{name}: offers in recent years ranged from {al_range[0]} to {al_range[1]} at A level (in one set of exams).",
-                  "ib": f"{name}: offers in recent years ranged from {ib_m[0]} points with {ib_m[1]} at HL to {ib_m[2]} points with {ib_m[3]} at HL."},
+         adm_all({"a-level": f"{name}: {al_range[1]} at A level was the lowest offer most applicants needed in recent years; offers ranged up to {al_range[0]} (in one set of exams).",
+                  "ib": f"{name}: IB {ib_m[2]} points with {ib_m[3]} at HL was the lowest offer most applicants needed in recent years; offers ranged up to {ib_m[0]} points with {ib_m[1]} at HL."},
                  "req", english={"test_name": "IELTS Academic", "min_score": "IELTS Academic 6.5 overall with at least 5.5 in each component.", "source": "req"}))
     print("wrote", name, intl, al_range, ib_m[0], ib_m[2])

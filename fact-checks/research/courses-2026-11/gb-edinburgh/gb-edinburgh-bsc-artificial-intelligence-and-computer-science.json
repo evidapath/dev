@@ -81,7 +81,7 @@
     {
       "curriculum": "a-level",
       "source": "req",
-      "threshold": "Artificial Intelligence and Computer Science: offers in recent years ranged from A*A*A* to AAB at A level (in one set of exams).",
+      "threshold": "Artificial Intelligence and Computer Science: AAB at A level was the lowest offer most applicants needed in recent years; offers ranged up to A*A*A* (in one set of exams).",
       "required_subjects": [],
       "tests": [],
       "english": {
@@ -93,7 +93,7 @@
     {
       "curriculum": "ib",
       "source": "req",
-      "threshold": "Artificial Intelligence and Computer Science: offers in recent years ranged from 43 points with 777 at HL to 34 points with 665 at HL.",
+      "threshold": "Artificial Intelligence and Computer Science: IB 34 points with 665 at HL was the lowest offer most applicants needed in recent years; offers ranged up to 43 points with 777 at HL.",
       "required_subjects": [],
       "tests": [],
       "english": {

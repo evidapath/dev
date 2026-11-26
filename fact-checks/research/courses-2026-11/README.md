@@ -494,3 +494,23 @@ the order; nothing from them is stored). Pending: `2026-11-26-apu.ndjson` (3 com
 9,779-10,058, A-Level 12 points / IB 28, IELTS 6.0). Held: UCSI (fee layout on its pages can't be matched to
 programmes), INTI ("Approx. RM 89,708" doesn't say whether per year or for the whole degree), APU Information
 Technology (entry wording differs).
+
+## Batch 2026-11-26 (THE most-international list, 10 universities)
+
+Done (pending files `fact-checks/pending/2026-11-26-<name>.ndjson`, each dry-run HTTP 200):
+edinburgh (3 BSc, £40,900/yr, living £1,546/month), leeds (2 BSc, £33,700), durham (2 BSc, £35,000),
+bristol (3 BSc, £34,700 / £32,500), sheffield (2 BSc, £34,670), lse (3 BSc, £41,900 / £37,500 / £39,300),
+anu (Bachelor of Computing, A$57,640), uq (Bachelor of Computer Science, A$60,952), cuhk (Computer Science and
+Engineering, HK$230,000), caltech (Computer Science B.S., $68,574; housing + food $21,996 for nine months,
+our calculation). Thresholds lead with the lowest published offer so the engine compares on it.
+
+Held: Glasgow (grades and fees in tabs not readable), St Andrews (subject page and 2027 prospectus disagree,
+fee not found), Trinity College Dublin (subject minimums only; no per-course non-EU fee line), UCL
+(Cloudflare check).
+
+Found on the way (fixed): the app only attached `programDetails` to universities with 2+ programmes, and
+subject matching reads only that list, so single-programme universities never appeared (affected
+University of Pannonia and University of Pisa already on staging). `sanity.server.ts` now always sets it.
+
+To check: Leeds' IB requirement is "18 points at Higher level" (the site shows "can't compare"); Caltech
+publishes no grade threshold; Bristol and LSE English requirements not stored (band not in saved text).

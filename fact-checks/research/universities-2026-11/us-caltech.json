@@ -1,0 +1,40 @@
+{
+  "uni": "us-caltech",
+  "name": "California Institute of Technology",
+  "aliases": [
+    "Caltech"
+  ],
+  "type": "private",
+  "website": "https://www.caltech.edu",
+  "country": {
+    "cc": "us",
+    "name": "United States",
+    "currency": "USD"
+  },
+  "city": {
+    "slug": "us-pasadena",
+    "name": "Pasadena"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.catalog.caltech.edu/current/information-for-undergraduate-students/undergraduate-expenses/",
+      "page": "1d13dc064c5c",
+      "title": "Undergraduate Expenses | Caltech Catalog",
+      "organization": "California Institute of Technology",
+      "quotes": [
+        "California Institute of Technology 1200 East California Boulevard Pasadena",
+        "Estimated Cost of Attendance 2026-27 The charts below list the estimated nine-month, full-time cost of attendance budgets",
+        "Category On-Campus Tuition $68,574 Fees 1,2 2,655 Housing 12,711 Food/Meals 9,285 Total Direct Costs $93,225"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "All undergraduates",
+      "description": "Caltech tuition is the same for all undergraduates.",
+      "source": "main"
+    }
+  ]
+}
