@@ -1,0 +1,57 @@
+{
+  "uni": "au-uq",
+  "slug": "bachelor-of-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://study.uq.edu.au/study-options/programs/bachelor-computer-science-2559",
+      "page": "85e449918913",
+      "title": "Bachelor of Computer Science (2559) | The University of Queensland",
+      "organization": "The University of Queensland",
+      "quotes": [
+        "Location St Lucia Duration 3 Years (or part time equivalent) Start Semester Semester 1 (22 Feb, 2027)",
+        "Approximate yearly cost of tuition (16 units). Your fees will vary according to your study load. Fees are reviewed each year and may increase. AUD $60,952 2027",
+        "Entry score threshold ATAR / Rank IB 84 32 These are the lowest adjusted scores we made an offer to in Semester 1, 2026.",
+        "IELTS overall 6.5; reading 6; writing 6; speaking 6; listening 6.",
+        "of Computer Science - Study - The University of Queensland"
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor of Computer Science",
+    "degree_type": "Bachelor",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Computer Science, The University of Queensland (St Lucia); 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "AUD",
+      "tuition_annual": 60952,
+      "academic_year": "2027",
+      "source": "course",
+      "note": "Approximate yearly cost of tuition (16 units): AUD $60,952 (2027); fees are reviewed each year and may increase."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Bachelor of Computer Science: IB 32 was the lowest adjusted score offered a place in Semester 1, 2026 (not a guarantee).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS",
+        "min_score": "IELTS overall 6.5; reading, writing, speaking and listening 6 each.",
+        "source": "course"
+      }
+    }
+  ]
+}

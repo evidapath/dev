@@ -1,0 +1,40 @@
+{
+  "uni": "au-anu",
+  "name": "The Australian National University",
+  "aliases": [
+    "ANU",
+    "Australian National University"
+  ],
+  "type": "public",
+  "website": "https://www.anu.edu.au",
+  "country": {
+    "cc": "au",
+    "name": "Australia",
+    "currency": "AUD"
+  },
+  "city": {
+    "slug": "au-canberra",
+    "name": "Canberra"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.anu.edu.au/about",
+      "page": "e3a57abca90d",
+      "title": "About ANU | Australian National University",
+      "organization": "The Australian National University",
+      "quotes": [
+        "The Australian National University (ANU) is unlike any other university",
+        "You'll find ANU in the inner-city suburb of Acton, Canberra in the ACT."
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "ANU annual indicative fee for international students.",
+      "source": "main"
+    }
+  ]
+}

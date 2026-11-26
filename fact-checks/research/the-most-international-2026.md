@@ -32,9 +32,9 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 19 | University of Edinburgh | United Kingdom | done (pending 2026-11-26-edinburgh.ndjson) |
 | 20 | Wageningen University & Research | Netherlands | todo |
 | 21 | University of Amsterdam | Netherlands | have |
-| =22 | Australian National University | Australia | todo |
+| =22 | Australian National University | Australia | done (pending 2026-11-26-anu.ndjson) |
 | =22 | University of Manchester | United Kingdom | have |
-| 24 | Trinity College Dublin | Ireland | todo |
+| 24 | Trinity College Dublin | Ireland | held: course page gives only subject minimums (no overall grade); 2026-27 fee calendar has no per-course non-EU line (2026-11-26) |
 | =25 | KTH Royal Institute of Technology | Sweden | todo |
 | =25 | University of Glasgow | United Kingdom | held: entry grades and fees load in tabs not readable by fetch or render (2026-11-26) |
 | 27 | University of Toronto | Canada | have |
@@ -49,7 +49,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 36 | University of Birmingham | United Kingdom | have |
 | 37 | University of St Andrews | United Kingdom | held: subject page and 2027 prospectus disagree on grades (AAA vs AAB, IB 38 vs 36); fee not found (2026-11-26) |
 | 38 | Monash University | Australia | have |
-| 39 | The University of Queensland | Australia | todo |
+| 39 | The University of Queensland | Australia | done (pending 2026-11-26-uq.ndjson) |
 | 40 | University of Auckland | New Zealand | todo |
 | 41 | The University of Sydney | Australia | have |
 | 42 | University of Groningen | Netherlands | todo |

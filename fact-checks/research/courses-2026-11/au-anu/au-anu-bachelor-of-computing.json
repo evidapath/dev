@@ -1,0 +1,52 @@
+{
+  "uni": "au-anu",
+  "slug": "bachelor-of-computing",
+  "sources": {
+    "course": {
+      "url": "https://programsandcourses.anu.edu.au/2027/program/bcomp",
+      "page": "654c442ffec9",
+      "title": "Bachelor of Computing (BCOMP) 2027 | ANU Programs and Courses",
+      "organization": "The Australian National University",
+      "quotes": [
+        "Bachelor of Computing - ANU",
+        "Academic Year 2027",
+        "Length 3 year full-time Minimum 144 Units",
+        "English Language Requirements for Admission ATAR: 80 International Baccalaureate: 31",
+        "Annual indicative fee for international students $57,640.00"
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor of Computing",
+    "degree_type": "Bachelor",
+    "field": "Computer Science",
+    "faculty": "ANU College of Systems and Society",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Computing, The Australian National University; 3 years full-time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "AUD",
+      "tuition_annual": 57640,
+      "academic_year": "2027",
+      "source": "course",
+      "note": "Annual indicative fee for international students: $57,640 (2027, standard full-time load)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Bachelor of Computing: International Baccalaureate 31 (ANU admission requirement, 2027).",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "uni": "au-uq",
+  "name": "The University of Queensland",
+  "aliases": [
+    "UQ",
+    "University of Queensland"
+  ],
+  "type": "public",
+  "website": "https://www.uq.edu.au",
+  "country": {
+    "cc": "au",
+    "name": "Australia",
+    "currency": "AUD"
+  },
+  "city": {
+    "slug": "au-brisbane",
+    "name": "Brisbane"
+  },
+  "sources": {
+    "main": {
+      "url": "https://campuses.uq.edu.au/st-lucia",
+      "page": "d6298bf952e0",
+      "title": "St Lucia Campus | UQ",
+      "organization": "The University of Queensland",
+      "quotes": [
+        "© The University of Queensland ABN",
+        "Located 7 kilometres from Brisbane’s city centre"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "UQ approximate yearly international tuition (16 units).",
+      "source": "main"
+    }
+  ]
+}
