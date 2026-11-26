@@ -36,12 +36,12 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =22 | University of Manchester | United Kingdom | have |
 | 24 | Trinity College Dublin | Ireland | todo |
 | =25 | KTH Royal Institute of Technology | Sweden | todo |
-| =25 | University of Glasgow | United Kingdom | todo |
+| =25 | University of Glasgow | United Kingdom | held: entry grades and fees load in tabs not readable by fetch or render (2026-11-26) |
 | 27 | University of Toronto | Canada | have |
 | 28 | University of Warwick | United Kingdom | have |
 | 29 | University of Melbourne | Australia | have |
 | 30 | UNSW Sydney | Australia | have |
-| 31 | University of Leeds | United Kingdom | todo |
+| 31 | University of Leeds | United Kingdom | done (pending 2026-11-26-leeds.ndjson) |
 | 32 | University of British Columbia | Canada | have |
 | =33 | Durham University | United Kingdom | todo |
 | =33 | Massachusetts Institute of Technology | United States | have |

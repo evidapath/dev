@@ -1,0 +1,71 @@
+{
+  "uni": "gb-leeds",
+  "slug": "bsc-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://courses.leeds.ac.uk/3260/computer-science-bsc",
+      "page": "4c009f3c32c7",
+      "title": "Computer Science BSc | University of Leeds",
+      "organization": "University of Leeds",
+      "quotes": [
+        "Fees UK: £10,050 International: £33,700 (per year)",
+        "Delivery type On campus Duration 3 Years (Full time)",
+        "Year of entry 2027",
+        "International Baccalaureate 18 points at Higher level to include 5 in HL Mathematics: Analysis and Approaches or 6 in HL Mathematics: Applications and Interpretation.",
+        "IELTS 6.0 overall, with no less than 5.5 in each section.",
+        "A-level: AAA including Mathematics.",
+        "Computer Science BSc | University of Leeds"
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science",
+    "degree_type": "BSc",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2027",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "Computer Science BSc, University of Leeds; 3 years full time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 33700,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "International: £33,700 per year for 2027 entry (course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Computer Science: A-level AAA including Mathematics.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS",
+        "min_score": "IELTS 6.0 overall, with no less than 5.5 in each section.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Computer Science: IB 18 points at Higher level, including 5 in HL Mathematics: Analysis and Approaches or 6 in HL Mathematics: Applications and Interpretation.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS",
+        "min_score": "IELTS 6.0 overall, with no less than 5.5 in each section.",
+        "source": "course"
+      }
+    }
+  ]
+}

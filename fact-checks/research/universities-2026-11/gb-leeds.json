@@ -1,0 +1,39 @@
+{
+  "uni": "gb-leeds",
+  "name": "University of Leeds",
+  "aliases": [
+    "Leeds"
+  ],
+  "type": "public",
+  "website": "https://www.leeds.ac.uk",
+  "country": {
+    "cc": "gb",
+    "name": "United Kingdom",
+    "currency": "GBP"
+  },
+  "city": {
+    "slug": "gb-leeds",
+    "name": "Leeds"
+  },
+  "sources": {
+    "main": {
+      "url": "https://courses.leeds.ac.uk/3260/computer-science-bsc",
+      "page": "4c009f3c32c7",
+      "title": "Computer Science BSc | University of Leeds",
+      "organization": "University of Leeds",
+      "quotes": [
+        "Computer Science BSc | University of Leeds",
+        "Fees UK: £10,050 International: £33,700 (per year)"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "University of Leeds international tuition fee (per year, fixed for the course).",
+      "source": "main"
+    }
+  ]
+}
