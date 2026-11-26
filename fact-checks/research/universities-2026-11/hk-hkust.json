@@ -1,0 +1,39 @@
+{
+  "uni": "hk-hkust",
+  "name": "The Hong Kong University of Science and Technology",
+  "aliases": [
+    "HKUST"
+  ],
+  "type": "public",
+  "website": "https://hkust.edu.hk",
+  "country": {
+    "cc": "hk",
+    "name": "Hong Kong",
+    "currency": "HKD"
+  },
+  "city": {
+    "slug": "hk-hong-kong",
+    "name": "Hong Kong"
+  },
+  "sources": {
+    "main": {
+      "url": "https://join.hkust.edu.hk/fees-and-scholarships",
+      "page": "83655b37d789",
+      "title": "Fees and Scholarships | HKUST Undergraduate Admissions",
+      "organization": "The Hong Kong University of Science and Technology",
+      "quotes": [
+        "Tuition Fee (Non-local Students) * HKD 260,000(~USD33,300) per academic year in 2027/28 academic year",
+        "Copyright © The Hong Kong University of Science and Technology. All rights reserved."
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-local",
+      "label": "Non-local students",
+      "description": "HKUST's tuition for non-local undergraduate students.",
+      "source": "main"
+    }
+  ]
+}

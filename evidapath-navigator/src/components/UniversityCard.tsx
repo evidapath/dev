@@ -105,6 +105,7 @@ const COUNTRY_HUE: Record<string, number> = {
   Türkiye: 30,
   "South Korea": 230,
   Hungary: 130,
+  "Hong Kong": 350,
 };
 export function countryHue(country: string): number {
   return COUNTRY_HUE[country] ?? 230;

@@ -387,6 +387,7 @@ const COUNTRY_CODES: [RegExp, string][] = [
   [/\b(t[uü]rkiye|turkey|turkish)/i, "tr"],
   [/\b(south korea|korean|republic of korea)/i, "kr"],
   [/\b(hungary|hungarian)/i, "hu"],
+  [/\bhong kong/i, "hk"],
 ];
 
 export function citizenshipCode(text: string): string | null {
@@ -428,6 +429,7 @@ const HOME_COUNTRY: Record<string, string> = {
   tr: "Türkiye",
   kr: "South Korea",
   hu: "Hungary",
+  hk: "Hong Kong",
 };
 const INTL_NAME = /\binternational\b(?! baccalaureate)/i;
 const INTL_ONLY =
@@ -825,6 +827,7 @@ const COUNTRY_OF: Record<string, string> = {
   tr: "Türkiye",
   kr: "South Korea",
   hu: "Hungary",
+  hk: "Hong Kong",
 };
 
 /**

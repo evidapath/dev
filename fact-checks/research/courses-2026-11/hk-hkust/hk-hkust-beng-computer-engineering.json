@@ -1,0 +1,97 @@
+{
+  "uni": "hk-hkust",
+  "slug": "beng-computer-engineering",
+  "sources": {
+    "course": {
+      "url": "https://join.hkust.edu.hk/our-programs/school-of-engineering/computer-engineering",
+      "page": "52e2579c73a4",
+      "title": "BEng in Computer Engineering | HKUST",
+      "organization": "The Hong Kong University of Science and Technology",
+      "quotes": [
+        "Modules Award BEng in Computer Engineering Duration 4Y",
+        "Copyright © The Hong Kong University of Science and Technology. All rights reserved."
+      ]
+    },
+    "fees": {
+      "url": "https://join.hkust.edu.hk/fees-and-scholarships",
+      "page": "83655b37d789",
+      "title": "Fees and Scholarships | HKUST Undergraduate Admissions",
+      "organization": "The Hong Kong University of Science and Technology",
+      "quotes": [
+        "Tuition Fee (Non-local Students) * HKD 260,000(~USD33,300) per academic year in 2027/28 academic year",
+        "Copyright © The Hong Kong University of Science and Technology. All rights reserved."
+      ]
+    },
+    "intl": {
+      "url": "https://join.hkust.edu.hk/admissions/international-qualifications",
+      "page": "1fa17bf99584",
+      "title": "International Qualifications | HKUST Undergraduate Admissions",
+      "organization": "The Hong Kong University of Science and Technology",
+      "quotes": [
+        "All applicants with international qualifications are expected to graduate from high school and be able to fulfil the General Admissions Requirements, School/Program-specific Requirements, and English Language Requirements.",
+        "Deadline for Priority Round Applications"
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Engineering",
+    "degree_type": "BEng",
+    "field": "Computer Engineering",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2027/28",
+    "platform": "HKUST online application (international qualifications)",
+    "source": "course",
+    "summary": "BEng in Computer Engineering, HKUST, Hong Kong; 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-local",
+      "currency": "HKD",
+      "tuition_annual": 260000,
+      "academic_year": "2027/28",
+      "source": "fees",
+      "note": "Non-local students: HKD 260,000 per academic year in 2027/28 (HKUST admissions fees page). Accommodation fee for 2027/28 not yet announced."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "intl",
+      "threshold": "Computer Engineering: HKUST lists General Admissions Requirements, School/Program-specific Requirements and English Language Requirements for each international qualification on its International Qualifications page; the details weren't readable on the saved page, so no grade is shown.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "a-level",
+      "source": "intl",
+      "threshold": "Computer Engineering: HKUST lists General Admissions Requirements, School/Program-specific Requirements and English Language Requirements for each international qualification on its International Qualifications page; the details weren't readable on the saved page, so no grade is shown.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "intl",
+      "threshold": "Computer Engineering: HKUST lists General Admissions Requirements, School/Program-specific Requirements and English Language Requirements for each international qualification on its International Qualifications page; the details weren't readable on the saved page, so no grade is shown.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "cbse",
+      "source": "intl",
+      "threshold": "Computer Engineering: HKUST lists General Admissions Requirements, School/Program-specific Requirements and English Language Requirements for each international qualification on its International Qualifications page; the details weren't readable on the saved page, so no grade is shown.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "international-other",
+      "source": "intl",
+      "threshold": "Computer Engineering: HKUST lists General Admissions Requirements, School/Program-specific Requirements and English Language Requirements for each international qualification on its International Qualifications page; the details weren't readable on the saved page, so no grade is shown.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

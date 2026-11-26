@@ -232,6 +232,18 @@ export const VISAS: Record<string, VisaInfo> = {
       },
     ],
   },
+  "Hong Kong": {
+    country: "Hong Kong",
+    visa: "Student visa / entry permit",
+    money: [],
+    note: "We haven't confirmed Hong Kong's student visa fees, money to show and work rules yet. Check the Immigration Department's page for students.",
+    sources: [
+      {
+        label: "Students (Hong Kong Immigration Department)",
+        url: "https://www.immd.gov.hk/eng/services/visas/study.html",
+      },
+    ],
+  },
 };
 
 export function visaFor(country: string): VisaInfo | null {
