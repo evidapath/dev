@@ -1,0 +1,59 @@
+{
+  "uni": "gb-lse",
+  "slug": "bsc-mathematics-and-economics",
+  "sources": {
+    "course": {
+      "url": "https://www.lse.ac.uk/study-at-lse/undergraduate/bsc-mathematics-and-economics",
+      "page": "94e5fbd73dfa",
+      "title": "BSc Mathematics and Economics | LSE",
+      "organization": "The London School of Economics and Political Science",
+      "quotes": [
+        "Overseas full-time students ( Three years ) Open Academic year 2027/28 Start date 27 September 2027",
+        "Overseas £39,300 Overseas student fee per each year of your programme This is the 2027/28 fee for each year of your programme.",
+        "A-levels A*AA, with an A* in Mathematics",
+        "IB Diploma 39 points overall, including 766 in higher level subjects, with 7 in Mathematics: analysis and approaches",
+        "BSc Mathematics and Economics"
+      ]
+    }
+  },
+  "program": {
+    "name": "Mathematics and Economics",
+    "degree_type": "BSc",
+    "field": "Economics",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2027/28",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "BSc Mathematics and Economics, LSE; three years full-time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 39300,
+      "academic_year": "2027/28",
+      "source": "course",
+      "note": "Overseas £39,300 per each year of the programme (2027/28 entry, programme page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Mathematics and Economics: A-levels A*AA with an A* in Mathematics.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Mathematics and Economics: IB Diploma 39 points overall, 766 at Higher Level, with 7 in Mathematics.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

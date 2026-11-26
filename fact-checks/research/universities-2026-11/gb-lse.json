@@ -1,0 +1,39 @@
+{
+  "uni": "gb-lse",
+  "name": "The London School of Economics and Political Science",
+  "aliases": [
+    "LSE",
+    "London School of Economics"
+  ],
+  "type": "public",
+  "website": "https://www.lse.ac.uk",
+  "country": {
+    "cc": "gb",
+    "name": "United Kingdom",
+    "currency": "GBP"
+  },
+  "city": {
+    "slug": "uk-london-gb",
+    "name": "London"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.lse.ac.uk/study-at-lse/undergraduate/bsc-economics",
+      "page": "6576980a5cde",
+      "title": "BSc Economics | LSE",
+      "organization": "The London School of Economics and Political Science",
+      "quotes": [
+        "The London School of Economics and Political Science Houghton Street London"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "Overseas students",
+      "description": "LSE overseas tuition fee, fixed for each year of the programme.",
+      "source": "main"
+    }
+  ]
+}

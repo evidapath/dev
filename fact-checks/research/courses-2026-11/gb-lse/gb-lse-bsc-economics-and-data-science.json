@@ -1,0 +1,59 @@
+{
+  "uni": "gb-lse",
+  "slug": "bsc-economics-and-data-science",
+  "sources": {
+    "course": {
+      "url": "https://www.lse.ac.uk/study-at-lse/undergraduate/bsc-economics-and-data-science",
+      "page": "63cca37b5284",
+      "title": "BSc Economics and Data Science | LSE",
+      "organization": "The London School of Economics and Political Science",
+      "quotes": [
+        "Overseas full-time students ( Three years ) Open Academic year 2027/28 Start date 27 September 2027",
+        "Overseas £37,500 Overseas student fee per each year of your programme This is the 2027/28 fee for each year of your programme.",
+        "A-levels A*AA, with an A* in Mathematics",
+        "IB Diploma 39 points overall, including 766 in higher level subjects, with 7 in \"Mathematics: analysis and approaches",
+        "BSc Economics and Data Science"
+      ]
+    }
+  },
+  "program": {
+    "name": "Economics and Data Science",
+    "degree_type": "BSc",
+    "field": "Economics",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2027/28",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "BSc Economics and Data Science, LSE; three years full-time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 37500,
+      "academic_year": "2027/28",
+      "source": "course",
+      "note": "Overseas £37,500 per each year of the programme (2027/28 entry, programme page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Economics and Data Science: A-levels A*AA with an A* in Mathematics.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Economics and Data Science: IB Diploma 39 points overall, 766 at Higher Level, with 7 in Mathematics.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

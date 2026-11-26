@@ -26,7 +26,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 13 | UCL | United Kingdom | todo |
 | =14 | The Chinese University of Hong Kong | Hong Kong | todo |
 | =14 | University of Vienna | Austria | todo |
-| 16 | London School of Economics and Political Science | United Kingdom | todo |
+| 16 | London School of Economics and Political Science | United Kingdom | done (pending 2026-11-26-lse.ndjson) |
 | 17 | University of Geneva | Switzerland | todo |
 | 18 | Delft University of Technology | Netherlands | have |
 | 19 | University of Edinburgh | United Kingdom | done (pending 2026-11-26-edinburgh.ndjson) |
