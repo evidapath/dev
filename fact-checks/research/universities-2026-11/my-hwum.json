@@ -1,0 +1,39 @@
+{
+  "uni": "my-hwum",
+  "name": "Heriot-Watt University Malaysia",
+  "aliases": [
+    "HWUM",
+    "Heriot-Watt Malaysia"
+  ],
+  "type": "private",
+  "website": "https://www.hw.ac.uk/malaysia",
+  "country": {
+    "cc": "my",
+    "name": "Malaysia",
+    "currency": "MYR"
+  },
+  "city": {
+    "slug": "my-putrajaya",
+    "name": "Putrajaya"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.hw.ac.uk/malaysia/study/undergraduate/computing-science",
+      "page": "c0f6f078214f",
+      "title": "BSc (Hons) Computing Science | Heriot-Watt University Malaysia",
+      "organization": "Heriot-Watt University Malaysia",
+      "quotes": [
+        "Heriot-Watt University Malaysia's purpose-built, state-of-the-art, lakeside campus in Putrajaya"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "Heriot-Watt University Malaysia's 2026/27 fee structure for international students (6% SST added).",
+      "source": "main"
+    }
+  ]
+}

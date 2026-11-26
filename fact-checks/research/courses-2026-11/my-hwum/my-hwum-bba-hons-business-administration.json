@@ -1,0 +1,70 @@
+{
+  "uni": "my-hwum",
+  "slug": "bba-hons-business-administration",
+  "sources": {
+    "course": {
+      "url": "https://www.hw.ac.uk/malaysia/study/undergraduate/bachelor-business-administration-hons",
+      "page": "801bbf6e1208",
+      "title": "BBA (Hons) Business Administration | Heriot-Watt University Malaysia",
+      "organization": "Heriot-Watt University Malaysia",
+      "quotes": [
+        "Degree qualification BBA (Hons)",
+        "Duration 3 years Location Malaysia",
+        "A-Level: CCC",
+        "IB Diploma : 27 points for 6 subjects (3 HL including business and 3 SL subjects)",
+        "Heriot-Watt University Malaysia's purpose-built, state-of-the-art, lakeside campus in Putrajaya"
+      ]
+    },
+    "fees": {
+      "url": "https://www.hw.ac.uk/document-library/malaysia/study/Fee-International.pdf",
+      "page": "hwm-fee-intl-2627",
+      "title": "Fee Structure International Students 2026/27 (PDF) | Heriot-Watt University Malaysia",
+      "organization": "Heriot-Watt University Malaysia",
+      "quotes": [
+        "Fee Structure International Students 2026/27",
+        "business administration kpt/jps (r2/0414/7/0079) (mqa/fa4166) 05/29 * business and finance kpt/jps (r2/0488/6/0040) (mqa/fa4165) 11/29 * finance with data analytics kpt/jps (n/0412/6/0061) (mqa/pa18349) 07/30 international business management kpt/jps (r2/0414/6/0263) (mqa/fa7425) 03/31 psychology kpt/jps (r2/0313/6/0053) (mqa/fa8056) 04/31 psychology with management kpt/jps (r2/0313/6/0050) (mqa/fa5343) 08/30 psychology with marketing kpt/jps (n/0313/6/0058) (mqa/pa18166) 05/30 year semester per semester fee (rm) 6% sst total per semester annual tuition fee (rm) 6% sst total per year 1 1&2 24,060.00 1,443.60 25,503.60 48,120.00 2,887.20 51,007.20"
+      ]
+    }
+  },
+  "program": {
+    "name": "Business Administration",
+    "degree_type": "BBA (Hons)",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2026/27 fees (2027/28 not yet published)",
+    "platform": "Heriot-Watt University Malaysia application",
+    "source": "course",
+    "summary": "BBA (Hons) Business Administration, Heriot-Watt University Malaysia, Putrajaya; 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_annual": 48120,
+      "mandatory_fees_annual": 2887.2,
+      "academic_year": "2026/27",
+      "source": "fees",
+      "note": "2026/27 international: annual tuition RM48,120 plus 6% SST RM2,887.20 a year (shown as compulsory fees)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Business Administration: CCC at A-Level.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Business Administration: 27 points for 6 subjects (3 HL including business and 3 SL subjects).",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

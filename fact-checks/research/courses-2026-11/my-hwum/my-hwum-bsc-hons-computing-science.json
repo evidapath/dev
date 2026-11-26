@@ -1,0 +1,70 @@
+{
+  "uni": "my-hwum",
+  "slug": "bsc-hons-computing-science",
+  "sources": {
+    "course": {
+      "url": "https://www.hw.ac.uk/malaysia/study/undergraduate/computing-science",
+      "page": "c0f6f078214f",
+      "title": "BSc (Hons) Computing Science | Heriot-Watt University Malaysia",
+      "organization": "Heriot-Watt University Malaysia",
+      "quotes": [
+        "Degree qualification BSc (Hons)",
+        "Duration 3 years Location Malaysia",
+        "A-Level: BBC including B in Mathematics",
+        "IB Diploma : 26 points for 6 subjects including 5 in HL Mathematics AA or AI",
+        "Heriot-Watt University Malaysia's purpose-built, state-of-the-art, lakeside campus in Putrajaya"
+      ]
+    },
+    "fees": {
+      "url": "https://www.hw.ac.uk/document-library/malaysia/study/Fee-International.pdf",
+      "page": "hwm-fee-intl-2627",
+      "title": "Fee Structure International Students 2026/27 (PDF) | Heriot-Watt University Malaysia",
+      "organization": "Heriot-Watt University Malaysia",
+      "quotes": [
+        "Fee Structure International Students 2026/27",
+        "computing science kpt/jps (r/0613/6/0123) (mqa/fa14530) 06/31 information systems with data analytics kpt/jps (n/0611/6/0092) (mqa/pa17527) 07/29 year semester per semester fee (rm) 6% sst total per semester annual tuition fee (rm) 6% sst total per year 1 1&2 24,200.00 1,452.00 25,652.00 48,400.00 2,904.00 51,304.00"
+      ]
+    }
+  },
+  "program": {
+    "name": "Computing Science",
+    "degree_type": "BSc (Hons)",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2026/27 fees (2027/28 not yet published)",
+    "platform": "Heriot-Watt University Malaysia application",
+    "source": "course",
+    "summary": "BSc (Hons) Computing Science, Heriot-Watt University Malaysia, Putrajaya; 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_annual": 48400,
+      "mandatory_fees_annual": 2904,
+      "academic_year": "2026/27",
+      "source": "fees",
+      "note": "2026/27 international: annual tuition RM48,400 plus 6% SST RM2,904.00 a year (shown as compulsory fees)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Computing Science: BBC including B in Mathematics at A-Level.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Computing Science: 26 points for 6 subjects including 5 in HL Mathematics AA or AI.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

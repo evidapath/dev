@@ -1,0 +1,70 @@
+{
+  "uni": "my-hwum",
+  "slug": "bsc-hons-actuarial-science",
+  "sources": {
+    "course": {
+      "url": "https://www.hw.ac.uk/malaysia/study/undergraduate/actuarial-science-bsc-hons",
+      "page": "195853d7bad5",
+      "title": "BSc (Hons) Actuarial Science | Heriot-Watt University Malaysia",
+      "organization": "Heriot-Watt University Malaysia",
+      "quotes": [
+        "Degree qualification BSc (Hons)",
+        "Duration 3 years Location Malaysia",
+        "A-Level : BBB (including B in Mathematics)",
+        "IB Diploma : 28 points for 6 subjects including 6 in HL, AA Mathematics (HL Analysis and Approaches Mathematics)",
+        "Heriot-Watt University Malaysia's purpose-built, state-of-the-art, lakeside campus in Putrajaya"
+      ]
+    },
+    "fees": {
+      "url": "https://www.hw.ac.uk/document-library/malaysia/study/Fee-International.pdf",
+      "page": "hwm-fee-intl-2627",
+      "title": "Fee Structure International Students 2026/27 (PDF) | Heriot-Watt University Malaysia",
+      "organization": "Heriot-Watt University Malaysia",
+      "quotes": [
+        "Fee Structure International Students 2026/27",
+        "actuarial science kpt/jps (r2/0542/6/0012) (mqa/fa4167) 06/29 statistical data science kpt/jps (r/462/6/0018) (mqa/fa8513) 06/27 year semester per semester fee (rm) 6% sst total per semester annual tuition fee (rm) 6% sst total per year 1 1&2 25,960.00 1,557.60 27,517.60 51,920.00 3,115.20 55,035.20"
+      ]
+    }
+  },
+  "program": {
+    "name": "Actuarial Science",
+    "degree_type": "BSc (Hons)",
+    "field": "Actuarial Studies",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2026/27 fees (2027/28 not yet published)",
+    "platform": "Heriot-Watt University Malaysia application",
+    "source": "course",
+    "summary": "BSc (Hons) Actuarial Science, Heriot-Watt University Malaysia, Putrajaya; 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "MYR",
+      "tuition_annual": 51920,
+      "mandatory_fees_annual": 3115.2,
+      "academic_year": "2026/27",
+      "source": "fees",
+      "note": "2026/27 international: annual tuition RM51,920 plus 6% SST RM3,115.20 a year (shown as compulsory fees)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Actuarial Science: BBB (including B in Mathematics) at A-Level.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Actuarial Science: 28 points for 6 subjects including 6 in HL, AA Mathematics (HL Analysis and Approaches Mathematics).",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}
