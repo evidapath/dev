@@ -1,0 +1,78 @@
+{
+  "uni": "hk-cuhk",
+  "slug": "bsc-computer-science-and-engineering",
+  "sources": {
+    "course": {
+      "url": "https://admission.cuhk.edu.hk/programme/bcsen/",
+      "page": "b8a84d742fb8",
+      "title": "Computer Science and Engineering | CUHK Undergraduate Admissions",
+      "organization": "The Chinese University of Hong Kong",
+      "quotes": [
+        "JUPAS Code JS4412 Programme Code BCSEN Faculty Engineering Study Period 4 Years",
+        "The Chinese University of Hong Kong, Shatin, NT, Hong Kong",
+        "Computer Science and Engineering - CUHK Undergraduate Admissions"
+      ]
+    },
+    "fees": {
+      "url": "https://admission.cuhk.edu.hk/fees-financing-your-studies/fees/",
+      "page": "389d559a5a1e",
+      "title": "Fees | CUHK Undergraduate Admissions",
+      "organization": "The Chinese University of Hong Kong",
+      "quotes": [
+        "2027-2028 annual tuition fees for non-local students HK$230,000 per annum",
+        "Any yearly fee adjustment for the 2027 cohort will be capped at 3%."
+      ]
+    },
+    "ref": {
+      "url": "https://www.cuhk.edu.hk/adm/nonjupas/docs/Reference_Scores.pdf",
+      "page": "cuhk-reference-scores-oct2025",
+      "title": "Reference Scores for Major International Qualifications (October 2025) | CUHK",
+      "organization": "The Chinese University of Hong Kong",
+      "quotes": [
+        "Computer Science & Engineering 33-35 ABB to AAB",
+        "Reference scores are compiled with reference to admission statistics in 2023, 2024 and 2025 entries.",
+        "The lowest reference score ranges of undergraduate programmes based on admission statistics in the same period are summarized below."
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science and Engineering",
+    "degree_type": "Bachelor",
+    "field": "Computer Science",
+    "faculty": "Faculty of Engineering",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2027-2028",
+    "platform": "",
+    "source": "course",
+    "summary": "Computer Science and Engineering (JS4412 / BCSEN), The Chinese University of Hong Kong; study period 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "HKD",
+      "tuition_annual": 230000,
+      "academic_year": "2027-2028",
+      "source": "fees",
+      "note": "Non-local students: HK$230,000 per annum (2027-2028); any yearly adjustment for the 2027 cohort capped at 3%."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "ref",
+      "threshold": "Computer Science & Engineering: lowest reference score range 33-35 for the IB Diploma (2023-2025 entries; for reference only).",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "a-level",
+      "source": "ref",
+      "threshold": "Computer Science & Engineering: lowest reference score range ABB to AAB at GCE AL / IAL (2023-2025 entries; for reference only).",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

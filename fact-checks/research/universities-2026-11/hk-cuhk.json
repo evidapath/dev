@@ -1,0 +1,41 @@
+{
+  "uni": "hk-cuhk",
+  "name": "The Chinese University of Hong Kong",
+  "aliases": [
+    "CUHK",
+    "Chinese University of Hong Kong"
+  ],
+  "type": "public",
+  "website": "https://www.cuhk.edu.hk",
+  "country": {
+    "cc": "hk",
+    "name": "Hong Kong",
+    "currency": "HKD"
+  },
+  "city": {
+    "slug": "hk-hong-kong",
+    "name": "Hong Kong"
+  },
+  "sources": {
+    "main": {
+      "url": "https://admission.cuhk.edu.hk/programme/bcsen/",
+      "page": "b8a84d742fb8",
+      "title": "Computer Science and Engineering | CUHK Undergraduate Admissions",
+      "organization": "The Chinese University of Hong Kong",
+      "quotes": [
+        "JUPAS Code JS4412 Programme Code BCSEN Faculty Engineering Study Period 4 Years",
+        "The Chinese University of Hong Kong, Shatin, NT, Hong Kong",
+        "Computer Science and Engineering - CUHK Undergraduate Admissions"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "Non-local students",
+      "description": "CUHK annual tuition fee for non-local students.",
+      "source": "main"
+    }
+  ]
+}
