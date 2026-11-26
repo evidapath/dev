@@ -1,0 +1,52 @@
+{
+  "uni": "ch-eth",
+  "name": "ETH Zurich",
+  "aliases": [
+    "ETH",
+    "Eidgenössische Technische Hochschule Zürich"
+  ],
+  "type": "public",
+  "website": "https://ethz.ch",
+  "country": {
+    "cc": "ch",
+    "name": "Switzerland",
+    "currency": "CHF"
+  },
+  "city": {
+    "slug": "ch-zurich",
+    "name": "Zurich"
+  },
+  "sources": {
+    "main": {
+      "url": "https://ethz.ch/en/studies/bachelor/bachelors-degree-programmes/engineering-sciences/computer-science.html",
+      "page": "5575907880d6",
+      "title": "Bachelor Computer Science | ETH Zurich",
+      "organization": "ETH Zurich",
+      "quotes": [
+        "Bachelor Computer Science | ETH Zurich",
+        "Bachelor's degree programme (180 credits)",
+        "ETH Zurich Department of Computer Science Study Administration Office Universitätstrasse 6 CAB F 62.1 8092 Zurich Schweiz"
+      ]
+    },
+    "fees": {
+      "url": "https://ethz.ch/students/en/studies/financial/tuition-fees.html",
+      "page": "dc0cf9304150",
+      "title": "Tuition fees | ETH Zurich",
+      "organization": "ETH Zurich",
+      "quotes": [
+        "Simple tuition fee: CHF 730 / semester for students with Swiss citizenship.",
+        "Threefold tuition fee: CHF 2190 / semester All students who do not fulfil the criteria for simple tuition fee will be assigned to the second group paying a threefold tuition fe",
+        "The threefold tuition fee for foreign students will apply from the Autumn Semester 2025."
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "threefold",
+      "label": "Foreign students (threefold tuition fee)",
+      "description": "ETH tuition group 2: students who don't meet the simple-fee criteria (Swiss citizens and certain residents).",
+      "source": "fees"
+    }
+  ]
+}

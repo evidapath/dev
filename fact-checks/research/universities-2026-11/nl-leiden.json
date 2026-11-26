@@ -1,0 +1,57 @@
+{
+  "uni": "nl-leiden",
+  "name": "Leiden University",
+  "aliases": [
+    "Universiteit Leiden"
+  ],
+  "type": "public",
+  "website": "https://www.universiteitleiden.nl",
+  "country": {
+    "cc": "nl",
+    "name": "Netherlands",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "nl-leiden",
+    "name": "Leiden"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.universiteitleiden.nl/en/education/study-programmes/bachelor/data-science-and-artificial-intelligence",
+      "page": "4653334fb7df",
+      "title": "Data Science and Artificial Intelligence (BSc) - Leiden University",
+      "organization": "Leiden University",
+      "quotes": [
+        "Data Science and Artificial Intelligence (BSc) - Leiden University",
+        "Facts & Figures Degree Bachelor of Science Language English Location Leiden Programme code 50300 Start September Mode of study Fulltime Duration 3 years",
+        "The programme is organized by LIACS, the Leiden Institute of Advanced Computer Science."
+      ]
+    },
+    "fees": {
+      "url": "https://www.universiteitleiden.nl/en/education/study-programmes/bachelor/data-science-and-artificial-intelligence/admission-and-application/tuition-fees",
+      "page": "e3e9ed8a3121",
+      "title": "Tuition fees - Data Science and Artificial Intelligence (BSc) - Leiden University",
+      "organization": "Leiden University",
+      "quotes": [
+        "The statutory tuition fee of the academic year 2027-2028 for first-year bachelor's students is: €2771,-.",
+        "If you do not qualify for Dutch student finance and you are not a national of an EEA country, Suriname or Switzerland you can find the amount of tuition fee you are required to pay for your study programme here below.",
+        "Tuition fee: €19,200,- (academic year 2027-2028)"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eea",
+      "label": "Non-EU/EEA students",
+      "description": "Institutional tuition fee for students who are not nationals of an EEA country, Suriname or Switzerland.",
+      "source": "fees"
+    },
+    {
+      "key": "eu-eea",
+      "label": "EU/EEA students",
+      "description": "Statutory tuition fee (EEA, Suriname and Swiss nationals).",
+      "source": "fees"
+    }
+  ]
+}

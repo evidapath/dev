@@ -1,0 +1,43 @@
+{
+  "uni": "nz-auckland",
+  "name": "University of Auckland",
+  "aliases": [],
+  "type": "public",
+  "website": "https://www.auckland.ac.nz",
+  "country": {
+    "cc": "nz",
+    "name": "New Zealand",
+    "currency": "NZD"
+  },
+  "city": {
+    "slug": "nz-auckland",
+    "name": "Auckland"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/bachelor-of-commerce-bcom.html",
+      "page": "4f26e69bd8b1",
+      "title": "Bachelor of Commerce – University of Auckland",
+      "organization": "University of Auckland",
+      "quotes": [
+        "Bachelor of Commerce – University of Auckland",
+        "Get an idea of how much accommodation and general living in Auckland will cost.",
+        "Apply now for Bachelor of Commerce Duration Full-time: 3 years",
+        "Minimum requirements listed here are the likely grades required and do not guarantee entry. We assess each application individually and applicants may require a higher grade to be offered a place.",
+        "Qualification IB International Baccalaureate Diploma Score required 28 + Qualification IELTS Academic International English Language Testing System Score required 6.0 No bands less than 5.5.",
+        "Qualification GCE A Level/CIE General Certificate of Education Advanced Level Score required BBC",
+        "2027 fees Domestic students NZ$8,698.80 * International students NZ$51,020 *",
+        "Fees are set in advance of each calendar year and will be updated on this website. Fees are inclusive of 15% G"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "University of Auckland 2027 fees for international students.",
+      "source": "main"
+    }
+  ]
+}

@@ -60,6 +60,9 @@ def nums(s: str, quote: bool = True) -> set[str]:
     # Quotes only: a value we built may list separate numbers with spaces ("700 200 200").
     for m in (re.findall(r"\b\d{1,3}(?: \d{3})+\b", s) if quote else []):
         out.add(m.replace(" ", ""))
+    # Swiss thousands in a quote ("4’380", "11'300") = 4380, 11300.
+    for m in (re.findall(r"\b\d{1,3}(?:[’']\d{3})+\b", s) if quote else []):
+        out.add(re.sub(r"[’']", "", m))
     # European format in a quote ("2.040,00 €" = 2040.00): also read it the English way.
     for m in re.findall(r"\b\d{1,3}(?:\.\d{3})+(?:,\d+)?\b|\b\d+,\d{2}\b", s):
         whole, _, dec = m.replace(".", "").partition(",")

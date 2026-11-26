@@ -1,0 +1,51 @@
+{
+  "uni": "fi-aalto",
+  "name": "Aalto University",
+  "aliases": [
+    "Aalto"
+  ],
+  "type": "public",
+  "website": "https://www.aalto.fi",
+  "country": {
+    "cc": "fi",
+    "name": "Finland",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "fi-espoo",
+    "name": "Espoo"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.aalto.fi/sites/default/files/2026-03/Certificate-of-required-funds_2026.pdf",
+      "page": "aalto-funds-2026",
+      "title": "Certificate of required funds for Aalto University students (March 2026)",
+      "organization": "Aalto University",
+      "quotes": [
+        "Certificate of required funds for Aalto University students",
+        "Visiting address Otakaari 1 Espoo, Finland"
+      ]
+    },
+    "ds": {
+      "url": "https://www.aalto.fi/en/study-options/data-science-bachelor-of-science-and-master-of-science-technology",
+      "page": "ca75bf814c98",
+      "title": "Data Science, Bachelor of Science and Master of Science (Technology) | Aalto University",
+      "organization": "Aalto University",
+      "quotes": [
+        "Data Science, Bachelor of Science and Master of Science (Technology) | Aalto University",
+        "Application period: 7 Jan 2027 – 22 Jan 2027 Language of instruction: English Duration: 3+2 years, full-time",
+        "Credits: 180+120 ECTS Organising school: School of Science Tuition fees: For non-EU/EEA citizens, €12000/y (Bachelor’s studies) + €17000/y (M",
+        "The tuition fee for this programme is 12 000 euros per academic year. Citizens of European Union (EU), the European Economic Area (EEA) or Switzerland do not pay tuition"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU/EEA citizens",
+      "description": "Tuition fee for citizens of countries outside the EU, EEA and Switzerland.",
+      "source": "ds"
+    }
+  ]
+}

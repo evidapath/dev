@@ -514,3 +514,22 @@ University of Pannonia and University of Pisa already on staging). `sanity.serve
 
 To check: Leeds' IB requirement is "18 points at Higher level" (the site shows "can't compare"); Caltech
 publishes no grade threshold; Bristol and LSE English requirements not stored (band not in saved text).
+
+## Batch 2026-11-26 (THE list, second 10)
+
+Done (pending `fact-checks/pending/2026-11-26-<name>.ndjson`, each dry-run HTTP 200; new countries ch, se, nz,
+sg, fr, fi): eth (Computer Science, taught in German; CHF 4,380/yr threefold fee; living CHF 22,100; IB 38),
+epfl (Computer Science, taught in French B2; CHF 2190/semester; living CHF 25,219; IB 38 within 3000 places),
+nus (Computer Science; S$39,700 without MOE Tuition Grant, S$21,400 / S$18,050 with it; no entry rule stored),
+wageningen (Data Science for Global Challenges; €18,300 2026-27, the two pages differ for 2027-28),
+kth (ICT, SEK 453,000 for the programme = 151,000/yr our calculation; IB 24 is eligibility only, worded so the
+site doesn't call it a match), polytechnique (École Polytechnique Bachelor of Science, €19,600 non-EU; no
+minimum grades), auckland (BCom NZ$51,020, IB 28; BE(Hons) NZ$60,910, IB 33), groningen (Computing Science,
+€19,800), leiden (Data Science & AI, €19,200; Computer Science is Dutch-taught), aalto (Data Science BSc(Tech),
+€12,000).
+
+Held: NTU (CS pages 404; no-grant fee lab/non-lab unclear). Blocked on the way: NUS grade-profile page
+(Incapsula), Leiden science diploma PDF ("Access Blocked"), Aalto admission-criteria page (403).
+
+Builder: `build.py` now reads Swiss thousands in quotes ("4’380" = 4380). Rebuilt hk-cuhk, gb-edinburgh,
+gb-lse, au-uq: every rebuilt record identical; negative test refuses 4381 against "4’380".

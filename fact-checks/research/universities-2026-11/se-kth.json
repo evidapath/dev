@@ -1,0 +1,52 @@
+{
+  "uni": "se-kth",
+  "name": "KTH Royal Institute of Technology",
+  "aliases": [
+    "KTH"
+  ],
+  "type": "public",
+  "website": "https://www.kth.se",
+  "country": {
+    "cc": "se",
+    "name": "Sweden",
+    "currency": "SEK"
+  },
+  "city": {
+    "slug": "se-stockholm",
+    "name": "Stockholm"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.kth.se/en/studies/bachelor/information-communication-technology/bsc-information-and-communication-technology-1.437049",
+      "page": "3624de9c135e",
+      "title": "BSc Information and Communication Technology | KTH",
+      "organization": "KTH Royal Institute of Technology",
+      "quotes": [
+        "This is a three year programme (180 ECTS credits) given in English. Graduates are awarded the degree of Bachelor of Science.",
+        "The programme is given by the School of Electrical Engineering and Computer Science (at KTH).",
+        "KTH Royal Institute of Technology SE-100 44 Stockholm Sweden"
+      ]
+    },
+    "fees": {
+      "url": "https://www.kth.se/en/studies/bachelor/fees-1.646274",
+      "page": "8b8d4d29e54f",
+      "title": "Application and tuition fees for bachelor's programmes | KTH",
+      "organization": "KTH Royal Institute of Technology",
+      "quotes": [
+        "The full programme tuition fee for non-EU/EEA/Swiss citizens studying the bachelor's programme in Information and Communication Technology is SEK 453,000.",
+        "Citizens of an EU/EEA country or Switzerland are not required to pay application and tuition fees.",
+        "The tuition fee is charged in advance for each semester and you pay by bank transfer.",
+        "Last changed : Feb 17, 2025"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU/EEA/Swiss citizens",
+      "description": "Programme tuition fee for citizens of countries outside the EU/EEA and Switzerland.",
+      "source": "fees"
+    }
+  ]
+}

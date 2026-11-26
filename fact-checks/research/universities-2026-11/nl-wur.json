@@ -1,0 +1,60 @@
+{
+  "uni": "nl-wur",
+  "name": "Wageningen University & Research",
+  "aliases": [
+    "Wageningen University",
+    "WUR"
+  ],
+  "type": "public",
+  "website": "https://www.wur.nl",
+  "country": {
+    "cc": "nl",
+    "name": "Netherlands",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "nl-wageningen",
+    "name": "Wageningen"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.wur.nl/en/education/bachelor/bachelors-data-science-global-challenges",
+      "page": "848bc2d60b8b",
+      "title": "Bachelor's in Data Science for Global Challenges | WUR",
+      "organization": "Wageningen University & Research",
+      "quotes": [
+        "Bachelor’s in Data Science for Global Challenges What to expect Facts & figures Technology, Climate, Nature Full-time 3 Years English & Dutch Wageningen",
+        "This programme has a dual language track. You can either choose the English or the Dutch track for the whole programme depending on your preference.",
+        "You are eligible for various master's programmes at Wageningen University & Research",
+        "completed a relevant high school diploma in which you studied Mathematics and (Biology or Chemistry or Physics). You should be proficient in English."
+      ]
+    },
+    "fees": {
+      "url": "https://www.wur.nl/en/education/bachelor/study-expenses-bachelors/tuition-fees-and-study-finances",
+      "page": "e56f658cd494",
+      "title": "Tuition fees and study finances bachelor | WUR",
+      "organization": "Wageningen University & Research",
+      "quotes": [
+        "Are you a non-EU student**? Then your tuition fee for the academic year 2026-2027 is € 18,300 and € 18.840 for 2027-2028.",
+        "Are you a European student*? Your tuition fee for the 2026-2027 academic year is € 2,694 in total.",
+        "For the 2027-2028 academic year, the tuition fee will be € 2,771.",
+        "*Students with a nationality from NL/EEA/SME¹ countries and Ukraine are considered European students."
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU students",
+      "description": "Institutional tuition fee for students without an NL/EEA/SME nationality (Ukraine excepted).",
+      "source": "fees"
+    },
+    {
+      "key": "eu-eea",
+      "label": "EU/EEA students",
+      "description": "Statutory tuition fee for European students (NL/EEA/SME nationals and Ukraine).",
+      "source": "fees"
+    }
+  ]
+}

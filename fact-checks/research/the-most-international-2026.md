@@ -18,11 +18,11 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =5 | Abu Dhabi University | United Arab Emirates | have? |
 | =5 | University of Oxford | United Kingdom | have |
 | 7 | University of Cambridge | United Kingdom | have |
-| 8 | ETH Zurich | Switzerland | in progress: fee + costs read (CHF 2190/semester, cost sheet); length and foreign-certificate admission pages not found yet |
-| 9 | École Polytechnique Fédérale de Lausanne | Switzerland | todo |
-| 10 | Nanyang Technological University, Singapore | Singapore | todo |
+| 8 | ETH Zurich | Switzerland | done (pending 2026-11-26-eth.ndjson; taught in German) |
+| 9 | École Polytechnique Fédérale de Lausanne | Switzerland | done (pending 2026-11-26-epfl.ndjson; taught in French) |
+| 10 | Nanyang Technological University, Singapore | Singapore | held: CS programme pages 404; no-grant fee depends on an undefined 'lab based' category (S$40,600 or S$36,350); no IB grade profile (2026-11-26) |
 | 11 | King’s College London | United Kingdom | have |
-| 12 | National University of Singapore | Singapore | todo |
+| 12 | National University of Singapore | Singapore | done (pending 2026-11-26-nus.ndjson; grade-profile page behind Incapsula check, no entry rule stored) |
 | 13 | UCL | United Kingdom | held: Cloudflare check ("Just a moment...") on course pages (2026-11-26) |
 | =14 | The Chinese University of Hong Kong | Hong Kong | done (pending 2026-11-26-cuhk.ndjson) |
 | =14 | University of Vienna | Austria | todo |
@@ -30,12 +30,12 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 17 | University of Geneva | Switzerland | todo |
 | 18 | Delft University of Technology | Netherlands | have |
 | 19 | University of Edinburgh | United Kingdom | done (pending 2026-11-26-edinburgh.ndjson) |
-| 20 | Wageningen University & Research | Netherlands | todo |
+| 20 | Wageningen University & Research | Netherlands | done (pending 2026-11-26-wageningen.ndjson) |
 | 21 | University of Amsterdam | Netherlands | have |
 | =22 | Australian National University | Australia | done (pending 2026-11-26-anu.ndjson) |
 | =22 | University of Manchester | United Kingdom | have |
 | 24 | Trinity College Dublin | Ireland | held: course page gives only subject minimums (no overall grade); 2026-27 fee calendar has no per-course non-EU line (2026-11-26) |
-| =25 | KTH Royal Institute of Technology | Sweden | todo |
+| =25 | KTH Royal Institute of Technology | Sweden | done (pending 2026-11-26-kth.ndjson) |
 | =25 | University of Glasgow | United Kingdom | held: entry grades and fees load in tabs not readable by fetch or render (2026-11-26) |
 | 27 | University of Toronto | Canada | have |
 | 28 | University of Warwick | United Kingdom | have |
@@ -45,25 +45,25 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 32 | University of British Columbia | Canada | have |
 | =33 | Durham University | United Kingdom | done (pending 2026-11-26-durham.ndjson) |
 | =33 | Massachusetts Institute of Technology | United States | have |
-| 35 | Institut Polytechnique de Paris | France | todo |
+| 35 | Institut Polytechnique de Paris | France | done as École Polytechnique Bachelor of Science (pending 2026-11-26-polytechnique.ndjson) |
 | 36 | University of Birmingham | United Kingdom | have |
 | 37 | University of St Andrews | United Kingdom | held: subject page and 2027 prospectus disagree on grades (AAA vs AAB, IB 38 vs 36); fee not found (2026-11-26) |
 | 38 | Monash University | Australia | have |
 | 39 | The University of Queensland | Australia | done (pending 2026-11-26-uq.ndjson) |
-| 40 | University of Auckland | New Zealand | todo |
+| 40 | University of Auckland | New Zealand | done (pending 2026-11-26-auckland.ndjson; BSc left out, fee published only as a range) |
 | 41 | The University of Sydney | Australia | have |
-| 42 | University of Groningen | Netherlands | todo |
+| 42 | University of Groningen | Netherlands | done (pending 2026-11-26-groningen.ndjson) |
 | 43 | McGill University | Canada | have |
 | 44 | University of Bristol | United Kingdom | done (pending 2026-11-26-bristol.ndjson) |
 | 45 | Harvard University | United States | have |
 | 46 | University of Sheffield | United Kingdom | done (pending 2026-11-26-sheffield.ndjson) |
-| 47 | Leiden University | Netherlands | todo |
+| 47 | Leiden University | Netherlands | done (pending 2026-11-26-leiden.ndjson; CS is Dutch-taught, DS&AI added; science diploma PDF 'Access Blocked') |
 | 48 | TU Wien | Austria | todo |
 | 49 | University of Alberta | Canada | have |
 | 50 | California Institute of Technology | United States | done (pending 2026-11-26-caltech.ndjson) |
 | 51 | Lebanese American University | Lebanon | todo |
 | 52 | University of York | United Kingdom | have? |
-| 53 | Aalto University | Finland | todo |
+| 53 | Aalto University | Finland | done (pending 2026-11-26-aalto.ndjson; admission-criteria page 403) |
 | 54 | Stanford University | United States | have |
 | 55 | Karolinska Institute | Sweden | todo |
 | 56 | Princeton University | United States | have |

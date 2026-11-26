@@ -1,0 +1,65 @@
+{
+  "uni": "sg-nus",
+  "name": "National University of Singapore",
+  "aliases": [
+    "NUS"
+  ],
+  "type": "public",
+  "website": "https://www.nus.edu.sg",
+  "country": {
+    "cc": "sg",
+    "name": "Singapore",
+    "currency": "SGD"
+  },
+  "city": {
+    "slug": "sg-singapore",
+    "name": "Singapore"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.comp.nus.edu.sg/programmes/ug/cs/",
+      "page": "33ef28d31f59",
+      "title": "Computer Science | NUS Computing",
+      "organization": "National University of Singapore",
+      "quotes": [
+        "Bachelor of Computing in Computer Science (with Honours*)",
+        "© National University of Singapore. All Rights Reserved."
+      ]
+    },
+    "fees": {
+      "url": "https://www.nus.edu.sg/registrar/docs/info/administrative-policies-procedures/ugtuitioncurrent.pdf",
+      "page": "nus-ugtuition",
+      "title": "Undergraduate Tuition Fees Per Annum, AY2026/2027 | NUS Registrar",
+      "organization": "National University of Singapore",
+      "quotes": [
+        "Tuition Fees Per Annum (applicable for Academic Year 2026/2027)",
+        "A) For new students admitted in AY2026/2027",
+        "Fees payable by students in receipt of MOE Tuition Grant",
+        "ASEAN6 All other IS",
+        "Computing 8,300 11,600 18,050 21,400 39,700",
+        "3. Students who are not in receipt of the Tuition Grant will have to pay the non-subsidised fee amounts as quoted here (which are inclusive of the prevailing GST)."
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "intl-no-grant",
+      "label": "International students without the MOE Tuition Grant",
+      "description": "Non-subsidised fee, payable by students not receiving the MOE Tuition Grant.",
+      "source": "fees"
+    },
+    {
+      "key": "intl-grant",
+      "label": "International students with the MOE Tuition Grant (other than ASEAN)",
+      "description": "Subsidised fee for international students (other than ASEAN) receiving the MOE Tuition Grant.",
+      "source": "fees"
+    },
+    {
+      "key": "asean-grant",
+      "label": "ASEAN international students with the MOE Tuition Grant",
+      "description": "Subsidised fee for ASEAN international students receiving the MOE Tuition Grant.",
+      "source": "fees"
+    }
+  ]
+}

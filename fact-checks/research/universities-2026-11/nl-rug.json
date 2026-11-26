@@ -1,0 +1,50 @@
+{
+  "uni": "nl-rug",
+  "name": "University of Groningen",
+  "aliases": [
+    "Rijksuniversiteit Groningen",
+    "RUG"
+  ],
+  "type": "public",
+  "website": "https://www.rug.nl",
+  "country": {
+    "cc": "nl",
+    "name": "Netherlands",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "nl-groningen",
+    "name": "Groningen"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.rug.nl/bachelors/computing-science/?lang=en",
+      "page": "b770185796e7",
+      "title": "Computing Science | Bachelor's degree programmes | University of Groningen",
+      "organization": "University of Groningen",
+      "quotes": [
+        "Computing Science | Bachelor's degree programmes | University of Groningen",
+        "Degree BSc in Computing Science Course type Bachelor Duration 36 months (180 EC) Programme code 56978 Language of instruction English Start September Faculty Science and Engineering",
+        "Tuition fees Nationality Year Fee Programme form EU/EEA 2026-2027 € 2694 full-time non-EU/EEA 2026-2027 € 19800 full-time EU/EEA 2027-2028 € 2771 full-time non-EU/EEA 2027-2028 € 19800 full-time",
+        "Secondary education equivalent to Dutch pre-university (vwo) is required.",
+        "Sufficient background knowledge in Mathematics is required. The Admissions Board will determine whether your background knowledge in this subject is sufficient to start the Bachelor's degree programme of your choice.",
+        "non-EU/EEA students 01 May 2027 01 September 2027"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU/EEA students",
+      "description": "Institutional tuition fee for students without EU/EEA nationality.",
+      "source": "main"
+    },
+    {
+      "key": "eu-eea",
+      "label": "EU/EEA students",
+      "description": "Statutory tuition fee for EU/EEA students.",
+      "source": "main"
+    }
+  ]
+}

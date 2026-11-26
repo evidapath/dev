@@ -1,0 +1,74 @@
+{
+  "uni": "fr-polytechnique",
+  "name": "École Polytechnique",
+  "aliases": [
+    "Institut Polytechnique de Paris",
+    "IP Paris",
+    "Ecole Polytechnique"
+  ],
+  "type": "public",
+  "website": "https://www.polytechnique.edu",
+  "country": {
+    "cc": "fr",
+    "name": "France",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "fr-palaiseau",
+    "name": "Palaiseau"
+  },
+  "sources": {
+    "main": {
+      "url": "https://programmes.polytechnique.edu/en/bachelor/about-the-bachelor/faq",
+      "page": "8e94c18e4b57",
+      "title": "Bachelor FAQ - École Polytechnique",
+      "organization": "École Polytechnique",
+      "quotes": [
+        "However, as with all of École Polytechnique’s academic programs, the Bachelor programs are designed for top students with very high potential and we require them to have a strong overall academic average.",
+        "For the moment, there are no minimum grades required to be able to apply for the programs.",
+        "Annual tuition fees for 2027 intake are €15,900 for EU (including EEA) students and €19,600 for non-EU (non-EEA) students.",
+        "Accommodation currently costs €606 per month (2026 intake, amount revised annually in January) and is not included in the tuition fees.",
+        "International Baccalaureate: Mathematics Higher Level (preferably “Analysis and Approaches”) and at least one other science course should be Higher Level.",
+        "A-level program: Mathematics and at least one other scientific subject should be Higher Level.",
+        "The minimum grades required are: - TOEFL iBT : 90 - IELTS : 6,5 (minimum grade per each language skill: 6)",
+        "Route de Saclay 91128 PALAISEAU Cedex France"
+      ]
+    },
+    "course": {
+      "url": "https://programmes.polytechnique.edu/en/bachelor/about-the-bachelor/bachelor-of-science",
+      "page": "8274eefe5f2c",
+      "title": "Bachelor of Science - École Polytechnique",
+      "organization": "École Polytechnique",
+      "quotes": [
+        "The Bachelor of Science is a three-year program designed for students with a strong interest in Mathematics and Science. This highly selective and multidisciplinary program is taught entirely in English.",
+        "Three Years - 180 ECTS Three Double Majors September International In France In English",
+        "students work towards one of three double majors: Mathematics and Physics Mathematics and Computer Science Mathematics and Economics",
+        "ECOLE POLYTECHNIQUE Route de Saclay 91128 PALAISEAU Cedex France"
+      ]
+    },
+    "ip": {
+      "url": "https://www.ip-paris.fr/en",
+      "page": "f34332656b0f",
+      "title": "Institut Polytechnique de Paris",
+      "organization": "Institut Polytechnique de Paris",
+      "quotes": [
+        "École Polytechnique, one of the founding schools of Institut Polytechnique de Paris"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU (non-EEA) students",
+      "description": "Bachelor of Science annual tuition for non-EU (non-EEA) students.",
+      "source": "main"
+    },
+    {
+      "key": "eu-eea",
+      "label": "EU/EEA students",
+      "description": "Bachelor of Science annual tuition for EU (including EEA) students.",
+      "source": "main"
+    }
+  ]
+}

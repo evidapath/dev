@@ -1,0 +1,94 @@
+{
+  "uni": "fr-polytechnique",
+  "slug": "bachelor-of-science",
+  "sources": {
+    "course": {
+      "url": "https://programmes.polytechnique.edu/en/bachelor/about-the-bachelor/bachelor-of-science",
+      "page": "8274eefe5f2c",
+      "title": "Bachelor of Science - École Polytechnique",
+      "organization": "École Polytechnique",
+      "quotes": [
+        "The Bachelor of Science is a three-year program designed for students with a strong interest in Mathematics and Science. This highly selective and multidisciplinary program is taught entirely in English.",
+        "Three Years - 180 ECTS Three Double Majors September International In France In English",
+        "students work towards one of three double majors: Mathematics and Physics Mathematics and Computer Science Mathematics and Economics",
+        "ECOLE POLYTECHNIQUE Route de Saclay 91128 PALAISEAU Cedex France"
+      ]
+    },
+    "faq": {
+      "url": "https://programmes.polytechnique.edu/en/bachelor/about-the-bachelor/faq",
+      "page": "8e94c18e4b57",
+      "title": "Bachelor FAQ - École Polytechnique",
+      "organization": "École Polytechnique",
+      "quotes": [
+        "However, as with all of École Polytechnique’s academic programs, the Bachelor programs are designed for top students with very high potential and we require them to have a strong overall academic average.",
+        "For the moment, there are no minimum grades required to be able to apply for the programs.",
+        "Annual tuition fees for 2027 intake are €15,900 for EU (including EEA) students and €19,600 for non-EU (non-EEA) students.",
+        "Accommodation currently costs €606 per month (2026 intake, amount revised annually in January) and is not included in the tuition fees.",
+        "International Baccalaureate: Mathematics Higher Level (preferably “Analysis and Approaches”) and at least one other science course should be Higher Level.",
+        "A-level program: Mathematics and at least one other scientific subject should be Higher Level.",
+        "The minimum grades required are: - TOEFL iBT : 90 - IELTS : 6,5 (minimum grade per each language skill: 6)",
+        "Route de Saclay 91128 PALAISEAU Cedex France"
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor of Science (double major: Mathematics with Physics, Computer Science or Economics)",
+    "degree_type": "Bachelor",
+    "field": "Mathematics",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Science, École Polytechnique (Palaiseau); three years, 180 ECTS, taught entirely in English, leading to a double major in Mathematics and Physics, Computer Science or Economics.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_annual": 19600,
+      "academic_year": "2027 intake",
+      "source": "faq",
+      "note": "Non-EU (non-EEA) students: €19,600 a year (2027 intake). On-campus accommodation is extra: €606 per month (2026 intake)."
+    },
+    {
+      "residency": "eu-eea",
+      "currency": "EUR",
+      "tuition_annual": 15900,
+      "academic_year": "2027 intake",
+      "source": "faq",
+      "note": "EU (including EEA) students: €15,900 a year (2027 intake)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "faq",
+      "threshold": "Bachelor of Science: IB with Mathematics at Higher Level (preferably Analysis and Approaches) and at least one other science at Higher Level. There are no minimum grades; the programme is highly selective and expects a strong overall academic average.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "TOEFL iBT or IELTS",
+        "source": "faq",
+        "min_score": "TOEFL iBT 90; IELTS 6,5 as published (at least 6 in each skill)."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "faq",
+      "threshold": "Bachelor of Science: A levels including Mathematics and at least one other scientific subject. There are no minimum grades; the programme is highly selective and expects a strong overall academic average.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "TOEFL iBT or IELTS",
+        "source": "faq",
+        "min_score": "TOEFL iBT 90; IELTS 6,5 as published (at least 6 in each skill)."
+      }
+    }
+  ]
+}

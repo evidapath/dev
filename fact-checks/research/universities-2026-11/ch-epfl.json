@@ -1,0 +1,62 @@
+{
+  "uni": "ch-epfl",
+  "name": "EPFL",
+  "aliases": [
+    "École Polytechnique Fédérale de Lausanne"
+  ],
+  "type": "public",
+  "website": "https://www.epfl.ch",
+  "country": {
+    "cc": "ch",
+    "name": "Switzerland",
+    "currency": "CHF"
+  },
+  "city": {
+    "slug": "ch-lausanne",
+    "name": "Lausanne"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.epfl.ch/education/studies/en/financing-study/",
+      "page": "cb1aac2f86c2",
+      "title": "Financing your studies ‒ Study management ‐ EPFL",
+      "organization": "EPFL",
+      "quotes": [
+        "Approximate budget for foreigner Types of fees Monthly (CHF) Yearly (CHF) 12 months",
+        "TOTAL 2’107.- without tuition fees 25’219.- without tuition fees",
+        "Student services desk EPFL VPH-SLE BP 1229 (bâtiment BP) Station 16 CH – 1015 Lausanne"
+      ]
+    },
+    "about": {
+      "url": "https://www.epfl.ch/about/overview/",
+      "page": "5b1144d68e0d",
+      "title": "Overview ‒ About ‐ EPFL",
+      "organization": "EPFL",
+      "quotes": [
+        "Founded in 1853, the École Spéciale de Lausanne was renamed École Polytechnique Fédérale de Lausanne in 1969."
+      ]
+    },
+    "fees": {
+      "url": "https://www.epfl.ch/education/studies/en/rules-and-procedures/study-taxes/tuition-fee-other-fees/",
+      "page": "598412a4742f",
+      "title": "Tuition fee and other fees ‒ Study management ‐ EPFL",
+      "organization": "EPFL",
+      "quotes": [
+        "only the CHF 730 semester tuition fee is tripled by this measure (it is thus raised to CHF 2190 per semester)",
+        "the ETH Board expressed its support for the tripling of tuition fees for foreign students who take up residence in Switzerland for study purposes.",
+        "The total amount due per semester invoice is CHF 780 (CHF 2240 for some students from the fall semester, 2025; see above)",
+        "EPFL informs at the end of the spring semester",
+        "should they start a new program in the following fall semester"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "foreign",
+      "label": "Foreign students (tripled tuition fee)",
+      "description": "Foreign students who take up residence in Switzerland to study pay the tripled semester tuition fee.",
+      "source": "fees"
+    }
+  ]
+}

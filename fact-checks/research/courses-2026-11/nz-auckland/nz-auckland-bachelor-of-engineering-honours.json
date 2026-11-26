@@ -1,0 +1,79 @@
+{
+  "uni": "nz-auckland",
+  "slug": "bachelor-of-engineering-honours",
+  "sources": {
+    "course": {
+      "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/bachelor-of-engineering-honours-behons.html",
+      "page": "e544df41c7d1",
+      "title": "Bachelor of Engineering (Honours) – University of Auckland",
+      "organization": "University of Auckland",
+      "quotes": [
+        "Apply now for Bachelor of Engineering (Honours) Duration Full-time: 4 years",
+        "Minimum requirements listed here are the likely grades required and do not guarantee entry. We assess each application individually and applicants may require a higher grade to be offered a place.",
+        "Qualification IB International Baccalaureate Diploma Score required 33 Mathematics and Physics at HL level",
+        "Qualification GCE A Level/CIE General Certificate of Education Advanced Level Score required BBB Mathematics and Physics + Qualification IELTS Academic International English Language Testing System Score required 6.5 No bands less than 6.0.",
+        "2027 fees Domestic students NZ$10,766.40 * International students NZ$60,910 *",
+        "Fees are set in advance of each calendar year and will be updated on this website. Fees are inclusive of 15% G",
+        "Mechatronics Engineering Software Engineering Structural Engineering"
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor of Engineering (Honours)",
+    "degree_type": "Bachelor",
+    "field": "Engineering",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Engineering (Honours), University of Auckland; full-time, 4 years; specialisations include Software Engineering.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "NZD",
+      "tuition_annual": 60910,
+      "academic_year": "2027",
+      "source": "course",
+      "note": "International students: NZ$60,910 a year (2027 fees, inclusive of 15% GST)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Bachelor of Engineering (Honours): IB Diploma 33 with Mathematics and Physics at HL (likely grade for applicants from outside New Zealand; does not guarantee entry).",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic",
+        "source": "course",
+        "min_score": "IELTS Academic 6.5, no bands less than 6.0."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Bachelor of Engineering (Honours): BBB at A level including Mathematics and Physics (likely grade for applicants from outside New Zealand; does not guarantee entry).",
+      "required_subjects": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic",
+        "source": "course",
+        "min_score": "IELTS Academic 6.5, no bands less than 6.0."
+      }
+    }
+  ]
+}

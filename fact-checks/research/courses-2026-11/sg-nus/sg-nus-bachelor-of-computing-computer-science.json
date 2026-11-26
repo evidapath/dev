@@ -1,0 +1,92 @@
+{
+  "uni": "sg-nus",
+  "slug": "bachelor-of-computing-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://www.comp.nus.edu.sg/admissions/faq/",
+      "page": "66fb9b98a777",
+      "title": "Frequently Asked Questions | NUS Computing",
+      "organization": "National University of Singapore",
+      "quotes": [
+        "The Computer Science programme spans four years, culminating in an honours classification for most students.",
+        "Not all international students will receive MOE tuition grant subsidy due to limited quota for the different programme offers from each college, faculty or school."
+      ]
+    },
+    "cs": {
+      "url": "https://www.comp.nus.edu.sg/programmes/ug/cs/",
+      "page": "33ef28d31f59",
+      "title": "Computer Science | NUS Computing",
+      "organization": "National University of Singapore",
+      "quotes": [
+        "Bachelor of Computing in Computer Science (with Honours*)",
+        "© National University of Singapore. All Rights Reserved."
+      ]
+    },
+    "fees": {
+      "url": "https://www.nus.edu.sg/registrar/docs/info/administrative-policies-procedures/ugtuitioncurrent.pdf",
+      "page": "nus-ugtuition",
+      "title": "Undergraduate Tuition Fees Per Annum, AY2026/2027 | NUS Registrar",
+      "organization": "National University of Singapore",
+      "quotes": [
+        "Tuition Fees Per Annum (applicable for Academic Year 2026/2027)",
+        "A) For new students admitted in AY2026/2027",
+        "Fees payable by students in receipt of MOE Tuition Grant",
+        "ASEAN6 All other IS",
+        "Computing 8,300 11,600 18,050 21,400 39,700",
+        "3. Students who are not in receipt of the Tuition Grant will have to pay the non-subsidised fee amounts as quoted here (which are inclusive of the prevailing GST)."
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science",
+    "degree_type": "Bachelor of Computing (Honours)",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "AY2026/2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Computing in Computer Science (with Honours), National University of Singapore; four years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "intl-no-grant",
+      "currency": "SGD",
+      "tuition_annual": 39700,
+      "academic_year": "AY2026/2027",
+      "source": [
+        "fees",
+        "course"
+      ],
+      "note": "Students not receiving the MOE Tuition Grant: S$39,700 a year (new students admitted in AY2026/2027, inclusive of GST). The Tuition Grant is not given to every international student (limited quota)."
+    },
+    {
+      "residency": "intl-grant",
+      "currency": "SGD",
+      "tuition_annual": 21400,
+      "academic_year": "AY2026/2027",
+      "source": [
+        "fees",
+        "course"
+      ],
+      "note": "International students (other than ASEAN) with the MOE Tuition Grant: S$21,400 a year (AY2026/2027 intake, inclusive of GST). The Tuition Grant is not given to every international student (limited quota)."
+    },
+    {
+      "residency": "asean-grant",
+      "currency": "SGD",
+      "tuition_annual": 18050,
+      "academic_year": "AY2026/2027",
+      "source": [
+        "fees",
+        "course"
+      ],
+      "note": "ASEAN international students with the MOE Tuition Grant: S$18,050 a year (AY2026/2027 intake, inclusive of GST). The Tuition Grant is not given to every international student (limited quota)."
+    }
+  ],
+  "admissions": []
+}
