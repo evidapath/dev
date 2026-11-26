@@ -56,7 +56,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 43 | McGill University | Canada | have |
 | 44 | University of Bristol | United Kingdom | done (pending 2026-11-26-bristol.ndjson) |
 | 45 | Harvard University | United States | have |
-| 46 | University of Sheffield | United Kingdom | todo |
+| 46 | University of Sheffield | United Kingdom | done (pending 2026-11-26-sheffield.ndjson) |
 | 47 | Leiden University | Netherlands | todo |
 | 48 | TU Wien | Austria | todo |
 | 49 | University of Alberta | Canada | have |

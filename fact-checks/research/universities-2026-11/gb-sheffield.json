@@ -1,0 +1,39 @@
+{
+  "uni": "gb-sheffield",
+  "name": "University of Sheffield",
+  "aliases": [
+    "Sheffield",
+    "The University of Sheffield"
+  ],
+  "type": "public",
+  "website": "https://www.sheffield.ac.uk",
+  "country": {
+    "cc": "gb",
+    "name": "United Kingdom",
+    "currency": "GBP"
+  },
+  "city": {
+    "slug": "gb-sheffield",
+    "name": "Sheffield"
+  },
+  "sources": {
+    "main": {
+      "url": "https://sheffield.ac.uk/undergraduate/courses/2027/computer-science-bsc",
+      "page": "91a8dd988571",
+      "title": "Computer Science BSc | The University of Sheffield",
+      "organization": "University of Sheffield",
+      "quotes": [
+        "Computer science programmes at the University of Sheffield will empower you"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "Overseas students",
+      "description": "The University of Sheffield's overseas tuition fee for year one.",
+      "source": "main"
+    }
+  ]
+}
