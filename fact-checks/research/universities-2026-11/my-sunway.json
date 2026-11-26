@@ -1,0 +1,39 @@
+{
+  "uni": "my-sunway",
+  "name": "Sunway University",
+  "aliases": [
+    "Sunway"
+  ],
+  "type": "private",
+  "website": "https://sunwayuniversity.edu.my",
+  "country": {
+    "cc": "my",
+    "name": "Malaysia",
+    "currency": "MYR"
+  },
+  "city": {
+    "slug": "my-bandar-sunway",
+    "name": "Bandar Sunway"
+  },
+  "sources": {
+    "main": {
+      "url": "https://sunwayuniversity.edu.my/faculty-of-engineering-and-technology/courses/bachelor-of-science-honours-computer-science",
+      "page": "029a68b6cd45",
+      "title": "Computer Science | Sunway University",
+      "organization": "Sunway University",
+      "quotes": [
+        "Computer Science | Sunway University",
+        "Bandar Sunway , 47500 Selangor Darul Ehsan Malaysia"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "Sunway University's estimated annual course fee for international students (paid in RM equivalent).",
+      "source": "main"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "uni": "my-sunway",
+  "slug": "bachelor-hons-information-systems-data-analytics",
+  "sources": {
+    "course": {
+      "url": "https://sunwayuniversity.edu.my/school-of-computing-and-artificial-intelligence/courses/bachelor-of-information-systems-honours",
+      "page": "a6a409918b60",
+      "title": "Information Systems (Data Analytics) | Sunway University",
+      "organization": "Sunway University",
+      "quotes": [
+        "Estimated Annual Course Fee (Year 2026) RM41,000 for Malaysian students USD10,058 for international students International students must pay their fees in RM equivalent.",
+        "Duration 3 Years (full-time)",
+        "A-Level Minimum 12 points (Minimum Grade D in at least 2 subjects)",
+        "For A-Level points calculation A = 10 points B = 8 points C = 6 points D = 4 points E = 2 points",
+        "International Baccalaureate (IB) Completed with minimum 28 points (excluding bonus points)",
+        "English Language Requirements IELTS or equivalent 6.0",
+        "Information Systems"
+      ]
+    }
+  },
+  "program": {
+    "name": "Information Systems (Data Analytics)",
+    "degree_type": "Bachelor (Hons)",
+    "field": "Information Technology",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026 fee estimate (2027 not published)",
+    "platform": "Sunway University online application",
+    "source": "course",
+    "summary": "Information Systems (Data Analytics), Sunway University; 3 years full-time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 10058,
+      "academic_year": "Year 2026 (estimated)",
+      "source": "course",
+      "note": "Estimated annual course fee for Year 2026: USD 10,058 for international students, paid in RM equivalent (the USD is indicative)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Information Systems (Data Analytics): A-Level minimum 12 points (A=10, B=8, C=6, D=4, E=2) with at least Grade D in 2 subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS (or equivalent)",
+        "min_score": "IELTS or equivalent 6.0 (or MUET Band 4, O-Level English credit and others Sunway lists).",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Information Systems (Data Analytics): IB Diploma completed with at least 28 points (excluding bonus points).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS (or equivalent)",
+        "min_score": "IELTS or equivalent 6.0 (or MUET Band 4, O-Level English credit and others Sunway lists).",
+        "source": "course"
+      }
+    }
+  ]
+}
