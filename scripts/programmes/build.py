@@ -176,7 +176,7 @@ def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None
         word = {3: "three", 4: "four", 5: "five", 6: "six"}.get(p["duration_years"], "-")
         ordinal = {3: "third", 4: "fourth", 5: "fifth", 6: "sixth"}.get(p["duration_years"], "-")
         in_months = (f"{round(p['duration_years'] * 12)} months" in dq  # e.g. "36 months"
-                     or re.search(rf"\b{p['duration_years'] * 2:g} semesters\b", dq) is not None  # e.g. BME's "7 semesters" = 3.5 years
+                     or re.search(rf"\b{p['duration_years'] * 2:g} semesters?\b", dq) is not None  # e.g. BME's "7 semesters" = 3.5 years; Tübingen's "6 semester"
                      or re.search(rf"\b{word}[- ](?:academic )?years?\b", dq) is not None  # e.g. "a four-year degree", "four academic years"
                      # the last year of a published typical course sequence (e.g. RIT's "Fifth Year"),
                      # only when no later year is named in the same quotes
@@ -229,11 +229,15 @@ def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None
                     fail(f"{where}: semesters_quote gives {sem_years:g} years, the programme {p['duration_years']}")
                 check_numbers(c["tuition_per_semester"], c["source"], "per-semester fee")
                 c["tuition_annual"] = round(c["tuition_per_semester"] * int(m.group(1)) / sem_years, 2)
-            elif c.get("tuition_per_term"):
+            elif c.get("tuition_per_term") is not None:  # 0 allowed (no tuition, semester fees only)
                 # Per-term fee (e.g. Waterloo): the term fee is quoted; the terms per year
                 # must be backed by quotes naming the terms (e.g. "fall term – September to
                 # December", "winter term – January to April").
-                check_numbers(c["tuition_per_term"], c["source"], "per-term fee")
+                if c["tuition_per_term"] == 0:  # a zero fee needs a quote saying no tuition is charged
+                    if not re.search(r"\b(?:no tuition|not charge any tuition)", norm(q_of(c["source"]))):
+                        fail(f"{where}: a per-term fee of 0 needs a quote saying no tuition is charged")
+                else:
+                    check_numbers(c["tuition_per_term"], c["source"], "per-term fee")
                 for q in c["terms_evidence"]:
                     if norm(q) not in norm(q_of(c["source"])):
                         fail(f"{where}: terms_evidence quote isn't among the fee's quotes: {q}")
@@ -336,7 +340,8 @@ def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None
                 doc["extension_metadata"]["fields"].append(
                     {"_key": "compulsory_fees_note", "_type": "extensionMetadataFieldEntry",
                      "key": "compulsory_fees_note", "value": extra["note"], "value_type": "string"})
-            check_numbers(c["note"].replace(f"{c['tuition_annual']:,.2f}", "").replace(f"{c['tuition_annual']:,}", ""), c["source"], f"{c['residency']} fee note")
+            note_ = c["note"] if not c["tuition_annual"] else c["note"].replace(f"{c['tuition_annual']:,.2f}", "").replace(f"{c['tuition_annual']:,}", "")
+            check_numbers(note_, c["source"], f"{c['residency']} fee note")
             if living:
                 doc["estimated_living_costs_annual"] = living["estimated_living_costs_annual"]
                 doc["living_cost_source_note"] = living["living_cost_source_note"]

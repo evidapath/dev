@@ -1,0 +1,64 @@
+{
+  "uni": "us-gatech",
+  "name": "Georgia Institute of Technology",
+  "aliases": [
+    "Georgia Tech",
+    "GT"
+  ],
+  "type": "public",
+  "website": "https://www.gatech.edu",
+  "country": {
+    "cc": "us",
+    "name": "United States",
+    "currency": "USD"
+  },
+  "city": {
+    "slug": "us-atlanta-ga",
+    "name": "Atlanta"
+  },
+  "sources": {
+    "main": {
+      "url": "https://catalog.gatech.edu/programs/computer-science-bs/",
+      "page": "0cf9dd035a48",
+      "title": "Bachelor of Science in Computer Science | Georgia Tech Catalog",
+      "organization": "Georgia Institute of Technology",
+      "quotes": [
+        "In addition to the standard four-year plan, a five-year cooperative plan is offered",
+        "Georgia Institute of Technology North Avenue Atlanta, GA",
+        "College of Computing"
+      ]
+    },
+    "course": {
+      "url": "https://catalog.gatech.edu/programs/computer-science-bs/",
+      "page": "0cf9dd035a48",
+      "title": "Bachelor of Science in Computer Science | Georgia Tech Catalog",
+      "organization": "Georgia Institute of Technology",
+      "quotes": [
+        "In addition to the standard four-year plan, a five-year cooperative plan is offered",
+        "Georgia Institute of Technology North Avenue Atlanta, GA",
+        "College of Computing"
+      ]
+    },
+    "coa": {
+      "url": "https://finaid.gatech.edu/costs/undergraduate-costs",
+      "page": "e6d0da398205",
+      "title": "Undergraduate Costs | Georgia Tech Scholarships & Financial Aid",
+      "organization": "Georgia Institute of Technology",
+      "quotes": [
+        "2026-2027 Cost of Attendance First-Year Georgia Resident",
+        "First-Year Out of Country Cost On Campus Cost Off Campus Cost Tuition $35,610 $35,610 Mandatory Student Fees $1,716 $1,716 Books, Course Materials, Supplies, and Equipment $800 $800 Housing Allowance $8,318 $12,084 Standard Food Service Plan $6,310 $6,310",
+        "Estimated 2027-2028 Cost of Attendance",
+        "First-Year Out of Country Cost On Campus Cost Off Campus Cost Tuition $34,572 $34,572"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "out-of-country",
+      "label": "Out-of-country students",
+      "description": "Georgia Tech's cost of attendance for out-of-country (international) students.",
+      "source": "coa"
+    }
+  ]
+}

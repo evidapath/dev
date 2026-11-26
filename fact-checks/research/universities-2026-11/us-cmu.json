@@ -1,0 +1,61 @@
+{
+  "uni": "us-cmu",
+  "name": "Carnegie Mellon University",
+  "aliases": [
+    "CMU",
+    "Carnegie Mellon"
+  ],
+  "type": "private",
+  "website": "https://www.cmu.edu",
+  "country": {
+    "cc": "us",
+    "name": "United States",
+    "currency": "USD"
+  },
+  "city": {
+    "slug": "us-pittsburgh-pa",
+    "name": "Pittsburgh"
+  },
+  "sources": {
+    "main": {
+      "url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-bs/",
+      "page": "a9e52e92cd13",
+      "title": "Computer Science, B.S. < Carnegie Mellon University",
+      "organization": "Carnegie Mellon University",
+      "quotes": [
+        "these students should still be able to complete their degree in four years.",
+        "Carnegie Mellon University 5000 Forbes Avenue Pittsburgh, PA 15213",
+        "School of Computer Science"
+      ]
+    },
+    "course": {
+      "url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-bs/",
+      "page": "a9e52e92cd13",
+      "title": "Computer Science, B.S. < Carnegie Mellon University",
+      "organization": "Carnegie Mellon University",
+      "quotes": [
+        "these students should still be able to complete their degree in four years.",
+        "Carnegie Mellon University 5000 Forbes Avenue Pittsburgh, PA 15213",
+        "School of Computer Science"
+      ]
+    },
+    "coa": {
+      "url": "https://www.cmu.edu/sfs/tuition/undergraduate/index.html",
+      "page": "cb4224f5dcd9",
+      "title": "2026-2027 Undergraduate Tuition - Student Financial Services - Carnegie Mellon University",
+      "organization": "Carnegie Mellon University",
+      "quotes": [
+        "2026-2027 Undergraduate Tuition & Fees First-Years Entering Fall 2026 Per-Unit Tuition Rate - $969 RESIDENT COMMUTER Tuition $69,702 $69,702 Housing 1 11,700 0 Food 2 7,950 3,976"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "All undergraduates",
+      "description": "Carnegie Mellon undergraduate tuition is the same for all undergraduates.",
+      "source": "coa"
+    }
+  ]
+}

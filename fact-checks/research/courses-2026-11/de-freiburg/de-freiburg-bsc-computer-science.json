@@ -1,0 +1,74 @@
+{
+  "uni": "de-freiburg",
+  "slug": "bsc-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://www.tf.uni-freiburg.de/en/study-programs/computer-science/b-sc-computer-science",
+      "page": "a238d9d3c1d5",
+      "title": "Computer Science (Bachelor of Science) | Faculty of Engineering | University of Freiburg",
+      "organization": "University of Freiburg",
+      "quotes": [
+        "the Faculty of Engineering at the University of Freiburg organizes a robotic competition every year",
+        "Very good German language skills (level C1 of the European reference framework required for application already)",
+        "Total Credits: 180 ECTS points Standard Length of Studies: 6 semester resp. 3 years Language of Instruction: German based, with only some advanced courses in English Start of Courses: Winter semester (October)",
+        "German and European nationals 103€ fee for the Studierendenwerk (student organization) 80€ administrative fees 7€ student union fee Total: A 190€ fee per semester to be paid to the University.",
+        "Non-EU nationals 1500€ tuition 103€ fee for the Studierendenwerk (student organization) 80€ administrative fees 7€ student union fee Total: A 1690€ fee per semester to be paid to the University.",
+        "Admissions: First semester: without special admission requirements (admission-free)",
+        "June 1st – September 30 th (winter semester), December 1 st – March 31 st (summer semester)"
+      ]
+    },
+    "fees": {
+      "url": "https://uni-freiburg.de/en/studies/during-your-studies/tuition-fees-international-students/",
+      "page": "c36be828b052",
+      "title": "Tuition fees for international students | University of Freiburg",
+      "organization": "University of Freiburg",
+      "quotes": [
+        "The tuition fee for international students is 1,500 euros per semester in accordance with Section 4 (1) of the State Higher Education Fees Act."
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science",
+    "degree_type": "BSc",
+    "field": "Computer Science",
+    "faculty": "Faculty of Engineering",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "de"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "B.Sc. Computer Science, University of Freiburg; 6 semesters (3 years), 180 ECTS, taught mainly in German.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_per_term": 1500,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "(winter semester)",
+        "(summer semester)"
+      ],
+      "academic_year": "per semester",
+      "source": [
+        "course",
+        "fees"
+      ],
+      "note": "Non-EU nationals: €1500 tuition + €190 semester fees = €1690 per semester.",
+      "mandatory_per_term": 190
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Computer Science: a university entrance qualification, German at level C1 already when applying, and an online orientation test; first-semester admission is admission-free (no selection). No grade cut-off is published.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

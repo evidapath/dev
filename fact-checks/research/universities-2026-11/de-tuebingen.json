@@ -1,0 +1,54 @@
+{
+  "uni": "de-tuebingen",
+  "name": "University of Tübingen",
+  "aliases": [
+    "Universität Tübingen",
+    "Eberhard Karls Universität Tübingen"
+  ],
+  "type": "public",
+  "website": "https://uni-tuebingen.de",
+  "country": {
+    "cc": "de",
+    "name": "Germany",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "de-tuebingen",
+    "name": "Tübingen"
+  },
+  "sources": {
+    "main": {
+      "url": "https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/informatik-bachelor-mono/",
+      "page": "d414ea826c33",
+      "title": "Computer Science - Bachelor (mono) | University of Tübingen",
+      "organization": "University of Tübingen",
+      "quotes": [
+        "Computer Science - Bachelor (mono) | University of Tübingen",
+        "Key data on study program Faculty Science Academic Degree Bachelor (mono) Restricted admission None Regular duration of studies 6 semester",
+        "Program start Winter semester, Summer semester Language of instruction German",
+        "Dieser Studiengang ist zulassungsfrei, insofern Sie die Zugangsvoraussetzungen erfüllen, d.h. es ist keine Bewerbung notwendig."
+      ]
+    },
+    "fees": {
+      "url": "https://uni-tuebingen.de/en/study/organizing-your-studies/fees/tuition-fees/",
+      "page": "bdf14d3c94a1",
+      "title": "Tuition fees | University of Tübingen",
+      "organization": "University of Tübingen",
+      "quotes": [
+        "International students (=students who are not citizens of an EU/EEA member state) will be charged a tuition fee of 1,500.00 euros per semester .",
+        "This is in addition to the general semester fee of currently 194.80 euros per semester .",
+        "since winter semester 2017-18",
+        "since the summer semester 2017"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU/EEA students",
+      "description": "Tuition fee for students who are not citizens of an EU/EEA member state.",
+      "source": "fees"
+    }
+  ]
+}

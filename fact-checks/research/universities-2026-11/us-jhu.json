@@ -1,0 +1,72 @@
+{
+  "uni": "us-jhu",
+  "name": "Johns Hopkins University",
+  "aliases": [
+    "Johns Hopkins",
+    "JHU"
+  ],
+  "type": "private",
+  "website": "https://www.jhu.edu",
+  "country": {
+    "cc": "us",
+    "name": "United States",
+    "currency": "USD"
+  },
+  "city": {
+    "slug": "us-baltimore-md",
+    "name": "Baltimore"
+  },
+  "sources": {
+    "main": {
+      "url": "https://sfs.jhu.edu/cost-tuition/",
+      "page": "e7c2af495756",
+      "title": "Cost and Tuition | Johns Hopkins Student Financial Services",
+      "organization": "Johns Hopkins University",
+      "quotes": [
+        "2026-27 Academic Year On-Campus Living (Freshman)",
+        "On-Campus Living (Freshman) Tuition* $68,670 Matriculation Fee (One-time only) $500 Living Expenses, Housing (On-Campus) $13,073 Living Expenses, Meals (On-Campus) $8,894",
+        "3400 N Charles Street Levering Hall, Suite 102 Baltimore, MD 21218",
+        "Johns Hopkins University Est. 1876"
+      ]
+    },
+    "course": {
+      "url": "https://e-catalogue.jhu.edu/engineering/full-time-residential-programs/degree-programs/computer-science/computer-science-bs/",
+      "page": "09cca5084029",
+      "title": "Computer Science, Bachelor of Science | Johns Hopkins University Academic Catalogue",
+      "organization": "Johns Hopkins University",
+      "quotes": [
+        "Computer Science, Bachelor of Science Whiting School of Engineering 2026-27 Edition"
+      ]
+    },
+    "req": {
+      "url": "https://e-catalogue.jhu.edu/ksas-wse/undergraduate-policies/academic-policies/requirements-bachelors-degree/",
+      "page": "5dd8553a7e8a",
+      "title": "Requirements for a Bachelor's Degree | Johns Hopkins University Academic Catalogue",
+      "organization": "Johns Hopkins University",
+      "quotes": [
+        "in order to assure that they will complete requirements for graduation in four years."
+      ]
+    },
+    "coa": {
+      "url": "https://sfs.jhu.edu/cost-tuition/",
+      "page": "e7c2af495756",
+      "title": "Cost and Tuition | Johns Hopkins Student Financial Services",
+      "organization": "Johns Hopkins University",
+      "quotes": [
+        "2026-27 Academic Year On-Campus Living (Freshman)",
+        "On-Campus Living (Freshman) Tuition* $68,670 Matriculation Fee (One-time only) $500 Living Expenses, Housing (On-Campus) $13,073 Living Expenses, Meals (On-Campus) $8,894",
+        "3400 N Charles Street Levering Hall, Suite 102 Baltimore, MD 21218",
+        "Johns Hopkins University Est. 1876"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "All undergraduates",
+      "description": "Johns Hopkins undergraduate tuition is the same for all undergraduates.",
+      "source": "coa"
+    }
+  ]
+}

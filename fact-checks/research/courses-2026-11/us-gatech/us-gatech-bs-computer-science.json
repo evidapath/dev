@@ -1,0 +1,68 @@
+{
+  "uni": "us-gatech",
+  "slug": "bs-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://catalog.gatech.edu/programs/computer-science-bs/",
+      "page": "0cf9dd035a48",
+      "title": "Bachelor of Science in Computer Science | Georgia Tech Catalog",
+      "organization": "Georgia Institute of Technology",
+      "quotes": [
+        "In addition to the standard four-year plan, a five-year cooperative plan is offered",
+        "Georgia Institute of Technology North Avenue Atlanta, GA",
+        "College of Computing"
+      ]
+    },
+    "coa": {
+      "url": "https://finaid.gatech.edu/costs/undergraduate-costs",
+      "page": "e6d0da398205",
+      "title": "Undergraduate Costs | Georgia Tech Scholarships & Financial Aid",
+      "organization": "Georgia Institute of Technology",
+      "quotes": [
+        "2026-2027 Cost of Attendance First-Year Georgia Resident",
+        "First-Year Out of Country Cost On Campus Cost Off Campus Cost Tuition $35,610 $35,610 Mandatory Student Fees $1,716 $1,716 Books, Course Materials, Supplies, and Equipment $800 $800 Housing Allowance $8,318 $12,084 Standard Food Service Plan $6,310 $6,310",
+        "Estimated 2027-2028 Cost of Attendance",
+        "First-Year Out of Country Cost On Campus Cost Off Campus Cost Tuition $34,572 $34,572"
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science",
+    "degree_type": "Bachelor of Science",
+    "field": "Computer Science",
+    "faculty": "College of Computing",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Science in Computer Science, Georgia Tech; standard four-year plan (five-year co-op plan also offered).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "out-of-country",
+      "currency": "USD",
+      "tuition_annual": 35610,
+      "mandatory_fees_annual": 1716,
+      "academic_year": "2026-2027",
+      "source": "coa",
+      "note": "First-year out-of-country 2026-2027: tuition $35,610 and mandatory student fees $1,716. The page's estimate for 2027-2028 shows lower out-of-country tuition ($34,572); to check with Georgia Tech.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          8318,
+          6310
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "First-year on campus 2026-2027: housing allowance $8,318 + standard food plan $6,310 = $14,628 (our calculation)."
+      }
+    }
+  ],
+  "admissions": []
+}

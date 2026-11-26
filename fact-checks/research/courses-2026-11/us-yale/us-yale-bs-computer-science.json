@@ -1,0 +1,74 @@
+{
+  "uni": "us-yale",
+  "slug": "bs-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://catalog.yale.edu/ycps/subjects-of-instruction/computer-science/",
+      "page": "ae4a4353955d",
+      "title": "Computer Science < Yale University",
+      "organization": "Yale University",
+      "quotes": [
+        "B.S. degree program The B.S. degree program requires a total of twelve term courses"
+      ]
+    },
+    "reg": {
+      "url": "https://catalog.yale.edu/ycps/academic-regulations/requirements-for-ba-bs-degree/",
+      "page": "3028e6247def",
+      "title": "Requirements for the B.A. or B.S. Degree < Yale University",
+      "organization": "Yale University",
+      "quotes": [
+        "A. Requirements for the B.A. or B.S. Degree < Yale University",
+        "A student may normally complete no more than eight terms of enrollment in order to fulfill these requirements.",
+        "while the student was enrolled as a secondary school student in the New Haven area"
+      ]
+    },
+    "coa": {
+      "url": "https://finaid.yale.edu/coa",
+      "page": "a765a3f85e9e",
+      "title": "Cost of Attendance | Yale Undergraduate Financial Aid",
+      "organization": "Yale University",
+      "quotes": [
+        "2026-27 Estimated Cost of Attendance for Yale Undergraduate Students $72,500 Tuition $185 Student Activity Fee $12,080 Housing $9,520 Food",
+        "Planning for Four Years As you plan ahead for the next four years"
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science",
+    "degree_type": "B.S.",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "coa",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Computer Science B.S., Yale College; eight terms of enrollment (four years).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 72500,
+      "academic_year": "2026-27",
+      "source": "coa",
+      "note": "Tuition $72,500 (2026-27); student activity fee $185 is separate.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          12080,
+          9520
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "Yale College 2026-27: housing $12,080 + food $9,520 = $21,600 (our calculation)."
+      }
+    }
+  ],
+  "admissions": []
+}

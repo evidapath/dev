@@ -1,0 +1,74 @@
+{
+  "uni": "us-jhu",
+  "slug": "bs-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://e-catalogue.jhu.edu/engineering/full-time-residential-programs/degree-programs/computer-science/computer-science-bs/",
+      "page": "09cca5084029",
+      "title": "Computer Science, Bachelor of Science | Johns Hopkins University Academic Catalogue",
+      "organization": "Johns Hopkins University",
+      "quotes": [
+        "Computer Science, Bachelor of Science Whiting School of Engineering 2026-27 Edition"
+      ]
+    },
+    "req": {
+      "url": "https://e-catalogue.jhu.edu/ksas-wse/undergraduate-policies/academic-policies/requirements-bachelors-degree/",
+      "page": "5dd8553a7e8a",
+      "title": "Requirements for a Bachelor's Degree | Johns Hopkins University Academic Catalogue",
+      "organization": "Johns Hopkins University",
+      "quotes": [
+        "in order to assure that they will complete requirements for graduation in four years."
+      ]
+    },
+    "coa": {
+      "url": "https://sfs.jhu.edu/cost-tuition/",
+      "page": "e7c2af495756",
+      "title": "Cost and Tuition | Johns Hopkins Student Financial Services",
+      "organization": "Johns Hopkins University",
+      "quotes": [
+        "2026-27 Academic Year On-Campus Living (Freshman)",
+        "On-Campus Living (Freshman) Tuition* $68,670 Matriculation Fee (One-time only) $500 Living Expenses, Housing (On-Campus) $13,073 Living Expenses, Meals (On-Campus) $8,894",
+        "3400 N Charles Street Levering Hall, Suite 102 Baltimore, MD 21218",
+        "Johns Hopkins University Est. 1876"
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science",
+    "degree_type": "Bachelor of Science",
+    "field": "Computer Science",
+    "faculty": "Whiting School of Engineering",
+    "duration_years": 4,
+    "duration_source": "req",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Computer Science, Bachelor of Science, Whiting School of Engineering, Johns Hopkins University; four years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 68670,
+      "academic_year": "2026-27",
+      "source": "coa",
+      "note": "Tuition $68,670 (2026-27); one-time matriculation fee $500 in the first year.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          13073,
+          8894
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "First-year on-campus 2026-27: housing $13,073 + meals $8,894 = $21,967 (our calculation)."
+      }
+    }
+  ],
+  "admissions": []
+}

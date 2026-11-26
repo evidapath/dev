@@ -1,0 +1,71 @@
+{
+  "uni": "at-tuwien",
+  "slug": "bsc-informatics",
+  "sources": {
+    "course": {
+      "url": "https://www.tuwien.at/en/studies/studies/bachelor-programmes/computer-science-and-business-informatics/informatics",
+      "page": "596b8a742699",
+      "title": "Informatics | TU Wien",
+      "organization": "TU Wien",
+      "quotes": [
+        "Informatics | TU Wien",
+        "Degree programme code UE 033 521 - Bachelor's Programme Informatics",
+        "Duration of the degree programme 6 semesters Credits 180 ECTS Language of instruction German Degree Bachelor of Science (BSc)",
+        "the selection procedure does not assess programming skills and does not require any prior experience with computers. Instead, it evaluates your ability to solve problems, think logically, and comprehend texts.",
+        "The selection procedure takes place only once a year",
+        "Dean's Office of Faculty of Informatics Erzherzog-Johann-Platz 1 4 th floor 1040 Vienna"
+      ]
+    },
+    "fees": {
+      "url": "https://www.tuwien.at/en/studies/admission/students-union-fee-and-tuition-fee/tuition-fee",
+      "page": "0bd8758b7bea",
+      "title": "Tuition Fee | TU Wien",
+      "organization": "TU Wien",
+      "quotes": [
+        "Non-degree students and non-EU nationals are subject to tuition fees from the first semester.",
+        "The tuition fee is regular € 363.36 per semester (or € 726.72 per semester for non-EU nationals ). In addition to the respective tuition fee, the ÖH fee including insurance has to be paid each semester.",
+        "until October 31 st for winter semester and March 31 st for summer semester"
+      ]
+    }
+  },
+  "program": {
+    "name": "Informatics",
+    "degree_type": "BSc",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "de"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor's Programme Informatics (UE 033 521), TU Wien; 6 semesters, 180 ECTS, taught in German.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_per_term": 726.72,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "winter semester",
+        "summer semester"
+      ],
+      "academic_year": "per semester",
+      "source": "fees",
+      "note": "Non-EU nationals: €726.72 tuition per semester, plus the ÖH (student union) fee each semester."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Informatics: a selection procedure held once a year that tests problem solving, logical thinking and reading comprehension (no programming); taught in German. No grade cut-off is published.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

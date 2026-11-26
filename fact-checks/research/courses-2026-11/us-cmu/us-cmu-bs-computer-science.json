@@ -1,0 +1,64 @@
+{
+  "uni": "us-cmu",
+  "slug": "bs-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-bs/",
+      "page": "a9e52e92cd13",
+      "title": "Computer Science, B.S. < Carnegie Mellon University",
+      "organization": "Carnegie Mellon University",
+      "quotes": [
+        "these students should still be able to complete their degree in four years.",
+        "Carnegie Mellon University 5000 Forbes Avenue Pittsburgh, PA 15213",
+        "School of Computer Science"
+      ]
+    },
+    "coa": {
+      "url": "https://www.cmu.edu/sfs/tuition/undergraduate/index.html",
+      "page": "cb4224f5dcd9",
+      "title": "2026-2027 Undergraduate Tuition - Student Financial Services - Carnegie Mellon University",
+      "organization": "Carnegie Mellon University",
+      "quotes": [
+        "2026-2027 Undergraduate Tuition & Fees First-Years Entering Fall 2026 Per-Unit Tuition Rate - $969 RESIDENT COMMUTER Tuition $69,702 $69,702 Housing 1 11,700 0 Food 2 7,950 3,976"
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science",
+    "degree_type": "B.S.",
+    "field": "Computer Science",
+    "faculty": "School of Computer Science",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Computer Science B.S., School of Computer Science, Carnegie Mellon University; four years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 69702,
+      "academic_year": "2026-27 (first-years entering Fall 2026)",
+      "source": "coa",
+      "note": "Tuition $69,702 for first-years entering Fall 2026; university fees are separate.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          11700,
+          7950
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "First-year resident 2026-2027: housing $11,700 + food $7,950 = $19,650 (our calculation)."
+      }
+    }
+  ],
+  "admissions": []
+}

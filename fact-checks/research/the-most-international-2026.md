@@ -25,9 +25,9 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 12 | National University of Singapore | Singapore | done (pending 2026-11-26-nus.ndjson; grade-profile page behind Incapsula check, no entry rule stored) |
 | 13 | UCL | United Kingdom | held: Cloudflare check ("Just a moment...") on course pages (2026-11-26) |
 | =14 | The Chinese University of Hong Kong | Hong Kong | done (pending 2026-11-26-cuhk.ndjson) |
-| =14 | University of Vienna | Austria | todo |
+| =14 | University of Vienna | Austria | done (pending 2026-11-26-vienna.ndjson; German-taught) |
 | 16 | London School of Economics and Political Science | United Kingdom | done (pending 2026-11-26-lse.ndjson) |
-| 17 | University of Geneva | Switzerland | todo |
+| 17 | University of Geneva | Switzerland | held: fee page returns 'Access Denied' (403) in fetcher and browser; programme page script-only (2026-11-26) |
 | 18 | Delft University of Technology | Netherlands | have |
 | 19 | University of Edinburgh | United Kingdom | done (pending 2026-11-26-edinburgh.ndjson) |
 | 20 | Wageningen University & Research | Netherlands | done (pending 2026-11-26-wageningen.ndjson) |
@@ -58,7 +58,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 45 | Harvard University | United States | have |
 | 46 | University of Sheffield | United Kingdom | done (pending 2026-11-26-sheffield.ndjson) |
 | 47 | Leiden University | Netherlands | done (pending 2026-11-26-leiden.ndjson; CS is Dutch-taught, DS&AI added; science diploma PDF 'Access Blocked') |
-| 48 | TU Wien | Austria | todo |
+| 48 | TU Wien | Austria | done (pending 2026-11-26-tuwien.ndjson; German-taught) |
 | 49 | University of Alberta | Canada | have |
 | 50 | California Institute of Technology | United States | done (pending 2026-11-26-caltech.ndjson) |
 | 51 | Lebanese American University | Lebanon | todo |
@@ -68,31 +68,31 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 55 | Karolinska Institute | Sweden | todo |
 | 56 | Princeton University | United States | have |
 | 57 | University of Malaya | Malaysia | have |
-| 58 | KU Leuven | Belgium | todo |
+| 58 | KU Leuven | Belgium | held: no 2026-27 fee found for an English-taught bachelor (2026-11-26) |
 | 59 | King Khalid University | Saudi Arabia | todo |
 | 60 | Technical University of Munich | Germany | have |
 | 61 | Lund University | Sweden | todo |
-| 62 | University of California, Berkeley | United States | todo |
+| 62 | University of California, Berkeley | United States | done (pending 2026-11-26-berkeley.ndjson) |
 | 63 | Lebanese University | Lebanon | todo |
-| 64 | Free University of Berlin | Germany | todo |
+| 64 | Free University of Berlin | Germany | done (pending 2026-11-26-fu-berlin.ndjson; German-taught, no tuition) |
 | 65 | University of Copenhagen | Denmark | todo |
 | =66 | Universität Heidelberg | Germany | have |
-| =66 | Yale University | United States | todo |
+| =66 | Yale University | United States | done (pending 2026-11-26-yale.ndjson) |
 | 68 | Columbia University | United States | have? |
-| =69 | Aarhus University | Denmark | todo |
-| =69 | Carnegie Mellon University | United States | todo |
+| =69 | Aarhus University | Denmark | held: only a fee range found, no 2027 per-programme fee (2026-11-26) |
+| =69 | Carnegie Mellon University | United States | done (pending 2026-11-26-cmu.ndjson) |
 | 71 | Cornell University | United States | have |
 | 72 | University of Oslo | Norway | todo |
-| =73 | Humboldt University of Berlin | Germany | todo |
-| =73 | University of Cape Town | South Africa | todo |
+| =73 | Humboldt University of Berlin | Germany | held: no current semester-fee page found (only a ~10-year-old one) (2026-11-26) |
+| =73 | University of Cape Town | South Africa | held: 2027 fees not yet published (per-course fees) (2026-11-26) |
 | 75 | Sorbonne University | France | todo |
-| 76 | Johns Hopkins University | United States | todo |
-| 77 | Georgia Institute of Technology | United States | todo |
+| 76 | Johns Hopkins University | United States | done (pending 2026-11-26-jhu.ndjson) |
+| 77 | Georgia Institute of Technology | United States | done (pending 2026-11-26-gatech.ndjson) |
 | 78 | LMU Munich | Germany | have |
 | 79 | Paris Sciences et Lettres – PSL Research University Paris | France | todo |
 | 80 | Uppsala University | Sweden | todo |
 | =81 | Rice University | United States | todo |
-| =81 | University of Freiburg | Germany | todo |
+| =81 | University of Freiburg | Germany | done (pending 2026-11-26-freiburg.ndjson; German-taught) |
 | 83 | The University of Chicago | United States | todo |
 | 84 | University of California, Davis | United States | todo |
 | 85 | University of Pennsylvania | United States | have? |
@@ -100,7 +100,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 87 | University of California, Santa Barbara | United States | todo |
 | 88 | Technion Israel Institute of Technology | Israel | todo |
 | =89 | Purdue University West Lafayette | United States | have |
-| =89 | University of Tübingen | Germany | todo |
+| =89 | University of Tübingen | Germany | done (pending 2026-11-26-tuebingen.ndjson; German-taught) |
 | 91 | University of California, Irvine | United States | todo |
 | =92 | Ghent University | Belgium | todo |
 | =92 | University of Rochester | United States | have? |

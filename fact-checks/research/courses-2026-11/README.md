@@ -533,3 +533,23 @@ Held: NTU (CS pages 404; no-grant fee lab/non-lab unclear). Blocked on the way: 
 
 Builder: `build.py` now reads Swiss thousands in quotes ("4’380" = 4380). Rebuilt hk-cuhk, gb-edinburgh,
 gb-lse, au-uq: every rebuilt record identical; negative test refuses 4381 against "4’380".
+
+## Batch 2026-11-26 (THE list, third 10)
+
+Done (pending `fact-checks/pending/2026-11-26-<name>.ndjson`, each dry-run HTTP 200; new country at):
+berkeley (EECS B.S.; $18,214 + nonresident $39,270 = $57,484 our calculation; housing + meals $23,640),
+yale (CS B.S.; $72,500; housing + food $21,600), cmu (CS B.S.; $69,702; $19,650), jhu (CS B.S.; $68,670;
+$21,967), gatech (CS B.S.; out-of-country $35,610 + fees $1,716; $14,628), vienna (Computer Science, entrance
+exam, 415 places; €726.72 + €26.20 a semester), tuwien (Informatics, selection procedure; €726.72 a semester),
+fu-berlin (Informatik, no tuition, €376.80 a semester), freiburg (€1,500 + €190 a semester), tuebingen
+(€1,500 + €194.80 a semester; open admission). US admission is holistic: no admission rows stored.
+
+Held: Geneva (403), KU Leuven (no 2026-27 bachelor fee), Aarhus (fee range only), Humboldt (no current fee
+page), Cape Town (2027 fees not published).
+
+To check: Georgia Tech's page estimates 2027-2028 out-of-country tuition lower ($34,572) than 2026-2027.
+
+Builder: reads "6 semester" (singular) as a length; a per-term fee of 0 is allowed only with a quote saying no
+tuition is charged; the fee-note check no longer strips every "0" when the fee is 0. Rebuilt hk-cuhk,
+gb-edinburgh, ch-eth, ch-epfl, se-kth, nl-rug, fr-polytechnique (records identical) and hu-bme, hu-szeged with
+old vs new builder (identical). Negative tests refuse a 0 fee without the quote and 4 years against "6 semester".

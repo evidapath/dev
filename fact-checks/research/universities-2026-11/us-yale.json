@@ -1,0 +1,71 @@
+{
+  "uni": "us-yale",
+  "name": "Yale University",
+  "aliases": [
+    "Yale",
+    "Yale College"
+  ],
+  "type": "private",
+  "website": "https://www.yale.edu",
+  "country": {
+    "cc": "us",
+    "name": "United States",
+    "currency": "USD"
+  },
+  "city": {
+    "slug": "us-new-haven-ct",
+    "name": "New Haven"
+  },
+  "sources": {
+    "main": {
+      "url": "https://catalog.yale.edu/ycps/academic-regulations/requirements-for-ba-bs-degree/",
+      "page": "3028e6247def",
+      "title": "Requirements for the B.A. or B.S. Degree < Yale University",
+      "organization": "Yale University",
+      "quotes": [
+        "A. Requirements for the B.A. or B.S. Degree < Yale University",
+        "A student may normally complete no more than eight terms of enrollment in order to fulfill these requirements.",
+        "while the student was enrolled as a secondary school student in the New Haven area"
+      ]
+    },
+    "course": {
+      "url": "https://catalog.yale.edu/ycps/subjects-of-instruction/computer-science/",
+      "page": "ae4a4353955d",
+      "title": "Computer Science < Yale University",
+      "organization": "Yale University",
+      "quotes": [
+        "B.S. degree program The B.S. degree program requires a total of twelve term courses"
+      ]
+    },
+    "reg": {
+      "url": "https://catalog.yale.edu/ycps/academic-regulations/requirements-for-ba-bs-degree/",
+      "page": "3028e6247def",
+      "title": "Requirements for the B.A. or B.S. Degree < Yale University",
+      "organization": "Yale University",
+      "quotes": [
+        "A. Requirements for the B.A. or B.S. Degree < Yale University",
+        "A student may normally complete no more than eight terms of enrollment in order to fulfill these requirements.",
+        "while the student was enrolled as a secondary school student in the New Haven area"
+      ]
+    },
+    "coa": {
+      "url": "https://finaid.yale.edu/coa",
+      "page": "a765a3f85e9e",
+      "title": "Cost of Attendance | Yale Undergraduate Financial Aid",
+      "organization": "Yale University",
+      "quotes": [
+        "2026-27 Estimated Cost of Attendance for Yale Undergraduate Students $72,500 Tuition $185 Student Activity Fee $12,080 Housing $9,520 Food",
+        "Planning for Four Years As you plan ahead for the next four years"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "All undergraduates",
+      "description": "Yale College tuition is the same for all undergraduates.",
+      "source": "coa"
+    }
+  ]
+}

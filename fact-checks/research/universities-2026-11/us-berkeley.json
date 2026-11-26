@@ -1,0 +1,70 @@
+{
+  "uni": "us-berkeley",
+  "name": "University of California, Berkeley",
+  "aliases": [
+    "UC Berkeley",
+    "Berkeley"
+  ],
+  "type": "public",
+  "website": "https://www.berkeley.edu",
+  "country": {
+    "cc": "us",
+    "name": "United States",
+    "currency": "USD"
+  },
+  "city": {
+    "slug": "us-berkeley-ca",
+    "name": "Berkeley"
+  },
+  "sources": {
+    "main": {
+      "url": "https://admissions.berkeley.edu/apply-to-berkeley/international-students/requirements-for-international-students/",
+      "page": "f5a9f16ed599",
+      "title": "Requirements for International Students - Office of Undergraduate Admissions",
+      "organization": "University of California, Berkeley",
+      "quotes": [
+        "International students in the U.S. on a visa cannot be classified as California residents for tuition purposes.",
+        "Office of Undergraduate Admissions University of California, Berkeley 110 Sproul Hall #5800, Berkeley, CA 94720-5800"
+      ]
+    },
+    "course": {
+      "url": "https://eecs.berkeley.edu/academics/undergraduate/eecs-bs/",
+      "page": "f46decf77b8d",
+      "title": "EECS Bachelor of Science - EECS at Berkeley",
+      "organization": "University of California, Berkeley",
+      "quotes": [
+        "First-years are admitted directly into the EECS major and spend all four years in the program."
+      ]
+    },
+    "coa": {
+      "url": "https://financialaid.berkeley.edu/how-aid-works/student-budgets-cost-of-attendance/",
+      "page": "1b27bebfa8c6",
+      "title": "Student Budgets (Cost of Attendance) - Financial Aid & Scholarships",
+      "organization": "University of California, Berkeley",
+      "quotes": [
+        "New out-of-state students pay an additional Nonresident Supplemental Tuition of $39,270.",
+        "New Students Starting in the 2026-27 Academic Year add Living Arrangement for 2026-27: Living in a Campus Residence Hall Living in an On-Campus Apartment Living in an Off-Campus Apartment Living with Relatives Tuition and Fees $18,214 $18,214 $18,214 $18,214 Housing $16,640 $20,500 n/a n/a Meal Plan $7,000 n/a n/a n/a Student Health Insurance Plan $5,066",
+        "Final approved 2026-27 tuition and fee levels may be higher or lower than the amounts presented."
+      ]
+    },
+    "intl": {
+      "url": "https://admissions.berkeley.edu/apply-to-berkeley/international-students/requirements-for-international-students/",
+      "page": "f5a9f16ed599",
+      "title": "Requirements for International Students - Office of Undergraduate Admissions",
+      "organization": "University of California, Berkeley",
+      "quotes": [
+        "International students in the U.S. on a visa cannot be classified as California residents for tuition purposes.",
+        "Office of Undergraduate Admissions University of California, Berkeley 110 Sproul Hall #5800, Berkeley, CA 94720-5800"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "nonresident",
+      "label": "Nonresident students (including international students)",
+      "description": "Students who are not California residents for tuition purposes pay Nonresident Supplemental Tuition.",
+      "source": "coa"
+    }
+  ]
+}

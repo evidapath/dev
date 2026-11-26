@@ -1,0 +1,58 @@
+{
+  "uni": "at-univie",
+  "name": "University of Vienna",
+  "aliases": [
+    "Universität Wien",
+    "Uni Wien"
+  ],
+  "type": "public",
+  "website": "https://www.univie.ac.at",
+  "country": {
+    "cc": "at",
+    "name": "Austria",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "at-vienna",
+    "name": "Vienna"
+  },
+  "sources": {
+    "main": {
+      "url": "https://aufnahmeverfahren.univie.ac.at/en/computer-science",
+      "page": "b555e889c0c8",
+      "title": "Computer Science (bachelor's programme) | Entrance exam | University of Vienna",
+      "organization": "University of Vienna",
+      "quotes": [
+        "University of Vienna / Entrance exam / Before the entrance exam / Degree programmes / Computer Science (bachelor's programme)",
+        "033 521",
+        "6 semesters",
+        "180 ECTS (15 ECTS possible as extension curricula )",
+        "German (admission requirement)",
+        "1 March to 4 May 2027",
+        "19 July 2027 on site in Vienna (no alternative dates)",
+        "415 (total for Computer Science and Business Informatics)"
+      ]
+    },
+    "fees": {
+      "url": "https://studieren.univie.ac.at/en/studying-and-learning/financial-matters/amount-of-the-tuition-fee/students-union-fee",
+      "page": "1c48f4ab395f",
+      "title": "Amount of the tuition fee/Students' Union fee | University of Vienna",
+      "organization": "University of Vienna",
+      "quotes": [
+        "Amount non-EU/EEA Students' Union fee: 26.20 Euro Tuition fee: 726.72 Euro Total: 752.92 Euro per semester",
+        "Students with non-EU/EEA Citizenship You must pay your tuition fee/Students' Union fee every semester",
+        "from winter semester 2025 onwards",
+        "before summer semester 2021"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU/EEA citizens",
+      "description": "Tuition fee and Students' Union fee for non-EU/EEA citizens.",
+      "source": "fees"
+    }
+  ]
+}

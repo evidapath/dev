@@ -1,0 +1,53 @@
+{
+  "uni": "de-fu-berlin",
+  "name": "Freie Universität Berlin",
+  "aliases": [
+    "FU Berlin",
+    "Free University of Berlin"
+  ],
+  "type": "public",
+  "website": "https://www.fu-berlin.de",
+  "country": {
+    "cc": "de",
+    "name": "Germany",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "de-berlin",
+    "name": "Berlin"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.mi.fu-berlin.de/inf/stud/bachelor/bachelor-mono/index.html",
+      "page": "cf19ccd2f163",
+      "title": "Informatik (Mono-Bachelor) | Fachbereich Mathematik und Informatik | Freie Universität Berlin",
+      "organization": "Freie Universität Berlin",
+      "quotes": [
+        "Informatik (Mono-Bachelor) • Studium • Fachbereich Mathematik und Informatik",
+        "Freie Universität Berlin Fachbereich Mathematik und Informatik",
+        "Zulassungs­modus Lokale Zulassungsbeschränkung",
+        "Studienbeginn Wintersemester (WS) Studiensprache Deutsch Abschluss Bachelor of Science (B.Sc.) Regelstudienzeit 6 Semester"
+      ]
+    },
+    "fees": {
+      "url": "https://www.fu-berlin.de/en/studium/studieren/studienorganisation/gebuehren/gebuehren-faq/index.html",
+      "page": "79d5a81ed4b4",
+      "title": "Fees and dues | Freie Universität Berlin",
+      "organization": "Freie Universität Berlin",
+      "quotes": [
+        "Freie Universität Berlin does not charge any tuition fees (except for continuing education programs), rather so-called \"Semestergebühren und -beiträge\" (fees and dues).",
+        "Fees for new enrollments for winter semester 2026/27 A total of €376,80 is payable for registration for the winter semester 2026/27",
+        "Fees for new enrollments for summer semester 2027"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "all-students",
+      "label": "All students",
+      "description": "Freie Universität Berlin charges no tuition fees; every student pays the semester fees and dues.",
+      "source": "fees"
+    }
+  ]
+}
