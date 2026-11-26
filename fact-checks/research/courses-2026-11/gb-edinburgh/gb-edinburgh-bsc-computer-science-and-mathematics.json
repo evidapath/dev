@@ -1,0 +1,106 @@
+{
+  "uni": "gb-edinburgh",
+  "slug": "bsc-computer-science-and-mathematics",
+  "sources": {
+    "course": {
+      "url": "https://study.ed.ac.uk/programmes/undergraduate/64-computer-science-and-mathematics",
+      "page": "6587f7ef0e16",
+      "title": "Computer Science and Mathematics BSc (Hons) | The University of Edinburgh",
+      "organization": "The University of Edinburgh",
+      "quotes": [
+        "Award BSc (Hons) Duration of study 4 years",
+        "Computer Science and Mathematics"
+      ]
+    },
+    "req": {
+      "url": "https://study.ed.ac.uk/programmes/undergraduate/64-computer-science-and-mathematics/entry-requirements",
+      "page": "c0902af8decb",
+      "title": "Computer Science and Mathematics BSc (Hons) entry requirements | The University of Edinburgh",
+      "organization": "The University of Edinburgh",
+      "quotes": [
+        "offer in recent years: from A*A*A* to A*AB in one set of exams",
+        "offer in recent years: from 43 points with 777 at HL to 34 points with 755 at HL",
+        "IELTS Academic: total 6.5 with at least 5.5 in each component"
+      ]
+    },
+    "fees": {
+      "url": "https://study.ed.ac.uk/programmes/undergraduate-fees?programme_code=UTCMPMA&year=2027",
+      "page": "e5d681becfc4",
+      "title": "Computer Science and Mathematics tuition fees 2027-2028 | The University of Edinburgh",
+      "organization": "The University of Edinburgh",
+      "quotes": [
+        "International/EU fee rate Duration 2027/8 £1,820.00 £10,050.00 £40,900.00 4 Years",
+        "The table shows the fee for one year only."
+      ]
+    },
+    "living": {
+      "url": "https://study.ed.ac.uk/programmes/undergraduate/57-computer-science",
+      "page": "a20690111782",
+      "title": "Computer Science BSc (Hons) | The University of Edinburgh",
+      "organization": "The University of Edinburgh",
+      "quotes": [
+        "we estimate that it will cost an average of £1,546 each month to live in Edinburgh as a single undergraduate student. This equates to £13,914 for a 39-week academic year and £18,552 for a full year",
+        "The University of Edinburgh is a charitable body, registered in Sco"
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science and Mathematics",
+    "degree_type": "BSc (Hons)",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "September 2027",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "BSc (Hons) Computer Science and Mathematics, The University of Edinburgh; 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 40900,
+      "academic_year": "2027/8",
+      "source": "fees",
+      "note": "International/EU fee rate 2027/8: £40,900 for one year.",
+      "living": {
+        "monthly": [
+          1546
+        ],
+        "months": 12,
+        "source": "living",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "The University of Edinburgh estimates £1,546 a month, £18,552 for a full year (× 12 = £18,552)."
+      }
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "req",
+      "threshold": "Computer Science and Mathematics: offers in recent years ranged from A*A*A* to A*AB at A level (in one set of exams).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic",
+        "min_score": "IELTS Academic 6.5 overall with at least 5.5 in each component.",
+        "source": "req"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "req",
+      "threshold": "Computer Science and Mathematics: offers in recent years ranged from 43 points with 777 at HL to 34 points with 755 at HL.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic",
+        "min_score": "IELTS Academic 6.5 overall with at least 5.5 in each component.",
+        "source": "req"
+      }
+    }
+  ]
+}

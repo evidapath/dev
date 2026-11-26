@@ -18,7 +18,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =5 | Abu Dhabi University | United Arab Emirates | have? |
 | =5 | University of Oxford | United Kingdom | have |
 | 7 | University of Cambridge | United Kingdom | have |
-| 8 | ETH Zurich | Switzerland | todo |
+| 8 | ETH Zurich | Switzerland | in progress: fee + costs read (CHF 2190/semester, cost sheet); length and foreign-certificate admission pages not found yet |
 | 9 | École Polytechnique Fédérale de Lausanne | Switzerland | todo |
 | 10 | Nanyang Technological University, Singapore | Singapore | todo |
 | 11 | King’s College London | United Kingdom | have |
@@ -29,7 +29,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 16 | London School of Economics and Political Science | United Kingdom | todo |
 | 17 | University of Geneva | Switzerland | todo |
 | 18 | Delft University of Technology | Netherlands | have |
-| 19 | University of Edinburgh | United Kingdom | todo |
+| 19 | University of Edinburgh | United Kingdom | done (pending 2026-11-26-edinburgh.ndjson) |
 | 20 | Wageningen University & Research | Netherlands | todo |
 | 21 | University of Amsterdam | Netherlands | have |
 | =22 | Australian National University | Australia | todo |

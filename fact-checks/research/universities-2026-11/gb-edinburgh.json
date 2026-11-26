@@ -1,0 +1,40 @@
+{
+  "uni": "gb-edinburgh",
+  "name": "The University of Edinburgh",
+  "aliases": [
+    "Edinburgh",
+    "University of Edinburgh"
+  ],
+  "type": "public",
+  "website": "https://www.ed.ac.uk",
+  "country": {
+    "cc": "gb",
+    "name": "United Kingdom",
+    "currency": "GBP"
+  },
+  "city": {
+    "slug": "gb-edinburgh",
+    "name": "Edinburgh"
+  },
+  "sources": {
+    "main": {
+      "url": "https://study.ed.ac.uk/programmes/undergraduate/57-computer-science",
+      "page": "a20690111782",
+      "title": "Computer Science BSc (Hons) | The University of Edinburgh",
+      "organization": "The University of Edinburgh",
+      "quotes": [
+        "we estimate that it will cost an average of £1,546 each month to live in Edinburgh as a single undergraduate student. This equates to £13,914 for a 39-week academic year and £18,552 for a full year",
+        "The University of Edinburgh is a charitable body, registered in Sco"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International/EU students",
+      "description": "The University of Edinburgh's International/EU fee rate.",
+      "source": "main"
+    }
+  ]
+}
