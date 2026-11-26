@@ -1,0 +1,38 @@
+{
+  "uni": "hk-hku",
+  "name": "The University of Hong Kong",
+  "aliases": [
+    "HKU"
+  ],
+  "type": "public",
+  "website": "https://www.hku.hk",
+  "country": {
+    "cc": "hk",
+    "name": "Hong Kong",
+    "currency": "HKD"
+  },
+  "city": {
+    "slug": "hk-hong-kong",
+    "name": "Hong Kong"
+  },
+  "sources": {
+    "main": {
+      "url": "https://admissions.hku.hk/programmes/undergraduate-programmes/computing-and-data-science",
+      "page": "26af600b4f8b",
+      "title": "Computing and Data Science | HKU Undergraduate Admissions",
+      "organization": "The University of Hong Kong",
+      "quotes": [
+        "Copyright © 2026 Admissions Office, The Registry, The University of Hong Kong. All rights reserved."
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-local",
+      "label": "Non-local students (non-subsidised fee)",
+      "description": "HKU's non-subsidised composition fee, which non-local students pay.",
+      "source": "main"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "uni": "hk-hku",
+  "slug": "bba-6755",
+  "sources": {
+    "course": {
+      "url": "https://admissions.hku.hk/programmes/undergraduate-programmes/bachelor-of-business-administration",
+      "page": "f6e51bf77386",
+      "title": "Bachelor of Business Administration | HKU Undergraduate Admissions",
+      "organization": "The University of Hong Kong",
+      "quotes": [
+        "Undergraduate Courses Bachelor of Business Administration CODE 6755 STUDY PERIOD 4-year ABBREVIATION BBA",
+        "Copyright © 2026 Admissions Office, The Registry, The University of Hong Kong. All rights reserved."
+      ]
+    },
+    "fees": {
+      "url": "https://admissions.hku.hk/sites/default/files/2026-09/HKU_General_Information_NJ_2027.pdf",
+      "page": "hku-geninfo-2027",
+      "title": "General Information 2027 (PDF) | HKU Undergraduate Admissions",
+      "organization": "The University of Hong Kong",
+      "quotes": [
+        "The composition fees for students admitted in the 2027–2028 academic year will depend on their eligibility for government-subsidised student places.",
+        "Students who do not meet the eligibility criteria for subsidised fees, including non-local students, will be required to pay the applicable non-subsidised composition fee, as set out below:",
+        "STEM Faculties and Schools — including the Faculties of Engineering, Medicine (excluding the MBBS programme) and Science, and the Schools of Biomedical Engineering, Computing and Data Science*, and Innovation: HK$280,000 per annum, inclusive of the STEM fee*.",
+        "Non-STEM Faculties and Schools — including the Faculties of Architecture, Arts, Business and Economics, Education, Law and Social Sciences, and the Schools of Future Media and Governance and Policy: HK$250,000 per annum."
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor of Business Administration",
+    "degree_type": "BBA",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2027-2028",
+    "platform": "HKU international (non-JUPAS) application",
+    "source": "course",
+    "summary": "BBA, HKU (programme code 6755); 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-local",
+      "currency": "HKD",
+      "tuition_annual": 250000,
+      "academic_year": "2027-2028",
+      "source": "fees",
+      "note": "Non-local students admitted in 2027-2028 pay the non-subsidised composition fee: HK$250,000 per annum (non-STEM faculties/schools)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Bachelor of Business Administration: entry requirements by qualification aren't on the HKU programme page read, so no grade is shown.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Bachelor of Business Administration: entry requirements by qualification aren't on the HKU programme page read, so no grade is shown.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "us-hs",
+      "source": "course",
+      "threshold": "Bachelor of Business Administration: entry requirements by qualification aren't on the HKU programme page read, so no grade is shown.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "cbse",
+      "source": "course",
+      "threshold": "Bachelor of Business Administration: entry requirements by qualification aren't on the HKU programme page read, so no grade is shown.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Bachelor of Business Administration: entry requirements by qualification aren't on the HKU programme page read, so no grade is shown.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

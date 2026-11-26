@@ -13,7 +13,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 |---|---|---|---|
 | 1 | City University of Hong Kong | Hong Kong | held: Imperva/Incapsula CAPTCHA on its pages (fetcher and browser), 2026-11-26 |
 | 2 | The Hong Kong University of Science and Technology | Hong Kong | done (pending 2026-11-26-hkust.ndjson) |
-| 3 | University of Hong Kong | Hong Kong | todo |
+| 3 | University of Hong Kong | Hong Kong | done (pending 2026-11-26-hku.ndjson) |
 | 4 | Imperial College London | United Kingdom | have |
 | =5 | Abu Dhabi University | United Arab Emirates | have? |
 | =5 | University of Oxford | United Kingdom | have |
