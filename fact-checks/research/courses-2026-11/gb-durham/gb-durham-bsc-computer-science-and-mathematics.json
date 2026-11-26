@@ -1,0 +1,70 @@
+{
+  "uni": "gb-durham",
+  "slug": "bsc-computer-science-and-mathematics",
+  "sources": {
+    "course": {
+      "url": "https://www.durham.ac.uk/study/courses/computer-science-and-mathematics-g411/",
+      "page": "ad1c2b8e5290",
+      "title": "Computer Science and Mathematics G411 | Durham University",
+      "organization": "Durham University",
+      "quotes": [
+        "Computer Science and Mathematics G411 September 2027",
+        "Course length 3 years full-time",
+        "International (full-time): £35,000 per year",
+        "Entry requirements Entry requirements A*AA including either A*A in any order in Maths and Further Maths at A level",
+        "IB diploma score IB diploma score 37 including 7 in Higher Level Mathematics (Analysis & Approaches) and 66 in two other Higher Level subjects.",
+        "IELTS score of band 6.5 – 7.0 (no element below band 6.0) or equivalent."
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science and Mathematics",
+    "degree_type": "BSc (Hons)",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "September 2027",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "BSc (Hons) Computer Science and Mathematics (G411), Durham University; 3 years full-time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 35000,
+      "academic_year": "September 2027 entry",
+      "source": "course",
+      "note": "International (full-time): £35,000 per year (course page, September 2027)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Computer Science and Mathematics: A level A*AA including A*A in Maths and Further Maths (or the alternative on the course page).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS",
+        "min_score": "IELTS band 6.5-7.0 (no element below 6.0), or equivalent.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Computer Science and Mathematics: IB Diploma 37 points including 7 in HL Mathematics (Analysis & Approaches) and 6, 6 in two other HL subjects.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS",
+        "min_score": "IELTS band 6.5-7.0 (no element below 6.0), or equivalent.",
+        "source": "course"
+      }
+    }
+  ]
+}

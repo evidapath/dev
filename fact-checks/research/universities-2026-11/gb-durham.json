@@ -1,0 +1,38 @@
+{
+  "uni": "gb-durham",
+  "name": "Durham University",
+  "aliases": [
+    "Durham"
+  ],
+  "type": "public",
+  "website": "https://www.durham.ac.uk",
+  "country": {
+    "cc": "gb",
+    "name": "United Kingdom",
+    "currency": "GBP"
+  },
+  "city": {
+    "slug": "gb-durham",
+    "name": "Durham"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.durham.ac.uk/study/courses/computer-science-g400/",
+      "page": "c07cdd9b9f8f",
+      "title": "Computer Science G400 | Durham University",
+      "organization": "Durham University",
+      "quotes": [
+        "Computer Science G400 - Durham University"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students (full-time)",
+      "description": "Durham University's international full-time tuition fee per year.",
+      "source": "main"
+    }
+  ]
+}

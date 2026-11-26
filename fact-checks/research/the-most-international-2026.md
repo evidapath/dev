@@ -43,7 +43,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 30 | UNSW Sydney | Australia | have |
 | 31 | University of Leeds | United Kingdom | done (pending 2026-11-26-leeds.ndjson) |
 | 32 | University of British Columbia | Canada | have |
-| =33 | Durham University | United Kingdom | todo |
+| =33 | Durham University | United Kingdom | done (pending 2026-11-26-durham.ndjson) |
 | =33 | Massachusetts Institute of Technology | United States | have |
 | 35 | Institut Polytechnique de Paris | France | todo |
 | 36 | University of Birmingham | United Kingdom | have |

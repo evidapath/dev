@@ -1,0 +1,71 @@
+{
+  "uni": "gb-durham",
+  "slug": "bsc-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://www.durham.ac.uk/study/courses/computer-science-g400/",
+      "page": "c07cdd9b9f8f",
+      "title": "Computer Science G400 | Durham University",
+      "organization": "Durham University",
+      "quotes": [
+        "Computer Science G400 September 2027",
+        "Course length 3 years full-time",
+        "International (full-time): £35,000 per year",
+        "Entry requirements Entry requirements A*AA including A in Mathematics.",
+        "IB diploma score IB diploma score 37 with 766 in higher level subjects, including Mathematics.",
+        "IELTS score of band 6.5 – 7.0 (no element below band 6.0) or equivalent.",
+        "Contextual offer Contextual offer AAB including A in Mathematics."
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science",
+    "degree_type": "BSc (Hons)",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "September 2027",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "BSc (Hons) Computer Science (G400), Durham University; 3 years full-time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 35000,
+      "academic_year": "September 2027 entry",
+      "source": "course",
+      "note": "International (full-time): £35,000 per year (course page, September 2027)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Computer Science: A level A*AA including A in Mathematics (contextual offer AAB including A in Mathematics).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS",
+        "min_score": "IELTS band 6.5-7.0 (no element below 6.0), or equivalent.",
+        "source": "course"
+      }
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Computer Science: IB Diploma 37 points with 766 at Higher Level, including Mathematics.",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS",
+        "min_score": "IELTS band 6.5-7.0 (no element below 6.0), or equivalent.",
+        "source": "course"
+      }
+    }
+  ]
+}
