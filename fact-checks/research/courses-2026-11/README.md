@@ -485,3 +485,12 @@ academic years"; space-separated thousands read in quotes only. 27 earlier folde
 Held: ITU (fee currency not stated), Hacettepe (2024 fee decision), Sabancı (USD 36,500), Trento (official
 pages conflict: EUR 6,000 vs 3,000 max), University of Milan (Cloudflare bot check), Milano-Bicocca (course
 list behind sign-in), Pisa IPH (own fee), several programmes whose pages lack length/language (see generators).
+
+## 2026-11-26: order by international students; Malaysia APU, Sunway
+
+Subhan: prioritise universities with the most international students (search estimates used only to choose
+the order; nothing from them is stored). Pending: `2026-11-26-apu.ndjson` (3 computing BSc, RM108,500 over
+3 years + 6% SST, IELTS 5.0), `2026-11-26-sunway.ndjson` (4 computing degrees, estimated 2026 fee USD
+9,779-10,058, A-Level 12 points / IB 28, IELTS 6.0). Held: UCSI (fee layout on its pages can't be matched to
+programmes), INTI ("Approx. RM 89,708" doesn't say whether per year or for the whole degree), APU Information
+Technology (entry wording differs).
