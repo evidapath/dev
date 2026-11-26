@@ -47,14 +47,14 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =33 | Massachusetts Institute of Technology | United States | have |
 | 35 | Institut Polytechnique de Paris | France | todo |
 | 36 | University of Birmingham | United Kingdom | have |
-| 37 | University of St Andrews | United Kingdom | todo |
+| 37 | University of St Andrews | United Kingdom | held: subject page and 2027 prospectus disagree on grades (AAA vs AAB, IB 38 vs 36); fee not found (2026-11-26) |
 | 38 | Monash University | Australia | have |
 | 39 | The University of Queensland | Australia | todo |
 | 40 | University of Auckland | New Zealand | todo |
 | 41 | The University of Sydney | Australia | have |
 | 42 | University of Groningen | Netherlands | todo |
 | 43 | McGill University | Canada | have |
-| 44 | University of Bristol | United Kingdom | todo |
+| 44 | University of Bristol | United Kingdom | done (pending 2026-11-26-bristol.ndjson) |
 | 45 | Harvard University | United States | have |
 | 46 | University of Sheffield | United Kingdom | todo |
 | 47 | Leiden University | Netherlands | todo |

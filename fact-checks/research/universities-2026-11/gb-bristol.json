@@ -1,0 +1,38 @@
+{
+  "uni": "gb-bristol",
+  "name": "University of Bristol",
+  "aliases": [
+    "Bristol"
+  ],
+  "type": "public",
+  "website": "https://www.bristol.ac.uk",
+  "country": {
+    "cc": "gb",
+    "name": "United Kingdom",
+    "currency": "GBP"
+  },
+  "city": {
+    "slug": "gb-bristol",
+    "name": "Bristol"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.bristol.ac.uk/study/undergraduate/2027/computer-science/bsc-computer-science/",
+      "page": "f94a377fde49",
+      "title": "BSc Computer Science | University of Bristol",
+      "organization": "University of Bristol",
+      "quotes": [
+        "BSc Computer Science | Study at Bristol | University of Bristol"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "University of Bristol international Year 1 fee.",
+      "source": "main"
+    }
+  ]
+}

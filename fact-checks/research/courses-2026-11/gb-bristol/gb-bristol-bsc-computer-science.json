@@ -1,0 +1,59 @@
+{
+  "uni": "gb-bristol",
+  "slug": "bsc-computer-science",
+  "sources": {
+    "course": {
+      "url": "https://www.bristol.ac.uk/study/undergraduate/2027/computer-science/bsc-computer-science/",
+      "page": "f94a377fde49",
+      "title": "BSc Computer Science | University of Bristol",
+      "organization": "University of Bristol",
+      "quotes": [
+        "BSc Computer Science | Study at Bristol | University of Bristol",
+        "Programme duration 3 year(s) full-time",
+        "International students Year Year 1 fee 2027/28 £34,700",
+        "A-level standard offer: A*AA A-level contextual offer: AAB",
+        "International Baccalaureate Diploma 38 points overall with 18 at Higher Level, including 7 at Higher Level in Mathematics (either Analysis and Approaches or Applications and Interpretations)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science",
+    "degree_type": "BSc",
+    "field": "Computer Science",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [],
+    "entry_year": "2027",
+    "platform": "UCAS",
+    "source": "course",
+    "summary": "BSc Computer Science, University of Bristol; 3 years full-time.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "GBP",
+      "tuition_annual": 34700,
+      "academic_year": "2027/28",
+      "source": "course",
+      "note": "International students, Year 1 fee 2027/28: £34,700 (course page)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Computer Science: A-level standard offer A*AA (contextual offer AAB).",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Computer Science: IB Diploma 38 points overall with 18 at Higher Level, including 7 at Higher Level in Mathematics.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}
