@@ -1,0 +1,57 @@
+{
+  "uni": "jp-tohoku",
+  "name": "Tohoku University",
+  "aliases": [
+    "Tohoku Univ."
+  ],
+  "type": "public",
+  "website": "https://www.tohoku.ac.jp",
+  "country": {
+    "cc": "jp",
+    "name": "Japan",
+    "currency": "JPY"
+  },
+  "city": {
+    "slug": "jp-sendai",
+    "name": "Sendai"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.insc.tohoku.ac.jp/english/degree/undergraduate-english-future-global-leadership-program/",
+      "page": "6913c91e9a33",
+      "title": "Undergraduate (English): Future Global Leadership Program | Tohoku University",
+      "organization": "Tohoku University",
+      "quotes": [
+        "GLOBAL LEARNING CENTER, TOHOKU UNIVERSITY",
+        "Language: English Duration: 4 years",
+        "offers three outstanding undergraduate degree courses that are taught in English: - Advanced Molecular Chemistry (AMC) - International Mechanical and Aerospace Engineering (IMAC-U) - Applied Marine Biology (AMB)",
+        "Entrance Fee (Admission Fee) JPY 282,000 (Paid once for entrance to Tohoku University) Tuition Fees JPY 267,900 (Paid every semester for tuition.",
+        "Annual Tuition JPY 535,800 (JPY 267,900 x 2)",
+        "Sendai is a relatively inexpensive city"
+      ]
+    },
+    "course": {
+      "url": "https://www.insc.tohoku.ac.jp/english/degree/undergraduate-english-future-global-leadership-program/",
+      "page": "6913c91e9a33",
+      "title": "Undergraduate (English): Future Global Leadership Program | Tohoku University",
+      "organization": "Tohoku University",
+      "quotes": [
+        "GLOBAL LEARNING CENTER, TOHOKU UNIVERSITY",
+        "Language: English Duration: 4 years",
+        "offers three outstanding undergraduate degree courses that are taught in English: - Advanced Molecular Chemistry (AMC) - International Mechanical and Aerospace Engineering (IMAC-U) - Applied Marine Biology (AMB)",
+        "Entrance Fee (Admission Fee) JPY 282,000 (Paid once for entrance to Tohoku University) Tuition Fees JPY 267,900 (Paid every semester for tuition.",
+        "Annual Tuition JPY 535,800 (JPY 267,900 x 2)",
+        "Sendai is a relatively inexpensive city"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "all-students",
+      "label": "All students",
+      "description": "Tohoku University undergraduate tuition and entrance fee.",
+      "source": "course"
+    }
+  ]
+}

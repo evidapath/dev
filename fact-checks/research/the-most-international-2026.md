@@ -144,7 +144,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 131 | Pontificia Universidad Católica de Chile | Chile | todo |
 | 132 | University of Michigan-Ann Arbor | United States | todo |
 | 134 | University of Illinois at Urbana-Champaign | United States | todo |
-| 135 | National Taiwan University (NTU) | Taiwan | todo |
+| 135 | National Taiwan University (NTU) | Taiwan | built but held: TWD has no exchange rate in the app (ECB set), so the site can't show its cost (2026-11-27) |
 | 136 | University of Porto | Portugal | todo |
 | 137 | Korea University | South Korea | have? |
 | =138 | Emory University | United States | held: programme list is script-only and doesn't render (2026-11-27) |
@@ -162,12 +162,12 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 151 | Autonomous University of Madrid | Spain | todo |
 | 152 | Vanderbilt University | United States | held: no statement of the standard length; no undergraduate housing/food figures (2026-11-27) |
 | 153 | University of Padua | Italy | have |
-| 154 | Yonsei University (Seoul campus) | South Korea | todo |
+| 154 | Yonsei University (Seoul campus) | South Korea | held: length not stated in years; first year in a separate division (2026-11-27) |
 | 156 | University of Arizona | United States | have? |
 | 157 | University of Virginia (Main campus) | United States | todo |
 | 158 | Middle East Technical University | Turkey | have |
 | 160 | University of Colorado Boulder | United States | todo |
-| 161 | The University of Tokyo | Japan | todo |
+| 161 | The University of Tokyo | Japan | held: PEAK site TLS error; main-site programme page too thin (2026-11-27) |
 | 162 | Tongji University | China | todo |
 | 163 | Georgetown University | United States | done for the College of Arts & Sciences (pending 2026-11-27-georgetown.ndjson; 50 majors); SFS/MSB bulletin pages 404 |
 | 164 | Sapienza University of Rome | Italy | have |
@@ -176,13 +176,13 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =167 | University of Maryland, College Park | United States | todo |
 | =169 | Hebrew University of Jerusalem | Israel | todo |
 | =169 | University of Iowa | United States | held: two official pages give different international fees (2026-11-27) |
-| 171 | Tohoku University | Japan | todo |
+| 171 | Tohoku University | Japan | done (pending 2026-11-27-tohoku.ndjson; 3 FGL courses) |
 | 172 | University of Florida | United States | todo |
 | 173 | University of Warsaw | Poland | todo |
 | 174 | University of Pittsburgh-Pittsburgh campus | United States | todo |
 | =175 | Shanghai Jiao Tong University | China | todo |
-| =175 | Waseda University | Japan | todo |
-| 177 | Chulalongkorn University | Thailand | todo |
+| =175 | Waseda University | Japan | held: 2027 fee PDF behind Cloudflare check (2026-11-27) |
+| 177 | Chulalongkorn University | Thailand | held: international fees set per faculty, no current consolidated table (2026-11-27) |
 | =178 | Nanjing University | China | todo |
 | =178 | University of North Carolina at Chapel Hill | United States | held: 2026-27 non-resident tuition not final (2026-11-27) |
 | 180 | University of Texas at Austin | United States | todo |
@@ -192,20 +192,20 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =184 | Fudan University | China | todo |
 | =184 | University of Minnesota | United States | todo |
 | =186 | University of São Paulo | Brazil | todo |
-| =186 | University of Tsukuba | Japan | todo |
+| =186 | University of Tsukuba | Japan | held: no programme length stated in the 2027 guidelines (2026-11-27) |
 | 188 | University of Utah | United States | todo |
 | 189 | Tianjin University | China | todo |
 | =190 | Korea Advanced Institute of Science and Technology (KAIST) | South Korea | have |
 | =190 | Seoul National University | South Korea | todo |
-| 192 | The University of Osaka | Japan | todo |
-| 193 | Kyoto University | Japan | todo |
-| 194 | Kyushu University | Japan | todo |
-| 196 | Hokkaido University | Japan | todo |
-| 198 | Nagoya University | Japan | todo |
+| 192 | The University of Osaka | Japan | held: no programme length stated for its English programmes (2026-11-27) |
+| 193 | Kyoto University | Japan | done (pending 2026-11-27-kyoto.ndjson; Kyoto iUP, 9 faculties) |
+| 194 | Kyushu University | Japan | done (pending 2026-11-27-kyushu.ndjson; 4 IUPE programmes) |
+| 196 | Hokkaido University | Japan | done (pending 2026-11-27-hokkaido.ndjson; MJSP) |
+| 198 | Nagoya University | Japan | done (pending 2026-11-27-nagoya.ndjson; 10 G30 programmes) |
 | 199 | Southeast University | China | todo |
 | 200 | Nankai University | China | todo |
 | 201 | University of Campinas | Brazil | todo |
-| 202 | Keio University | Japan | todo |
+| 202 | Keio University | Japan | held: no current PEARL/GIGA fee on the pages read (2026-11-27) |
 | =203 | Pohang University of Science and Technology (POSTECH) | South Korea | todo |
 | =203 | Sichuan University | China | todo |
 | 205 | Wuhan University | China | todo |

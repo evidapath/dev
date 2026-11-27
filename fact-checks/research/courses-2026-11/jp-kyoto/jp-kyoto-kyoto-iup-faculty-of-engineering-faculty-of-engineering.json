@@ -1,0 +1,47 @@
+{
+  "uni": "jp-kyoto",
+  "slug": "kyoto-iup-faculty-of-engineering-faculty-of-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.iup.kyoto-u.ac.jp/Application_Guidelines_for_October_2027_Enrollment.pdf",
+      "page": "kyoto-iup-2027",
+      "title": "Application Guidelines for October 2027 Enrollment, Kyoto iUP | Kyoto University",
+      "organization": "Kyoto University",
+      "quotes": [
+        "Kyoto iUP comprises a six-month preparatory course followed by a four-year undergraduate course.",
+        "In the first two-and-a-half years, students develop an essential understanding of core subjects in both English and Japanese, and acquire sufficient Japanese language proficiency to attend specialized lectures and pursue advanced studies in Japanese in their final two years.",
+        "Faculty of Integrated Human Studies Faculty of Letters*2*3 Faculty of Education Faculty of Law Faculty of Economics Faculty of Science*2 Faculty of Pharmaceutical Sciences*4 Faculty of Engineering*2 Faculty of Agriculture*2*5",
+        "Undergraduate Course JPY 282,000 Full waiver available JPY 535,800 (Annual) Full or partial waivers available",
+        "Kyoto University reserves the right"
+      ]
+    }
+  },
+  "program": {
+    "name": "Kyoto iUP: Faculty of Engineering",
+    "degree_type": "Bachelor",
+    "field": "Engineering",
+    "faculty": "Faculty of Engineering",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en",
+      "ja"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Kyoto iUP: Faculty of Engineering, Faculty of Engineering, Kyoto University (Kyoto iUP); a six-month preparatory course, then a four-year undergraduate course taught in English and Japanese, with Japanese for the final two years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "JPY",
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Undergraduate course: JPY 535,800 a year (full or partial waivers available); admission fee JPY 282,000 (full waiver available). A six-month preparatory course comes first.",
+      "tuition_annual": 535800
+    }
+  ],
+  "admissions": []
+}

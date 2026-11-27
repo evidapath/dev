@@ -1,0 +1,63 @@
+{
+  "uni": "jp-nagoya",
+  "slug": "chemistry-school-of-engineering",
+  "sources": {
+    "course": {
+      "url": "https://admissions.g30.nagoya-u.ac.jp/undergraduate/",
+      "page": "193e0e84c609",
+      "title": "Undergraduate – Nagoya University Global 30 International Programs",
+      "organization": "Nagoya University",
+      "quotes": [
+        "Undergraduate – Nagoya University Global 30 International Programs",
+        "About Nagoya City",
+        "Automotive Engineering Program Mechanical Engineering - School of Engineering Electrical, Electronic and Information Engineering - School of Engineering Physics Program - School of Science Chemistry Program - School of Science - School of Engineering Biological Science Program - School of Science (Biology) - School of Agricultural Sciences (Applied Bioscience) Social Science Program - School of Law - School of Economics Japan-in-Asia Cultural Studies (JACS) Program - School of Humanities"
+      ]
+    },
+    "fees": {
+      "url": "https://admissions.g30.nagoya-u.ac.jp/studentlife/tuition/",
+      "page": "1a38c227504f",
+      "title": "Tuition and Financial Aid | Nagoya University G30",
+      "organization": "Nagoya University",
+      "quotes": [
+        "Tuition fee, regardless the nationality of students, is JPY535,800 per academic year",
+        "Annual Tuition Fee JPY 535,800 Non-Refundable Registration Fee One time payment at admission JPY 282,000"
+      ]
+    },
+    "y": {
+      "url": "https://admissions.g30.nagoya-u.ac.jp/faqs/",
+      "page": "51b72b8fb3a2",
+      "title": "FAQs | Nagoya University G30",
+      "organization": "Nagoya University",
+      "quotes": [
+        "All admitted students start as freshmen and complete 4 years of our bachelor’s degree program."
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemistry",
+    "degree_type": "Bachelor of Engineering",
+    "field": "Chemistry",
+    "faculty": "School of Engineering",
+    "duration_years": 4,
+    "duration_source": "y",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Chemistry, School of Engineering, Nagoya University (G30 International Programs, taught in English); a four-year bachelor's programme.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "JPY",
+      "academic_year": "2027 entry",
+      "source": "fees",
+      "note": "JPY 535,800 a year for all students; one-time registration fee JPY 282,000 at admission.",
+      "tuition_annual": 535800
+    }
+  ],
+  "admissions": []
+}

@@ -1,0 +1,56 @@
+{
+  "uni": "jp-kyoto",
+  "name": "Kyoto University",
+  "aliases": [
+    "Kyoto Univ.",
+    "Kyodai"
+  ],
+  "type": "public",
+  "website": "https://www.kyoto-u.ac.jp",
+  "country": {
+    "cc": "jp",
+    "name": "Japan",
+    "currency": "JPY"
+  },
+  "city": {
+    "slug": "jp-kyoto",
+    "name": "Kyoto"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.iup.kyoto-u.ac.jp/Application_Guidelines_for_October_2027_Enrollment.pdf",
+      "page": "kyoto-iup-2027",
+      "title": "Application Guidelines for October 2027 Enrollment, Kyoto iUP | Kyoto University",
+      "organization": "Kyoto University",
+      "quotes": [
+        "Kyoto iUP comprises a six-month preparatory course followed by a four-year undergraduate course.",
+        "In the first two-and-a-half years, students develop an essential understanding of core subjects in both English and Japanese, and acquire sufficient Japanese language proficiency to attend specialized lectures and pursue advanced studies in Japanese in their final two years.",
+        "Faculty of Integrated Human Studies Faculty of Letters*2*3 Faculty of Education Faculty of Law Faculty of Economics Faculty of Science*2 Faculty of Pharmaceutical Sciences*4 Faculty of Engineering*2 Faculty of Agriculture*2*5",
+        "Undergraduate Course JPY 282,000 Full waiver available JPY 535,800 (Annual) Full or partial waivers available",
+        "Kyoto University reserves the right"
+      ]
+    },
+    "course": {
+      "url": "https://www.iup.kyoto-u.ac.jp/Application_Guidelines_for_October_2027_Enrollment.pdf",
+      "page": "kyoto-iup-2027",
+      "title": "Application Guidelines for October 2027 Enrollment, Kyoto iUP | Kyoto University",
+      "organization": "Kyoto University",
+      "quotes": [
+        "Kyoto iUP comprises a six-month preparatory course followed by a four-year undergraduate course.",
+        "In the first two-and-a-half years, students develop an essential understanding of core subjects in both English and Japanese, and acquire sufficient Japanese language proficiency to attend specialized lectures and pursue advanced studies in Japanese in their final two years.",
+        "Faculty of Integrated Human Studies Faculty of Letters*2*3 Faculty of Education Faculty of Law Faculty of Economics Faculty of Science*2 Faculty of Pharmaceutical Sciences*4 Faculty of Engineering*2 Faculty of Agriculture*2*5",
+        "Undergraduate Course JPY 282,000 Full waiver available JPY 535,800 (Annual) Full or partial waivers available",
+        "Kyoto University reserves the right"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "all-students",
+      "label": "All students",
+      "description": "Kyoto iUP undergraduate course admission fee and annual tuition (waivers available).",
+      "source": "course"
+    }
+  ]
+}

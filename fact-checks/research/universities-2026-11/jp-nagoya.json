@@ -1,0 +1,70 @@
+{
+  "uni": "jp-nagoya",
+  "name": "Nagoya University",
+  "aliases": [
+    "Nagoya Univ."
+  ],
+  "type": "public",
+  "website": "https://en.nagoya-u.ac.jp",
+  "country": {
+    "cc": "jp",
+    "name": "Japan",
+    "currency": "JPY"
+  },
+  "city": {
+    "slug": "jp-nagoya",
+    "name": "Nagoya"
+  },
+  "sources": {
+    "main": {
+      "url": "https://admissions.g30.nagoya-u.ac.jp/undergraduate/",
+      "page": "193e0e84c609",
+      "title": "Undergraduate – Nagoya University Global 30 International Programs",
+      "organization": "Nagoya University",
+      "quotes": [
+        "Undergraduate – Nagoya University Global 30 International Programs",
+        "About Nagoya City",
+        "Automotive Engineering Program Mechanical Engineering - School of Engineering Electrical, Electronic and Information Engineering - School of Engineering Physics Program - School of Science Chemistry Program - School of Science - School of Engineering Biological Science Program - School of Science (Biology) - School of Agricultural Sciences (Applied Bioscience) Social Science Program - School of Law - School of Economics Japan-in-Asia Cultural Studies (JACS) Program - School of Humanities"
+      ]
+    },
+    "course": {
+      "url": "https://admissions.g30.nagoya-u.ac.jp/undergraduate/",
+      "page": "193e0e84c609",
+      "title": "Undergraduate – Nagoya University Global 30 International Programs",
+      "organization": "Nagoya University",
+      "quotes": [
+        "Undergraduate – Nagoya University Global 30 International Programs",
+        "About Nagoya City",
+        "Automotive Engineering Program Mechanical Engineering - School of Engineering Electrical, Electronic and Information Engineering - School of Engineering Physics Program - School of Science Chemistry Program - School of Science - School of Engineering Biological Science Program - School of Science (Biology) - School of Agricultural Sciences (Applied Bioscience) Social Science Program - School of Law - School of Economics Japan-in-Asia Cultural Studies (JACS) Program - School of Humanities"
+      ]
+    },
+    "fees": {
+      "url": "https://admissions.g30.nagoya-u.ac.jp/studentlife/tuition/",
+      "page": "1a38c227504f",
+      "title": "Tuition and Financial Aid | Nagoya University G30",
+      "organization": "Nagoya University",
+      "quotes": [
+        "Tuition fee, regardless the nationality of students, is JPY535,800 per academic year",
+        "Annual Tuition Fee JPY 535,800 Non-Refundable Registration Fee One time payment at admission JPY 282,000"
+      ]
+    },
+    "y": {
+      "url": "https://admissions.g30.nagoya-u.ac.jp/faqs/",
+      "page": "51b72b8fb3a2",
+      "title": "FAQs | Nagoya University G30",
+      "organization": "Nagoya University",
+      "quotes": [
+        "All admitted students start as freshmen and complete 4 years of our bachelor’s degree program."
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "all-students",
+      "label": "All students",
+      "description": "Nagoya University tuition is the same regardless of nationality.",
+      "source": "fees"
+    }
+  ]
+}

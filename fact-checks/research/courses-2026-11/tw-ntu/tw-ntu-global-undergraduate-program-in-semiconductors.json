@@ -1,0 +1,69 @@
+{
+  "uni": "tw-ntu",
+  "slug": "global-undergraduate-program-in-semiconductors",
+  "sources": {
+    "course": {
+      "url": "https://intl.ntu.edu.tw/admissions",
+      "page": "0bc9271fb228",
+      "title": "Admissions - International College, NTU",
+      "organization": "National Taiwan University",
+      "quotes": [
+        "The Global Undergraduate Program in Semiconductors only recruits international students only.",
+        "applying to National Taiwan University's International College (NTUIC)",
+        "7F, Zonghe Lecture Building, No.1, Sec.4 Roosevelt Rd., Taipei 10617, Taiwan"
+      ]
+    },
+    "fees": {
+      "url": "https://admissions.ntu.edu.tw/fees-scholarships/tuition-fees/",
+      "page": "aac78d3d7b06",
+      "title": "Tuition Fees | NTU Office of International Affairs",
+      "organization": "National Taiwan University",
+      "quotes": [
+        "Tuition is billed each semester (one academic year consists of two semesters).",
+        "International College Global Undergraduate Program in Semiconductors 60,000 2,000"
+      ]
+    },
+    "guide": {
+      "url": "https://admissions.ntu.edu.tw/wp-content/uploads/116-1Admission-Guidelines-for-Intl-Degree-Students_ENG-1.pdf",
+      "page": "ntu-tw-2027",
+      "title": "National Taiwan University (NTU) 2027/2028 September Entry Admission Guidelines for International Degree Students",
+      "organization": "National Taiwan University",
+      "quotes": [
+        "National Taiwan University (NTU) 2027/2028 September Entry Admission Guidelines for International Degree Students",
+        "A. Undergraduate programs shall be completed within 4 to 6 years."
+      ]
+    }
+  },
+  "program": {
+    "name": "Global Undergraduate Program in Semiconductors",
+    "degree_type": "Bachelor",
+    "field": "Electrical and Electronic Engineering",
+    "faculty": "International College",
+    "duration_years": 4,
+    "duration_source": "guide",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027/2028",
+    "platform": "",
+    "source": "course",
+    "summary": "Global Undergraduate Program in Semiconductors, International College, National Taiwan University (Taipei); for international students only.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "TWD",
+      "tuition_per_term": 60000,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "Tuition is billed each semester",
+        "(one academic year consists of two semesters)"
+      ],
+      "academic_year": "",
+      "source": "fees",
+      "note": "International students: TWD 60,000 per semester (tuition and fees); the page is for reference only."
+    }
+  ],
+  "admissions": []
+}

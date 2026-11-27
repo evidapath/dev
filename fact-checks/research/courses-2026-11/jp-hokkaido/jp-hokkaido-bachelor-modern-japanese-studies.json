@@ -1,0 +1,46 @@
+{
+  "uni": "jp-hokkaido",
+  "slug": "bachelor-modern-japanese-studies",
+  "sources": {
+    "course": {
+      "url": "https://www.oia.hokudai.ac.jp/mjsp/wp-content/uploads/2026/07/MJSP-Application-Guidelines-2028-Enrollment.pdf",
+      "page": "hokudai-mjsp-2028",
+      "title": "2028 Enrollment Application Guidelines, Modern Japanese Studies Program | Hokkaido University",
+      "organization": "Hokkaido University",
+      "quotes": [
+        "Modern Japanese Studies Program Hokkaido University",
+        "*The Modern Japanese Studies Program is a four-year Bachelor’s degree program preceded by a sixmonth Intensive Japanese Course.",
+        "Bachelor’s degree in ¥5,000 ¥282,000 ¥535,800 (per year) Modern Japanese Studies",
+        "*The full amount of the Enrollment Fee and first-year Tuition Fees will be waived (2028 academic year) for students enrolling in the Modern Japanese Studies Program in April (2028).",
+        "Office of Admissions, Hokkaido University Kita 17, Nishi 8, Kita-ku, Sapporo, Hokkaido, Japan 060-0817"
+      ]
+    }
+  },
+  "program": {
+    "name": "Modern Japanese Studies",
+    "degree_type": "Bachelor",
+    "field": "Japanese Studies",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "April 2028",
+    "platform": "",
+    "source": "course",
+    "summary": "Modern Japanese Studies Program, Hokkaido University; a four-year bachelor's degree preceded by a six-month Intensive Japanese Course.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "JPY",
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "JPY 535,800 a year; enrollment fee JPY 282,000. For April 2028 entrants the enrollment fee and first-year tuition are waived in full.",
+      "tuition_annual": 535800
+    }
+  ],
+  "admissions": []
+}

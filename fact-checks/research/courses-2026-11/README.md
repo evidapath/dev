@@ -611,3 +611,11 @@ Washington, Michigan State, Emory, Dartmouth, Vanderbilt, Iowa, Wisconsin, UNC.
 Builder: lengths written as semesters in words ("eight semesters", "eighth semester") are read. hu-bme,
 hu-szeged, de-tuebingen, us-brown rebuild identically with the old and new builder; a 5-year length against
 "eighth semester" is refused.
+
+## 2026-11-27 (5): Japan
+
+Pending (dry-run HTTP 200; new country jp): nagoya (10 G30 programmes, JPY 535,800/yr + JPY 282,000 once),
+tohoku (3 FGL courses), kyushu (4 IUPE programmes, JPY 267,900/semester), kyoto (Kyoto iUP, 9 faculties; English
+then Japanese from year 3), hokkaido (Modern Japanese Studies; 2028 entrants' enrollment fee and first-year
+tuition waived). Held: Tokyo, Waseda, Keio, Tsukuba, Osaka, Yonsei, NTU Taiwan (built; app has no TWD rate),
+Chulalongkorn (reasons in queue).

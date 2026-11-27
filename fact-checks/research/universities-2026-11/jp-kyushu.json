@@ -1,0 +1,55 @@
+{
+  "uni": "jp-kyushu",
+  "name": "Kyushu University",
+  "aliases": [
+    "Kyushu Univ."
+  ],
+  "type": "public",
+  "website": "https://www.kyushu-u.ac.jp",
+  "country": {
+    "cc": "jp",
+    "name": "Japan",
+    "currency": "JPY"
+  },
+  "city": {
+    "slug": "jp-fukuoka",
+    "name": "Fukuoka"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.kyushu-u.ac.jp/f/63645/ENG_rev2026_Application%20Instruction.pdf",
+      "page": "kyushu-iupe-2026",
+      "title": "Application Instructions, International Undergraduate Programs in Engineering, October 2026 | Kyushu University",
+      "organization": "Kyushu University",
+      "quotes": [
+        "International Undergraduate Programs in Electrical Engineering and Computer Science Applied Chemistry Civil Engineering Mechanical and Aerospace Engineering October 2026 School of Engineering Kyushu University",
+        "The International Undergraduate Program is a four-year bachelor program, in which all classes, with the exception of Japa",
+        "Tuition Fee for Fall 2026 Tuition Fee for Spring 2027",
+        "282,000 267,900 267,900 817,800",
+        "Kyushu University 744 Motooka, Nishi-ku, Fukuoka, 819-0395"
+      ]
+    },
+    "course": {
+      "url": "https://www.kyushu-u.ac.jp/f/63645/ENG_rev2026_Application%20Instruction.pdf",
+      "page": "kyushu-iupe-2026",
+      "title": "Application Instructions, International Undergraduate Programs in Engineering, October 2026 | Kyushu University",
+      "organization": "Kyushu University",
+      "quotes": [
+        "International Undergraduate Programs in Electrical Engineering and Computer Science Applied Chemistry Civil Engineering Mechanical and Aerospace Engineering October 2026 School of Engineering Kyushu University",
+        "The International Undergraduate Program is a four-year bachelor program, in which all classes, with the exception of Japa",
+        "Tuition Fee for Fall 2026 Tuition Fee for Spring 2027",
+        "282,000 267,900 267,900 817,800",
+        "Kyushu University 744 Motooka, Nishi-ku, Fukuoka, 819-0395"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "all-students",
+      "label": "All students",
+      "description": "Kyushu University IUPE enrolment fee and tuition (original amounts).",
+      "source": "course"
+    }
+  ]
+}

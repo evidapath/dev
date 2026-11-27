@@ -1,0 +1,47 @@
+{
+  "uni": "jp-tohoku",
+  "slug": "advanced-molecular-chemistry",
+  "sources": {
+    "course": {
+      "url": "https://www.insc.tohoku.ac.jp/english/degree/undergraduate-english-future-global-leadership-program/",
+      "page": "6913c91e9a33",
+      "title": "Undergraduate (English): Future Global Leadership Program | Tohoku University",
+      "organization": "Tohoku University",
+      "quotes": [
+        "GLOBAL LEARNING CENTER, TOHOKU UNIVERSITY",
+        "Language: English Duration: 4 years",
+        "offers three outstanding undergraduate degree courses that are taught in English: - Advanced Molecular Chemistry (AMC) - International Mechanical and Aerospace Engineering (IMAC-U) - Applied Marine Biology (AMB)",
+        "Entrance Fee (Admission Fee) JPY 282,000 (Paid once for entrance to Tohoku University) Tuition Fees JPY 267,900 (Paid every semester for tuition.",
+        "Annual Tuition JPY 535,800 (JPY 267,900 x 2)",
+        "Sendai is a relatively inexpensive city"
+      ]
+    }
+  },
+  "program": {
+    "name": "Advanced Molecular Chemistry",
+    "degree_type": "Bachelor",
+    "field": "Chemistry",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Advanced Molecular Chemistry, , Tohoku University (Future Global Leadership programme, taught in English); 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "JPY",
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "JPY 535,800 a year (JPY 267,900 per semester); one-time entrance fee JPY 282,000.",
+      "tuition_annual": 535800
+    }
+  ],
+  "admissions": []
+}
