@@ -1,0 +1,71 @@
+{
+  "uni": "de-fu-berlin",
+  "slug": "b-economics",
+  "sources": {
+    "course": {
+      "url": "https://www.fu-berlin.de/en/studium/studienangebot/grundstaendige/volkswirtschaftslehre_mono/index.html",
+      "page": "1f5e05d89254",
+      "title": "Economics - Mono bachelor | Freie Universität Berlin",
+      "organization": "Freie Universität Berlin",
+      "quotes": [
+        "Economics - Mono bachelor",
+        "1st Semester Admissions Restricted admission",
+        "Language English, German Degree Bachelor of Science (B.Sc.)",
+        "Duration 6 Semester"
+      ]
+    },
+    "fees": {
+      "url": "https://www.fu-berlin.de/en/studium/studieren/studienorganisation/gebuehren/gebuehren-faq/index.html",
+      "page": "79d5a81ed4b4",
+      "title": "Fees and dues | Freie Universität Berlin",
+      "organization": "Freie Universität Berlin",
+      "quotes": [
+        "Freie Universität Berlin does not charge any tuition fees (except for continuing education programs), rather so-called \"Semestergebühren und -beiträge\" (fees and dues).",
+        "Fees for new enrollments for winter semester 2026/27 A total of €376,80 is payable for registration for the winter semester 2026/27",
+        "Fees for new enrollments for summer semester 2027"
+      ]
+    }
+  },
+  "program": {
+    "name": "Economics",
+    "degree_type": "Bachelor of Science",
+    "field": "Economics",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en",
+      "de"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Economics (Mono bachelor), Freie Universität Berlin; 6 semesters, language English, German.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "EUR",
+      "tuition_per_term": 0,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "winter semester",
+        "summer semester"
+      ],
+      "academic_year": "winter semester 2026/27",
+      "source": "fees",
+      "note": "No tuition fee. Semester fees and dues €376.80 for new enrolment in winter semester 2026/27.",
+      "mandatory_per_term": 376.8
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Economics: restricted admission in the 1st semester; language of instruction English, German. No grade cut-off is published.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

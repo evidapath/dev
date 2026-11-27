@@ -572,3 +572,16 @@ English-taught bachelor's already added.
 App: decision-engine pickProgram now ranks a programme named exactly as the subject above one only filed under it
 (sim: "Computer Science" showed CMU Computational Biology and ETH Computational Science first; now Computer
 Science). Build passes.
+
+## 2026-11-27 (2): more programmes for five more universities
+
+Pending `2026-11-27-<name>-more.ndjson` (dry-run HTTP 200): tuebingen (+63, every Bachelor mono and major subject in
+the course finder, Lateinamerikastudien left out: language "Other"), vienna (+33, the bachelor's on the
+"Bachelor's and diploma programmes" page; that page may not list every programme), tuwien (+12; Civil
+Engineering and Technical Mathematics overview pages skipped), fu-berlin (+44, mono and combi-bachelor major
+subjects; minors, teacher-training tracks and pages without a Basic Information block left out), auckland (+15,
+single degrees with one 2027 international fee; BA, BSc, Communication (fee ranges), Health Sciences and
+Optometry (no fee shown), MBChB and conjoints left out). Sanity IDs over 128 characters avoided by shortening
+slugs (umlauts spelt out).
+
+Not yet expanded: Berkeley, Leiden, NUS (programme list behind a bot check), Freiburg.

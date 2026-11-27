@@ -1,0 +1,90 @@
+{
+  "uni": "at-univie",
+  "slug": "ba-meteorology-and-climate-science",
+  "sources": {
+    "course": {
+      "url": "https://studieren.univie.ac.at/en/find-you-degree-programme/bachelors-and-diploma-programmes/meteorology-and-climate-science-bachelors-programme",
+      "page": "a76597744b2f",
+      "title": "Meteorology and Climate Science (bachelor's programme) | University of Vienna",
+      "organization": "University of Vienna",
+      "quotes": [
+        "Meteorology and Climate Science (bachelor's programme)",
+        "Programme Code p]:mb-0\"> 033 604",
+        "Duration p]:mb-0\"> 6 semesters",
+        "Degree p]:mb-0\"> Bachelor of Science (BSc)",
+        "no fixed upper limit",
+        "German (admission requirement)",
+        "Additional exam p]:mb-0\"> None"
+      ]
+    },
+    "fees": {
+      "url": "https://studieren.univie.ac.at/en/studying-and-learning/financial-matters/amount-of-the-tuition-fee/students-union-fee",
+      "page": "1c48f4ab395f",
+      "title": "Amount of the tuition fee/Students' Union fee | University of Vienna",
+      "organization": "University of Vienna",
+      "quotes": [
+        "Amount non-EU/EEA Students' Union fee: 26.20 Euro Tuition fee: 726.72 Euro Total: 752.92 Euro per semester",
+        "Students with non-EU/EEA Citizenship You must pay your tuition fee/Students' Union fee every semester",
+        "from winter semester 2025 onwards",
+        "before summer semester 2021"
+      ]
+    },
+    "german": {
+      "url": "https://studieren.univie.ac.at/en/applying-for-a-programme/language-proficiency/german-language-proficiency",
+      "page": "7fc2cfa55a74",
+      "title": "German language proficiency | University of Vienna",
+      "organization": "University of Vienna",
+      "quotes": [
+        "The following applies to all bachelor’s and diploma programmes instructed in German : In your application, you need a proof of German language proficiency at level A2 (or higher). To be admitted, you must provide proof of German language proficiency at level C1."
+      ]
+    }
+  },
+  "program": {
+    "name": "Meteorology and Climate Science",
+    "degree_type": "Bachelor of Science (BSc)",
+    "field": "Earth Sciences",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "de"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Meteorology and Climate Science (bachelor's programme), University of Vienna (programme code 033 604); 6 semesters, German required for admission.",
+    "application_requirements": [
+      {
+        "name": "German language proficiency",
+        "source": "german",
+        "type": "language",
+        "description": "Programmes taught in German: proof of German at level A2 (or higher) to apply, and at level C1 to be admitted."
+      }
+    ]
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_per_term": 726.72,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "winter semester",
+        "summer semester"
+      ],
+      "academic_year": "per semester",
+      "source": "fees",
+      "note": "Non-EU/EEA citizens: tuition €726.72 + Students' Union fee €26.20 = €752.92 per semester.",
+      "mandatory_per_term": 26.2
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Meteorology and Climate Science: no fixed upper limit on places; German required for admission. No grade cut-off is published.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

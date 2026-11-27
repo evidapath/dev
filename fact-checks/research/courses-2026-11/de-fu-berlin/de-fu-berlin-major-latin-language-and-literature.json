@@ -1,0 +1,70 @@
+{
+  "uni": "de-fu-berlin",
+  "slug": "major-latin-language-and-literature",
+  "sources": {
+    "course": {
+      "url": "https://www.fu-berlin.de/en/studium/studienangebot/grundstaendige/lateinische_philologie_kombi/index.html",
+      "page": "b5ba34756eff",
+      "title": "Latin Language and Literature - Major subject in a combi bachelor | Freie Universität Berlin",
+      "organization": "Freie Universität Berlin",
+      "quotes": [
+        "Latin Language and Literature - Major subject in a combi bachelor",
+        "1st Semester Admissions Unrestricted admission",
+        "Language German Degree Bachelor of Arts (B.A.)",
+        "Duration 6 Semester"
+      ]
+    },
+    "fees": {
+      "url": "https://www.fu-berlin.de/en/studium/studieren/studienorganisation/gebuehren/gebuehren-faq/index.html",
+      "page": "79d5a81ed4b4",
+      "title": "Fees and dues | Freie Universität Berlin",
+      "organization": "Freie Universität Berlin",
+      "quotes": [
+        "Freie Universität Berlin does not charge any tuition fees (except for continuing education programs), rather so-called \"Semestergebühren und -beiträge\" (fees and dues).",
+        "Fees for new enrollments for winter semester 2026/27 A total of €376,80 is payable for registration for the winter semester 2026/27",
+        "Fees for new enrollments for summer semester 2027"
+      ]
+    }
+  },
+  "program": {
+    "name": "Latin Language and Literature",
+    "degree_type": "Bachelor of Arts (major subject, combi bachelor)",
+    "field": "Latin Language and Literature",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "de"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Latin Language and Literature (Major subject in a combi bachelor), Freie Universität Berlin; 6 semesters, language German.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "EUR",
+      "tuition_per_term": 0,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "winter semester",
+        "summer semester"
+      ],
+      "academic_year": "winter semester 2026/27",
+      "source": "fees",
+      "note": "No tuition fee. Semester fees and dues €376.80 for new enrolment in winter semester 2026/27.",
+      "mandatory_per_term": 376.8
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Latin Language and Literature: unrestricted admission in the 1st semester; language of instruction German. No grade cut-off is published.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

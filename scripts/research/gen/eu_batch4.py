@@ -125,3 +125,138 @@ prog("de-tuebingen", "bsc-computer-science", {"course": UP, "fees": UF},
         "Non-EU/EEA students: €1,500.00 tuition + €194.80 semester fee per semester.", "per semester")],
      adm_all({"international-other": "Computer Science: no restricted admission and no selection procedure, if you meet the entry requirements; taught in German. No grade cut-off is published."}, "course"))
 print("wrote eu batch4")
+
+# Tübingen: every other Bachelor (mono) and Bachelor (major subject) in the course finder (added 2026-11-27).
+# Fees are Tübingen's (same page as above, valid for all Bachelor's degree programs). Lateinamerikastudien left
+# out: its language of instruction is given only as "Other".
+import re
+from newuni import PAGES, slugify
+TFIELD = {"Ägyptologie": "History", "Allgemeine Rhetorik": "Humanities", "Altorientalische Philologie": "Humanities", "Biochemistry": "Biochemistry",
+          "Biologie": "Biology", "Chemistry": "Chemistry", "Cognitive Science": "Cognitive Science", "Computational Linguistics": "Linguistics",
+          "Economics and Business Administration": "Economics", "English and American Studies": "English", "Geographie": "Geography",
+          "Geoökologie": "Environmental Science", "Geowissenschaften": "Earth Sciences", "Germanistik": "German Studies",
+          "Geschichtswissenschaft": "History", "Griechisch": "Classics", "Hebammenwissenschaft": "Midwifery", "International Business Administration": "Business",
+          "International Economics": "Economics", "Internationale Literaturen": "Literature", "Italienisch": "Italian Studies", "Judaistik": "Religious Studies",
+          "Katholische Theologie": "Theology", "Klassische Archäologie": "Archaeology", "Kunstgeschichte": "Art History", "Latein": "Classics",
+          "Mathematics": "Mathematics", "Medizintechnik": "Biomedical Engineering", "Molekulare Medizin": "Biomedical Science", "Musikwissenschaft": "Music",
+          "Nano-Science": "Physics", "Pflege": "Nursing", "Philosophie": "Philosophy", "Physics": "Physics", "Politikwissenschaft": "Politics",
+          "Psychologie": "Psychology", "Religionswissenschaft": "Religious Studies", "Slavistik": "Slavic Studies", "Soziologie": "Sociology",
+          "Spanisch": "Spanish", "Umweltnaturwissenschaften": "Environmental Science", "Französisch": "French"}
+for pid in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "tue_pages.txt")).read().split():
+    t = re.sub(r"\s+", " ", open(PAGES / f"{pid}.txt", errors="replace").read())
+    title = t.split(" | ")[0].strip()
+    name, kind = re.match(r"(.+?) - Bachelor \((mono|major subject)\)", title).groups()
+    k = re.search(r"Restricted admission (None|Yes, in first and higher semesters|Yes, in first semester) Regular duration of studies (\d) semester Is a combination subject required\? (Yes|No)", t)
+    lang = re.search(r"Language of instruction (German|English)\b", t)
+    if not (k and lang):
+        continue
+    restricted, sem, combo = k.groups()
+    field = TFIELD.get(name) or TFIELD.get(name.split(" mit ")[0]) or TFIELD.get(name.split("/")[0].strip()) or ("Sport Science" if name.startswith("Sportwissenschaft") else name)
+    years = int(sem) / 2
+    P2 = src(pid, f"{title} | University of Tübingen", ORG, [f"{title} | University of Tübingen", k.group(0), f"Language of instruction {lang.group(1)}"])
+    combo_txt = " As a major subject it is studied together with a second (combination) subject." if combo == "Yes" else ""
+    adm = {"None": "no restricted admission (no selection procedure if you meet the entry requirements)",
+           "Yes, in first and higher semesters": "restricted admission in first and higher semesters",
+           "Yes, in first semester": "restricted admission in the first semester"}[restricted]
+    asc = name.translate(str.maketrans({"ä": "ae", "ö": "oe", "ü": "ue", "Ä": "Ae", "Ö": "Oe", "Ü": "Ue", "ß": "ss"}))
+    prog("de-tuebingen", "bachelor-" + slugify(asc)[:45].rstrip("-") + ("-major" if kind != "mono" else ""), {"course": P2, "fees": UF},
+         {"name": name, "degree_type": "Bachelor" + (" (major subject)" if kind != "mono" else ""), "field": field, "faculty": "",
+          "duration_years": years if years % 1 else int(years), "duration_source": "course", "languages": ["de" if lang.group(1) == "German" else "en"],
+          "entry_year": "2027", "platform": "", "source": "course",
+          "summary": f"{title}, University of Tübingen; regular duration {sem} semesters, taught in {lang.group(1)}.{combo_txt}", "application_requirements": []},
+         [C("non-eu", 1500, 194.80, ["winter semester", "summer semester"], "fees",
+            "Non-EU/EEA students: €1,500.00 tuition + €194.80 semester fee per semester.", "per semester")],
+         adm_all({"international-other": f"{name}: {adm}; taught in {lang.group(1)}. No grade cut-off is published."}, "course"))
+print("wrote tuebingen (all bachelor's)")
+
+VKEY = {"Geography": "Geography", "Mathematics": "Mathematics", "Physics": "Physics", "Philosophy": "Philosophy", "History": "History",
+        "Linguistics": "Linguistics", "Musicology": "Music", "Statistics and Data Analytics": "Statistics", "Meteorology and Climate Science": "Earth Sciences",
+        "Sport and Human Movement Science": "Sport Science", "Theatre, Film and Media Studies": "Media and Communication", "Comparative Literature": "Literature",
+        "History of Art and Architecture": "Art History", "Classical Archaeology": "Archaeology", "Prehistory and Historical Archaeology": "Archaeology",
+        "Protestant Theology": "Theology", "Islamic Theological Studies": "Theology", "Religious Education": "Theology", "German Philology": "German Studies"}
+field_for_vie = lambda n: VKEY.get(n, n)
+# Vienna: the bachelor's programmes on "Bachelor's and diploma programmes" (added 2026-11-27); each page's
+# "in a nutshell" block. Fees are the University of Vienna's non-EU/EEA semester fees (same page as above).
+VF_ = 'p]:mb-0"> '
+for pid in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "vie_pages.txt")).read().split():
+    t = re.sub(r"\s+", " ", open(PAGES / f"{pid}.txt", errors="replace").read())
+    title = t.split(" Skip to main")[0].strip()
+    name = title.replace(" (bachelor's programme)", "")
+    code = re.search(r"Programme Code " + re.escape(VF_) + r"(\d{3} \d{3})", t).group(1)
+    deg = re.search(r"Degree " + re.escape(VF_) + r"(Bachelor of [A-Za-z ]+?(?: \((?:BA|BSc)\))?) Contents", t).group(1)
+    ex = re.search(r"Additional exam " + re.escape(VF_) + r"(.+?) Degree " + re.escape(VF_), t)
+    if "German (admission requirement)" not in t or "6 semesters" not in t:
+        continue
+    qs = [title, f"Programme Code {VF_}{code}", f"Duration {VF_}6 semesters", f"Degree {VF_}{deg}", "no fixed upper limit", "German (admission requirement)"]
+    if ex:
+        qs.append(f"Additional exam {VF_}{ex.group(1)}")
+    P3 = src(pid, f"{title} | University of Vienna", "University of Vienna", qs)
+    extra = "" if not ex or ex.group(1) == "None" else f" Additional exam: {ex.group(1)}."
+    asc = name.translate(str.maketrans({"ä": "ae", "ö": "oe", "ü": "ue"}))
+    prog("at-univie", "ba-" + slugify(asc)[:50].rstrip("-"), {"course": P3, "fees": VF, "german": VG},
+         {"name": name, "degree_type": deg, "field": field_for_vie(name) if "field_for_vie" in globals() else name, "faculty": "",
+          "duration_years": 3, "duration_source": "course", "languages": ["de"], "entry_year": "2027", "platform": "", "source": "course",
+          "summary": f"{title}, University of Vienna (programme code {code}); 6 semesters, German required for admission.",
+          "application_requirements": [{"name": "German language proficiency", "source": "german", "type": "language",
+                                        "description": "Programmes taught in German: proof of German at level A2 (or higher) to apply, and at level C1 to be admitted."}]},
+         [C("non-eu", 726.72, 26.20, ["winter semester", "summer semester"], "fees",
+            "Non-EU/EEA citizens: tuition €726.72 + Students' Union fee €26.20 = €752.92 per semester.", "per semester")],
+         adm_all({"international-other": f"{name}: no fixed upper limit on places; German required for admission.{extra} No grade cut-off is published."}, "course"))
+print("wrote vienna (bachelor's list)")
+
+# TU Wien: other bachelor's programmes on its Bachelor Programmes page (added 2026-11-27). Pages without the key
+# facts line (Civil Engineering, Technical Mathematics: overview pages) are skipped.
+WFIELD = {"Architecture": "Architecture", "Chemical and Process Engineering": "Chemical Engineering", "Electrical Engineering": "Electrical and Electronic Engineering",
+          "Environmental Engineering": "Engineering", "Geodesy and Geoinformation": "Engineering", "Mechanical Engineering": "Mechanical Engineering",
+          "Mechanical Engineering - Management": "Mechanical Engineering", "Technical Chemistry": "Chemistry", "Technical Physics": "Physics",
+          "Urban and Regional Planning": "Urban Studies", "Business Informatics": "Business", "Computer Engineering": "Computer Engineering"}
+for pid in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "tuw_pages.txt")).read().split():
+    t = re.sub(r"\s+", " ", open(PAGES / f"{pid}.txt", errors="replace").read())
+    title = t.split(" | ")[0].strip()
+    k = "Duration of the degree programme 6 semesters Credits 180 ECTS Language of instruction German Degree Bachelor of Science (BSc)"
+    if k not in t or title not in WFIELD:
+        continue
+    P4 = src(pid, f"{title} | TU Wien", "TU Wien", [f"{title} | TU Wien", k])
+    prog("at-tuwien", "bsc-" + slugify(title), {"course": P4, "fees": TF},
+         {"name": title, "degree_type": "BSc", "field": WFIELD[title], "faculty": "", "duration_years": 3, "duration_source": "course",
+          "languages": ["de"], "entry_year": "2027", "platform": "", "source": "course",
+          "summary": f"Bachelor's programme {title}, TU Wien; 6 semesters, 180 ECTS, taught in German.", "application_requirements": []},
+         [C("non-eu", 726.72, None, ["winter semester", "summer semester"], "fees",
+            "Non-EU nationals: €726.72 tuition per semester, plus the ÖH (student union) fee each semester.", "per semester")],
+         adm_all({"international-other": f"{title}: taught in German. No grade cut-off is published."}, "course"))
+print("wrote tuwien (bachelor's list)")
+
+# FU Berlin: every mono bachelor and combi-bachelor major subject in "Our Degree Programs" (added 2026-11-27),
+# from each page's "Basic Information" block. Left out: minor subjects, teacher-training tracks, programmes whose
+# page has no Basic Information block, and Equine Sciences ("No admissions").
+LANGC = {"German": "de", "English": "en", "French": "fr", "Italian": "it", "Spanish": "es", "Modern Greek": "el"}
+FFIELD = {"Biochemistry": "Biochemistry", "Biology": "Biology", "Chemistry": "Chemistry", "Mathematics": "Mathematics", "Physics": "Physics",
+          "Economics": "Economics", "Psychology": "Psychology", "Political Science": "Politics", "Philosophy": "Philosophy", "History": "History",
+          "Geographical Sciences": "Geography", "Geological Sciences": "Earth Sciences", "Meteorology": "Earth Sciences",
+          "Digital Media and Technology": "Computer Science", "Media and Communication Studies": "Media and Communication", "Film Studies": "Media and Communication",
+          "English Language and Literature": "English", "German Language and Literature": "German Studies", "Social and Cultural Anthropology": "Anthropology",
+          "Theater Studies": "Theatre"}
+seen_fu = set()
+for pid in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "fu_pages.txt")).read().split():
+    t = re.sub(r"\s+", " ", open(PAGES / f"{pid}.txt", errors="replace").read())
+    m = re.search(r"Bachelor's Degree and State Exam (.+?) \1 - (Mono bachelor|Major subject in a combi bachelor)", t)
+    d = re.search(r"Basic Information 1st Semester Admissions (Restricted admission|Unrestricted admission).*? Language ([A-Za-z, ]+?) Degree (Bachelor of (?:Science \(B\.Sc\.\)|Arts \(B\.A\.\))).*? Duration (\d) Semester", t)
+    if not (m and d) or re.search(r"Teacher Training|for Teaching", m.group(1)) or m.group(1) in seen_fu:
+        continue
+    name, kind = m.group(1), m.group(2)
+    langs = [LANGC[x.strip()] for x in d.group(2).split(",") if x.strip() in LANGC]
+    if not langs:
+        continue
+    seen_fu.add(name)
+    adm, deg, sem = d.group(1), d.group(3), int(d.group(4))
+    P5 = src(pid, f"{name} - {kind} | Freie Universität Berlin", "Freie Universität Berlin",
+             [f"{name} - {kind}", f"1st Semester Admissions {adm}", f"Language {d.group(2)} Degree {deg}", f"Duration {sem} Semester"])
+    prog("de-fu-berlin", ("b-" if kind == "Mono bachelor" else "major-") + slugify(name)[:50].rstrip("-"), {"course": P5, "fees": FF},
+         {"name": name, "degree_type": deg.split(" (")[0] + (" (major subject, combi bachelor)" if kind != "Mono bachelor" else ""),
+          "field": FFIELD.get(name, name), "faculty": "", "duration_years": sem / 2 if sem % 2 else sem // 2, "duration_source": "course",
+          "languages": langs, "entry_year": "2027", "platform": "", "source": "course",
+          "summary": f"{name} ({kind}), Freie Universität Berlin; {sem} semesters, language {d.group(2)}.", "application_requirements": []},
+         [C("all-students", 0, 376.80, ["winter semester", "summer semester"], "fees",
+            "No tuition fee. Semester fees and dues €376.80 for new enrolment in winter semester 2026/27.", "winter semester 2026/27")],
+         adm_all({"international-other": f"{name}: {adm.lower()} in the 1st semester; language of instruction {d.group(2)}. No grade cut-off is published."}, "course"))
+print("wrote fu-berlin (bachelor's list)")

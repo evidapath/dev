@@ -1,0 +1,67 @@
+{
+  "uni": "at-tuwien",
+  "slug": "bsc-computer-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.tuwien.at/en/studies/studies/bachelor-programmes/computer-science-and-business-informatics/computer-engineering",
+      "page": "035cc7a62c5e",
+      "title": "Computer Engineering | TU Wien",
+      "organization": "TU Wien",
+      "quotes": [
+        "Computer Engineering | TU Wien",
+        "Duration of the degree programme 6 semesters Credits 180 ECTS Language of instruction German Degree Bachelor of Science (BSc)"
+      ]
+    },
+    "fees": {
+      "url": "https://www.tuwien.at/en/studies/admission/students-union-fee-and-tuition-fee/tuition-fee",
+      "page": "0bd8758b7bea",
+      "title": "Tuition Fee | TU Wien",
+      "organization": "TU Wien",
+      "quotes": [
+        "Non-degree students and non-EU nationals are subject to tuition fees from the first semester.",
+        "The tuition fee is regular € 363.36 per semester (or € 726.72 per semester for non-EU nationals ). In addition to the respective tuition fee, the ÖH fee including insurance has to be paid each semester.",
+        "until October 31 st for winter semester and March 31 st for summer semester"
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Engineering",
+    "degree_type": "BSc",
+    "field": "Computer Engineering",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "de"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor's programme Computer Engineering, TU Wien; 6 semesters, 180 ECTS, taught in German.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_per_term": 726.72,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "winter semester",
+        "summer semester"
+      ],
+      "academic_year": "per semester",
+      "source": "fees",
+      "note": "Non-EU nationals: €726.72 tuition per semester, plus the ÖH (student union) fee each semester."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Computer Engineering: taught in German. No grade cut-off is published.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

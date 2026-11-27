@@ -1,0 +1,70 @@
+{
+  "uni": "de-tuebingen",
+  "slug": "bachelor-ur-und-fruehgeschichtliche-archaeologie-und-a-major",
+  "sources": {
+    "course": {
+      "url": "https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/ur-und-fruehgeschichtliche-archaeologie-und-archaeologie-des-mittelalters-bachelor-hauptfach/",
+      "page": "3db81dda76e9",
+      "title": "Ur- und Frühgeschichtliche Archäologie und Archäologie des Mittelalters - Bachelor (major subject) | University of Tübingen",
+      "organization": "University of Tübingen",
+      "quotes": [
+        "Ur- und Frühgeschichtliche Archäologie und Archäologie des Mittelalters - Bachelor (major subject) | University of Tübingen",
+        "Restricted admission None Regular duration of studies 6 semester Is a combination subject required? Yes",
+        "Language of instruction German"
+      ]
+    },
+    "fees": {
+      "url": "https://uni-tuebingen.de/en/study/organizing-your-studies/fees/tuition-fees/",
+      "page": "bdf14d3c94a1",
+      "title": "Tuition fees | University of Tübingen",
+      "organization": "University of Tübingen",
+      "quotes": [
+        "International students (=students who are not citizens of an EU/EEA member state) will be charged a tuition fee of 1,500.00 euros per semester .",
+        "This is in addition to the general semester fee of currently 194.80 euros per semester .",
+        "since winter semester 2017-18",
+        "since the summer semester 2017"
+      ]
+    }
+  },
+  "program": {
+    "name": "Ur- und Frühgeschichtliche Archäologie und Archäologie des Mittelalters",
+    "degree_type": "Bachelor (major subject)",
+    "field": "Ur- und Frühgeschichtliche Archäologie und Archäologie des Mittelalters",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "de"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Ur- und Frühgeschichtliche Archäologie und Archäologie des Mittelalters - Bachelor (major subject), University of Tübingen; regular duration 6 semesters, taught in German. As a major subject it is studied together with a second (combination) subject.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_per_term": 1500,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "winter semester",
+        "summer semester"
+      ],
+      "academic_year": "per semester",
+      "source": "fees",
+      "note": "Non-EU/EEA students: €1,500.00 tuition + €194.80 semester fee per semester.",
+      "mandatory_per_term": 194.8
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Ur- und Frühgeschichtliche Archäologie und Archäologie des Mittelalters: no restricted admission (no selection procedure if you meet the entry requirements); taught in German. No grade cut-off is published.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

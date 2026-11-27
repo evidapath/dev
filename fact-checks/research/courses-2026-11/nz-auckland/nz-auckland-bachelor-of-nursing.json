@@ -1,0 +1,73 @@
+{
+  "uni": "nz-auckland",
+  "slug": "bachelor-of-nursing",
+  "sources": {
+    "course": {
+      "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/bachelor-of-nursing-bnurs.html",
+      "page": "448d90d3ee99",
+      "title": "Bachelor of Nursing – University of Auckland",
+      "organization": "University of Auckland",
+      "quotes": [
+        "Bachelor of Nursing – University of Auckland",
+        "Apply now for Bachelor of Nursing Duration Full-time: 3 years",
+        "2027 fees Domestic students NZ$9,312 * International students NZ$44,959 *",
+        "Fees are set in advance of each calendar year and will be updated on this website. Fees are inclusive of 15% G",
+        "Minimum requirements listed here are the likely grades required and do not guarantee entry. We assess each application individually and applicants may require a higher grade to be offered a place.",
+        "Qualification IB International Baccalaureate Diploma Score required 31 + Qualification IELTS Academic International English Language Testing System Score required 6.5 No bands less than 6.0.",
+        "Qualification GCE A Level/CIE General Certificate of Education Advanced Level Score required BBB"
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor of Nursing",
+    "degree_type": "Bachelor",
+    "field": "Nursing",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Nursing, University of Auckland; full-time, 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "NZD",
+      "tuition_annual": 44959,
+      "academic_year": "2027",
+      "source": "course",
+      "note": "International students: NZ$44,959 a year (2027 fees, inclusive of 15% GST)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Bachelor of Nursing: IB Diploma 31 (likely grade for applicants from outside New Zealand; does not guarantee entry).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic",
+        "source": "course",
+        "min_score": "IELTS Academic 6.5, no bands less than 6.0."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Bachelor of Nursing: BBB at A level (likely grade for applicants from outside New Zealand; does not guarantee entry).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic",
+        "source": "course",
+        "min_score": "IELTS Academic 6.5, no bands less than 6.0."
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "uni": "nz-auckland",
+  "slug": "bachelor-of-early-childhood-studies",
+  "sources": {
+    "course": {
+      "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/bachelor-of-early-childhood-studies.html",
+      "page": "c03e7e686828",
+      "title": "Bachelor of Early Childhood Studies – University of Auckland",
+      "organization": "University of Auckland",
+      "quotes": [
+        "Bachelor of Early Childhood Studies – University of Auckland",
+        "Apply now for Bachelor of Early Childhood Studies Duration Full-time: 3 years",
+        "2027 fees Domestic students NZ$8,072.40 * International students NZ$42,521 *",
+        "Fees are set in advance of each calendar year and will be updated on this website. Fees are inclusive of 15% G",
+        "Qualification IB International Baccalaureate Diploma Score required 26 + Qualification IELTS Academic International English Language Testing System Score required 6.0 No bands less than 5."
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor of Early Childhood Studies",
+    "degree_type": "Bachelor",
+    "field": "Education",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Early Childhood Studies, University of Auckland; full-time, 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "NZD",
+      "tuition_annual": 42521,
+      "academic_year": "2027",
+      "source": "course",
+      "note": "International students: NZ$42,521 a year (2027 fees, inclusive of 15% GST)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Bachelor of Early Childhood Studies: IB Diploma 26 (applicants from outside New Zealand).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic",
+        "source": "course",
+        "min_score": "IELTS Academic 6.0, no bands less than 5."
+      }
+    }
+  ]
+}

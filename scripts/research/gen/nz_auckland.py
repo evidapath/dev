@@ -48,3 +48,41 @@ prog("nz-auckland", "bachelor-of-engineering-honours", {"course": BE},
               "a-level": "Bachelor of Engineering (Honours): BBB at A level including Mathematics and Physics" + T},
              "course", english=ENG_E, subjects=["Mathematics", "Physics"]))
 print("wrote auckland")
+
+# Every other single bachelor's degree on "Find a study option" with one published 2027 international fee
+# (added 2026-11-27). Left out: fee published as a range (BSc, BA, Communication) or not shown (Health Sciences,
+# Optometry); conjoint degrees; MBChB. Admission rows only where the page gives the "Outside New Zealand" IB row.
+import re
+from newuni import PAGES, slugify
+AFIELD = {"Bachelor of Architectural Studies": "Architecture", "Bachelor of Dance Studies": "Dance", "Bachelor of Design": "Design",
+          "Bachelor of Early Childhood Studies": "Education", "Bachelor of Education (Teaching)": "Education", "Bachelor of Education (TESOL)": "Education",
+          "Bachelor of Fine Arts": "Art", "Bachelor of Global Studies": "International Relations", "Bachelor of Laws": "Law", "Bachelor of Music": "Music",
+          "Bachelor of Nursing": "Nursing", "Bachelor of Pharmacy": "Pharmacy", "Bachelor of Property": "Business", "Bachelor of Psychology": "Psychology",
+          "Bachelor of Sport, Health and Physical Education": "Sport Science"}
+for pid in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "auk_pages.txt")).read().split():
+    t = re.sub(r"\s+", " ", open(PAGES / f"{pid}.txt", errors="replace").read())
+    title = t.split(" – ")[0].strip()
+    d = re.search(r"Apply now for " + re.escape(title) + r" Duration Full-time: (\d) years", t)
+    f = re.search(r"2027 fees Domestic students NZ\$[\d,.]+ \* International students NZ\$([\d,]+) \*", t)
+    if title not in AFIELD or not (d and f):
+        continue
+    ib = re.search(r"Qualification IB International Baccalaureate Diploma Score required (\d+)[^+]{0,80}? \+ Qualification IELTS Academic International English Language Testing System Score required ([\d.]+) No bands less than ([\d.]+)\.", t)
+    al = re.search(r"Qualification GCE A Level/CIE General Certificate of Education Advanced Level Score required ([A-E*]{3})", t)
+    has_min = MIN in t
+    qs = [f"{title} – University of Auckland", d.group(0), f.group(0), GST] + ([MIN] if has_min else []) + ([ib.group(0)] if ib else []) + ([al.group(0)] if al else [])
+    S6 = src(pid, f"{title} – University of Auckland", ORG, qs)
+    fee = int(f.group(1).replace(",", ""))
+    rows = {}
+    if ib:
+        rows["ib"] = f"{title}: IB Diploma {ib.group(1)}" + (T if has_min else " (applicants from outside New Zealand).")
+    if al:
+        rows["a-level"] = f"{title}: {al.group(1)} at A level" + (T if has_min else " (applicants from outside New Zealand).")
+    eng = {"test_name": "IELTS Academic", "source": "course", "min_score": f"IELTS Academic {ib.group(2)}, no bands less than {ib.group(3)}."} if ib else None
+    prog("nz-auckland", slugify(title), {"course": S6},
+         {"name": title, "degree_type": "Bachelor", "field": AFIELD[title], "faculty": "", "duration_years": int(d.group(1)), "duration_source": "course",
+          "languages": ["en"], "entry_year": "2027", "platform": "", "source": "course",
+          "summary": f"{title}, University of Auckland; full-time, {d.group(1)} years.", "application_requirements": []},
+         [{"residency": "international", "currency": "NZD", "tuition_annual": fee, "academic_year": "2027", "source": "course",
+           "note": f"International students: NZ${fee:,} a year (2027 fees, inclusive of 15% GST)."}],
+         adm_all(rows, "course", english=eng) if rows else [])
+print("wrote auckland (all single bachelor's with one fee)")

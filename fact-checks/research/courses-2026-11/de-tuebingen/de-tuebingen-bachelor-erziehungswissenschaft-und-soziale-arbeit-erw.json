@@ -1,0 +1,70 @@
+{
+  "uni": "de-tuebingen",
+  "slug": "bachelor-erziehungswissenschaft-und-soziale-arbeit-erw",
+  "sources": {
+    "course": {
+      "url": "https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/erziehungswissenschaft-und-soziale-arbeit-erwachsenenbildung-bachelor-mono/",
+      "page": "4972cd4aed01",
+      "title": "Erziehungswissenschaft und Soziale Arbeit / Erwachsenenbildung - Bachelor (mono) | University of Tübingen",
+      "organization": "University of Tübingen",
+      "quotes": [
+        "Erziehungswissenschaft und Soziale Arbeit / Erwachsenenbildung - Bachelor (mono) | University of Tübingen",
+        "Restricted admission Yes, in first and higher semesters Regular duration of studies 6 semester Is a combination subject required? No",
+        "Language of instruction German"
+      ]
+    },
+    "fees": {
+      "url": "https://uni-tuebingen.de/en/study/organizing-your-studies/fees/tuition-fees/",
+      "page": "bdf14d3c94a1",
+      "title": "Tuition fees | University of Tübingen",
+      "organization": "University of Tübingen",
+      "quotes": [
+        "International students (=students who are not citizens of an EU/EEA member state) will be charged a tuition fee of 1,500.00 euros per semester .",
+        "This is in addition to the general semester fee of currently 194.80 euros per semester .",
+        "since winter semester 2017-18",
+        "since the summer semester 2017"
+      ]
+    }
+  },
+  "program": {
+    "name": "Erziehungswissenschaft und Soziale Arbeit / Erwachsenenbildung",
+    "degree_type": "Bachelor",
+    "field": "Erziehungswissenschaft und Soziale Arbeit / Erwachsenenbildung",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "de"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Erziehungswissenschaft und Soziale Arbeit / Erwachsenenbildung - Bachelor (mono), University of Tübingen; regular duration 6 semesters, taught in German.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_per_term": 1500,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "winter semester",
+        "summer semester"
+      ],
+      "academic_year": "per semester",
+      "source": "fees",
+      "note": "Non-EU/EEA students: €1,500.00 tuition + €194.80 semester fee per semester.",
+      "mandatory_per_term": 194.8
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Erziehungswissenschaft und Soziale Arbeit / Erwachsenenbildung: restricted admission in first and higher semesters; taught in German. No grade cut-off is published.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

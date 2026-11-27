@@ -1,0 +1,73 @@
+{
+  "uni": "nz-auckland",
+  "slug": "bachelor-of-dance-studies",
+  "sources": {
+    "course": {
+      "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/bachelor-of-dance-studies-bdancest.html",
+      "page": "a671c1f6d974",
+      "title": "Bachelor of Dance Studies – University of Auckland",
+      "organization": "University of Auckland",
+      "quotes": [
+        "Bachelor of Dance Studies – University of Auckland",
+        "Apply now for Bachelor of Dance Studies Duration Full-time: 3 years",
+        "2027 fees Domestic students NZ$9,312 * International students NZ$49,582 *",
+        "Fees are set in advance of each calendar year and will be updated on this website. Fees are inclusive of 15% G",
+        "Minimum requirements listed here are the likely grades required and do not guarantee entry. We assess each application individually and applicants may require a higher grade to be offered a place.",
+        "Qualification IB International Baccalaureate Diploma Score required 26 + Qualification IELTS Academic International English Language Testing System Score required 6.0 No bands less than 5.5.",
+        "Qualification GCE A Level/CIE General Certificate of Education Advanced Level Score required CCC"
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor of Dance Studies",
+    "degree_type": "Bachelor",
+    "field": "Dance",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Dance Studies, University of Auckland; full-time, 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "NZD",
+      "tuition_annual": 49582,
+      "academic_year": "2027",
+      "source": "course",
+      "note": "International students: NZ$49,582 a year (2027 fees, inclusive of 15% GST)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Bachelor of Dance Studies: IB Diploma 26 (likely grade for applicants from outside New Zealand; does not guarantee entry).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic",
+        "source": "course",
+        "min_score": "IELTS Academic 6.0, no bands less than 5.5."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Bachelor of Dance Studies: CCC at A level (likely grade for applicants from outside New Zealand; does not guarantee entry).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic",
+        "source": "course",
+        "min_score": "IELTS Academic 6.0, no bands less than 5.5."
+      }
+    }
+  ]
+}

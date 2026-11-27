@@ -1,0 +1,73 @@
+{
+  "uni": "nz-auckland",
+  "slug": "bachelor-of-property",
+  "sources": {
+    "course": {
+      "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/bachelor-of-property-bprop.html",
+      "page": "09ed59dfec04",
+      "title": "Bachelor of Property – University of Auckland",
+      "organization": "University of Auckland",
+      "quotes": [
+        "Bachelor of Property – University of Auckland",
+        "Apply now for Bachelor of Property Duration Full-time: 3 years",
+        "2027 fees Domestic students NZ$8,698.80 * International students NZ$51,020 *",
+        "Fees are set in advance of each calendar year and will be updated on this website. Fees are inclusive of 15% G",
+        "Minimum requirements listed here are the likely grades required and do not guarantee entry. We assess each application individually and applicants may require a higher grade to be offered a place.",
+        "Qualification IB International Baccalaureate Diploma Score required 28 + Qualification IELTS Academic International English Language Testing System Score required 6.0 No bands less than 5.5.",
+        "Qualification GCE A Level/CIE General Certificate of Education Advanced Level Score required BBC"
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor of Property",
+    "degree_type": "Bachelor",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Property, University of Auckland; full-time, 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "NZD",
+      "tuition_annual": 51020,
+      "academic_year": "2027",
+      "source": "course",
+      "note": "International students: NZ$51,020 a year (2027 fees, inclusive of 15% GST)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "course",
+      "threshold": "Bachelor of Property: IB Diploma 28 (likely grade for applicants from outside New Zealand; does not guarantee entry).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic",
+        "source": "course",
+        "min_score": "IELTS Academic 6.0, no bands less than 5.5."
+      }
+    },
+    {
+      "curriculum": "a-level",
+      "source": "course",
+      "threshold": "Bachelor of Property: BBC at A level (likely grade for applicants from outside New Zealand; does not guarantee entry).",
+      "required_subjects": [],
+      "tests": [],
+      "english": {
+        "test_name": "IELTS Academic",
+        "source": "course",
+        "min_score": "IELTS Academic 6.0, no bands less than 5.5."
+      }
+    }
+  ]
+}

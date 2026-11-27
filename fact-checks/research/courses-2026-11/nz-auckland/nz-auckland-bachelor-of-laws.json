@@ -1,0 +1,45 @@
+{
+  "uni": "nz-auckland",
+  "slug": "bachelor-of-laws",
+  "sources": {
+    "course": {
+      "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/bachelor-of-laws-llb.html",
+      "page": "48d496bea168",
+      "title": "Bachelor of Laws – University of Auckland",
+      "organization": "University of Auckland",
+      "quotes": [
+        "Bachelor of Laws – University of Auckland",
+        "Apply now for Bachelor of Laws Duration Full-time: 4 years",
+        "2027 fees Domestic students NZ$8,698.80 * International students NZ$49,578 *",
+        "Fees are set in advance of each calendar year and will be updated on this website. Fees are inclusive of 15% G"
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor of Laws",
+    "degree_type": "Bachelor",
+    "field": "Law",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Laws, University of Auckland; full-time, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "NZD",
+      "tuition_annual": 49578,
+      "academic_year": "2027",
+      "source": "course",
+      "note": "International students: NZ$49,578 a year (2027 fees, inclusive of 15% GST)."
+    }
+  ],
+  "admissions": []
+}
