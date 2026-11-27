@@ -1,0 +1,40 @@
+{
+  "uni": "us-jhu",
+  "slug": "bachelor-of-arts-psychology",
+  "sources": {
+    "course": {
+      "url": "https://e-catalogue.jhu.edu/programs/",
+      "page": "16a9c9316274",
+      "title": "Programs | Johns Hopkins University Academic Catalogue",
+      "organization": "Johns Hopkins University",
+      "quotes": [
+        "(Full Time, On Campus Programs) Bachelor's Full-time",
+        "Psychology, Bachelor of Arts Krieger School of Arts and Sciences (Full Time, On Campus Programs)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "Bachelor of Arts",
+    "field": "Psychology",
+    "faculty": "Krieger School of Arts and Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Psychology (Bachelor of Arts), Krieger School of Arts and Sciences; same college fees as the university's other majors.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-jhu-bs-computer-science",
+    "quote": "(Full Time, On Campus Programs) Bachelor's Full-time",
+    "copy": [
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

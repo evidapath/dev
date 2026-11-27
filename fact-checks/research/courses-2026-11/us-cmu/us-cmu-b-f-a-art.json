@@ -1,0 +1,42 @@
+{
+  "uni": "us-cmu",
+  "slug": "b-f-a-art",
+  "sources": {
+    "course": {
+      "url": "https://coursecatalog.web.cmu.edu/degreesoffered/",
+      "page": "4cdf6315f024",
+      "title": "Degrees Offered < Carnegie Mellon University",
+      "organization": "Carnegie Mellon University",
+      "quotes": [
+        "Carnegie Mellon offers a wide range of programs in seven schools and colleges",
+        "To browse the primary undergraduate degrees offered, select a school or college above.",
+        "College of Fine Arts",
+        "Art, B.F.A."
+      ]
+    }
+  },
+  "program": {
+    "name": "Art",
+    "degree_type": "B.F.A.",
+    "field": "Art",
+    "faculty": "College of Fine Arts",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Art (B.F.A.), College of Fine Arts; same college fees as the university's other majors.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-cmu-bs-computer-science",
+    "quote": "Carnegie Mellon offers a wide range of programs in seven schools and colleges",
+    "copy": [
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

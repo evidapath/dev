@@ -1,0 +1,41 @@
+{
+  "uni": "us-yale",
+  "slug": "b-a-humanities",
+  "sources": {
+    "course": {
+      "url": "https://catalog.yale.edu/ycps/majors-in-yale-college/",
+      "page": "4499ee1af2d3",
+      "title": "Majors in Yale College < Yale University",
+      "organization": "Yale University",
+      "quotes": [
+        "Yale College Programs of Study 2026–2027",
+        "Majors in Yale College",
+        "Humanities (B.A.)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Humanities",
+    "degree_type": "B.A.",
+    "field": "Humanities",
+    "faculty": "Yale College",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Humanities (B.A.), Yale College; same college fees as the university's other majors.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-yale-bs-computer-science",
+    "quote": "Majors in Yale College",
+    "copy": [
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

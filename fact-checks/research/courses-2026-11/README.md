@@ -553,3 +553,22 @@ Builder: reads "6 semester" (singular) as a length; a per-term fee of 0 is allow
 tuition is charged; the fee-note check no longer strips every "0" when the fee is 0. Rebuilt hk-cuhk,
 gb-edinburgh, ch-eth, ch-epfl, se-kth, nl-rug, fr-polytechnique (records identical) and hu-bme, hu-szeged with
 old vs new builder (identical). Negative tests refuse a 0 fee without the quote and 4 years against "6 semester".
+
+## 2026-11-27: all programmes for universities added with one or a few
+
+Pending `fact-checks/pending/2026-11-27-<name>-more.ndjson` (only records not yet in Sanity; each dry-run
+HTTP 200): aalto (+9 English-taught bachelor's; International Business held, its page still shows the 2026
+application period), groningen (+33, every English-taught bachelor's on rug.nl/bachelors/in-english), eth (+20,
+every bachelor's except Human Medicine and Public Policy), epfl (+13, every bachelor's), wageningen (+6, the
+English-taught BSc on the 2026-intake list; Tourism joint degree left out), yale (+79, every major on "Majors in
+Yale College"), cmu (+58, Pittsburgh degrees on "Degrees Offered"), gatech (+41, every BS on the catalog's
+Programs page), jhu (+56, Krieger and Whiting full-time on-campus bachelor's). US majors reuse the college's
+verified fee record (builder `college`, costs only).
+
+Not expanded yet: Berkeley (catalogue moved, major list not read), Leiden (programme list loads by script), NUS,
+Auckland, Vienna, TU Wien, FU Berlin, Freiburg, Tübingen. KTH and École Polytechnique offer only the one
+English-taught bachelor's already added.
+
+App: decision-engine pickProgram now ranks a programme named exactly as the subject above one only filed under it
+(sim: "Computer Science" showed CMU Computational Biology and ETH Computational Science first; now Computer
+Science). Build passes.

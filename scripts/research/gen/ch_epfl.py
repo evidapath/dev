@@ -62,3 +62,31 @@ prog("ch-epfl", "bachelor-computer-science", {"course": CS, "structure": STR, "f
               "a-level": "Computer Science: A-levels in mathematics, physics and chemistry/biology/computer science at grade A or better (AAA); accepted within the 3000 first-year places, ranked by average."},
              "adm"))
 print("wrote epfl")
+
+# Every other EPFL bachelor's programme (added 2026-11-27): tuition, living budget, admission rules and French
+# requirement are EPFL-wide; each programme cites its own page for its name and the "Second and third year" plan.
+import re
+from newuni import PAGES, slugify
+FIELD = {"Architecture": "Architecture", "Artificial Intelligence": "Computer Science", "Chemistry and Chemical Engineering": "Chemistry",
+         "Civil Engineering": "Civil Engineering", "Communication Systems": "Computer Science",
+         "Electrical and Electronic Engineering": "Electrical and Electronic Engineering", "Environmental Sciences and Engineering": "Environmental Science",
+         "Life Sciences Engineering": "Biology", "Materials Science and Engineering": "Engineering", "Mathematics": "Mathematics",
+         "Mechanical Engineering": "Mechanical Engineering", "Microengineering": "Engineering", "Physics": "Physics"}
+for pid in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "epfl_pages.txt")).read().split():
+    t = re.sub(r"\s+", " ", open(PAGES / f"{pid}.txt", errors="replace").read())
+    name = t.split(" ‒ ")[0].strip()
+    P = src(pid, f"{name} ‒ Bachelor ‐ EPFL", ORG, [f"{name} ‒ Bachelor ‐ EPFL", "Second and third year"])
+    prog("ch-epfl", "bachelor-" + slugify(name), {"course": P, "structure": STR, "faq": FAQ, "adm": ADM, "fees": FEE, "fin": FIN},
+         {"name": name, "degree_type": "Bachelor", "field": FIELD[name], "faculty": "", "duration_years": 3, "duration_source": "course",
+          "languages": ["fr"], "entry_year": "", "platform": "", "source": "course",
+          "summary": f"Bachelor in {name}, EPFL (Lausanne); three years. Taught in French.", "application_requirements": []},
+         [{"residency": "foreign", "currency": "CHF", "tuition_per_term": 2190, "terms_per_year": 2,
+           "terms_evidence": ["EPFL informs at the end of the spring semester", "should they start a new program in the following fall semester"],
+           "academic_year": "from fall semester 2025", "source": "fees",
+           "note": "Tripled tuition fee for foreign students: CHF 2190 per semester (CHF 2240 per semester invoice with compulsory fees), from fall 2025.",
+           "living": {"monthly": [], "months": 12, "yearly": [25219], "source": "fin", "kind": "genuine_cost_of_living_estimate",
+                      "note": "EPFL's approximate budget for foreigners: CHF 25,219 a year without tuition fees."}}],
+         adm_all({"ib": f"{name}: IB 38 out of 42 (excluding bonus points) with HL mathematics, physics and chemistry/biology/computer science, and at least 6 in mathematics and physics; accepted within the 3000 first-year places, ranked by total points.",
+                  "a-level": f"{name}: A-levels in mathematics, physics and chemistry/biology/computer science at grade A or better (AAA); accepted within the 3000 first-year places, ranked by average."},
+                 "adm"))
+print("wrote epfl (all bachelor's)")

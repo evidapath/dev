@@ -38,4 +38,38 @@ prog("fi-aalto", "bsc-tech-data-science", {"course": DS, "ib": IB},
      [{"residency": "non-eu", "currency": "EUR", "tuition_annual": 12000, "academic_year": "2027 entry", "source": "course",
        "note": "Non-EU/EEA citizens: €12,000 a year for the bachelor's studies (€17,000 a year for the master's studies)."}],
      adm_all({"ib": "Data Science: apply in admission round B with the IB Diploma; selection is on IB grades, and no minimum points total is published. Offers made on predicted grades are conditional and may be revoked if final scores are lower."}, "ib"))
+
+# More English-taught bachelor's study options (added 2026-11-27): same key-facts block on each page.
+# Held: International Business (its page still shows the 2026 application period).
+import re
+from newuni import text as _t
+MORE = [  # page, slug, field, school, ib-route covered by the IB page
+    ("f22bb84f4357", "bsc-econ-economics", "Economics", "School of Business", True),
+    ("123df61eaf6e", "bsc-tech-chemical-engineering", "Chemical Engineering", "School of Chemical Engineering", True),
+    ("ce81d369f1de", "bsc-tech-mechanical-and-civil-engineering", "Engineering", "School of Engineering", True),
+    ("2ad286befb0a", "bsc-tech-computer-engineering", "Computer Engineering", "School of Electrical Engineering", True),
+    ("a8626c8f333f", "bsc-tech-digital-systems-and-design", "Computer Engineering", "School of Electrical Engineering", True),
+    ("1d0eccdbc306", "bsc-econ-finance", "Finance", "School of Business", True),
+    ("e95432ded435", "bsc-tech-quantum-technology", "Physics", "School of Science", True),
+    ("211888b4d9d7", "bsc-technology-business-and-design", "Business", "School of Science", True),
+    ("197389b52205", "ba-design-and-media", "Design", "School of Arts, Design and Architecture", False),
+]
+for page, slug, field, school, ib in MORE:
+    raw = open(f"{os.path.dirname(os.path.abspath(__file__))}/../../../.research-cache/pages/{page}.txt").read()
+    title = re.sub(r"\s+", " ", raw).split(" | ")[0].strip()
+    name = title.split(",")[0]
+    fee = re.search(r"The tuition fee for this programme is (\d+) (\d{3}) euros per academic year\.", re.sub(r"\s+", " ", raw))
+    amount = int(fee.group(1) + fee.group(2))
+    degree = re.search(r"Degree: (.+?) \+ Master", re.sub(r"\s+", " ", raw)).group(1)
+    S = src(page, f"{title} | Aalto University", ORG,
+            [f"{title} | Aalto University", "Application period: 7 Jan 2027 – 22 Jan 2027 Language of instruction: English Duration: 3+2 years, full-time",
+             f"Organising school: {school}", fee.group(0), f"Degree: {degree}"])
+    prog("fi-aalto", slug, {"course": S, "ib": IB},
+         {"name": name, "degree_type": degree, "field": field, "faculty": school, "duration_years": 3, "duration_source": "course",
+          "languages": ["en"], "entry_year": "2027", "platform": "", "source": "course",
+          "summary": f"{name}, Aalto University ({school}); bachelor's in 3 years with a 2-year master's to follow; taught in English.",
+          "application_requirements": []},
+         [{"residency": "non-eu", "currency": "EUR", "tuition_annual": amount, "academic_year": "2027 entry", "source": "course",
+           "note": f"Non-EU/EEA citizens: €{amount:,} a year for the bachelor's studies."}],
+         adm_all({"ib": f"{name}: apply in admission round B with the IB Diploma; selection is on IB grades, and no minimum points total is published. Offers made on predicted grades are conditional and may be revoked if final scores are lower."}, "ib") if ib else [])
 print("wrote aalto")

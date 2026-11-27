@@ -13,7 +13,7 @@ Living costs (€41,400 for 3 years, IND amount) not stored: only a three-year t
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from newuni import src, spec, prog, adm_all
+from newuni import src, spec, prog, adm_all, slugify
 
 ORG = "Wageningen University & Research"
 P = src("848bc2d60b8b", "Bachelor's in Data Science for Global Challenges | WUR", ORG,
@@ -51,3 +51,36 @@ prog("nl-wur", "bsc-data-science-for-global-challenges", {"course": P, "fees": F
               "a-level": "Data Science for Global Challenges: at least 3 GCSEs (A*-C or 9-4) and at least 3 academic A-levels (A*-C), 6 different subjects in total (2026 intake list), having studied Mathematics and Biology, Chemistry or Physics."},
              "elig"))
 print("wrote wur")
+
+# The other English-taught BSc programmes (added 2026-11-27): programmes marked * ("English taught BSc
+# programmes") on the 2026-intake eligibility list, each with its own programme page. Tourism is a joint degree
+# with another institution in Breda and is left out. Fees are WUR's bachelor fees (same page as above).
+MORE = [  # page, name, field, facts quote, IB row
+    ("8c4ec28b005b", "Animal Sciences", "Animal Science", "Health, Nature, Food Full-time 3 years English Wageningen",
+     "Animal Sciences* Mathematics A&I (HL)/Mathematics A&A (SL/HL) + Chemistry (one of these three subjects has to be on HL) + Biology (SL/HL)"),
+    ("bb5d5ce955fe", "Earth System Sciences", "Earth Sciences", "Nature, Climate Full-time 3 years English Wageningen",
+     "Earth System Sciences (Soil, Water, Atmosphere)* Mathematics A&I (HL)/Mathematics A&A (SL/HL) + Chemistry + Physics (one of the two latter subjects has to be on HL)"),
+    ("bc1952727d89", "Environmental Sciences", "Environmental Science", "Climate, Society, Nature Full-time 3 Years English Wageningen",
+     "Environmental Sciences* Mathematics A&I (HL)/Mathematics A&A (SL/HL) + Chemistry + Physics (one of the two latter subjects has to be on HL)"),
+    ("53d41128f5f6", "Food Technology", "Food Science", "Food, Technology Full-time 3 Years English Wageningen",
+     "Food Technology* Mathematics A&I (HL)/Mathematics A&A (SL/HL) + Chemistry + Biology/Physics (one of the three latter subjects has to be on HL)"),
+    ("1214a80c8804", "International Land and Water Management", "Environmental Science", "Climate, Society, Nature Full-time 3 Years English Wageningen",
+     "International Land and Water Management* Mathematics A&I (HL)/Mathematics A&A (SL/HL) + Physics (SL/HL)"),
+    ("0181b28ac9de", "Marine Sciences", "Marine Science", "Nature, Society, Food Fulltime 3 Years English Wageningen",
+     "Marine Sciences* Mathematics A&I (HL)/Mathematics A&A (SL/HL) + Chemistry + Biology (one of the two latter subjects has to be on HL)"),
+]
+for page, name, field, facts, ib in MORE:
+    S = src(page, f"Bachelor's in {name} | WUR", ORG, [facts])
+    E2 = src("wur-elig-2026", "Diploma Eligibility List Wageningen University 2026 intake", ORG,
+             ["Diploma Eligibility List Wageningen University 2026 intake", "Appendix 2 - International Baccalaureate DP Diploma", ib,
+              "*These BSc programmes are English taught BSc programmes"])
+    prog("nl-wur", "bsc-" + slugify(name), {"course": S, "fees": F, "costs": SC, "elig": E2},
+         {"name": name, "degree_type": "BSc", "field": field, "faculty": "", "duration_years": 3, "duration_source": "course",
+          "languages": ["en"], "entry_year": "2026-2027", "platform": "Studielink", "source": "course",
+          "summary": f"BSc {name}, Wageningen University & Research; full-time, 3 years, taught in English.", "application_requirements": []},
+         [{"residency": "non-eu", "currency": "EUR", "tuition_annual": 18300, "academic_year": "2026-2027", "source": ["fees", "costs"],
+           "note": "Non-EU students: €18,300 (2026-2027). For 2027-2028 the tuition page says €18,840 and the study-costs page estimates €18,800; the definite amount is set at the end of 2026."},
+          {"residency": "eu-eea", "currency": "EUR", "tuition_annual": 2694, "academic_year": "2026-2027", "source": "fees",
+           "note": "European students: €2,694 (2026-2027); €2,771 for 2027-2028."}],
+         adm_all({"ib": f"{name}: IB DP Diploma with {ib.split('* ', 1)[1]} (2026 intake list). No minimum points total is published."}, "elig"))
+print("wrote wur (all English-taught BSc)")

@@ -1,0 +1,65 @@
+{
+  "uni": "fi-aalto",
+  "slug": "bsc-tech-mechanical-and-civil-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.aalto.fi/en/study-options/computational-engineering-bachelor-of-science-technology-master-of-science-technology",
+      "page": "ce81d369f1de",
+      "title": "Mechanical and Civil Engineering, Bachelor of Science and Master of Science (Technology) | Aalto University",
+      "organization": "Aalto University",
+      "quotes": [
+        "Mechanical and Civil Engineering, Bachelor of Science and Master of Science (Technology) | Aalto University",
+        "Application period: 7 Jan 2027 – 22 Jan 2027 Language of instruction: English Duration: 3+2 years, full-time",
+        "Organising school: School of Engineering",
+        "The tuition fee for this programme is 12 000 euros per academic year.",
+        "Degree: Bachelor of Science (Technology)"
+      ]
+    },
+    "ib": {
+      "url": "https://www.aalto.fi/en/admission-services/english-taught-bachelors-programmes-i-am-applying-with-an-ib-diploma",
+      "page": "480803617d04",
+      "title": "English-taught bachelor's programmes - I am applying with an IB Diploma | Aalto University",
+      "organization": "Aalto University",
+      "quotes": [
+        "If you apply on the basis of your International Baccalaureate (IB) diploma, you apply to the English-taught bachelor’s programmes at Aalto University in the admission round B .",
+        "If you are accepted based on IB predicted grades, the admission is conditional until Aalto University Admission Services receives your official final grades from the IBO.",
+        "If the scores calculated based on the final grades are lower than the scores calculated based on the predicted grades, the admission offer may be revoked."
+      ]
+    }
+  },
+  "program": {
+    "name": "Mechanical and Civil Engineering",
+    "degree_type": "Bachelor of Science (Technology)",
+    "field": "Engineering",
+    "faculty": "School of Engineering",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Mechanical and Civil Engineering, Aalto University (School of Engineering); bachelor's in 3 years with a 2-year master's to follow; taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_annual": 12000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Non-EU/EEA citizens: €12,000 a year for the bachelor's studies."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "ib",
+      "threshold": "Mechanical and Civil Engineering: apply in admission round B with the IB Diploma; selection is on IB grades, and no minimum points total is published. Offers made on predicted grades are conditional and may be revoked if final scores are lower.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

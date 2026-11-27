@@ -1,0 +1,42 @@
+{
+  "uni": "us-cmu",
+  "slug": "b-s-statistics-and-data-science",
+  "sources": {
+    "course": {
+      "url": "https://coursecatalog.web.cmu.edu/degreesoffered/",
+      "page": "4cdf6315f024",
+      "title": "Degrees Offered < Carnegie Mellon University",
+      "organization": "Carnegie Mellon University",
+      "quotes": [
+        "Carnegie Mellon offers a wide range of programs in seven schools and colleges",
+        "To browse the primary undergraduate degrees offered, select a school or college above.",
+        "Dietrich College of Humanities and Social Sciences",
+        "Statistics and Data Science, B.S."
+      ]
+    }
+  },
+  "program": {
+    "name": "Statistics and Data Science",
+    "degree_type": "B.S.",
+    "field": "Data Science",
+    "faculty": "Dietrich College of Humanities and Social Sciences",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Statistics and Data Science (B.S.), Dietrich College of Humanities and Social Sciences; same college fees as the university's other majors.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-cmu-bs-computer-science",
+    "quote": "Carnegie Mellon offers a wide range of programs in seven schools and colleges",
+    "copy": [
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

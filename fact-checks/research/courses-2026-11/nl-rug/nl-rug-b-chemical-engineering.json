@@ -1,0 +1,61 @@
+{
+  "uni": "nl-rug",
+  "slug": "b-chemical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.rug.nl/bachelors/chemical-engineering/?lang=en",
+      "page": "173a2318c824",
+      "title": "Chemical Engineering | Bachelor's degree programmes | University of Groningen",
+      "organization": "University of Groningen",
+      "quotes": [
+        "Chemical Engineering | Bachelor's degree programmes | University of Groningen",
+        "Degree BSc in Chemical Engineering Course type Bachelor Duration 36 months (180 EC) Programme code 56960 Language of instruction English Start September Faculty Science and Engineering",
+        "Tuition fees Nationality Year Fee Programme form EU/EEA 2026-2027 € 2694 full-time non-EU/EEA 2026-2027 € 19800 full-time EU/EEA 2027-2028 € 2771 full-time non-EU/EEA 2027-2028 € 19800 full-time",
+        "Sufficient background knowledge in Mathematics, Physics and Chemistry is required. The Admissions Board will determine whether your background knowledge in these subjects is sufficient"
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemical Engineering",
+    "degree_type": "BSc",
+    "field": "Chemical Engineering",
+    "faculty": "Faculty Science and Engineering",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027-2028",
+    "platform": "Studielink",
+    "source": "course",
+    "summary": "BSc Chemical Engineering, University of Groningen; 36 months (180 EC), language of instruction English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_annual": 19800,
+      "academic_year": "2027-2028",
+      "source": "course",
+      "note": "Non-EU/EEA students: €19,800 a year (2027-2028)."
+    },
+    {
+      "residency": "eu-eea",
+      "currency": "EUR",
+      "tuition_annual": 2771,
+      "academic_year": "2027-2028",
+      "source": "course",
+      "note": "EU/EEA students: €2,771 (2027-2028)."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "international-other",
+      "source": "course",
+      "threshold": "Chemical Engineering: Sufficient background knowledge in Mathematics, Physics and Chemistry is required. The Admissions Board will determine whether your background knowledge in these subjects is sufficient. No minimum grade or points total is published.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

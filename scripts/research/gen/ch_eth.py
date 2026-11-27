@@ -60,3 +60,34 @@ prog("ch-eth", "bachelor-computer-science", {"course": CS, "lang": LANG, "struct
               "a-level": "Computer Science: AAA, three A-Levels in mathematics, physics/chemistry/biology and a language at minimum grade A each, plus further subjects, for admission without an entrance examination (2026/27 rules); otherwise the Reduced Entrance Examination."},
              "adm"))
 print("wrote eth")
+
+# Every other ETH bachelor's programme (added 2026-11-27). Fees, living costs, length (structure page) and the
+# foreign-certificate admission rules are ETH-wide, so each programme cites its own page for its name plus the
+# shared sources. Left out: Human Medicine (own admission procedure) and Public Policy (Professional Officer).
+import re
+from newuni import PAGES, slugify
+FIELD = {"Architecture": "Architecture", "Civil Engineering": "Civil Engineering", "Environmental Engineering": "Engineering",
+         "Geospatial Engineering": "Engineering", "Electrical Engineering and Information Technology": "Electrical and Electronic Engineering",
+         "Materials Science": "Engineering", "Mechanical Engineering": "Mechanical Engineering", "Chemistry / Chemical and Bioengineering": "Chemistry",
+         "Biochemistry – Chemical Biology": "Chemistry", "Biology": "Biology", "Computational Science and Engineering": "Computer Science",
+         "Interdisciplinary Sciences": "Natural Sciences", "Mathematics": "Mathematics", "Pharmaceutical Sciences": "Pharmacy", "Physics": "Physics",
+         "Agricultural Sciences": "Agriculture", "Earth and Climate Sciences": "Earth Sciences", "Environmental Sciences": "Environmental Science",
+         "Food Science and Nutrition": "Food Science", "Health Sciences and Technology": "Health Sciences"}
+for pid in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "eth_pages.txt")).read().split():
+    t = re.sub(r"\s+", " ", open(PAGES / f"{pid}.txt", errors="replace").read())
+    title = t.split(" | ")[0].strip()
+    name = title.replace("Bachelor ", "", 1)
+    P = src(pid, f"{title} | ETH Zurich", ORG, [f"{title} | ETH Zurich"])
+    prog("ch-eth", "bachelor-" + slugify(name), {"course": P, "lang": LANG, "structure": ST, "fees": FEE, "costs": COL, "adm": ADM},
+         {"name": name, "degree_type": "Bachelor", "field": FIELD[name], "faculty": "", "duration_years": 3, "duration_source": "structure",
+          "languages": ["de"], "entry_year": "2026/27", "platform": "", "source": "course",
+          "summary": f"Bachelor {name}, ETH Zurich; ETH bachelor's programmes usually take three years and begin in German.",
+          "application_requirements": []},
+         [{"residency": "threefold", "currency": "CHF", "tuition_annual": 4380, "academic_year": "from Autumn Semester 2025", "source": ["costs", "fees"],
+           "note": "Threefold tuition fee CHF 2190 per semester, CHF 4,380 a year (foreign students); with compulsory semester fees CHF 4,528 a year.",
+           "living": {"monthly": [], "months": 12, "yearly": [22100], "source": "costs", "kind": "genuine_cost_of_living_estimate",
+                      "note": "ETH's approximate individual living costs for international students: CHF 22,100 a year (rent, meals, transport, health insurance, personal expenses)."}}],
+         adm_all({"ib": f"{name}: IB 38 out of 42 (without bonus points) with HL Mathematics, HL physics, chemistry or biology, and HL language A, for admission without an entrance examination (2026/27 rules); otherwise the Reduced Entrance Examination.",
+                  "a-level": f"{name}: AAA, three A-Levels in mathematics, physics/chemistry/biology and a language at minimum grade A each, plus further subjects, for admission without an entrance examination (2026/27 rules); otherwise the Reduced Entrance Examination."},
+                 "adm"))
+print("wrote eth (all bachelor's)")

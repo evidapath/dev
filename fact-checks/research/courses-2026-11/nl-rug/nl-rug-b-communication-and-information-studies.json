@@ -1,0 +1,53 @@
+{
+  "uni": "nl-rug",
+  "slug": "b-communication-and-information-studies",
+  "sources": {
+    "course": {
+      "url": "https://www.rug.nl/bachelors/communication-and-information-studies/?lang=en",
+      "page": "79b7a3f822d4",
+      "title": "Communication and Information Studies | Bachelor's degree programmes | University of Groningen",
+      "organization": "University of Groningen",
+      "quotes": [
+        "Communication and Information Studies | Bachelor's degree programmes | University of Groningen",
+        "Degree BA in Communication and Information Studies Course type Bachelor Duration 36 months (180 EC) Programme code 56826 Language of instruction English, Dutch Start September Faculty Arts",
+        "Tuition fees Nationality Year Fee Programme form EU/EEA 2026-2027 € 2694 full-time non-EU/EEA 2026-2027 € 14000 full-time EU/EEA 2027-2028 € 2771 full-time non-EU/EEA 2027-2028 € 14400 full-time"
+      ]
+    }
+  },
+  "program": {
+    "name": "Communication and Information Studies",
+    "degree_type": "BA",
+    "field": "Media and Communication",
+    "faculty": "Faculty Arts",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en",
+      "nl"
+    ],
+    "entry_year": "2027-2028",
+    "platform": "Studielink",
+    "source": "course",
+    "summary": "BA Communication and Information Studies, University of Groningen; 36 months (180 EC), language of instruction English, Dutch.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_annual": 14400,
+      "academic_year": "2027-2028",
+      "source": "course",
+      "note": "Non-EU/EEA students: €14,400 a year (2027-2028)."
+    },
+    {
+      "residency": "eu-eea",
+      "currency": "EUR",
+      "tuition_annual": 2771,
+      "academic_year": "2027-2028",
+      "source": "course",
+      "note": "EU/EEA students: €2,771 (2027-2028)."
+    }
+  ],
+  "admissions": []
+}

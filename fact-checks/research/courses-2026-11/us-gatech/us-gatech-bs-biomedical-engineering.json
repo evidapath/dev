@@ -1,0 +1,41 @@
+{
+  "uni": "us-gatech",
+  "slug": "bs-biomedical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://catalog.gatech.edu/programs/",
+      "page": "ad4c90c03899",
+      "title": "Programs | Georgia Tech Catalog",
+      "organization": "Georgia Institute of Technology",
+      "quotes": [
+        "Programs | Georgia Tech Catalog",
+        "2026-2027 Edition",
+        "Biomedical Engineering. Minor , BS , MS , PhD"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biomedical Engineering",
+    "degree_type": "BS",
+    "field": "Biomedical Engineering",
+    "faculty": "Georgia Institute of Technology",
+    "duration_years": 4,
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Biomedical Engineering (BS), Georgia Institute of Technology; same college fees as the university's other majors.",
+    "application_requirements": []
+  },
+  "college": {
+    "from": "program-us-gatech-bs-computer-science",
+    "quote": "Programs | Georgia Tech Catalog",
+    "copy": [
+      "costs"
+    ]
+  },
+  "costs": [],
+  "admissions": []
+}

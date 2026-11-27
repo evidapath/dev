@@ -1,0 +1,129 @@
+{
+  "uni": "ch-epfl",
+  "slug": "bachelor-materials-science-and-engineering",
+  "sources": {
+    "course": {
+      "url": "https://www.epfl.ch/education/bachelor/programs/materials-science-and-engineering/",
+      "page": "d6f3703a5f00",
+      "title": "Materials Science and Engineering ‒ Bachelor ‐ EPFL",
+      "organization": "EPFL",
+      "quotes": [
+        "Materials Science and Engineering ‒ Bachelor ‐ EPFL",
+        "Second and third year"
+      ]
+    },
+    "structure": {
+      "url": "https://www.epfl.ch/education/bachelor/study-programs-structure/",
+      "page": "fd3a014e0460",
+      "title": "Study programs structure ‒ Bachelor ‐ EPFL",
+      "organization": "EPFL",
+      "quotes": [
+        "Bachelor: 180 ECTS"
+      ]
+    },
+    "faq": {
+      "url": "https://www.epfl.ch/education/bachelor/study-programs-structure/faqs/",
+      "page": "f4f12afab434",
+      "title": "FAQs ‒ Bachelor ‐ EPFL",
+      "organization": "EPFL",
+      "quotes": [
+        "ECTS is based on the principal that the full-time work done by a student during a university year corresponds to 60 credits."
+      ]
+    },
+    "adm": {
+      "url": "https://www.epfl.ch/education/admission/admission-2/bachelor-admission-criteria-and-application/",
+      "page": "77a6f4005f2c",
+      "title": "Bachelor/CMS admission criteria & application ‒ Admission ‐ EPFL",
+      "organization": "EPFL",
+      "quotes": [
+        "EPFL introduces a limitation on the number of students in the first year of the Bachelor’s programs (3000).",
+        "Applicants holding an International Baccalaureate (IB) from IBO.org are accepted in the first year of the Bachelor’s programs , within the places available (see above) , provided that their title fulfils all of the following conditions: the following subjects were studied and examined within the Diploma Programme (DP) at the higher level (HL): 1) mathematics, 2) physics, and 3) chemistry, biology, or computer science",
+        "the total number of points scored is at least 38 out of 42 (excluding bonus points) and the grades in mathematics and physics are at least 6 out of 7",
+        "The general average (or total number of points scored) of the school-leaving certificate will be used to rank and select the applicants.",
+        "the grades in mathematics and physics, as well as in chemistry, biology, or computer science, are at least A and/or 1",
+        "EPFL considers that level B2 in French (according to the Common European Framework of Reference for Languages ) is required to follow its Bachelor’s programs. Level C1 is highly recommended."
+      ]
+    },
+    "fees": {
+      "url": "https://www.epfl.ch/education/studies/en/rules-and-procedures/study-taxes/tuition-fee-other-fees/",
+      "page": "598412a4742f",
+      "title": "Tuition fee and other fees ‒ Study management ‐ EPFL",
+      "organization": "EPFL",
+      "quotes": [
+        "only the CHF 730 semester tuition fee is tripled by this measure (it is thus raised to CHF 2190 per semester)",
+        "the ETH Board expressed its support for the tripling of tuition fees for foreign students who take up residence in Switzerland for study purposes.",
+        "The total amount due per semester invoice is CHF 780 (CHF 2240 for some students from the fall semester, 2025; see above)",
+        "EPFL informs at the end of the spring semester",
+        "should they start a new program in the following fall semester"
+      ]
+    },
+    "fin": {
+      "url": "https://www.epfl.ch/education/studies/en/financing-study/",
+      "page": "cb1aac2f86c2",
+      "title": "Financing your studies ‒ Study management ‐ EPFL",
+      "organization": "EPFL",
+      "quotes": [
+        "Approximate budget for foreigner Types of fees Monthly (CHF) Yearly (CHF) 12 months",
+        "TOTAL 2’107.- without tuition fees 25’219.- without tuition fees",
+        "Student services desk EPFL VPH-SLE BP 1229 (bâtiment BP) Station 16 CH – 1015 Lausanne"
+      ]
+    }
+  },
+  "program": {
+    "name": "Materials Science and Engineering",
+    "degree_type": "Bachelor",
+    "field": "Engineering",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "fr"
+    ],
+    "entry_year": "",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor in Materials Science and Engineering, EPFL (Lausanne); three years. Taught in French.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "foreign",
+      "currency": "CHF",
+      "tuition_per_term": 2190,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "EPFL informs at the end of the spring semester",
+        "should they start a new program in the following fall semester"
+      ],
+      "academic_year": "from fall semester 2025",
+      "source": "fees",
+      "note": "Tripled tuition fee for foreign students: CHF 2190 per semester (CHF 2240 per semester invoice with compulsory fees), from fall 2025.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          25219
+        ],
+        "source": "fin",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "EPFL's approximate budget for foreigners: CHF 25,219 a year without tuition fees."
+      }
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "adm",
+      "threshold": "Materials Science and Engineering: IB 38 out of 42 (excluding bonus points) with HL mathematics, physics and chemistry/biology/computer science, and at least 6 in mathematics and physics; accepted within the 3000 first-year places, ranked by total points.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "a-level",
+      "source": "adm",
+      "threshold": "Materials Science and Engineering: A-levels in mathematics, physics and chemistry/biology/computer science at grade A or better (AAA); accepted within the 3000 first-year places, ranked by average.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

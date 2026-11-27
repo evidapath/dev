@@ -1,0 +1,128 @@
+{
+  "uni": "ch-eth",
+  "slug": "bachelor-materials-science",
+  "sources": {
+    "course": {
+      "url": "https://ethz.ch/en/studies/bachelor/bachelors-degree-programmes/engineering-sciences/materials-science.html",
+      "page": "371123519e99",
+      "title": "Bachelor Materials Science | ETH Zurich",
+      "organization": "ETH Zurich",
+      "quotes": [
+        "Bachelor Materials Science | ETH Zurich"
+      ]
+    },
+    "lang": {
+      "url": "https://ethz.ch/en/studies/bachelor/bachelors-degree-programmes.html",
+      "page": "c647c6d02ea0",
+      "title": "Bachelor's degree programmes | ETH Zurich",
+      "organization": "ETH Zurich",
+      "quotes": [
+        "Please note: the Bachelor’s degree programmes begin in German . In the second and third years of the programmes, some of the courses may take place in English."
+      ]
+    },
+    "structure": {
+      "url": "https://ethz.ch/en/studies/bachelor/prospective-students/features-of-eth-studies/programme-structure.html",
+      "page": "1004057f6be7",
+      "title": "Programme structure | ETH Zurich",
+      "organization": "ETH Zurich",
+      "quotes": [
+        "The Bachelor’s degree programme comprises 180 credits and usually takes three years."
+      ]
+    },
+    "fees": {
+      "url": "https://ethz.ch/students/en/studies/financial/tuition-fees.html",
+      "page": "dc0cf9304150",
+      "title": "Tuition fees | ETH Zurich",
+      "organization": "ETH Zurich",
+      "quotes": [
+        "Simple tuition fee: CHF 730 / semester for students with Swiss citizenship.",
+        "Threefold tuition fee: CHF 2190 / semester All students who do not fulfil the criteria for simple tuition fee will be assigned to the second group paying a threefold tuition fe",
+        "The threefold tuition fee for foreign students will apply from the Autumn Semester 2025."
+      ]
+    },
+    "costs": {
+      "url": "https://ethz.ch/content/dam/ethz/main/education/finanzielles/files-en/cost-of-living.pdf",
+      "page": "eth-col",
+      "title": "Study and Living Costs International students (approximate) | ETH Zurich",
+      "organization": "ETH Zurich",
+      "quotes": [
+        "Study and Living Costs International students (approximate) Annual costs in CHF",
+        "Tuition fee (including exam fees) 1’460 4’380",
+        "TOTAL 1’608 4’528",
+        "Rent (room including heating, etc; canton of Zurich, average 2024) Ø 11’300",
+        "Health insurance (non-EU/EFTA; average) Ø 1’320",
+        "Individual expenses 1’680 TOTAL 22’100"
+      ]
+    },
+    "adm": {
+      "url": "https://ethz.ch/content/dam/ethz/main/education/admission/bachelor/andere-qual/ETH-ZulassungsbedingungenHS2026_EN.pdf",
+      "page": "eth-adm-2026",
+      "title": "Admission requirements ETH Zurich, Academic Year 2026/27",
+      "organization": "ETH Zurich",
+      "quotes": [
+        "Admission requirements ETH Zurich Academic Year 2026/27",
+        "Admission without entrance examination if the following requirements are fulfilled: International Baccalaureate − 38 out of 42 points (without bonus points);",
+        "− At Higher Level (HL): a) Mathematics: applications and interpretation or Mathematics: analysis and approaches, b) physics or chemistry or biology, c) 1 language A;",
+        "Otherwise: Reduced Entrance Examination ETHZ",
+        "England, Wales and Northern Ireland: (I)GCE with three Advanced Levels or",
+        "Cambridge Pre-U Certificate (three Principal Subjects) in: 1. mathematics; 2.",
+        "physics or chemistry or biology, 3. language of instruction or foreign language with minimum grade A in each A-Level"
+      ]
+    }
+  },
+  "program": {
+    "name": "Materials Science",
+    "degree_type": "Bachelor",
+    "field": "Engineering",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "structure",
+    "languages": [
+      "de"
+    ],
+    "entry_year": "2026/27",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor Materials Science, ETH Zurich; ETH bachelor's programmes usually take three years and begin in German.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "threefold",
+      "currency": "CHF",
+      "tuition_annual": 4380,
+      "academic_year": "from Autumn Semester 2025",
+      "source": [
+        "costs",
+        "fees"
+      ],
+      "note": "Threefold tuition fee CHF 2190 per semester, CHF 4,380 a year (foreign students); with compulsory semester fees CHF 4,528 a year.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          22100
+        ],
+        "source": "costs",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "ETH's approximate individual living costs for international students: CHF 22,100 a year (rent, meals, transport, health insurance, personal expenses)."
+      }
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "adm",
+      "threshold": "Materials Science: IB 38 out of 42 (without bonus points) with HL Mathematics, HL physics, chemistry or biology, and HL language A, for admission without an entrance examination (2026/27 rules); otherwise the Reduced Entrance Examination.",
+      "required_subjects": [],
+      "tests": []
+    },
+    {
+      "curriculum": "a-level",
+      "source": "adm",
+      "threshold": "Materials Science: AAA, three A-Levels in mathematics, physics/chemistry/biology and a language at minimum grade A each, plus further subjects, for admission without an entrance examination (2026/27 rules); otherwise the Reduced Entrance Examination.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

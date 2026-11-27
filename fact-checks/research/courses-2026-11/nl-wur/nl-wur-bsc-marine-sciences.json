@@ -1,0 +1,95 @@
+{
+  "uni": "nl-wur",
+  "slug": "bsc-marine-sciences",
+  "sources": {
+    "course": {
+      "url": "https://www.wur.nl/en/education/bachelor/bachelors-marine-sciences",
+      "page": "0181b28ac9de",
+      "title": "Bachelor's in Marine Sciences | WUR",
+      "organization": "Wageningen University & Research",
+      "quotes": [
+        "Nature, Society, Food Fulltime 3 Years English Wageningen"
+      ]
+    },
+    "fees": {
+      "url": "https://www.wur.nl/en/education/bachelor/study-expenses-bachelors/tuition-fees-and-study-finances",
+      "page": "e56f658cd494",
+      "title": "Tuition fees and study finances bachelor | WUR",
+      "organization": "Wageningen University & Research",
+      "quotes": [
+        "Are you a non-EU student**? Then your tuition fee for the academic year 2026-2027 is € 18,300 and € 18.840 for 2027-2028.",
+        "Are you a European student*? Your tuition fee for the 2026-2027 academic year is € 2,694 in total.",
+        "For the 2027-2028 academic year, the tuition fee will be € 2,771.",
+        "*Students with a nationality from NL/EEA/SME¹ countries and Ukraine are considered European students."
+      ]
+    },
+    "costs": {
+      "url": "https://www.wur.nl/en/education/bachelor/study-expenses-bachelors",
+      "page": "0fde3b1b4572",
+      "title": "Study expenses bachelor's: tuiton fees and other costs | WUR",
+      "organization": "Wageningen University & Research",
+      "quotes": [
+        "Tuition Fee 2027/2028 €2,775.00 (estimate) €18,800.00 (estimate)",
+        "The definite amount of tuition fees of 2027-2028 will be determined in the end of 2026."
+      ]
+    },
+    "elig": {
+      "url": "https://backend.wur.nl/sites/default/files/2025-10/Diploma-Eligibility-List-2026-intake-EN.pdf",
+      "page": "wur-elig-2026",
+      "title": "Diploma Eligibility List Wageningen University 2026 intake",
+      "organization": "Wageningen University & Research",
+      "quotes": [
+        "Diploma Eligibility List Wageningen University 2026 intake",
+        "Appendix 2 - International Baccalaureate DP Diploma",
+        "Marine Sciences* Mathematics A&I (HL)/Mathematics A&A (SL/HL) + Chemistry + Biology (one of the two latter subjects has to be on HL)",
+        "*These BSc programmes are English taught BSc programmes"
+      ]
+    }
+  },
+  "program": {
+    "name": "Marine Sciences",
+    "degree_type": "BSc",
+    "field": "Marine Science",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027",
+    "platform": "Studielink",
+    "source": "course",
+    "summary": "BSc Marine Sciences, Wageningen University & Research; full-time, 3 years, taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_annual": 18300,
+      "academic_year": "2026-2027",
+      "source": [
+        "fees",
+        "costs"
+      ],
+      "note": "Non-EU students: €18,300 (2026-2027). For 2027-2028 the tuition page says €18,840 and the study-costs page estimates €18,800; the definite amount is set at the end of 2026."
+    },
+    {
+      "residency": "eu-eea",
+      "currency": "EUR",
+      "tuition_annual": 2694,
+      "academic_year": "2026-2027",
+      "source": "fees",
+      "note": "European students: €2,694 (2026-2027); €2,771 for 2027-2028."
+    }
+  ],
+  "admissions": [
+    {
+      "curriculum": "ib",
+      "source": "elig",
+      "threshold": "Marine Sciences: IB DP Diploma with Mathematics A&I (HL)/Mathematics A&A (SL/HL) + Chemistry + Biology (one of the two latter subjects has to be on HL) (2026 intake list). No minimum points total is published.",
+      "required_subjects": [],
+      "tests": []
+    }
+  ]
+}

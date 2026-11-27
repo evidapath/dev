@@ -519,14 +519,18 @@ function pickProgram(
   }
   // Several programmes can match (e.g. "Engineering" matches every branch). Show the one
   // named or filed exactly as the subject first, then any that don't name another
-  // engineering branch, instead of whichever sorts first alphabetically.
+  // engineering branch, instead of whichever sorts first alphabetically. A programme
+  // named exactly as the subject beats one only filed under it (Computer Science before
+  // Computational Biology, Psychology before Cognitive Science).
   const s = subject.trim().toLowerCase();
   const rank = (p: ProgramView) =>
-    p.name.toLowerCase() === s || (p.fieldOfStudy ?? "").toLowerCase() === s
+    p.name.toLowerCase() === s
       ? 0
-      : otherBranch(p.name, subject)
-        ? 2
-        : 1;
+      : (p.fieldOfStudy ?? "").toLowerCase() === s
+        ? 1
+        : otherBranch(p.name, subject)
+          ? 3
+          : 2;
   matches = [...matches].sort((a, b) => rank(a) - rank(b));
   return { program: matches[0] ?? progs[0] ?? null, matches: matches.map((p) => p.name) };
 }
