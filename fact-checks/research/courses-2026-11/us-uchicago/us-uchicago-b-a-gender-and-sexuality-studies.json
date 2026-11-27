@@ -1,0 +1,128 @@
+{
+  "uni": "us-uchicago",
+  "slug": "b-a-gender-and-sexuality-studies",
+  "sources": {
+    "course": {
+      "url": "http://collegecatalog.uchicago.edu/thecollege/curriculum/",
+      "page": "cc2aa492b687",
+      "title": "The Curriculum | Academic Catalog | The University of Chicago",
+      "organization": "The University of Chicago",
+      "quotes": [
+        "Bachelor's degrees awarded are based on the major(s) selected by the student and may come in two forms: Bachelor of Arts (B.A.) or Bachelor of Science (B.S.).",
+        "© 2026-2027 The University of Chicago",
+        "1427 East 60th Street Chicago, IL 60637",
+        "Archaeology (B.A., minor)",
+        "Art History (B.A., minor)",
+        "Cinema and Media Studies (B.A., minor)",
+        "Classical Studies (B.A., minor)",
+        "Cognitive Science (B.A., minor)",
+        "Comparative Literature (B.A.)",
+        "Creative Writing (B.A.)",
+        "East Asian Languages and Civilizations (B.A., minor)",
+        "English Language and Literature (B.A.)",
+        "Fundamentals: Issues and Texts (B.A.)",
+        "Germanic Studies (B.A., minor)",
+        "Inquiry and Research in the Humanities (B.A.)",
+        "Jewish Studies (B.A., minor)",
+        "Linguistics (B.A., minor)",
+        "Media Arts and Design (B.A., minor)",
+        "Medieval Studies (B.A., minor)",
+        "Middle Eastern Studies (B.A., minor)",
+        "Music (B.A., minor)",
+        "Philosophy (B.A., minor)",
+        "Philosophy and Allied Fields (B.A.)",
+        "Religious Studies (B.A., minor)",
+        "Romance Languages and Literatures (B.A., minor)",
+        "Russian and East European Studies (B.A., minor)",
+        "South Asian Languages and Civilizations (B.A., minor)",
+        "Theater and Performance Studies (B.A., minor)",
+        "Visual Arts (B.A., minor)",
+        "Neuroscience (B.A., B.S., minor)",
+        "Astrophysics (B.A., B.S.)",
+        "Biological Chemistry (B.S.)",
+        "Chemistry (B.A., B.S., minor)",
+        "Climate and Sustainable Growth (B.A., minor)",
+        "Computational and Applied Mathematics (B.S.)",
+        "Computer Science (B.A., B.S., minor)",
+        "Data Science (B.A., B.S., minor)",
+        "Environmental Science (B.S.)",
+        "Geophysical Sciences (B.A., B.S.)",
+        "Mathematics (B.A., B.S., minor)",
+        "Molecular Engineering (B.S., minor)",
+        "Physics (B.A., B.S., minor)",
+        "Statistics (B.A., B.S., minor)",
+        "Comparative Human Development (B.A.)",
+        "Economics (B.A.)",
+        "Environment, Geography, and Urbanization (B.A., minor)",
+        "Gender and Sexuality Studies (B.A., minor)",
+        "Global Studies (B.A.)",
+        "History (B.A., minor)",
+        "History, Philosophy, and Social Studies of Science and Medicine (B.A., minor)",
+        "Human Rights (B.A., minor)",
+        "Latin American and Caribbean Studies (B.A., minor)",
+        "Law, Letters, and Society (B.A.)",
+        "Political Science (B.A.)",
+        "Psychology (B.A.)",
+        "Public Policy Studies (B.A.)",
+        "Race, Diaspora, and Indigeneity (B.A., minor)",
+        "Sociology (B.A.)"
+      ]
+    },
+    "q": {
+      "url": "http://collegecatalog.uchicago.edu/thecollege/gradingandacademicstatus/",
+      "page": "3ff89c3e05a2",
+      "title": "Enrollment Policies and Statuses | Academic Catalog | The University of Chicago",
+      "organization": "The University of Chicago",
+      "quotes": [
+        "Over the course of a typical four-year program (i.e., 12 quarters)"
+      ]
+    },
+    "coa": {
+      "url": "https://financialaid.uchicago.edu/undergraduate/how-aid-works/undergraduate-costs/",
+      "page": "924729ad69c5",
+      "title": "Undergraduate Costs | UChicago Financial Aid",
+      "organization": "The University of Chicago",
+      "quotes": [
+        "Cost of Attendance for 2026-2027 On-Campus Commuter Off-Campus Tuition $75,960 $75,960 $75,960 Student Services Fee $1,677 $1,677 $1,677 UPASS Fee $318 $318 $318 Food & Housing (or Maintenance Allowance) $21,414"
+      ]
+    }
+  },
+  "program": {
+    "name": "Gender and Sexuality Studies",
+    "degree_type": "B.A.",
+    "field": "Gender and Sexuality Studies",
+    "faculty": "The College",
+    "duration_years": 4,
+    "duration_source": "q",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Gender and Sexuality Studies, The University of Chicago (major in The College); a typical four-year program.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 75960,
+      "mandatory_fees_annual": 1677,
+      "academic_year": "2026-2027",
+      "source": "coa",
+      "note": "2026-2027: tuition $75,960; student services fee $1,677; UPASS fee $318 is separate.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          21414
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "UChicago 2026-2027 on-campus food & housing allowance: $21,414."
+      }
+    }
+  ],
+  "admissions": []
+}

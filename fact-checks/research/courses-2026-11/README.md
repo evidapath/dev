@@ -585,3 +585,14 @@ Optometry (no fee shown), MBChB and conjoints left out). Sanity IDs over 128 cha
 slugs (umlauts spelt out).
 
 Not yet expanded: Berkeley, Leiden, NUS (programme list behind a bot check), Freiburg.
+
+## 2026-11-27 (3): new universities with every programme
+
+Pending (dry-run HTTP 200): brown (88 concentrations, A.B. or Sc.B. by concentration; $74,568 + fees $3,084;
+housing + food $19,464), bu (136 undergraduate degrees from Degree Programs A–Z, Metropolitan College part-time
+left out; $73,024 + $1,570; $20,740), uchicago (55 majors with B.A./B.S. on The Curriculum page; $75,960 +
+$1,677; food & housing $21,414). Each programme carries its own copy of the cost record.
+
+Held: Rice (list mixes majors/minors/certificates; COA page 406), Duke (programme list doesn't render),
+Northwestern (A–Z list gives no degree per major), Notre Dame (catalogue page 404), Leiden more programmes
+(CAPTCHA "Access Blocked"), Freiburg more programmes (directory redirects).

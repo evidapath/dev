@@ -57,7 +57,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 44 | University of Bristol | United Kingdom | done (pending 2026-11-26-bristol.ndjson) |
 | 45 | Harvard University | United States | have |
 | 46 | University of Sheffield | United Kingdom | done (pending 2026-11-26-sheffield.ndjson) |
-| 47 | Leiden University | Netherlands | done (pending 2026-11-26-leiden.ndjson; CS is Dutch-taught, DS&AI added; science diploma PDF 'Access Blocked') |
+| 47 | Leiden University | Netherlands | done, 1 programme (pending 2026-11-26-leiden.ndjson); more held: site now returns a CAPTCHA 'Access Blocked' page (2026-11-27) |
 | 48 | TU Wien | Austria | done (pending 2026-11-26-tuwien.ndjson; German-taught) |
 | 49 | University of Alberta | Canada | have |
 | 50 | California Institute of Technology | United States | done (pending 2026-11-26-caltech.ndjson) |
@@ -91,9 +91,9 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 78 | LMU Munich | Germany | have |
 | 79 | Paris Sciences et Lettres – PSL Research University Paris | France | todo |
 | 80 | Uppsala University | Sweden | todo |
-| =81 | Rice University | United States | todo |
-| =81 | University of Freiburg | Germany | done (pending 2026-11-26-freiburg.ndjson; German-taught) |
-| 83 | The University of Chicago | United States | todo |
+| =81 | Rice University | United States | held: catalogue list mixes majors, minors and certificates without degrees; cost-of-attendance page returns 406 (2026-11-27) |
+| =81 | University of Freiburg | Germany | done, 1 programme; more held: programme directory redirects to the homepage (2026-11-27) |
+| 83 | The University of Chicago | United States | done (pending 2026-11-27-uchicago.ndjson; 55 majors) |
 | 84 | University of California, Davis | United States | todo |
 | 85 | University of Pennsylvania | United States | have? |
 | 86 | University of Massachusetts | United States | have? |
@@ -108,13 +108,13 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 95 | Université Paris-Saclay | France | todo |
 | 96 | Technical University of Berlin | Germany | have |
 | 97 | New York University | United States | have |
-| 98 | Boston University | United States | todo |
+| 98 | Boston University | United States | done (pending 2026-11-27-bu.ndjson; 136 majors) |
 | 99 | Karlsruhe Institute of Technology | Germany | have |
 | 100 | University of Göttingen | Germany | todo |
 | 101 | Norwegian University of Science and Technology | Norway | todo |
 | 102 | RWTH Aachen University | Germany | have |
 | 103 | Politecnico di Milano | Italy | have |
-| 104 | Duke University | United States | todo |
+| 104 | Duke University | United States | held: bulletin 'All Programs' page renders without the list (2026-11-27) |
 | 105 | Universitat Autònoma de Barcelona (UAB) | Spain | todo |
 | 106 | Université Paris Cité | France | todo |
 | 107 | University of Southern California | United States | have? |
@@ -136,7 +136,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 123 | Washington University in St Louis | United States | todo |
 | 124 | Arizona State University (Tempe) | United States | have |
 | 125 | University of Washington | United States | todo |
-| 126 | Brown University | United States | todo |
+| 126 | Brown University | United States | done (pending 2026-11-27-brown.ndjson; 88 concentrations) |
 | =127 | University of Bologna | Italy | have |
 | =127 | University of Notre Dame | United States | todo |
 | 129 | Imam Abdulrahman Bin Faisal University | Saudi Arabia | todo |
