@@ -1,0 +1,139 @@
+{
+  "uni": "us-notre-dame",
+  "slug": "bachelor-s-major-program-of-liberal-studies",
+  "sources": {
+    "course": {
+      "url": "https://catalog.nd.edu/programs/",
+      "page": "fc8ad24292ea",
+      "title": "Academic Programs | University of Notre Dame Academic Catalog",
+      "organization": "University of Notre Dame",
+      "quotes": [
+        "2026-2027 Bulletin of Information",
+        "Accountancy (Major)",
+        "Aerospace Engineering (Major)",
+        "Africana Studies (Major)",
+        "American Studies (Major)",
+        "Anthropology (Major)",
+        "Applied & Computational Mathematics & Statistics (Major)",
+        "Arabic (Major)",
+        "Architecture (Major)",
+        "Art History (Major)",
+        "Art Studio (BA) (Major)",
+        "Art Studio (BFA) (Major)",
+        "Biochemistry (Major)",
+        "Biological Sciences (Major)",
+        "Business Analytics (Major)",
+        "Chemical Engineering (Major)",
+        "Chemistry (Major)",
+        "Chemistry/Computing (Major)",
+        "Chinese (Major)",
+        "Civil Engineering (Major)",
+        "Classics (Major)",
+        "Computer Engineering (Major)",
+        "Computer Science (Major)",
+        "Design (BA) (Major)",
+        "Design (BFA) (Major)",
+        "Economics (Major)",
+        "Electrical Engineering (Major)",
+        "English (Major)",
+        "Environmental Engineering (Major)",
+        "Film, Television and Theatre (Major)",
+        "Finance (Major)",
+        "French and Francophone Studies (Major)",
+        "Gender Studies (Major)",
+        "German (Major)",
+        "Global Affairs (Major)",
+        "Greek and Roman Civilization (Major)",
+        "History (Major)",
+        "International Economics - Arabic (Major)",
+        "International Economics - Chinese (Major)",
+        "International Economics - German (Major)",
+        "International Economics - Japanese (Major)",
+        "International Economics - LLR (Major)",
+        "International Economics - Russian (Major)",
+        "Italian (Major)",
+        "Marketing (Major)",
+        "Mathematics (BS) (Major)",
+        "Mathematics-Honors (Major)",
+        "Mechanical Engineering (Major)",
+        "Medieval Studies (Major)",
+        "Music (Major)",
+        "Neuroscience & Behavior (BA) (Major)",
+        "Neuroscience and Behavior (BS) (Major)",
+        "Philosophy (Major)",
+        "Physics (Major)",
+        "Physics in Medicine (Major)",
+        "Political Science (Major)",
+        "Pre-Professional (Major)",
+        "Program of Liberal Studies (Major)",
+        "Psychology (Major)",
+        "Romance Languages and Literature (Major)",
+        "Russian (Major)",
+        "Science - Computing (Major)",
+        "Science - Education (Major)",
+        "Sociology (Major)",
+        "Spanish (Major)",
+        "Statistics (Major)",
+        "Strategic Management (Major)",
+        "Theology (Major)"
+      ]
+    },
+    "y": {
+      "url": "https://advising.nd.edu/first-year-and-incoming-students/requirements-and-credits/number-of-courses-and-credits/",
+      "page": "defacaa0b335",
+      "title": "Number of Courses and Credits | Notre Dame Advising",
+      "organization": "University of Notre Dame",
+      "quotes": [
+        "remain on pace to graduate in four years/eight semesters (five years/ten semesters for Architecture"
+      ]
+    },
+    "coa": {
+      "url": "https://financialaid.nd.edu/costs-and-affordability/",
+      "page": "c59ba89fe888",
+      "title": "Costs & Affordability | Notre Dame Financial Aid",
+      "organization": "University of Notre Dame",
+      "quotes": [
+        "Average Cost of Attendance for 2026-2027 Item Cost Tuition $69,280 Mandatory Fees $514 Housing and Food $18,992",
+        "University of Notre Dame Notre Dame , IN 46556 USA"
+      ]
+    }
+  },
+  "program": {
+    "name": "Program of Liberal Studies",
+    "degree_type": "Bachelor's (major)",
+    "field": "Program of Liberal Studies",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "y",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Program of Liberal Studies, University of Notre Dame; on pace to graduate in four years (five years for Architecture).",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 69280,
+      "mandatory_fees_annual": 514,
+      "academic_year": "2026-2027",
+      "source": "coa",
+      "note": "2026-2027: tuition $69,280; mandatory fees $514.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          18992
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "Notre Dame average housing and food 2026-2027: $18,992."
+      }
+    }
+  ],
+  "admissions": []
+}

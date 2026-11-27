@@ -1,0 +1,124 @@
+{
+  "uni": "us-georgetown",
+  "slug": "b-s-neurobiology",
+  "sources": {
+    "course": {
+      "url": "https://college.georgetown.edu/academics/undergraduate/majors-minors-and-certificates/",
+      "page": "3cac469deb69",
+      "title": "Majors & Minors | Georgetown University's College of Arts & Sciences",
+      "organization": "Georgetown University",
+      "quotes": [
+        "Majors & Minors | Georgetown University's College of Arts & Sciences",
+        "American Musical Cultures ✓ A.B.",
+        "American Studies ✓ A.B.",
+        "Anthropology ✓ ✓ A.B.",
+        "Arabic ✓ ✓ A.B.",
+        "Art ✓ ✓ A.B.",
+        "Art History ✓ ✓ A.B.",
+        "Biochemistry ✓ B.S .",
+        "Biological Physics ✓ B.S .",
+        "Biology ✓ ✓ B.S .",
+        "Biology of Global Health ✓ B.S .",
+        "Black Studies ✓ ✓ A.B.",
+        "Chemistry ✓ ✓ B.S .",
+        "Chinese ✓ ✓ A.B.",
+        "Classics ✓ ✓ A.B.",
+        "Computer Science ✓ ✓ A.B., B.S .",
+        "Computer Science, Ethics, and Society ✓ A.B.",
+        "Disability Studies ✓ ✓ A.B.",
+        "East Asian Languages & Cultures ✓ A.B.",
+        "Economics ✓ ✓ A.B.",
+        "English ✓ ✓ A.B.",
+        "Environment & Sustainability * ✓ ✓ B.S .",
+        "Environmental Biology ✓ B.S .",
+        "French and Francophone Studies ✓ ✓ A.B.",
+        "German ✓ ✓ A.B.",
+        "Global and Comparative Literature ✓ A.B.",
+        "Global Medieval Studies ✓ ✓ A.B.",
+        "Government ✓ ✓ A.B.",
+        "History ✓ ✓ A.B.",
+        "Interdisciplinary Studies ✓ A.B.",
+        "International Business, Language, and Culture ✓ B.S .",
+        "Italian ✓ ✓ A.B.",
+        "Japanese ✓ ✓ A.B.",
+        "Justice and Peace Studies ✓ ✓ A.B.",
+        "Korean ✓ ✓ A.B.",
+        "Linguistics ✓ ✓ A.B.",
+        "Mathematics ✓ ✓ A.B., B.S .",
+        "Neurobiology ✓ B.S .",
+        "Philosophy ✓ ✓ A.B.",
+        "Physics ✓ ✓ A.B., B.S .",
+        "Political Economy ✓ A.B.",
+        "Portuguese ✓ ✓ A.B.",
+        "Psychology ✓ ✓ A.B.",
+        "Public Policy ✓ ✓ A.B.",
+        "Russian ✓ ✓ A.B.",
+        "Sociology ✓ ✓ A.B.",
+        "Spanish ✓ ✓ A.B.",
+        "Spanish and Portuguese Studies ✓ A.B.",
+        "Theater and Performance Studies ✓ ✓ A.B.",
+        "Theology and Religious Studies ✓ ✓ A.B.",
+        "Women’s and Gender Studies ✓ ✓ A.B."
+      ]
+    },
+    "y": {
+      "url": "https://bulletin.georgetown.edu/academics/undergraduate-regulations/matriculation/",
+      "page": "244f02622c93",
+      "title": "Matriculation | Georgetown Undergraduate Bulletin",
+      "organization": "Georgetown University",
+      "quotes": [
+        "Students admitted as first-year students are ordinarily expected to complete their degree requirements and graduate by the end of their eighth semester of matriculation."
+      ]
+    },
+    "coa": {
+      "url": "https://finaid.georgetown.edu/undergrad/aid-for-undergrads/",
+      "page": "e5d71d98698e",
+      "title": "How Aid Works for Undergraduates | Georgetown Financial Aid",
+      "organization": "Georgetown University",
+      "quotes": [
+        "2026-2027 Annual Cost of Attendance First Year Undergraduate",
+        "Full Time Tuition & Fees $74,732 $74,732 $75,091 $75,091 Average Housing Expense $13,944 $900 $13,944 $900 Food Expense $8,236",
+        "3700 O St N.W., Box 571252 Washington DC 20057",
+        "Office of Student Financial Aid | Georgetown University"
+      ]
+    }
+  },
+  "program": {
+    "name": "Neurobiology",
+    "degree_type": "B.S.",
+    "field": "Neuroscience",
+    "faculty": "College of Arts & Sciences",
+    "duration_years": 4,
+    "duration_source": "y",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Neurobiology, Georgetown University (College of Arts & Sciences); first-year students ordinarily graduate by the end of their eighth semester.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 74732,
+      "academic_year": "2026-2027",
+      "source": "coa",
+      "note": "First-year 2026-2027: full-time tuition & fees $74,732.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          13944,
+          8236
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "Georgetown 2026-2027 first-year: average housing $13,944 + food $8,236 = $22,180 (our calculation)."
+      }
+    }
+  ],
+  "admissions": []
+}

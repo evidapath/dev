@@ -596,3 +596,18 @@ $1,677; food & housing $21,414). Each programme carries its own copy of the cost
 Held: Rice (list mixes majors/minors/certificates; COA page 406), Duke (programme list doesn't render),
 Northwestern (A–Z list gives no degree per major), Notre Dame (catalogue page 404), Leiden more programmes
 (CAPTCHA "Access Blocked"), Freiburg more programmes (directory redirects).
+
+## 2026-11-27 (4): ten-university attempt
+
+Done (dry-run HTTP 200): ucsc (75 majors; tuition $17,439 + non-resident $39,270 = $56,709 our calculation;
+housing + food $21,957), wustl (all majors on Majors (all schools); $71,310; housing and food $24,272),
+notre-dame (67 majors; $69,280 + $514; $18,992; Architecture 5 years), georgetown (50 College of Arts & Sciences
+majors with A.B./B.S.; $74,732; $22,180), helsinki (Bachelor's Programmes in Science and in Liberal Arts and
+Sciences; €13,000 non-EU/EEA).
+
+Held (reasons in the queue): UC Davis, UCSB, UC Irvine, UC San Diego, Stony Brook, Texas A&M, University of
+Washington, Michigan State, Emory, Dartmouth, Vanderbilt, Iowa, Wisconsin, UNC.
+
+Builder: lengths written as semesters in words ("eight semesters", "eighth semester") are read. hu-bme,
+hu-szeged, de-tuebingen, us-brown rebuild identically with the old and new builder; a 5-year length against
+"eighth semester" is refused.

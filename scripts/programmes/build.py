@@ -178,6 +178,9 @@ def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None
         in_months = (f"{round(p['duration_years'] * 12)} months" in dq  # e.g. "36 months"
                      or re.search(rf"\b{p['duration_years'] * 2:g} semesters?\b", dq) is not None  # e.g. BME's "7 semesters" = 3.5 years; Tübingen's "6 semester"
                      or re.search(rf"\b{word}[- ](?:academic )?years?\b", dq) is not None  # e.g. "a four-year degree", "four academic years"
+                     # semesters in words: "eight semesters", "eighth semester" (Georgetown, Emory) = 4 years
+                     or re.search(rf"\b{ {6: 'six', 7: 'seven', 8: 'eight', 10: 'ten'}.get(round(p['duration_years'] * 2), '-')} (?:regular, full-time )?semesters\b", dq) is not None
+                     or re.search(rf"\b{ {6: 'sixth', 8: 'eighth', 10: 'tenth'}.get(round(p['duration_years'] * 2), '-')} semester\b", dq) is not None
                      # the last year of a published typical course sequence (e.g. RIT's "Fifth Year"),
                      # only when no later year is named in the same quotes
                      or (re.search(rf"\b{ordinal} year\b", dq) is not None

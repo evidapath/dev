@@ -1,0 +1,49 @@
+{
+  "uni": "fi-helsinki",
+  "name": "University of Helsinki",
+  "aliases": [
+    "Helsingin yliopisto"
+  ],
+  "type": "public",
+  "website": "https://www.helsinki.fi",
+  "country": {
+    "cc": "fi",
+    "name": "Finland",
+    "currency": "EUR"
+  },
+  "city": {
+    "slug": "fi-helsinki",
+    "name": "Helsinki"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.helsinki.fi/en/degree-programmes/science-bachelors-programme",
+      "page": "92a4d3dc7717",
+      "title": "Science | Bachelor's programme | University of Helsinki",
+      "organization": "University of Helsinki",
+      "quotes": [
+        "Science | Bachelor's programme | University of Helsinki",
+        "Scope of studies and length 180 ECTS credits, 3 years Degree level Bachelor Language English Tuition fee per year (only non-EU/EEA citizens) 13 000 EUR",
+        "P.O. Box 3 (Fabianinkatu 33) 00014 University of Helsinki"
+      ]
+    },
+    "fees": {
+      "url": "https://www.helsinki.fi/en/admissions-and-education/apply-bachelors-and-masters-programmes/tuition-fees-and-scholarship-programme",
+      "page": "d0f37d5a667d",
+      "title": "Tuition fees and scholarship programme | University of Helsinki",
+      "organization": "University of Helsinki",
+      "quotes": [
+        "The fee for the English-language bachelor's programmes is 13,000 EUR per academic year."
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU/EEA citizens",
+      "description": "Tuition fee for the English-language bachelor's programmes (non-EU/EEA citizens only).",
+      "source": "fees"
+    }
+  ]
+}

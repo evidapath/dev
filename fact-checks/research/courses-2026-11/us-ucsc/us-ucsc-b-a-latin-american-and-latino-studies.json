@@ -1,0 +1,147 @@
+{
+  "uni": "us-ucsc",
+  "slug": "b-a-latin-american-and-latino-studies",
+  "sources": {
+    "course": {
+      "url": "https://catalog.ucsc.edu/en/current/general-catalog/academic-programs/bachelors-degrees",
+      "page": "696f445ae743",
+      "title": "Bachelor's Degrees | University of California Santa Cruz",
+      "organization": "University of California Santa Cruz",
+      "quotes": [
+        "University of California Santa Cruz - Bachelor's Degrees",
+        "Agroecology B.A.",
+        "Ancient Studies B.A.",
+        "Anthropology B.A.",
+        "Applied Linguistics and Multilingualism B.A.",
+        "Applied Mathematics B.S.",
+        "Applied Physics B.S.",
+        "Art & Design: Games + Playable Media B.A.",
+        "Art B.A.",
+        "Biochemistry and Molecular Biology B.S.",
+        "Biology B.A.",
+        "Biology B.S.",
+        "Biomolecular Engineering and Bioinformatics B.S.",
+        "Biotechnology B.A.",
+        "Business Management Economics B.A.",
+        "Chemistry B.A.",
+        "Chemistry B.S.",
+        "Cognitive Science B.S.",
+        "Community Studies B.A.",
+        "Computer Engineering B.S.",
+        "Computer Science B.A.",
+        "Computer Science B.S.",
+        "Computer Science: Computer Game Design B.S.",
+        "Creative Technologies B.A.",
+        "Critical Race and Ethnic Studies B.A.",
+        "Earth Sciences B.S.",
+        "Earth Sciences/Anthropology Combined Major B.A.",
+        "Ecology and Evolution B.S.",
+        "Economics B.A.",
+        "Economics/Mathematics Combined B.A.",
+        "Education, Democracy, and Justice B.A.",
+        "Electrical Engineering B.S.",
+        "Environmental Sciences B.S.",
+        "Environmental Studies B.A.",
+        "Environmental Studies/Biology Combined Major B.A.",
+        "Environmental Studies/Earth Sciences Combined Major B.A.",
+        "Environmental Studies/Economics Combined Major B.A.",
+        "Feminist Studies B.A.",
+        "Film and Digital Media B.A.",
+        "Global and Community Health B.A.",
+        "Global and Community Health B.S.",
+        "Global Economics B.A.",
+        "History B.A.",
+        "History of Art and Visual Culture B.A.",
+        "Jewish Studies B.A.",
+        "Language Studies B.A.",
+        "Latin American and Latino Studies B.A.",
+        "Latin American and Latino Studies/Education, Democracy, and Justice B.A.",
+        "Latin American and Latino Studies/Politics Combined B.A.",
+        "Latin American and Latino Studies/Sociology Combined B.A.",
+        "Legal Studies B.A.",
+        "Linguistics B.A.",
+        "Literature B.A.",
+        "Marine Biology B.S.",
+        "Mathematics B.A.",
+        "Mathematics B.S.",
+        "Mathematics Education B.A.",
+        "Mathematics Theory and Computation B.S.",
+        "Microbiology B.S.",
+        "Molecular, Cell, and Developmental Biology B.S.",
+        "Music B.A.",
+        "Music B.M.",
+        "Network and Digital Technology B.A.",
+        "Neuroscience B.S.",
+        "Philosophy B.A.",
+        "Physics (Astrophysics) B.S.",
+        "Physics B.S.",
+        "Plant Sciences B.S.",
+        "Politics B.A.",
+        "Psychology B.A.",
+        "Robotics Engineering B.S.",
+        "Science Education B.S.",
+        "Sociology B.A.",
+        "Spanish Studies B.A.",
+        "Technology and Information Management B.S.",
+        "Theater Arts B.A."
+      ]
+    },
+    "y": {
+      "url": "https://catalog.ucsc.edu/en/current/general-catalog/undergraduate-information/undergraduate-academic-program/planning-your-academic-program",
+      "page": "d202bb918c57",
+      "title": "Planning Your Academic Program | University of California Santa Cruz",
+      "organization": "University of California Santa Cruz",
+      "quotes": [
+        "Students who enter as frosh are expected to graduate in four years."
+      ]
+    },
+    "coa": {
+      "url": "https://financialaid.ucsc.edu/managing-aid/budget-cost-to-attend/",
+      "page": "4f638e374cb6",
+      "title": "Cost to Attend UC Santa Cruz | Financial Aid",
+      "organization": "University of California Santa Cruz",
+      "quotes": [
+        "2026-27 Undergraduate Budgets for Entering Students (Fall, Winter, & Spring Terms ) Entering Students On-Campus Off-Campus Commuter Tuition and Fees 1 $17,439 $17,439 $17,439 Housing 2 $15,120 $15,614 $3,956 Food $6,837 $5,947 $4,834",
+        "Non-Resident Tuition $39,270 $39,270 $39,270 Total Non-California Resident Budget $87,807"
+      ]
+    }
+  },
+  "program": {
+    "name": "Latin American and Latino Studies",
+    "degree_type": "B.A.",
+    "field": "Latin American and Latino Studies",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "y",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Latin American and Latino Studies, University of California Santa Cruz; students entering as first-years are expected to graduate in four years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "nonresident",
+      "currency": "USD",
+      "tuition_formula": "4*(17439+39270)/4",
+      "academic_year": "2026-27",
+      "source": "coa",
+      "note": "Entering students 2026-27: tuition and fees $17,439 + non-resident tuition $39,270 = $56,709 a year (our calculation); estimates, may not be final.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          15120,
+          6837
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "On-campus 2026-27: housing $15,120 + food $6,837 = $21,957 (our calculation)."
+      }
+    }
+  ],
+  "admissions": []
+}

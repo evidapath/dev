@@ -1,0 +1,153 @@
+{
+  "uni": "us-wustl",
+  "slug": "bachelor-s-major-biology",
+  "sources": {
+    "course": {
+      "url": "https://bulletin.wustl.edu/undergrad/majors/",
+      "page": "00ec6572b086",
+      "title": "Majors (all schools) | Washington University Bulletin",
+      "organization": "Washington University in St. Louis",
+      "quotes": [
+        "Majors (all schools) | Washington University Bulletin",
+        "Accounting, BSBA",
+        "African & African American Studies Major",
+        "American Culture Studies Major",
+        "Ancient Studies Major",
+        "Anthropology Major",
+        "Applied Mathematics Major",
+        "Applied Science (Chemical Engineering) (EECE), BS",
+        "Applied Science (Electrical Engineering) (ESE), BS",
+        "Applied Science (Mechanical Engineering) (MEMS), BS",
+        "Applied Science (Systems Science & Engineering) (ESE), BS",
+        "Arabic Major",
+        "Architecture, BA",
+        "Architecture, BS",
+        "Art History and Archaeology Major",
+        "Art, BA",
+        "Art, BFA",
+        "Astrophysics Major",
+        "Biochemistry Major",
+        "Biology Major",
+        "Biomedical Engineering (BME), BS",
+        "Business and Computer Science (CSE), BS",
+        "Chemical Engineering (EECE), BS",
+        "Chemistry Major",
+        "Classics Major",
+        "Communication Design, BFA",
+        "Comparative Literature and Thought Major",
+        "Computer Engineering (CSE), BS",
+        "Computer Science (CSE), BS",
+        "Computer Science + Economics (CSE), BS",
+        "Computer Science + Mathematics (CSE), BS",
+        "Dance Major",
+        "Data Science (CSE), BS",
+        "Data Science Major",
+        "Design, BA",
+        "Drama Major",
+        "Earth Science Major",
+        "East Asian Languages and Cultures Major",
+        "Economics and Computer Science Major",
+        "Economics and Strategy, BSBA",
+        "Economics Major",
+        "Educational Studies Major",
+        "Electrical Engineering (ESE), BS",
+        "English Literature Major",
+        "Entrepreneurship, BSBA",
+        "Environmental Analysis Major",
+        "Environmental Biology Major",
+        "Environmental Engineering (EECE), BS",
+        "Environmental Policy Major",
+        "Environmental Science Major",
+        "Fashion Design, BFA",
+        "Film and Media Studies Major",
+        "Finance, BSBA",
+        "French Major",
+        "Germanic Languages and Literatures Major",
+        "Health Care Management, BSBA",
+        "Hebrew Major",
+        "History Major",
+        "Italian Major",
+        "Latin American Studies Major",
+        "Linguistics Major",
+        "Marketing, BSBA",
+        "Mathematical Sciences Major",
+        "Mathematics and Computer Science Major",
+        "Mathematics and Economics Major",
+        "Mathematics Major",
+        "Mechanical Engineering (MEMS), BS",
+        "Organization and Strategic Management, BSBA",
+        "Philosophy Major",
+        "Physics Major",
+        "Planetary Science Major",
+        "Political Science Major",
+        "Psychological & Brain Sciences Major",
+        "Psychological & Brain Sciences: Cognitive Neuroscience Major",
+        "Public Health & Society Major",
+        "Religious Studies Major",
+        "Romance Languages and Literatures Major",
+        "Sociology Major",
+        "Spanish Major",
+        "Statistics Major",
+        "Supply Chain, Operations, and Technology, BSBA",
+        "Systems Science & Engineering (ESE), BS",
+        "Women, Gender, and Sexuality Studies Major"
+      ]
+    },
+    "y": {
+      "url": "https://bulletin.wustl.edu/undergrad/architecture/policies/",
+      "page": "c26bffaf56fe",
+      "title": "Academic Policies | Washington University Bulletin",
+      "organization": "Washington University in St. Louis",
+      "quotes": [
+        "For undergraduates, this is usually eight semesters"
+      ]
+    },
+    "coa": {
+      "url": "https://financialaid.wustl.edu/how-aid-works/cost-of-attendance/",
+      "page": "70471b91aee9",
+      "title": "Costs | WashU Student Financial Services",
+      "organization": "Washington University in St. Louis",
+      "quotes": [
+        "Undergraduate tuition and fees for 2026-27 University charges Tuition $71,310 Student activity fee $712 Student health and wellness fee $700 Average housing and food (university meal plan)* $24,272",
+        "©2026 Washington University in St. Louis"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biology",
+    "degree_type": "Bachelor's (major)",
+    "field": "Biology",
+    "faculty": "",
+    "duration_years": 4,
+    "duration_source": "y",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-27",
+    "platform": "",
+    "source": "course",
+    "summary": "Biology, Washington University in St. Louis; undergraduate degrees usually take eight semesters.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 71310,
+      "academic_year": "2026-27",
+      "source": "coa",
+      "note": "2026-27: tuition $71,310; plus student activity fee $712 and student health and wellness fee $700.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          24272
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "Average housing and food (university meal plan) 2026-27: $24,272."
+      }
+    }
+  ],
+  "admissions": []
+}

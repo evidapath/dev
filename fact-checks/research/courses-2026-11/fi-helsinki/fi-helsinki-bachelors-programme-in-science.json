@@ -1,0 +1,56 @@
+{
+  "uni": "fi-helsinki",
+  "slug": "bachelors-programme-in-science",
+  "sources": {
+    "course": {
+      "url": "https://www.helsinki.fi/en/degree-programmes/science-bachelors-programme",
+      "page": "92a4d3dc7717",
+      "title": "Science | Bachelor's programme | University of Helsinki",
+      "organization": "University of Helsinki",
+      "quotes": [
+        "Science | Bachelor's programme | University of Helsinki",
+        "Scope of studies and length 180 ECTS credits, 3 years Degree level Bachelor Language English Tuition fee per year (only non-EU/EEA citizens) 13 000 EUR",
+        "P.O. Box 3 (Fabianinkatu 33) 00014 University of Helsinki"
+      ]
+    },
+    "fees": {
+      "url": "https://www.helsinki.fi/en/admissions-and-education/apply-bachelors-and-masters-programmes/tuition-fees-and-scholarship-programme",
+      "page": "d0f37d5a667d",
+      "title": "Tuition fees and scholarship programme | University of Helsinki",
+      "organization": "University of Helsinki",
+      "quotes": [
+        "The fee for the English-language bachelor's programmes is 13,000 EUR per academic year."
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor's Programme in Science",
+    "degree_type": "Bachelor",
+    "field": "Natural Sciences",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor's Programme in Science, University of Helsinki; 180 ECTS credits, 3 years, taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "EUR",
+      "tuition_annual": 13000,
+      "academic_year": "2027 entry",
+      "source": [
+        "course",
+        "fees"
+      ],
+      "note": "Non-EU/EEA citizens: €13,000 a year; EU/EEA citizens pay no tuition fee."
+    }
+  ],
+  "admissions": []
+}

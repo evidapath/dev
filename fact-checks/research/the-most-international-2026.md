@@ -94,14 +94,14 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =81 | Rice University | United States | held: catalogue list mixes majors, minors and certificates without degrees; cost-of-attendance page returns 406 (2026-11-27) |
 | =81 | University of Freiburg | Germany | done, 1 programme; more held: programme directory redirects to the homepage (2026-11-27) |
 | 83 | The University of Chicago | United States | done (pending 2026-11-27-uchicago.ndjson; 55 majors) |
-| 84 | University of California, Davis | United States | todo |
+| 84 | University of California, Davis | United States | held: cost page 403 and fee page Cloudflare check (2026-11-27) |
 | 85 | University of Pennsylvania | United States | have? |
 | 86 | University of Massachusetts | United States | have? |
-| 87 | University of California, Santa Barbara | United States | todo |
+| 87 | University of California, Santa Barbara | United States | held: catalog programme list doesn't render (2026-11-27) |
 | 88 | Technion Israel Institute of Technology | Israel | todo |
 | =89 | Purdue University West Lafayette | United States | have |
 | =89 | University of Tübingen | Germany | done (pending 2026-11-26-tuebingen.ndjson; German-taught) |
-| 91 | University of California, Irvine | United States | todo |
+| 91 | University of California, Irvine | United States | held: no statement of the standard length found (2026-11-27) |
 | =92 | Ghent University | Belgium | todo |
 | =92 | University of Rochester | United States | have? |
 | 94 | University of Bonn | Germany | todo |
@@ -119,26 +119,26 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 106 | Université Paris Cité | France | todo |
 | 107 | University of Southern California | United States | have? |
 | 108 | University of Toulouse | France | todo |
-| 109 | Stony Brook University | United States | todo |
+| 109 | Stony Brook University | United States | held: catalog majors page loads without the list (2026-11-27) |
 | 110 | Charles University | Czechia | todo |
-| 111 | University of California, Santa Cruz | United States | todo |
-| 112 | University of California, San Diego | United States | todo |
+| 111 | University of California, Santa Cruz | United States | done (pending 2026-11-27-ucsc.ndjson; 75 majors) |
+| 112 | University of California, San Diego | United States | held: no statement of the standard length found; no 2026-27 living costs (2026-11-27) |
 | 113 | Sungkyunkwan University (SKKU) | South Korea | todo |
 | 114 | University of California, Los Angeles | United States | todo |
 | =115 | Northwestern University | United States | todo |
 | =115 | Université Grenoble Alpes | France | todo |
 | 117 | University of Hamburg | Germany | todo |
 | =118 | TU Dresden | Germany | todo |
-| =118 | University of Helsinki | Finland | todo |
-| 120 | Michigan State University | United States | todo |
+| =118 | University of Helsinki | Finland | done (pending 2026-11-27-helsinki.ndjson; the 2 English-taught bachelor's) |
+| 120 | Michigan State University | United States | held: programme list page doesn't load; tuition varies by class year (2026-11-27) |
 | 121 | University of Barcelona | Spain | todo |
-| 122 | Texas A&M University | United States | todo |
-| 123 | Washington University in St Louis | United States | todo |
+| 122 | Texas A&M University | United States | held: non-resident tuition depends on a programme category and credit hours not given per major (2026-11-27) |
+| 123 | Washington University in St Louis | United States | done (pending 2026-11-27-wustl.ndjson) |
 | 124 | Arizona State University (Tempe) | United States | have |
-| 125 | University of Washington | United States | todo |
+| 125 | University of Washington | United States | held: catalog lists departments, not degrees (2026-11-27) |
 | 126 | Brown University | United States | done (pending 2026-11-27-brown.ndjson; 88 concentrations) |
 | =127 | University of Bologna | Italy | have |
-| =127 | University of Notre Dame | United States | todo |
+| =127 | University of Notre Dame | United States | done (pending 2026-11-27-notre-dame.ndjson; 67 majors) |
 | 129 | Imam Abdulrahman Bin Faisal University | Saudi Arabia | todo |
 | 130 | École Normale Supérieure de Lyon | France | todo |
 | 131 | Pontificia Universidad Católica de Chile | Chile | todo |
@@ -147,20 +147,20 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 135 | National Taiwan University (NTU) | Taiwan | todo |
 | 136 | University of Porto | Portugal | todo |
 | 137 | Korea University | South Korea | have? |
-| =138 | Emory University | United States | todo |
+| =138 | Emory University | United States | held: programme list is script-only and doesn't render (2026-11-27) |
 | =138 | Virginia Polytechnic Institute and State University | United States | todo |
 | 140 | North Carolina State University | United States | todo |
 | 141 | Tel Aviv University | Israel | todo |
 | 142 | National Autonomous University of Mexico | Mexico | todo |
-| 143 | University of Wisconsin-Madison | United States | todo |
+| 143 | University of Wisconsin-Madison | United States | held: business/nursing/engineering pay extra tuition not stated per major (2026-11-27) |
 | 145 | Indiana University | United States | todo |
-| 146 | Dartmouth College | United States | todo |
+| 146 | Dartmouth College | United States | held: catalog gives 'twelve terms' including summer terms, not a length in years (2026-11-27) |
 | =147 | Peking University | China | todo |
 | =147 | Penn State (Main campus) | United States | todo |
 | 149 | Ohio State University (Main campus) | United States | todo |
 | 150 | University of Münster | Germany | todo |
 | 151 | Autonomous University of Madrid | Spain | todo |
-| 152 | Vanderbilt University | United States | todo |
+| 152 | Vanderbilt University | United States | held: no statement of the standard length; no undergraduate housing/food figures (2026-11-27) |
 | 153 | University of Padua | Italy | have |
 | 154 | Yonsei University (Seoul campus) | South Korea | todo |
 | 156 | University of Arizona | United States | have? |
@@ -169,13 +169,13 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 160 | University of Colorado Boulder | United States | todo |
 | 161 | The University of Tokyo | Japan | todo |
 | 162 | Tongji University | China | todo |
-| 163 | Georgetown University | United States | todo |
+| 163 | Georgetown University | United States | done for the College of Arts & Sciences (pending 2026-11-27-georgetown.ndjson; 50 majors); SFS/MSB bulletin pages 404 |
 | 164 | Sapienza University of Rome | Italy | have |
 | 165 | University of Granada | Spain | todo |
 | 166 | Complutense University of Madrid | Spain | todo |
 | =167 | University of Maryland, College Park | United States | todo |
 | =169 | Hebrew University of Jerusalem | Israel | todo |
-| =169 | University of Iowa | United States | todo |
+| =169 | University of Iowa | United States | held: two official pages give different international fees (2026-11-27) |
 | 171 | Tohoku University | Japan | todo |
 | 172 | University of Florida | United States | todo |
 | 173 | University of Warsaw | Poland | todo |
@@ -184,7 +184,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =175 | Waseda University | Japan | todo |
 | 177 | Chulalongkorn University | Thailand | todo |
 | =178 | Nanjing University | China | todo |
-| =178 | University of North Carolina at Chapel Hill | United States | todo |
+| =178 | University of North Carolina at Chapel Hill | United States | held: 2026-27 non-resident tuition not final (2026-11-27) |
 | 180 | University of Texas at Austin | United States | todo |
 | 181 | Tsinghua University | China | todo |
 | 182 | Cairo University | Egypt | todo |
