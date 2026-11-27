@@ -1,0 +1,50 @@
+{
+  "uni": "no-uio",
+  "name": "University of Oslo",
+  "aliases": [
+    "UiO",
+    "Universitetet i Oslo"
+  ],
+  "type": "public",
+  "website": "https://www.uio.no",
+  "country": {
+    "cc": "no",
+    "name": "Norway",
+    "currency": "NOK"
+  },
+  "city": {
+    "slug": "no-oslo",
+    "name": "Oslo"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.uio.no/english/studies/programmes/technology-systems/",
+      "page": "63dc3d411f03",
+      "title": "Technology Systems: Science and Engineering (bachelor) – University of Oslo",
+      "organization": "University of Oslo",
+      "quotes": [
+        "Technology Systems: Science and Engineering (bachelor) – University of Oslo",
+        "Technology Systems: Science and Engineering Level: Bachelor Duration: 3 years ECTS Credits: 180"
+      ]
+    },
+    "adm": {
+      "url": "https://www.uio.no/english/studies/programmes/technology-systems/admission/admission-no-norwegian.html",
+      "page": "ca9aa0fe492a",
+      "title": "Admission without Norwegian proficiency – Technology Systems | University of Oslo",
+      "organization": "University of Oslo",
+      "quotes": [
+        "The tuition fee for the 2027/2028 academic year is NOK 218 000. The tuition fee applies for each year of study and is adjusted annually. The programme is taught in English.",
+        "must pay tuition fees to the University of Oslo, unless they qualify for an exemption"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU/EEA/Swiss citizens",
+      "description": "Tuition fee for citizens of countries outside the EU/EEA and Switzerland.",
+      "source": "adm"
+    }
+  ]
+}

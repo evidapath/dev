@@ -1,0 +1,44 @@
+{
+  "uni": "se-lund",
+  "slug": "bachelor-international-business",
+  "sources": {
+    "course": {
+      "url": "https://www.lunduniversity.lu.se/lubas/i-uoh-lu-EGIBU",
+      "page": "5c8d71d97730",
+      "title": "International Business - Bachelor's Programme | Lund University",
+      "organization": "Lund University",
+      "quotes": [
+        "International Business - Bachelor's Programme | Lund University",
+        "Start Autumn 2027 Duration 3 years Level Bachelor's Language English Place of study Lund",
+        "Full programme/course tuition fee: SEK 390,000 First payment: SEK 65,000"
+      ]
+    }
+  },
+  "program": {
+    "name": "International Business",
+    "degree_type": "Bachelor",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Autumn 2027",
+    "platform": "University Admissions in Sweden",
+    "source": "course",
+    "summary": "International Business, Bachelor's Programme, Lund University; 3 years, taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "SEK",
+      "tuition_formula": "390000/3",
+      "academic_year": "Autumn 2027 entry",
+      "source": "course",
+      "note": "Full programme fee SEK 390,000 (about SEK 130,000 a year, our calculation); first payment SEK 65,000."
+    }
+  ],
+  "admissions": []
+}

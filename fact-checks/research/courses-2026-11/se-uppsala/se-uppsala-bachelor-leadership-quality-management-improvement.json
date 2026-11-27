@@ -1,0 +1,45 @@
+{
+  "uni": "se-uppsala",
+  "slug": "bachelor-leadership-quality-management-improvement",
+  "sources": {
+    "course": {
+      "url": "https://www.uu.se/en/study/programme/bachelors-programme-leadership-quality-management-improvement",
+      "page": "52f65ff9aad2",
+      "title": "Bachelor's Programme in Leadership – Quality Management – Improvement – Uppsala University",
+      "organization": "Uppsala University",
+      "quotes": [
+        "The programme is divided into six semesters",
+        "Location Visby",
+        "First tuition fee instalment: SEK 75,000 Total tuition fee: SEK 450,000 Read more about fees. Application deadline 15 January 2027",
+        "Language of instruction English"
+      ]
+    }
+  },
+  "program": {
+    "name": "Leadership – Quality Management – Improvement",
+    "degree_type": "Bachelor",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Autumn 2027",
+    "platform": "University Admissions in Sweden",
+    "source": "course",
+    "summary": "Bachelor's Programme in Leadership – Quality Management – Improvement, Uppsala University (Visby); six semesters, taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "SEK",
+      "tuition_formula": "450000/3",
+      "academic_year": "Autumn 2027 entry",
+      "source": "course",
+      "note": "Autumn 2027 entry: total fee SEK 450,000 (about SEK 150,000 a year, our calculation); first instalment SEK 75,000."
+    }
+  ],
+  "admissions": []
+}

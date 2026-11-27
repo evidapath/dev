@@ -1,0 +1,53 @@
+{
+  "uni": "no-uio",
+  "slug": "bachelor-technology-systems",
+  "sources": {
+    "course": {
+      "url": "https://www.uio.no/english/studies/programmes/technology-systems/",
+      "page": "63dc3d411f03",
+      "title": "Technology Systems: Science and Engineering (bachelor) – University of Oslo",
+      "organization": "University of Oslo",
+      "quotes": [
+        "Technology Systems: Science and Engineering (bachelor) – University of Oslo",
+        "Technology Systems: Science and Engineering Level: Bachelor Duration: 3 years ECTS Credits: 180"
+      ]
+    },
+    "adm": {
+      "url": "https://www.uio.no/english/studies/programmes/technology-systems/admission/admission-no-norwegian.html",
+      "page": "ca9aa0fe492a",
+      "title": "Admission without Norwegian proficiency – Technology Systems | University of Oslo",
+      "organization": "University of Oslo",
+      "quotes": [
+        "The tuition fee for the 2027/2028 academic year is NOK 218 000. The tuition fee applies for each year of study and is adjusted annually. The programme is taught in English.",
+        "must pay tuition fees to the University of Oslo, unless they qualify for an exemption"
+      ]
+    }
+  },
+  "program": {
+    "name": "Technology Systems: Science and Engineering",
+    "degree_type": "Bachelor",
+    "field": "Engineering",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027/2028",
+    "platform": "",
+    "source": "course",
+    "summary": "Technology Systems: Science and Engineering (bachelor), University of Oslo; 3 years, 180 ECTS, taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "NOK",
+      "tuition_annual": 218000,
+      "academic_year": "2027/2028",
+      "source": "adm",
+      "note": "NOK 218,000 for 2027/2028, for each year of study, adjusted annually."
+    }
+  ],
+  "admissions": []
+}

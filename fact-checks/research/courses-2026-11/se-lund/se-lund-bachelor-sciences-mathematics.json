@@ -1,0 +1,44 @@
+{
+  "uni": "se-lund",
+  "slug": "bachelor-sciences-mathematics",
+  "sources": {
+    "course": {
+      "url": "https://www.lunduniversity.lu.se/study/sciences-mathematics-NGNAT-ENMA",
+      "page": "eed4921f1836",
+      "title": "Sciences, Mathematics | Lund University",
+      "organization": "Lund University",
+      "quotes": [
+        "Sciences, Mathematics | Lund University",
+        "Start Autumn 2027 Duration 3 years Level Bachelor's Language English Place of study Lund",
+        "Full programme/course tuition fee: SEK 555,000 First payment: SEK 92,500"
+      ]
+    }
+  },
+  "program": {
+    "name": "Sciences, Mathematics",
+    "degree_type": "Bachelor",
+    "field": "Mathematics",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Autumn 2027",
+    "platform": "University Admissions in Sweden",
+    "source": "course",
+    "summary": "Sciences, Mathematics, Bachelor's programme, Lund University; 3 years, taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "SEK",
+      "tuition_formula": "555000/3",
+      "academic_year": "Autumn 2027 entry",
+      "source": "course",
+      "note": "Full programme fee SEK 555,000 (about SEK 185,000 a year, our calculation); first payment SEK 92,500."
+    }
+  ],
+  "admissions": []
+}

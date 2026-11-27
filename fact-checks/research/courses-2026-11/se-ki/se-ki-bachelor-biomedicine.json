@@ -1,0 +1,46 @@
+{
+  "uni": "se-ki",
+  "slug": "bachelor-biomedicine",
+  "sources": {
+    "course": {
+      "url": "https://education.ki.se/programme/1bi17-bachelors-programme-in-biomedicine",
+      "page": "68812d5b792f",
+      "title": "Bachelor's Programme in Biomedicine | Karolinska Institutet",
+      "organization": "Karolinska Institutet",
+      "quotes": [
+        "Bachelor's Programme in Biomedicine | Karolinska Institutet",
+        "Study location: Solna Study mode: On Campus Language of instruction: English",
+        "lay a solid foundation for the courses in molecular medicine during the third year",
+        "Tuition fee Total amount: 540 000 SEK First instalment: 90 000 SEK",
+        "Degree: Bachelor of Medical Science with a Major in Biomedicine"
+      ]
+    }
+  },
+  "program": {
+    "name": "Biomedicine",
+    "degree_type": "Bachelor of Medical Science",
+    "field": "Biomedical Science",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Autumn 2027",
+    "platform": "University Admissions in Sweden",
+    "source": "course",
+    "summary": "Bachelor's Programme in Biomedicine, Karolinska Institutet (Solna); taught in English; molecular medicine in the third year.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "non-eu",
+      "currency": "SEK",
+      "tuition_formula": "540000/3",
+      "academic_year": "Autumn 2027 entry",
+      "source": "course",
+      "note": "Total amount SEK 540,000 (about SEK 180,000 a year, our calculation); first instalment SEK 90,000."
+    }
+  ],
+  "admissions": []
+}

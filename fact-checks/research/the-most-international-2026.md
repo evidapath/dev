@@ -65,13 +65,13 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 52 | University of York | United Kingdom | have? |
 | 53 | Aalto University | Finland | done (pending 2026-11-26-aalto.ndjson; admission-criteria page 403) |
 | 54 | Stanford University | United States | have |
-| 55 | Karolinska Institute | Sweden | todo |
+| 55 | Karolinska Institute | Sweden | done (pending 2026-11-27-karolinska.ndjson; Biomedicine, its only English bachelor's) |
 | 56 | Princeton University | United States | have |
 | 57 | University of Malaya | Malaysia | have |
 | 58 | KU Leuven | Belgium | held: no 2026-27 fee found for an English-taught bachelor (2026-11-26) |
 | 59 | King Khalid University | Saudi Arabia | todo |
 | 60 | Technical University of Munich | Germany | have |
-| 61 | Lund University | Sweden | todo |
+| 61 | Lund University | Sweden | done (pending 2026-11-27-lund.ndjson; 2 English-taught bachelor's) |
 | 62 | University of California, Berkeley | United States | done (pending 2026-11-26-berkeley.ndjson) |
 | 63 | Lebanese University | Lebanon | todo |
 | 64 | Free University of Berlin | Germany | done (pending 2026-11-26-fu-berlin.ndjson; German-taught, no tuition) |
@@ -82,7 +82,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =69 | Aarhus University | Denmark | held: only a fee range found, no 2027 per-programme fee (2026-11-26) |
 | =69 | Carnegie Mellon University | United States | done (pending 2026-11-26-cmu.ndjson) |
 | 71 | Cornell University | United States | have |
-| 72 | University of Oslo | Norway | todo |
+| 72 | University of Oslo | Norway | done (pending 2026-11-27-oslo.ndjson; Technology Systems, its English bachelor's) |
 | =73 | Humboldt University of Berlin | Germany | held: no current semester-fee page found (only a ~10-year-old one) (2026-11-26) |
 | =73 | University of Cape Town | South Africa | held: 2027 fees not yet published (per-course fees) (2026-11-26) |
 | 75 | Sorbonne University | France | todo |
@@ -90,7 +90,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 77 | Georgia Institute of Technology | United States | done (pending 2026-11-26-gatech.ndjson) |
 | 78 | LMU Munich | Germany | have |
 | 79 | Paris Sciences et Lettres – PSL Research University Paris | France | todo |
-| 80 | Uppsala University | Sweden | todo |
+| 80 | Uppsala University | Sweden | done (pending 2026-11-27-uppsala.ndjson; 2 Visby programmes; Energy Transition held: no length stated) |
 | =81 | Rice University | United States | held: catalogue list mixes majors, minors and certificates without degrees; cost-of-attendance page returns 406 (2026-11-27) |
 | =81 | University of Freiburg | Germany | done, 1 programme; more held: programme directory redirects to the homepage (2026-11-27) |
 | 83 | The University of Chicago | United States | done (pending 2026-11-27-uchicago.ndjson; 55 majors) |
@@ -110,8 +110,8 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 97 | New York University | United States | have |
 | 98 | Boston University | United States | done (pending 2026-11-27-bu.ndjson; 136 majors) |
 | 99 | Karlsruhe Institute of Technology | Germany | have |
-| 100 | University of Göttingen | Germany | todo |
-| 101 | Norwegian University of Science and Technology | Norway | todo |
+| 100 | University of Göttingen | Germany | held: fee page lists an €800 tuition fee without saying who pays it; length only stated for some programmes (2026-11-27) |
+| 101 | Norwegian University of Science and Technology | Norway | held: no bachelor's taught in English (2026-11-27) |
 | 102 | RWTH Aachen University | Germany | have |
 | 103 | Politecnico di Milano | Italy | have |
 | 104 | Duke University | United States | held: bulletin 'All Programs' page renders without the list (2026-11-27) |

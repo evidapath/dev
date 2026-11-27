@@ -1,0 +1,43 @@
+{
+  "uni": "se-ki",
+  "name": "Karolinska Institutet",
+  "aliases": [
+    "KI",
+    "Karolinska Institute"
+  ],
+  "type": "public",
+  "website": "https://ki.se",
+  "country": {
+    "cc": "se",
+    "name": "Sweden",
+    "currency": "SEK"
+  },
+  "city": {
+    "slug": "se-solna",
+    "name": "Solna"
+  },
+  "sources": {
+    "main": {
+      "url": "https://education.ki.se/programme/1bi17-bachelors-programme-in-biomedicine",
+      "page": "68812d5b792f",
+      "title": "Bachelor's Programme in Biomedicine | Karolinska Institutet",
+      "organization": "Karolinska Institutet",
+      "quotes": [
+        "Bachelor's Programme in Biomedicine | Karolinska Institutet",
+        "Study location: Solna Study mode: On Campus Language of instruction: English",
+        "lay a solid foundation for the courses in molecular medicine during the third year",
+        "Tuition fee Total amount: 540 000 SEK First instalment: 90 000 SEK",
+        "Degree: Bachelor of Medical Science with a Major in Biomedicine"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU/EEA/Swiss citizens",
+      "description": "Tuition fees apply to citizens of a country outside the EU, EEA or Switzerland.",
+      "source": "main"
+    }
+  ]
+}

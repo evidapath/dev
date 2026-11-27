@@ -1,0 +1,42 @@
+{
+  "uni": "se-uppsala",
+  "name": "Uppsala University",
+  "aliases": [
+    "Uppsala universitet"
+  ],
+  "type": "public",
+  "website": "https://www.uu.se",
+  "country": {
+    "cc": "se",
+    "name": "Sweden",
+    "currency": "SEK"
+  },
+  "city": {
+    "slug": "se-visby",
+    "name": "Visby"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.uu.se/en/study/programme/bachelors-programme-game-design-and-programming",
+      "page": "c33b14ae9811",
+      "title": "Bachelor's Programme in Game Design and Programming – Uppsala University",
+      "organization": "Uppsala University",
+      "quotes": [
+        "Bachelor's Programme in Game Design and Programming – Uppsala University",
+        "The Bachelor's Programme in Game Design and Programming spans three years",
+        "Location Visby",
+        "First tuition fee instalment: SEK 75,000 Total tuition fee: SEK 450,000 Read more about fees. Application deadline 15 January 2027",
+        "Language of instruction English"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "non-eu",
+      "label": "Non-EU/EEA/Swiss citizens",
+      "description": "Programme tuition fee for students required to pay fees.",
+      "source": "main"
+    }
+  ]
+}
