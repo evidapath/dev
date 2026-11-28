@@ -15,7 +15,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 2 | The Hong Kong University of Science and Technology | Hong Kong | done (pending 2026-11-26-hkust.ndjson) |
 | 3 | University of Hong Kong | Hong Kong | done (pending 2026-11-26-hku.ndjson) |
 | 4 | Imperial College London | United Kingdom | have |
-| =5 | Abu Dhabi University | United Arab Emirates | have? |
+| =5 | Abu Dhabi University | United Arab Emirates | done (pending 2026-11-27-adu.ndjson; 37 undergraduate programmes, Abu Dhabi campus per-credit rates; Law held: no credit total) |
 | =5 | University of Oxford | United Kingdom | have |
 | 7 | University of Cambridge | United Kingdom | have |
 | 8 | ETH Zurich | Switzerland | done (pending 2026-11-26-eth.ndjson; taught in German) |
@@ -61,7 +61,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 48 | TU Wien | Austria | done (pending 2026-11-26-tuwien.ndjson; German-taught) |
 | 49 | University of Alberta | Canada | have |
 | 50 | California Institute of Technology | United States | done (pending 2026-11-26-caltech.ndjson) |
-| 51 | Lebanese American University | Lebanon | todo |
+| 51 | Lebanese American University | Lebanon | held: 403 (bot protection) (2026-11-28) |
 | 52 | University of York | United Kingdom | have? |
 | 53 | Aalto University | Finland | done (pending 2026-11-26-aalto.ndjson; admission-criteria page 403) |
 | 54 | Stanford University | United States | have |
@@ -78,7 +78,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 65 | University of Copenhagen | Denmark | todo |
 | =66 | Universität Heidelberg | Germany | have |
 | =66 | Yale University | United States | done (pending 2026-11-26-yale.ndjson) |
-| 68 | Columbia University | United States | have? |
+| 68 | Columbia University | United States | done (pending 2026-11-27-columbia.ndjson; 78 Columbia College majors; Columbia Engineering not added) |
 | =69 | Aarhus University | Denmark | held: only a fee range found, no 2027 per-programme fee (2026-11-26) |
 | =69 | Carnegie Mellon University | United States | done (pending 2026-11-26-cmu.ndjson) |
 | 71 | Cornell University | United States | have |
@@ -95,15 +95,15 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =81 | University of Freiburg | Germany | done, 1 programme; more held: programme directory redirects to the homepage (2026-11-27) |
 | 83 | The University of Chicago | United States | done (pending 2026-11-27-uchicago.ndjson; 55 majors) |
 | 84 | University of California, Davis | United States | held: cost page 403 and fee page Cloudflare check (2026-11-27) |
-| 85 | University of Pennsylvania | United States | have? |
-| 86 | University of Massachusetts | United States | have? |
+| 85 | University of Pennsylvania | United States | held: cost page 403 (2026-11-28) |
+| 86 | University of Massachusetts | United States | held: 403 on every page (2026-11-28) |
 | 87 | University of California, Santa Barbara | United States | held: catalog programme list doesn't render (2026-11-27) |
 | 88 | Technion Israel Institute of Technology | Israel | held: international programme pages now 404 (2026-11-28) |
 | =89 | Purdue University West Lafayette | United States | have |
 | =89 | University of Tübingen | Germany | done (pending 2026-11-26-tuebingen.ndjson; German-taught) |
 | 91 | University of California, Irvine | United States | held: no statement of the standard length found (2026-11-27) |
 | =92 | Ghent University | Belgium | todo |
-| =92 | University of Rochester | United States | have? |
+| =92 | University of Rochester | United States | done (pending 2026-11-27-rochester.ndjson; 92 Arts & Sciences and Hajim programmes; Eastman and Nursing not added) |
 | 94 | University of Bonn | Germany | todo |
 | 95 | Université Paris-Saclay | France | todo |
 | 96 | Technical University of Berlin | Germany | have |
@@ -117,18 +117,18 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 104 | Duke University | United States | held: bulletin 'All Programs' page renders without the list (2026-11-27) |
 | 105 | Universitat Autònoma de Barcelona (UAB) | Spain | todo |
 | 106 | Université Paris Cité | France | todo |
-| 107 | University of Southern California | United States | have? |
+| 107 | University of Southern California | United States | held: catalogue degree list page is an archived overview; flat tuition $37,692/semester found (2026-11-28) |
 | 108 | University of Toulouse | France | todo |
 | 109 | Stony Brook University | United States | held: catalog majors page loads without the list (2026-11-27) |
-| 110 | Charles University | Czechia | todo |
+| 110 | Charles University | Czechia | done (pending 2026-11-27-cuni.ndjson; all 21 full-time English-taught bachelor's in the admission portal) |
 | 111 | University of California, Santa Cruz | United States | done (pending 2026-11-27-ucsc.ndjson; 75 majors) |
 | 112 | University of California, San Diego | United States | held: no statement of the standard length found; no 2026-27 living costs (2026-11-27) |
 | 113 | Sungkyunkwan University (SKKU) | South Korea | held: only an AY2020 fee table and a 2026 estimate range (2026-11-28) |
-| 114 | University of California, Los Angeles | United States | todo |
+| 114 | University of California, Los Angeles | United States | done (pending 2026-11-27-ucla.ndjson; 134 majors) |
 | =115 | Northwestern University | United States | todo |
 | =115 | Université Grenoble Alpes | France | todo |
-| 117 | University of Hamburg | Germany | todo |
-| =118 | TU Dresden | Germany | todo |
+| 117 | University of Hamburg | Germany | held: A-Z list 404; programme pages carry no details (2026-11-28) |
+| =118 | TU Dresden | Germany | held: programme search (SINS) renders results only in the browser (2026-11-28) |
 | =118 | University of Helsinki | Finland | done (pending 2026-11-27-helsinki.ndjson; the 2 English-taught bachelor's) |
 | 120 | Michigan State University | United States | held: programme list page doesn't load; tuition varies by class year (2026-11-27) |
 | 121 | University of Barcelona | Spain | todo |
@@ -141,24 +141,24 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =127 | University of Notre Dame | United States | done (pending 2026-11-27-notre-dame.ndjson; 67 majors) |
 | 129 | Imam Abdulrahman Bin Faisal University | Saudi Arabia | todo |
 | 130 | École Normale Supérieure de Lyon | France | todo |
-| 131 | Pontificia Universidad Católica de Chile | Chile | todo |
+| 131 | Pontificia Universidad Católica de Chile | Chile | held: fees in CLP, which the app's exchange-rate source doesn't cover (2026-11-28) |
 | 132 | University of Michigan-Ann Arbor | United States | todo |
-| 134 | University of Illinois at Urbana-Champaign | United States | todo |
+| 134 | University of Illinois at Urbana-Champaign | United States | held: only a cost range that varies by major (2026-11-28) |
 | 135 | National Taiwan University (NTU) | Taiwan | built but held: TWD has no exchange rate in the app (ECB set), so the site can't show its cost (2026-11-27) |
-| 136 | University of Porto | Portugal | todo |
-| 137 | Korea University | South Korea | have? |
+| 136 | University of Porto | Portugal | held: faculty fee page 403 (2026-11-28) |
+| 137 | Korea University | South Korea | held: 2027 guide has no tuition table (2026-11-28) |
 | =138 | Emory University | United States | held: programme list is script-only and doesn't render (2026-11-27) |
 | =138 | Virginia Polytechnic Institute and State University | United States | todo |
-| 140 | North Carolina State University | United States | todo |
+| 140 | North Carolina State University | United States | done (pending 2026-11-27-ncsu.ndjson; 94 majors) |
 | 141 | Tel Aviv University | Israel | done (pending 2026-11-27-tau.ndjson; BA Liberal Arts; Management & Liberal Arts held: no length stated) |
 | 142 | National Autonomous University of Mexico | Mexico | todo |
 | 143 | University of Wisconsin-Madison | United States | held: business/nursing/engineering pay extra tuition not stated per major (2026-11-27) |
-| 145 | Indiana University | United States | todo |
+| 145 | Indiana University | United States | held: programme list is 58 script pages mixing graduate and double-major entries (2026-11-28) |
 | 146 | Dartmouth College | United States | held: catalog gives 'twelve terms' including summer terms, not a length in years (2026-11-27) |
-| =147 | Peking University | China | todo |
+| =147 | Peking University | China | held: no published tuition for the coming intake (2026-11-28) |
 | =147 | Penn State (Main campus) | United States | todo |
 | 149 | Ohio State University (Main campus) | United States | todo |
-| 150 | University of Münster | Germany | todo |
+| 150 | University of Münster | Germany | held: programme pages give no standard length (2026-11-28) |
 | 151 | Autonomous University of Madrid | Spain | todo |
 | 152 | Vanderbilt University | United States | held: no statement of the standard length; no undergraduate housing/food figures (2026-11-27) |
 | 153 | University of Padua | Italy | have |
@@ -186,18 +186,18 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =178 | Nanjing University | China | todo |
 | =178 | University of North Carolina at Chapel Hill | United States | held: 2026-27 non-resident tuition not final (2026-11-27) |
 | 180 | University of Texas at Austin | United States | todo |
-| 181 | Tsinghua University | China | todo |
+| 181 | Tsinghua University | China | held: no published international undergraduate tuition for 2027 (2026-11-28) |
 | 182 | Cairo University | Egypt | todo |
-| 183 | Zhejiang University | China | todo |
-| =184 | Fudan University | China | todo |
-| =184 | University of Minnesota | United States | todo |
+| 183 | Zhejiang University | China | held: English-taught programme and fee pages render empty; PDF link returns nothing (2026-11-28) |
+| =184 | Fudan University | China | done (pending 2026-11-27-fudan.ndjson; UIPE Economics, the English-taught bachelor's with a stated length) |
+| =184 | University of Minnesota | United States | held: 403 (bot protection) (2026-11-28) |
 | =186 | University of São Paulo | Brazil | todo |
-| =186 | University of Tsukuba | Japan | held: no programme length stated in the 2027 guidelines (2026-11-27) |
+| =186 | University of Tsukuba | Japan | held: no programme length stated (2027 guidelines, English-programme pages) (2026-11-28) |
 | 188 | University of Utah | United States | todo |
 | 189 | Tianjin University | China | todo |
 | =190 | Korea Advanced Institute of Science and Technology (KAIST) | South Korea | have |
 | =190 | Seoul National University | South Korea | todo |
-| 192 | The University of Osaka | Japan | held: no programme length stated for its English programmes (2026-11-27) |
+| 192 | The University of Osaka | Japan | done (pending 2026-11-27-osaka.ndjson; Human Sciences International Undergraduate Degree Program, length from the 2027 guidelines) |
 | 193 | Kyoto University | Japan | done (pending 2026-11-27-kyoto.ndjson; Kyoto iUP, 9 faculties) |
 | 194 | Kyushu University | Japan | done (pending 2026-11-27-kyushu.ndjson; 4 IUPE programmes) |
 | 196 | Hokkaido University | Japan | done (pending 2026-11-27-hokkaido.ndjson; MJSP) |
@@ -217,7 +217,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 211 | University of Tehran | Iran | todo |
 | 212 | Sharif University of Technology | Iran | todo |
 | 213 | Sun Yat-sen University | China | todo |
-| 214 | Indian Institute of Science | India | todo |
+| 214 | Indian Institute of Science | India | held: 2026-27 fee circular covers Indian categories only, no foreign-national fee (2026-11-28) |
 | 215 | Beihang University | China | todo |
 | 216 | Harbin Institute of Technology | China | todo |
 | 217 | Huazhong University of Science and Technology | China | todo |

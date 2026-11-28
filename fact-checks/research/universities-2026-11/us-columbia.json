@@ -1,0 +1,51 @@
+{
+  "uni": "us-columbia",
+  "name": "Columbia University",
+  "aliases": [
+    "Columbia",
+    "Columbia College",
+    "Columbia University in the City of New York"
+  ],
+  "type": "private",
+  "website": "https://www.columbia.edu",
+  "country": {
+    "cc": "us",
+    "name": "United States",
+    "currency": "USD"
+  },
+  "city": {
+    "slug": "us-new-york-ny",
+    "name": "New York"
+  },
+  "sources": {
+    "main": {
+      "url": "https://bulletin.columbia.edu/columbia-college/departments-instruction/",
+      "page": "8ce8dfba4c1a",
+      "title": "Departments, Programs, and Courses | Columbia College Bulletin 2026-2027",
+      "organization": "Columbia University",
+      "quotes": [
+        "Columbia College Columbia University in the City of New York 208 Hamilton Hall , Mail Code 2805 1130 Amsterdam Avenue New York, NY 10027",
+        "© 2026-2027 Columbia University"
+      ]
+    },
+    "coa": {
+      "url": "https://undergrad.admissions.columbia.edu/affordability/cost",
+      "page": "d806c05d7695",
+      "title": "Cost & Aid | Columbia Undergraduate Admissions",
+      "organization": "Columbia University",
+      "quotes": [
+        "2026-2027 Cost of Attendance Tuition $72,800 Fees $4,160 Food $7,128 Housing $12,522 Books and supplies $1,320",
+        "First-year students are required to live on campus."
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "All undergraduates (Columbia College)",
+      "description": "Columbia College cost of attendance, 2026-2027.",
+      "source": "coa"
+    }
+  ]
+}

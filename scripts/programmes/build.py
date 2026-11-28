@@ -71,6 +71,11 @@ def nums(s: str, quote: bool = True) -> set[str]:
             out |= {f"{whole}.{dec}", f"{whole}.{dec}".rstrip("0")}
     for n in re.findall(r"\d[\d,]*(?:\.\d+)?", s):
         n = n.replace(",", "")
+        # A value we built is checked in its shortest form (2000.00 = 2000, 35.50 = 35.5): the same
+        # number, so a quote printing "2000" supports it. Quotes keep both forms.
+        if "." in n and not quote:
+            out.add(n.rstrip("0").rstrip("."))
+            continue
         out.add(n)
         if "." in n:
             out.add(n.rstrip("0").rstrip("."))

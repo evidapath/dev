@@ -1,0 +1,45 @@
+{
+  "uni": "cz-cuni",
+  "slug": "music-education-for-teacher-education-with-double-curriculum-study-choral-singin",
+  "sources": {
+    "course": {
+      "url": "https://is.cuni.cz/studium/eng/prijimacky/index.php?do=detail_obor&id_obor=37242",
+      "page": "a715654526cc",
+      "title": "Music Education for Teacher Education with double curriculum study Choral Singing for Teacher Education | Charles University admission (SIS)",
+      "organization": "Charles University",
+      "quotes": [
+        "Music Education for Teacher Education with double curriculum study Choral Singing for Teacher Education (0114RA320007 / 0114RA320006) - double subject study",
+        "Faculty: Faculty of Education Study programme: Music Education for Teacher Education (B0114A320007) Form of study: full-time Type of study: Bachelor's Language of instruction: English",
+        "Standard length of study: 3 years",
+        "Tuition [CZK] / per period: 180000 CZK / year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Music Education for Teacher Education with double curriculum study Choral Singing for Teacher Education (double subject study)",
+    "degree_type": "Bachelor's",
+    "field": "Education",
+    "faculty": "Faculty of Education",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027/2028 admission",
+    "platform": "",
+    "source": "course",
+    "summary": "Music Education for Teacher Education with double curriculum study Choral Singing for Teacher Education (double subject study), Faculty of Education, Charles University (Prague); full-time bachelor's taught in English, standard length 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CZK",
+      "tuition_annual": 180000,
+      "academic_year": "2027/2028 admission",
+      "source": "course",
+      "note": "Tuition fee for studies in a foreign language: 180000 CZK a year (admission portal)."
+    }
+  ],
+  "admissions": []
+}

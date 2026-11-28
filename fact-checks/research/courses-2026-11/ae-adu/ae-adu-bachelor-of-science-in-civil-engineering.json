@@ -1,0 +1,66 @@
+{
+  "uni": "ae-adu",
+  "slug": "bachelor-of-science-in-civil-engineering",
+  "sources": {
+    "course": {
+      "url": "https://adu.ac.ae/academics/program-finder/programdetail/bachelor-of-science-in-civil-engineering",
+      "page": "7fd71d5959b6",
+      "title": "Bachelor of Science in Civil Engineering | Abu Dhabi University",
+      "organization": "Abu Dhabi University",
+      "quotes": [
+        "Bachelor of Science in Civil Engineering AR EN Apply Now",
+        "Quick Facts Duration 4 Years Credits 142 Campuses Abu Dhabi · Al Ain Mode Full-time Language English"
+      ]
+    },
+    "fees": {
+      "url": "https://cdn.adu.ac.ae/images-container/docs/default-source/admissions-financials/all-tuition-fees-english.pdf?sfvrsn=d375c643_22",
+      "page": "adu-fees",
+      "title": "Tuition and Fee Rates, Academic Year 2026-2027 | Abu Dhabi University",
+      "organization": "Abu Dhabi University",
+      "quotes": [
+        "Abu Dhabi University Tuition and Fee Rates Academic Year 2026-2027",
+        "Undergraduate Tuition And Fee Rates | Abu Dhabi Campus Academic Year 2026 - 2027",
+        "Registration Fee (Non-refundable; Paid once upon admission) 2850",
+        "Healthcare Services 110 55 Student Services 350 175",
+        "The above fees are subject to VAT 5% excluding the Accommodation and the transportation fees.",
+        "Arts, Education and Social Sciences (BA in Digital Media and Strategic Communication) 1620",
+        "Arts, Education and Social Sciences (Mass Communication Arabic), (BA in Film and Media Production) 1680",
+        "Arts, Education and Social Sciences (BA in International Relations), (BA in Psychology) 1715",
+        "Arts, Education and Social Sciences (BA in Video Game Design) 1890",
+        "Business 1800",
+        "Engineering 2000",
+        "Health Sciences 2085",
+        "Other Health Sciences Programs (BSc in Environmental Health & Safety, and BSc in Public Health) 1745"
+      ]
+    }
+  },
+  "program": {
+    "name": "Bachelor of Science in Civil Engineering",
+    "degree_type": "Bachelor",
+    "field": "Civil Engineering",
+    "faculty": "College of Engineering",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Bachelor of Science in Civil Engineering, College of Engineering, Abu Dhabi University; 4 years, 142 credits, taught in English; campuses: Abu Dhabi · Al Ain.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "AED",
+      "tuition_per_credit": 2000,
+      "degree_credits": 142,
+      "credits_source": "course",
+      "academic_year": "2026-2027",
+      "source": "fees",
+      "note": "Abu Dhabi campus, 2026-2027: AED 2000 per credit hour × the programme's credit total ÷ its years (our calculation). Plus per Fall/Spring semester: healthcare services AED 110 and student services AED 350; one-time registration fee AED 2850. Fees are subject to VAT 5% (not accommodation or transport)."
+    }
+  ],
+  "admissions": []
+}

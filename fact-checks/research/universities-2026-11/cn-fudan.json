@@ -1,0 +1,49 @@
+{
+  "uni": "cn-fudan",
+  "name": "Fudan University",
+  "aliases": [
+    "Fudan"
+  ],
+  "type": "public",
+  "website": "https://www.fudan.edu.cn",
+  "country": {
+    "cc": "cn",
+    "name": "China",
+    "currency": "CNY"
+  },
+  "city": {
+    "slug": "cn-shanghai",
+    "name": "Shanghai"
+  },
+  "sources": {
+    "main": {
+      "url": "https://econ.fudan.edu.cn/uipe/Courses/Curriculum.htm",
+      "page": "2af0cafbe5dc",
+      "title": "Curriculum - Undergraduate International Program in Economics | Fudan University",
+      "organization": "Fudan University",
+      "quotes": [
+        "Undergraduate International Program in Economics (UIPE) is an English-taught program with a duration of 4 years",
+        "Bachelor in Economics will be granted by Fudan University to those who meet the requirement",
+        "579 Guoquan Road, Shanghai, 200433, China © School of Economics , Fudan University"
+      ]
+    },
+    "fees": {
+      "url": "https://econ.fudan.edu.cn/uipe/Prospective_Students1/Tuition_and_Expenses.htm",
+      "page": "221bd1f9d545",
+      "title": "Tuition and Expenses - Undergraduate International Program in Economics | Fudan University",
+      "organization": "Fudan University",
+      "quotes": [
+        "For Degree Students of UIPE and UIPI (Undergraduate International Program in International Economy and Trade) Application Fee: RMB 800 Tuition: RMB 100,000/year (starting with the intake of 2027)"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "UIPE tuition for degree students.",
+      "source": "fees"
+    }
+  ]
+}

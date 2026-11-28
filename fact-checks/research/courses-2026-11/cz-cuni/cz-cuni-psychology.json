@@ -1,0 +1,45 @@
+{
+  "uni": "cz-cuni",
+  "slug": "psychology",
+  "sources": {
+    "course": {
+      "url": "https://is.cuni.cz/studium/eng/prijimacky/index.php?do=detail_obor&id_obor=37295",
+      "page": "f8549d14176a",
+      "title": "Psychology | Charles University admission (SIS)",
+      "organization": "Charles University",
+      "quotes": [
+        "Psychology (0313RA230015)",
+        "Faculty: Faculty of Arts Study programme: Psychology (B0313A230015) Form of study: full-time Type of study: Bachelor's Language of instruction: English",
+        "Standard length of study: 3 years",
+        "Tuition [CZK] / per period: 250000 CZK / year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Psychology",
+    "degree_type": "Bachelor's",
+    "field": "Psychology",
+    "faculty": "Faculty of Arts",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027/2028 admission",
+    "platform": "",
+    "source": "course",
+    "summary": "Psychology, Faculty of Arts, Charles University (Prague); full-time bachelor's taught in English, standard length 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CZK",
+      "tuition_annual": 250000,
+      "academic_year": "2027/2028 admission",
+      "source": "course",
+      "note": "Tuition fee for studies in a foreign language: 250000 CZK a year (admission portal)."
+    }
+  ],
+  "admissions": []
+}

@@ -1,0 +1,45 @@
+{
+  "uni": "cz-cuni",
+  "slug": "history-and-area-studies",
+  "sources": {
+    "course": {
+      "url": "https://is.cuni.cz/studium/eng/prijimacky/index.php?do=detail_obor&id_obor=36347",
+      "page": "bc15a68f6392",
+      "title": "History and Area Studies | Charles University admission (SIS)",
+      "organization": "Charles University",
+      "quotes": [
+        "History and Area Studies (0222RA120017)",
+        "Faculty: Faculty of Social Sciences Study programme: History and Area Studies (B0222A120017) Form of study: full-time Type of study: Bachelor's Language of instruction: English",
+        "Standard length of study: 3 years",
+        "Tuition [EUR] / per period: 5000 EUR / year"
+      ]
+    }
+  },
+  "program": {
+    "name": "History and Area Studies",
+    "degree_type": "Bachelor's",
+    "field": "History",
+    "faculty": "Faculty of Social Sciences",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027/2028 admission",
+    "platform": "",
+    "source": "course",
+    "summary": "History and Area Studies, Faculty of Social Sciences, Charles University (Prague); full-time bachelor's taught in English, standard length 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_annual": 5000,
+      "academic_year": "2027/2028 admission",
+      "source": "course",
+      "note": "Tuition fee for studies in a foreign language: 5000 EUR a year (admission portal)."
+    }
+  ],
+  "admissions": []
+}

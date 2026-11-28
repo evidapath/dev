@@ -1,0 +1,45 @@
+{
+  "uni": "cz-cuni",
+  "slug": "computer-science",
+  "sources": {
+    "course": {
+      "url": "https://is.cuni.cz/studium/eng/prijimacky/index.php?do=detail_obor&id_obor=36423",
+      "page": "6b3bcde7850f",
+      "title": "Computer Science | Charles University admission (SIS)",
+      "organization": "Charles University",
+      "quotes": [
+        "Computer Science (0613RA1400070000)",
+        "Faculty: Faculty of Mathematics and Physics Study programme: Computer Science (B0613A140007) Form of study: full-time Type of study: Bachelor's Language of instruction: English",
+        "Standard length of study: 3 years",
+        "Tuition [EUR] / per period: 7500 EUR / year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Computer Science",
+    "degree_type": "Bachelor's",
+    "field": "Computer Science",
+    "faculty": "Faculty of Mathematics and Physics",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027/2028 admission",
+    "platform": "",
+    "source": "course",
+    "summary": "Computer Science, Faculty of Mathematics and Physics, Charles University (Prague); full-time bachelor's taught in English, standard length 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_annual": 7500,
+      "academic_year": "2027/2028 admission",
+      "source": "course",
+      "note": "Tuition fee for studies in a foreign language: 7500 EUR a year (admission portal)."
+    }
+  ],
+  "admissions": []
+}

@@ -125,3 +125,29 @@ if not ONLY or ONLY == "jp-hokkaido":
           "application_requirements": []},
          [C("course", "JPY 535,800 a year; enrollment fee JPY 282,000. For April 2028 entrants the enrollment fee and first-year tuition are waived in full.", annual=535800)], [])
     print("jp-hokkaido 1")
+
+
+# The University of Osaka: Human Sciences International Undergraduate Degree Program (added 2026-11-28; was held
+# for no stated length, now quoted from the October 2027 application guidelines). The International Undergraduate
+# Program in Science is not added: no current page with its length was read.
+ORG = "The University of Osaka"
+if ONLY in (None, "jp-osaka"):
+    OG = src("osaka-hus-2027", "Human Sciences International Undergraduate Degree Program, Application Guidelines, October 2027 Enrollment | The University of Osaka", ORG,
+             ["Human Sciences International Undergraduate Degree Program The University of Osaka APPLICATION GUIDELINES October 2027 Enrollment",
+              "Duration of Program (2027 cohort) October 1, 2027 to September 30, 2031 (4 years)",
+              "This exciting and innovative program was launched in October 2011 by the School of Human Sciences"])
+    OE = src("41a996565bce", "Special Courses in English | The University of Osaka", ORG,
+             ["Human Sciences International Undergraduate Degree Program will be conducting entrance examinations.",
+              "The University of Osaka1-1 Yamadaoka, Suita,Osaka 565-0871 Japan"])
+    OF = src("6c2929e3b8e5", "Tuition Fees / Matriculation Fee | The University of Osaka", ORG,
+             ["Undergraduate Student ¥535,800 ¥267,900 ¥282,000 ¥17,000"])
+    spec("jp-osaka", ORG, ["Osaka University", "Handai"], "public", "https://www.osaka-u.ac.jp/en", JP, ("jp-osaka", "Osaka"), {"main": OE, "fees": OF},
+         [("all-students", "All students", "The University of Osaka undergraduate tuition.", "fees")])
+    prog("jp-osaka", "human-sciences-international-undergraduate-degree-program", {"course": OG, "fees": OF},
+         {"name": "Human Sciences International Undergraduate Degree Program", "degree_type": "Bachelor", "field": "Liberal Arts",
+          "faculty": "School of Human Sciences", "duration_years": 4, "duration_source": "course", "languages": ["en"],
+          "entry_year": "October 2027", "platform": "", "source": "course",
+          "summary": "Human Sciences International Undergraduate Degree Program, School of Human Sciences, The University of Osaka; October 2027 cohort, 4 years.",
+          "application_requirements": []},
+         [C("fees", "Undergraduate tuition ¥535,800 a year (¥267,900 per half year); one-time enrollment fee ¥282,000; entrance examination fee ¥17,000.", annual=535800)], [])
+    print("jp-osaka 1")

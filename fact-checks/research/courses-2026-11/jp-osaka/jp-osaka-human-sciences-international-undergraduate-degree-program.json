@@ -1,0 +1,53 @@
+{
+  "uni": "jp-osaka",
+  "slug": "human-sciences-international-undergraduate-degree-program",
+  "sources": {
+    "course": {
+      "url": "https://iudp.hus.osaka-u.ac.jp/wp-content/uploads/2026/07/2027-HUS-Application-Guidelines.pdf",
+      "page": "osaka-hus-2027",
+      "title": "Human Sciences International Undergraduate Degree Program, Application Guidelines, October 2027 Enrollment | The University of Osaka",
+      "organization": "The University of Osaka",
+      "quotes": [
+        "Human Sciences International Undergraduate Degree Program The University of Osaka APPLICATION GUIDELINES October 2027 Enrollment",
+        "Duration of Program (2027 cohort) October 1, 2027 to September 30, 2031 (4 years)",
+        "This exciting and innovative program was launched in October 2011 by the School of Human Sciences"
+      ]
+    },
+    "fees": {
+      "url": "https://www.osaka-u.ac.jp/en/campus/tuition/tuition.html",
+      "page": "6c2929e3b8e5",
+      "title": "Tuition Fees / Matriculation Fee | The University of Osaka",
+      "organization": "The University of Osaka",
+      "quotes": [
+        "Undergraduate Student ¥535,800 ¥267,900 ¥282,000 ¥17,000"
+      ]
+    }
+  },
+  "program": {
+    "name": "Human Sciences International Undergraduate Degree Program",
+    "degree_type": "Bachelor",
+    "field": "Liberal Arts",
+    "faculty": "School of Human Sciences",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "October 2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Human Sciences International Undergraduate Degree Program, School of Human Sciences, The University of Osaka; October 2027 cohort, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "JPY",
+      "academic_year": "2027 entry",
+      "source": "fees",
+      "note": "Undergraduate tuition ¥535,800 a year (¥267,900 per half year); one-time enrollment fee ¥282,000; entrance examination fee ¥17,000.",
+      "tuition_annual": 535800
+    }
+  ],
+  "admissions": []
+}

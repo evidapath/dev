@@ -1,0 +1,45 @@
+{
+  "uni": "cz-cuni",
+  "slug": "economics-and-finance",
+  "sources": {
+    "course": {
+      "url": "https://is.cuni.cz/studium/eng/prijimacky/index.php?do=detail_obor&id_obor=36346",
+      "page": "5a79af90894c",
+      "title": "Economics and Finance | Charles University admission (SIS)",
+      "organization": "Charles University",
+      "quotes": [
+        "Economics and Finance (0311RA050018)",
+        "Faculty: Faculty of Social Sciences Study programme: Economics and Finance (B0311A050018) Form of study: full-time Type of study: Bachelor's Language of instruction: English",
+        "Standard length of study: 3 years",
+        "Tuition [EUR] / per period: 7000 EUR / year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Economics and Finance",
+    "degree_type": "Bachelor's",
+    "field": "Economics",
+    "faculty": "Faculty of Social Sciences",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027/2028 admission",
+    "platform": "",
+    "source": "course",
+    "summary": "Economics and Finance, Faculty of Social Sciences, Charles University (Prague); full-time bachelor's taught in English, standard length 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "EUR",
+      "tuition_annual": 7000,
+      "academic_year": "2027/2028 admission",
+      "source": "course",
+      "note": "Tuition fee for studies in a foreign language: 7000 EUR a year (admission portal)."
+    }
+  ],
+  "admissions": []
+}

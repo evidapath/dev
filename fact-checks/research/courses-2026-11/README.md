@@ -619,3 +619,21 @@ tohoku (3 FGL courses), kyushu (4 IUPE programmes, JPY 267,900/semester), kyoto 
 then Japanese from year 3), hokkaido (Modern Japanese Studies; 2028 entrants' enrollment fee and first-year
 tuition waived). Held: Tokyo, Waseda, Keio, Tsukuba, Osaka, Yonsei, NTU Taiwan (built; app has no TWD rate),
 Chulalongkorn (reasons in queue).
+
+## 2026-11-28: batch of 10 (THE most-international list)
+
+Pending (all dry-run HTTP 200): tau (Tel Aviv, BA Liberal Arts $15,500/yr), huji (Hebrew University, 3
+international BA tracks, $15,500 + housing $7,330), fudan (UIPE Economics, RMB 100,000/yr from the 2027 intake),
+osaka (Human Sciences IUDP, 4 years per the October 2027 guidelines, JPY 535,800/yr), cuni (Charles University, all
+21 full-time English-taught bachelor's from the admission portal, EUR or CZK per programme; new country cz),
+ucla (134 majors, fees $16,430 + nonresident $39,270), ncsu (NC State, 94 majors, out-of-state $34,961), rochester
+(92 programmes, $71,750 + $1,622 fees), columbia (78 Columbia College majors, $72,800 + $4,160 fees), adu (Abu
+Dhabi University, 37 programmes, AED per credit hour x credits / years, Abu Dhabi campus).
+
+Held (reasons in the queue): Technion, POSTECH, SKKU, Warsaw, Zhejiang, LAU, Münster, Hamburg, TU Dresden,
+PUC Chile (CLP), Indiana, Minnesota, Illinois, Peking, Tsinghua, IISc, Porto, Penn, USC, UMass, Korea University,
+Tsukuba.
+
+Builder: a value is checked in its shortest numeric form (2000.00 = 2000), so a per-credit rate printed "2000"
+supports it; 2001.00 against "2000" is still refused. The 14 folders using per-credit or per-term fees rebuild
+byte-identically with the old and new builder.

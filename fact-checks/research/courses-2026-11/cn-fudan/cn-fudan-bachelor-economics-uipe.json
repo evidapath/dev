@@ -1,0 +1,53 @@
+{
+  "uni": "cn-fudan",
+  "slug": "bachelor-economics-uipe",
+  "sources": {
+    "course": {
+      "url": "https://econ.fudan.edu.cn/uipe/Courses/Curriculum.htm",
+      "page": "2af0cafbe5dc",
+      "title": "Curriculum - Undergraduate International Program in Economics | Fudan University",
+      "organization": "Fudan University",
+      "quotes": [
+        "Undergraduate International Program in Economics (UIPE) is an English-taught program with a duration of 4 years",
+        "Bachelor in Economics will be granted by Fudan University to those who meet the requirement",
+        "579 Guoquan Road, Shanghai, 200433, China © School of Economics , Fudan University"
+      ]
+    },
+    "fees": {
+      "url": "https://econ.fudan.edu.cn/uipe/Prospective_Students1/Tuition_and_Expenses.htm",
+      "page": "221bd1f9d545",
+      "title": "Tuition and Expenses - Undergraduate International Program in Economics | Fudan University",
+      "organization": "Fudan University",
+      "quotes": [
+        "For Degree Students of UIPE and UIPI (Undergraduate International Program in International Economy and Trade) Application Fee: RMB 800 Tuition: RMB 100,000/year (starting with the intake of 2027)"
+      ]
+    }
+  },
+  "program": {
+    "name": "Economics (Undergraduate International Program in Economics, UIPE)",
+    "degree_type": "Bachelor in Economics",
+    "field": "Economics",
+    "faculty": "School of Economics",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Undergraduate International Program in Economics (UIPE), School of Economics, Fudan University (Shanghai); English-taught, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 100000,
+      "academic_year": "2027 intake",
+      "source": "fees",
+      "note": "Tuition RMB 100,000 a year (starting with the intake of 2027); application fee RMB 800."
+    }
+  ],
+  "admissions": []
+}

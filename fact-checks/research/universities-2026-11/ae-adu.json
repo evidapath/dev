@@ -1,0 +1,71 @@
+{
+  "uni": "ae-adu",
+  "name": "Abu Dhabi University",
+  "aliases": [
+    "ADU"
+  ],
+  "type": "private",
+  "website": "https://www.adu.ac.ae",
+  "country": {
+    "cc": "ae",
+    "name": "United Arab Emirates",
+    "currency": "AED"
+  },
+  "city": {
+    "slug": "ae-abu-dhabi",
+    "name": "Abu Dhabi"
+  },
+  "sources": {
+    "main": {
+      "url": "https://cdn.adu.ac.ae/images-container/docs/default-source/admissions-financials/all-tuition-fees-english.pdf?sfvrsn=d375c643_22",
+      "page": "adu-fees",
+      "title": "Tuition and Fee Rates, Academic Year 2026-2027 | Abu Dhabi University",
+      "organization": "Abu Dhabi University",
+      "quotes": [
+        "Abu Dhabi University Tuition and Fee Rates Academic Year 2026-2027",
+        "Undergraduate Tuition And Fee Rates | Abu Dhabi Campus Academic Year 2026 - 2027",
+        "Registration Fee (Non-refundable; Paid once upon admission) 2850",
+        "Healthcare Services 110 55 Student Services 350 175",
+        "The above fees are subject to VAT 5% excluding the Accommodation and the transportation fees.",
+        "Arts, Education and Social Sciences (BA in Digital Media and Strategic Communication) 1620",
+        "Arts, Education and Social Sciences (Mass Communication Arabic), (BA in Film and Media Production) 1680",
+        "Arts, Education and Social Sciences (BA in International Relations), (BA in Psychology) 1715",
+        "Arts, Education and Social Sciences (BA in Video Game Design) 1890",
+        "Business 1800",
+        "Engineering 2000",
+        "Health Sciences 2085",
+        "Other Health Sciences Programs (BSc in Environmental Health & Safety, and BSc in Public Health) 1745"
+      ]
+    },
+    "fees": {
+      "url": "https://cdn.adu.ac.ae/images-container/docs/default-source/admissions-financials/all-tuition-fees-english.pdf?sfvrsn=d375c643_22",
+      "page": "adu-fees",
+      "title": "Tuition and Fee Rates, Academic Year 2026-2027 | Abu Dhabi University",
+      "organization": "Abu Dhabi University",
+      "quotes": [
+        "Abu Dhabi University Tuition and Fee Rates Academic Year 2026-2027",
+        "Undergraduate Tuition And Fee Rates | Abu Dhabi Campus Academic Year 2026 - 2027",
+        "Registration Fee (Non-refundable; Paid once upon admission) 2850",
+        "Healthcare Services 110 55 Student Services 350 175",
+        "The above fees are subject to VAT 5% excluding the Accommodation and the transportation fees.",
+        "Arts, Education and Social Sciences (BA in Digital Media and Strategic Communication) 1620",
+        "Arts, Education and Social Sciences (Mass Communication Arabic), (BA in Film and Media Production) 1680",
+        "Arts, Education and Social Sciences (BA in International Relations), (BA in Psychology) 1715",
+        "Arts, Education and Social Sciences (BA in Video Game Design) 1890",
+        "Business 1800",
+        "Engineering 2000",
+        "Health Sciences 2085",
+        "Other Health Sciences Programs (BSc in Environmental Health & Safety, and BSc in Public Health) 1745"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "all-students",
+      "label": "All students (Abu Dhabi campus)",
+      "description": "ADU per-credit-hour tuition, Abu Dhabi campus, 2026-2027.",
+      "source": "fees"
+    }
+  ]
+}

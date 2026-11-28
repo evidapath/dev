@@ -1,0 +1,49 @@
+{
+  "uni": "jp-osaka",
+  "name": "The University of Osaka",
+  "aliases": [
+    "Osaka University",
+    "Handai"
+  ],
+  "type": "public",
+  "website": "https://www.osaka-u.ac.jp/en",
+  "country": {
+    "cc": "jp",
+    "name": "Japan",
+    "currency": "JPY"
+  },
+  "city": {
+    "slug": "jp-osaka",
+    "name": "Osaka"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.osaka-u.ac.jp/en/admissions/faculty/english_program",
+      "page": "41a996565bce",
+      "title": "Special Courses in English | The University of Osaka",
+      "organization": "The University of Osaka",
+      "quotes": [
+        "Human Sciences International Undergraduate Degree Program will be conducting entrance examinations.",
+        "The University of Osaka1-1 Yamadaoka, Suita,Osaka 565-0871 Japan"
+      ]
+    },
+    "fees": {
+      "url": "https://www.osaka-u.ac.jp/en/campus/tuition/tuition.html",
+      "page": "6c2929e3b8e5",
+      "title": "Tuition Fees / Matriculation Fee | The University of Osaka",
+      "organization": "The University of Osaka",
+      "quotes": [
+        "Undergraduate Student ¥535,800 ¥267,900 ¥282,000 ¥17,000"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "all-students",
+      "label": "All students",
+      "description": "The University of Osaka undergraduate tuition.",
+      "source": "fees"
+    }
+  ]
+}

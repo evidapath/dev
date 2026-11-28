@@ -1,0 +1,45 @@
+{
+  "uni": "cz-cuni",
+  "slug": "coach",
+  "sources": {
+    "course": {
+      "url": "https://is.cuni.cz/studium/eng/prijimacky/index.php?do=detail_obor&id_obor=37211",
+      "page": "b561e29873d5",
+      "title": "Coach | Charles University admission (SIS)",
+      "organization": "Charles University",
+      "quotes": [
+        "Coach (1014RA280005)",
+        "Faculty: Faculty of Physical Education and Sport Study programme: Coach (B1014A280005) Form of study: full-time Type of study: Bachelor's Language of instruction: English",
+        "Standard length of study: 3 years",
+        "Tuition [CZK] / per period: 160000 CZK / year"
+      ]
+    }
+  },
+  "program": {
+    "name": "Coach",
+    "degree_type": "Bachelor's",
+    "field": "Sport Science",
+    "faculty": "Faculty of Physical Education and Sport",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027/2028 admission",
+    "platform": "",
+    "source": "course",
+    "summary": "Coach, Faculty of Physical Education and Sport, Charles University (Prague); full-time bachelor's taught in English, standard length 3 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CZK",
+      "tuition_annual": 160000,
+      "academic_year": "2027/2028 admission",
+      "source": "course",
+      "note": "Tuition fee for studies in a foreign language: 160000 CZK a year (admission portal)."
+    }
+  ],
+  "admissions": []
+}

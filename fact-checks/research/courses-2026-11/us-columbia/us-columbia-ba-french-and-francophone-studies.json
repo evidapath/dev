@@ -1,0 +1,152 @@
+{
+  "uni": "us-columbia",
+  "slug": "ba-french-and-francophone-studies",
+  "sources": {
+    "course": {
+      "url": "https://www.college.columbia.edu/academics/programs",
+      "page": "b2cb702e0474",
+      "title": "Majors, Concentrations, and Programs of Study | Columbia College",
+      "organization": "Columbia University",
+      "quotes": [
+        "All Columbia College students must complete a major.",
+        "a student pursuing a special program must also complete a major in order to earn the B.A. degree.",
+        "African American Studies",
+        "American Studies",
+        "Anthropology",
+        "Applied Mathematics",
+        "Archaeology",
+        "Architecture",
+        "Art History",
+        "Art History & Visual Arts",
+        "Astronomy",
+        "Astrophysics",
+        "Biology",
+        "Biochemistry",
+        "Biophysics",
+        "Chemical Physics",
+        "Chemistry",
+        "Classics",
+        "Climate and Sustainability",
+        "Climate System Science",
+        "Cognitive Science",
+        "Comparative Literature and Society",
+        "Computational Biology",
+        "Computer Science",
+        "Computer Science — Mathematics",
+        "Creative Writing",
+        "Dance",
+        "Data Science",
+        "Drama and Theatre Arts",
+        "Earth Science",
+        "East Asian Studies",
+        "Economics",
+        "Economics — Mathematics",
+        "Economics — Philosophy",
+        "Economics — Political Science",
+        "Economics — Statistics",
+        "Education Studies",
+        "English",
+        "Environmental Biology",
+        "Environmental Chemistry",
+        "Environmental Science",
+        "Ethnicity and Race Studies",
+        "Evolutionary Biology of the Human Species",
+        "Film and Media Studies",
+        "Financial Economics",
+        "French",
+        "French & Francophone Studies",
+        "German Literature & Cultural",
+        "Global Affairs and Public Policy",
+        "Hispanic Studies",
+        "History",
+        "History and Theory of Architecture",
+        "Human Rights",
+        "Information Science",
+        "Italian",
+        "Latin American and Caribbean Studies",
+        "Linguistics",
+        "Mathematics",
+        "Mathematics — Statistics",
+        "Medical Humanities",
+        "Middle Eastern, South Asian & African Studies",
+        "Music",
+        "Neuroscience & Behavior",
+        "Philosophy",
+        "Physics",
+        "Political Science",
+        "Political Science — Statistics",
+        "Psychology",
+        "Regional Studies",
+        "Religion",
+        "Russian Language & Culture",
+        "Russian Literature & Culture",
+        "Slavic Studies",
+        "Sociology",
+        "Statistics",
+        "Sustainable Development",
+        "Urban Studies",
+        "Visual Arts",
+        "Women’s & Gender Studies",
+        "Yiddish Studies"
+      ]
+    },
+    "y": {
+      "url": "https://bulletin.columbia.edu/columbia-college/requirements-degree-bachelor-arts/",
+      "page": "9cb9474912f1",
+      "title": "Academic Requirements | Columbia College Bulletin 2026-2027",
+      "organization": "Columbia University",
+      "quotes": [
+        "Students are expected to fulfill their degree requirements in eight semesters"
+      ]
+    },
+    "coa": {
+      "url": "https://undergrad.admissions.columbia.edu/affordability/cost",
+      "page": "d806c05d7695",
+      "title": "Cost & Aid | Columbia Undergraduate Admissions",
+      "organization": "Columbia University",
+      "quotes": [
+        "2026-2027 Cost of Attendance Tuition $72,800 Fees $4,160 Food $7,128 Housing $12,522 Books and supplies $1,320",
+        "First-year students are required to live on campus."
+      ]
+    }
+  },
+  "program": {
+    "name": "French & Francophone Studies",
+    "degree_type": "B.A.",
+    "field": "French & Francophone Studies",
+    "faculty": "Columbia College",
+    "duration_years": 4,
+    "duration_source": "y",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027",
+    "platform": "",
+    "source": "course",
+    "summary": "French & Francophone Studies major, Columbia College, Columbia University (B.A.); students are expected to complete the degree in eight semesters.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 72800,
+      "mandatory_fees_annual": 4160,
+      "academic_year": "2026-2027",
+      "source": "coa",
+      "note": "2026-2027: tuition $72,800; fees $4,160.",
+      "living": {
+        "monthly": [],
+        "months": 9,
+        "yearly": [
+          12522,
+          7128
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "Columbia College 2026-2027 budget: housing $12,522 + food $7,128 = $19,650 (our calculation); first-years live on campus."
+      }
+    }
+  ],
+  "admissions": []
+}

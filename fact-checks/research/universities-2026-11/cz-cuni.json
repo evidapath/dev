@@ -1,0 +1,39 @@
+{
+  "uni": "cz-cuni",
+  "name": "Charles University",
+  "aliases": [
+    "Univerzita Karlova",
+    "CUNI"
+  ],
+  "type": "public",
+  "website": "https://cuni.cz",
+  "country": {
+    "cc": "cz",
+    "name": "Czechia",
+    "currency": "CZK"
+  },
+  "city": {
+    "slug": "cz-prague",
+    "name": "Prague"
+  },
+  "sources": {
+    "main": {
+      "url": "https://natur.cuni.cz/en/students/tuition-fees-for-studying-in-a-foreign-language",
+      "page": "b883031f1117",
+      "title": "Tuition fees for studying in a foreign language | Faculty of Science, Charles University",
+      "organization": "Charles University",
+      "quotes": [
+        "Faculty of Science Charles University Albertov 6 128 00 Prague 2"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "Foreign-language study",
+      "description": "Tuition fee for studies in a foreign language (English-taught programmes).",
+      "source": "main"
+    }
+  ]
+}
