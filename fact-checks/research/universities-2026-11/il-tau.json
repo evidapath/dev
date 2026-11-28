@@ -1,0 +1,49 @@
+{
+  "uni": "il-tau",
+  "name": "Tel Aviv University",
+  "aliases": [
+    "TAU"
+  ],
+  "type": "public",
+  "website": "https://english.tau.ac.il",
+  "country": {
+    "cc": "il",
+    "name": "Israel",
+    "currency": "ILS"
+  },
+  "city": {
+    "slug": "il-tel-aviv",
+    "name": "Tel Aviv"
+  },
+  "sources": {
+    "main": {
+      "url": "https://international.tau.ac.il/undergraduate_degrees_overview",
+      "page": "96a8931e558a",
+      "title": "Undergraduate Degrees in English at Tel Aviv University",
+      "organization": "Tel Aviv University",
+      "quotes": [
+        "Location: Tel Aviv University campus, Israel"
+      ]
+    },
+    "la": {
+      "url": "https://international.tau.ac.il/Liberal_Arts",
+      "page": "794188b28f57",
+      "title": "BA in Liberal Arts in Israel | Tel Aviv University",
+      "organization": "Tel Aviv University",
+      "quotes": [
+        "BA in Liberal Arts in Israel | Tel Aviv University",
+        "Registration is open for: Fall 2027 Application Deadlines : TBA Program Length : 3 Years Language of Instruction : English Tuition : $15,500 / Year",
+        "Available tracks to choose from: Data Science Psychology Middle Eastern Studies Philosophy Literature Jewish & Israel Studies Digital Culture & Media Entrepreneurship & Innovation"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "Tuition for the English-taught international BA programme.",
+      "source": "la"
+    }
+  ]
+}

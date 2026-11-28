@@ -1,0 +1,44 @@
+{
+  "uni": "il-tau",
+  "slug": "ba-liberal-arts",
+  "sources": {
+    "course": {
+      "url": "https://international.tau.ac.il/Liberal_Arts",
+      "page": "794188b28f57",
+      "title": "BA in Liberal Arts in Israel | Tel Aviv University",
+      "organization": "Tel Aviv University",
+      "quotes": [
+        "BA in Liberal Arts in Israel | Tel Aviv University",
+        "Registration is open for: Fall 2027 Application Deadlines : TBA Program Length : 3 Years Language of Instruction : English Tuition : $15,500 / Year",
+        "Available tracks to choose from: Data Science Psychology Middle Eastern Studies Philosophy Literature Jewish & Israel Studies Digital Culture & Media Entrepreneurship & Innovation"
+      ]
+    }
+  },
+  "program": {
+    "name": "Liberal Arts",
+    "degree_type": "BA",
+    "field": "Liberal Arts",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "Fall 2027",
+    "platform": "",
+    "source": "course",
+    "summary": "BA in Liberal Arts, Tel Aviv University; 3 years, taught in English; a major, a minor and two further fields from tracks including Data Science, Psychology, Philosophy and Entrepreneurship & Innovation.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 15500,
+      "academic_year": "Fall 2027",
+      "source": "course",
+      "note": "Tuition $15,500 a year (Fall 2027 entry)."
+    }
+  ],
+  "admissions": []
+}

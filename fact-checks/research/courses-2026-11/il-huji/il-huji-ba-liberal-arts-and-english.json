@@ -1,0 +1,65 @@
+{
+  "uni": "il-huji",
+  "slug": "ba-liberal-arts-and-english",
+  "sources": {
+    "course": {
+      "url": "https://international.huji.ac.il/ba-degree",
+      "page": "d5f468c08f0f",
+      "title": "BA English Programs | Hebrew University",
+      "organization": "Hebrew University",
+      "quotes": [
+        "If you prefer to study in English, Hebrew University offers a 3-year international BA degree",
+        "choose 2 out of 3 fields of specialization – liberal arts, business, and English – and design the double-major degree",
+        "Immerse yourself in Jerusalem's captivating energy"
+      ]
+    },
+    "fees": {
+      "url": "https://overseas.huji.ac.il/welcome-to-the-hebrew-university-of-jerusalem/hebrew-university-students/money-matters/ba-degree-tuition/",
+      "page": "09a290847598",
+      "title": "BA Degree Tuition | Rothberg International School, Hebrew University",
+      "organization": "Hebrew University",
+      "quotes": [
+        "BA Degree Tuition 2025-26 2026-27",
+        "Business Administration & Liberal Arts Track US $120 US $15,500 US $7,330 US $770 US $23,720 Business Administration & English Track US $120 US $15,500 US $7,330 US $770 US $23,720 Liberal Arts & English Track US $120 US $15,500 US $7,330 US $770 US $23,720",
+        "RIS reserves the right to change fees at any time."
+      ]
+    }
+  },
+  "program": {
+    "name": "Liberal Arts & English",
+    "degree_type": "BA (double major)",
+    "field": "Liberal Arts",
+    "faculty": "",
+    "duration_years": 3,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "",
+    "platform": "",
+    "source": "course",
+    "summary": "International BA, Liberal Arts & English track, Hebrew University of Jerusalem; a 3-year double-major degree taught in English.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "USD",
+      "tuition_annual": 15500,
+      "academic_year": "2025-26 / 2026-27 (BA Degree Tuition page)",
+      "source": "fees",
+      "note": "Tuition US $15,500 a year; health insurance US $770; application fee US $120 (non-refundable). Fees may change.",
+      "living": {
+        "monthly": [],
+        "months": 12,
+        "yearly": [
+          7330
+        ],
+        "source": "fees",
+        "kind": "official_housing_only",
+        "note": "Housing US $7,330 a year (university figure; food and other costs not included)."
+      }
+    }
+  ],
+  "admissions": []
+}

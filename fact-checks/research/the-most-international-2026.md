@@ -98,7 +98,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 85 | University of Pennsylvania | United States | have? |
 | 86 | University of Massachusetts | United States | have? |
 | 87 | University of California, Santa Barbara | United States | held: catalog programme list doesn't render (2026-11-27) |
-| 88 | Technion Israel Institute of Technology | Israel | todo |
+| 88 | Technion Israel Institute of Technology | Israel | held: international programme pages now 404 (2026-11-28) |
 | =89 | Purdue University West Lafayette | United States | have |
 | =89 | University of Tübingen | Germany | done (pending 2026-11-26-tuebingen.ndjson; German-taught) |
 | 91 | University of California, Irvine | United States | held: no statement of the standard length found (2026-11-27) |
@@ -123,7 +123,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 110 | Charles University | Czechia | todo |
 | 111 | University of California, Santa Cruz | United States | done (pending 2026-11-27-ucsc.ndjson; 75 majors) |
 | 112 | University of California, San Diego | United States | held: no statement of the standard length found; no 2026-27 living costs (2026-11-27) |
-| 113 | Sungkyunkwan University (SKKU) | South Korea | todo |
+| 113 | Sungkyunkwan University (SKKU) | South Korea | held: only an AY2020 fee table and a 2026 estimate range (2026-11-28) |
 | 114 | University of California, Los Angeles | United States | todo |
 | =115 | Northwestern University | United States | todo |
 | =115 | Université Grenoble Alpes | France | todo |
@@ -150,7 +150,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | =138 | Emory University | United States | held: programme list is script-only and doesn't render (2026-11-27) |
 | =138 | Virginia Polytechnic Institute and State University | United States | todo |
 | 140 | North Carolina State University | United States | todo |
-| 141 | Tel Aviv University | Israel | todo |
+| 141 | Tel Aviv University | Israel | done (pending 2026-11-27-tau.ndjson; BA Liberal Arts; Management & Liberal Arts held: no length stated) |
 | 142 | National Autonomous University of Mexico | Mexico | todo |
 | 143 | University of Wisconsin-Madison | United States | held: business/nursing/engineering pay extra tuition not stated per major (2026-11-27) |
 | 145 | Indiana University | United States | todo |
@@ -174,11 +174,11 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 165 | University of Granada | Spain | todo |
 | 166 | Complutense University of Madrid | Spain | todo |
 | =167 | University of Maryland, College Park | United States | todo |
-| =169 | Hebrew University of Jerusalem | Israel | todo |
+| =169 | Hebrew University of Jerusalem | Israel | done (pending 2026-11-27-huji.ndjson; 3 international BA tracks) |
 | =169 | University of Iowa | United States | held: two official pages give different international fees (2026-11-27) |
 | 171 | Tohoku University | Japan | done (pending 2026-11-27-tohoku.ndjson; 3 FGL courses) |
 | 172 | University of Florida | United States | todo |
-| 173 | University of Warsaw | Poland | todo |
+| 173 | University of Warsaw | Poland | held for now: fee PDF two-column layout, lengths only on per-programme catalogue pages (2026-11-28) |
 | 174 | University of Pittsburgh-Pittsburgh campus | United States | todo |
 | =175 | Shanghai Jiao Tong University | China | todo |
 | =175 | Waseda University | Japan | held: 2027 fee PDF behind Cloudflare check (2026-11-27) |
@@ -206,7 +206,7 @@ Countries new to EvidaPath (need country maps, card tint, visa links with the fi
 | 200 | Nankai University | China | todo |
 | 201 | University of Campinas | Brazil | todo |
 | 202 | Keio University | Japan | held: no current PEARL/GIGA fee on the pages read (2026-11-27) |
-| =203 | Pohang University of Science and Technology (POSTECH) | South Korea | todo |
+| =203 | Pohang University of Science and Technology (POSTECH) | South Korea | held: no list of majors or length stated for the international track (2026-11-28) |
 | =203 | Sichuan University | China | todo |
 | 205 | Wuhan University | China | todo |
 | 206 | Beijing Normal University | China | todo |
