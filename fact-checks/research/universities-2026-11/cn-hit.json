@@ -1,0 +1,53 @@
+{
+  "uni": "cn-hit",
+  "name": "Harbin Institute of Technology",
+  "aliases": [
+    "HIT",
+    "Harbin Inst. of Technology"
+  ],
+  "type": "public",
+  "website": "https://en.hit.edu.cn",
+  "country": {
+    "cc": "cn",
+    "name": "China",
+    "currency": "CNY"
+  },
+  "city": {
+    "slug": "cn-harbin",
+    "name": "Harbin"
+  },
+  "sources": {
+    "main": {
+      "url": "https://en.hit.edu.cn/",
+      "page": "f44c60566243",
+      "title": "Harbin Institute of Technology (English site)",
+      "organization": "Harbin Institute of Technology",
+      "quotes": [
+        "Copyright Harbin Institute of Technology All Rights Reserved No. 92 Xidazhi Street, Nangang District, Harbin"
+      ]
+    },
+    "fees": {
+      "url": "https://studyathit.hit.edu.cn/18337/list.htm",
+      "page": "904a4e29e8ce",
+      "title": "Bachelor | Study at HIT | Harbin Institute of Technology",
+      "organization": "Harbin Institute of Technology",
+      "quotes": [
+        "Tuition Chinese-taught CNY 20,000/year (approximately USD 3,000) English-taught CNY 26,000/year (approximately USD 3,900)",
+        "Insurance CNY 10 00/year",
+        "Accommodation Fee CNY 800-1,000/month/bed",
+        "English-taught undergraduate programs require a minimum of 20 students. Programs that do not reach this number will not run.",
+        "Address:No.92 West Dazhi Street,Nangang District,Harbin 150001, P.R. China",
+        "HIT International Student Application Portal"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "HIT tuition for international undergraduates (CNY/year).",
+      "source": "fees"
+    }
+  ]
+}

@@ -637,3 +637,23 @@ Tsukuba.
 Builder: a value is checked in its shortest numeric form (2000.00 = 2000), so a per-credit rate printed "2000"
 supports it; 2001.00 against "2000" is still refused. The 14 folders using per-credit or per-term fees rebuild
 byte-identically with the old and new builder.
+
+## 2026-11-28 (2): second batch of 10
+
+Pending (all dry-run HTTP 200): northwestern (86 majors, $71,802 + $1,260 fees + room and board $22,941), vt
+(Virginia Tech, 107 majors; out-of-state $36,428 + $3,754 fees plus the cost sheet's college fee for named
+colleges), osu (Ohio State, 169 Columbus bachelor's; international $14,034 + $30,220 + $3,104), umd (Maryland, 101
+majors; $42,266 + $1,820 fees, junior/senior differential $3,375 for Business, Engineering, CS), bonn (59 BA/BSc; no
+tuition, semester contribution ~EUR 300; new country de), xjtu (15), hust (5 English-taught), xmu (English MBBS),
+tju (Tianjin, 80 from the 2027 catalogue .xls), hit (Harbin, 108 from the 2027/2028 major list .xlsx).
+Also: 2026-11-28-cmu-fields.ndjson corrects two existing CMU records (Artificial Intelligence field "Art" ->
+Computer Science; Computational Finance "Computer Science" -> Finance).
+
+Held (reasons in the queue): York (bot check), Florida, Pittsburgh, Colorado, UT Austin, Michigan, Arizona, Nankai,
+SJTU, Tongji, Sun Yat-sen, Beihang, Sichuan, Nanjing.
+
+Builder: a zero per-term tuition is also accepted after "not charge tuition" ("does not charge tuition fees");
+text without such a phrase is still refused. 13 per-term/per-credit folders rebuild byte-identically.
+us_fields.field_for: "artificial intelligence", "computational finance", "integrated circuit", "intelligent medic",
+"nanomedicine" mapped before the generic keys (AI had been mapped to Art).
+.xls/.xlsx catalogues are converted to text pages (tju-catalog-2027.txt, hit-majors-2027.txt) so quotes are checked.

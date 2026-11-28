@@ -1,7 +1,9 @@
 """Subject field for a US major name (shared by us_majors.py and us_new5.py)."""
 import re
 
-KEYS = [("computer", "Computer Science"), ("comput", "Computer Science"), ("data science", "Data Science"), ("statistic", "Statistics"),
+KEYS = [("artificial intelligence", "Computer Science"), ("human-centered artificial", "Computer Science"), ("computational finance", "Finance"),
+        ("integrated circuit", "Electrical and Electronic Engineering"), ("intelligent medic", "Biomedical Engineering"), ("nanomedicine", "Biomedical Science"),
+        ("computer", "Computer Science"), ("comput", "Computer Science"), ("data science", "Data Science"), ("statistic", "Statistics"),
         ("mathemat", "Mathematics"), ("physics", "Physics"), ("astro", "Physics"), ("chemical eng", "Chemical Engineering"), ("engineering sciences \\(chemical", "Chemical Engineering"), ("chemi", "Chemistry"), ("biochem", "Biochemistry"),
         ("biomedical eng", "Biomedical Engineering"), ("electrical", "Electrical and Electronic Engineering"), ("mechanical", "Mechanical Engineering"),
         ("civil engineering", "Civil Engineering"), ("aerospace", "Aerospace Engineering"), ("industrial", "Engineering"), ("materials", "Engineering"),

@@ -1,0 +1,43 @@
+{
+  "uni": "cn-xmu",
+  "name": "Xiamen University",
+  "aliases": [
+    "XMU",
+    "Xiamen Univ."
+  ],
+  "type": "public",
+  "website": "https://www.xmu.edu.cn",
+  "country": {
+    "cc": "cn",
+    "name": "China",
+    "currency": "CNY"
+  },
+  "city": {
+    "slug": "cn-xiamen",
+    "name": "Xiamen"
+  },
+  "sources": {
+    "main": {
+      "url": "https://admissions.xmu.edu.cn/info/1061/4620.htm",
+      "page": "364983a73973",
+      "title": "2027 Admission Guide of Xiamen University for Undergraduate Programs | Admissions Office of Xiamen University",
+      "organization": "Xiamen University",
+      "quotes": [
+        "2027 Admission Guide of Xiamen University for Undergraduate Programs",
+        "Length of Program: English-medium MBBS program: 6 years.",
+        "(2) English-medium programs: Ø MBBS: RMB 38,000/year.",
+        "Tuition fees are payable in RMB by academic year and do not include textbook fees. Tuition fees are subject to change without prior notice upon approval by price regulators.",
+        "Address: 422 South Siming Road, Xiamen, Fujian Province, China, 361005"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "Xiamen University 2027 tuition for international undergraduates.",
+      "source": "main"
+    }
+  ]
+}

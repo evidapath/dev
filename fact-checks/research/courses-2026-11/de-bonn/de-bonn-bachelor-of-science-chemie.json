@@ -1,0 +1,80 @@
+{
+  "uni": "de-bonn",
+  "slug": "bachelor-of-science-chemie",
+  "sources": {
+    "course": {
+      "url": "https://www.uni-bonn.de/de/studium/studienangebot/studiengaenge-a-z/chemie-bsc",
+      "page": "ecc38f53c623",
+      "title": "Chemie — Universität Bonn",
+      "organization": "University of Bonn",
+      "quotes": [
+        "Chemie — Universität Bonn",
+        "Keyfacts Studienabschluss Bachelor of Science Studienmodell Ein-Fach Unterrichtssprache Deutsch Regelstudienzeit 6 Semester"
+      ]
+    },
+    "fees": {
+      "url": "https://www.uni-bonn.de/en/studying/application-admission-and-enrollment/applications-from-international-students",
+      "page": "3214d133c7d2",
+      "title": "Applications from International Students | University of Bonn",
+      "organization": "University of Bonn",
+      "quotes": [
+        "Public universities in Germany do not charge tuition fees, only semester fees. At the University of Bonn, these are around EUR 300 per semester (EUR 600 per year).",
+        "around EUR 300 per semester",
+        "(EUR 600 per year)"
+      ]
+    },
+    "liv": {
+      "url": "https://www.uni-bonn.de/en/studying/international-students/costs-and-financing-for-international-students",
+      "page": "c01c09ecc935",
+      "title": "Costs and Financing for International Students | University of Bonn",
+      "organization": "University of Bonn",
+      "quotes": [
+        "The University of Bonn does not charge tuition fees.",
+        "Living expenses for a student in Bonn amount to roughly €1,000 a month and will mainly go on your rent."
+      ]
+    }
+  },
+  "program": {
+    "name": "Chemie",
+    "degree_type": "Bachelor of Science",
+    "field": "Chemistry",
+    "faculty": "",
+    "duration_years": 3.0,
+    "duration_source": "course",
+    "languages": [
+      "de"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Chemie, Bachelor of Science (Ein-Fach), University of Bonn; regular duration 6 semesters, taught in Deutsch.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "all-students",
+      "currency": "EUR",
+      "tuition_per_term": 0,
+      "terms_per_year": 2,
+      "terms_evidence": [
+        "around EUR 300 per semester",
+        "(EUR 600 per year)"
+      ],
+      "mandatory_per_term": 300,
+      "academic_year": "current (page undated)",
+      "source": "fees",
+      "note": "No tuition fees; semester contribution around EUR 300 per semester (EUR 600 per year).",
+      "living": {
+        "monthly": [
+          1000
+        ],
+        "months": 12,
+        "yearly": [],
+        "source": "liv",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "Living expenses in Bonn: roughly €1,000 a month (university estimate), €12,000 a year (our calculation)."
+      }
+    }
+  ],
+  "admissions": []
+}

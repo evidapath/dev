@@ -1,0 +1,43 @@
+{
+  "uni": "cn-tju",
+  "slug": "ch-applied-physics-school-of-science",
+  "sources": {
+    "course": {
+      "url": "https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202609/W020261027616110500011.xls",
+      "page": "tju-catalog-2027",
+      "title": "Catalog of Undergraduate Programs (2027) | Tianjin University",
+      "organization": "Tianjin University",
+      "quotes": [
+        "Tianjin University Catalog of Undergraduate Programs (international students, 2027)",
+        "应用物理学 | Applied Physics | 理学 | 理学院 | School of Science |  |  | 4Y | 本科生 | Bachelor's Degree | 中文 | Chinese | 20000 | 500 | 是 | 3021002 | 70202"
+      ]
+    }
+  },
+  "program": {
+    "name": "Applied Physics (Chinese-taught)",
+    "degree_type": "Bachelor's Degree",
+    "field": "Physics",
+    "faculty": "School of Science",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "zh"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Applied Physics (应用物理学), School of Science, Tianjin University; Chinese-taught, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 20000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Tuition 20,000 RMB a year (programme catalogue); application fee 500 RMB."
+    }
+  ],
+  "admissions": []
+}

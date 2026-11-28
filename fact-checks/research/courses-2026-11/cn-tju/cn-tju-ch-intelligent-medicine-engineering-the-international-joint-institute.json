@@ -1,0 +1,43 @@
+{
+  "uni": "cn-tju",
+  "slug": "ch-intelligent-medicine-engineering-the-international-joint-institute",
+  "sources": {
+    "course": {
+      "url": "https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202609/W020261027616110500011.xls",
+      "page": "tju-catalog-2027",
+      "title": "Catalog of Undergraduate Programs (2027) | Tianjin University",
+      "organization": "Tianjin University",
+      "quotes": [
+        "Tianjin University Catalog of Undergraduate Programs (international students, 2027)",
+        "智能医学工程 | Intelligent Medicine Engineering | 医学 | 福州国际联合学院 | The International Joint Institute of Tianjin University, Fuzhou |  |  | 4Y | 本科生 | Bachelor's Degree | 中文 | Chinese | 100000 | 500 | 是 | 140007T | 140007T"
+      ]
+    }
+  },
+  "program": {
+    "name": "Intelligent Medicine Engineering (Chinese-taught)",
+    "degree_type": "Bachelor's Degree",
+    "field": "Biomedical Engineering",
+    "faculty": "The International Joint Institute of Tianjin University, Fuzhou",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "zh"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Intelligent Medicine Engineering (智能医学工程), The International Joint Institute of Tianjin University, Fuzhou, Tianjin University; Chinese-taught, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 100000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Tuition 100,000 RMB a year (programme catalogue); application fee 500 RMB."
+    }
+  ],
+  "admissions": []
+}

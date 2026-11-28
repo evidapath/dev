@@ -242,7 +242,7 @@ def main(research_dir: str, pages_dir: str, out_path: str, base_path: str | None
                 # must be backed by quotes naming the terms (e.g. "fall term – September to
                 # December", "winter term – January to April").
                 if c["tuition_per_term"] == 0:  # a zero fee needs a quote saying no tuition is charged
-                    if not re.search(r"\b(?:no tuition|not charge any tuition)", norm(q_of(c["source"]))):
+                    if not re.search(r"\b(?:no tuition|not charge any tuition|not charge tuition)", norm(q_of(c["source"]))):
                         fail(f"{where}: a per-term fee of 0 needs a quote saying no tuition is charged")
                 else:
                     check_numbers(c["tuition_per_term"], c["source"], "per-term fee")

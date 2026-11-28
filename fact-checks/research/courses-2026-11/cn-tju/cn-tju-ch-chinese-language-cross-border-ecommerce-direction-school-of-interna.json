@@ -1,0 +1,43 @@
+{
+  "uni": "cn-tju",
+  "slug": "ch-chinese-language-cross-border-ecommerce-direction-school-of-interna",
+  "sources": {
+    "course": {
+      "url": "https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202609/W020261027616110500011.xls",
+      "page": "tju-catalog-2027",
+      "title": "Catalog of Undergraduate Programs (2027) | Tianjin University",
+      "organization": "Tianjin University",
+      "quotes": [
+        "Tianjin University Catalog of Undergraduate Programs (international students, 2027)",
+        "汉语言+跨境电商微专业 | Chinese Language (Cross-border Ecommerce Direction) | 文学 | 国际教育学院 | School of International Education |  |  | 4Y | 本科生 | Bachelor's Degree | 中文 | Chinese | 20000 | 500 | 是 | 3022801 | 050102"
+      ]
+    }
+  },
+  "program": {
+    "name": "Chinese Language (Cross-border Ecommerce Direction) (Chinese-taught)",
+    "degree_type": "Bachelor's Degree",
+    "field": "Chinese Language (Cross-border Ecommerce Direction)",
+    "faculty": "School of International Education",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "zh"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Chinese Language (Cross-border Ecommerce Direction) (汉语言+跨境电商微专业), School of International Education, Tianjin University; Chinese-taught, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 20000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Tuition 20,000 RMB a year (programme catalogue); application fee 500 RMB."
+    }
+  ],
+  "admissions": []
+}

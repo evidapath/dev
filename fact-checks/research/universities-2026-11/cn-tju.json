@@ -1,0 +1,41 @@
+{
+  "uni": "cn-tju",
+  "name": "Tianjin University",
+  "aliases": [
+    "TJU",
+    "Tianjin Univ."
+  ],
+  "type": "public",
+  "website": "https://www.tju.edu.cn",
+  "country": {
+    "cc": "cn",
+    "name": "China",
+    "currency": "CNY"
+  },
+  "city": {
+    "slug": "cn-tianjin",
+    "name": "Tianjin"
+  },
+  "sources": {
+    "main": {
+      "url": "https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202609/t20260930_324729.html",
+      "page": "8f2a842786e3",
+      "title": "Undergraduate admissions (2027) | International School of Education, Tianjin University",
+      "organization": "Tianjin University",
+      "quotes": [
+        "The standard duration is 4 years (5 years for Architecture).",
+        "Bachelor's general programs: 20,000 RMB/year; Other programs: 26,000 RMB/year (programs in the School of Architecture / Software Engineering)",
+        "Tianjin University"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "Tianjin University tuition for international undergraduates (RMB/year).",
+      "source": "main"
+    }
+  ]
+}

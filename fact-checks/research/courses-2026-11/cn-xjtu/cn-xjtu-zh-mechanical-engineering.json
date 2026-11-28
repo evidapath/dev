@@ -1,0 +1,60 @@
+{
+  "uni": "cn-xjtu",
+  "slug": "zh-mechanical-engineering",
+  "sources": {
+    "course": {
+      "url": "https://sie.xjtu.edu.cn/en/info/1119/3271.htm",
+      "page": "d4730794fd93",
+      "title": "Xi'an Jiaotong University International Undergraduate Programs 2027 | School of International Education",
+      "organization": "Xi'an Jiaotong University",
+      "quotes": [
+        "Xi’an Jiaotong University International Undergraduate Programs 2027 Release time :2026-10-28",
+        "1. Tuition fee (RMB/Year) Chinese-taught Program Science & Engineering Business\\Economics\\Humanities Arts 22,000 20,000 40,000 English-taught Program Electrical Engineering & Automation Intelligent Manufacturing Engineering Energy and Power Engineering Materials Science and Engineering MBBS BDS 180,000 60,000 80,000",
+        "English-Taught Programs Schools Programs Study Duration(Y) Degree Conferred",
+        "No.28, Xianning West Road, Xi'an, Shaanxi, 710049, P.R. China",
+        "English-taught program: Submit English proficiency certificate. IELTS 6.0 or TOEFL 80 (or above)",
+        "The accommodation fee varies from RMB 8000 to 19000 every year.",
+        "Chinese-taught program: Submit Chinese proficiency certificate. Proficiency must be above HSK 4 or equivalent.",
+        "BDS 6 Bachelor of Dental Surgery",
+        "Computer Science and Technology 4 Bachelor of Engineering",
+        "Electrical Engineering and Automation 4 Bachelor of Engineering",
+        "Energy Storage Science and Engineering 4 Bachelor of Engineering",
+        "Energy and Power Engineering 4 Bachelor of Engineering",
+        "Environmental Engineering 4 Bachelor of Engineering",
+        "Intelligent Manufacturing Engineering 4 Bachelor of Engineering",
+        "MBBS 6 Bachelor of Medicine and Bachelor of Surgery",
+        "Materials Science and Engineering 4 Bachelor of Engineering",
+        "Mechanical Engineering 4 Bachelor of Engineering",
+        "New Energy Science and Engineering 4 Bachelor of Engineering",
+        "Nuclear Engineering and Technology 4 Bachelor of Engineering"
+      ]
+    }
+  },
+  "program": {
+    "name": "Mechanical Engineering (Chinese-taught)",
+    "degree_type": "Bachelor of Engineering",
+    "field": "Mechanical Engineering",
+    "faculty": "School of Mechanical Engineering",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "zh"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Mechanical Engineering, School of Mechanical Engineering, Xi'an Jiaotong University; Chinese-taught, 4 years, Bachelor of Engineering.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 22000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Chinese-taught tuition RMB 22,000 a year (2027 programmes page); accommodation RMB 8000 to 19000 a year extra."
+    }
+  ],
+  "admissions": []
+}

@@ -1,0 +1,61 @@
+{
+  "uni": "us-vt",
+  "name": "Virginia Tech",
+  "aliases": [
+    "Virginia Polytechnic Institute and State University",
+    "VT",
+    "Virginia Tech (Blacksburg)"
+  ],
+  "type": "public",
+  "website": "https://www.vt.edu",
+  "country": {
+    "cc": "us",
+    "name": "United States",
+    "currency": "USD"
+  },
+  "city": {
+    "slug": "us-blacksburg-va",
+    "name": "Blacksburg"
+  },
+  "sources": {
+    "main": {
+      "url": "https://www.vt.edu/about.html",
+      "page": "86ac851d0e8d",
+      "title": "About | Virginia Tech",
+      "organization": "Virginia Tech",
+      "quotes": [
+        "Main campus located in Blacksburg, Virginia",
+        "Part of every Virginia Tech plate purchase funds scholarships"
+      ]
+    },
+    "coa": {
+      "url": "https://finaid.vt.edu/content/dam/finaid_vt_edu/Cost_of_Attendance/2627/UGNRON_UPDATED_05132026.pdf",
+      "page": "vt-UGNRON_UPDATED_05132026",
+      "title": "Estimated Cost of Attendance, Out-of-State, Undergraduate, On-Campus, 2026-2027 | Virginia Tech Financial Aid",
+      "organization": "Virginia Tech",
+      "quotes": [
+        "Estimated Cost of Attendance Out-of-State, Undergraduate, On-Campus 2026-2027 Academic Year",
+        "Tuition $36,428",
+        "Fees $3,754",
+        "Housing $10,394",
+        "Food $6,826",
+        "*(Includes majors in Architecture, Industrial Design, Interior Design, and Landscape Architecture)",
+        "College of Agriculture and Biochemistry Majors: $750",
+        "College of Architecture: $1,500*",
+        "College of Engineering: $2,000",
+        "Building Construction: $2,000",
+        "Pamplin College of Business: $2,550",
+        "College of Science $1,000"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "nonresident",
+      "label": "Out-of-state students",
+      "description": "Virginia Tech estimated cost of attendance, out-of-state undergraduate on campus, 2026-2027.",
+      "source": "coa"
+    }
+  ]
+}

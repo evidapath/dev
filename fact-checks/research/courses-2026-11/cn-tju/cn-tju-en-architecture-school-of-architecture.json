@@ -1,0 +1,43 @@
+{
+  "uni": "cn-tju",
+  "slug": "en-architecture-school-of-architecture",
+  "sources": {
+    "course": {
+      "url": "https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202609/W020261027616110500011.xls",
+      "page": "tju-catalog-2027",
+      "title": "Catalog of Undergraduate Programs (2027) | Tianjin University",
+      "organization": "Tianjin University",
+      "quotes": [
+        "Tianjin University Catalog of Undergraduate Programs (international students, 2027)",
+        "建筑学 | Architecture | 工学 | 建筑学院 | School of Architecture |  |  | 5Y | 本科生 | Bachelor's Degree | 英文 | English | 26000 | 500 | 是 | 3020601 | 082801"
+      ]
+    }
+  },
+  "program": {
+    "name": "Architecture (English-taught)",
+    "degree_type": "Bachelor's Degree",
+    "field": "Architecture",
+    "faculty": "School of Architecture",
+    "duration_years": 5,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Architecture (建筑学), School of Architecture, Tianjin University; English-taught, 5 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 26000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Tuition 26,000 RMB a year (programme catalogue); application fee 500 RMB."
+    }
+  ],
+  "admissions": []
+}

@@ -1,0 +1,43 @@
+{
+  "uni": "cn-tju",
+  "slug": "en-civil-engineering-school-of-civil-engineering",
+  "sources": {
+    "course": {
+      "url": "https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202609/W020261027616110500011.xls",
+      "page": "tju-catalog-2027",
+      "title": "Catalog of Undergraduate Programs (2027) | Tianjin University",
+      "organization": "Tianjin University",
+      "quotes": [
+        "Tianjin University Catalog of Undergraduate Programs (international students, 2027)",
+        "土木工程 | Civil Engineering | 工学 | 建筑工程学院 | School of Civil Engineering |  |  | 4Y | 本科生 | Bachelor's Degree | 英文 | English | 20000 | 500 | 是 | 3020527 | 081000"
+      ]
+    }
+  },
+  "program": {
+    "name": "Civil Engineering (English-taught)",
+    "degree_type": "Bachelor's Degree",
+    "field": "Civil Engineering",
+    "faculty": "School of Civil Engineering",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Civil Engineering (土木工程), School of Civil Engineering, Tianjin University; English-taught, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 20000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Tuition 20,000 RMB a year (programme catalogue); application fee 500 RMB."
+    }
+  ],
+  "admissions": []
+}

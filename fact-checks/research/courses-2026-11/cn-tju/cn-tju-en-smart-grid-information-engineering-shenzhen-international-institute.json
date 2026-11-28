@@ -1,0 +1,43 @@
+{
+  "uni": "cn-tju",
+  "slug": "en-smart-grid-information-engineering-shenzhen-international-institute",
+  "sources": {
+    "course": {
+      "url": "https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202609/W020261027616110500011.xls",
+      "page": "tju-catalog-2027",
+      "title": "Catalog of Undergraduate Programs (2027) | Tianjin University",
+      "organization": "Tianjin University",
+      "quotes": [
+        "Tianjin University Catalog of Undergraduate Programs (international students, 2027)",
+        "智能电网信息工程 | Smart Grid Information Engineering | 工学 | 深圳国际学院 | Shenzhen International Institute of Tianjin University |  |  | 4Y | 本科生 | Bachelor's Degree | 英文 | English | 130000 | 500 | 是 | 080602TH | 080602TH"
+      ]
+    }
+  },
+  "program": {
+    "name": "Smart Grid Information Engineering (English-taught)",
+    "degree_type": "Bachelor's Degree",
+    "field": "Engineering",
+    "faculty": "Shenzhen International Institute of Tianjin University",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Smart Grid Information Engineering (智能电网信息工程), Shenzhen International Institute of Tianjin University, Tianjin University; English-taught, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 130000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Tuition 130,000 RMB a year (programme catalogue); application fee 500 RMB."
+    }
+  ],
+  "admissions": []
+}

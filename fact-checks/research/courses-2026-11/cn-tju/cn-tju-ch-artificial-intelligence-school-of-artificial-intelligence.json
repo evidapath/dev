@@ -1,0 +1,43 @@
+{
+  "uni": "cn-tju",
+  "slug": "ch-artificial-intelligence-school-of-artificial-intelligence",
+  "sources": {
+    "course": {
+      "url": "https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202609/W020261027616110500011.xls",
+      "page": "tju-catalog-2027",
+      "title": "Catalog of Undergraduate Programs (2027) | Tianjin University",
+      "organization": "Tianjin University",
+      "quotes": [
+        "Tianjin University Catalog of Undergraduate Programs (international students, 2027)",
+        "人工智能 | Artificial Intelligence | 工学 | 人工智能学院 | School of Artificial Intelligence |  |  | 4Y | 本科生 | Bachelor's Degree | 中文 | Chinese | 20000 | 500 | 是 | 2580001 | 080717T"
+      ]
+    }
+  },
+  "program": {
+    "name": "Artificial Intelligence (Chinese-taught)",
+    "degree_type": "Bachelor's Degree",
+    "field": "Computer Science",
+    "faculty": "School of Artificial Intelligence",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "zh"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Artificial Intelligence (人工智能), School of Artificial Intelligence, Tianjin University; Chinese-taught, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 20000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Tuition 20,000 RMB a year (programme catalogue); application fee 500 RMB."
+    }
+  ],
+  "admissions": []
+}

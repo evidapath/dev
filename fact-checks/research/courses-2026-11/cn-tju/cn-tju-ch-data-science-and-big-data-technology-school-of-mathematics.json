@@ -1,0 +1,43 @@
+{
+  "uni": "cn-tju",
+  "slug": "ch-data-science-and-big-data-technology-school-of-mathematics",
+  "sources": {
+    "course": {
+      "url": "https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202609/W020261027616110500011.xls",
+      "page": "tju-catalog-2027",
+      "title": "Catalog of Undergraduate Programs (2027) | Tianjin University",
+      "organization": "Tianjin University",
+      "quotes": [
+        "Tianjin University Catalog of Undergraduate Programs (international students, 2027)",
+        "数据科学与大数据技术 | Data Science and Big Data Technology | 理学 | 数学学院 | School of Mathematics |  |  | 4Y | 本科生 | Bachelor's Degree | 中文 | Chinese | 20000 | 500 | 是 | 3023305 | 080910T"
+      ]
+    }
+  },
+  "program": {
+    "name": "Data Science and Big Data Technology (Chinese-taught)",
+    "degree_type": "Bachelor's Degree",
+    "field": "Data Science",
+    "faculty": "School of Mathematics",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "zh"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Data Science and Big Data Technology (数据科学与大数据技术), School of Mathematics, Tianjin University; Chinese-taught, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 20000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Tuition 20,000 RMB a year (programme catalogue); application fee 500 RMB."
+    }
+  ],
+  "admissions": []
+}

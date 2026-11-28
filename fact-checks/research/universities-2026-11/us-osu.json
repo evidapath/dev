@@ -1,0 +1,57 @@
+{
+  "uni": "us-osu",
+  "name": "The Ohio State University",
+  "aliases": [
+    "Ohio State",
+    "Ohio State University",
+    "OSU"
+  ],
+  "type": "public",
+  "website": "https://www.osu.edu",
+  "country": {
+    "cc": "us",
+    "name": "United States",
+    "currency": "USD"
+  },
+  "city": {
+    "slug": "us-columbus-oh",
+    "name": "Columbus"
+  },
+  "sources": {
+    "main": {
+      "url": "https://sfa.osu.edu/international-student/about-aid/financial-aid-eligibility",
+      "page": "70797df164e7",
+      "title": "Cost of attendance, International Students | Student Financial Aid | The Ohio State University",
+      "organization": "The Ohio State University",
+      "quotes": [
+        "Cost of Attendance 2026-2027 Academic Year Ohio State University full-time, two semester academic year costs reflected below may vary by program",
+        "Non-Ohio resident: Living on campus Category Estimated Cost Direct Costs Tuition and fees $14,034 Non-resident fees $30,220",
+        "International Student Fee $3,104",
+        "Living expenses: housing and food $15,630",
+        "The Ohio State University © 2026, Office of Strategic Enrollment Management | Student Financial Aid Student Academic Services Building | 281 W Lane Ave, Columbus, OH 43210"
+      ]
+    },
+    "coa": {
+      "url": "https://sfa.osu.edu/international-student/about-aid/financial-aid-eligibility",
+      "page": "70797df164e7",
+      "title": "Cost of attendance, International Students | Student Financial Aid | The Ohio State University",
+      "organization": "The Ohio State University",
+      "quotes": [
+        "Cost of Attendance 2026-2027 Academic Year Ohio State University full-time, two semester academic year costs reflected below may vary by program",
+        "Non-Ohio resident: Living on campus Category Estimated Cost Direct Costs Tuition and fees $14,034 Non-resident fees $30,220",
+        "International Student Fee $3,104",
+        "Living expenses: housing and food $15,630",
+        "The Ohio State University © 2026, Office of Strategic Enrollment Management | Student Financial Aid Student Academic Services Building | 281 W Lane Ave, Columbus, OH 43210"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students (Columbus, non-Ohio resident)",
+      "description": "Ohio State 2026-2027 cost of attendance for international undergraduates.",
+      "source": "coa"
+    }
+  ]
+}

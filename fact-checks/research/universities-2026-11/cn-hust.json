@@ -1,0 +1,45 @@
+{
+  "uni": "cn-hust",
+  "name": "Huazhong University of Science and Technology",
+  "aliases": [
+    "HUST",
+    "Huazhong University of Science & Technology"
+  ],
+  "type": "public",
+  "website": "https://www.hust.edu.cn",
+  "country": {
+    "cc": "cn",
+    "name": "China",
+    "currency": "CNY"
+  },
+  "city": {
+    "slug": "cn-wuhan",
+    "name": "Wuhan"
+  },
+  "sources": {
+    "main": {
+      "url": "https://iso.hust.edu.cn/info/1194/5144.htm",
+      "page": "fa7dcdd6dbd6",
+      "title": "2027 Application Guide for International Undergraduate Programs | International Student Office, HUST",
+      "organization": "Huazhong University of Science and Technology",
+      "quotes": [
+        "2027 Application Guide for International Undergraduate Programs Editor： Date：October 26, 2026",
+        "English Telecommunications Engineering 4 30000 Software Engineering 4 30000 Biomedical Engineering 4 30000 Clinical Medicine(MBBS) 6 40000 Pharmacy 4 35000",
+        "Tuition (CNY/Year) Language of Instruction Discipline/Major Duration Tuition",
+        "Double Room: 700-900CNY/month",
+        "Insurance Premium: 1,000 CNY/year",
+        "International Student Office Huazhong University of Science and Technology",
+        "Address:1037 Luoyu Road, Hongshan District, Wuhan 430074, P.R.China"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "international",
+      "label": "International students",
+      "description": "HUST 2027 tuition for international undergraduates (CNY/Year).",
+      "source": "main"
+    }
+  ]
+}

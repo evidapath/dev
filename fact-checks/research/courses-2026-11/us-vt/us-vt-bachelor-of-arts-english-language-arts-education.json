@@ -1,0 +1,87 @@
+{
+  "uni": "us-vt",
+  "slug": "bachelor-of-arts-english-language-arts-education",
+  "sources": {
+    "course": {
+      "url": "https://www.vt.edu/academics/majors/english-language-arts-education.html",
+      "page": "de67c4bd8d51",
+      "title": "English Language Arts Education | Undergraduate Majors | Virginia Tech",
+      "organization": "Virginia Tech",
+      "quotes": [
+        "/ Undergraduate Majors / English Language Arts Education / Explore",
+        "Colleges College of Liberal Arts and Human Sciences Degree Types Bachelor of Arts",
+        "© 2026 Virginia Polytechnic Institute and State University.",
+        "Apply to Virginia Tech now"
+      ]
+    },
+    "y": {
+      "url": "https://catalog.vt.edu/undergraduate/undergraduate-policies/",
+      "page": "570b097af881",
+      "title": "Undergraduate Policies | Virginia Tech Undergraduate Catalog",
+      "organization": "Virginia Tech",
+      "quotes": [
+        "Virginia Tech offers four-year degree programs leading to a Bachelor of Arts, Bachelor of Science, or Bachelor of Fine Arts degree.",
+        "Also offered are five-year Bachelor of Architecture and Bachelor of Landscape Architecture programs."
+      ]
+    },
+    "coa": {
+      "url": "https://finaid.vt.edu/content/dam/finaid_vt_edu/Cost_of_Attendance/2627/UGNRON_UPDATED_05132026.pdf",
+      "page": "vt-UGNRON_UPDATED_05132026",
+      "title": "Estimated Cost of Attendance, Out-of-State, Undergraduate, On-Campus, 2026-2027 | Virginia Tech Financial Aid",
+      "organization": "Virginia Tech",
+      "quotes": [
+        "Estimated Cost of Attendance Out-of-State, Undergraduate, On-Campus 2026-2027 Academic Year",
+        "Tuition $36,428",
+        "Fees $3,754",
+        "Housing $10,394",
+        "Food $6,826",
+        "*(Includes majors in Architecture, Industrial Design, Interior Design, and Landscape Architecture)",
+        "College of Agriculture and Biochemistry Majors: $750",
+        "College of Architecture: $1,500*",
+        "College of Engineering: $2,000",
+        "Building Construction: $2,000",
+        "Pamplin College of Business: $2,550",
+        "College of Science $1,000"
+      ]
+    }
+  },
+  "program": {
+    "name": "English Language Arts Education",
+    "degree_type": "Bachelor of Arts",
+    "field": "Art",
+    "faculty": "College of Liberal Arts and Human Sciences",
+    "duration_years": 4,
+    "duration_source": "y",
+    "languages": [
+      "en"
+    ],
+    "entry_year": "2026-2027",
+    "platform": "",
+    "source": "course",
+    "summary": "English Language Arts Education (Bachelor of Arts), College of Liberal Arts and Human Sciences, Virginia Tech; Virginia Tech's bachelor's degrees are four-year programmes.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "nonresident",
+      "currency": "USD",
+      "tuition_formula": "4*(36428)/4",
+      "mandatory_fees_annual": 3754,
+      "academic_year": "2026-2027",
+      "source": "coa",
+      "note": "Out-of-state 2026-2027 estimate: tuition $36,428 + fees $3,754. Estimates; actual charges can differ by college, major and housing.",
+      "living": {
+        "monthly": [],
+        "months": 9,
+        "yearly": [
+          10394,
+          6826
+        ],
+        "source": "coa",
+        "kind": "genuine_cost_of_living_estimate",
+        "note": "On campus 2026-2027: housing $10,394 + food $6,826 = $17,220 (our calculation)."
+      }
+    }
+  ],
+  "admissions": []
+}

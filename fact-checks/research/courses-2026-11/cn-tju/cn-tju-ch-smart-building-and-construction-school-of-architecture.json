@@ -1,0 +1,43 @@
+{
+  "uni": "cn-tju",
+  "slug": "ch-smart-building-and-construction-school-of-architecture",
+  "sources": {
+    "course": {
+      "url": "https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202609/W020261027616110500011.xls",
+      "page": "tju-catalog-2027",
+      "title": "Catalog of Undergraduate Programs (2027) | Tianjin University",
+      "organization": "Tianjin University",
+      "quotes": [
+        "Tianjin University Catalog of Undergraduate Programs (international students, 2027)",
+        "智慧建筑与建造 | Smart Building and Construction | 工学 | 建筑学院 | School of Architecture |  |  | 4Y | 本科生 | Bachelor's Degree | 中文 | Chinese | 26000 | 500 | 是 | 3020613 | 082807T"
+      ]
+    }
+  },
+  "program": {
+    "name": "Smart Building and Construction (Chinese-taught)",
+    "degree_type": "Bachelor's Degree",
+    "field": "Smart Building and Construction",
+    "faculty": "School of Architecture",
+    "duration_years": 4,
+    "duration_source": "course",
+    "languages": [
+      "zh"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Smart Building and Construction (智慧建筑与建造), School of Architecture, Tianjin University; Chinese-taught, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 26000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Tuition 26,000 RMB a year (programme catalogue); application fee 500 RMB."
+    }
+  ],
+  "admissions": []
+}

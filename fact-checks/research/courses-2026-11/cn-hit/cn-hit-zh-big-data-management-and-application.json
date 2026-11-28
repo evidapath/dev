@@ -1,0 +1,57 @@
+{
+  "uni": "cn-hit",
+  "slug": "zh-big-data-management-and-application",
+  "sources": {
+    "course": {
+      "url": "https://studyathit.hit.edu.cn/_upload/article/files/96/2d/cc4244394e8f9d67e13e22595fe3/ad8c6e47-3334-424d-95cd-db91debaf9a2.xls",
+      "page": "hit-majors-2027",
+      "title": "2027/2028 Bachelor's Degree Program Major Lists | Harbin Institute of Technology",
+      "organization": "Harbin Institute of Technology",
+      "quotes": [
+        "哈尔滨工业大学2027/2028学年国际学生本科招生专业目录及CSCA测试科目 Harbin Institute of Technology 2027/2028 Bachelor's Degree Program Major Lists & CSCA Subjects",
+        "大数据管理与应用 Big Data Management and Application | 中文 Chinese | 4.0"
+      ]
+    },
+    "fees": {
+      "url": "https://studyathit.hit.edu.cn/18337/list.htm",
+      "page": "904a4e29e8ce",
+      "title": "Bachelor | Study at HIT | Harbin Institute of Technology",
+      "organization": "Harbin Institute of Technology",
+      "quotes": [
+        "Tuition Chinese-taught CNY 20,000/year (approximately USD 3,000) English-taught CNY 26,000/year (approximately USD 3,900)",
+        "Insurance CNY 10 00/year",
+        "Accommodation Fee CNY 800-1,000/month/bed",
+        "English-taught undergraduate programs require a minimum of 20 students. Programs that do not reach this number will not run.",
+        "Address:No.92 West Dazhi Street,Nangang District,Harbin 150001, P.R. China",
+        "HIT International Student Application Portal"
+      ]
+    }
+  },
+  "program": {
+    "name": "Big Data Management and Application (Chinese-taught)",
+    "degree_type": "Bachelor",
+    "field": "Business",
+    "faculty": "",
+    "duration_years": 4.0,
+    "duration_source": "course",
+    "languages": [
+      "zh"
+    ],
+    "entry_year": "2027/2028",
+    "platform": "",
+    "source": "course",
+    "summary": "Big Data Management and Application, School of Management, Harbin Institute of Technology; Chinese-taught, 4 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 20000,
+      "academic_year": "2027/2028 intake",
+      "source": "fees",
+      "note": "Chinese-taught tuition CNY 20,000/year."
+    }
+  ],
+  "admissions": []
+}

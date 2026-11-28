@@ -1,0 +1,43 @@
+{
+  "uni": "cn-tju",
+  "slug": "ch-preventive-medicine-school-of-disaster-and-emergency-medicine",
+  "sources": {
+    "course": {
+      "url": "https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202609/W020261027616110500011.xls",
+      "page": "tju-catalog-2027",
+      "title": "Catalog of Undergraduate Programs (2027) | Tianjin University",
+      "organization": "Tianjin University",
+      "quotes": [
+        "Tianjin University Catalog of Undergraduate Programs (international students, 2027)",
+        "预防医学 | Preventive Medicine | 医学 | 卫生应急学院 | School of Disaster and Emergency Medicine |  |  | 5Y | 本科生 | Bachelor's Degree | 中文 | Chinese | 20000 | 500 | 是 | 3025301 | 100401K"
+      ]
+    }
+  },
+  "program": {
+    "name": "Preventive Medicine (Chinese-taught)",
+    "degree_type": "Bachelor's Degree",
+    "field": "Preventive Medicine",
+    "faculty": "School of Disaster and Emergency Medicine",
+    "duration_years": 5,
+    "duration_source": "course",
+    "languages": [
+      "zh"
+    ],
+    "entry_year": "2027",
+    "platform": "",
+    "source": "course",
+    "summary": "Preventive Medicine (预防医学), School of Disaster and Emergency Medicine, Tianjin University; Chinese-taught, 5 years.",
+    "application_requirements": []
+  },
+  "costs": [
+    {
+      "residency": "international",
+      "currency": "CNY",
+      "tuition_annual": 20000,
+      "academic_year": "2027 entry",
+      "source": "course",
+      "note": "Tuition 20,000 RMB a year (programme catalogue); application fee 500 RMB."
+    }
+  ],
+  "admissions": []
+}

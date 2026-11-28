@@ -1,0 +1,51 @@
+{
+  "uni": "us-umd",
+  "name": "University of Maryland",
+  "aliases": [
+    "University of Maryland, College Park",
+    "UMD",
+    "Maryland"
+  ],
+  "type": "public",
+  "website": "https://umd.edu",
+  "country": {
+    "cc": "us",
+    "name": "United States",
+    "currency": "USD"
+  },
+  "city": {
+    "slug": "us-college-park-md",
+    "name": "College Park"
+  },
+  "sources": {
+    "main": {
+      "url": "https://academiccatalog.umd.edu/undergraduate/programs/",
+      "page": "ee9f0022a260",
+      "title": "Programs | University of Maryland Undergraduate Catalog 2026-2027",
+      "organization": "University of Maryland",
+      "quotes": [
+        "Undergraduate Programs | University of Maryland Catalog",
+        "The Flagship Institution of the University System of Maryland College Park, MD 20742, USA"
+      ]
+    },
+    "coa": {
+      "url": "https://academiccatalog.umd.edu/undergraduate/fees-expenses-financial-aid/tuition-fees/",
+      "page": "ef3045952fde",
+      "title": "Undergraduate Tuition and Fees | University of Maryland Undergraduate Catalog 2026-2027",
+      "organization": "University of Maryland",
+      "quotes": [
+        "2026-2027 Residents of the District of Columbia, Other States, and Other Countries Tuition and Fees-Academic Year Fee Total Academic Year Cost (fall and spring semesters) Tuition $42,266.00 Additional Differential Tuition for full-time juniors and seniors who are majoring in Business, Engineering, or Computer Science (regardless of residency classification) $3,375.00 Mandatory Fees (includes Tech fee). Maximum charged to all students registered for 9 or more credits $1,820.00 Board Contract (Resident Dining Plan - Base Plan) $6,820.00 Room (Standard 2-person w/AC, includes Telecom fee) $10,290.00",
+        "Undergraduate Tuition and Fees | University of Maryland Catalog"
+      ]
+    }
+  },
+  "main_source": "main",
+  "residency": [
+    {
+      "key": "nonresident",
+      "label": "Out-of-state and international students",
+      "description": "UMD tuition and fees for residents of other states and other countries, 2026-2027.",
+      "source": "coa"
+    }
+  ]
+}
